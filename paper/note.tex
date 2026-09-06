@@ -32,8 +32,8 @@
 at a split prime}
 \author{Toshihisa Urahigashi\\
 \small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 0.1.2-draft --- \today\\[3pt]
-\small DOI \href{https://doi.org/10.5281/zenodo.22537343}{\texttt{10.5281/zenodo.22537343}}\qquad ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}}
+\date{Version 0.1.3-draft --- \today\\[3pt]
+\small DOI \href{https://doi.org/10.5281/zenodo.22537342}{\texttt{10.5281/zenodo.22537342}} (all versions)\qquad ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}}
 
 \begin{document}
 \maketitle
@@ -400,6 +400,69 @@ If a further restriction on the data is required, which stated hypothesis
 imposes it, and which applications remain within its scope?
 \end{question}
 
+\begin{remark}[related work, added after the first deposit]\label{r:lana}
+We learned of the following only after depositing the first version of this note.
+
+\textup{[S]} \cite{LANA} isolates a compatibility problem in the passage from
+\cite[Thm.~3.11]{IUT3} to \cite[Cor.~3.12]{IUT3}.  Its main goal
+\cite[\S9.2]{LANA} is to show that $\eta^{q}=\eta^{\mathrm{anab}}_{S}$ for some
+suitable $S$, where the two sides are isomorphisms of pointed real lines obtained
+respectively from the $q$-pilot in its native structure and by anabelian and
+Kummer-theoretic procedures; \cite[\S9.3]{LANA} reads this as the assertion that
+the rigidified $q$-pilot is represented in the output regions.  \cite{LANA} states
+that it does not have a proof of this at present, and reserves judgement.
+
+\textup{[P]} That is not the same statement as \SA4.  \SA4 concerns which regions
+the union of possible images contains, and \textup{(F2)} concerns the reading of
+the resulting hull in the fixed target of Step~(v) of \cite[Thm.~1.10]{IUT4}.
+Within \cite{LANA} the corresponding place is \cite[\S10.4]{LANA}, which locates
+the effect of the indeterminacies in the ambiguity of the choice of $S$ and says
+that this is reflected in the log-volume computation for the hull in
+\cite{IUT4}.
+
+\textup{[S]} \cite[\S10.4]{LANA} continues that the hull computation ``is made
+at each place individually, but the effects of $\Ind1$, $\Ind2$ and $\Ind3$ cannot
+be detected locally''.  \textup{[P]} This does not contradict
+Theorem~\ref{t:cmp}, which is conditional: if that reading is correct then \SA{}
+fails, and what is withdrawn is the source application, not the rational
+calculation.  Nor have we identified the regions, admitted transports, hull and
+normalized readout of \cite{LANA} with the fixed mixed tensor component used here;
+without that identification the two statements are not yet about the same objects.
+We record the cross-check as \textup{(F5)} in \S\ref{s:fals}.
+
+\textup{[S]} One point of contact is exact.  The LGP element of
+\cite[\S5.2(f)]{LANA} is
+$\bigl(\bigotimes_{t\in S_j}(1)_{w\mid v_{\mathbb Q}}\bigr)\otimes
+\underline{\underline q}_v^{\,j^2}$ at a bad place and $\bigl(\bigotimes_{t\in S_j}(1)_{w\mid v_{\mathbb Q}}\bigr)\otimes1$
+at a good one: the factor $\underline{\underline q}_v^{\,j^2}$ occupies the distinguished slot alone and
+every other slot carries $1$.  That is the same shape as the reading of Step~(v)
+used in \S\ref{s:cmp}, and as the insert-$1$ representation of \S\ref{s:sa}.
+
+\textup{[S]} \cite{LANA} gives no explicit numerical initial $\Theta$-datum
+\cite[\S2]{LANA}, and computes no fibre cardinality and no separate
+constant/non-constant/mixed classification of tuples.  Its containers are nevertheless indexed exactly as here:
+\cite[\S5.2(a)]{LANA} sets
+$K_{S_{j+1},v}=\bigl(\bigotimes_{t\in S_j}\bigoplus_{w\mid v_{\mathbb Q}}
+K_{t,w}\bigr)\otimes K_{j,v}$, so the decomposition of
+Proposition~\ref{p:dich} is present in that formalism and the configuration of
+\S\ref{s:dich} is admitted by it.  What \S\ref{s:dich} adds is that the
+configuration occurs, and \S\ref{s:datum} that it occurs in an admitted datum.
+
+\textup{[S]} \cite{Form} decomposes the same passage as
+$3.11\Rightarrow3.11.5\Rightarrow3.12$, obtained by moving the ``hull+det'' of
+$3.12$ into $3.11.5$.  We use this only for the decomposition.  We do not identify
+the transport of \SA3 with the algorithmic parallel transport of
+\cite[Rem.~3.11.1(iv)]{IUT3}.  That remark says of the parallel transport
+\emph{mechanism} that it ``does not consist of a simple instance of transport of
+some set-theoretic region \dots\ via some set-theoretic function'', but is a
+construction algorithm valid in the arithmetic holomorphic structures on both
+sides of the $\Theta$-link.  The map $\tau_{\sigma,t}$ of \S\ref{s:sa} is of a
+different type: it is a map between summands of one fixed ambient $E$ on one side.
+We do not read the remark as a prohibition on such a component map, and we do not
+borrow the name for it.  The label ``$3.11.5$'' is explanatory; \cite{Form} states
+that it does not appear in \cite{IUT1,IUT2,IUT3,IUT4}.
+\end{remark}
+
 The selection and tuple statements preceding this question are independent of
 \SA{}.  Our proposed interpretation of the comparison itself is conditional
 on \SA{}, as specified next.  We do not infer an independent probability for
@@ -647,6 +710,16 @@ these are not asserted to exhaust all possible readings.
  tensor structure and $L$ to those of the fixed target as used above.
  The log-unit equality invoked here is for $e_i\le p-2$, not for arbitrary
  tame extensions.
+\item The regions, admitted transports, hull and normalized readout of
+ \cite[\S9.2, \S10.4]{LANA} are identified with the fixed component used here,
+ \emph{and} under that identification the effects of the indeterminacies are not
+ detectable at a single place, as \cite[\S10.4]{LANA} states of the hull
+ computation in \cite{IUT4}.  Both halves are needed: the identification is not
+ established here, and without it the two accounts are not yet about the same
+ objects.  If both are supplied then \SA{} fails and the source application is
+ withdrawn.  We regard this as the cross-check most directly checkable against the
+ source, since it concerns where the effect of $\Ind1$ can appear rather than our
+ arithmetic.
 \end{enumerate}
 
 There is a related type distinction in
@@ -741,7 +814,7 @@ that no further errors remain, and retain the withdrawal undertaking of
 \bibitem[Full]{Full} T.~Urahigashi, \emph{An explicit initial $\Theta$-datum
  with mixed reduction over a split prime, and the local estimates of
  inter-universal Teichm\"uller theory IV}, companion draft, version
- 0.1.2-draft (2026).  Included as \href{paper.pdf}{\texttt{paper.pdf}},
+ 0.1.3-draft (2026).  Included as \href{paper.pdf}{\texttt{paper.pdf}},
  with the source and reproducibility scripts in the same package.
 \bibitem[CanLift]{CanLift} S.~Mochizuki, \emph{The absolute anabelian geometry of
  canonical curves}, Doc. Math., Kazuya Kato's fiftieth birthday, Extra Vol.\
@@ -764,6 +837,12 @@ that no further errors remain, and retain the withdrawal undertaking of
 \bibitem[IUT4]{IUT4} S.~Mochizuki, \emph{Inter-universal Teichm\"uller theory IV},
  Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 627--723.
  Consulted author version: April 2020.
+\bibitem[Form]{Form} S.~Mochizuki, \emph{On the formalization of IUT: a preliminary
+ progress report} (joint work in progress with Y.~Hoshi, G.~Yamashita, Y.~Yang),
+ slides, Workshop on AI and Theorem Provers in Mathematics, April 2026, 14 pp.
+\bibitem[LANA]{LANA} Project LANA, \emph{Project LANA interim report on IUT theory},
+ July 2026, 50 pp.  Lean for ANAbelian geometry; core members J.~Commelin,
+ K.~Kedlaya, Y.~Hoshi, A.~Topaz, F.~Kato (project leader).
 \bibitem[MFHMP]{MFHMP} S.~Mochizuki, I.~Fesenko, Y.~Hoshi, A.~Minamide,
  W.~Porowski, \emph{Explicit estimates in inter-universal Teichm\"uller theory},
  Kodai Math. J. \textbf{45} (2022), no.~2, 175--236.

@@ -61,3 +61,47 @@ The accompanying PDF is a 21-page draft. Arithmetic, the norm sieve, the CRT
 checks, all nine Lean theorems and two consecutive LaTeX runs passed. The final
 PDF was visually inspected on every page. This audit does not turn (SA) into an
 unconditional theorem or establish a global contradiction.
+
+## 0.1.3-draft (2026-09-07)
+
+Version DOI 10.5281/zenodo.22544085.  Concept DOI 10.5281/zenodo.22537342 resolves
+to the latest version.
+
+- ★Added the two references we had missed at the first deposit, and a Remark on the
+  relation.  ★The first two drafts of that Remark were wrong; three independent audits
+  found six errors, each confirmed verbatim against the sources.
+
+  Round 1 (four errors):
+  - "the same object as (SA4) and (F2)" -- LANA's goal (9-1) is whether the rigidified
+    q-pilot is represented in the output regions (§9.2-§9.3); (SA4) is about which
+    regions the union contains.  The corresponding place in LANA is §10.4.
+  - ★"does not consider a rational prime with several places, so the configuration does
+    not arise there" -- **false**: LANA §5.2(a) sets
+    K_{S_{j+1},v} = (⊗_t ⊕_{w|v_Q} K_{t,w}) ⊗ K_{j,v}.  Our word search missed it
+    because they write "⊕_{w|v_Q}" and never "tuple" or "split".
+  - ★★identifying the transport of (SA3) with the algorithmic parallel transport (APT)
+    of IUT III Rem 3.11.1(iv).  Removed.
+  - a convergence paragraph that read as corroboration of (SA).  Removed.
+
+  Round 2 (two further errors, introduced by the first correction):
+  - ★★★"the two cannot both stand as written" -- **a logic error**.  Theorem 4 is
+    conditional; SA => D is compatible with not-D, which yields not-SA.  There is no
+    contradiction, only a falsifier.  Also, the regions, transports, hull and readout
+    of LANA were never identified with the fixed component used here, so the two
+    accounts are not yet about the same objects.
+  - ★reading Rem 3.11.1(iv) as prohibiting the component map tau.  The remark is about
+    the transport *mechanism* being an algorithm valid on both sides of the Theta-link;
+    tau maps between summands of one fixed ambient object on one side.  We neither
+    borrow the name nor read the remark as a prohibition.
+
+- ★★(F5) is now stated as a two-part conditional cross-check, not a contradiction:
+  the identification must be supplied *and* the locality statement must hold; then
+  (SA) fails and the source application -- not the rational calculation -- is withdrawn.
+- ★An exact point of contact: LANA's LGP element (§5.2(f)) carries the 2l-th root
+  double-underline q_v^{j^2} in the distinguished slot alone and 1 in every other slot,
+  the same shape as the reading of Step (v) used here.
+- "3.11.5" is recorded as an explanatory label; [Form] states it does not appear in the
+  four IUT papers.
+- Title block now carries the concept DOI 10.5281/zenodo.22537342 (all versions).
+  Version 1 (10.5281/zenodo.22537343) is unchanged and remains the record of what was
+  circulated on 2026-09-06.  ★No auditor asked for its withdrawal.

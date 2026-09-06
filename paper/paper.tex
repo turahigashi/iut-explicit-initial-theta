@@ -1,5 +1,5 @@
 \pdfoutput=1
-\def\PaperVersion{0.1.2-draft}
+\def\PaperVersion{0.1.3-draft}
 
 \documentclass[11pt]{article}
 \usepackage[margin=1in]{geometry}
@@ -35,7 +35,7 @@
 and the local estimates of inter-universal Teichm\"uller theory IV}
 \author{Toshihisa Urahigashi}
 \date{Version \PaperVersion\ --- \today\\[3pt]
-\small DOI \href{https://doi.org/10.5281/zenodo.22537343}{\texttt{10.5281/zenodo.22537343}}\qquad ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}}
+\small DOI \href{https://doi.org/10.5281/zenodo.22537342}{\texttt{10.5281/zenodo.22537342}} (all versions)\qquad ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}}
 
 \begin{document}
 \maketitle
@@ -1194,15 +1194,33 @@ primes and the archimedean places follows from it.
 
 \section{Scope}\label{sec:scope}
 
-We restate \S\ref{sec:notclaim} now that the statements have been made.
-Theorems~\ref{thm:local} and \ref{thm:averaged} concern the application of a
-local upper bound to the fixed target component of the union of possible images.
-They do not bear on the truth of $abc$, on the lower bound of
-\cite[Corollary 3.12]{IUT3}, on the global inequality of
-\cite[Theorem 1.10]{IUT4}, or on the merits of \cite{SS} versus \cite{Rpt2018}.
-They also do not show that the estimates cannot be repaired: an enlarged
-container is permitted by \cite{IUT4}, and the question is whether the
-accompanying loss of volume can be carried through the subsequent averaging.
+\paragraph{Related work, added after the first deposit.}
+\textup{[S]} \cite{LANA} isolates a compatibility problem in the passage from
+\cite[Thm.~3.11]{IUT3} to \cite[Cor.~3.12]{IUT3}; its goal \cite[\S9.2]{LANA} is
+$\eta^{q}=\eta^{\mathrm{anab}}_{S}$ for some suitable $S$, read in
+\cite[\S9.3]{LANA} as the assertion that the rigidified $q$-pilot is represented
+in the output regions, and it states that it has no proof of this at present.
+\textup{[P]} That is not the statement \SA4, which concerns which regions the
+union of possible images contains; within \cite{LANA} the corresponding place is
+\cite[\S10.4]{LANA}.  \textup{[S]} That section says the hull computation ``is
+made at each place individually, but the effects of $\Ind1$, $\Ind2$ and $\Ind3$
+cannot be detected locally''.  \textup{[P]} This does not contradict the
+conditional statement proved here; if that reading is correct then \SA{} fails and
+the source application is withdrawn.  We have not identified the regions, hull and
+readout of \cite{LANA} with the fixed component used here, and the note records
+the cross-check as a falsifier.  One point of contact is exact: the LGP element of
+\cite[\S5.2(f)]{LANA} carries $\underline{\underline q}_v^{\,j^2}$ in the
+distinguished slot alone and $1$ in every other, the shape used here.
+\cite{LANA} gives no explicit numerical initial $\Theta$-datum and computes no
+fibre cardinality or constant/mixed classification of tuples, but its containers
+are indexed as here \cite[\S5.2(a)]{LANA}, so the configuration is admitted by
+that formalism.  \cite{Form} decomposes the passage as
+$3.11\Rightarrow3.11.5\Rightarrow3.12$ by moving the ``hull+det'' of $3.12$ into
+$3.11.5$ --- an explanatory label, which \cite{Form} states does not appear in
+\cite{IUT1,IUT2,IUT3,IUT4} --- and we use it only for that.  We do not identify
+the transport of \SA3 with the algorithmic parallel transport of
+\cite[Rem.~3.11.1(iv)]{IUT3}, nor read that remark as a prohibition on a component
+map between summands of one fixed ambient object.
 
 \section{What would falsify the argument}\label{sec:falsify}
 
@@ -1512,6 +1530,18 @@ S.~Mochizuki,
 collective reference to the four articles in
 Publ. Res. Inst. Math. Sci. \textbf{57} (2021), no.~1/2:
 I, 3--207; II, 209--401; III, 403--626; IV, 627--723.
+
+\bibitem[Form]{Form}
+S.~Mochizuki,
+\emph{On the formalization of IUT: a preliminary progress report}
+(joint work in progress with Y.~Hoshi, G.~Yamashita, Y.~Yang),
+slides, Workshop on AI and Theorem Provers in Mathematics, April 2026, 14 pp.
+
+\bibitem[LANA]{LANA}
+Project LANA,
+\emph{Project LANA interim report on IUT theory}, July 2026, 50 pp.
+Lean for ANAbelian geometry; core members J.~Commelin, K.~Kedlaya, Y.~Hoshi,
+A.~Topaz, F.~Kato (project leader).
 
 \bibitem[MFHMP]{MFHMP}
 S.~Mochizuki, I.~Fesenko, Y.~Hoshi, A.~Minamide and W.~Porowski,

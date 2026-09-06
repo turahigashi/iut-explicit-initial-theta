@@ -1,12 +1,12 @@
 # An explicit initial Θ-datum with mixed reduction over a split prime
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22537343.svg)](https://doi.org/10.5281/zenodo.22537343)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22537342.svg)](https://doi.org/10.5281/zenodo.22537342)
 
-Draft paper, version 0.1.2-draft.
-Archived at DOI [10.5281/zenodo.22537343](https://doi.org/10.5281/zenodo.22537343).
+Draft paper, version 0.1.3-draft.
+Archived at DOI [10.5281/zenodo.22537342](https://doi.org/10.5281/zenodo.22537342) (all versions); this version is 10.5281/zenodo.22544085.
 
 ```
-paper/note.tex      the first report (11 pages) -- the paper of record
+paper/note.tex      the first report (12 pages) -- the paper of record
 paper/paper.tex     the companion full draft (22 pages), cited as [Full]
 scripts/checks.py   displayed arithmetic and exact comparison certificates
 scripts/check_round3.py   corrected margins and rigorous selected-degree ratios
