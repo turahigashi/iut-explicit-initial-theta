@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the accompanying paper and this artifact."
+title: "iut-explicit-initial-theta: an explicit initial Theta-datum with mixed reduction over a split prime, with exact verification scripts"
+type: software
+authors:
+  - family-names: Urahigashi
+    given-names: Toshihisa
+    email: "123026.urahigashi.toshihisa@gmail.com"
+    affiliation: "Independent researcher"
+    orcid: "https://orcid.org/0009-0004-0460-6242"
+version: "0.1.2-draft"
+doi: "10.5281/zenodo.22537343"
+license: Apache-2.0
+keywords:
+  - inter-universal Teichmuller theory
+  - initial Theta-datum
+  - elliptic curve
+  - Legendre form
+  - split prime
+  - mixed reduction
+  - log-volume
+  - Lean 4

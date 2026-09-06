@@ -1,0 +1,9 @@
+'RegardedUpTo.act_A' does not depend on any axioms
+'RegardedUpTo.act_sA' does not depend on any axioms
+'RegardedUpTo.act_is_nontrivial' does not depend on any axioms
+'RegardedUpTo.hull_card_invariant' does not depend on any axioms
+'RegardedUpTo.union_hull_exceeds_every_member' does not depend on any axioms
+'RegardedUpTo.orbit_not_forced_by_invariance' does not depend on any axioms
+'RegardedUpTo.orbit_is_up_to_act' does not depend on any axioms
+'RegardedUpTo.orbit_vol_invariant' does not depend on any axioms
+'RegardedUpTo.the_point' does not depend on any axioms

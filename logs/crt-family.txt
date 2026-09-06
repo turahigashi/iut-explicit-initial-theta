@@ -1,0 +1,58 @@
+{
+  "scope": "Finite Hensel/CRT and local-order checks only.",
+  "samples": [
+    {
+      "N": 1,
+      "hensel_modulus_exponent": 2,
+      "hensel_root_mod_211": 65,
+      "all_six_CRT_conditions": "PASS",
+      "A0_decimal_digits": 9,
+      "progression_modulus_is_25080_times_211_to_N_plus_1": true,
+      "sample_x": 1,
+      "v211_first_norm": 1,
+      "v211_second_norm": 0,
+      "v211_f": 1,
+      "v2_G": 2,
+      "G_mod211": 110,
+      "G_is_unit_at_3_5_11_19_211": true,
+      "sample_G_seventh_power_free_certified": false
+    },
+    {
+      "N": 106,
+      "hensel_modulus_exponent": 107,
+      "hensel_root_mod_211": 65,
+      "all_six_CRT_conditions": "PASS",
+      "A0_decimal_digits": 253,
+      "progression_modulus_is_25080_times_211_to_N_plus_1": true,
+      "sample_x": 1,
+      "v211_first_norm": 106,
+      "v211_second_norm": 0,
+      "v211_f": 106,
+      "v2_G": 2,
+      "G_mod211": 110,
+      "G_is_unit_at_3_5_11_19_211": true,
+      "sample_G_seventh_power_free_certified": false
+    },
+    {
+      "N": 211,
+      "hensel_modulus_exponent": 212,
+      "hensel_root_mod_211": 65,
+      "all_six_CRT_conditions": "PASS",
+      "A0_decimal_digits": 497,
+      "progression_modulus_is_25080_times_211_to_N_plus_1": true,
+      "sample_x": 1,
+      "v211_first_norm": 211,
+      "v211_second_norm": 0,
+      "v211_f": 211,
+      "v2_G": 2,
+      "G_mod211": 110,
+      "G_is_unit_at_3_5_11_19_211": true,
+      "sample_G_seventh_power_free_certified": false
+    }
+  ],
+  "infinite_existence_proof": "Appendix D; not established by these finite checks.",
+  "individual_seventh_power_free_sample": "Not certified."
+}
+PASS: all three samples satisfy the stated CRT and local-order conditions.
+No individual sample has been certified seventh-power-free.
+EXIT:0

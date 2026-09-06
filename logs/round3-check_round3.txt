@@ -1,0 +1,25 @@
+EXPLICIT pi^29 CERTIFICATE
+A29 = 1067261374298406947765593518710042015056
+B29 = 477293796532903168691016059805411153867
+gcd(A29,B29) = 1
+gcd(A29-1,B29) = 3
+Norm(a) = 25362449986390845063221249702894221440426112035618541763923185414691
+R=Norm(1-a) = 25362449986390845063221249700759698691829298140087354726503101384580
+v_p(R), p=2,3,5,7 = {2: 2, 3: 2, 5: 1, 7: 0}
+59 residues at sqrt5=8,51 = [58, 1]
+SELECTED TATE-DIVISOR CONTRIBUTIONS (outside 2,7; 1/[F0:Q])
+H_all = 29 log(211) + log(R/4) in (309.021477380491, 309.021477380492)
+H_ns = log(45) in (3.806662489770, 3.806662489771)
+H_ns/H_all in (0.012318439876860, 0.012318439876861)
+CERTIFIED 0.0123 < H_ns/H_all < 0.0124
+CERTIFIED discarded fraction > 0.9876
+CORRECTED STAGE CERTIFICATES
+j=1: lambda=29/7, dI=104/105, aI=106/105, seed=-106/105, upper=-226/105, margin=8/7, exponent=2
+j=2: lambda=116/7, dI=208/105, aI=107/105, seed=-107/105, upper=-1427/105, margin=88/7, exponent=13
+j=3: lambda=261/7, dI=104/35, aI=36/35, seed=-36/35, upper=-1166/35, margin=226/7, exponent=33
+j=2 positivity threshold: ord_p(q_Tate) > 14 (not 56)
+FAMILY DISTINCTION
+A29+B29*sqrt5 is the explicit example, with odd nonsplit bad primes exactly 3,5.
+For a=T-sqrt5 and T=2 mod5,19, the deterministic theorem instead gives H_ns=0.
+The theorem proving those classifications is written separately; finite checks are not its proof.
+PASS: all integer and rational assertions. No floating-point pass/fail.

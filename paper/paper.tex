@@ -1,0 +1,1546 @@
+\pdfoutput=1
+\def\PaperVersion{0.1.2-draft}
+
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{hidelinks,
+  pdftitle={An explicit initial Theta-datum with mixed reduction over a split prime},
+  pdfauthor={Toshihisa Urahigashi}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{observation}[theorem]{Observation}
+
+\newcommand{\Fmod}{F_{\mathrm{mod}}}
+\newcommand{\Vmod}{\mathbb{V}_{\mathrm{mod}}}
+\newcommand{\Vbad}{\mathbb{V}^{\mathrm{bad}}}
+\newcommand{\Vgood}{\mathbb{V}^{\mathrm{good}}}
+\newcommand{\VV}{\mathbb{V}}
+\newcommand{\Ind}[1]{\textup{(Ind#1)}}
+\newcommand{\SA}{\textup{(SA)}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\Norm}{\operatorname{N}}
+\newcommand{\Aut}{\operatorname{Aut}}
+
+\title{An explicit initial $\Theta$-datum with mixed reduction over a split prime,
+and the local estimates of inter-universal Teichm\"uller theory IV}
+\author{Toshihisa Urahigashi}
+\date{Version \PaperVersion\ --- \today\\[3pt]
+\small DOI \href{https://doi.org/10.5281/zenodo.22537343}{\texttt{10.5281/zenodo.22537343}}\qquad ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We exhibit an explicit initial $\Theta$-datum in the sense of
+\cite[Definition 3.1]{IUT1} --- an elliptic curve in Legendre form over
+$\mathbb{Q}(\sqrt5)$, with $\ell=7$ --- whose defining prime $p=211$
+\emph{splits} in the field of moduli, so that one place of multiplicative
+reduction and one place of good reduction lie above it.  All conditions (a)--(f) of \cite[Definition 3.1]{IUT1}
+are verified by explicit arithmetic and cited geometric constructions,
+independently of the hypothesis used in the comparison below.  For this datum the local invariants are
+$e_{\mathrm{g}}=1$, $e_{\mathrm{b}}=105$ and
+$\ord_{211}(\underline{\underline q}_{\mathrm{b}})=29/7$, and the extension is
+tame at $211$ since $105\le 209=p-2$.
+
+We then examine what this datum implies for the local estimates of
+\cite[Theorem 1.10, proof, Step (v)]{IUT4}.  Under one hypothesis about the source, which we
+isolate as \SA{} and state precisely in \S\ref{sec:sa}, the log-volume of the
+holomorphic hull of the union of the possible images of a $\Theta$-pilot object
+at a mixed tuple is bounded below by $-106/105$ in the relevant normalization,
+whereas the upper bound obtained by applying \cite[Proposition 1.4(iii)]{IUT4} to
+the fixed target component is $-226/105$.  The difference is $8/7>0$.
+
+We are explicit about the status of every step.  The construction of
+\S\ref{sec:datum}--\S\ref{sec:profile} is interpretation-free.  The hypothesis
+\SA{} of \S\ref{sec:sa} is a reading of the source, and we say exactly which
+sentences it rests on and exactly what would falsify it.  We do \emph{not} claim
+that the $abc$ conjecture is false, that the lower bound of
+\cite[Corollary 3.12]{IUT3} is false, that the global inequality of
+\cite[Theorem 1.10]{IUT4} is false, or that the objections of \cite{SS} are
+thereby vindicated.
+\end{abstract}
+
+\tableofcontents
+
+%=====================================================================
+\section{Introduction}\label{sec:intro}
+
+\subsection{What this paper does}
+
+Inter-universal Teichm\"uller theory \cite{IUT1,IUT2,IUT3,IUT4} begins from a
+collection of data called an \emph{initial $\Theta$-datum}
+\cite[Definition 3.1]{IUT1}.  Explicit initial $\Theta$-data are needed whenever
+one wants numerically effective consequences; \cite{MFHMP} is devoted to
+obtaining such consequences.  The present paper contributes an explicit initial
+$\Theta$-datum with the following feature: the rational prime underlying the bad place \emph{splits} in
+the field of moduli, so that the set $\VV$ of \cite[Definition 3.1(e)]{IUT1} 
+contains \emph{two} places above it, one bad and one good.
+
+We call this a \emph{mixed profile}.  The number of selected places is fixed
+by \cite[Definition 3.1(e)]{IUT1}, which requires $\VV$
+to be a \emph{section} of $\VV(K)\twoheadrightarrow\Vmod$, so that the number of
+places of $\VV$ above a rational prime $p$ equals the number of places of $\Fmod$
+above $p$.  In the present quadratic field, a mixed profile at $p$ occurs when $p$ splits
+and the reduction types differ at its two places.
+
+Part~\ref{part:datum} constructs such a datum and verifies
+\cite[Definition 3.1]{IUT1} in full.  Part~\ref{part:estimates} examines the
+consequences for the local estimates of \cite[Theorem 1.10, proof, Step (v)]{IUT4}.
+
+\subsection{The two results}\label{sec:results}
+
+\begin{theorem}[the datum; \S\ref{sec:datum}--\S\ref{sec:profile}]\label{thm:A}
+Let
+\[
+ F_0=\mathbb{Q}(\sqrt5),\quad \pi=16+3\sqrt5,\quad a=\pi^{29},\quad
+ E_0:y^2=x(x-1)(x-a),\quad \ell=7,
+\]
+\[
+ F=F_0\bigl(\sqrt{-1},E_0[15]\bigr),\qquad K=F\bigl(E_0[7]\bigr).
+\]
+Let $\Vbad_{\mathrm{mod}}$ consist of all places of $F_0$ of multiplicative
+reduction outside residue characteristics $2,7$; it contains $v_\pi$, where
+$v_\pi(\pi)=1$.  There exist a global cover $\underline C_K$, a compatible
+section $\VV$ of $\VV(K)\twoheadrightarrow\Vmod$, and a cusp $\epsilon$ such that
+these data form an initial $\Theta$-datum in the sense of
+\cite[Definition 3.1]{IUT1}.  The choices are constructed in
+\S\ref{sec:e}; an arbitrary section is not asserted to be compatible.  Above the rational prime $211=\Norm(\pi)$ the set
+$\VV$ has exactly two elements, one of multiplicative and one of good reduction,
+with
+\[
+ e_{\mathrm{g}}=1,\qquad e_{\mathrm{b}}=105,\qquad
+ \ord_{211}\bigl(\underline{\underline q}_{\mathrm{b}}\bigr)=\tfrac{29}{7},
+\]
+and the profile is tame at $211$, with the stronger bound $105\le209=p-2$.
+\end{theorem}
+
+Theorem~\ref{thm:A} uses exact computations, standard facts about elliptic
+curves and the cited constructions, checking \cite[Definition 3.1]{IUT1} one
+condition at a time.  It is independent of \SA{}.
+
+\begin{theorem}[the comparison; \S\ref{sec:local}]\label{thm:B}
+Assume the hypothesis \SA{} of \S\ref{sec:sa}.  For the datum of
+Theorem~\ref{thm:A}, at stage $j=1$ and the mixed tuple
+$t=(\mathrm{g},\mathrm{b})$, the upper bound obtained by applying
+\cite[Proposition 1.4(iii)]{IUT4} to the fixed target component is
+$-226/105$ in the normalization by $\log211$, while the holomorphic hull of the actual comparison region contains
+a lattice whose hull has log-volume $-106/105$.  The two are
+incompatible, with margin
+\[
+ -\frac{106}{105}-\Bigl(-\frac{226}{105}\Bigr)=\frac{8}{7}>0 .
+\]
+\end{theorem}
+
+Theorem~\ref{thm:B} rests on exactly one hypothesis about the source, isolated as
+\SA{} in \S\ref{sec:sa}.  \SA{} is a \emph{reading}, not a computation; we give
+its four supporting steps separately in \S\ref{sec:sabasis} and state in
+\S\ref{sec:falsify} the four ways it could fail.  Everything else in
+Theorem~\ref{thm:B} uses the cited local estimates and elementary lattice
+and arithmetic calculations.
+
+\subsection{What this paper does not claim}\label{sec:notclaim}
+
+We state this at the outset because the subject invites misreading.
+This paper does \emph{not} claim:
+\begin{enumerate}[label=(\roman*)]
+\item that the $abc$ conjecture is false, or that any Diophantine consequence
+      asserted in \cite{IUT4} is false;
+\item that the lower bound of \cite[Corollary 3.12]{IUT3} is false;
+\item that the global inequality of \cite[Theorem 1.10]{IUT4} is false;
+\item that the objections raised in \cite{SS} are correct, or that the responses
+      of \cite{Rpt2018} are incorrect;
+\item that the estimates examined here cannot be repaired.
+\end{enumerate}
+What is asserted, and only under the hypothesis \SA{} of \S\ref{sec:sa}, is that
+one specific step --- the application of \cite[Proposition 1.4(iii)]{IUT4} to a
+fixed target component of the union of possible images --- does not yield the
+bound it is used to yield, for the datum constructed here.
+
+\subsection{The status of each step}
+
+We use three labels throughout.
+\begin{description}[leftmargin=2.2em,style=nextline]
+\item[{[S]}] A source statement, cited by number.  Quotation marks delimit
+  verbatim wording; unquoted descriptions are paraphrases.  Ordinary deductions
+  from these statements are written as proofs.
+\item[{[P]}] A proved deduction or an exact computation.  Every computation in Part~\ref{part:datum}
+  is carried out in $\mathbb{Z}[\sqrt5]$ or in $\mathbb{Z}$ with exact integer
+  arithmetic.  Decimal evaluations in \S\ref{sec:averaged} are illustrative;
+  the inequalities there are also proved using rational bounds.
+\item[{[H]}] A \emph{reading} of the source: a step whose justification is an
+  interpretation of the text rather than a computation or a quoted statement.
+  There is exactly one such step of substance, namely \SA{} of \S\ref{sec:sa},
+  and \S\ref{sec:falsify} says what would falsify it.
+\end{description}
+
+\subsection{Sources and versions}
+
+Statement numbers in this paper refer to the author versions of
+\cite{IUT1,IUT2,IUT3,IUT4} dated May 2020 (I), December 2020 (II), May 2020
+(III) and April 2020 (IV).  We cite by statement number throughout.
+The publication metadata in \cite{IUTpub} identify the corresponding journal
+articles; we do not assert textual identity between those editions and the
+author versions consulted.
+
+%=====================================================================
+\part{An explicit initial \texorpdfstring{$\Theta$}{Theta}-datum}\label{part:datum}
+
+\section{The datum}\label{sec:datum}
+
+\begin{definition}\label{def:datum}
+Set
+\[
+  F_0=\mathbb{Q}(\sqrt5),\qquad
+  \pi=16+3\sqrt5,\qquad
+  a=\pi^{29},\qquad
+  E_0:\; y^2=x(x-1)(x-a)\ \text{over } F_0,
+\]
+\[
+  \ell=7,\qquad
+  F=F_0\bigl(\sqrt{-1},\,E_0[15]\bigr),\qquad
+  K=F\bigl(E_0[7]\bigr),
+\]
+and let $X_F\subset E_F:=E_0\times_{F_0}F$ be the once-punctured elliptic curve
+obtained by removing the origin.  Let $v_\pi,v_{\bar\pi}$ denote the two places
+of $F_0$ above $211$ (see Lemma~\ref{lem:split}), let
+$\Vbad_{\mathrm{mod}}$ be the set of all multiplicative places of $F_0$
+outside residue characteristics $2,7$.  Fix a line $W\subset E_0[7](K)$ and a
+nonzero class $\xi\in E_0[7](K)/W$.  Equip these data with the global cover,
+cusp and compatible section $\VV$ constructed in \S\ref{sec:e}.
+Thus the arithmetic input is explicit; its auxiliary geometric choices are
+specified up to the compatible choices allowed by the source.
+\end{definition}
+
+The choices serve the following conditions of
+\cite[Definition 3.1]{IUT1}, as follows.
+\begin{center}
+\begin{tabular}{p{.34\linewidth}p{.60\linewidth}}
+\hline
+choice & condition it serves\\
+\hline
+Legendre form $y^2=x(x-1)(x-a)$ & full $2$-torsion over $F_0$, for (b)\\
+$E_0[15]\subset E_0(F)$ & semistability everywhere, and $[F{:}\Fmod]$ prime to $7$, for (b)\\
+$a=\pi^{29}$, $29$ prime & $\ell\nmid\ord(q)$, for (c)\\
+$\Norm(\pi)=211$ split & two places of $\VV$ above $211$, for the mixed profile\\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Elementary arithmetic of the datum}\label{sec:arith}
+
+Write $x\mapsto\bar x$ for the nontrivial automorphism of $F_0$ and
+$\Norm=\Norm_{F_0/\mathbb{Q}}$.
+
+\begin{lemma}[P]\label{lem:split}
+$\Norm(\pi)=16^2-5\cdot3^2=211$, which is prime.  The congruence $s^2\equiv5
+\pmod{211}$ has the two solutions $s\equiv65,146$, so $211$ splits in $F_0$;
+write $v_\pi,v_{\bar\pi}$ for the two places, normalized so that
+$v_\pi(\pi)=1$, $v_\pi(\bar\pi)=0$.
+\end{lemma}
+
+\begin{lemma}[P]\label{lem:val}
+Write $a=A+B\sqrt5$ with $A,B\in\mathbb{Z}$ (so $A$ has $40$ decimal digits and
+$B$ has $39$).  Then
+\[
+  \Norm(a)=211^{29},\qquad v_\pi(a)=29,\qquad v_{\bar\pi}(a)=0,
+\]
+and $211\nmid\Norm(1-a)$, so $v_\pi(a-1)=v_{\bar\pi}(a-1)=0$.
+Reducing modulo the two places, $a\equiv0$, $a-1\equiv210$ at $v_\pi$, and
+$a\equiv26$, $a-1\equiv25$ at $v_{\bar\pi}$.
+\end{lemma}
+
+\begin{proposition}[P]\label{prop:red}
+$E_0$ has multiplicative reduction at $v_\pi$ and good reduction at
+$v_{\bar\pi}$.  Moreover
+\[
+ v_\pi(j)=-58,\qquad v_{\bar\pi}(j)=0 .
+\]
+\end{proposition}
+
+\begin{proof}
+The discriminant of the Legendre model is $\Delta=16\,a^2(a-1)^2$ and the
+$j$-invariant is $j=256\,(a^2-a+1)^3/\bigl(a^2(a-1)^2\bigr)$.  At $v_\pi$ we have
+$v_\pi(a)=29>0$, hence $v_\pi(a^2-a+1)=0$ and $v_\pi(a-1)=0$, so
+$v_\pi(\Delta)=2\cdot29=58>0$ and $v_\pi(j)=-2\cdot29=-58<0$; since $211$ is odd,
+$v_\pi(16)=0$.  The invariant $c_4=16(a^2-a+1)$ is a unit, so this
+integral model has nodal, hence multiplicative, reduction.  At $v_{\bar\pi}$
+both $a$ and $a-1$ are units by Lemma~\ref{lem:val}, so
+$v_{\bar\pi}(\Delta)=0$; moreover $a^2-a+1\equiv18\pmod{v_{\bar\pi}}$,
+which gives $v_{\bar\pi}(j)=0$.
+\end{proof}
+
+\begin{proposition}[P]\label{prop:fmod}
+$j(E_0)\notin\mathbb{Q}$; consequently the field of moduli of $X_F$ is
+$\Fmod=\mathbb{Q}(j)=F_0=\mathbb{Q}(\sqrt5)$.
+\end{proposition}
+
+\begin{proof}
+The unequal valuations $v_\pi(j)=-58$ and $v_{\bar\pi}(j)=0$ already exclude
+$j\in\mathbb Q$, since a rational number has equal valuations at the two split
+places.  As an independent exact check, for the Legendre parameter $\lambda=a$
+one has $j\in\mathbb{Q}$ if and only if
+$j=\bar j$, i.e.\ if and only if $\bar a$ lies in the $S_3$-orbit
+$\{\lambda,\lambda^{-1},1-\lambda,(1-\lambda)^{-1},\lambda(\lambda-1)^{-1},
+(\lambda-1)\lambda^{-1}\}$ of $a$.  Each of the six equalities is an identity in
+$\mathbb{Z}[\sqrt5]$ after clearing denominators, and each fails; the
+computation is exact.  Since $j\in F_0$ and $[F_0{:}\mathbb{Q}]=2$, we get
+$\mathbb{Q}(j)=F_0$.
+\end{proof}
+
+\begin{remark}
+Proposition~\ref{prop:fmod} is what makes the mixed profile possible.  Had $j$
+been rational we would have had $\Fmod=\mathbb{Q}$, hence a single place of
+$\VV$ above $211$ by \cite[Definition 3.1(e)]{IUT1}, and no mixed tuple.
+\end{remark}
+
+\section{Verification of the initial-data conditions}
+\label{sec:def31}
+
+\subsection{(a): the base field}
+Fix an algebraic closure $\overline F$ containing all the fields in
+Definition~\ref{def:datum}. The field $F$ is a number field and contains $i$.
+This verifies \cite[Definition 3.1(a)]{IUT1}.
+
+\subsection{(b): reduction, the selected places, and the base extension}
+
+\begin{proposition}\label{prop:b}
+The curve $X_F$ and the fields of Definition~\ref{def:datum} satisfy
+\cite[Definition 3.1(b)]{IUT1}, with
+\[
+ \Vbad_{\mathrm{mod}}
+ =\{u\in\Vmod^{\mathrm{non}}:u\nmid14,\ \ord_u(a(1-a))>0\}.
+\]
+\end{proposition}
+
+\begin{proof}
+For a finite place $w$ of $F$, choose $r=3$ if the residue characteristic is
+not $3$, and $r=5$ otherwise. All $r$-torsion points of $E_F$ are rational
+over $F_w$, and $r\ge3$ is invertible in $\mathcal O_{F_w}$.
+By \cite[Proposition 1.8(v)]{IUT4}, $E_F$ has semistable reduction over
+$\mathcal O_{F_w}$ itself. With the origin as marked section this gives
+stable reduction of the once-punctured curve $X_F$.
+
+At an odd prime ideal dividing $a(1-a)$, precisely one of $a,1-a$ has
+positive order. The invariant $c_4=16(a^2-a+1)$ is a unit there, so the
+reduction is multiplicative. When $a\equiv0$ the nodal tangent slopes
+are $\pm i$, and when $a\equiv1$ they are $\pm1$.
+Consequently the reduction is split multiplicative over $F$, which contains
+$i$. The selected set is finite and nonempty, since it contains $v_\pi$;
+its residue characteristics are odd and different from $7$.
+
+By Proposition~\ref{prop:fmod}, $\Fmod=F_0$. The field
+$F=F_0(i,E_0[15])$ is Galois over $F_0$, and
+\[
+ [F:F_0]\mid 2\,|\mathrm{GL}_2(\mathbb Z/15\mathbb Z)|
+ =2\cdot48\cdot480=46080=2^{10}3^2 5.
+\]
+This degree is prime to $7$.
+Finally $E_0[2]$ is rational over $F_0$ by the Legendre equation, and
+$E_0[3]$ is rational over $F$. Thus all $6$-torsion points are rational over $F$.
+\end{proof}
+
+\subsection{(c): the torsion image and all selected local orders}
+
+\begin{lemma}[descent]\label{lem:descent}
+If $\rho_7(G_{F_0})$ contains $\mathrm{SL}_2(\mathbb F_7)$, then so does
+$\rho_7(G_F)$.
+\end{lemma}
+
+\begin{proof}
+The latter image is normal in the former, and the quotient has order dividing
+$[F:F_0]$, hence prime to $7$. Every element of order $7$ of
+$\mathrm{SL}_2(\mathbb F_7)$ therefore belongs to $\rho_7(G_F)$.
+The upper and lower unipotent root subgroups generate
+$\mathrm{SL}_2(\mathbb F_7)$, proving the assertion.
+\end{proof}
+
+\begin{proposition}\label{prop:sl2}
+The image $\rho_7(G_F)$ contains $\mathrm{SL}_2(\mathbb F_7)$.
+\end{proposition}
+
+\begin{proof}
+At $v_\pi$, the minimal discriminant order is $58$.
+After the unramified splitting extension $\mathbb Q_{211}(i)$,
+Tate uniformization identifies the torsion with
+$\mu_7$ and a class of $q^{1/7}$.
+Because $7\nmid58$ and $211\ne7$, inertia contains a nonidentity
+transvection $T$ of order $7$. This conclusion is unchanged by the
+unramified splitting extension.
+
+At the place above $11$ given by $\sqrt5\equiv4$, the parameter $a$ reduces
+to $2$, and the exact point count is $\#E_0(\mathbb F_{11})=12$.
+Thus a Frobenius element $h$ has characteristic polynomial $X^2+11$.
+Its discriminant modulo $7$ is $5$, a nonsquare, so $h$ fixes no line
+in $\mathbb F_7^2$. The transvections $T$ and $hTh^{-1}$ have different
+fixed lines. In a basis given by these two lines they lie in the two
+opposite root subgroups. Their powers give both full root subgroups,
+since the coefficient field is the prime field $\mathbb F_7$.
+Hence $\rho_7(G_{F_0})$ contains $\mathrm{SL}_2(\mathbb F_7)$.
+Apply Lemma~\ref{lem:descent}.
+\end{proof}
+
+\begin{proposition}\label{prop:coprime}
+At every place of $\VV(F)^{\mathrm{bad}}$, the order of the Tate parameter
+of $E_F$ is prime to $7$.
+\end{proposition}
+
+\begin{proof}
+The exact norm certificate supplied with the computation gives
+\[
+ \Norm(a)=211^{29},\qquad
+ \Norm(1-a)=2^2 3^2\cdot5\cdot59\cdot80621\cdot C,
+\]
+where
+\[
+ C=29622281599338016545834674091843816951690863770835007573979,
+\]
+and the second norm is seventh-power-free. The certificate checks all
+primes up to $\lfloor C^{1/7}\rfloor=225469788$; it does not assert
+that $C$ is prime.
+For integral $z\ne0$, the identity
+\[
+ \ord_q\Norm(z)=\sum_{\mathfrak p\mid q}
+ f(\mathfrak p/q)\ord_{\mathfrak p}(z)
+\]
+shows that every positive order of $1-a$ is at most $6$.
+The only positive order of $a$ is $29$ at $v_\pi$.
+
+For a selected prime ideal $\mathfrak p$ of $F_0$, let $r$ be the positive
+order of $a$ or $1-a$. Since $c_4$ is a unit, the minimal discriminant order
+and Tate parameter order over $F_{0,\mathfrak p}$ are $2r$.
+Thus $7\nmid2r$.
+At a place $w$ of $F$ above $\mathfrak p$ this order becomes
+$2r\,e(w/\mathfrak p)$. Since the ramification index divides the
+prime-to-$7$ degree $[F:F_0]$, the resulting order is also prime to $7$.
+\end{proof}
+
+Together with Proposition~\ref{prop:sl2}, this verifies all parts of
+\cite[Definition 3.1(c)]{IUT1}: $\ell=7$ is prime, $\ell\ge5$, and no
+selected residue characteristic is $7$.
+Moreover $K=F(E_0[7])$ is exactly the field fixed by the kernel of this
+representation, rather than an arbitrary larger torsion-containing field.
+
+\subsection{(d): a fixed global quotient and its specified core}
+\label{sec:kcore}
+
+Fix a line $W\subset V:=E_0[7](K)$ and a nonzero element $\xi\in Q:=V/W$.
+Let $\pi_W:E_K\to E':=E_K/W$, and let $\psi:E'\to E_K$ be the isogeny
+satisfying $\psi\pi_W=[7]$. The group
+$\ker\psi=\pi_W(E_K[7])\simeq Q$ is constant over $K$.
+Put
+\[
+ \underline X_K=E'\setminus\ker\psi,\qquad
+ \underline C_K=[\underline X_K/\{\pm1\}],\qquad
+ C_K=[X_K/\{\pm1\}].
+\]
+The degree-$7$ covering $\underline C_K\to C_K$ has type
+$(1,7\text{-tors})^{\pm}$ in the sense of
+\cite[Definition 2.1]{EtTh}.
+Indeed, the isogeny has constant kernel, and its zero cusp is rational.
+The resulting arithmetic quotient onto $Q$ is surjective on the geometric
+group and zero on the decomposition group of the zero cusp, as required
+by that definition. The quotient-stack square with
+$\underline X_K\to X_K$ is cartesian and finite etale, and hence gives the
+corresponding open inclusions of fundamental groups in
+\cite[Definition 3.1(d)]{IUT1}.
+Let $\epsilon$ be the cusp represented by the sign class of the point
+corresponding to $\xi$ in $\ker\psi$.
+
+\begin{proposition}\label{prop:kcore}
+The $K$-core of $\underline C_K$ is the specified orbicurve $C_K$.
+The corresponding statement remains true over each completion $K_v$.
+\end{proposition}
+
+\begin{proof}
+By \cite[Proposition 2.1]{MFHMP} (see also \cite[Table 4]{Sijs}), an arithmetic once-punctured elliptic
+curve has one of the following four $j$-invariants:
+\[
+ \frac{488095744}{125}=2^{14}31^3 5^{-3},\qquad
+ \frac{1556068}{81}=2^2 73^3 3^{-4},\qquad 1728,\qquad0.
+\]
+All four are rational, whereas $j(E_0)$ is not by
+Proposition~\ref{prop:fmod}.
+Thus $X_{\overline K}$ is non-arithmetic; the finite etale commensurable
+orbicurve $C_{\overline K}$ is non-arithmetic as well.
+It is a punctured hemi-elliptic orbicurve, so
+\cite[Proposition 2.7]{CanLift} says that $C_{\overline K}$ is itself a core.
+By \cite[Proposition 2.3(i)]{CanLift}, this core descends to $C_K$.
+Since $\underline C_K\to C_K$ is finite etale, it has this same core.
+For a completion, choose an embedding
+$\overline K\hookrightarrow\overline{K_v}$, apply
+\cite[Proposition 2.3(ii)]{CanLift}, and then descend by
+\cite[Proposition 2.3(i)]{CanLift}. This gives precisely $C_{K_v}$.
+\end{proof}
+
+\begin{remark}
+Two exceptional $j$-invariants are not algebraic integers.
+Non-integrality alone would not exclude them; the preceding argument
+uses the nonrationality of $j(E_0)$.
+\end{remark}
+
+The geometric covers of types $(1,7\text{-tors}_{\Theta})$ and
+$(1,7\text{-tors}_{\Theta})^{\pm}$ recalled in
+\cite[Definition 3.1(d)]{IUT1} are the covers supplied by
+\cite[Proposition 2.2, Definition 2.3]{EtTh}.
+Here $7$ is odd. These geometric covers are distinguished from their
+arithmetic models at individual bad places below.
+
+\subsection{(e) and (f): a compatible section and the local covers}
+\label{sec:e}
+
+We retain the single global pair $(W,\xi)$, the quotient $\underline C_K$,
+and the cusp $\epsilon$ just constructed.
+For a selected moduli place $u$, first choose a place $w$ of $F$ over $u$
+and a place $v_0$ of $K$ over $w$.
+The curve over $F_w$ is split Tate. Its graph quotient on $7$-torsion is
+\[
+ 0\longrightarrow\mu_7\longrightarrow E[7]
+ \longrightarrow\mathbb Z/7\mathbb Z\longrightarrow0,
+\]
+where the class of $q^{1/7}$ maps to $1$.
+This determines a local marked flag $(W_{v_0},\pm\xi_{v_0})$.
+Changing the root by $\mu_7$ does not change the quotient class.
+
+The group $\mathrm{SL}_2(V)$ acts transitively on pairs consisting of a
+line and a nonzero quotient element: lift the quotient element to $t$ and
+choose $w$ in the line so that $\det(w,t)=1$, and map one such basis to
+another. Since $\mathrm{Gal}(K/F)$ contains this group, choose an element
+$\sigma_u$ carrying the local marked flag to $(W,\pm\xi)$, and replace
+$v_0$ by $v(u)=\sigma_u v_0$.
+With the convention $\iota_{\sigma v}=\iota_v\circ\sigma^{-1}$ for local
+embeddings, the local marked flag at $\sigma v$ is the image under $\sigma$
+of the one at $v$.
+The decomposition group preserves the split Tate graph quotient and its
+canonical generator, so this prescription is independent of the representative
+of the place.
+We are acting on places, not replacing the fixed global quotient or cusp.
+
+In the split Tate model, the quotient map is
+$E(q)\to E(q^7)$, induced by $z\mapsto z^7$.
+Its dual $\psi:E(q^7)\to E(q)$ is induced by $z\mapsto z$ and has
+kernel given by the classes $q^r$ for $r\in\mathbb Z/7\mathbb Z$.
+Thus at the chosen place the local covering has type
+$(1,\mathbb Z/7\mathbb Z)^{\pm}$, and the cusp $\epsilon_v$ is the canonical
+$\pm1$ cusp of \cite[Definition 2.5(i)]{EtTh}.
+This verifies the simultaneous local requirements of
+\cite[Definition 3.1(e),(f)]{IUT1}.
+Choose one lift at every remaining moduli place to complete the section
+$\VV\to\Vmod$.
+Different moduli places may use different $\sigma_u$; no equivariance of
+the section is required. Each $\sigma_u$ fixes $F$, so this construction
+preserves all the local ramification indices and parameter orders already
+computed.
+
+The local theta models also satisfy the hypotheses used by the source.
+The full $2$-torsion gives the condition $K_v=\ddot K_v$ noted in
+\cite[Definition 3.1(e)]{IUT1}.
+The Weil pairings give $\mu_3\subset F$ and $\mu_7\subset K$, and hence
+$\mu_{12}\subset F$ because $i\in F$.
+The square and seventh roots of the local Tate parameter exist from the
+full $2$- and $7$-torsion.
+The local core is non-arithmetic by Proposition~\ref{prop:kcore}.
+Use the normalized theta construction of
+\cite[Theorem 1.10(iii), Definition 2.5(i)]{EtTh} to give the geometric
+theta covers their natural arithmetic models at each bad place.
+The auxiliary double cover in that construction can be chosen from a
+nonzero rational $2$-torsion element different from the toric one.
+No additional field extension or common global arithmetic theta twist
+is imposed here.
+
+Finally, construct the arrow-marked covers from $(X_K,\underline C_K,\epsilon)$
+as in \cite[Section 1, Definition 1.1, Remark 1.1.2]{IUT1}.
+The torsion hypothesis there concerns the original, un-underlined $X_K$;
+it follows from $E_0[7](K)$ and does not require all of $E'[7]$ to be rational.
+The section used in that construction is supplied by the decomposition group
+of the cusp $2\epsilon$; it is available since $7\ge5$ and
+$2\xi\ne\pm\xi$.
+Base-changing these covers to the good places supplies the remaining local
+covers and open subgroups in \cite[Definition 3.1(f)]{IUT1}.
+Together with the preceding constructions, this verifies every clause of
+\cite[Definition 3.1]{IUT1} for the chosen data.
+
+\begin{proposition}\label{prop:mixed}
+The section $\VV$ has exactly two places above $211$, one in $\Vbad$ and
+one in $\Vgood$.
+\end{proposition}
+
+\begin{proof}
+The section is in bijection with $\Vmod=\VV(F_0)$, which has exactly two
+places above $211$. Of these, $v_\pi$ belongs to the selected bad set and
+$v_{\bar\pi}$ has good reduction. The choices in the preceding construction
+preserve these reduction types.
+\end{proof}
+
+\subsection{The remaining input for the local estimate}
+\label{sec:lattice}
+
+\begin{lemma}\label{lem:theater-existence}
+The datum above admits an LGP-Gaussian log-theta-lattice as in
+\cite[Definition 3.8(iii)]{IUT3}.
+\end{lemma}
+
+\begin{proof}
+Start with the native models of the initial data in
+\cite[Examples 3.2--3.5, 4.3, 4.4, 5.4, 6.2, 6.3]{IUT1}.
+The bridge identifications of
+\cite[Proposition 4.8(ii), Proposition 6.7]{IUT1} align the additive and
+multiplicative models to give a full theater of
+\cite[Definition 6.13]{IUT1}.
+The Frobenioid models are constructed before applying the isomorphism
+lifting of \cite[Corollary 5.3(ii)]{IUT1}.
+On tagged copies indexed by $\mathbb Z^2$, form the synchronized full
+log-links of \cite[Proposition 1.3]{IUT3}: one theater isomorphism is used
+for all constituents before taking the full collection.
+For each horizontal edge, use the nonempty enhanced Gaussian isomorphism
+sets of \cite[Corollary 4.10(iii)]{IUT2} and the Gaussian/LGP identifications
+relative to the incoming log-link in \cite[Proposition 3.7]{IUT3}.
+Taking the full isomorphism sets supplies the links required by
+\cite[Definition 3.8(ii),(iii)]{IUT3}.
+This construction uses neither a numerical inequality from
+\cite[Corollary 3.12]{IUT3} nor the hypothesis \SA{} below.
+\end{proof}
+
+For the additional arithmetic hypotheses of \cite[Theorem 1.10]{IUT4},
+the Legendre model has $F_{\mathrm{tpd}}=F_0$ and
+\[
+ F=F_0(i,E_0[30])=F_0(i,E_0[15])
+\]
+exactly. At every nonselected place outside $2,7$, the discriminant
+$16a^2(1-a)^2$ is a unit, so the curve has good reduction.
+Thus the extra good-reduction and exact-field hypotheses hold.
+
+\section{The local profile at \texorpdfstring{$211$}{211}}\label{sec:profile}
+
+\begin{proposition}\label{prop:profile}
+With notation as above, write $\mathrm{b}$ and $\mathrm{g}$ for the bad and good
+places of $\VV$ above $211$.  Then
+\[
+  e_{\mathrm{g}}=1,\qquad e_{\mathrm{b}}=105,\qquad
+  \ord_{211}\bigl(\underline{\underline q}_{\mathrm{b}}\bigr)=\frac{29}{7},
+\]
+and the extension is tame at $211$, since $211\nmid105$; moreover
+$105\le209=p-2$.
+\end{proposition}
+
+\begin{proof}
+Since $15$ and $7$ are coprime, the definition of $K$ gives the exact equality
+\[
+ K=F_0(i,E_0[105]).
+\]
+At either place of $F_0$ above $211$, the completion is $\mathbb Q_{211}$,
+and adjoining $i$ is unramified. At the good place,
+\cite[Proposition 1.8(vii)]{IUT4} shows that the $105$-torsion field
+is unramified, hence $e_{\mathrm g}=1$.
+
+At the bad place, pass first to the unramified field
+$k_0=\mathbb Q_{211}(i)$. The curve then has split multiplicative reduction.
+We use the standard Tate uniformization fact that the full $n$-torsion field
+of a split Tate curve is $k_0(\mu_n,q^{1/n})$.
+Here $\ord_{211}(q)=58$ and $n=105$.
+The value $58/105$ of $q^{1/105}$, in lowest terms, forces the ramification
+index to be divisible by $105$.
+On the other hand, \cite[Proposition 1.8(vii)]{IUT4} says that it divides
+$105$. Thus $e_{\mathrm b}=105$.
+Finally \cite[Example 3.2(iv)]{IUT1} supplies the $2\ell$-th root
+\[
+ \underline{\underline q}_{\mathrm b}=q^{1/(2\ell)}
+ \quad\text{up to a }\mu_{2\ell}\text{-multiple},
+ \qquad
+ \ord_{211}(\underline{\underline q}_{\mathrm b})=\frac{58}{14}=\frac{29}{7}.
+\]
+
+The normalized valuation $\ord_{211}$ always has $\ord_{211}(211)=1$.
+In contrast, the discrete orders of $q$ at the selected $F$- and $K$-places
+are $870$ and $6090$, respectively; those of the theta root are measured
+with the same normalization when compared in Part~\ref{part:estimates}.
+\end{proof}
+
+\begin{remark}[why tameness matters]\label{rem:tame}
+[S] Put
+\[
+ L_I:=\bigotimes_{i\in I,\,\mathbb Z_p}\log_p(R_i^\times).
+\]
+Thus $L_I$ is the object denoted by $\log_p(R_I^\times)$ in
+\cite[Proposition 1.2]{IUT4}; this is a tensor-log notation.
+The orders of differents are normalized by $\ord_p(p)=1$.
+For tame $k_i/\mathbb Q_p$, \cite[Proposition 1.3(i)]{IUT4},
+with $k_0=\mathbb Q_p$, gives $d_i=1-1/e_i$.
+If moreover $p>2$ and $e_i\le p-2$, then
+\cite[Proposition 1.2]{IUT4} gives $a_i=1/e_i=-b_i$.
+For the subset $I^*$ in \cite[Proposition 1.4(iii)]{IUT4},
+the two displayed upper bounds are
+\[
+ \mu^{\log}\!\left(p^{\lfloor\lambda-d_I-a_I\rfloor}L_I\right)
+ \le\left(-\lambda+d_I+1+\frac{4|I^*|}{p}\right)\log p
+\]
+and
+\[
+ \mu^{\log}\!\left(
+ p^{\lfloor\lambda-d_I-a_I\rfloor-b_I}(R_I)^{\sim}\right)
+ \le(-\lambda+d_I+1)\log p+
+ \sum_{i\in I^*}(3+\log e_i).
+\]
+
+In \cite[Theorem 1.10, proof, Step (v)]{IUT4}, the distinguished slot
+is $i^\dagger=j$, and the substitution in these formulas is
+\[
+ \lambda=0\quad(t_j\in\Vgood),\qquad
+ \lambda=\ord_p(\underline{\underline q}_{t_j}^{\,j^2})
+        =j^2\ord_p(\underline{\underline q}_{t_j})\quad(t_j\in\Vbad).
+\]
+The formulas below with $\lambda=29/7$ concern $j=1$.
+
+The parameter $\lambda$ in these source formulas belongs to
+$e_{i^\dagger}^{-1}\mathbb Z$ for some $i^\dagger\in I$; here
+$29/7=435/105$ satisfies that condition.
+For the profile of Proposition~\ref{prop:profile} every $e_i$ satisfies
+$e_i\le105\le209=p-2$, so one may take $I^*=\varnothing$ and \emph{both} error
+terms vanish: the bound is exactly $(-\lambda+d_I+1)\log p$.  For this small-ramification profile the cited formulas give
+\[
+ d_I=0+\tfrac{104}{105}=\tfrac{104}{105},\qquad
+ a_I=1+\tfrac1{105}=\tfrac{106}{105},\qquad
+ d_I+a_I=2=|I| ,
+\]
+attaining the source's inequality $d_I+a_I\ge|I|$ with equality; and the exponent
+occurring in the intermediate container is exactly $\lfloor\lambda\rfloor-|I|$.
+This is why the comparison of \S\ref{sec:local} can be made without error terms.
+\end{remark}
+
+%=====================================================================
+\part{The local estimates}\label{part:estimates}
+
+\section{The tensor packet and the tuple index}\label{sec:packet}
+
+[S] \cite[Proposition 3.2]{IUT3} defines, for a capsule $\{{}^\alpha D^\vdash\}_{\alpha\in A}$
+of $D^\vdash$-prime-strips, the $1$-tensor packet as
+$\log({}^\alpha D^\vdash_{v_{\mathbb{Q}}})=\bigoplus_{\VV\ni v\mid v_{\mathbb{Q}}}
+\log({}^\alpha D^\vdash_v)$ and the $n$-tensor packet as
+$\log({}^A D^\vdash_{v_{\mathbb{Q}}})=\bigotimes_{\alpha\in A}
+\log({}^\alpha D^\vdash_{v_{\mathbb{Q}}})$.
+
+\begin{observation}\label{obs:tuple}
+Consequently, with $A=S^\pm_{j+1}$ and $v_{\mathbb{Q}}=211$,
+\[
+ I^{\mathbb{Q}}\bigl(S^\pm_{j+1};{}^{n,\circ}D^\vdash_{211}\bigr)
+ \;=\;\bigotimes_{\alpha\in S^\pm_{j+1}}\Bigl(\bigoplus_{v\in\VV,\ v\mid211}\cdots\Bigr)
+ \;=\;\bigoplus_{t\,:\,S^\pm_{j+1}\to\VV_{211}}\ \bigotimes_{\alpha}(\cdots)_{t(\alpha)} .
+\]
+By Proposition~\ref{prop:mixed}, $|\VV_{211}|=2$ with one bad and one good
+member, so the summands are indexed by tuples
+$t\in\{\mathrm{g},\mathrm{b}\}^{\,j+1}$, of which there are $2^{j+1}$.
+The outer tensor index is the \emph{label} set, on which $\Ind1$ acts; the inner
+direct-sum index is the set of \emph{places}; $\Ind2$ acts independently
+within each place-indexed summand
+(\cite[Theorem 3.11(i)]{IUT3} records that the number of direct summands equals
+the number of $v\in\VV$ over $v_{\mathbb{Q}}$).
+\end{observation}
+
+For $j\ge1$, nonconstant \emph{place} tuples exist precisely when
+$|\VV_p|\ge2$, regardless of reduction types.  A tuple containing both
+chosen-good and chosen-bad places is a further condition.  Under the additional
+good-reduction assumption of \cite[Theorem 1.10]{IUT4}, these chosen types
+coincide with the actual reduction types outside $2\ell$.
+No statistical independence of bad primes is assumed here.
+
+Observation~\ref{obs:tuple} is what connects Part~\ref{part:datum} to the
+estimates: the tuple index of the estimates and the split-prime structure of the
+datum are the same object.
+
+\section{The hypothesis \texorpdfstring{\SA}{(SA)}}\label{sec:sa}
+
+Fix one lattice supplied by \S\ref{sec:lattice}, one column $(n,\circ)$,
+a stage $j$, and $p=211$.  The fixed ambient is
+\[
+ E=I^{\mathbb{Q}}(S^\pm_{j+1};{}^{n,\circ}D^\vdash_{p}).
+\]
+Write $U^{\mathrm{act}}_{j,t}$ for the
+$t$-component of the union of possible images of a $\Theta$-pilot object in the
+sense of \cite[Corollary 3.12]{IUT3}, $C_{\widetilde O_t}(-)$ for the terminal
+holomorphic hull at the fixed arithmetic structure, and
+$L_t=\bigotimes_i\log\mathcal{O}_{K_{t_i}}^\times$.
+
+\begin{definition}[\SA]\label{def:sa}
+\[
+\begin{cases}
+ L_t\subseteq C_{\widetilde O_t}\bigl(U^{\mathrm{act}}_{j,t}\bigr),
+   & \text{$t$ contains at least one good factor,}\\[2pt]
+ p^{\lceil j^2N/7\rceil}L_t\subseteq C_{\widetilde O_t}\bigl(U^{\mathrm{act}}_{j,t}\bigr),
+   & t=(\mathrm{b},\dots,\mathrm{b}),
+\end{cases}
+\]
+where $N=\ord_{211}(\underline{\underline q}_{\mathrm{b}})\cdot 7$.
+\end{definition}
+
+\subsection{The source basis for \SA{}}\label{sec:sabasis}
+
+[H] We now give the reading.  It has four steps; none of them is a general
+theorem about functors, and each rests on a separately identified passage.
+
+\begin{enumerate}[label=\textbf{(SA\arabic*)},leftmargin=3.2em]
+\item \emph{One output exists.}  [S] \cite[Proposition 3.7(ii),(v)]{IUT3}
+  constructs the local fractional ideal $J_v$ and states that it ``is a subset
+  [indeed a submodule when $v\in\VV^{\mathrm{non}}$] of
+  $I^{\mathbb{Q}}({}^{A,\alpha}F_v)$ whose $\mathbb{Q}$-span is equal to
+  $I^{\mathbb{Q}}({}^{A,\alpha}F_v)$'', and builds the associated global objects;
+  \cite[Definition 3.8(i)]{IUT3} defines the $\Theta$-pilot object from these;
+  \cite[Proposition 3.10(i)]{IUT3} gives the compatibility of the native and
+  vertically coric algorithms with respect to the specified labelled Kummer
+  maps; \cite[Theorem 3.11(ii)(a)]{IUT3} gives ``isomorphisms with local
+  mono-analytic tensor packets and their $\mathbb{Q}$-spans \ldots\ all of which
+  are compatible with the respective log-volumes''.  Here the comparison in
+  Theorem 3.11(ii) is taken before imposing $\Ind1,\Ind2$; its additive map
+  $\kappa_E$ is distinct from the map on Frobenioid objects.  The labelled
+  compatibility in Proposition 3.10(i) connects these two realizations.
+  Under our reading, realizing the specified native representation yields one region
+  $R=\kappa_E[J]$ which is among the possible images of
+  \cite[Corollary 3.12]{IUT3}.  We do \emph{not} claim that every isomorphic
+  $fJ$, or the full $\mathbb{Q}$-span, is a possible image.
+\item \emph{Which automorphisms are admitted.}  [S] In \cite[\S0 and
+  Definition 4.10]{IUT1} the arrows of a procession are not single fixed
+  inclusions but sets of capsule-full poly-morphisms.  Hence the factor
+  transposition required below is realized by a single automorphism $\sigma$ of
+  the whole procession.  Preserving the one-element capsule
+  ${}^{n,\circ}D^\vdash_0$ is not a condition fixing label $0$
+  inside capsules with two or more factors; the slot distinguished by Step (v)
+  of \cite[Theorem 1.10]{IUT4} is $j$.
+\item \emph{The type of the action.}  [S] \cite[Theorem 3.11(i)]{IUT3} treats the
+  collection of data (a),(b),(c) ``regarded up to indeterminacies'' of which
+  $\Ind1$ is ``the indeterminacies induced by the automorphisms of the procession
+  of $D^\vdash$-prime-strips $\mathrm{Prc}({}^{n,\circ}D^\vdash_T)$'', and states
+  that the algorithm is ``functorial with respect to isomorphisms of processions
+  of $D^\vdash$-prime-strips''.  An automorphism is an isomorphism, so one
+  obtains an action $T_\sigma:E\to E$ transporting labels, coefficients and the
+  local and global realizations \emph{together}.  In particular one does not move
+  coefficients alone, nor recombine components of distinct tuples.
+\item \emph{Membership in the same comparison target.}  [S]
+  \cite[Corollary 3.12]{IUT3} defines $U_{j,p}\subseteq E$ as the \emph{union} of
+  the possible images ``relative to the relevant Kummer isomorphisms \ldots\
+  which we regard as subject to the indeterminacies $\Ind1$, $\Ind2$, $\Ind3$'',
+  and only then forms the holomorphic hull.  The introduction of \cite{IUT3}
+  states the same thing: the quantity is the log-volume of the holomorphic hull
+  ``of the union of the collection of possible images \ldots\ where we recall
+  that these `possible images' are subject to the indeterminacies $\Ind1$,
+  $\Ind2$, $\Ind3$''.  Applying (SA1)--(SA3) to this definition places both $R$
+  and $T_\sigma R$ in the same $U_{j,p}$.  The restriction in the proof of
+  \cite[Corollary 3.12]{IUT3} to possible images interpretable as an
+  $\mathcal{F}^\Vdash$-prime-strip is preserved, since the transport carries the
+  localizations and the global object together.
+\end{enumerate}
+
+\begin{proof}[Derivation of \SA{} from (SA1)--(SA4)]
+Suppose $t$ contains a good factor.  Choose $\sigma$ so that
+$s=\sigma^{-1}t$ has a good factor in its distinguished slot.  The insert-$1$
+construction of \cite[Propositions 3.1(ii), 3.4(i),(ii)]{IUT3} and the generated
+local fractional ideals of \cite[Example 3.6(ii), Proposition 3.7(v),
+Definition 3.8(i)]{IUT3} give $J_s=\widetilde O_s$ for this specified native
+representation.  Here $\widetilde O_s$ is the product of the integer rings in
+the native tensor algebra's field components, not necessarily the tensor
+order $R_s=\bigotimes_i\mathcal O_{K_{s_i}}$.  Thus
+$L_s\subseteq R_s\subseteq J_s$.  This is not a claim about every possible image.
+
+The comparison of \cite[Theorem 3.11(ii)(a), Proposition 3.2(i),(ii)]{IUT3}
+is an isomorphism of ind-topological modules, including their integral
+structures $I$ and their $\mathbb{Q}$-spans.  On the finite-dimensional
+portions used here it is additive and continuous, hence $\mathbb{Q}_p$-linear,
+and it preserves $I$ as a lattice.  The odd-prime identity
+$I_i=p^{-1}L_i$ of \cite[Remark 1.2.2(i)]{IUT3} gives
+$L_s=p^{j+1}I_s$ for the integral tensor construction.  Hence this comparison
+also carries $L_s$ to the corresponding lattice.  The equality
+$L_i=\mathfrak m_i$, used here with $e_i\le105\le p-2$, comes separately from
+\cite[Proposition 1.2(i)]{IUT4}.
+
+Transporting by
+$T_\sigma$ and taking the $\mathbb{Z}_p$-span and then the terminal hull at the
+target gives $L_t\subseteq C_{\widetilde O_t}(U^{\mathrm{act}}_{j,t})$.  For
+$t=(\mathrm{b},\dots,\mathrm{b})$, put $c=\lceil j^2N/7\rceil$; the specified
+coefficient $a_s$ has valuation $j^2N/7$, so $p^c/a_s$ is integral and
+$p^cR_s\subseteq a_sR_s\subseteq J_s$, whence $p^cL_s\subseteq J_s$; since
+$\kappa_E$ commutes with the integer scalar $p^c$ and preserves $L$, the same
+conclusion follows.  No commutation of $\kappa_E$ with the hull, and no ring
+linearity of $\kappa_E$, is used.
+\end{proof}
+
+The tuple transport used here satisfies
+\[
+ \operatorname{pr}_tT_\sigma
+ =\tau_{\sigma,t}\operatorname{pr}_{\sigma^{-1}t},\qquad
+ \tau_{\sigma,t}:E_{\sigma^{-1}t}\longrightarrow E_t.
+\]
+It is a tensor-factor permutation and does not require a field isomorphism
+$K_{\mathrm b}\simeq K_{\mathrm g}$.  All four steps concern one whole
+representation in the same fixed ambient.  A general theorem that functoriality
+alone saturates a collection of outputs is neither used nor asserted.
+
+\subsection{Two readings that must be distinguished}\label{sec:twoparts}
+
+The following two statements about $\Ind1$ are \emph{not} equivalent, and the
+argument above uses the second, not the first:
+\begin{description}[leftmargin=2.4em,style=nextline]
+\item[(A) Invariance] the log-volumes are invariant under $\Ind1$
+  (\cite[Proposition 3.9(i)--(iii)]{IUT3}; step (x) of the proof of
+  \cite[Corollary 3.12]{IUT3});
+\item[(B) Closure] the collection of possible images is stable under $\Ind1$
+  (\cite[Corollary 3.12]{IUT3} and the introduction of \cite{IUT3}, quoted in
+  (SA4)).
+\end{description}
+(A) does not imply (B); and even (A) together with (B) does not imply that the
+hull of the union is bounded by the hull of a member, because the hull of a
+union can strictly exceed the hull of every member.  We record this in
+Appendix~\ref{app:lean} as a machine-checked finite model, and note that the
+phenomenon is present in the source itself in the worked example of
+\cite[Remark 3.9.5(iv)]{IUT3}.
+
+\section{The local comparison}\label{sec:local}
+
+\begin{theorem}\label{thm:local}
+Assume \SA{}.  For the datum of Definition~\ref{def:datum}, take $j=1$ and the
+mixed tuple $t=(\mathrm{g},\mathrm{b})$.  Then, in the normalization by
+$\log 211$:
+\[
+ \text{upper bound from \cite[Proposition 1.4(iii)]{IUT4} with $I^*=\varnothing$: }\;
+ -\lambda+d_I+1=-\frac{29}{7}+\frac{104}{105}+1=-\frac{226}{105},
+\]
+\[
+ \text{value of the hull of the seed }L_t:\; -\frac{106}{105},
+ \qquad\text{difference }\;\frac{8}{7}>0 .
+\]
+Here $j=1$, so $\lambda=j^2\ord_{211}(\underline{\underline q}_{\mathrm{b}})=29/7$, and
+$d_I=104/105$ by Remark~\ref{rem:tame}, and $I^*=\varnothing$ is admissible
+because every $e_i\le105\le p-2$, so no error term occurs.
+Consequently the bound is not satisfied by the region it is applied to.
+Moreover the stronger container $p^2L_t$ does not contain $L_t$, since
+$L\not\subseteq p^2L$ for a nonzero finitely generated
+$\mathbb{Z}_{211}$-lattice.
+\end{theorem}
+
+\begin{proof}
+Put $R_t=\bigotimes_i\mathcal O_{K_{t_i}}$ and choose uniformizers
+$\pi_i$ in the factors.  Here the fixed holomorphic integer ring is
+$\widetilde O_t=\widetilde R_t$.  Proposition~\ref{prop:profile} and
+\cite[Proposition 1.2(i)]{IUT4} give
+$L_t=(\bigotimes_i\pi_i)R_t$.  Its ideal hull is
+$(\bigotimes_i\pi_i)\widetilde R_t$, whose degree-normalized log-volume
+is $-(1+1/105)\log211$ by \cite[Proposition 1.4(i)]{IUT4}.
+The containment in \SA{} therefore gives this lower bound for the actual
+terminal hull.  The proposed application at the fixed target has the
+right-hand side $(-29/7+104/105+1)\log211$, so the asserted comparison
+fails by the displayed positive difference.
+The issue persists at the level of hulls: $L_t$ is not contained in
+$p^2C_{\widetilde O_t}(L_t)$, since its generating tensor has order
+$1+1/105$, while multiplication by $p^2$ adds $2$ in every field component.
+Thus taking a terminal hull does not rescue that particular container.
+In this comparison $C_{\widetilde O_t}(p^2L_t)=p^2C_{\widetilde O_t}(L_t)$;
+no commutation of a Kummer map with the hull is needed.
+\end{proof}
+
+\begin{remark}
+Theorem~\ref{thm:local} does not refute \cite[Proposition 1.4]{IUT4} itself; the
+proposition's estimate for the input regions it is stated for is not in question.
+What is in question is the application of that estimate to the fixed target
+component of the union of possible images.
+\end{remark}
+
+\begin{remark}[the nonpositive integer power]
+\cite[Theorem 1.10, proof, Step (v)]{IUT4} permits a suitable nonpositive integer power in the
+intermediate container.  Enlarging the container is possible, but the resulting
+loss of volume must then be carried into the subsequent bound; adding an
+$N$-independent constant does not absorb a difference in the slope in $N$.  For
+the tame profile of Proposition~\ref{prop:profile} the exponent is exactly
+$\lfloor\lambda\rfloor-|I|$, and for $j=1$ mixed this is
+$\lfloor29/7-2\rfloor=2$.
+\end{remark}
+
+\section{The averaged comparison}\label{sec:averaged}
+
+The explicit datum of Definition~\ref{def:datum} has $N=29$.
+In this section we use a different family: for each fixed positive integer
+$N\equiv1\pmod{105}$ we construct infinitely many integers $A$ with
+$a=A-\sqrt5$.  In particular, $N=211$ is an existence result for this second
+family; it does not change the exponent of the explicit datum.
+The arithmetic existence argument below does not assume \SA{}.
+
+\begin{proposition}[weights and the conditional lower estimate]\label{prop:weights}
+Suppose the two selected places above $p=211$ have
+$e_{\mathrm g}=1$, $e_{\mathrm b}=105$ and
+$[(\Fmod)_{\mathrm g}:\mathbb Q_p]=[(\Fmod)_{\mathrm b}:\mathbb Q_p]=1$.
+At stage $j$, put $k=j+1$ and let $t\in\{\mathrm g,\mathrm b\}^k$.
+For the degree-normalized local log-volumes, the weight of $t$ is $2^{-k}$.
+Assuming \SA{}, for $N\equiv1\pmod7$ one has
+\[
+ \frac{h_{211}}{\log211}\ge
+ -\frac{53}{35}-\frac{N}{16}-\frac{5}{48}.
+\]
+\end{proposition}
+\begin{proof}
+The raw weights in \cite[Remark 3.1.1(ii)]{IUT3} include the factor
+$\prod_i[K_{t_i}:(\Fmod)_{t_i}]^{-1}$.  Passing to the degree-normalized
+log-volumes of \cite[Proposition 1.4(i)]{IUT4} cancels the local degrees, as
+explained explicitly in \cite[Remark 1.7.1]{IUT4}.  The remaining weight is
+\[
+ \frac{\prod_i[(\Fmod)_{t_i}:\mathbb Q_p]}
+ {\sum_{u\in\{\mathrm g,\mathrm b\}^k}\prod_i[(\Fmod)_{u_i}:\mathbb Q_p]}
+ =2^{-k}.
+\]
+No residue degree of $K_{t_i}$ is assumed to equal one here.
+By the logarithm calculation with $e_i\le105\le p-2$, the normalized log-volume of the integral
+ideal hull of $L_t$ is $-\sum_i e_{t_i}^{-1}\log p$.
+Indeed, $L_t=(\bigotimes_i\pi_{t_i})R_t$, and its hull is
+$(\bigotimes_i\pi_{t_i})\widetilde R_t$, even when $R_t$ is not normal.
+Thus the average of its depth is $53k/105$.
+By \SA{}, only the all-bad tuple needs the additional depth
+$\lceil j^2N/7\rceil$.  Averaging first over tuples and then over $j=1,2,3$ gives
+\[
+ \frac{h_{211}}{\log p}\ge
+ -\frac13\sum_{j=1}^3\left\{
+ \frac{53(j+1)}{105}+2^{-(j+1)}\left\lceil\frac{j^2N}{7}\right\rceil
+ \right\}.
+\]
+For $N\equiv1\pmod7$, the three ceilings are
+$(N+6)/7$, $(4N+3)/7$ and $(9N+5)/7$.
+The constant, slope and rounding term are respectively
+\[
+ \frac13\sum_{j=1}^3\frac{53(j+1)}{105}=\frac{53}{35},\quad
+ \frac1{21}\left(\frac14+\frac48+\frac9{16}\right)=\frac1{16},\quad
+ \frac13\left(\frac6{28}+\frac3{56}+\frac5{112}\right)=\frac5{48}.
+\]
+\end{proof}
+
+\begin{remark}[the Tate-degree normalization]
+For a split semistable elliptic curve over $k$ and $v\mid p$, let $v_v$ be the
+discrete valuation, $e_v=v_v(p)$ and $f_v$ the residue degree.
+The definition of $D=\deg(q_E)$ in \cite[\S1.2]{SS} gives
+\[
+ D_p=\frac1{[k:\mathbb Q]}\sum_{v\mid p}v_v(q_v)f_v\log p
+ =\frac{\log p}{[k:\mathbb Q]}
+   \sum_{v\mid p}[k_v:\mathbb Q_p]\ord_p(q_v).
+\]
+The summand is zero at good places.
+With the full place set pulled back this is invariant under finite extension,
+since $\sum_{w\mid v}[k'_w:k_v]=[k':k]$; it is the normalized degree of
+\cite[Definition 1.9]{IUT4}.  Here $D_{211}=N\log211$, while the local bad
+root has order $N/7$ and its degree contribution is $D_{211}/14$.
+The root factor $1/(2\ell)$ and the moduli-place weight $1/2$ are distinct.
+The native Tate coefficient in \cite[equation (1.5)]{SS} and the local upper
+expression below is $1/3$.  The conditional seed coefficient above is $1/16$;
+their difference $13/48$ concerns these two bounds, not the actual volume.
+The coefficient in the simplified expression \cite[equation (1.6)]{SS} is
+instead $1/14$.  Equality of input normalizations does not identify the
+possible-image regions of those arguments.  If the selected bad support is
+smaller, this comparison concerns the corresponding restriction of $q_E$.
+\end{remark}
+
+\begin{proposition}[the expression in the local upper estimate]\label{prop:B2}
+For the family constructed below, denote by $B_2(N)$ the final right-hand
+side of \cite[Theorem 1.10, proof, Step (v)]{IUT4}, at $p=211$.
+Then
+\[
+ \frac{B_2(N)}{\log211}=
+ \frac{1984}{735}-\frac N3+
+ \frac{40}{3}\frac{\log7741440}{\log211}.
+\]
+This proposition evaluates that expression; it does not assume that it is an
+upper bound for the actual family defined using \SA{}.
+\end{proposition}
+\begin{proof}
+The cited final expression is
+\[
+ \frac{\ell+1}{4}\left\{
+ \left(1+\frac4\ell\right)\log\mathfrak d^K_p
+ -\frac16\log q_p+\frac4\ell\log\mathfrak s^{\mathbb Q}_p
+ +\frac{20}{3}\ell^*_{\mathrm{mod}}\log\mathfrak s^{\le}_p\right\}.
+\]
+Here $\ell=7$, $e_{\mathrm{mod}}=2$,
+$e^*_{\mathrm{mod}}=2^{12}3^3\cdot5\cdot2=1105920$ and
+$\ell^*_{\mathrm{mod}}=\log(e^*_{\mathrm{mod}}\ell)=\log7741440$.
+The definitions of the support divisors in Step (iii) assign the coefficient
+$\iota_p/\log p$ to $p$ in $\mathfrak s^{\le}$.
+Since $211$ is ramified in $K$ and is below the cutoff $7741440$,
+\[
+ \log\mathfrak s^{\le}_{211}=1,\qquad
+ \log\mathfrak s^{\mathbb Q}_{211}=\log211.
+\]
+The two moduli-place weights are $1/2$.  Their normalized different
+exponents are $0$ and $104/105$, and their Tate orders are $0$ and $2N$.
+Consequently
+\[
+ \log\mathfrak d^K_{211}=\frac{52}{105}\log211,\qquad
+ \log q_{211}=N\log211.
+\]
+Notice that this last $q$ is the Tate-divisor quantity; the theta parameter
+at the bad place has order $N/7$ instead.
+Substitution gives the formula, since
+$2[(11/7)(52/105)+4/7]=1984/735$.
+\end{proof}
+
+\begin{proposition}[an arithmetic existence family]\label{prop:exist}
+For every positive integer $N\equiv1\pmod{105}$ there are infinitely many
+positive integers $A$ with the following properties.  Put
+$a=A-\sqrt5$ and $F_0=\mathbb Q(\sqrt5)$.
+At the two places of $F_0$ above $211$, labeled by
+$\sqrt5\equiv65$ and $\sqrt5\equiv146$, respectively,
+\[
+ \ord_{\mathrm b}(a)=N,\qquad
+ a\equiv130\pmod{\mathrm g},\qquad
+ \ord_{\mathrm b}(1-a)=\ord_{\mathrm g}(1-a)=0.
+\]
+Moreover,
+\[
+ \frac{\Norm(a)\Norm(1-a)}{211^N}
+\]
+is a positive seventh-power-free integer, and
+$A\equiv0\pmod8$, $A\equiv2\pmod{3,5,19}$, $A\equiv6\pmod{11}$.
+\end{proposition}
+The complete congruences and counting proof are given in Appendix~\ref{app:family}.
+
+
+\paragraph{Arithmetic data for the family.}
+For each such $A$ set
+\[
+ E_0:y^2=x(x-1)(x-a),\quad
+ F=F_0(\sqrt{-1},E_0[15]),\quad K=F(E_0[7]).
+\]
+Choose as $\Vbad_{\mathrm{mod}}$ all multiplicative places of $F_0$ of
+residue characteristic other than $2,7$, and choose the quotient, cusp and
+section compatibly as in \S\ref{sec:e}.
+The same rule for the selected bad set is applied to this new curve.  The arithmetic checks used earlier apply as follows.
+
+The two conjugate $j$-valuations at $211$ are $-2N$ and $0$:
+$130^2-130+1\equiv102\not\equiv0\pmod{211}$ on the good side.
+Thus $\Fmod=\mathbb Q(j)=F_0$, and the rational exceptional $j$-values in
+the core criterion of \S\ref{sec:kcore} are excluded.
+For a rational prime $q\ne211$, the norm identity in
+Proposition~\ref{prop:exist} implies that every positive local order of
+$a$ or $1-a$ is at most six.  At $211$ the only such order is $N$.
+At odd multiplicative places the Tate order is twice that order, hence
+prime to $7$.  The extension $F/F_0$ is Galois of degree dividing
+$2|\operatorname{GL}_2(\mathbb F_3)||\operatorname{GL}_2(\mathbb F_5)|
+=46080$, also prime to $7$, so the required coprimality persists over $F$.
+
+At the place of $F_0$ above $11$ with $\sqrt5\equiv4$, the parameter is
+$a\equiv2$.  The curve $y^2=x(x-1)(x-2)$ has $12$ points over $\mathbb F_{11}$,
+so its Frobenius has trace zero and discriminant $-44\equiv5\pmod7$,
+a nonsquare.  The Tate inertia at $211$ supplies a nontrivial transvection.
+The same elementary group argument as in \S\ref{sec:def31}, or
+\cite[Lemma 3.1(iii)]{GenEll}, then gives
+$\operatorname{SL}_2(\mathbb F_7)$ in the image over $F_0$.
+The image over $F$ is normal with prime-to-$7$ quotient, so it contains
+all the order-$7$ transvections and their generated
+$\operatorname{SL}_2(\mathbb F_7)$.
+The core and compatible marked-section constructions therefore apply.
+
+At an odd prime the integral Legendre model has good or multiplicative
+reduction; its multiplicative reduction is split over $F$, since $i\in F$.
+The full $3$- and $5$-torsion and \cite[Proposition 1.8(v)]{IUT4} give
+semistability at every finite place.  By the chosen bad set, every good-set
+place outside $2\ell$ is genuinely of good reduction, as required by
+\cite[Theorem 1.10]{IUT4}.
+All $2$-torsion is already $F_0$-rational, so $F$ has exactly the field form
+required there, and $d_{\mathrm{mod}}=e_{\mathrm{mod}}=2$.
+Finally, the Tate torsion calculation of \S\ref{sec:profile}, using
+$\gcd(2N,105)=1$, gives
+\[
+ e(F_{\mathrm b}/\mathbb Q_{211})=15,\quad
+ e(K_{\mathrm b}/\mathbb Q_{211})=105,\quad
+ e(K_{\mathrm g}/\mathbb Q_{211})=1,\quad
+ \ord_{211}(\underline{\underline q}_{\mathrm b})=\frac{2N}{14}=\frac N7.
+\]
+These are arithmetic statements and do not use \SA{}; the actual-family
+containment needed for the lower estimate remains precisely the separate
+hypothesis \SA{}.
+
+\begin{theorem}\label{thm:averaged}
+For any datum in the preceding existence family with $N=211$, assume
+\SA{}.  Then
+\[
+ \frac{h_{211}}{\log211}\ge-\frac{12437}{840},\qquad
+ \frac{B_2(211)}{\log211}<-\frac{6117}{245},\qquad
+ \frac{h_{211}-B_2(211)}{\log211}>\frac{59749}{5880}>0.
+\]
+In particular, $B_2(211)$ cannot bound that actual $211$-local log-volume.
+\end{theorem}
+\begin{proof}
+The first bound is Proposition~\ref{prop:weights}.
+The elementary exponential series gives
+$e>65/24$ and
+$e<5/2+(1/6)/(1-1/4)=49/18<11/4$.
+The integer comparisons
+\[
+ 65^{16}>7741440\cdot24^{16},\qquad 11^5<211\cdot4^5
+\]
+therefore imply $\log7741440<16$ and $\log211>5$.
+Substitute $\log7741440/\log211<16/5$ into
+Proposition~\ref{prop:B2}.  The resulting upper bound is $-6117/245$;
+subtracting it from $-12437/840$ gives $59749/5880$.
+\end{proof}
+
+\begin{remark}
+Weakening $5/48$ to $7/48$ gives instead
+$h_{211}/\log211\ge-1559/105$ and the still positive margin
+$7438/735$.  The two certified margins differ by exactly $1/24$.
+The proof uses no floating-point comparison.  This conclusion concerns a
+single rational-prime component; no assertion about the sum over other
+primes and the archimedean places follows from it.
+\end{remark}
+
+\section{Scope}\label{sec:scope}
+
+We restate \S\ref{sec:notclaim} now that the statements have been made.
+Theorems~\ref{thm:local} and \ref{thm:averaged} concern the application of a
+local upper bound to the fixed target component of the union of possible images.
+They do not bear on the truth of $abc$, on the lower bound of
+\cite[Corollary 3.12]{IUT3}, on the global inequality of
+\cite[Theorem 1.10]{IUT4}, or on the merits of \cite{SS} versus \cite{Rpt2018}.
+They also do not show that the estimates cannot be repaired: an enlarged
+container is permitted by \cite{IUT4}, and the question is whether the
+accompanying loss of volume can be carried through the subsequent averaging.
+
+\section{What would falsify the argument}\label{sec:falsify}
+
+The interpretation-free content is Part~\ref{part:datum}: the datum of
+Definition~\ref{def:datum} satisfies \cite[Definition 3.1]{IUT1}, with the local
+profile of Proposition~\ref{prop:profile}.  That part stands or falls on exact
+arithmetic and on the quoted conditions, and we invite direct checking.
+
+The proposed application in the remainder rests on \SA{}.  Each of the
+following would invalidate an identified step in our proposed derivation of
+\SA{}, and require withdrawal of that application.  Such an objection need
+not disprove the abstract conditional implication ``if \SA{}, then the
+numerical comparison''; the issue is whether \SA{} holds for the source's
+actual collection of possible images.
+\begin{enumerate}[label=(F\arabic*)]
+\item The transposition of two factors of a capsule with $\ge2$ factors is
+  \emph{not} induced by an automorphism of the procession admitted in
+  $\Ind1$ --- for instance if the distinguished slot is fixed by a condition we
+  have not located.  This would contradict our reading of (SA2).
+\item ``Regarded up to indeterminacies'' in \cite[Theorem 3.11(i)]{IUT3}, and
+  ``subject to the indeterminacies'' in \cite[Corollary 3.12]{IUT3} and in the
+  introduction of \cite{IUT3}, do \emph{not} mean that the $\Ind1$-orbit of a
+  possible image consists of possible images.  This would contradict (SA4).
+\item The specified native representation $\kappa_E[J]$ is not among the possible
+  images of \cite[Corollary 3.12]{IUT3} --- for instance if a further condition
+  on possible images, beyond interpretability as an
+  $\mathcal{F}^\Vdash$-prime-strip, excludes it.  This would contradict (SA1).
+\item The comparison of \cite[Theorem 3.11(ii)(a)]{IUT3} does not preserve the
+  lattice $L$ at a tame place, contrary to the derivation in \S\ref{sec:sa}.
+\end{enumerate}
+We regard (F2) as the most likely locus of disagreement, since it is the point at
+which the treatment of labels is at issue.  This is related to the label and
+holomorphic-structure issue discussed in \cite[\S12]{Rpt2018}; that passage
+does not itself decide the orbit-membership question posed here.
+
+\section{What we ask of the reader}\label{sec:ask}
+
+This paper is addressed, in the first instance, to those who know the theory
+well.  We ask two specific things.
+
+\medskip\noindent\textbf{First, check Theorem~\ref{thm:A}.}
+It is a finite list of conditions about one explicit curve over a real quadratic
+field.  It is independent of \SA{}, though it uses the cited standard reduction and
+geometric results.  If a
+condition of \cite[Definition 3.1]{IUT1} fails for this datum, the rest of the
+paper is void and we would be grateful to be told which one.  The computations
+and their reproducibility scope are listed in Appendix~\ref{app:comp}; the
+geometric construction is checked separately in \S\ref{sec:def31}.
+
+\medskip\noindent\textbf{Second, tell us which of (F1)--(F4) holds, if any.}
+Theorem~\ref{thm:B} is not offered as a settled conclusion.  It is offered as the
+consequence of a stated reading \SA{}, together with the request that the reading
+be adjudicated.  \S\ref{sec:falsify} enumerates four ways its proposed derivation can fail, and
+we regard (F2) --- whether the $\Ind1$-orbit of a possible image consists of
+possible images --- as the likeliest.  A reply of the form ``(F2) holds, because
+$\ldots$'' would settle the matter, and we would withdraw Theorem~\ref{thm:B}
+accordingly.
+
+\medskip\noindent
+We have tried to make the paper easy to refute rather than hard to refute.  The
+interpretive content is confined to one hypothesis, that hypothesis is stated in
+one place, and the ways it can fail are enumerated.  If the estimate examined in
+\S\ref{sec:local} can be repaired --- for instance by enlarging the intermediate
+container and carrying the resulting loss of volume through the averaging of
+\S\ref{sec:averaged} --- then that repair, and not this paper, is the interesting
+mathematics, and we would like to see it.
+
+\appendix
+
+\section{The exact computations}\label{app:comp}
+
+All computations of Part~\ref{part:datum} are exact integer computations in
+$\mathbb{Z}$ or $\mathbb{Z}[\sqrt5]$.  We record the inputs so that they may be
+repeated.
+\begin{itemize}
+\item $\pi=16+3\sqrt5$; $\Norm(\pi)=211$; $a=\pi^{29}=A+B\sqrt5$ with
+  $A,B\in\mathbb{Z}$ of $40$ and $39$ decimal digits; $\Norm(a)=211^{29}$.
+\item $s^2\equiv5\pmod{211}$ has solutions $s\equiv65,146$.
+\item $211\nmid\Norm(1-a)$.  For reference,
+  $\Norm(1-a)=2^2\cdot3^2\cdot5\cdot59\cdot80621\cdot C$ with
+  $C$ a $59$-digit cofactor; the primality of $C$ is neither needed nor claimed.
+\item The six orbit identities of Proposition~\ref{prop:fmod} all fail.
+\item Traces of Frobenius $a_v$ for $121$ degree-one places of $F_0$ of good
+  reduction, each satisfying the Hasse bound; the witness $(11,4,0)$ is used in
+  Proposition~\ref{prop:sl2}.  The additional witnesses printed by the program
+  are supplementary arithmetic checks.
+\end{itemize}
+The program \texttt{scripts/checks.py} checks these displayed computations
+and the comparison constants.  The separate exhaustive integer sieve
+\texttt{scripts/check\_norm\_seventh\_power\_free.cpp} verifies that
+$\Norm(1-a)$ is seventh-power-free.  Its cofactor has exact seventh-root floor
+$225469788$, and all $12407147$ primes up to that bound are tested; the listed
+small factors are removed with their complete valuations first.  This proves
+the assertion without a primality claim for the residual cofactor.
+Neither program proves the cited geometric results or \SA{}.
+The logarithm ratio in \S\ref{sec:averaged} is evaluated approximately for
+orientation, while its required bound is proved exactly in the proof of
+Theorem~\ref{thm:averaged}.
+The companion \texttt{scripts/check\_crt\_family.py} reproduces the CRT
+congruences and exact local orders for $N=1,106,211$.  These finite checks do
+not certify any individual sample as seventh-power-free; the existence
+assertion is proved by the counting argument in Appendix~\ref{app:family}.
+
+\section{A machine-checked finite model}\label{app:lean}
+
+The distinction of \S\ref{sec:twoparts} is elementary but easy to elide, so we
+record it as a finite model checked by the Lean~4 kernel.  Subsets of a
+four-element set are encoded as four-bit naturals; the action transposes the
+first two and the last two points; \texttt{hull} fills the interval between the
+least and greatest member; \texttt{card} counts members.  With
+$A=\{0,2\}$ and $\sigma A=\{1,3\}$ the file establishes, with no axioms:
+\begin{itemize}
+\item \texttt{hull\_card\_invariant}: $\mathrm{card}(\mathrm{hull}\,A)
+  =\mathrm{card}(\mathrm{hull}\,\sigma A)$ --- the analogue of (A);
+\item \texttt{orbit\_not\_forced\_by\_invariance}: a predicate satisfying (A) but
+  not (B) exists, so (A) does not imply (B);
+\item \texttt{the\_point}: the orbit predicate satisfies both (A) and (B), and
+  nevertheless $\mathrm{card}(\mathrm{hull}\,A)<
+  \mathrm{card}\bigl(\mathrm{hull}(A\cup\sigma A)\bigr)$ and likewise for
+  $\sigma A$.
+\end{itemize}
+The model is an analogy, not a formalization of the source; it fixes the logical
+distinction only.
+
+\section{Disclosure of the use of AI assistance}\label{app:ai}
+
+Large language models were used substantially in the preparation of this paper:
+in locating the relevant passages of \cite{IUT1,IUT3,IUT4,CanLift,MFHMP}, in
+carrying out and cross-checking the computations, in drafting the exposition, and
+in adversarial review of successive drafts.  Several distinct models were used,
+and disagreements between them were resolved by returning to the sources.  This
+note delimits what does and does not depend on that assistance.
+
+\medskip\noindent\textbf{What does not depend on it.}
+\begin{enumerate}[label=(\roman*)]
+\item The displayed numerical calculations in Part~\ref{part:datum} are
+  exact and reproducible by the programs described in Appendix~\ref{app:comp}.
+  The remaining deductions use the supplied proofs and cited theorems about
+  reduction, torsion and covers; they are not certified by the arithmetic
+  programs.  None of these checks certifies the source reading \SA{}.
+\item Every source condition invoked in \S\ref{sec:def31} and \S\ref{sec:sa} is
+  cited by statement number and, where the wording matters, quoted verbatim.
+\item The finite model of Appendix~\ref{app:lean} is checked by the Lean~4
+  kernel and depends on no axioms.
+\end{enumerate}
+
+\medskip\noindent\textbf{What does depend on human judgement.}
+\begin{enumerate}[label=(\roman*),start=4]
+\item The hypothesis \SA{} of \S\ref{sec:sa} is a reading of the source.  It is
+  not a computation and it is not a quotation; it is an interpretation of what
+  ``regarded up to indeterminacies'' and ``subject to the indeterminacies''
+  mean.  It is stated separately, its four supporting steps are given
+  separately, and \S\ref{sec:falsify} states what would falsify it.  The author
+  regards this as the point at which disagreement is most likely, and invites it.
+\item The selection of which passages are the relevant ones, and the framing of
+  the comparison in \S\ref{sec:local}, are likewise judgements.
+\item An earlier draft stated Proposition~\ref{prop:exist} without a
+  reconstructed proof.  The congruences and counting argument are now supplied
+  in Appendix~\ref{app:family}, following source and arithmetic review with AI
+  assistance.  This does not assert an independent human verification.  The
+  proposition is used only in \S\ref{sec:averaged}, not in
+  Theorem~\ref{thm:local}.
+\end{enumerate}
+
+\medskip\noindent
+Errors found during preparation are recorded here rather than silently removed,
+since the pattern is informative.  Three that were caught late: an appeal to a
+Lean declaration absent from the checked source after a change of name; an
+axiom tally whose itemized counts did not sum to its stated total; and a conjecture
+that the four exceptional $j$-invariants of \S\ref{sec:kcore} would be algebraic
+integers, which is false for two of them --- had it not been checked against
+\cite[Proposition 2.1]{MFHMP}, Proposition~\ref{prop:kcore} would have reached a
+correct conclusion by an incorrect route.  The author does not claim that no
+further errors remain.  A subsequent audit of the accompanying short reports
+corrected an omitted $j^2$ at stage $2$, an overly broad logarithm-lattice
+identity, and a confusion between nonconstant place tuples and mixed reduction
+types.  This paper already used $j^2N/7$ in its general-stage calculation;
+version 0.1.2 makes the stage convention and small-ramification restriction
+explicit throughout.  The labels [S], [P], [H] now distinguish source
+statements, deductions or computations, and hypotheses, respectively.
+
+\section{The seventh-power-free existence argument}\label{app:family}
+
+\begin{proof}[Proof of Proposition~\ref{prop:exist}]
+Write $p=211$.  Since $65^2\equiv5\pmod p$ and $130$ is a unit modulo $p$,
+Hensel's lemma gives an integer $s_N$ satisfying
+$s_N^2\equiv5\pmod{p^{N+1}}$ and $s_N\equiv65\pmod p$.
+Choose $0\le A_0<M$ by the following complete set of CRT conditions:
+\[
+ \begin{split}
+ A_0&\equiv s_N+p^N\pmod{p^{N+1}},\qquad A_0\equiv0\pmod8,\\
+ A_0&\equiv2\pmod3,\quad A_0\equiv2\pmod5,\quad
+ A_0\equiv2\pmod{19},\quad A_0\equiv6\pmod{11},\\
+ M&=8\cdot3\cdot5\cdot11\cdot19\cdot p^{N+1}
+   =25080p^{N+1}.
+ \end{split}
+\]
+For $A=A_0+Mx$, $x\ge1$, put
+\[
+ f(T)=(T^2-5)((T-1)^2-5)
+     =T^4-2T^3-9T^2+10T+20,\qquad
+ G_N(x)=p^{-N}f(A_0+Mx).
+\]
+The constant term is divisible by $p^N$ and every positive-degree
+coefficient by $M$, so $G_N\in\mathbb Z[x]$ has degree four.
+The additional Hensel digit ensures exact order $N$, not merely order at
+least $N$.  In fact, for every $x$,
+\[
+ \frac{A^2-5}{p^N}\equiv130\pmod p,\qquad
+ (A-1)^2-5\equiv82\pmod p,\qquad G_N(x)\equiv110\pmod p.
+\]
+At the conjugate place $a\equiv130$, which is neither $0$ nor $1$.
+
+The primes dividing $M$ cannot supply a seventh power:
+$v_2(G_N(x))=2$, since $f(A)\equiv4\pmod8$;
+for $q=3,5,19$, $f(A)\equiv f(2)=4\not\equiv0\pmod q$;
+for $q=11$, $f(A)\equiv f(6)=620\equiv4\pmod{11}$;
+and $p\nmid G_N(x)$ as just shown.
+The two quadratic factors of $f$ have discriminant $20$ and resultant
+$(1-2\sqrt5)(1+2\sqrt5)=-19$.  Hence
+$\operatorname{disc}(f)=20^2\cdot19^2=144400$.
+For any prime $q\nmid M$, all roots of $f$ modulo $q$ are simple, and there
+are at most four.  Each lifts uniquely modulo $q^7$.
+As $M$ and $p$ are units modulo $q$, at most four residue classes modulo
+$q^7$ satisfy $q^7\mid G_N(x)$.
+
+Fix $N$.  For $1\le x\le X$,
+$0<G_N(x)<C_N(X+1)^4$, where one may take $C_N=M^4/p^N$.
+Thus any prime whose seventh power divides $G_N(x)$ is at most
+$Y=C_N^{1/7}(X+1)^{4/7}$.
+The number of excluded integers $x$ is at most
+\[
+ \begin{split}
+ \sum_{\substack{q\le Y\text{ prime}\\q\nmid M}}
+       4\left(\frac{X}{q^7}+1\right)
+ &\le 4X\sum_{n\ge7}\frac1{n^7}+4Y\\
+ &\le\frac{X}{69984}+4C_N^{1/7}(X+1)^{4/7},
+ \end{split}
+\]
+because $4\int_6^\infty t^{-7}\,dt=1/69984$.
+The second term is $o(X)$ for this fixed $N$, while $1/69984<1$.
+Therefore infinitely many $x$, and hence infinitely many $A$, remain.
+The identity $f(A)=\Norm(a)\Norm(1-a)$ proves the assertion.
+No bound uniform in $N$, and no certified individual value of $A$ for
+$N=211$, is needed for this existence conclusion.
+\end{proof}
+
+The rational logarithm bounds used in Theorem~\ref{thm:averaged} are
+proved there directly from the exponential series; they require no numerical
+approximation to logarithms.
+
+\begin{thebibliography}{MFHMP}
+
+\bibitem[CanLift]{CanLift}
+S.~Mochizuki,
+\emph{The absolute anabelian geometry of canonical curves},
+Doc. Math., Extra Volume: Kazuya Kato's Fiftieth Birthday (2003), 609--640.
+\href{https://doi.org/10.4171/DMS/3/17}{doi:10.4171/DMS/3/17}.
+
+\bibitem[EtTh]{EtTh}
+S.~Mochizuki,
+\emph{The \'etale theta function and its Frobenioid-theoretic manifestations},
+Publ. Res. Inst. Math. Sci. \textbf{45} (2009), no.~1, 227--349.
+\href{https://doi.org/10.2977/PRIMS/1234361159}{doi:10.2977/PRIMS/1234361159}.
+
+\bibitem[GenEll]{GenEll}
+S.~Mochizuki,
+\emph{Arithmetic elliptic curves in general position},
+Math. J. Okayama Univ. \textbf{52} (2010), 1--28.
+\href{https://doi.org/10.18926/mjou/33503}{doi:10.18926/mjou/33503}.
+
+\bibitem[IUT1]{IUT1}
+S.~Mochizuki,
+\emph{Inter-universal Teichm\"uller theory I: Construction of Hodge theaters},
+RIMS Preprint 1756 (2012); consulted author version, May 2020.
+Published in Publ. Res. Inst. Math. Sci. \textbf{57} (2021), no.~1/2, 3--207;
+see also \cite{IUTpub}.
+\href{https://doi.org/10.4171/PRIMS/57-1-1}{doi:10.4171/PRIMS/57-1-1}.
+
+\bibitem[IUT2]{IUT2}
+S.~Mochizuki,
+\emph{Inter-universal Teichm\"uller theory II: Hodge--Arakelov-theoretic evaluation},
+RIMS Preprint 1757 (2012); consulted author version, December 2020.
+Published in Publ. Res. Inst. Math. Sci. \textbf{57} (2021), no.~1/2, 209--401;
+see also \cite{IUTpub}.
+\href{https://doi.org/10.4171/PRIMS/57-1-2}{doi:10.4171/PRIMS/57-1-2}.
+
+\bibitem[IUT3]{IUT3}
+S.~Mochizuki,
+\emph{Inter-universal Teichm\"uller theory III: Canonical splittings of the log-theta-lattice},
+RIMS Preprint 1758 (2012); consulted author version, May 2020.
+Published in Publ. Res. Inst. Math. Sci. \textbf{57} (2021), no.~1/2, 403--626;
+see also \cite{IUTpub}.
+\href{https://doi.org/10.4171/PRIMS/57-1-3}{doi:10.4171/PRIMS/57-1-3}.
+
+\bibitem[IUT4]{IUT4}
+S.~Mochizuki,
+\emph{Inter-universal Teichm\"uller theory IV: Log-volume computations and set-theoretic foundations},
+RIMS Preprint 1759 (2012); consulted author version, April 2020.
+Published in Publ. Res. Inst. Math. Sci. \textbf{57} (2021), no.~1/2, 627--723;
+see also \cite{IUTpub}.
+\href{https://doi.org/10.4171/PRIMS/57-1-4}{doi:10.4171/PRIMS/57-1-4}.
+
+\bibitem[IUTpub]{IUTpub}
+S.~Mochizuki,
+\emph{Inter-universal Teichm\"uller theory I--IV},
+collective reference to the four articles in
+Publ. Res. Inst. Math. Sci. \textbf{57} (2021), no.~1/2:
+I, 3--207; II, 209--401; III, 403--626; IV, 627--723.
+
+\bibitem[MFHMP]{MFHMP}
+S.~Mochizuki, I.~Fesenko, Y.~Hoshi, A.~Minamide and W.~Porowski,
+\emph{Explicit estimates in inter-universal Teichm\"uller theory},
+Kodai Math. J. \textbf{45} (2022), no.~2, 175--236.
+\href{https://doi.org/10.2996/kmj45201}{doi:10.2996/kmj45201}.
+Consulted author versions: December 2021 and May 2022.
+
+\bibitem[Rpt2018]{Rpt2018}
+S.~Mochizuki,
+\emph{Report on discussions, held during the period March 15--20, 2018,
+concerning inter-universal Teichm\"uller theory (IUTch)},
+author manuscript, February 2019 revision, 45 pp.
+\url{https://www.kurims.kyoto-u.ac.jp/~motizuki/Rpt2018.pdf}.
+
+\bibitem[Sijs]{Sijs}
+J.~Sijsling,
+\emph{Canonical models of arithmetic $(1;\infty)$-curves},
+in \emph{Arithmetic geometry: computation and applications},
+Contemp. Math. \textbf{722}, Amer. Math. Soc., Providence, RI, 2019, 149--165.
+\href{https://doi.org/10.1090/conm/722/14530}{doi:10.1090/conm/722/14530}.
+Consulted author version: \href{https://arxiv.org/abs/1707.01158v2}{arXiv:1707.01158v2} (2017).
+
+\bibitem[SS]{SS}
+P.~Scholze and J.~Stix,
+\emph{Why $abc$ is still a conjecture},
+author manuscript, July 16, 2018, 10 pp.
+\url{https://www.math.uni-bonn.de/people/scholze/WhyABCisStillaConjecture.pdf}.
+
+\end{thebibliography}
+
+\end{document}

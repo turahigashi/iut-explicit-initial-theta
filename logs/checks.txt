@@ -1,0 +1,99 @@
+(1) the quadratic field and the split prime
+  [ok] Norm(pi): 211
+  [ok] 211 is prime: True
+  [ok] sqrt(5) mod 211: [65, 146]
+(2) valuations of a = pi^29
+  [ok] Norm(a) = 211^29: True
+  [ok] digits of A: 40
+  [ok] digits of B: 39
+  [ok] v_211(Norm(1-a)): 0
+  [ok] root at v_pi: 65
+  [ok] a mod v_pi: 0
+  [ok] a-1 mod v_pi: 210
+  [ok] a mod v_pibar: 26
+  [ok] a-1 mod v_pibar: 25
+  [ok] a^2-a+1 mod v_pibar: 18
+(3) the field of moduli: j is irrational
+  [ok] abar == a: False
+  [ok] abar == 1/a: False
+  [ok] abar == 1-a: False
+  [ok] abar == 1/(1-a): False
+  [ok] abar == a/(a-1): False
+  [ok] abar == (a-1)/a: False
+  [ok] j is rational: False
+(4) numerical inputs to the cited K-core criterion
+  [ok] first exceptional j factorization: 488095744/125
+  [ok] second exceptional j factorization: 1556068/81
+  [ok] each exceptional j has nonnegative 211-valuation (v(0)=infinity): True
+  [ok] degree bound: 2*48*480 = 2^10*3^2*5: 46080
+(5) mod 7 image contains SL_2(F_7)
+  [ok] good degree-one places tested: 121
+  [ok] irreducible Frobenius witness: True
+  [ok] witness excluding Borel: True
+        witness = (11, 4, 0, 5)
+  [ok] witness excluding splitN: True
+        witness = (19, 9, -4, 3)
+  [ok] witness excluding nonsplitN: True
+        witness = (19, 10, 8, 2)
+  [ok] witness excluding exc: True
+        witness = (19, 9, -4, 6)
+(6) the local profile at 211
+  [ok] ord(q) = -v_pi(j): 58
+  [ok] ord(qbar) = ord(q)/(2*l): 29/7
+  [ok] gcd(105, 58) = 1: 1
+  [ok] q-order over selected F-place: 870
+  [ok] q-order over selected K-place: 6090
+  [ok] tame: e_b <= p-2: True
+  [ok] d_I + a_I = |I|: 2
+(7) the local comparison (Theorem 4 of the note)
+  [ok] upper bound -lambda+d_I+1: -226/105
+  [ok] hull of the seed: -106/105
+  [ok] margin: 8/7
+(7b) the margin in closed form: lambda = j^2 * s  (Thm 1.10 Step (v))
+  [ok] j=1: margin = j^2*s-(j+2): 8/7
+  [ok] j=2: margin = j^2*s-(j+2): 88/7
+  [ok] j=3: margin = j^2*s-(j+2): 226/7
+  [ok]   e=[1, 105]: margin independent of e: 8/7
+  [ok]   e=[1, 7]: margin independent of e: 8/7
+  [ok]   e=[105, 1, 105]: margin independent of e: 88/7
+  [ok]   e=[3, 1, 11]: margin independent of e: 88/7
+  [ok] j=2 upper bound -lambda+d_I+1 for t=(b,g,b): -1427/105
+  [ok] j=2 seed: -107/105
+(7c) finite residue checks for the nonsplit-selection obstruction
+  [ok] both-bad forces 2A = 1 mod 19, i.e. A = 10: [10]
+  [ok]   and 4s^2 = 1 has solutions that square to 5 there: [9, 10]
+  [ok] excluded by the congruence A = 2 mod 19: True
+  [ok] gcd(A,B) for a = pi^29: 1
+  [ok] gcd(A-1,B) for a = pi^29: 3
+(7d) the mechanism: two different tuple-dependences (Thm 1.10 Step (v))
+  [ok] upper-bound coefficient of N (weight 1/2): 1/3
+  [ok]   and it equals the coefficient of -N in B2: 1/3
+  [ok] lower-bound coefficient of N (weight 2^-(j+1)): 1/16
+  [ok] the two differ: True
+  [ok] growth of the discrepancy: 13/48
+(8) the averaged comparison
+  [ok] baseline: 53/35
+  [ok] slope: 1/16
+  [ok] ceil remainders: [Fraction(6, 7), Fraction(3, 7), Fraction(5, 7)]
+  [ok] rounding: 5/48
+  [ok] B_2 constant: 1984/735
+  [ok] B_2 slope in N: 1/3
+  [ok] B_2 s-coeff: 40/3
+  [ok] 211 = 1 mod 105: 1
+  [ok] exact sharp lower bound: -12437/840
+  [ok] log(7741440) < 16: exp series lower bound: True
+  [ok] log(211) > 5: exp series upper bound: True
+  [ok] displayed integer bound for exp(16): True
+  [ok] displayed integer bound for exp(5): True
+  [ok] exact rational upper bound for B2/log211: -6117/245
+  [ok] weak rigorous margin > 7438/735: 7438/735
+  [ok] sharp rigorous margin > 59749/5880: 59749/5880
+  [--] log(7741440)/log(211) = 2.9638487940
+  [approx] sharp lower bound for h/log211: -14.8059523810
+  [approx] B2/log211: -28.1160296849
+  [approx] sharp lower bound minus B2/log211: 13.3100773040
+  [approx] weak lower bound minus B2/log211: 13.2684106373
+  [ok] difference of the two exact bounds is 1/24: 1/24
+
+OK: displayed arithmetic and rational comparison certificates PASS
+SA and geometric constructions require the separate mathematical arguments.

@@ -1,0 +1,63 @@
+# Draft changes
+
+## 0.1.2-draft — 2026-09-06
+
+- Rechecked every stage-dependent theta depth. The full paper already retained
+  j²; made the stage-1 specialization explicit and corrected the first report's
+  residual 1/7 claim to 88/7. The equivalent general threshold divides by j².
+- Reworked the first report's initial-data verification to retain every selected
+  bad place, the compatible marked cover and the exact local torsion field.
+- Rewrote the second report with separate statements about nonconstant place
+  tuples, mixed reduction, and the distinguished slot's permitted orbit.
+- Proved the deterministic nonsplit-selection obstruction and reproduced the
+  selected Tate-degree ratio with rigorous rational logarithm intervals.
+- Restricted the logarithm-lattice identity to e_i <= p-2 and supplied the tame
+  Q_3(zeta_3) counterexample to the broader assertion.
+- Matched global Tate degrees to local orders and tuple weights, separating
+  the coefficients 1/3, 1/14 and the conditional seed coefficient 1/16.
+  Retained 13/48 solely as the coefficient difference of specified bounds.
+- Compared the SS exponent diagnosis with the tuple-transport inclusion;
+  identified the unproved actual-output comparisons and corrected the scope
+  of SS footnote 12. Map types alone do not prove a failed estimate.
+- Standardized [S]/[P]/[H] status labels and preserved withdrawal clauses and
+  all recorded preparation errors. Added two exact arithmetic certificates.
+
+The full paper is now 22 pages. All three TeX documents were rebuilt and their
+PDF pages inspected. The new arithmetic certificates pass; unchanged Lean
+proofs and the norm sieve retain their previously verified scope. This remains
+a draft with an explicit source-reading hypothesis.
+
+## 0.1.1-draft — 2026-09-06
+
+- Supplied the compatible global quotient, cusp and section in the initial datum,
+  the core descent, local covers and the log-theta-lattice construction. Selected
+  all multiplicative places outside residue characteristics 2 and 7 and checked
+  every required Tate order, including the additional hypotheses of IUT IV.
+- Added the exact torsion-field equality and both ramification bounds proving
+  `e_b=105`. Cited the semistability criterion in IUT IV Proposition 1.8(v).
+- Restored the floor functions in Proposition 1.4(iii), distinguished tameness
+  from `e_i <= p-2`, and supplied the sources for the different and logarithm
+  constants. The conditional local margin remains `8/7`.
+- Corrected the degree factorization to `46080=2^10*3^2*5`, the first exceptional
+  j-invariant to `2^14*31^3/5^3`, and the reduction argument using `c_4`.
+- Expanded the native-ideal, integral-lattice and whole-procession transport
+  steps supporting (SA), preserving it as the single source-reading hypothesis.
+- Derived the normalized tuple weights and the final local expression directly
+  from the specified source passages. Replaced rounded inequalities with exact
+  rational bounds.
+- Added the complete Hensel/CRT and elementary sieve proof for the separate
+  N=211 existence family in Appendix D, together with finite CRT checks and an
+  exhaustive norm certificate for the explicit N=29 datum.
+- Checked all bibliography entries and citation occurrences against the specified
+  source versions. Added nine verified DOIs and clarified author-version versus
+  publication metadata. Unquoted source descriptions are identified as paraphrases.
+- Limited the public Lean comments to the finite model actually proved, and
+  printed the axiom dependencies of all nine theorems. The proof terms are unchanged.
+- Retained the scope restrictions, F1–F4, the F2 withdrawal commitment and all
+  three recorded preparation errors. Distinguished numerical checks, cited
+  geometric results, the source reading and independent human review.
+
+The accompanying PDF is a 21-page draft. Arithmetic, the norm sieve, the CRT
+checks, all nine Lean theorems and two consecutive LaTeX runs passed. The final
+PDF was visually inspected on every page. This audit does not turn (SA) into an
+unconditional theorem or establish a global contradiction.
