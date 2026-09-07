@@ -78,7 +78,16 @@ def t3():
         print(f"    {nm:28s} {p:>5} {o:>9}   {str(s):>11} {float(m):>8.2f}  "
               f"{'NONTRIVIAL' if m > 0 else 'vacuous'}")
     print("    WARNING.  For the four curves over Q the margin formula's own hypotheses fail:")
-    print("      11a1: e_b = 105/gcd(105,5) = 21 > p-2 = 9;   14a1: p = ell;   15a1: p divides the torsion level 15;")
+    # CORRECTED 2026-09-07 (external review, round 19).  An earlier version applied
+    # THIS datum's torsion level 105 to curves that do not have it.  [IUT1, Def 3.1(b)]
+    # makes E[6] rational over F, so at the reference level 7 the field K contains
+    # E[42]; both primes are prime to 42, with Tate orders 5 and 1.
+    for _nm, _p, _oq in (("11a1", 11, 5), ("37a1", 37, 1)):
+        _eb = 42 // math.gcd(42, _oq)
+        assert _eb == 42 and _eb > _p - 2
+        print(f"      {_nm}: e_b >= 42/gcd(42,{_oq}) = {_eb} > p-2 = {_p-2}"
+              f"   [not 105/gcd(105,{_oq}); 105 is THIS datum's level]")
+    print("      14a1: p = ell;   15a1: p divides the torsion level 15;")
     print("      37a1: e > p-2.  Their entries are formula values, not licensed comparisons.")
     print("      Over F_mod = Q there is in any case no mixed place [First, Cor. 3(i)].")
 
@@ -143,7 +152,8 @@ def t5():
     print("              the order is 2N, so the check is ell not dividing 2N.  At the")
     print("              REMAINING bad places the condition needs v_p(1-a) prime to ell,")
     print("              for which power-freeness of Norm(1-a) is sufficient; that is an")
-    print("              external computation, not this column.  (Continued:)")
+    print("              separate computation -- scripts/powerfree_certificate.py, which")
+    print("              ships here -- not this column.  (Continued:)")
     print("     H_all = N log p + log N(1-a) - min(v_2, 8) log 2      <- (C1) uses this")
     print("     H_sel = N log p + log N(1-a) - v_2 log 2 - v_ell log ell  <- selected places")
     print("     CORRECTION 2026-09-07 (round 2): H_sel dropped the place over 7 for every")
@@ -338,7 +348,8 @@ def t11():
     print(f"    shared primes across blocks: v_2(B) = {v2b}, v_5(B) = {v5b}; both < "
           f"{win[0]} = the smallest ell in the window,")
     print("      which is why blockwise 89th-power-freeness gives it for B itself.")
-    print("      (The exhaustive sieve over each block is external; its inputs -- the")
+    print("      (The exhaustive sieve over each block is run by")
+    print("       scripts/powerfree_certificate.py, shipped here; its inputs -- the")
     print("       nine norms, the 36 pair gcds and the nine 89th-root bounds, largest")
     print("       24,856 -- are in lean/LargeImaginaryDatum.lean.)")
     print("    [IUT1, Def. 3.1(c)] also needs ell prime to the residue characteristics of")
@@ -373,7 +384,8 @@ def t11():
     print(f"      G_+ = (X^118+i)/(X^2-i) and G_- = (X^118-i)/(X^2+i), with G_+G_- = Phi_472.")
     print(f"      Degrees {blocks} sum to {sum(blocks)} = N; that is "
           f"{nfac*(nfac-1)//2} pairwise gcds to clear.")
-    print("      (The sieve itself is EXTERNAL and is not run here.  Its inputs -- the")
+    print("      (The sieve is not run in THIS script; it is run by")
+    print("       scripts/powerfree_certificate.py, shipped here.  Its inputs -- the")
     print("       nine norms, the 36 pair gcds and the nine 89th-root bounds, largest")
     print("       24,856 -- are in lean/LargeImaginaryDatum.lean, whose header states")
     print("       that having them does not by itself prove power-freeness;")

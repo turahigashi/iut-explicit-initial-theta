@@ -92,8 +92,8 @@ records of the preceding draft.
 
 **An initial Θ-datum over an imaginary quadratic field, and numerical values of the
 local quantities of inter-universal Teichmüller theory IV.**
-DOI [10.5281/zenodo.22601335](https://doi.org/10.5281/zenodo.22601335)
-(all versions: 10.5281/zenodo.22601333).
+version 1.0.1, DOI [10.5281/zenodo.22634210](https://doi.org/10.5281/zenodo.22634210)
+(all versions: [10.5281/zenodo.22601333](https://doi.org/10.5281/zenodo.22601333)).
 
 The datum is `E_0: y^2 = x(x-1)(x-a)` with `a = (10+3i)^29` and `ℓ = 7` over
 `Q(i)`, for which 109 splits into one multiplicative and one good place.  All of

@@ -80,6 +80,13 @@ RETRACTED = [
      "the norms and the Frobenius traces; it does not reproduce the image argument"),
     # --- added after round 15: counts that had gone stale in three places at once
     ("thirteen", ["paper/note5.tex"], "fourteen (the audit covers 14 files)"),
+    # --- added after round 19: this datum's torsion level was applied to other curves
+    ("105/gcd(105,5) = 21", ["scripts/tables.py", "scripts/tables_output.txt"],
+     "e_b >= 42/gcd(42,5) = 42; 105 is THIS datum's level, not 11a1's"),
+    ("e_{\\mathrm b}=105/\\gcd(105,5)=21", ["paper/note5.tex"],
+     "e_b >= 42 from [IUT1, Def 3.1(b)] making E[6] rational"),
+    ("is external to this report", ["paper/note5.tex"],
+     "carried out by scripts/powerfree_certificate.py, which ships here"),
 ]
 
 def flatten(text: str) -> str:

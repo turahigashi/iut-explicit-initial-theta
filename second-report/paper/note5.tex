@@ -38,7 +38,9 @@ inter-universal Teichm\"uller theory IV\\
 \large A second report}
 \author{Toshihisa Urahigashi\\
 \small\texttt{123026.urahigashi.toshihisa@gmail.com}\\[2pt]
-\small DOI \href{https://doi.org/10.5281/zenodo.22601335}{10.5281/zenodo.22601335}}
+\small Version 1.0.1\\[1pt]
+\small DOI \href{https://doi.org/10.5281/zenodo.22601333}{10.5281/zenodo.22601333} (all versions);\\[1pt]
+\small this version \href{https://doi.org/10.5281/zenodo.22634210}{10.5281/zenodo.22634210}}
 \date{Version 0.2.0-draft --- \today\\[3pt]
 \small ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}}
 
@@ -596,11 +598,23 @@ the present datum over $\mathbb{Q}(i)$ & 109 & \textbf{58} & $29/7$ & $\mathbf{+
 \end{center}
 
 \textup{[P]} \emph{The last column of the four $\mathbb{Q}$-rows is the value of the
-formula, not a licensed comparison}: at 11a1
-$e_{\mathrm b}=105/\gcd(105,5)=21>p-2=9$; at 14a1 $p=\ell$
-(which \cite[Def.~3.1(c)]{IUT1} does not allow at a bad place at all), at 15a1
-$p\mid15$, and at 37a1 $e_{\mathrm b}=105>35$.  They are printed to show the scale of
-$\ord_p(q)$ on record, nothing more.
+formula, not a licensed comparison}: at 14a1 $p=\ell$
+(which \cite[Def.~3.1(c)]{IUT1} does not allow at a bad place at all), and at 15a1
+$p\mid15$.  At 11a1 and 37a1 the exclusion is by size, and \emph{the bound does not
+depend on choosing a field}: \cite[Def.~3.1(b)]{IUT1} requires the $2\cdot3$-torsion
+of $E_F$ to be rational over $F$, so at the reference level $\ell=7$ the field $K$
+contains $E[42]$.  Both primes are prime to $42$, and their Tate orders are $5$ and
+$1$, so
+\[
+ e_{\mathrm b}\ \ge\ \frac{42}{\gcd(42,\ord_p(q))}=42
+ \quad\text{at both},\qquad 42>9,\qquad 42>35 .
+\]
+\emph{An earlier version printed $105/\gcd(105,5)=21$ at 11a1 and $105$ at 37a1},
+carrying over the torsion level $105$ of the datum \eqref{e:datum} to curves that do
+not have it; \cite{DH25} takes $F=\mathbb{Q}(i,E[30])$, which at level $7$ would give
+$210/\gcd(210,5)=42$ and at its own level $13$ gives $390/\gcd(390,5)=78$.  The
+exclusions are unchanged; the printed indices were not the indices of these curves.
+They are printed to show the scale of $\ord_p(q)$ on record, nothing more.
 
 \textup{[P]} The sample above is not the whole record.  Sweeping the Cremona tables
 of conductor below $10^4$ --- $64687$ curves --- for a \emph{single} place of
@@ -821,7 +835,9 @@ not necessary} --- a valuation of $\ell+1$ is prime to $\ell$ and not $\ell$-th-
 \S\ref{s:region} and \S\ref{s:fourteen} it is not}: the cyclotomic factorization
 $a-1=\prod_{d\mid N}\Phi_d(\pi)$ reduces the search, but on its own it excludes an
 $\ell$-th power only for factors whose norm is small enough, and the certificate for the
-reduced search is external to this report.  The rows above should be read accordingly.
+reduced search is carried out by \path{scripts/powerfree_certificate.py}, which ships
+with this report and runs in well under a second.  The rows above should be read
+accordingly.
 
 \begin{remark}[corrections]
 \textbf{[P]} An earlier version of this table compared the two sides of condition (3)

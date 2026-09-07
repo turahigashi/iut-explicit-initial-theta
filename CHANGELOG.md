@@ -1,5 +1,19 @@
 # Draft changes
 
+## 0.2.1 — 2026-09-07
+
+- Corrects one mathematical error in the second report, §9: the ramification indices
+  printed for Dupuy–Hilado's curves 11a1 and 37a1 carried over the torsion level 105
+  of *this* paper's datum, which those curves do not have.  Since [IUT I, Def. 3.1(b)]
+  makes the 2·3-torsion rational over F, at the reference level ℓ = 7 the field K
+  contains E[42]; both primes are prime to 42 with Tate orders 5 and 1, so e_b ≥ 42.
+  **The exclusions those rows state are unchanged** (42 > 9 and 42 > 35), and the
+  datum, its tables, Proposition 2, the fourteen candidate levels and the Lean
+  development are untouched.
+- Aligns the remaining descriptions of the 89th-power-free certificate with the fact
+  that it ships and runs.
+- Zenodo 10.5281/zenodo.22634210.
+
 ## 0.2.0 — 2026-09-07
 
 - Adds the **second report**: an initial Θ-datum over the imaginary quadratic field
