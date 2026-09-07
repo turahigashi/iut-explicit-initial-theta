@@ -1,0 +1,329 @@
+{
+ "note": "Every passage quoted in note3, with the source it is attributed to and the SHA-256 of the PDF it was checked against.  The sources are not distributed; supply your own copies under the names in each entry's \"pdf\" field.  The checker extracts the text itself and refuses to run on a printing whose hash the manifest does not name.",
+ "how_to_run": "python3 scripts/note3_quotes.py --sources DIR --manifest scripts/note3_quotes_manifest.json",
+ "attribution": "Assigned by reading the prose around each quotation.  Proximity to the nearest \\cite is not reliable: it put the [MT] introduction's sentences on [IUT2].  An earlier manifest also marked three entries as the paper's own labels; external review showed all three stand verbatim in [IUT3], so no entry now claims that status.",
+ "limitation": "The check is a word-sequence match with mathematics dropped and punctuation ignored, so it LOCATES a candidate passage; it does not establish verbatim identity.  External review found a quotation that stopped early inside the source's bracket without an ellipsis, and a dropped qualifying clause, both of which this search reported as located.  Every candidate needs an eye.",
+ "sources": {
+  "IUT1": {
+   "sha256": "7360e3ed27c235b5497a0743d3ed1646fbb97688547d16b7c784fc7f127f1f03",
+   "pdf": "IUT1.pdf"
+  },
+  "IUT2": {
+   "sha256": "180bfa6aaddc4ae37af37acaad51f61e0a47b33b8255ad3169e28a970ae39b7c",
+   "pdf": "IUT2.pdf"
+  },
+  "IUT3": {
+   "sha256": "9a7ee3c77b1c7717210c0613eb39b6844649d0040dc3d9e1be7d544f8f91a0b9",
+   "pdf": "IUT3.pdf"
+  },
+  "IUT4": {
+   "sha256": "5bf4b1e0a8c2686562a6859e5009d301335044cfb5efec5d3a9edf764e4af87f",
+   "pdf": "IUT4.pdf"
+  },
+  "MFHMP": {
+   "sha256": "7767a97d8a4b51a7e33e9898aaf95f0a198f208140d6ddc2e461e58e099f3bde",
+   "pdf": "MFHMP.pdf"
+  },
+  "DH": {
+   "sha256": "d2196b557d5c5d4afe2520db26df880585416c1218d939962b3a479d7ff341dc",
+   "pdf": "DH.pdf"
+  },
+  "DHv2": {
+   "sha256": "e6ba06b458ea633764093618c3312926ab585bb4f092e43416f2eff386bb0ce2",
+   "pdf": "DHv2.pdf"
+  },
+  "MTa": {
+   "sha256": "38bc7efed44f686c413fcc5962b26a8be48d12b8ff4cf5d881e2fdd960bdecb3",
+   "group": "MT",
+   "pdf": "MTa.pdf"
+  },
+  "MTb": {
+   "sha256": "65be9916fd0cc5b9f0476916903adb1558964d930f4c77b413a77a80ba2b062a",
+   "group": "MT",
+   "pdf": "MTb.pdf"
+  }
+ },
+ "quotations": [
+  {
+   "n": 1,
+   "source": null,
+   "locator": "",
+   "tex": "the source asserts $R$",
+   "kind": "self"
+  },
+  {
+   "n": 2,
+   "source": "IUT3",
+   "locator": "Cor.~3.12, proof, (iv)",
+   "tex": "to apply the bi-coricity of the units [cf.\\ Theorem 1.5, (iii), (iv)] in order to compute the \\emph{$0$-column} $\\Theta$-pilot object in terms of the arithmetic holomorphic structure of the \\emph{$1$-column}. In order to do this, one must work with units that are vertically once-shifted [i.e., lie at $(n,m-1)$] relative to the value group structures involved [i.e., which lie at $(n,m)$]",
+   "kind": "quote"
+  },
+  {
+   "n": 3,
+   "source": "IUT3",
+   "locator": "Cor.~3.12, proof, (iv)",
+   "tex": "vertical shift",
+   "kind": "quote"
+  },
+  {
+   "n": 4,
+   "source": "IUT3",
+   "locator": "Cor.~3.12, proof, (iv)",
+   "tex": "impossibility of vertical shift",
+   "kind": "quote"
+  },
+  {
+   "n": 5,
+   "source": "IUT3",
+   "locator": "Cor.~3.12, proof, (iv)",
+   "tex": "$(n,\\circ)$",
+   "kind": "quote"
+  },
+  {
+   "n": 6,
+   "source": "IUT3",
+   "locator": "Cor.~3.12, proof, (iii)",
+   "tex": "practically impossible to obtain conclusions that require one to relate both \\dots\\ simultaneously",
+   "kind": "quote"
+  },
+  {
+   "n": 7,
+   "source": "IUT3",
+   "locator": "Cor.~3.12, proof, (iv)",
+   "tex": "may be implemented only at the cost of admitting the `indeterminacy' constituted by the upper semi-compatibility of $\\Ind3$",
+   "kind": "quote"
+  },
+  {
+   "n": 8,
+   "source": "IUT3",
+   "locator": "Cor.~3.12, proof, (xi-b)",
+   "tex": "a construction of a collection of possibilities of output data contained in $({}^{0,\\circ}U^{\\mathbb Q}\\supseteq)\\ {}^{0,\\circ}U\\xrightarrow{\\ \\sim\\ } {}^{1,\\circ}U\\ (\\subseteq{}^{1,\\circ}U^{\\mathbb Q})$ --- where the isomorphism `$\\xrightarrow{\\sim}$' arises from the permutation symmetries discussed in the final portion of Theorem 3.11, (i) --- that satisfies the input prime-strip link (IPL) and simultaneous holomorphic expressibility (SHE) properties",
+   "kind": "quote"
+  },
+  {
+   "n": 9,
+   "source": "IUT3",
+   "locator": "Cor.~3.12, proof, (xi-d)",
+   "tex": "in order to rectify the vertical shift/mismatch",
+   "kind": "quote"
+  },
+  {
+   "n": 10,
+   "source": null,
+   "locator": "",
+   "tex": "arbitrary iterates of the log-link",
+   "kind": "self"
+  },
+  {
+   "n": 11,
+   "source": "IUT3",
+   "locator": "Prop.~3.5(ii)(a)",
+   "tex": "contains the images of the submodules of Galois invariants \\dots\\ of the \\emph{groups of units}",
+   "kind": "quote"
+  },
+  {
+   "n": 12,
+   "source": "IUT3",
+   "locator": "Rem.~3.10.1(i)",
+   "tex": "are subject to a somewhat more complicated `log-Kummer correspondence' \\dots\\ that revolves around `upper semi-compatibility', i.e., in a word, \\emph{one-sided inclusions, as opposed to precise equalities}",
+   "kind": "quote"
+  },
+  {
+   "n": 13,
+   "source": "IUT3",
+   "locator": "Rem.~3.10.1(i)",
+   "tex": "the imprecise nature of such one-sided inclusions is incompatible with the construction of",
+   "kind": "quote"
+  },
+  {
+   "n": 14,
+   "source": "IUT3",
+   "locator": "Rem.~3.10.1(i)",
+   "tex": "in particular, one cannot construct log-link-compatible isomorphisms of Frobenioids",
+   "kind": "quote"
+  },
+  {
+   "n": 15,
+   "source": "IUT3",
+   "locator": "Rem.~3.10.1(iii)",
+   "tex": "i.e., local fractional ideals",
+   "kind": "quote"
+  },
+  {
+   "n": 16,
+   "source": "IUT3",
+   "locator": "Rem.~3.10.1(iii)",
+   "tex": "by contrast",
+   "kind": "quote"
+  },
+  {
+   "n": 17,
+   "source": "IUT3",
+   "locator": "Rem.~3.10.1(iii)",
+   "tex": "well-suited to the computation of the étale-transport indeterminacies",
+   "kind": "quote"
+  },
+  {
+   "n": 18,
+   "source": "IUT3",
+   "locator": "Rem.~3.10.1(iii)",
+   "tex": "various \\emph{distortions} of these local modules arise as a result of both \\dots\\ the local `upper semi-compatibility' of Proposition 3.5, (ii), and \\dots\\ the \\emph{discrepancy} between local holomorphic and mono-analytic integral structures \\dots, one may nevertheless compute --- i.e., if one takes into account the various distortions that occur, `estimate' --- the global arithmetic degrees of objects of",
+   "kind": "quote"
+  },
+  {
+   "n": 19,
+   "source": "IUT3",
+   "locator": "Rem.~3.10.1(iii)",
+   "tex": "by computing log-volumes \\dots, which are bi-coric",
+   "kind": "quote"
+  },
+  {
+   "n": 20,
+   "source": "IUT3",
+   "locator": "Rem.~3.10.1(iii)",
+   "tex": "\\emph{This computability is precisely the topic of Corollary 3.12 below.}",
+   "kind": "quote"
+  },
+  {
+   "n": 21,
+   "source": "IUT3",
+   "locator": "Thm.~3.11(ii)",
+   "tex": "[precisely!] compatible",
+   "kind": "quote"
+  },
+  {
+   "n": 22,
+   "source": "IUT3",
+   "locator": "Thm.~3.11(ii)",
+   "tex": "MOD",
+   "kind": "quote"
+  },
+  {
+   "n": 23,
+   "source": "IUT3",
+   "locator": "Thm.~3.11(ii)",
+   "tex": "[but \\emph{not} between the isomorphisms that involve the subscript ``mod",
+   "kind": "quote",
+   "note": "the source nests a quotation inside this one; the entry stops at the inner closing quotation mark, and the ellipsis in the paper marks it"
+  },
+  {
+   "n": 24,
+   "source": "IUT3",
+   "locator": "Rem.~3.9.5(i)",
+   "tex": "is relatively compact",
+   "kind": "quote"
+  },
+  {
+   "n": 25,
+   "source": "IUT3",
+   "locator": "Rem.~3.9.5(i)",
+   "tex": "\\emph{If} $^\\alpha U$ \\dots\\ \\emph{is not relatively compact, then we define the holomorphic hull of} $^\\alpha U$ \\dots\\ \\emph{to be} $I^{\\mathbb Q}(^\\alpha\\mathcal F_{v_{\\mathbb Q}})$",
+   "kind": "quote"
+  },
+  {
+   "n": 26,
+   "source": null,
+   "locator": "",
+   "tex": "only when",
+   "kind": "self"
+  },
+  {
+   "n": 27,
+   "source": null,
+   "locator": "",
+   "tex": "carries no information at all",
+   "kind": "self"
+  },
+  {
+   "n": 28,
+   "source": "IUT3",
+   "locator": "Rem.~3.9.6",
+   "tex": "amounts to a coincidence of log-volumes --- \\emph{not of arbitrary regions} that appear in the domain and codomain of the log-link, but rather --- of certain types of `\\emph{sufficiently small}' regions",
+   "kind": "quote"
+  },
+  {
+   "n": 29,
+   "source": "IUT3",
+   "locator": "Def.~1.1(i)",
+   "tex": "the image in $\\Psi^{\\sim}_{{}^\\dagger\\mathcal F_v}$ of the submonoid of $G_v({}^\\dagger\\Pi_v)$-invariants of $\\Psi^{\\times}_{{}^\\dagger\\mathcal F_v}$",
+   "kind": "quote"
+  },
+  {
+   "n": 30,
+   "source": "IUT3",
+   "locator": "Def.~1.1(i)",
+   "tex": "constitutes a \\emph{compact} topological module",
+   "kind": "quote"
+  },
+  {
+   "n": 31,
+   "source": "MT",
+   "locator": "Thm.~F, and Thm.~7.4",
+   "tex": "$\\Ind2$ is relatively small",
+   "kind": "quote"
+  },
+  {
+   "n": 32,
+   "source": "IUT3",
+   "locator": "Thm.~3.11(i)",
+   "tex": "the indeterminacies induced by the action of independent copies of $\\mathrm{Ism}$ \\dots\\ on each of the direct summands of the $j+1$ factors",
+   "kind": "quote"
+  },
+  {
+   "n": 33,
+   "source": "MT",
+   "locator": "Introduction, before Thm.~F",
+   "tex": "$\\Ind2$ consists of these isometries",
+   "kind": "quote"
+  },
+  {
+   "n": 34,
+   "source": "MT",
+   "locator": "Introduction, before Thm.~F",
+   "tex": "Theorem F implies that $\\Ind2$ is relatively small",
+   "kind": "quote"
+  },
+  {
+   "n": 35,
+   "source": "IUT1",
+   "locator": "Prop.~6.9(i)",
+   "tex": "there are precisely $n$ possibilities",
+   "kind": "quote"
+  },
+  {
+   "n": 36,
+   "source": "IUT4",
+   "locator": "p.~23",
+   "tex": "is equal to",
+   "kind": "quote"
+  },
+  {
+   "n": 37,
+   "source": "IUT4",
+   "locator": "Thm.~1.10, proof, Step (v), p.~29",
+   "tex": "it remains to compute the average over $j\\in\\mathbb F_\\ell^{*}$. By averaging over $j\\in\\{1,\\dots,\\ell^{*}=\\frac{\\ell-1}2\\}$ and applying (E1), (E2), we obtain the `procession-normalized upper bound'\\,",
+   "kind": "quote"
+  },
+  {
+   "n": 38,
+   "source": "DH",
+   "locator": "Rem.~4.10.1",
+   "tex": "the order of operations and formulas for the indeterminacies do not appear in",
+   "kind": "quote"
+  },
+  {
+   "n": 39,
+   "source": "DH",
+   "locator": "\\S4.9",
+   "tex": "we assume a bound on $\\mathcal O_L(-P_\\Theta)^{\\Ind3}$",
+   "kind": "quote"
+  },
+  {
+   "n": 40,
+   "source": "DH",
+   "locator": "\\S4",
+   "tex": "a formula for an upper bound on the $\\Ind3$ indeterminacies",
+   "kind": "quote"
+  }
+ ]
+}

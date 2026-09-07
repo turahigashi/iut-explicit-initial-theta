@@ -1,0 +1,819 @@
+\pdfoutput=1
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{hidelinks,
+  pdftitle={Split bad primes and the tuple structure of IUT: a fourth report},
+  pdfauthor={Toshihisa Urahigashi}}
+
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}[proposition]{Corollary}
+\newtheorem{lemma}[proposition]{Lemma}
+\theoremstyle{definition}
+\newtheorem{question}{Question}
+\newtheorem{remark}{Remark}
+\newtheorem{program}{Programme}
+
+\newcommand{\Fmod}{F_{\mathrm{mod}}}
+\newcommand{\Vmod}{\mathbb{V}_{\mathrm{mod}}}
+\newcommand{\Vbad}{\mathbb{V}^{\mathrm{bad}}}
+\newcommand{\Vgood}{\mathbb{V}^{\mathrm{good}}}
+\newcommand{\VV}{\mathbb{V}}
+\newcommand{\Ind}[1]{\textup{(Ind#1)}}
+\newcommand{\SA}{\textup{(SA)}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\Norm}{\operatorname{N}}
+
+\title{Split bad primes and the tuple structure of\\
+inter-universal Teichm\"uller theory\\
+\large A fourth report: what the source states, and what follows}
+\author{Toshihisa Urahigashi\\
+\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
+\date{Version 1.0.0 --- 8 September 2026\\[3pt]
+\small ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}\\[3pt]
+\small DOI \href{https://doi.org/10.5281/zenodo.22648945}{10.5281/zenodo.22648945}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report collects statements about inter-universal Teichm\"uller theory that
+are either quoted from the source or proved outright, together with the
+computations that accompany them.  It records: that a tensor packet admits
+place tuples of mixed reduction type, and that selecting only nonsplit bad
+primes does not remove them --- over $\mathbb Q(\sqrt5)$ a congruence family has
+every odd bad prime split with exactly one bad place, and for a separate
+explicit curve the nonsplit selection retains between $1.23\%$ and $1.24\%$ of
+the selected Tate-divisor degree; that the general-stage parameter is
+$\lambda=j^2\ord_p(\underline{\underline q})$ and that when every $e_{v_i}\le p-2$ ---
+the condition under which Step (v) of \cite{IUT4} leaves a place out of the set $I^*$
+it defines --- \cite[Prop.~1.4(iii)]{IUT4} yields the stage margin
+$j^2s-(j+2)$; where the source places the evaluation, quoted verbatim from the
+proof of \cite[Cor.~3.12]{IUT3}; two constraints on the indeterminacies, namely
+that $\Ind2$ acts by a unit scalar and therefore leaves the generated hull
+unchanged, and that labels are not recoverable from a raw procession; and the
+identity between the two forms in which \cite[Thm.~1.10]{IUT4} prints the
+procession-normalized coefficient, which is $\ell(\ell+1)/12$ times the stage-one
+coefficient --- a ratio that no statement below depends on, Proposition~\ref{p:chi}
+being the statement about it.  Every assertion is quoted or proved,
+the statement about $\Ind2$ is for a fixed \emph{nonarchimedean} tuple and the one
+about labels for a fixed
+stage, and no verdict on the correctness of the theory or on $abc$ is asserted.
+\end{abstract}
+
+\section{Scope and status of the statements}\label{s:scope}
+
+This report accompanies the explicit initial-data construction in
+\cite[Thm.~1]{First}, whose conditions are verified there; the expanded
+verification is \cite[\S\S2--5]{Firstfull}.  That construction uses
+\[
+ F_0=\mathbb Q(\sqrt5),\quad \pi=16+3\sqrt5,\quad a=\pi^{29},\quad
+ E_0:y^2=x(x-1)(x-a),\quad \ell=7,
+\]
+\[
+ F=F_0(i,E_0[15]),\qquad K=F(E_0[7])=F_0(i,E_0[105]).
+\]
+All multiplicative places outside $2,7$ are selected as bad.  The global
+cover, compatible section and cusp, and all selected local orders are
+verified in the cited construction, with the warrants separated there: the geometric
+constructions are proved and \emph{are not verified by any program}, while the
+seventh-power-free clause that gives the selected orders at \emph{all} places is
+certified by the exhaustive sieve of \cite[\S9]{First} together with the norm
+identity.  The field of moduli is $F_0$; the
+selected places above $211$ are one good place and one bad place, with
+$e_{\mathrm g}=1$, $e_{\mathrm b}=105$ and
+$\ord_{211}(\underline{\underline q}_{\mathrm b})=29/7$.
+
+We use \textbf{[S]} for a cited source statement or a report of an author's
+claim, \textbf{[P]} for a deduction with proof or a reproducible computation,
+and \textbf{[H]} for an unproved identification or source reading.
+Reporting a claim as [S] does not certify its truth.
+\emph{Every assertion below is either quoted from a source or proved.}  We do not
+claim more than that.  In particular we do not claim that no reading is involved
+anywhere: writing $S(R)$ for ``the source asserts $R$'', $S(R)$ and $R$ are different
+statements, and $S(R)\not\Rightarrow R$.  Where a consequence is drawn from a
+quotation, what is proved is either a statement about the text or a mathematical
+statement whose unproved inputs are cited theorems, named as \textbf{[S]} where they
+are used --- Propositions \ref{p:ind2hull} and \ref{p:allsplit} are of the second kind.
+Two scopes are stated
+explicitly rather than left to the reader: Proposition \ref{p:ind2hull} is about a
+\emph{fixed} nonarchimedean tuple, and the procession argument of \S\ref{s:indets} is
+about a \emph{fixed} stage.  An earlier version guaranteed that nothing here was
+conditional on any reading; that guarantee could not
+stand as written (2026-09-08).
+The source versions are specified in the bibliography.  In particular, a
+reference to Step (v) means the proof of Theorem 1.10 of \cite{IUT4}.
+
+
+
+\section{Place tuples and mixed reduction}\label{s:mech}
+
+\begin{proposition}[\textup{[P]}]\label{p:dichotomy}
+For a rational prime $p$ let $\VV_p=\{v\in\VV:v\mid p\}$ and let $A$ be a
+label set with $|A|\ge2$.  The tuple set of the local tensor packet is
+$\VV_p^A$.  Nonconstant place tuples exist if and only if $|\VV_p|\ge2$,
+equivalently if $\Fmod$ has at least two places above $p$.
+Tuples containing both chosen-good and chosen-bad places exist if and only
+if both kinds of places occur in $\VV_p$.
+\end{proposition}
+
+\begin{proof}
+By \cite[Definition 3.1(e)]{IUT1}, the section $\VV\to\Vmod$ restricts to a
+bijection above each $p$.  Distributing the tensor product of direct sums in
+\cite[Propositions 3.1, 3.2]{IUT3} gives
+\[
+ \bigotimes_{\alpha\in A}\bigoplus_{v\in\VV_p}V_{\alpha,v}
+ =\bigoplus_{t\in\VV_p^A}\bigotimes_{\alpha\in A}V_{\alpha,t(\alpha)}.
+\]
+Each assertion now follows by choosing the values of a function $t:A\to\VV_p$.
+No reduction hypothesis is needed for nonconstancy.
+\end{proof}
+
+Thus the mechanism involving mixed place tuples is absent when
+$\Fmod=\mathbb Q$.  Over a quadratic field a nonsplit rational prime has a
+single place, while a split prime has two; the split case can still have two
+good places or two bad places.  Splitting alone does not supply mixed reduction.
+We make no claim here about the full scope of the effective results in
+\cite{MFHMP}.  Under Theorem 1.10 of \cite{IUT4}, chosen and actual reduction
+types agree outside $2\ell$, as shown next.
+
+
+\section{What changing the selected bad set can accomplish}\label{s:repair}
+
+\begin{proposition}[the selection constraint; \textup{[P]}]\label{p:selection}
+For a fixed initial datum satisfying the additional good-reduction hypothesis
+of \cite[Theorem 1.10]{IUT4}, the chosen bad places outside $2\ell$ are exactly
+the actual multiplicative places there.  Changing the chosen set alone cannot
+eliminate a mixed profile at such a prime while retaining those hypotheses.
+\end{proposition}
+
+\begin{proof}
+Definition 3.1(b) of \cite{IUT1} permits a nonempty subset of odd multiplicative
+places; in particular it does not permit an actual-good place to be selected
+as bad.  The extra hypothesis at the opening of \cite[Theorem 1.10, p.~22]{IUT4}
+requires actual good reduction at each chosen-good place outside $2\ell$.
+It therefore prohibits leaving an actual-bad place outside $2\ell$ unselected.
+These two inclusions give the equality.  The distinction between the freedom
+in the definition and the hypotheses for applying the theorem is essential.
+\end{proof}
+
+\begin{proposition}[a family with no odd nonsplit bad place; \textup{[P]}]
+\label{p:allsplit}
+Let $a=A-\sqrt5$, where $A\in\mathbb Z$, $A\equiv2\pmod5$ and
+$A\equiv2\pmod{19}$.  For the Legendre curve over $F_0=\mathbb Q(\sqrt5)$,
+every odd rational prime below a bad place splits in $F_0$, with exactly one
+bad place above it.  The set of odd nonsplit bad places is empty.
+\end{proposition}
+
+\begin{proof}
+The integral Legendre equation has
+$\Delta=16a^2(a-1)^2$ and $c_4=16(a^2-a+1)$.  At an odd place it has good
+reduction when $a\not\equiv0,1$, and multiplicative reduction when
+$a\equiv0$ or $1$, since then $c_4$ is a unit.
+For inert $p$, $\sqrt5\notin\mathbb F_p$, so $A-\sqrt5$ cannot be $0$ or $1$
+in the residue field.  At the ramified prime $5$, its residue is $2$.
+Now suppose that both places over a split odd $p$ were bad.  For a nonzero
+root $s$ of $s^2=5$ in $\mathbb F_p$, the distinct values $A-s,A+s$ would
+have to be $0,1$ in some order.  Hence $2A=1$ and $4s^2=1$ in
+$\mathbb F_p$.  Thus $p\mid19$ and $A=10\pmod{19}$, contrary to the
+hypothesis.  This proves the assertion.
+\end{proof}
+
+The separate Hensel/CRT existence family of \cite[Prop.~9.4]{Firstfull}
+satisfies these congruences and has a bad place at $211$.  For its admissible
+members, selecting only nonsplit odd bad places would select the empty set,
+contrary even to the nonemptiness clause in \cite[Definition 3.1]{IUT1}.
+Proposition~\ref{p:allsplit} is a statement about reduction for every stated
+$A$; the additional initial-data conditions for the admissible subfamily
+are not part of that proposition: \cite[Prop.~9.4]{Firstfull} supplies the arithmetic
+--- the orders, the congruences and the seventh-power-free norm --- while
+initial-$\Theta$-datum status for the family is claimed in the unnumbered paragraph
+following it, on the strength of that draft's \S4, which we do not certify here.
+We do not assert those
+conditions for arbitrary powers $\pi^n$ or arbitrary $A$.
+
+\subsection*{A different example: the numerical cost for $\pi^{29}$}
+
+The following numbers concern $a=\pi^{29}=A_{29}+B_{29}\sqrt5$, not the
+family $A-\sqrt5$.  Exact integer arithmetic gives
+\[
+ \gcd(A_{29},B_{29})=1,\qquad \gcd(A_{29}-1,B_{29})=3,
+\]
+\[
+ R=\Norm(1-a)
+ =25362449986390845063221249700759698691829298140087354726503101384580,
+\]
+and $v_2(R)=2$, $v_3(R)=2$, $v_5(R)=1$, $v_7(R)=0$.
+At an inert odd $p$, the condition $a=0$ in the residue field requires
+$p\mid A_{29},B_{29}$, which is impossible; the condition $a=1$ requires
+$p\mid A_{29}-1,B_{29}$, leaving only $p=3$.  This prime is indeed inert and
+bad.  At $5$, the residue of $a$ is $1$, giving the other nonsplit bad prime.
+All other odd bad primes split.  Both places of a split prime cannot have
+$a=0$ or both have $a=1$, by the gcds above.  If they had respectively
+$a=0,1$, the prime would divide $\Norm(a)=211^{29}$, but the two residues
+of $a$ at $211$ are $0,26$.  Thus these split bad primes have mixed reduction.
+
+Define $H_{\rm all}$ as the degree-normalized Tate-divisor contribution from
+bad places outside $2,7$, and $H_{\rm ns}$ as its nonsplit part, using
+$1/[F_0:\mathbb Q]=1/2$.  The Tate orders at odd bad places are twice the
+discrete orders of $a$ or $a-1$, so
+\begin{equation}\label{e:heightcost}
+ H_{\rm all}=29\log211+\log(R/4),\qquad H_{\rm ns}=2\log3+\log5=\log45.
+\end{equation}
+In the ramified case $5$, the residue degree is $1$ and the discrete order of
+$a-1$ is $1$; the factor $1/2$ cancels the Tate order $2$, giving $\log5$.
+The inert place at $3$ has residue degree $2$ and Tate order $2$, giving
+$2\log3$ after normalization.  These are contributions to a selected divisor,
+not full Weil heights.
+The independent rational-series certificate in
+\texttt{scripts/check\_round3.py} proves
+\[
+\begin{split}
+309.021477380491&<H_{\rm all}<309.021477380492,\\
+3.806662489770&<H_{\rm ns}<3.806662489771,\\
+0.012318439876860&<H_{\rm ns}/H_{\rm all}<0.012318439876861.
+\end{split}
+\]
+Discarding the split part would therefore discard more than $98.76\%$ of
+this selected term, even if that operation were permitted.  In the
+$A-\sqrt5$ family of Proposition~\ref{p:allsplit}, the corresponding
+$H_{\rm ns}$ is instead zero.  The two statements must not be conflated.
+
+
+\section{The logarithm lattice and the corrected stage margin}\label{s:hull}
+
+\begin{lemma}[\textup{[P]}]\label{l:hull}
+Let $p>2$ and $K_i/\mathbb Q_p$ be finite extensions with $e_i\le p-2$,
+$0\le i\le j$.  In the tensor algebra put
+$R_t=\bigotimes_{i,\mathbb Z_p}\mathcal O_{K_i}$,
+$L_t=\bigotimes_{i,\mathbb Z_p}\log\mathcal O_{K_i}^\times$, and let
+$\widetilde O_t$ be the product of integer rings of its field components.
+For its ideal hull and degree-normalized logarithmic volume,
+\[
+ C_t(L_t)=\Bigl(\bigotimes_i\varpi_i\Bigr)\widetilde O_t,
+ \qquad \mu^{\log}(C_t(L_t))=-\sum_i e_i^{-1}\log p,
+\]
+where $\varpi_i$ is a uniformizer.  If $L_t\subseteq C_t(U_t)$ then
+$\mu^{\log}(C_t(U_t))\ge-\sum_i e_i^{-1}\log p$.
+\end{lemma}
+
+\begin{proof}
+Under the stated bound, \cite[Proposition 1.2(i)]{IUT4} gives
+$\log\mathcal O_{K_i}^\times=\mathfrak m_i=\varpi_i\mathcal O_{K_i}$.
+Thus $L_t=(\bigotimes_i\varpi_i)R_t$ and its ideal hull has the displayed
+form.  Each embedding of the tensor algebra into a field component assigns
+valuation $\sum_i1/e_i$ to the generator, with $\ord_p(p)=1$.
+The volume convention of \cite[Proposition 1.4(i)]{IUT4} yields the equality.
+The inequality follows by monotonicity of the hull and its logarithmic volume.
+No assertion that $L_t$ belongs to $U_t$ before taking the hull is required.
+\end{proof}
+
+Odd residue characteristic and tameness alone do not suffice.  For
+$K=\mathbb Q_3(\zeta_3)$, $e=2=p-1$ is tame.  Put
+$\varpi=\zeta_3-1$, $U_r=1+\mathfrak m^r$.
+The quotient $U_1/U_2$ has order $3$ and is represented by $\mu_3$, so
+$U_1=\mu_3U_2$.  The logarithm kills $\mu_3$, and logarithm and exponential
+are inverse on $U_2$ and $\mathfrak m^2$ since their normalized valuations
+are greater than $1/(p-1)$.  The remaining residue units are torsion.
+Consequently $\log\mathcal O_K^\times=\mathfrak m^2\ne\mathfrak m$.
+This also explains why exceeding $p-2$ should not be called the wild case:
+that range contains tame extensions as well.
+
+\begin{proposition}[the numerical margin; \textup{[P]}]\label{p:margin}
+Under the hypotheses of Lemma~\ref{l:hull}, let the distinguished slot $j$
+be bad and put $s=\ord_p(\underline{\underline q}_{t_j})$.
+Step (v) of \cite[Theorem 1.10]{IUT4} uses $\lambda=j^2s$.
+If the target hull contains $L_t$, its lower bound from the lemma exceeds
+the expression $(-\lambda+d_I+1)\log p$ by
+\[
+ \bigl(j^2s-(j+2)\bigr)\log p.
+\]
+The difference is positive exactly when
+\begin{equation}\label{e:threshold}
+ j^2s>j+2,\qquad\text{equivalently}\qquad
+ \ord_p(q_{t_j})>\frac{2\ell(j+2)}{j^2}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Here every extension is tame and $d_I=(j+1)-\sum_i1/e_i$.
+The choice $I^*=\varnothing$ is admissible in
+\cite[Proposition 1.4(iii)]{IUT4}.  Subtracting its numerical expression from
+the lemma's bound gives
+$-\sum_i1/e_i+j^2s-d_I-1=j^2s-(j+2)$.
+The root is $q^{1/(2\ell)}$, proving the equivalent form.
+\end{proof}
+
+The proposition is a statement about the expression of
+\cite[Prop.~1.4(iii)]{IUT4} at a given stage; whether that expression governs
+the actual comparison region is a separate question, not decided here.  In the
+explicit $\pi^{29}$ example,
+$s=29/7$.  At $j=1$, target $(\mathrm g,\mathrm b)$ gives upper expression
+$-226/105$, seed-hull volume $-106/105$ and margin $8/7$, after division by
+$\log211$.  At $j=2$, source $(\mathrm b,\mathrm b,\mathrm g)$ can be
+transported to target $(\mathrm b,\mathrm g,\mathrm b)$ by $(1\ 2)$,
+fixing label $0$.  The corresponding values are
+\[
+\begin{aligned}
+ &\lambda=116/7,\qquad d_I=208/105,\qquad a_I=107/105,\\
+ &\text{upper}=-1427/105,\quad\text{seed}=-107/105,\quad
+   \text{margin}=88/7.
+\end{aligned}
+\]
+This checks a conditional use of an upper expression; it does not refute
+Proposition 1.4 for the inputs covered by its hypotheses.
+
+\subsection*{Which permutations matter}
+
+For an admitted group $G\le\operatorname{Sym}(\{0,\ldots,j\})$, a target
+tuple $t$ has a preimage with good distinguished slot precisely when
+$t_k$ is good for some $k\in G\cdot j$.  Indeed, for
+$(\sigma t)_i=t_{\sigma^{-1}i}$, one has
+$(\sigma^{-1}t)_j=t_{\sigma j}$.
+Thus protecting label $0$ does not block the $j=2$ example, but fixing $j$
+does block this particular good-slot route when $t_j$ is bad.  A group may
+fix $j$ and act nontrivially on other slots.  Our example therefore does not
+require banning all nontrivial permutations as the only possible repair.
+Nor does this orbit calculation by itself establish admission of any
+permutation by the source or membership of its output in the actual union.
+
+
+\section{Where the evaluation lives: two columns}\label{s:columns}
+
+\textup{[S]} \cite[Cor.~3.12, proof, (iv)]{IUT3} states the aim of the passage:
+\begin{quote}
+``to apply the bi-coricity of the units [cf.\ Theorem 1.5, (iii), (iv)] in order to
+compute the \emph{$0$-column} $\Theta$-pilot object in terms of the arithmetic
+holomorphic structure of the \emph{$1$-column}.  In order to do this, one must work
+with units that are vertically once-shifted [i.e., lie at $(n,m-1)$] relative to the
+value group structures involved [i.e., which lie at $(n,m)$]''
+\end{quote}
+and resolves the conflict between ``vertical shift'' and ``impossibility of vertical
+shift'' by working, on the $0$-column, with structures invariant under
+$(0,m)\mapsto(0,m+1)$ --- which is what ``$(n,\circ)$'' denotes.  Subitem (iii)
+explains why a single $\Theta^{\times\mu}_{\mathrm{LGP}}$-link is used: relating
+units through one link and value groups through another would, the source says,
+render it ``practically impossible to obtain conclusions that require one to relate
+both \dots\ simultaneously'' --- that is subitem (iii).  \emph{The price of the
+solution adopted is recorded separately, in subitem (iv)}: it ``may be implemented only
+at the cost of admitting the `indeterminacy' constituted by the upper
+semi-compatibility of $\Ind3$''.
+
+\textup{[S]} Subitem (xi-b) places the output data:
+\begin{quote}
+``a construction of a collection of possibilities of output data contained in
+$({}^{0,\circ}U^{\mathbb Q}\supseteq)\ {}^{0,\circ}U\xrightarrow{\ \sim\ }
+{}^{1,\circ}U\ (\subseteq{}^{1,\circ}U^{\mathbb Q})$ --- where the isomorphism
+`$\xrightarrow{\sim}$' arises from the permutation symmetries discussed in the final
+portion of Theorem 3.11, (i) --- that satisfies the input prime-strip link (IPL) and
+simultaneous holomorphic expressibility (SHE) properties''
+\end{quote}
+Subitem (xi-c) compares in the $1$-column, the collection being linked by (IPL), via
+isomorphisms of $\mathcal F^\Vdash$-prime-strips, to the log-Kummer representation of
+the $q$-pilot object at $(1,0)$; and (xi-d) says that the log-Kummer correspondence
+must be applied ``in order to rectify the vertical shift/mismatch'' between the unit
+portion of ${}^{1,0}\mathcal F^{\Vdash\times\mu}$ and the log-shells arising from it.
+\emph{The iterates themselves are elsewhere}: \cite[Prop.~3.5(ii)(a)(2)]{IUT3} carries
+the $m'$-th iterates for $m'\ge1$.  An earlier version of this paragraph attributed
+``arbitrary iterates of the log-link'' to (xi-d); that phrase occurs nowhere in
+(xi-b)--(xi-f), and joining the two places was a reading, not a quotation (external
+review, 2026-09-08).
+
+\textup{[P]} Three things follow from the quoted words themselves, without settling
+what the passage establishes about the construction.
+The comparison is not confined to one column: the possibilities lie in
+${}^{0,\circ}U\xrightarrow{\sim}{}^{1,\circ}U$ and the comparison is made in the
+$1$-column.  The units and the value groups sit at different vertical positions,
+$(n,m-1)$ and $(n,m)$.  And the isomorphism identifying the two columns is
+a \emph{poly}-isomorphism furnished by the permutation symmetries of
+\cite[Thm.~3.11(i)]{IUT3} --- a collection of isomorphisms, so no single map is
+selected here.
+
+\begin{remark}[five things that may not be inferred]
+\textup{[P]} A point lying in a log-shell is not thereby an output of the
+$\Theta$-pilot.  The relevant statement, \cite[Prop.~3.5(ii)(a)]{IUT3}, is entitled
+\emph{Upper Semi-compatibility} and asserts that the module in question ``contains
+the images of the submodules of Galois invariants \dots\ of the \emph{groups of
+units}'' --- an inclusion in one direction, about units, not an identification with
+the $\Theta$-pilot output.  It also lists \emph{two} branches through which those
+images arise: (1) the tensor product of the Kummer isomorphisms, and (2) their
+pre-composite with the $m$-th iterates of the log-links \emph{for $m\ge1$}.  So the
+zero-iterate branch is present, and one may not treat it as absent.
+
+\textup{[S]} The source itself names the cost of the one-sided form.
+\cite[Rem.~3.10.1(i)]{IUT3} says that the local monoids entering
+$(^\dagger\mathcal F_{\mathrm{mod}})^\alpha$ ``are subject to a somewhat more
+complicated `log-Kummer correspondence' \dots\ that revolves around `upper
+semi-compatibility', i.e., in a word, \emph{one-sided inclusions, as opposed to
+precise equalities}'', that ``the imprecise nature of such one-sided inclusions is
+incompatible with the construction of'' that object, and that ``in particular, one
+cannot construct log-link-compatible isomorphisms of Frobenioids'' for it --- in
+contrast to $\mathcal F_{\mathrm{MOD}}$, for which the compatibility is precise.
+
+\textup{[S]} \emph{The source states the counterpart in the same remark, and it must
+be read with the above.}  \cite[Rem.~3.10.1(iii)]{IUT3} says that the local modules
+of $\mathcal F_{\mathrm{mod}}$ --- ``i.e., local fractional ideals'' --- are, ``by
+contrast'', ``well-suited to the computation of the étale-transport
+indeterminacies''.  \emph{The same sentence begins by saying the opposite about the
+other indeterminacy}: the additive nature of those modules renders $\Fmod$
+ill-suited to the computation of Kummer-detachment indeterminacies.  It continues that
+although ``various \emph{distortions} of these local
+modules arise as a result of both \dots\ the local `upper semi-compatibility' of
+Proposition 3.5, (ii), and \dots\ the \emph{discrepancy} between local holomorphic
+and mono-analytic integral structures \dots, one may nevertheless compute --- i.e.,
+if one takes into account the various distortions that occur, `estimate' --- the
+global arithmetic degrees of objects of'' $\mathcal F_{\mathrm{mod}}$ ``by computing
+log-volumes \dots, which are bi-coric''.  It then states: ``\emph{This computability
+is precisely the topic of Corollary 3.12 below.}''  Consistently,
+\cite[Thm.~3.11(ii)]{IUT3} records that the tensor-packet isomorphisms of its
+subitem (a) --- not the Frobenioid isomorphisms of the preceding paragraph --- are
+``[precisely!] compatible'' with the log-volumes, while the mutual compatibility of
+the Frobenioid isomorphisms holds for the subscript ``MOD'' ``[but \emph{not}
+between the isomorphisms that involve the subscript ``mod''! \dots]''.
+
+\textup{[P]} So the one-sided inclusions above are \emph{acknowledged by the source}:
+it locates them, names them as one of two sources of distortion, and asserts
+computability at the level of log-volumes rather than at the level of Frobenioid
+isomorphisms.  \emph{Whether that treatment is sufficient is a different question,
+and not one decided here}; what is established is that pointing at the inclusions is
+not by itself the exhibition of something the source has overlooked.  What the quoted passages do establish is where an
+argument may and may not read an equality: at the level of the local modules the
+relation is an inclusion, and a claim phrased as an identification of regions there
+is not licensed by these statements.
+
+\textup{[P]} Isomorphism class and degree do not determine a local representative.
+In the category of \cite[Ex.~3.6(ii)]{IUT3} an object is a collection
+$J=\{J_v\}_{v\in\mathbb V}$ of fractional ideals and, for $f\in F_{\mathrm{mod}}^\times$,
+$f\cdot J=\{f\cdot J_v\}_v$ is again an object; the product formula makes the global
+degree of $f\cdot J$ equal to that of $J$.  Taking $f=211^{-n}$ and $t$ a place above
+$211$ gives $\bigcup_{n\ge0}211^{-n}J_t=K_t$.  So a fixed isomorphism class together
+with a fixed global degree leaves the local representative unbounded.  The size of
+the effect is exactly a height:
+
+\begin{proposition}\label{p:reprheight}
+\textup{[P]} Let $J=\{J_v\}$ be a fractional-ideal presentation of an arithmetic line
+bundle over $F_0$ and $b\in F_0^\times$, so that $J$ and $bJ$ present the same bundle.
+Write $E$ for the normalized global log-volume and $C(-)$ for the place-wise hull.
+Then $E(bJ)=E(J)$, while
+\[
+ E\bigl(C(J\cup bJ)\bigr)-E(J)
+ =\frac1{[F_0:\mathbb Q]}\sum_v n_v\log\max(1,|b|_v)=h(b),
+\]
+the absolute logarithmic Weil height of $b$.  For $b=211^{-n}$ over
+$F_0=\mathbb Q(\sqrt5)$ this is $n\log211$.
+\end{proposition}
+
+\begin{proof}
+At a finite place the two fractional ideals are comparable by inclusion and the hull
+is the larger; at an infinite place they are balls with the same centre and the hull
+is the larger.  So the local increment over $J_v$ is $\log\max(1,|b|_v)$, and the
+weighted sum is $h(b)$.  The difference of the individual valuations is
+$\sum_vn_v\log|b|_v/[F_0:\mathbb Q]=0$ by the product formula.  For $b=211^{-n}$ the
+two places above $211$ each contribute $n\log211$ with weight $\tfrac12$ and the two
+real places contribute $0$.
+\end{proof}
+
+\textup{[S]} \emph{The source fixes this by a definition, and says what happens
+without it.}  \cite[Rem.~3.9.5(i)]{IUT3} defines the holomorphic hull \emph{in two
+branches}, for a region already assumed to contain a relatively compact subset of
+log-volume $>-\infty$: when the region ``is relatively compact'' the hull is the
+smallest set of the form $\lambda\cdot\mathcal O$ containing it, with the components
+of $\lambda$ nonzero; and otherwise --- ``\emph{If} $^\alpha U$ \dots\ \emph{is not
+relatively compact, then we define the holomorphic hull of} $^\alpha U$ \dots\
+\emph{to be} $I^{\mathbb Q}(^\alpha\mathcal F_{v_{\mathbb Q}})$'' --- it is the whole
+ambient object.  \emph{The standing hypothesis is not decoration}: without it there
+need be no smallest containing $\lambda\cdot\mathcal O$ at all, since
+$U=\{0\}\subset\mathbb{Q}_p$ is compact and lies in every $p^{n}\mathbb{Z}_p$.
+\textup{[P]} So relative compactness is not a convenience: in the second branch the
+hull is still defined, but it gives no finite upper bound on the log-volume.  An
+earlier version said the hull was defined ``only when'' the region is relatively
+compact and that it then ``carries no information at all''; both overstated the
+source.
+
+\textup{[P]} \emph{The scalar value of a hull does not determine the value of the
+transported hull.}  Work inside the good completion $K_{\mathrm g}$ of the datum of
+\cite{Firstfull}.  \emph{That completion is unramified of degree $24$ over
+$\mathbb{Q}_{211}$}, which we verify here rather than cite: $211$ splits in $F_0$, and
+at the good place $\sqrt5\equiv146$, so $a=\pi^{29}\equiv26$; the reduced curve
+$y^2=x(x-1)(x-26)$ over $\mathbb F_{211}$ has $a_{211}=24$ and $188$ points.  Since
+$105$ is invertible there, N\'eron--Ogg--Shafarevich makes $K_{\mathrm g}/\mathbb Q_{211}$
+unramified, of degree the order of Frobenius.  That order is the order of the companion
+matrix because $X^2-24X+211$ is separable at each of $3,5,7$ --- its discriminant $-268$
+is $2,2,5$ there --- so Frobenius is conjugate to it rather than scalar or unipotent.
+The companion matrix of
+$X^2-24X+211$ has order $4$ on $E[3]$, $3$ on $E[5]$ and $8$ on $E[7]$, hence $24$ on
+$E[105]$, and $211\equiv3\pmod 4$ makes adjoining $i$ cost $2$, with
+$\operatorname{lcm}(24,2)=24$.  \emph{The coincidence with $a_{211}=24$ is accidental.}
+So
+$e_{\mathrm g}=1<p-1$ and $\exp,\log$ are mutually inverse on $1+p\mathcal O$.
+Normalize $\mu(\mathcal O)=1$ and write $\nu(U)=\tfrac1{24}\log\mu(U)$,
+$E(U)=\nu(C(U))$ with $C$ the hull.
+
+\begin{proposition}\label{p:nodescent}
+Put $U_r=1+p^r\mathcal O$ for $r\ge1$.  Then $E(U_r)=0$ for every $r$, while
+$E(\log U_r)=-r\log p$.  Consequently there is no function
+$g:\mathbb{R}\to\mathbb{R}$ with $E(\log U)=g(E(U))$ for all these $U$ --- with or
+without any linearity assumption.  Adding the raw volume does not repair this:
+$U=1+p^3\mathcal O$ and $V=\exp(p)\,U$ satisfy
+$\nu(U)=\nu(V)=-3\log p$ and $E(U)=E(V)=0$, yet $E(\log U)=-3\log p$ and
+$E(\log V)=-\log p$.
+\end{proposition}
+
+\begin{proof}
+$U_r$ contains $1$ and lies in $\mathcal O$, so its hull is $\mathcal O$ and
+$E(U_r)=0$.  Since $r\ge1>e_{\mathrm g}/(p-1)$, $\log$ carries $U_r$ isometrically
+onto $p^r\mathcal O$, which is already of the form $\lambda\mathcal O$; as
+$\mu(p^r\mathcal O)=p^{-24r}$, $E(\log U_r)=-r\log p$.  The inputs are all $0$ and
+the outputs are pairwise distinct, so no $g$ exists; and the outputs are unbounded
+below, so no two-sided error term depending on the input alone repairs it either.
+For the second pair, $\exp(p)$ is a unit, so $V\subseteq\mathcal O$ contains a unit
+and $C(V)=\mathcal O$, while multiplication by a unit preserves $\mu$.  But
+$\log V=p+p^3\mathcal O$ contains elements of valuation exactly $1$ and lies in
+$p\mathcal O$, so $C(\log V)=p\mathcal O$.
+\end{proof}
+
+\textup{[S]} \emph{The source states the restriction that this respects.}
+\cite[Rem.~3.9.6]{IUT3} says that the log-link compatibility ``amounts to a
+coincidence of log-volumes --- \emph{not of arbitrary regions} that appear in the
+domain and codomain of the log-link, but rather --- of certain types of
+`\emph{sufficiently small}' regions''.  \textup{[P]} Proposition~\ref{p:nodescent}
+is therefore not in tension with \cite{IUT3}: it exhibits what is lost if the
+compatibility is read as a statement about hull scalars.  \emph{The point is not only
+the smallness restriction}: the $U_r$ above are small, and $E$ is still constant on
+them, because it is the passage to the hull --- not the size of the region --- that
+discards what the raw log-volume $\nu$ records.
+
+\textup{[S]} \emph{The pre-log-shell is the image of the invariants, not the
+invariants of the quotient.}  \cite[Def.~1.1(i)]{IUT3} defines it as ``the image in
+$\Psi^{\sim}_{{}^\dagger\mathcal F_v}$ of the submonoid of
+$G_v({}^\dagger\Pi_v)$-invariants of $\Psi^{\times}_{{}^\dagger\mathcal F_v}$'', and
+records that this ``constitutes a \emph{compact} topological module''; the log-shell
+is that, times $(p_v^{*})^{-1}$.
+
+\begin{proposition}\label{p:invimg}
+\textup{[P]} Let $K_v$ be a finite extension of $\mathbb{Q}_p$, $\bar K_v$ an
+algebraic closure, $G=G_{K_v}$, $\bar U=\mathcal O_{\bar K_v}^{\times}$, and
+$\mu_\infty\subset\bar U$ the roots of unity.  Then
+\[
+ \log\,\operatorname{im}\bigl(\bar U^{G}\to\bar U/\mu_\infty\bigr)
+   =\log\mathcal O_{K_v}^{\times},
+ \qquad
+ \log\bigl((\bar U/\mu_\infty)^{G}\bigr)=K_v .
+\]
+The first is a full lattice in $K_v$, hence compact; the second is not.
+\end{proposition}
+
+\begin{proof}
+On units of an algebraic closure the kernel of $\log$ is exactly $\mu_\infty$: an
+element lies in some finite extension, and after removing its finite-order residue
+and passing to a high enough $p$-power it lies in a neighbourhood on which $\exp$ and
+$\log$ are mutually inverse, so $\log z=0$ forces that power to be $1$.  It is
+surjective onto $\bar K_v$: given $x$, choose $r$ with $p^rx$ in the domain of
+convergence of $\exp$ inside a finite extension containing $x$, put $w=\exp(p^rx)$
+and let $z$ be a $p^r$-th root of $w$ in $\bar K_v$; then $z$ is a unit and
+$\log z=p^{-r}\log w=x$.  So $\log:\bar U/\mu_\infty\to\bar K_v$ is a
+$G$-equivariant isomorphism, and taking invariants gives $K_v$ on the right.  The
+image of the invariant units is $\log\mathcal O_{K_v}^{\times}$ by definition.
+\end{proof}
+
+\textup{[P]} So reading the pre-log-shell as the invariant part of the quotient
+rather than as the image of the invariants replaces a compact lattice by the whole
+local field, and any log-volume bound stated in terms of it becomes vacuous.  This is
+not a defect of \cite{IUT3}, which takes the image and says so; it measures what the
+other reading would cost.
+\end{remark}
+
+\section{Two constraints on the indeterminacies}\label{s:indets}
+
+\textup{[P]} \emph{$\Ind2$ acts by a unit scalar} --- Proposition \ref{p:ind2hull}
+below, at a fixed nonarchimedean tuple.  \emph{The classification of the isometries is
+not ours}: \cite[Thm.~F, and Thm.~7.4]{MT} state that the natural
+$\mathbb Z_p^{\times}\to\mathrm{Ism}(G_K)$ is bijective under the hypotheses recalled
+next, and the authors summarize this as ``$\Ind2$ is relatively small''.  What is left
+to this report is to check those hypotheses for a finite extension of $\mathbb Q_p$ and
+to draw the consequence for the hull.  The identification is in the sources too:
+\cite[Thm.~3.11(i)]{IUT3} describes $\Ind2$ as ``the indeterminacies induced by the
+action of independent copies of $\mathrm{Ism}$ \dots\ on each of the direct summands of
+the $j+1$ factors'', and the introduction of \cite{MT} states, \emph{before} Theorem F,
+that ``$\Ind2$ consists of these isometries''.  \textup{[S]} \cite[Def.~7.3]{MT} defines
+$\mathrm{Ism}(G_K)$ as the group of $G_K$-equivariant automorphisms of
+$U_{K^{\mathrm{sep}}}^{\mu}$ that preserve the lattice $U_L^{\mu}$ for
+\emph{each} finite separable $K\subseteq L\subseteq K^{\mathrm{sep}}$ --- not merely
+one lattice --- and notes a natural injection
+$\mathbb{Z}_p^{\times}\hookrightarrow\mathrm{Ism}(G_K)$.  Their Theorem 7.4 states
+that \emph{if $G_k$ is not a pro-prime-to-$p$ group}, that injection is bijective;
+their Remark 7.3.1 states that \emph{if $k$ is finite}, this $\mathrm{Ism}(G_K)$
+is compatible with the one of \cite[Ex.~1.8(iv)]{IUT2}.  The authors themselves write that
+``Theorem F implies that $\Ind2$ is relatively small''.
+
+\textup{[P]} Both hypotheses hold in the case we use.  For $K$ a finite extension of
+$\mathbb{Q}_p$ the residue field $k$ is finite, so Remark 7.3.1 applies; and
+$G_k\cong\widehat{\mathbb{Z}}$ has $\mathbb{Z}_p$ as a quotient, so $G_k$ is not
+pro-prime-to-$p$ and Theorem 7.4 applies.  Hence in this case
+$\mathrm{Ism}(G_K)=\mathbb{Z}_p^{\times}$.
+
+\begin{proposition}\label{p:ind2hull}
+\textup{[P]} At a fixed \emph{nonarchimedean} tuple $t$, let $C_t$ denote the
+holomorphic hull of \cite[Rem.~3.9.5(i)]{IUT3} in \emph{both} of its branches: the
+smallest $\lambda\cdot\mathcal O$ containing the region when that region is relatively
+compact, and the whole ambient object when it is not.  Then for every $g$ in the group
+above, $C_t(g_tU)=C_t(U)$ and $C_t\bigl(\bigcup_g g_tU\bigr)=C_t(U)$.
+\end{proposition}
+
+\begin{proof}
+By the previous paragraph the action at $t$ is $g_t=u_t\,\mathrm{id}$ with
+$u_t\in\mathbb{Z}_p^{\times}$, so each $g_t$ is an isometry: it preserves valuations
+componentwise, hence preserves relative compactness and the family of sets
+$\lambda\cdot\mathcal O$.
+
+\emph{Relatively compact branch.}  If $U$ is relatively compact then so is $g_tU$, and
+$U\subseteq\lambda\cdot\mathcal O$ if and only if $g_tU\subseteq\lambda\cdot\mathcal O$;
+the two therefore have the same smallest such $\lambda\cdot\mathcal O$, so
+$C_t(g_tU)=C_t(U)$.  The union $\bigcup_g g_tU$ lies in that same
+$\lambda\cdot\mathcal O$ and contains $U$, so it is relatively compact with the same
+hull.
+
+\emph{Non-relatively-compact branch.}  If $U$ is not relatively compact then neither is
+$g_tU$ nor the union, and all three hulls are the whole ambient object by definition.
+
+\emph{An earlier version identified the hull with the $B_t$-module generated by the
+region.}  That identification does not hold in general --- the module generated by a
+region with full support is not of the form $\lambda\cdot\mathcal O$ --- and it is not
+needed: the argument above uses only that $g_t$ is an isometry.
+\end{proof}
+
+\emph{This is proved by exhibiting a common $B_t$-module, not inferred from equality
+of the individual volumes.}  It concerns $\Ind2$ alone: it does not extend to
+$\Ind1$, $\Ind3$, the input fibre or the $q$-comparison, and it does not say that an
+arbitrary automorphism of $G_K$ acts as a ring isomorphism.
+
+\textup{[P]} \emph{Labels are not recoverable from a raw procession.}  In a
+procession whose entries are copies of one prime-strip, the internal symmetric group
+of any stage acts while fixing every other stage, including the singleton stage: by
+\cite[\S0]{IUT1} a capsule-full poly-morphism is a fixed injection together with
+\emph{all} collections of isomorphisms, and by \cite[Def.~4.10]{IUT1} each arrow of a
+procession is the collection of all such, so the automorphisms act stage-wise
+independently, with the full symmetric group at each stage.  The only subsets
+\emph{naturally selectable} --- that is, invariant under every automorphism of the raw
+procession --- are therefore $\varnothing$ and the whole.  \textup{[S]} The source
+states the conclusion directly: \cite[Prop.~6.9(i)]{IUT1} records that ``there are
+precisely $n$ possibilities'' for the element of $|\mathbb F_\ell|$ to which a given
+index of the $n$-capsule corresponds.  Hence one may not deduce, from the fixing of the
+singleton $\mathcal D_0$, that the label $0$ is fixed inside the larger capsules; and
+a coefficient computation for a subgroup does not by itself exhibit a repair, which
+would require additional structure surviving in the actual weakened input together
+with a proof that the choice is natural.  This concerns copies of one strip, not
+processions with mutually non-isomorphic entries.
+
+\section{The procession-normalized coefficient}\label{s:calib}
+
+\textup{[S]} In Step (v) of the proof of \cite[Thm.~1.10]{IUT4} the weighted average
+upper bound carries the term $-\frac{j^2}{2\ell}\log(\mathfrak q_{v_{\mathbb Q}})$ ---
+the coefficient is \emph{negative}, and what is printed below are its magnitudes ---
+at stage $j$ --- on the \emph{degree of the $q$-parameter divisor}, not on its
+$2\ell$-th root: \cite[p.~23]{IUT4} records that $|\log(\underline{\underline q})|$
+``is equal to'' $\tfrac1{2\ell}\log(\mathfrak q)$, so the coefficient on
+$\log(\underline{\underline q})$ at stage $j$ is $j^2$.  An earlier version wrote
+$\log(\underline{\underline q})$ in both places, conflating the two by a factor of
+$2\ell$.  The source then says: ``it remains to compute the average over
+$j\in\mathbb F_\ell^{*}$.  By averaging over $j\in\{1,\dots,\ell^{*}=\frac{\ell-1}2\}$
+and applying (E1), (E2), we obtain the `procession-normalized upper bound'\,'' --- in
+which the magnitude of the coefficient on $\log(\mathfrak q_{v_{\mathbb Q}})$ is printed first as
+$\dfrac{(2\ell^{*}+1)(\ell^{*}+1)}{12\ell}$ and then as $\dfrac{\ell+1}{24}$.
+
+\begin{proposition}\label{p:chi}
+\textup{[P]} The two printed forms agree, and the average of the stage
+coefficients equals $\dfrac{\ell(\ell+1)}{12}$ times the stage-one coefficient:
+\[
+ \frac1{\ell^{*}}\sum_{j=1}^{\ell^{*}}\frac{j^2}{2\ell}
+ =\frac{(2\ell^{*}+1)(\ell^{*}+1)}{12\ell}
+ =\frac{\ell+1}{24}
+ =\frac{\ell(\ell+1)}{12}\cdot\frac1{2\ell}.
+\]
+Equivalently, the stage-one coefficient is
+$\chi:=\dfrac{12}{\ell(\ell+1)}$ times the averaged one; at $\ell=7$,
+$\chi=\tfrac3{14}$ and the averaged coefficient is $\tfrac13$.
+\end{proposition}
+
+\begin{proof}
+$\sum_{j=1}^{m}j^2=m(m+1)(2m+1)/6$ with $m=\ell^{*}$ gives the first equality after
+dividing by $\ell^{*}\cdot2\ell$.  Substituting $\ell^{*}=(\ell-1)/2$ gives
+$2\ell^{*}+1=\ell$ and $\ell^{*}+1=(\ell+1)/2$, whence
+$(2\ell^{*}+1)(\ell^{*}+1)/(12\ell)=(\ell+1)/24$.  The last equality is
+$(\ell+1)/24=\bigl(\ell(\ell+1)/12\bigr)\cdot\bigl(1/(2\ell)\bigr)$.
+\end{proof}
+
+This is an identity between two quantities printed in the source; it is not a
+statement about which region either coefficient is evaluated on, and it is not used
+below.
+
+\begin{remark}[on explicit formulations]
+\textup{[S]} \cite[\S4.10, eq.~(4.4)]{DH} writes the multiradial representation of
+the $\Theta$-pilot region as
+$U_\Theta:=\Ind2\bigl(\Ind1\bigl((\mathcal O_L(-P_\Theta))^{\Ind3}\bigr)\bigr)\subset L$,
+and \cite[Rem.~4.10.1]{DH} states that ``the order of operations and formulas for the
+indeterminacies do not appear in'' Tan's note or in \cite{IUT3}, \cite{IUT4}.  The
+$\Ind3$ ingredient is moreover an assumed bound: \cite[\S4.9]{DH} writes ``we assume
+a bound on $\mathcal O_L(-P_\Theta)^{\Ind3}$'', and the introduction to \cite[\S4]{DH}
+describes it as ``a formula for an upper bound on the $\Ind3$ indeterminacies''.
+
+\textup{[S]} \cite[p.~3]{DH} states, on the other hand, that the ordering in their
+own (1.2) is deliberate, and reports that Mochizuki considers $\Ind1$ and $\Ind2$
+together.  \textup{[P]} One consequence, and one non-consequence.  Exhibiting a map
+inside an over-large group is not a lower bound for the actual indeterminacy, since
+the bound is an upper one.  But a counterexample to a formulation of this shape is
+not \emph{thereby} a counterexample to \cite{IUT3} either: that would require the
+equivalence of the two formulations, which is not established here and which the two
+passages above do not settle in either direction.  An earlier version inferred from
+the first passage that the source is \emph{not committed} to the ordering; that does
+not follow from a statement about where formulas appear .
+\end{remark}
+
+\section*{Corrections and reproducibility}
+
+Earlier drafts omitted $j^2$ at stage $2$, producing the incorrect claimed
+margin $1/7$; the corrected margin is $88/7$.  They also confused nonconstant
+place tuples with mixed reduction, inferred independent probabilities
+$2^{-r}$ from a splitting density, asserted the logarithm-lattice identity
+for every tame odd place, and claimed that every nontrivial permutation
+would have to be forbidden.  Those inferences are withdrawn; the proofs
+and restrictions above replace them.  The earlier comparison of $1/3$
+with $2/3$ also used an incorrect weighting.  The normalized bound
+coefficients are not used in any statement above except
+Proposition~\ref{p:chi}, which is the identity between them.
+
+Corrections in the accompanying initial-data account include
+$46080=2^{10}3^25$, the exceptional invariant $2^{14}31^3/5^3$,
+selection of all multiplicative places outside $2,7$ including the place
+over $59$, and the split-multiplicative argument after adjoining $i$.
+Full rational $2$-torsion does not itself exclude a nonsplit twist.
+The mistaken suggestion that all four exceptional invariants are algebraic
+integers is also retained as an error record in the first report.
+
+Every passage quoted above was checked against the English original of the version
+listed in the bibliography.  \emph{The two steps are different}: the shipped
+\path{scripts/note3_quotes.py} \emph{locates} a candidate passage by a word-sequence
+match that drops mathematics and ignores punctuation, and reports eleven of the forty
+entries as too short to locate at all; verbatim identity was then checked by reading.
+The mechanical step used string match on the extracted text and, where text
+extraction interleaves floats --- which it does on p.~150 of \cite{IUT3} --- by
+reading the rendered page.  Two conventions of the extraction are worth recording,
+since each produced a false mismatch before being accounted for: a page's text may
+contain control characters inside a word, and the source uses double quotation marks
+where a quotation reproduced here uses single ones.
+
+The exact scripts released with the present report --- revised copies of those
+published with \cite{First}, certifying the same numbers and additionally refusing to
+run with assertions disabled --- verify the displayed
+integer and rational arithmetic, including rigorous logarithm intervals and
+the normalization identities.  They do not verify source interpretations.
+The finite Lean model checks a distinction between invariance, orbit
+membership and hulls of unions; it is not a model of the entire source theory.
+Large language models were used in drafting, computations and source review.
+No independent human verification or absence of further errors is asserted.
+
+
+\begin{thebibliography}{First-full}
+\bibitem[First]{First} T.~Urahigashi, \emph{An explicit initial $\Theta$-datum with
+ mixed reduction at a split prime}, Zenodo, DOI 10.5281/zenodo.22537342, 2026.
+\bibitem[First-full]{Firstfull} T.~Urahigashi,
+\emph{An explicit initial $\Theta$-datum with mixed reduction over a split prime,
+and the local estimates of inter-universal Teichm\"uller theory IV},
+version 0.1.3-draft (2026), accompanying manuscript
+\texttt{paper.tex} in the accompanying release.
+\bibitem[IUT1]{IUT1} S.~Mochizuki,
+\emph{Inter-universal Teichm\"uller theory I}, RIMS Preprint 1756 (2012),
+consulted author version, May 2020.
+Published in Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 3--207;
+\href{https://doi.org/10.4171/PRIMS/57-1-1}{doi:10.4171/PRIMS/57-1-1}.
+\bibitem[IUT3]{IUT3} S.~Mochizuki,
+\emph{Inter-universal Teichm\"uller theory III}, RIMS Preprint 1758 (2012),
+consulted author version, May 2020.
+Published in Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 403--626;
+\href{https://doi.org/10.4171/PRIMS/57-1-3}{doi:10.4171/PRIMS/57-1-3}.
+\bibitem[IUT4]{IUT4} S.~Mochizuki,
+\emph{Inter-universal Teichm\"uller theory IV}, RIMS Preprint 1759 (2012),
+consulted author version, April 2020.
+Published in Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 627--723;
+\href{https://doi.org/10.4171/PRIMS/57-1-4}{doi:10.4171/PRIMS/57-1-4}.
+\bibitem[DH]{DH} T.~Dupuy, A.~Hilado, \emph{The Statement of Mochizuki's Corollary
+ 3.12, Initial Theta Data, and the First Two Indeterminacies}, arXiv:2004.13228v1
+ [math.NT], 28 April 2020, 35 pp.  \emph{Version~1 is cited deliberately.}  Under the
+ same identifier, version~2 (19 June 2025, 20 pp.) is a different paper, on
+ constructing initial theta data for elliptic curves over $\mathbb{Q}$; none of the
+ four passages quoted above survives into it.
+\bibitem[IUT2]{IUT2} S.~Mochizuki, \emph{Inter-universal Teichm\"uller theory II},
+ Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 209--401.
+\bibitem[MT]{MT} A.~Minamide, S.~Tsujimura, \emph{Anabelian Geometry for Henselian
+ Discrete Valuation Fields with Quasi-finite Residues}, RIMS-1973, Research Institute
+ for Mathematical Sciences, Kyoto University, June 2023, 69 pp.
+\bibitem[MFHMP]{MFHMP} S.~Mochizuki, I.~Fesenko, Y.~Hoshi, A.~Minamide,
+W.~Porowski, \emph{Explicit estimates in inter-universal Teichm\"uller theory},
+Kodai Math. J. \textbf{45} (2022), 175--236;
+\href{https://doi.org/10.2996/kmj45201}{doi:10.2996/kmj45201}.
+Consulted author versions: December 2021 and May 2022.
+\end{thebibliography}
+\end{document}

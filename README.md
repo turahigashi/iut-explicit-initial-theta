@@ -163,3 +163,49 @@ the distinction being measured is the author's own rather than the source's — 
 weighting contrast of §8 and the two-adic cap of §12 — are marked as such in the text.
 No claim is made about [IUT III, Cor. 3.12], about the objections of Scholze–Stix, or
 about the abc conjecture.
+
+## The reports, and which file is which
+
+The file names carry an older working numbering; the reports are numbered as follows.
+
+| report | paper | Zenodo (all versions) |
+|---|---|---|
+| first | `paper/note.tex` | [10.5281/zenodo.22537342](https://doi.org/10.5281/zenodo.22537342) |
+| second | `second-report/paper/note5.tex` | [10.5281/zenodo.22601333](https://doi.org/10.5281/zenodo.22601333) |
+| third | `third-report/paper/note6.tex` | [10.5281/zenodo.22646136](https://doi.org/10.5281/zenodo.22646136) |
+| fourth | `fourth-report/paper/note3.tex` | [10.5281/zenodo.22648945](https://doi.org/10.5281/zenodo.22648945) |
+
+`paper/paper.tex` is the expanded version of the **first** report, cited as `[First-full]`;
+the first report is the version of record.
+
+## The fourth report — split bad primes and the tuple structure (September 2026)
+
+`fourth-report/paper/note3.pdf` (12 pages), DOI
+[10.5281/zenodo.22648945](https://doi.org/10.5281/zenodo.22648945).
+
+It collects statements that are **either quoted from a source or proved outright**: that a
+tensor packet admits place tuples of mixed reduction type and that selecting only nonsplit
+bad primes does not remove them; the stage margin `j²s − (j+2)`; where the source places the
+evaluation, quoted verbatim; two constraints on the indeterminacies, at a fixed
+nonarchimedean tuple and a fixed stage; and an identity between the two forms in which
+[IUT IV, Thm. 1.10] prints its procession-normalized coefficient.
+
+Writing `S(R)` for "the source asserts `R`", the report notes that `S(R)` does not imply `R`,
+and states the scope of each proposition rather than offering a blanket guarantee.  **No
+verdict on the theory or on abc is asserted.**
+
+```
+cd fourth-report
+python3 scripts/check_round3.py
+python3 scripts/check_normalization.py
+python3 scripts/check_crt_family.py
+python3 scripts/note3_quotes.py --sources YOUR_PDFS --manifest scripts/note3_quotes_manifest.json \
+        --paper paper/note3.tex
+```
+
+The last checks the forty quoted passages against your own copies of the sources.  It
+verifies each source PDF's SHA-256 against the manifest and refuses to run on a different
+printing; it refuses if the manifest has drifted from the manuscript; and it reports a
+passage as **located**, which is a candidate found by a word-sequence match, not a verdict of
+verbatim identity.
+
