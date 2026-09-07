@@ -87,3 +87,35 @@ criterion and correction history. No overall verdict on either side is claimed.
 Compile each TeX file twice, repeating if LaTeX requests another pass.
 Current verification logs have the prefix `round3-`; earlier logs remain as
 records of the preceding draft.
+
+## Second report (2026-09-07)
+
+**An initial Θ-datum over an imaginary quadratic field, and numerical values of the
+local quantities of inter-universal Teichmüller theory IV.**
+DOI [10.5281/zenodo.22601335](https://doi.org/10.5281/zenodo.22601335)
+(all versions: 10.5281/zenodo.22601333).
+
+The datum is `E_0: y^2 = x(x-1)(x-a)` with `a = (10+3i)^29` and `ℓ = 7` over
+`Q(i)`, for which 109 splits into one multiplicative and one good place.  All of
+[IUT I, Def. 3.1] (a)–(f) is verified, and the local quantities of [IUT IV, Thm 1.10]
+and [Prop. 1.4(iii)] are evaluated at that input.
+
+```
+second-report/paper/note5.pdf         the paper (20 pages)
+second-report/scripts/                reproduction; python3 scripts/tables.py etc.
+second-report/lean/                   14 files, Init-only
+second-report/audit-logs/             the Lean audit of 2026-09-07
+```
+
+263 stated theorems, 768 declarations, 565 axiom-free, no `sorryAx`, no
+`Classical.choice`.  Seven of the fourteen Lean files are pinned by SHA-256 to the
+bytes released with the first report.  **What the kernel does not carry is stated in
+the paper**: the sieve is not run there, the identification of the numeric predicates
+with the actual Galois representation and with the places and cusps of the named curve
+is an interface field rather than a theorem, the geometric arguments are not verified
+by these programs, and Proposition 2 is formalised only in part.
+
+Scope: this report constructs data and evaluates local quantities on them.  It does not
+compute the hull of the union of the possible images of the actual Θ-pilot or compare
+the two sides of [IUT III, Cor. 3.12]; no claim is made about Corollary 3.12, about the
+objections of Scholze–Stix, or about the abc conjecture.

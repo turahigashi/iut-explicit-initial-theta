@@ -1,0 +1,30 @@
+=== the polynomial ===
+  OK   f(T) = T^4 - 2T^3 + 3T^2 - 2T + 2 on -50..49
+  OK   disc(f) = disc(T^2+1) * disc((T-1)^2+1) * Res^2 = 400   Res = 5, disc = 400
+
+=== (i) v_2(f(A)) = 1 for every A ===
+  OK   v_2(f(A)) = 1 on -2000..1999, so 2^7 never divides f(A)
+  OK   the odd factor is 2 mod 8 and the other factor is odd
+
+=== (ii) q = 3 mod 4 never divides f(A) ===
+  OK   no prime q = 3 mod 4 below 4000 divides any f(A)
+      (reason: q | f(A) forces A^2 = -1 or (A-1)^2 = -1 mod q, impossible for q = 3 mod 4)
+
+=== (iii) 7 never divides f(A): the residue-characteristic exclusion is automatic ===
+  OK   7 does not divide f(A) for any A mod 7   values [1, 2, 3]
+  OK   because 7 = 3 mod 4, so (ii) already excludes residue characteristic 7
+      This does NOT give the Tate-order condition at pi: that still needs 7 not | N.
+
+=== excluded densities, compared as the same quantity ===
+  OK   Q(i):    sum over q >= 13, q = 1 mod 4 of 4/q^7   = 7.3794e-08
+  OK   tail bound 4*int_100^inf x^-7 dx = 2/(3*10^12)
+  OK   EXACT: 4*sum_{q>=13, q=1 mod 4} q^-7 <= 7.38e-8   = 7.379497828710413e-08  (margin 5.0217e-12)
+  OK   Q(sqrt5): sum over q not dividing M of 4/q^7    = 4.9322e-06
+  ratio = 66.8
+  OK   the honest ratio is 66.8, not 194
+  OK   the single term 4/7^7 is 98.5% of the first density   4/7^7 = 4.857e-06, share = 0.9848
+  (the integral majorant used in the first report is 1/69984 = 1.4289e-05;
+   it is not the prime sum, and must not be compared with one)
+
+==============================================
+RESULT: PASS - all checks hold

@@ -1,5 +1,20 @@
 # Draft changes
 
+## 0.2.0 — 2026-09-07
+
+- Adds the **second report**: an initial Θ-datum over the imaginary quadratic field
+  Q(i) — the curve y² = x(x−1)(x−a) with a = (10+3i)²⁹ and ℓ = 7, at which 109 splits
+  into one multiplicative and one good place — and numerical values of the local
+  quantities of [IUT IV, Thm 1.10] and [Prop. 1.4(iii)] at that input.
+  DOI 10.5281/zenodo.22601335.
+- Fourteen Lean files (Init only): 263 stated theorems, 768 declarations, 565
+  axiom-free, no `sorryAx`, no `Classical.choice`; audit log included.  Seven of them
+  are pinned by SHA-256 to the bytes released with the first report.
+- Adds an executable 89th-power-free certificate for the fourteen candidate levels,
+  with its own negative control (`--self-test`).
+- The first report's files are unchanged.
+
+
 ## 0.1.2-draft — 2026-09-06
 
 - Rechecked every stage-dependent theta depth. The full paper already retained

@@ -1,0 +1,7129 @@
+{
+  "errors": [],
+  "files": {
+    "ImaginaryQuadraticDatum": {
+      "authored_theorems": 27,
+      "declarations": 79,
+      "kernel_theorems": 33,
+      "authored_axiom_free": 27,
+      "authored_with_axioms": 0
+    },
+    "ModSevenImage": {
+      "authored_theorems": 33,
+      "declarations": 71,
+      "kernel_theorems": 33,
+      "authored_axiom_free": 19,
+      "authored_with_axioms": 14
+    },
+    "GeometricInput": {
+      "authored_theorems": 14,
+      "declarations": 120,
+      "kernel_theorems": 33,
+      "authored_axiom_free": 12,
+      "authored_with_axioms": 2
+    },
+    "GeometricFinite": {
+      "authored_theorems": 20,
+      "declarations": 29,
+      "kernel_theorems": 22,
+      "authored_axiom_free": 8,
+      "authored_with_axioms": 12
+    },
+    "SplitReduction": {
+      "authored_theorems": 9,
+      "declarations": 29,
+      "kernel_theorems": 13,
+      "authored_axiom_free": 2,
+      "authored_with_axioms": 7
+    },
+    "GeometricCompletion": {
+      "authored_theorems": 11,
+      "declarations": 118,
+      "kernel_theorems": 37,
+      "authored_axiom_free": 1,
+      "authored_with_axioms": 10
+    },
+    "GeometricModels": {
+      "authored_theorems": 26,
+      "declarations": 35,
+      "kernel_theorems": 29,
+      "authored_axiom_free": 0,
+      "authored_with_axioms": 26
+    },
+    "EntranceMargin": {
+      "authored_theorems": 16,
+      "declarations": 78,
+      "kernel_theorems": 38,
+      "authored_axiom_free": 2,
+      "authored_with_axioms": 14
+    },
+    "DeepImaginaryDatum": {
+      "authored_theorems": 37,
+      "declarations": 55,
+      "kernel_theorems": 38,
+      "authored_axiom_free": 36,
+      "authored_with_axioms": 1
+    },
+    "BlurExceedsMargin": {
+      "authored_theorems": 8,
+      "declarations": 13,
+      "kernel_theorems": 11,
+      "authored_axiom_free": 6,
+      "authored_with_axioms": 2
+    },
+    "LargeImaginaryDatum": {
+      "authored_theorems": 38,
+      "declarations": 79,
+      "kernel_theorems": 41,
+      "authored_axiom_free": 36,
+      "authored_with_axioms": 2
+    },
+    "RegardedUpToIsOrbit": {
+      "authored_theorems": 9,
+      "declarations": 20,
+      "kernel_theorems": 9,
+      "authored_axiom_free": 9,
+      "authored_with_axioms": 0
+    },
+    "BasisFreeImage": {
+      "authored_theorems": 12,
+      "declarations": 37,
+      "kernel_theorems": 12,
+      "authored_axiom_free": 6,
+      "authored_with_axioms": 6
+    },
+    "FamilyArithmetic": {
+      "authored_theorems": 3,
+      "declarations": 5,
+      "kernel_theorems": 5,
+      "authored_axiom_free": 1,
+      "authored_with_axioms": 2
+    }
+  },
+  "declarations": [
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.CC",
+      "user_name": "IMQ.CC",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI",
+      "user_name": "IMQ.GI",
+      "kind": "inductive",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.NN",
+      "user_name": "IMQ.NN",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.Na",
+      "user_name": "IMQ.Na",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.Noma",
+      "user_name": "IMQ.Noma",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.a",
+      "user_name": "IMQ.a",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.a_is_pi_pow",
+      "user_name": "IMQ.a_is_pi_pow",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.ab",
+      "user_name": "IMQ.ab",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.am1",
+      "user_name": "IMQ.am1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.dvdPi",
+      "user_name": "IMQ.dvdPi",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.dvdPib",
+      "user_name": "IMQ.dvdPib",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.eb",
+      "user_name": "IMQ.eb",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.eb_val",
+      "user_name": "IMQ.eb_val",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.ell",
+      "user_name": "IMQ.ell",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.gcd_ord_eb",
+      "user_name": "IMQ.gcd_ord_eb",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.instDecidableEqGI",
+      "user_name": "IMQ.instDecidableEqGI",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.instReprGI",
+      "user_name": "IMQ.instReprGI",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.isPrimeB",
+      "user_name": "IMQ.isPrimeB",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.j_not_rational",
+      "user_name": "IMQ.j_not_rational",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.norm_a",
+      "user_name": "IMQ.norm_a",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.norm_oma_factored",
+      "user_name": "IMQ.norm_oma_factored",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.norm_pi",
+      "user_name": "IMQ.norm_pi",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.oma",
+      "user_name": "IMQ.oma",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.orbit1",
+      "user_name": "IMQ.orbit1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.orbit2",
+      "user_name": "IMQ.orbit2",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.orbit3",
+      "user_name": "IMQ.orbit3",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.orbit4",
+      "user_name": "IMQ.orbit4",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.orbit5",
+      "user_name": "IMQ.orbit5",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.orbit6",
+      "user_name": "IMQ.orbit6",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.ord_q",
+      "user_name": "IMQ.ord_q",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.ord_qbb",
+      "user_name": "IMQ.ord_qbb",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.p_prime",
+      "user_name": "IMQ.p_prime",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.p_split",
+      "user_name": "IMQ.p_split",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.pi",
+      "user_name": "IMQ.pi",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.pi_not_dvd_oma",
+      "user_name": "IMQ.pi_not_dvd_oma",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.pi_not_dvd_pib",
+      "user_name": "IMQ.pi_not_dvd_pib",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.pi_pib",
+      "user_name": "IMQ.pi_pib",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.pib",
+      "user_name": "IMQ.pib",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.pib_not_dvd_a",
+      "user_name": "IMQ.pib_not_dvd_a",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.pib_not_dvd_oma",
+      "user_name": "IMQ.pib_not_dvd_oma",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.pp",
+      "user_name": "IMQ.pp",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.seven_not_dvd_norm_oma",
+      "user_name": "IMQ.seven_not_dvd_norm_oma",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.seven_not_dvd_ord_q",
+      "user_name": "IMQ.seven_not_dvd_ord_q",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.seven_not_dvd_small",
+      "user_name": "IMQ.seven_not_dvd_small",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.sieve_bound_is_seventh_root",
+      "user_name": "IMQ.sieve_bound_is_seventh_root",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.tame",
+      "user_name": "IMQ.tame",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI._sizeOf_1",
+      "user_name": "IMQ.GI._sizeOf_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI._sizeOf_inst",
+      "user_name": "IMQ.GI._sizeOf_inst",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.add",
+      "user_name": "IMQ.GI.add",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.casesOn",
+      "user_name": "IMQ.GI.casesOn",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.conj",
+      "user_name": "IMQ.GI.conj",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.ctorIdx",
+      "user_name": "IMQ.GI.ctorIdx",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.im",
+      "user_name": "IMQ.GI.im",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.mk",
+      "user_name": "IMQ.GI.mk",
+      "kind": "constructor",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.mul",
+      "user_name": "IMQ.GI.mul",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.noConfusion",
+      "user_name": "IMQ.GI.noConfusion",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.noConfusionType",
+      "user_name": "IMQ.GI.noConfusionType",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.nrm",
+      "user_name": "IMQ.GI.nrm",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.one",
+      "user_name": "IMQ.GI.one",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.pw",
+      "user_name": "IMQ.GI.pw",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.re",
+      "user_name": "IMQ.GI.re",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.rec",
+      "user_name": "IMQ.GI.rec",
+      "kind": "recursor",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.recOn",
+      "user_name": "IMQ.GI.recOn",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.sub",
+      "user_name": "IMQ.GI.sub",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.instDecidableEqGI.decEq",
+      "user_name": "IMQ.instDecidableEqGI.decEq",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.instReprGI.repr",
+      "user_name": "IMQ.instReprGI.repr",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.mk._flat_ctor",
+      "user_name": "IMQ.GI.mk._flat_ctor",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.mk.inj",
+      "user_name": "IMQ.GI.mk.inj",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.mk.injEq",
+      "user_name": "IMQ.GI.mk.injEq",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.mk.noConfusion",
+      "user_name": "IMQ.GI.mk.noConfusion",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.mk.sizeOf_spec",
+      "user_name": "IMQ.GI.mk.sizeOf_spec",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.pw._f",
+      "user_name": "IMQ.GI.pw._f",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.pw._sunfold",
+      "user_name": "IMQ.GI.pw._sunfold",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.pw._unsafe_rec",
+      "user_name": "IMQ.GI.pw._unsafe_rec",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.GI.pw.match_1",
+      "user_name": "IMQ.GI.pw.match_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.instDecidableEqGI.decEq._proof_1",
+      "user_name": "IMQ.instDecidableEqGI.decEq._proof_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.instDecidableEqGI.decEq._proof_2",
+      "user_name": "IMQ.instDecidableEqGI.decEq._proof_2",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.instDecidableEqGI.decEq._proof_3",
+      "user_name": "IMQ.instDecidableEqGI.decEq._proof_3",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ImaginaryQuadraticDatum",
+      "name": "IMQ.instDecidableEqGI.decEq.match_1",
+      "user_name": "IMQ.instDecidableEqGI.decEq.match_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.TT",
+      "user_name": "IMQ7.TT",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.aMod",
+      "user_name": "IMQ7.aMod",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.card",
+      "user_name": "IMQ7.card",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.closure",
+      "user_name": "IMQ7.closure",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.comp",
+      "user_name": "IMQ7.comp",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.compInv",
+      "user_name": "IMQ7.compInv",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.compInv13",
+      "user_name": "IMQ7.compInv13",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.compInv17",
+      "user_name": "IMQ7.compInv17",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.compInv37",
+      "user_name": "IMQ7.compInv37",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.compInv41",
+      "user_name": "IMQ7.compInv41",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.compInv53",
+      "user_name": "IMQ7.compInv53",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.compInv61",
+      "user_name": "IMQ7.compInv61",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.conjT",
+      "user_name": "IMQ7.conjT",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.dec",
+      "user_name": "IMQ7.dec",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.disc7",
+      "user_name": "IMQ7.disc7",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.enc",
+      "user_name": "IMQ7.enc",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.gen13",
+      "user_name": "IMQ7.gen13",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.gen17",
+      "user_name": "IMQ7.gen17",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.gen37",
+      "user_name": "IMQ7.gen37",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.gen41",
+      "user_name": "IMQ7.gen41",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.gen53",
+      "user_name": "IMQ7.gen53",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.gen61",
+      "user_name": "IMQ7.gen61",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.gensOrder",
+      "user_name": "IMQ7.gensOrder",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.ident",
+      "user_name": "IMQ7.ident",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.index_prime_to_seven",
+      "user_name": "IMQ7.index_prime_to_seven",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.inv7",
+      "user_name": "IMQ7.inv7",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.legendre",
+      "user_name": "IMQ7.legendre",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.mulI",
+      "user_name": "IMQ7.mulI",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.nonsq13",
+      "user_name": "IMQ7.nonsq13",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.nonsq17",
+      "user_name": "IMQ7.nonsq17",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.nonsq37",
+      "user_name": "IMQ7.nonsq37",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.nonsq41",
+      "user_name": "IMQ7.nonsq41",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.nonsq53",
+      "user_name": "IMQ7.nonsq53",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.nonsq61",
+      "user_name": "IMQ7.nonsq61",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.other_place_13_fails",
+      "user_name": "IMQ7.other_place_13_fails",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.other_place_61_fails",
+      "user_name": "IMQ7.other_place_61_fails",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.root13",
+      "user_name": "IMQ7.root13",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.root17",
+      "user_name": "IMQ7.root17",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.root37",
+      "user_name": "IMQ7.root37",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.root41",
+      "user_name": "IMQ7.root41",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.root53",
+      "user_name": "IMQ7.root53",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.root61",
+      "user_name": "IMQ7.root61",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.rootI",
+      "user_name": "IMQ7.rootI",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.sq7",
+      "user_name": "IMQ7.sq7",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.stepOne",
+      "user_name": "IMQ7.stepOne",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.tr13",
+      "user_name": "IMQ7.tr13",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.tr17",
+      "user_name": "IMQ7.tr17",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.tr37",
+      "user_name": "IMQ7.tr37",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.tr41",
+      "user_name": "IMQ7.tr41",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.tr53",
+      "user_name": "IMQ7.tr53",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.tr61",
+      "user_name": "IMQ7.tr61",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.traceAt",
+      "user_name": "IMQ7.traceAt",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.aMod.go",
+      "user_name": "IMQ7.aMod.go",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.card._f",
+      "user_name": "IMQ7.card._f",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.card._sunfold",
+      "user_name": "IMQ7.card._sunfold",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.card._unsafe_rec",
+      "user_name": "IMQ7.card._unsafe_rec",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.closure._f",
+      "user_name": "IMQ7.closure._f",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.closure._sunfold",
+      "user_name": "IMQ7.closure._sunfold",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.closure._unsafe_rec",
+      "user_name": "IMQ7.closure._unsafe_rec",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.legendre.pw",
+      "user_name": "IMQ7.legendre.pw",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.mulI.match_1",
+      "user_name": "IMQ7.mulI.match_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.stepOne._f",
+      "user_name": "IMQ7.stepOne._f",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.stepOne._sunfold",
+      "user_name": "IMQ7.stepOne._sunfold",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.stepOne._unsafe_rec",
+      "user_name": "IMQ7.stepOne._unsafe_rec",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.aMod.go._f",
+      "user_name": "IMQ7.aMod.go._f",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.aMod.go._sunfold",
+      "user_name": "IMQ7.aMod.go._sunfold",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.aMod.go._unsafe_rec",
+      "user_name": "IMQ7.aMod.go._unsafe_rec",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.aMod.go.match_1",
+      "user_name": "IMQ7.aMod.go.match_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.legendre.pw._f",
+      "user_name": "IMQ7.legendre.pw._f",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.legendre.pw._sunfold",
+      "user_name": "IMQ7.legendre.pw._sunfold",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "ModSevenImage",
+      "name": "IMQ7.legendre.pw._unsafe_rec",
+      "user_name": "IMQ7.legendre.pw._unsafe_rec",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput",
+      "user_name": "IMQGeom.AnabelianInput",
+      "kind": "inductive",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI",
+      "user_name": "IMQGeom.GI",
+      "kind": "inductive",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.SL7",
+      "user_name": "IMQGeom.SL7",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.WeakInput",
+      "user_name": "IMQGeom.WeakInput",
+      "kind": "inductive",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.a",
+      "user_name": "IMQGeom.a",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.actFlag",
+      "user_name": "IMQGeom.actFlag",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.actSet",
+      "user_name": "IMQGeom.actSet",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.actV",
+      "user_name": "IMQGeom.actV",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.allFlags",
+      "user_name": "IMQGeom.allFlags",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.cardBits",
+      "user_name": "IMQGeom.cardBits",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.core_of_datum",
+      "user_name": "IMQGeom.core_of_datum",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.core_of_irrational_j",
+      "user_name": "IMQGeom.core_of_irrational_j",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.cosetPair",
+      "user_name": "IMQGeom.cosetPair",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.counter",
+      "user_name": "IMQGeom.counter",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.encV",
+      "user_name": "IMQGeom.encV",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.excJ",
+      "user_name": "IMQGeom.excJ",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.exc_all_rational",
+      "user_name": "IMQGeom.exc_all_rational",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.flagKey",
+      "user_name": "IMQGeom.flagKey",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.flags_card",
+      "user_name": "IMQGeom.flags_card",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.flags_transitive",
+      "user_name": "IMQGeom.flags_transitive",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.instDecidableEqGI",
+      "user_name": "IMQGeom.instDecidableEqGI",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.instReprGI",
+      "user_name": "IMQGeom.instReprGI",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.jDen",
+      "user_name": "IMQGeom.jDen",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.jDen_ne_zero",
+      "user_name": "IMQGeom.jDen_ne_zero",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.jIsRational",
+      "user_name": "IMQGeom.jIsRational",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.jNum",
+      "user_name": "IMQGeom.jNum",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.j_not_rational",
+      "user_name": "IMQGeom.j_not_rational",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.lineOf",
+      "user_name": "IMQGeom.lineOf",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.mfhmp_is_necessary",
+      "user_name": "IMQGeom.mfhmp_is_necessary",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.sl7_card",
+      "user_name": "IMQGeom.sl7_card",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.stabiliser_order",
+      "user_name": "IMQGeom.stabiliser_order",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.two_xi_ne_pm_xi",
+      "user_name": "IMQGeom.two_xi_ne_pm_xi",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.witness",
+      "user_name": "IMQGeom.witness",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.witness_arithmetic_inhabited",
+      "user_name": "IMQGeom.witness_arithmetic_inhabited",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.witness_core_fails",
+      "user_name": "IMQGeom.witness_core_fails",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.witness_core_holds",
+      "user_name": "IMQGeom.witness_core_holds",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput.Curve",
+      "user_name": "IMQGeom.AnabelianInput.Curve",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput.HasRationalJ",
+      "user_name": "IMQGeom.AnabelianInput.HasRationalJ",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput.IsArithmetic",
+      "user_name": "IMQGeom.AnabelianInput.IsArithmetic",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput.IsCore",
+      "user_name": "IMQGeom.AnabelianInput.IsCore",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput.IsPuncturedHemiElliptic",
+      "user_name": "IMQGeom.AnabelianInput.IsPuncturedHemiElliptic",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput.X0",
+      "user_name": "IMQGeom.AnabelianInput.X0",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput.X0_j",
+      "user_name": "IMQGeom.AnabelianInput.X0_j",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput.X0_phe",
+      "user_name": "IMQGeom.AnabelianInput.X0_phe",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput._sizeOf_1",
+      "user_name": "IMQGeom.AnabelianInput._sizeOf_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput._sizeOf_inst",
+      "user_name": "IMQGeom.AnabelianInput._sizeOf_inst",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput.canlift_2_7",
+      "user_name": "IMQGeom.AnabelianInput.canlift_2_7",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput.casesOn",
+      "user_name": "IMQGeom.AnabelianInput.casesOn",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput.ctorIdx",
+      "user_name": "IMQGeom.AnabelianInput.ctorIdx",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput.mfhmp_2_1",
+      "user_name": "IMQGeom.AnabelianInput.mfhmp_2_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput.mk",
+      "user_name": "IMQGeom.AnabelianInput.mk",
+      "kind": "constructor",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput.noConfusion",
+      "user_name": "IMQGeom.AnabelianInput.noConfusion",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput.noConfusionType",
+      "user_name": "IMQGeom.AnabelianInput.noConfusionType",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput.rec",
+      "user_name": "IMQGeom.AnabelianInput.rec",
+      "kind": "recursor",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput.recOn",
+      "user_name": "IMQGeom.AnabelianInput.recOn",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI._sizeOf_1",
+      "user_name": "IMQGeom.GI._sizeOf_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI._sizeOf_inst",
+      "user_name": "IMQGeom.GI._sizeOf_inst",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI.add",
+      "user_name": "IMQGeom.GI.add",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI.casesOn",
+      "user_name": "IMQGeom.GI.casesOn",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI.conj",
+      "user_name": "IMQGeom.GI.conj",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI.ctorIdx",
+      "user_name": "IMQGeom.GI.ctorIdx",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI.im",
+      "user_name": "IMQGeom.GI.im",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI.mk",
+      "user_name": "IMQGeom.GI.mk",
+      "kind": "constructor",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI.mul",
+      "user_name": "IMQGeom.GI.mul",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI.noConfusion",
+      "user_name": "IMQGeom.GI.noConfusion",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI.noConfusionType",
+      "user_name": "IMQGeom.GI.noConfusionType",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI.one",
+      "user_name": "IMQGeom.GI.one",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI.pw",
+      "user_name": "IMQGeom.GI.pw",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI.re",
+      "user_name": "IMQGeom.GI.re",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI.rec",
+      "user_name": "IMQGeom.GI.rec",
+      "kind": "recursor",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI.recOn",
+      "user_name": "IMQGeom.GI.recOn",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI.sub",
+      "user_name": "IMQGeom.GI.sub",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.WeakInput.Curve",
+      "user_name": "IMQGeom.WeakInput.Curve",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.WeakInput.HasRationalJ",
+      "user_name": "IMQGeom.WeakInput.HasRationalJ",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.WeakInput.IsArithmetic",
+      "user_name": "IMQGeom.WeakInput.IsArithmetic",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.WeakInput.IsCore",
+      "user_name": "IMQGeom.WeakInput.IsCore",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.WeakInput.IsPuncturedHemiElliptic",
+      "user_name": "IMQGeom.WeakInput.IsPuncturedHemiElliptic",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.WeakInput._sizeOf_1",
+      "user_name": "IMQGeom.WeakInput._sizeOf_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.WeakInput._sizeOf_inst",
+      "user_name": "IMQGeom.WeakInput._sizeOf_inst",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.WeakInput.canlift_2_7",
+      "user_name": "IMQGeom.WeakInput.canlift_2_7",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.WeakInput.casesOn",
+      "user_name": "IMQGeom.WeakInput.casesOn",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.WeakInput.ctorIdx",
+      "user_name": "IMQGeom.WeakInput.ctorIdx",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.WeakInput.mk",
+      "user_name": "IMQGeom.WeakInput.mk",
+      "kind": "constructor",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.WeakInput.noConfusion",
+      "user_name": "IMQGeom.WeakInput.noConfusion",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.WeakInput.noConfusionType",
+      "user_name": "IMQGeom.WeakInput.noConfusionType",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.WeakInput.rec",
+      "user_name": "IMQGeom.WeakInput.rec",
+      "kind": "recursor",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.WeakInput.recOn",
+      "user_name": "IMQGeom.WeakInput.recOn",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.actSet._f",
+      "user_name": "IMQGeom.actSet._f",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.actSet._sunfold",
+      "user_name": "IMQGeom.actSet._sunfold",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.actSet._unsafe_rec",
+      "user_name": "IMQGeom.actSet._unsafe_rec",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.cardBits._f",
+      "user_name": "IMQGeom.cardBits._f",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.cardBits._sunfold",
+      "user_name": "IMQGeom.cardBits._sunfold",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.cardBits._unsafe_rec",
+      "user_name": "IMQGeom.cardBits._unsafe_rec",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.instDecidableEqGI.decEq",
+      "user_name": "IMQGeom.instDecidableEqGI.decEq",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.instReprGI.repr",
+      "user_name": "IMQGeom.instReprGI.repr",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.lineOf.encM",
+      "user_name": "IMQGeom.lineOf.encM",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.witness._proof_1",
+      "user_name": "IMQGeom.witness._proof_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.witness._proof_2",
+      "user_name": "IMQGeom.witness._proof_2",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput.mk._flat_ctor",
+      "user_name": "IMQGeom.AnabelianInput.mk._flat_ctor",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput.mk.inj",
+      "user_name": "IMQGeom.AnabelianInput.mk.inj",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput.mk.injEq",
+      "user_name": "IMQGeom.AnabelianInput.mk.injEq",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput.mk.noConfusion",
+      "user_name": "IMQGeom.AnabelianInput.mk.noConfusion",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.AnabelianInput.mk.sizeOf_spec",
+      "user_name": "IMQGeom.AnabelianInput.mk.sizeOf_spec",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI.mk._flat_ctor",
+      "user_name": "IMQGeom.GI.mk._flat_ctor",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI.mk.inj",
+      "user_name": "IMQGeom.GI.mk.inj",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI.mk.injEq",
+      "user_name": "IMQGeom.GI.mk.injEq",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI.mk.noConfusion",
+      "user_name": "IMQGeom.GI.mk.noConfusion",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI.mk.sizeOf_spec",
+      "user_name": "IMQGeom.GI.mk.sizeOf_spec",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI.pw._f",
+      "user_name": "IMQGeom.GI.pw._f",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI.pw._sunfold",
+      "user_name": "IMQGeom.GI.pw._sunfold",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.GI.pw._unsafe_rec",
+      "user_name": "IMQGeom.GI.pw._unsafe_rec",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.WeakInput.mk._flat_ctor",
+      "user_name": "IMQGeom.WeakInput.mk._flat_ctor",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.WeakInput.mk.inj",
+      "user_name": "IMQGeom.WeakInput.mk.inj",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.WeakInput.mk.injEq",
+      "user_name": "IMQGeom.WeakInput.mk.injEq",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.WeakInput.mk.noConfusion",
+      "user_name": "IMQGeom.WeakInput.mk.noConfusion",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.WeakInput.mk.sizeOf_spec",
+      "user_name": "IMQGeom.WeakInput.mk.sizeOf_spec",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.instDecidableEqGI.decEq._proof_1",
+      "user_name": "IMQGeom.instDecidableEqGI.decEq._proof_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.instDecidableEqGI.decEq._proof_2",
+      "user_name": "IMQGeom.instDecidableEqGI.decEq._proof_2",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.instDecidableEqGI.decEq._proof_3",
+      "user_name": "IMQGeom.instDecidableEqGI.decEq._proof_3",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricInput",
+      "name": "IMQGeom.instDecidableEqGI.decEq.match_1",
+      "user_name": "IMQGeom.instDecidableEqGI.decEq.match_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.Selected",
+      "user_name": "IMQGeomFinite.Selected",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.canonical_action_mem",
+      "user_name": "IMQGeomFinite.canonical_action_mem",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.canonical_action_ne_zero",
+      "user_name": "IMQGeomFinite.canonical_action_ne_zero",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.canonical_orbit_checked",
+      "user_name": "IMQGeomFinite.canonical_orbit_checked",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.fibres_disjoint",
+      "user_name": "IMQGeomFinite.fibres_disjoint",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.flags_transitive_with_representatives",
+      "user_name": "IMQGeomFinite.flags_transitive_with_representatives",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.matrixForFlag",
+      "user_name": "IMQGeomFinite.matrixForFlag",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.matrixForFlag_checked",
+      "user_name": "IMQGeomFinite.matrixForFlag_checked",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.matrixForFlag_spec",
+      "user_name": "IMQGeomFinite.matrixForFlag_spec",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.projection_select",
+      "user_name": "IMQGeomFinite.projection_select",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.select",
+      "user_name": "IMQGeomFinite.select",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.select_injective",
+      "user_name": "IMQGeomFinite.select_injective",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.selectedList",
+      "user_name": "IMQGeomFinite.selectedList",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.selectedList_cardinality",
+      "user_name": "IMQGeomFinite.selectedList_cardinality",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.selectedList_complete",
+      "user_name": "IMQGeomFinite.selectedList_complete",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.selectedList_length",
+      "user_name": "IMQGeomFinite.selectedList_length",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.selectedList_nodup",
+      "user_name": "IMQGeomFinite.selectedList_nodup",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.selectedPoint",
+      "user_name": "IMQGeomFinite.selectedPoint",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.selectedPoint_projection",
+      "user_name": "IMQGeomFinite.selectedPoint_projection",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.selectedProjection",
+      "user_name": "IMQGeomFinite.selectedProjection",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.selectedProjection_bijective",
+      "user_name": "IMQGeomFinite.selectedProjection_bijective",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.selectedProjection_injective",
+      "user_name": "IMQGeomFinite.selectedProjection_injective",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.selectedProjection_point",
+      "user_name": "IMQGeomFinite.selectedProjection_point",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.selectedProjection_surjective",
+      "user_name": "IMQGeomFinite.selectedProjection_surjective",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.simultaneousMatrices",
+      "user_name": "IMQGeomFinite.simultaneousMatrices",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.simultaneousMatrices_spec",
+      "user_name": "IMQGeomFinite.simultaneousMatrices_spec",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.zero_not_flag",
+      "user_name": "IMQGeomFinite.zero_not_flag",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.selectedList.eq_1",
+      "user_name": "IMQGeomFinite.selectedList.eq_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricFinite",
+      "name": "IMQGeomFinite.selectedPoint._proof_1",
+      "user_name": "IMQGeomFinite.selectedPoint._proof_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.Quadratic",
+      "user_name": "IMQSplit.Quadratic",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.coeff",
+      "user_name": "IMQSplit.coeff",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.lineProduct",
+      "user_name": "IMQSplit.lineProduct",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.one_center_expansion",
+      "user_name": "IMQSplit.one_center_expansion",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.one_center_initial_form",
+      "user_name": "IMQSplit.one_center_initial_form",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.one_cone_split_modulo",
+      "user_name": "IMQSplit.one_cone_split_modulo",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.polyAdd",
+      "user_name": "IMQSplit.polyAdd",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.polyMul",
+      "user_name": "IMQSplit.polyMul",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.quadraticPart",
+      "user_name": "IMQSplit.quadraticPart",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.reduceQuadratic",
+      "user_name": "IMQSplit.reduceQuadratic",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.residue109_certificate",
+      "user_name": "IMQSplit.residue109_certificate",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.shiftedRhs",
+      "user_name": "IMQSplit.shiftedRhs",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.zero_center_expansion",
+      "user_name": "IMQSplit.zero_center_expansion",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.zero_center_initial_form",
+      "user_name": "IMQSplit.zero_center_initial_form",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.zero_cone_factorization109",
+      "user_name": "IMQSplit.zero_cone_factorization109",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.zero_cone_split_modulo109",
+      "user_name": "IMQSplit.zero_cone_split_modulo109",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.zero_cone_zero_set109",
+      "user_name": "IMQSplit.zero_cone_zero_set109",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.one_cone_split_modulo._proof_1",
+      "user_name": "IMQSplit.one_cone_split_modulo._proof_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.one_cone_split_modulo._proof_2",
+      "user_name": "IMQSplit.one_cone_split_modulo._proof_2",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.one_cone_split_modulo._proof_3",
+      "user_name": "IMQSplit.one_cone_split_modulo._proof_3",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.one_cone_split_modulo._proof_4",
+      "user_name": "IMQSplit.one_cone_split_modulo._proof_4",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.polyAdd._f",
+      "user_name": "IMQSplit.polyAdd._f",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.polyAdd._sunfold",
+      "user_name": "IMQSplit.polyAdd._sunfold",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.polyAdd._unsafe_rec",
+      "user_name": "IMQSplit.polyAdd._unsafe_rec",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.polyAdd.match_1",
+      "user_name": "IMQSplit.polyAdd.match_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.polyMul._f",
+      "user_name": "IMQSplit.polyMul._f",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.polyMul._sunfold",
+      "user_name": "IMQSplit.polyMul._sunfold",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.polyMul._unsafe_rec",
+      "user_name": "IMQSplit.polyMul._unsafe_rec",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "SplitReduction",
+      "name": "IMQSplit.polyMul.match_1",
+      "user_name": "IMQSplit.polyMul.match_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.AnabelianInputEF",
+      "user_name": "IMQGeomEF.AnabelianInputEF",
+      "kind": "inductive",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.ConcreteChecks",
+      "user_name": "IMQGeomEF.ConcreteChecks",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.ConditionsEF",
+      "user_name": "IMQGeomEF.ConditionsEF",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData",
+      "user_name": "IMQGeomEF.GeometricData",
+      "kind": "inductive",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricRules",
+      "user_name": "IMQGeomEF.GeometricRules",
+      "kind": "inductive",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation",
+      "user_name": "IMQGeomEF.Obligation",
+      "kind": "inductive",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Rule",
+      "user_name": "IMQGeomEF.Rule",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.arrow_covers_of_datum",
+      "user_name": "IMQGeomEF.arrow_covers_of_datum",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.bad_place_conditions",
+      "user_name": "IMQGeomEF.bad_place_conditions",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.concrete_checks",
+      "user_name": "IMQGeomEF.concrete_checks",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.conditions_d_e_f",
+      "user_name": "IMQGeomEF.conditions_d_e_f",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.conditions_e_f",
+      "user_name": "IMQGeomEF.conditions_e_f",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.correctedLift",
+      "user_name": "IMQGeomEF.correctedLift",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.corrected_lift_good",
+      "user_name": "IMQGeomEF.corrected_lift_good",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.corrected_lift_has_fixed_flag",
+      "user_name": "IMQGeomEF.corrected_lift_has_fixed_flag",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.corrected_places_distinct",
+      "user_name": "IMQGeomEF.corrected_places_distinct",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.corrected_section_bijective",
+      "user_name": "IMQGeomEF.corrected_section_bijective",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.cubicAt",
+      "user_name": "IMQGeomEF.cubicAt",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.fixedFlag",
+      "user_name": "IMQGeomEF.fixedFlag",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.fixed_flag_valid",
+      "user_name": "IMQGeomEF.fixed_flag_valid",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.instDecidableEqObligation",
+      "user_name": "IMQGeomEF.instDecidableEqObligation",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.instReprObligation",
+      "user_name": "IMQGeomEF.instReprObligation",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.two_torsion_roots_computed",
+      "user_name": "IMQGeomEF.two_torsion_roots_computed",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.AnabelianInputEF._sizeOf_1",
+      "user_name": "IMQGeomEF.AnabelianInputEF._sizeOf_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.AnabelianInputEF._sizeOf_inst",
+      "user_name": "IMQGeomEF.AnabelianInputEF._sizeOf_inst",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.AnabelianInputEF.casesOn",
+      "user_name": "IMQGeomEF.AnabelianInputEF.casesOn",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.AnabelianInputEF.ctorIdx",
+      "user_name": "IMQGeomEF.AnabelianInputEF.ctorIdx",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.AnabelianInputEF.geometricRules",
+      "user_name": "IMQGeomEF.AnabelianInputEF.geometricRules",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.AnabelianInputEF.geometry",
+      "user_name": "IMQGeomEF.AnabelianInputEF.geometry",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.AnabelianInputEF.mk",
+      "user_name": "IMQGeomEF.AnabelianInputEF.mk",
+      "kind": "constructor",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.AnabelianInputEF.noConfusion",
+      "user_name": "IMQGeomEF.AnabelianInputEF.noConfusion",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.AnabelianInputEF.noConfusionType",
+      "user_name": "IMQGeomEF.AnabelianInputEF.noConfusionType",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.AnabelianInputEF.rec",
+      "user_name": "IMQGeomEF.AnabelianInputEF.rec",
+      "kind": "recursor",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.AnabelianInputEF.recOn",
+      "user_name": "IMQGeomEF.AnabelianInputEF.recOn",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.AnabelianInputEF.toAnabelianInput",
+      "user_name": "IMQGeomEF.AnabelianInputEF.toAnabelianInput",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.ConcreteChecks._proof_1",
+      "user_name": "IMQGeomEF.ConcreteChecks._proof_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.ArrowCovers",
+      "user_name": "IMQGeomEF.GeometricData.ArrowCovers",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.CanonicalCusp",
+      "user_name": "IMQGeomEF.GeometricData.CanonicalCusp",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.Fibre",
+      "user_name": "IMQGeomEF.GeometricData.Fibre",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.GlobalSetup",
+      "user_name": "IMQGeomEF.GeometricData.GlobalSetup",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.LocalSetup",
+      "user_name": "IMQGeomEF.GeometricData.LocalSetup",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.ModPlace",
+      "user_name": "IMQGeomEF.GeometricData.ModPlace",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.SameLocalField",
+      "user_name": "IMQGeomEF.GeometricData.SameLocalField",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.ThetaModel",
+      "user_name": "IMQGeomEF.GeometricData.ThetaModel",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData._sizeOf_1",
+      "user_name": "IMQGeomEF.GeometricData._sizeOf_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData._sizeOf_inst",
+      "user_name": "IMQGeomEF.GeometricData._sizeOf_inst",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.bad",
+      "user_name": "IMQGeomEF.GeometricData.bad",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.casesOn",
+      "user_name": "IMQGeomEF.GeometricData.casesOn",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.ctorIdx",
+      "user_name": "IMQGeomEF.GeometricData.ctorIdx",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.initialLift",
+      "user_name": "IMQGeomEF.GeometricData.initialLift",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.localFlag",
+      "user_name": "IMQGeomEF.GeometricData.localFlag",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.mk",
+      "user_name": "IMQGeomEF.GeometricData.mk",
+      "kind": "constructor",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.move",
+      "user_name": "IMQGeomEF.GeometricData.move",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.noConfusion",
+      "user_name": "IMQGeomEF.GeometricData.noConfusion",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.noConfusionType",
+      "user_name": "IMQGeomEF.GeometricData.noConfusionType",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.rec",
+      "user_name": "IMQGeomEF.GeometricData.rec",
+      "kind": "recursor",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.recOn",
+      "user_name": "IMQGeomEF.GeometricData.recOn",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricRules.arithmetic_theta_model",
+      "user_name": "IMQGeomEF.GeometricRules.arithmetic_theta_model",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricRules.arrow_marked_covers",
+      "user_name": "IMQGeomEF.GeometricRules.arrow_marked_covers",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricRules.casesOn",
+      "user_name": "IMQGeomEF.GeometricRules.casesOn",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricRules.datum_localization",
+      "user_name": "IMQGeomEF.GeometricRules.datum_localization",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricRules.galois_transport",
+      "user_name": "IMQGeomEF.GeometricRules.galois_transport",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricRules.graph_cusp_label",
+      "user_name": "IMQGeomEF.GeometricRules.graph_cusp_label",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricRules.mk",
+      "user_name": "IMQGeomEF.GeometricRules.mk",
+      "kind": "constructor",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricRules.rational_two_field",
+      "user_name": "IMQGeomEF.GeometricRules.rational_two_field",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricRules.rec",
+      "user_name": "IMQGeomEF.GeometricRules.rec",
+      "kind": "recursor",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricRules.recOn",
+      "user_name": "IMQGeomEF.GeometricRules.recOn",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricRules.tate_marked_flag",
+      "user_name": "IMQGeomEF.GeometricRules.tate_marked_flag",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation._sizeOf_1",
+      "user_name": "IMQGeomEF.Obligation._sizeOf_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation._sizeOf_inst",
+      "user_name": "IMQGeomEF.Obligation._sizeOf_inst",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.arrow",
+      "user_name": "IMQGeomEF.Obligation.arrow",
+      "kind": "constructor",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.casesOn",
+      "user_name": "IMQGeomEF.Obligation.casesOn",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.ctorElim",
+      "user_name": "IMQGeomEF.Obligation.ctorElim",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.ctorElimType",
+      "user_name": "IMQGeomEF.Obligation.ctorElimType",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.ctorIdx",
+      "user_name": "IMQGeomEF.Obligation.ctorIdx",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.datum",
+      "user_name": "IMQGeomEF.Obligation.datum",
+      "kind": "constructor",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.field",
+      "user_name": "IMQGeomEF.Obligation.field",
+      "kind": "constructor",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.graph",
+      "user_name": "IMQGeomEF.Obligation.graph",
+      "kind": "constructor",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.noConfusion",
+      "user_name": "IMQGeomEF.Obligation.noConfusion",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.noConfusionType",
+      "user_name": "IMQGeomEF.Obligation.noConfusionType",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.ofNat",
+      "user_name": "IMQGeomEF.Obligation.ofNat",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.ofNat_ctorIdx",
+      "user_name": "IMQGeomEF.Obligation.ofNat_ctorIdx",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.rec",
+      "user_name": "IMQGeomEF.Obligation.rec",
+      "kind": "recursor",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.recOn",
+      "user_name": "IMQGeomEF.Obligation.recOn",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.tate",
+      "user_name": "IMQGeomEF.Obligation.tate",
+      "kind": "constructor",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.theta",
+      "user_name": "IMQGeomEF.Obligation.theta",
+      "kind": "constructor",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.toCtorIdx",
+      "user_name": "IMQGeomEF.Obligation.toCtorIdx",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.transport",
+      "user_name": "IMQGeomEF.Obligation.transport",
+      "kind": "constructor",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.correctedLift.eq_1",
+      "user_name": "IMQGeomEF.correctedLift.eq_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.instDecidableEqObligation._proof_1",
+      "user_name": "IMQGeomEF.instDecidableEqObligation._proof_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.instDecidableEqObligation._proof_2",
+      "user_name": "IMQGeomEF.instDecidableEqObligation._proof_2",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.instReprObligation.repr",
+      "user_name": "IMQGeomEF.instReprObligation.repr",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.AnabelianInputEF.mk._flat_ctor",
+      "user_name": "IMQGeomEF.AnabelianInputEF.mk._flat_ctor",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.AnabelianInputEF.mk.inj",
+      "user_name": "IMQGeomEF.AnabelianInputEF.mk.inj",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.AnabelianInputEF.mk.injEq",
+      "user_name": "IMQGeomEF.AnabelianInputEF.mk.injEq",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.AnabelianInputEF.mk.noConfusion",
+      "user_name": "IMQGeomEF.AnabelianInputEF.mk.noConfusion",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.AnabelianInputEF.mk.sizeOf_spec",
+      "user_name": "IMQGeomEF.AnabelianInputEF.mk.sizeOf_spec",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.mk._flat_ctor",
+      "user_name": "IMQGeomEF.GeometricData.mk._flat_ctor",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.mk.inj",
+      "user_name": "IMQGeomEF.GeometricData.mk.inj",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.mk.injEq",
+      "user_name": "IMQGeomEF.GeometricData.mk.injEq",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.mk.noConfusion",
+      "user_name": "IMQGeomEF.GeometricData.mk.noConfusion",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricData.mk.sizeOf_spec",
+      "user_name": "IMQGeomEF.GeometricData.mk.sizeOf_spec",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.GeometricRules.mk._flat_ctor",
+      "user_name": "IMQGeomEF.GeometricRules.mk._flat_ctor",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.arrow.elim",
+      "user_name": "IMQGeomEF.Obligation.arrow.elim",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.arrow.sizeOf_spec",
+      "user_name": "IMQGeomEF.Obligation.arrow.sizeOf_spec",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.datum.elim",
+      "user_name": "IMQGeomEF.Obligation.datum.elim",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.datum.sizeOf_spec",
+      "user_name": "IMQGeomEF.Obligation.datum.sizeOf_spec",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.field.elim",
+      "user_name": "IMQGeomEF.Obligation.field.elim",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.field.sizeOf_spec",
+      "user_name": "IMQGeomEF.Obligation.field.sizeOf_spec",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.graph.elim",
+      "user_name": "IMQGeomEF.Obligation.graph.elim",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.graph.sizeOf_spec",
+      "user_name": "IMQGeomEF.Obligation.graph.sizeOf_spec",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.tate.elim",
+      "user_name": "IMQGeomEF.Obligation.tate.elim",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.tate.sizeOf_spec",
+      "user_name": "IMQGeomEF.Obligation.tate.sizeOf_spec",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.theta.elim",
+      "user_name": "IMQGeomEF.Obligation.theta.elim",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.theta.sizeOf_spec",
+      "user_name": "IMQGeomEF.Obligation.theta.sizeOf_spec",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.transport.elim",
+      "user_name": "IMQGeomEF.Obligation.transport.elim",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.Obligation.transport.sizeOf_spec",
+      "user_name": "IMQGeomEF.Obligation.transport.sizeOf_spec",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricCompletion",
+      "name": "IMQGeomEF.instReprObligation.repr.match_1",
+      "user_name": "IMQGeomEF.instReprObligation.repr.match_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.AllExcept",
+      "user_name": "IMQGeomModels.AllExcept",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.aggregate_is_necessary",
+      "user_name": "IMQGeomModels.aggregate_is_necessary",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.all_except",
+      "user_name": "IMQGeomModels.all_except",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.altFlag",
+      "user_name": "IMQGeomModels.altFlag",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.arrow_is_necessary",
+      "user_name": "IMQGeomModels.arrow_is_necessary",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.arrow_premise_inhabited",
+      "user_name": "IMQGeomModels.arrow_premise_inhabited",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.completeRules",
+      "user_name": "IMQGeomModels.completeRules",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.completeWitness",
+      "user_name": "IMQGeomModels.completeWitness",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.complete_model_conditions",
+      "user_name": "IMQGeomModels.complete_model_conditions",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.complete_model_nondegenerate",
+      "user_name": "IMQGeomModels.complete_model_nondegenerate",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.complete_witness_conditions",
+      "user_name": "IMQGeomModels.complete_witness_conditions",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.corrected_lift_values",
+      "user_name": "IMQGeomModels.corrected_lift_values",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.datum_is_necessary",
+      "user_name": "IMQGeomModels.datum_is_necessary",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.datum_premise_inhabited",
+      "user_name": "IMQGeomModels.datum_premise_inhabited",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.deleted_conditions_fail",
+      "user_name": "IMQGeomModels.deleted_conditions_fail",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.field_is_necessary",
+      "user_name": "IMQGeomModels.field_is_necessary",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.field_premise_inhabited",
+      "user_name": "IMQGeomModels.field_premise_inhabited",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.flags_distinct",
+      "user_name": "IMQGeomModels.flags_distinct",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.flags_valid",
+      "user_name": "IMQGeomModels.flags_valid",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.graph_is_necessary",
+      "user_name": "IMQGeomModels.graph_is_necessary",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.graph_premise_inhabited",
+      "user_name": "IMQGeomModels.graph_premise_inhabited",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.model",
+      "user_name": "IMQGeomModels.model",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.modelFlag",
+      "user_name": "IMQGeomModels.modelFlag",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.modelMove",
+      "user_name": "IMQGeomModels.modelMove",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.move_normalizes",
+      "user_name": "IMQGeomModels.move_normalizes",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.rule_when_kept",
+      "user_name": "IMQGeomModels.rule_when_kept",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.tate_is_necessary",
+      "user_name": "IMQGeomModels.tate_is_necessary",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.tate_premise_inhabited",
+      "user_name": "IMQGeomModels.tate_premise_inhabited",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.theta_is_necessary",
+      "user_name": "IMQGeomModels.theta_is_necessary",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.theta_premise_inhabited",
+      "user_name": "IMQGeomModels.theta_premise_inhabited",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.transport_is_necessary",
+      "user_name": "IMQGeomModels.transport_is_necessary",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.transport_premise_inhabited",
+      "user_name": "IMQGeomModels.transport_premise_inhabited",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.model.eq_1",
+      "user_name": "IMQGeomModels.model.eq_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.modelFlag.eq_1",
+      "user_name": "IMQGeomModels.modelFlag.eq_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "GeometricModels",
+      "name": "IMQGeomModels.modelMove.eq_1",
+      "user_name": "IMQGeomModels.modelMove.eq_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.EntranceNat",
+      "user_name": "IMQEntrance.EntranceNat",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.Fraction",
+      "user_name": "IMQEntrance.Fraction",
+      "kind": "inductive",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.Less",
+      "user_name": "IMQEntrance.Less",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.Positive",
+      "user_name": "IMQEntrance.Positive",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.RepresentsDepth",
+      "user_name": "IMQEntrance.RepresentsDepth",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.SameValue",
+      "user_name": "IMQEntrance.SameValue",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.candidates",
+      "user_name": "IMQEntrance.candidates",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.candidates_nonempty_iff",
+      "user_name": "IMQEntrance.candidates_nonempty_iff",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.depth",
+      "user_name": "IMQEntrance.depth",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.depth_represents",
+      "user_name": "IMQEntrance.depth_represents",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.entrance_canonical_depth",
+      "user_name": "IMQEntrance.entrance_canonical_depth",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.entrance_downward",
+      "user_name": "IMQEntrance.entrance_downward",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.entrance_iff_integer_upper",
+      "user_name": "IMQEntrance.entrance_iff_integer_upper",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.instDecidableEntranceNat",
+      "user_name": "IMQEntrance.instDecidableEntranceNat",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.instDecidableLess",
+      "user_name": "IMQEntrance.instDecidableLess",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.instDecidablePositive",
+      "user_name": "IMQEntrance.instDecidablePositive",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.instDecidableSameValue",
+      "user_name": "IMQEntrance.instDecidableSameValue",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.integer",
+      "user_name": "IMQEntrance.integer",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.interval_empty_iff",
+      "user_name": "IMQEntrance.interval_empty_iff",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.interval_nonempty_iff",
+      "user_name": "IMQEntrance.interval_nonempty_iff",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.margin",
+      "user_name": "IMQEntrance.margin",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.margin_pos_iff_cross_mul",
+      "user_name": "IMQEntrance.margin_pos_iff_cross_mul",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.margin_pos_iff_nat_criterion",
+      "user_name": "IMQEntrance.margin_pos_iff_nat_criterion",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.margin_pos_iff_ord_gt_threshold",
+      "user_name": "IMQEntrance.margin_pos_iff_ord_gt_threshold",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.margin_positive_iff",
+      "user_name": "IMQEntrance.margin_positive_iff",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.mem_candidates_iff",
+      "user_name": "IMQEntrance.mem_candidates_iff",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.positive_interval_nonempty_iff",
+      "user_name": "IMQEntrance.positive_interval_nonempty_iff",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.represents_iff_same_value",
+      "user_name": "IMQEntrance.represents_iff_same_value",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.stage_one_criterion",
+      "user_name": "IMQEntrance.stage_one_criterion",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.threshold",
+      "user_name": "IMQEntrance.threshold",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.threshold_less_iff",
+      "user_name": "IMQEntrance.threshold_less_iff",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.EntranceNat.eq_1",
+      "user_name": "IMQEntrance.EntranceNat.eq_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.Fraction._sizeOf_1",
+      "user_name": "IMQEntrance.Fraction._sizeOf_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.Fraction._sizeOf_inst",
+      "user_name": "IMQEntrance.Fraction._sizeOf_inst",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.Fraction.casesOn",
+      "user_name": "IMQEntrance.Fraction.casesOn",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.Fraction.ctorIdx",
+      "user_name": "IMQEntrance.Fraction.ctorIdx",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.Fraction.den",
+      "user_name": "IMQEntrance.Fraction.den",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.Fraction.den_pos",
+      "user_name": "IMQEntrance.Fraction.den_pos",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.Fraction.mk",
+      "user_name": "IMQEntrance.Fraction.mk",
+      "kind": "constructor",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.Fraction.noConfusion",
+      "user_name": "IMQEntrance.Fraction.noConfusion",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.Fraction.noConfusionType",
+      "user_name": "IMQEntrance.Fraction.noConfusionType",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.Fraction.num",
+      "user_name": "IMQEntrance.Fraction.num",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.Fraction.rec",
+      "user_name": "IMQEntrance.Fraction.rec",
+      "kind": "recursor",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.Fraction.recOn",
+      "user_name": "IMQEntrance.Fraction.recOn",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.Less.eq_1",
+      "user_name": "IMQEntrance.Less.eq_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.RepresentsDepth.eq_1",
+      "user_name": "IMQEntrance.RepresentsDepth.eq_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.SameValue.eq_1",
+      "user_name": "IMQEntrance.SameValue.eq_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.candidates.eq_1",
+      "user_name": "IMQEntrance.candidates.eq_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.candidates_nonempty_iff.match_1",
+      "user_name": "IMQEntrance.candidates_nonempty_iff.match_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.candidates_nonempty_iff.match_2",
+      "user_name": "IMQEntrance.candidates_nonempty_iff.match_2",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.depth._proof_1",
+      "user_name": "IMQEntrance.depth._proof_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.depth.eq_1",
+      "user_name": "IMQEntrance.depth.eq_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.entrance_iff_integer_upper._proof_1",
+      "user_name": "IMQEntrance.entrance_iff_integer_upper._proof_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.instDecidableEntranceNat._aux_1",
+      "user_name": "IMQEntrance.instDecidableEntranceNat._aux_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.instDecidableLess._aux_1",
+      "user_name": "IMQEntrance.instDecidableLess._aux_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.instDecidablePositive._aux_1",
+      "user_name": "IMQEntrance.instDecidablePositive._aux_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.instDecidableSameValue._aux_1",
+      "user_name": "IMQEntrance.instDecidableSameValue._aux_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.integer._proof_1",
+      "user_name": "IMQEntrance.integer._proof_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.integer.eq_1",
+      "user_name": "IMQEntrance.integer.eq_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.interval_nonempty_iff.match_1",
+      "user_name": "IMQEntrance.interval_nonempty_iff.match_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.interval_nonempty_iff.match_2",
+      "user_name": "IMQEntrance.interval_nonempty_iff.match_2",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.mem_candidates_iff._simp_2",
+      "user_name": "IMQEntrance.mem_candidates_iff._simp_2",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.mem_candidates_iff._simp_3",
+      "user_name": "IMQEntrance.mem_candidates_iff._simp_3",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.mem_candidates_iff._simp_4",
+      "user_name": "IMQEntrance.mem_candidates_iff._simp_4",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.mem_candidates_iff.match_4",
+      "user_name": "IMQEntrance.mem_candidates_iff.match_4",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.mem_candidates_iff.match_5",
+      "user_name": "IMQEntrance.mem_candidates_iff.match_5",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.positive_interval_nonempty_iff._proof_1",
+      "user_name": "IMQEntrance.positive_interval_nonempty_iff._proof_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.positive_interval_nonempty_iff._proof_2",
+      "user_name": "IMQEntrance.positive_interval_nonempty_iff._proof_2",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.positive_interval_nonempty_iff._proof_3",
+      "user_name": "IMQEntrance.positive_interval_nonempty_iff._proof_3",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.positive_interval_nonempty_iff.match_1",
+      "user_name": "IMQEntrance.positive_interval_nonempty_iff.match_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.positive_interval_nonempty_iff.match_2",
+      "user_name": "IMQEntrance.positive_interval_nonempty_iff.match_2",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.threshold.eq_1",
+      "user_name": "IMQEntrance.threshold.eq_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.Fraction.mk._flat_ctor",
+      "user_name": "IMQEntrance.Fraction.mk._flat_ctor",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.Fraction.mk.congr_simp",
+      "user_name": "IMQEntrance.Fraction.mk.congr_simp",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.Fraction.mk.inj",
+      "user_name": "IMQEntrance.Fraction.mk.inj",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.Fraction.mk.injEq",
+      "user_name": "IMQEntrance.Fraction.mk.injEq",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.Fraction.mk.noConfusion",
+      "user_name": "IMQEntrance.Fraction.mk.noConfusion",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "EntranceMargin",
+      "name": "IMQEntrance.Fraction.mk.sizeOf_spec",
+      "user_name": "IMQEntrance.Fraction.mk.sizeOf_spec",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.B",
+      "user_name": "IMQDeep.B",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.GI",
+      "user_name": "IMQDeep.GI",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.NN",
+      "user_name": "IMQDeep.NN",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.a",
+      "user_name": "IMQDeep.a",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.ab",
+      "user_name": "IMQDeep.ab",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.actual_fraction_entrance",
+      "user_name": "IMQDeep.actual_fraction_entrance",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.actual_fraction_margin",
+      "user_name": "IMQDeep.actual_fraction_margin",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.am1",
+      "user_name": "IMQDeep.am1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.candidate",
+      "user_name": "IMQDeep.candidate",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.candidates_exact",
+      "user_name": "IMQDeep.candidates_exact",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.conjugate_place_good",
+      "user_name": "IMQDeep.conjugate_place_good",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.coprime_branch_empty",
+      "user_name": "IMQDeep.coprime_branch_empty",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.degree_prime_to_ell",
+      "user_name": "IMQDeep.degree_prime_to_ell",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.ell",
+      "user_name": "IMQDeep.ell",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.ell_ge_five",
+      "user_name": "IMQDeep.ell_ge_five",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.ell_prime",
+      "user_name": "IMQDeep.ell_prime",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.entrance_positive",
+      "user_name": "IMQDeep.entrance_positive",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.field_ramification",
+      "user_name": "IMQDeep.field_ramification",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.frobenius_discriminant",
+      "user_name": "IMQDeep.frobenius_discriminant",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.frobenius_place",
+      "user_name": "IMQDeep.frobenius_place",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.frobenius_trace",
+      "user_name": "IMQDeep.frobenius_trace",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.full_ramification",
+      "user_name": "IMQDeep.full_ramification",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.full_weil_proxy_empty",
+      "user_name": "IMQDeep.full_weil_proxy_empty",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.irreducible_discriminant",
+      "user_name": "IMQDeep.irreducible_discriminant",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.jDen",
+      "user_name": "IMQDeep.jDen",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.jNum",
+      "user_name": "IMQDeep.jNum",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.j_den_nonzero",
+      "user_name": "IMQDeep.j_den_nonzero",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.j_nonreal",
+      "user_name": "IMQDeep.j_nonreal",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.larger_candidates_fail",
+      "user_name": "IMQDeep.larger_candidates_fail",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.margin_numerator",
+      "user_name": "IMQDeep.margin_numerator",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.norm_a",
+      "user_name": "IMQDeep.norm_a",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.norm_oma",
+      "user_name": "IMQDeep.norm_oma",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.old_seven_cap_insufficient",
+      "user_name": "IMQDeep.old_seven_cap_insufficient",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.oma",
+      "user_name": "IMQDeep.oma",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.orbit_exclusion",
+      "user_name": "IMQDeep.orbit_exclusion",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.order_at_pi",
+      "user_name": "IMQDeep.order_at_pi",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.order_prime_to_ell",
+      "user_name": "IMQDeep.order_prime_to_ell",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.pi",
+      "user_name": "IMQDeep.pi",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.quadraticSymbol",
+      "user_name": "IMQDeep.quadraticSymbol",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.remaining_orders",
+      "user_name": "IMQDeep.remaining_orders",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.residueA",
+      "user_name": "IMQDeep.residueA",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.residues_pi",
+      "user_name": "IMQDeep.residues_pi",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.rhs",
+      "user_name": "IMQDeep.rhs",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.seven_power_counterexample",
+      "user_name": "IMQDeep.seven_power_counterexample",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.sieve_root31",
+      "user_name": "IMQDeep.sieve_root31",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.sieve_root7",
+      "user_name": "IMQDeep.sieve_root7",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.small_ramification",
+      "user_name": "IMQDeep.small_ramification",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.smooth",
+      "user_name": "IMQDeep.smooth",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.split_roots",
+      "user_name": "IMQDeep.split_roots",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.t",
+      "user_name": "IMQDeep.t",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.thirty_one_good",
+      "user_name": "IMQDeep.thirty_one_good",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.torsion_gcd",
+      "user_name": "IMQDeep.torsion_gcd",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.torsion_order",
+      "user_name": "IMQDeep.torsion_order",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.trace17",
+      "user_name": "IMQDeep.trace17",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "DeepImaginaryDatum",
+      "name": "IMQDeep.larger_candidates_fail._proof_1",
+      "user_name": "IMQDeep.larger_candidates_fail._proof_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "BlurExceedsMargin",
+      "name": "BlurMargin.blur",
+      "user_name": "BlurMargin.blur",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BlurExceedsMargin",
+      "name": "BlurMargin.blur_dominates",
+      "user_name": "BlurMargin.blur_dominates",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BlurExceedsMargin",
+      "name": "BlurMargin.datum_blur",
+      "user_name": "BlurMargin.datum_blur",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BlurExceedsMargin",
+      "name": "BlurMargin.datum_excess",
+      "user_name": "BlurMargin.datum_excess",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BlurExceedsMargin",
+      "name": "BlurMargin.datum_margins",
+      "user_name": "BlurMargin.datum_margins",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BlurExceedsMargin",
+      "name": "BlurMargin.deeper_datum",
+      "user_name": "BlurMargin.deeper_datum",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BlurExceedsMargin",
+      "name": "BlurMargin.excess_at_top",
+      "user_name": "BlurMargin.excess_at_top",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "BlurExceedsMargin",
+      "name": "BlurMargin.excess_independent_of_depth",
+      "user_name": "BlurMargin.excess_independent_of_depth",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "BlurExceedsMargin",
+      "name": "BlurMargin.margin",
+      "user_name": "BlurMargin.margin",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BlurExceedsMargin",
+      "name": "BlurMargin.shallow_datum",
+      "user_name": "BlurMargin.shallow_datum",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BlurExceedsMargin",
+      "name": "BlurMargin.blur.eq_1",
+      "user_name": "BlurMargin.blur.eq_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BlurExceedsMargin",
+      "name": "BlurMargin.excess_at_top._proof_3",
+      "user_name": "BlurMargin.excess_at_top._proof_3",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "BlurExceedsMargin",
+      "name": "BlurMargin.margin.eq_1",
+      "user_name": "BlurMargin.margin.eq_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.B",
+      "user_name": "IMQLarge.B",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.FrobeniusWitness",
+      "user_name": "IMQLarge.FrobeniusWitness",
+      "kind": "inductive",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.GI",
+      "user_name": "IMQLarge.GI",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.NN",
+      "user_name": "IMQLarge.NN",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.a",
+      "user_name": "IMQLarge.a",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.a_is_power",
+      "user_name": "IMQLarge.a_is_power",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.all_entrance_cutoffs",
+      "user_name": "IMQLarge.all_entrance_cutoffs",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.all_extension_degrees",
+      "user_name": "IMQLarge.all_extension_degrees",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.all_fraction_entrances",
+      "user_name": "IMQLarge.all_fraction_entrances",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.all_fraction_margins",
+      "user_name": "IMQLarge.all_fraction_margins",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.all_frobenius_checks",
+      "user_name": "IMQLarge.all_frobenius_checks",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.all_height_cutoffs",
+      "user_name": "IMQLarge.all_height_cutoffs",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.all_pair_gcds",
+      "user_name": "IMQLarge.all_pair_gcds",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.all_remaining_orders",
+      "user_name": "IMQLarge.all_remaining_orders",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.all_roots89",
+      "user_name": "IMQLarge.all_roots89",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.all_small_ramification",
+      "user_name": "IMQLarge.all_small_ramification",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.all_torsion_gcds",
+      "user_name": "IMQLarge.all_torsion_gcds",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.candidate",
+      "user_name": "IMQLarge.candidate",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.ellCandidates",
+      "user_name": "IMQLarge.ellCandidates",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.ell_B_nonzero",
+      "user_name": "IMQLarge.ell_B_nonzero",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.ell_B_residues",
+      "user_name": "IMQLarge.ell_B_residues",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.ell_count",
+      "user_name": "IMQLarge.ell_count",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.ell_pi_nonzero",
+      "user_name": "IMQLarge.ell_pi_nonzero",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.ell_primes",
+      "user_name": "IMQLarge.ell_primes",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.exceptional_v2",
+      "user_name": "IMQLarge.exceptional_v2",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.exceptional_v5",
+      "user_name": "IMQLarge.exceptional_v5",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.factorGI",
+      "user_name": "IMQLarge.factorGI",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.factorNorms",
+      "user_name": "IMQLarge.factorNorms",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.factorPairs",
+      "user_name": "IMQLarge.factorPairs",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.factor_lengths",
+      "user_name": "IMQLarge.factor_lengths",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.factor_norms_exact",
+      "user_name": "IMQLarge.factor_norms_exact",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.finite_candidates_exact",
+      "user_name": "IMQLarge.finite_candidates_exact",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.frobeniusCheck",
+      "user_name": "IMQLarge.frobeniusCheck",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.frobeniusWitnesses",
+      "user_name": "IMQLarge.frobeniusWitnesses",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.frobenius_ell_coverage",
+      "user_name": "IMQLarge.frobenius_ell_coverage",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.gaussian_factor_product",
+      "user_name": "IMQLarge.gaussian_factor_product",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.integer_factor_product",
+      "user_name": "IMQLarge.integer_factor_product",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.legendreTrace",
+      "user_name": "IMQLarge.legendreTrace",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.margin157",
+      "user_name": "IMQLarge.margin157",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.marginCheck",
+      "user_name": "IMQLarge.marginCheck",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.maximum_root89",
+      "user_name": "IMQLarge.maximum_root89",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.norm_a",
+      "user_name": "IMQLarge.norm_a",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.norm_oma",
+      "user_name": "IMQLarge.norm_oma",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.norm_pi",
+      "user_name": "IMQLarge.norm_pi",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.oma",
+      "user_name": "IMQLarge.oma",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.orbit_exclusion",
+      "user_name": "IMQLarge.orbit_exclusion",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.p_prime",
+      "user_name": "IMQLarge.p_prime",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.p_split",
+      "user_name": "IMQLarge.p_split",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.pairGCDs",
+      "user_name": "IMQLarge.pairGCDs",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.pair_coverage",
+      "user_name": "IMQLarge.pair_coverage",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.pair_gcd_support",
+      "user_name": "IMQLarge.pair_gcd_support",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.pi",
+      "user_name": "IMQLarge.pi",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.positiveMarginCheck",
+      "user_name": "IMQLarge.positiveMarginCheck",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.pp",
+      "user_name": "IMQLarge.pp",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.quadraticSymbol",
+      "user_name": "IMQLarge.quadraticSymbol",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.roots89",
+      "user_name": "IMQLarge.roots89",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.sl157_order_formula",
+      "user_name": "IMQLarge.sl157_order_formula",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.smooth",
+      "user_name": "IMQLarge.smooth",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.whole_root157",
+      "user_name": "IMQLarge.whole_root157",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.FrobeniusWitness._sizeOf_1",
+      "user_name": "IMQLarge.FrobeniusWitness._sizeOf_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.FrobeniusWitness._sizeOf_inst",
+      "user_name": "IMQLarge.FrobeniusWitness._sizeOf_inst",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.FrobeniusWitness.casesOn",
+      "user_name": "IMQLarge.FrobeniusWitness.casesOn",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.FrobeniusWitness.ctorIdx",
+      "user_name": "IMQLarge.FrobeniusWitness.ctorIdx",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.FrobeniusWitness.disc",
+      "user_name": "IMQLarge.FrobeniusWitness.disc",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.FrobeniusWitness.ell",
+      "user_name": "IMQLarge.FrobeniusWitness.ell",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.FrobeniusWitness.mk",
+      "user_name": "IMQLarge.FrobeniusWitness.mk",
+      "kind": "constructor",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.FrobeniusWitness.noConfusion",
+      "user_name": "IMQLarge.FrobeniusWitness.noConfusion",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.FrobeniusWitness.noConfusionType",
+      "user_name": "IMQLarge.FrobeniusWitness.noConfusionType",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.FrobeniusWitness.q",
+      "user_name": "IMQLarge.FrobeniusWitness.q",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.FrobeniusWitness.rec",
+      "user_name": "IMQLarge.FrobeniusWitness.rec",
+      "kind": "recursor",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.FrobeniusWitness.recOn",
+      "user_name": "IMQLarge.FrobeniusWitness.recOn",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.FrobeniusWitness.residueA",
+      "user_name": "IMQLarge.FrobeniusWitness.residueA",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.FrobeniusWitness.rootI",
+      "user_name": "IMQLarge.FrobeniusWitness.rootI",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.FrobeniusWitness.trace",
+      "user_name": "IMQLarge.FrobeniusWitness.trace",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.FrobeniusWitness.mk._flat_ctor",
+      "user_name": "IMQLarge.FrobeniusWitness.mk._flat_ctor",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.FrobeniusWitness.mk.inj",
+      "user_name": "IMQLarge.FrobeniusWitness.mk.inj",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.FrobeniusWitness.mk.injEq",
+      "user_name": "IMQLarge.FrobeniusWitness.mk.injEq",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.FrobeniusWitness.mk.noConfusion",
+      "user_name": "IMQLarge.FrobeniusWitness.mk.noConfusion",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "LargeImaginaryDatum",
+      "name": "IMQLarge.FrobeniusWitness.mk.sizeOf_spec",
+      "user_name": "IMQLarge.FrobeniusWitness.mk.sizeOf_spec",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "RegardedUpToIsOrbit",
+      "name": "RegardedUpTo.A",
+      "user_name": "RegardedUpTo.A",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "RegardedUpToIsOrbit",
+      "name": "RegardedUpTo.Orbit",
+      "user_name": "RegardedUpTo.Orbit",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "RegardedUpToIsOrbit",
+      "name": "RegardedUpTo.Single",
+      "user_name": "RegardedUpTo.Single",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "RegardedUpToIsOrbit",
+      "name": "RegardedUpTo.UpToAct",
+      "user_name": "RegardedUpTo.UpToAct",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "RegardedUpToIsOrbit",
+      "name": "RegardedUpTo.VolInvariant",
+      "user_name": "RegardedUpTo.VolInvariant",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "RegardedUpToIsOrbit",
+      "name": "RegardedUpTo.act",
+      "user_name": "RegardedUpTo.act",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "RegardedUpToIsOrbit",
+      "name": "RegardedUpTo.act_A",
+      "user_name": "RegardedUpTo.act_A",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "RegardedUpToIsOrbit",
+      "name": "RegardedUpTo.act_is_nontrivial",
+      "user_name": "RegardedUpTo.act_is_nontrivial",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "RegardedUpToIsOrbit",
+      "name": "RegardedUpTo.act_sA",
+      "user_name": "RegardedUpTo.act_sA",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "RegardedUpToIsOrbit",
+      "name": "RegardedUpTo.card",
+      "user_name": "RegardedUpTo.card",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "RegardedUpToIsOrbit",
+      "name": "RegardedUpTo.cup",
+      "user_name": "RegardedUpTo.cup",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "RegardedUpToIsOrbit",
+      "name": "RegardedUpTo.hull",
+      "user_name": "RegardedUpTo.hull",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "RegardedUpToIsOrbit",
+      "name": "RegardedUpTo.hull_card_invariant",
+      "user_name": "RegardedUpTo.hull_card_invariant",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "RegardedUpToIsOrbit",
+      "name": "RegardedUpTo.mem",
+      "user_name": "RegardedUpTo.mem",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "RegardedUpToIsOrbit",
+      "name": "RegardedUpTo.orbit_is_up_to_act",
+      "user_name": "RegardedUpTo.orbit_is_up_to_act",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "RegardedUpToIsOrbit",
+      "name": "RegardedUpTo.orbit_not_forced_by_invariance",
+      "user_name": "RegardedUpTo.orbit_not_forced_by_invariance",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "RegardedUpToIsOrbit",
+      "name": "RegardedUpTo.orbit_vol_invariant",
+      "user_name": "RegardedUpTo.orbit_vol_invariant",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "RegardedUpToIsOrbit",
+      "name": "RegardedUpTo.sA",
+      "user_name": "RegardedUpTo.sA",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "RegardedUpToIsOrbit",
+      "name": "RegardedUpTo.the_point",
+      "user_name": "RegardedUpTo.the_point",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "RegardedUpToIsOrbit",
+      "name": "RegardedUpTo.union_hull_exceeds_every_member",
+      "user_name": "RegardedUpTo.union_hull_exceeds_every_member",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.actL",
+      "user_name": "BasisFree.actL",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.card",
+      "user_name": "BasisFree.card",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.closure",
+      "user_name": "BasisFree.closure",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.dec",
+      "user_name": "BasisFree.dec",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.detI",
+      "user_name": "BasisFree.detI",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.diagonal_conjugation_normalizes",
+      "user_name": "BasisFree.diagonal_conjugation_normalizes",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.enc",
+      "user_name": "BasisFree.enc",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.ident",
+      "user_name": "BasisFree.ident",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.irrMats",
+      "user_name": "BasisFree.irrMats",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.irrMats_card",
+      "user_name": "BasisFree.irrMats_card",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.irreducibleCharPoly",
+      "user_name": "BasisFree.irreducibleCharPoly",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.irreducible_moves_every_line",
+      "user_name": "BasisFree.irreducible_moves_every_line",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.lines",
+      "user_name": "BasisFree.lines",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.lines_card",
+      "user_name": "BasisFree.lines_card",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.mulI",
+      "user_name": "BasisFree.mulI",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.normLine",
+      "user_name": "BasisFree.normLine",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.normalized_pairs_generate_1",
+      "user_name": "BasisFree.normalized_pairs_generate_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.normalized_pairs_generate_2",
+      "user_name": "BasisFree.normalized_pairs_generate_2",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.normalized_pairs_generate_3",
+      "user_name": "BasisFree.normalized_pairs_generate_3",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.normalized_pairs_generate_4",
+      "user_name": "BasisFree.normalized_pairs_generate_4",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.normalized_pairs_generate_5",
+      "user_name": "BasisFree.normalized_pairs_generate_5",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.normalized_pairs_generate_6",
+      "user_name": "BasisFree.normalized_pairs_generate_6",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.sl2",
+      "user_name": "BasisFree.sl2",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.sl2_card",
+      "user_name": "BasisFree.sl2_card",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.sl2_transitive_on_distinct_pairs",
+      "user_name": "BasisFree.sl2_transitive_on_distinct_pairs",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.stepOne",
+      "user_name": "BasisFree.stepOne",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.traceI",
+      "user_name": "BasisFree.traceI",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.card._f",
+      "user_name": "BasisFree.card._f",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.card._sunfold",
+      "user_name": "BasisFree.card._sunfold",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.card._unsafe_rec",
+      "user_name": "BasisFree.card._unsafe_rec",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.closure._f",
+      "user_name": "BasisFree.closure._f",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.closure._sunfold",
+      "user_name": "BasisFree.closure._sunfold",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.closure._unsafe_rec",
+      "user_name": "BasisFree.closure._unsafe_rec",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.normLine.match_1",
+      "user_name": "BasisFree.normLine.match_1",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.stepOne._f",
+      "user_name": "BasisFree.stepOne._f",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.stepOne._sunfold",
+      "user_name": "BasisFree.stepOne._sunfold",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "BasisFreeImage",
+      "name": "BasisFree.stepOne._unsafe_rec",
+      "user_name": "BasisFree.stepOne._unsafe_rec",
+      "kind": "definition",
+      "print_reports": 1,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "file": "FamilyArithmetic",
+      "name": "FamilyArith.dvd_five_of_both",
+      "user_name": "FamilyArith.dvd_five_of_both",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "FamilyArithmetic",
+      "name": "FamilyArith.four_hundred_factors",
+      "user_name": "FamilyArith.four_hundred_factors",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": []
+    },
+    {
+      "file": "FamilyArithmetic",
+      "name": "FamilyArith.not_dvd_other_factor",
+      "user_name": "FamilyArith.not_dvd_other_factor",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "FamilyArithmetic",
+      "name": "FamilyArith.dvd_five_of_both._proof_1",
+      "user_name": "FamilyArith.dvd_five_of_both._proof_1",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "FamilyArithmetic",
+      "name": "FamilyArith.dvd_five_of_both._proof_2",
+      "user_name": "FamilyArith.dvd_five_of_both._proof_2",
+      "kind": "theorem",
+      "print_reports": 1,
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "total_declarations": 768,
+  "total_authored_theorems": 263,
+  "axiom_free_declarations": 565,
+  "with_axiom_declarations": 203,
+  "axiom_sets": {
+    "(none)": 565,
+    "propext": 138,
+    "propext, Quot.sound": 65
+  },
+  "lean_version": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "source_manifest": [
+    {
+      "source": "lean/ImaginaryQuadraticDatum.lean",
+      "file": "ImaginaryQuadraticDatum",
+      "namespace": "IMQ",
+      "sha256": "e033877320cb8b1af2b4f7cfbcb4b816b5982a59c5fd20d6f4013f2a7dab8940",
+      "authored_theorems": [
+        "IMQ.p_prime",
+        "IMQ.p_split",
+        "IMQ.norm_pi",
+        "IMQ.pi_pib",
+        "IMQ.orbit1",
+        "IMQ.orbit2",
+        "IMQ.orbit3",
+        "IMQ.orbit4",
+        "IMQ.orbit5",
+        "IMQ.orbit6",
+        "IMQ.j_not_rational",
+        "IMQ.a_is_pi_pow",
+        "IMQ.pi_not_dvd_pib",
+        "IMQ.pib_not_dvd_a",
+        "IMQ.pi_not_dvd_oma",
+        "IMQ.pib_not_dvd_oma",
+        "IMQ.norm_a",
+        "IMQ.norm_oma_factored",
+        "IMQ.seven_not_dvd_norm_oma",
+        "IMQ.sieve_bound_is_seventh_root",
+        "IMQ.ord_q",
+        "IMQ.seven_not_dvd_ord_q",
+        "IMQ.seven_not_dvd_small",
+        "IMQ.eb_val",
+        "IMQ.gcd_ord_eb",
+        "IMQ.tame",
+        "IMQ.ord_qbb"
+      ]
+    },
+    {
+      "source": "lean/ModSevenImage.lean",
+      "file": "ModSevenImage",
+      "namespace": "IMQ7",
+      "sha256": "7c6a4c5cb711429bf9bdeeaaf136647bd1de1626eac1d3d08924308ecf83d2bf",
+      "authored_theorems": [
+        "IMQ7.root13",
+        "IMQ7.root17",
+        "IMQ7.root37",
+        "IMQ7.root41",
+        "IMQ7.root53",
+        "IMQ7.root61",
+        "IMQ7.tr13",
+        "IMQ7.tr17",
+        "IMQ7.tr37",
+        "IMQ7.tr41",
+        "IMQ7.tr53",
+        "IMQ7.tr61",
+        "IMQ7.nonsq13",
+        "IMQ7.nonsq17",
+        "IMQ7.nonsq37",
+        "IMQ7.nonsq41",
+        "IMQ7.nonsq53",
+        "IMQ7.nonsq61",
+        "IMQ7.other_place_13_fails",
+        "IMQ7.other_place_61_fails",
+        "IMQ7.compInv13",
+        "IMQ7.compInv17",
+        "IMQ7.compInv37",
+        "IMQ7.compInv41",
+        "IMQ7.compInv53",
+        "IMQ7.compInv61",
+        "IMQ7.gen13",
+        "IMQ7.gen17",
+        "IMQ7.gen37",
+        "IMQ7.gen41",
+        "IMQ7.gen53",
+        "IMQ7.gen61",
+        "IMQ7.index_prime_to_seven"
+      ]
+    },
+    {
+      "source": "lean/GeometricInput.lean",
+      "file": "GeometricInput",
+      "namespace": "IMQGeom",
+      "sha256": "6c0df6721a4db238e96a5ad6eb56cbe7180b9c97bb5682940f893eb08194f128",
+      "authored_theorems": [
+        "IMQGeom.jDen_ne_zero",
+        "IMQGeom.j_not_rational",
+        "IMQGeom.exc_all_rational",
+        "IMQGeom.sl7_card",
+        "IMQGeom.flags_card",
+        "IMQGeom.flags_transitive",
+        "IMQGeom.stabiliser_order",
+        "IMQGeom.two_xi_ne_pm_xi",
+        "IMQGeom.core_of_irrational_j",
+        "IMQGeom.core_of_datum",
+        "IMQGeom.witness_arithmetic_inhabited",
+        "IMQGeom.witness_core_fails",
+        "IMQGeom.witness_core_holds",
+        "IMQGeom.mfhmp_is_necessary"
+      ]
+    },
+    {
+      "source": "lean/GeometricFinite.lean",
+      "file": "GeometricFinite",
+      "namespace": "IMQGeomFinite",
+      "sha256": "994f22e1122d124b251e220f62ef3fdf632cbd22c16a452d0e568d9790d33024",
+      "authored_theorems": [
+        "IMQGeomFinite.matrixForFlag_checked",
+        "IMQGeomFinite.matrixForFlag_spec",
+        "IMQGeomFinite.flags_transitive_with_representatives",
+        "IMQGeomFinite.canonical_orbit_checked",
+        "IMQGeomFinite.canonical_action_mem",
+        "IMQGeomFinite.zero_not_flag",
+        "IMQGeomFinite.canonical_action_ne_zero",
+        "IMQGeomFinite.simultaneousMatrices_spec",
+        "IMQGeomFinite.fibres_disjoint",
+        "IMQGeomFinite.projection_select",
+        "IMQGeomFinite.select_injective",
+        "IMQGeomFinite.selectedProjection_point",
+        "IMQGeomFinite.selectedPoint_projection",
+        "IMQGeomFinite.selectedProjection_injective",
+        "IMQGeomFinite.selectedProjection_surjective",
+        "IMQGeomFinite.selectedProjection_bijective",
+        "IMQGeomFinite.selectedList_length",
+        "IMQGeomFinite.selectedList_complete",
+        "IMQGeomFinite.selectedList_nodup",
+        "IMQGeomFinite.selectedList_cardinality"
+      ]
+    },
+    {
+      "source": "lean/SplitReduction.lean",
+      "file": "SplitReduction",
+      "namespace": "IMQSplit",
+      "sha256": "d6f6f40f8d6a25272ed50074690dad5a3594254030cf079a83a4a0fb58eadb7e",
+      "authored_theorems": [
+        "IMQSplit.zero_center_expansion",
+        "IMQSplit.one_center_expansion",
+        "IMQSplit.zero_center_initial_form",
+        "IMQSplit.one_center_initial_form",
+        "IMQSplit.one_cone_split_modulo",
+        "IMQSplit.residue109_certificate",
+        "IMQSplit.zero_cone_split_modulo109",
+        "IMQSplit.zero_cone_factorization109",
+        "IMQSplit.zero_cone_zero_set109"
+      ]
+    },
+    {
+      "source": "lean/GeometricCompletion.lean",
+      "file": "GeometricCompletion",
+      "namespace": "IMQGeomEF",
+      "sha256": "d6cff07cadd358d80acf21d7d4b7f7140727f4bddc9913a060734428a99efe19",
+      "authored_theorems": [
+        "IMQGeomEF.fixed_flag_valid",
+        "IMQGeomEF.two_torsion_roots_computed",
+        "IMQGeomEF.concrete_checks",
+        "IMQGeomEF.corrected_lift_good",
+        "IMQGeomEF.corrected_places_distinct",
+        "IMQGeomEF.corrected_lift_has_fixed_flag",
+        "IMQGeomEF.corrected_section_bijective",
+        "IMQGeomEF.bad_place_conditions",
+        "IMQGeomEF.arrow_covers_of_datum",
+        "IMQGeomEF.conditions_e_f",
+        "IMQGeomEF.conditions_d_e_f"
+      ]
+    },
+    {
+      "source": "lean/GeometricModels.lean",
+      "file": "GeometricModels",
+      "namespace": "IMQGeomModels",
+      "sha256": "47e25e7e5c2d5890c733b8d08a717f558c2208ebf2192803a98e542d76094f9f",
+      "authored_theorems": [
+        "IMQGeomModels.flags_valid",
+        "IMQGeomModels.flags_distinct",
+        "IMQGeomModels.move_normalizes",
+        "IMQGeomModels.rule_when_kept",
+        "IMQGeomModels.completeRules",
+        "IMQGeomModels.complete_witness_conditions",
+        "IMQGeomModels.corrected_lift_values",
+        "IMQGeomModels.complete_model_nondegenerate",
+        "IMQGeomModels.complete_model_conditions",
+        "IMQGeomModels.datum_premise_inhabited",
+        "IMQGeomModels.tate_premise_inhabited",
+        "IMQGeomModels.transport_premise_inhabited",
+        "IMQGeomModels.field_premise_inhabited",
+        "IMQGeomModels.graph_premise_inhabited",
+        "IMQGeomModels.theta_premise_inhabited",
+        "IMQGeomModels.arrow_premise_inhabited",
+        "IMQGeomModels.all_except",
+        "IMQGeomModels.deleted_conditions_fail",
+        "IMQGeomModels.aggregate_is_necessary",
+        "IMQGeomModels.datum_is_necessary",
+        "IMQGeomModels.tate_is_necessary",
+        "IMQGeomModels.transport_is_necessary",
+        "IMQGeomModels.field_is_necessary",
+        "IMQGeomModels.graph_is_necessary",
+        "IMQGeomModels.theta_is_necessary",
+        "IMQGeomModels.arrow_is_necessary"
+      ]
+    },
+    {
+      "source": "lean/EntranceMargin.lean",
+      "file": "EntranceMargin",
+      "namespace": "IMQEntrance",
+      "sha256": "4949135f6024c79db0fa1a6ad049145e35933e64b2df0cf8de859a04d31d8af9",
+      "authored_theorems": [
+        "IMQEntrance.depth_represents",
+        "IMQEntrance.represents_iff_same_value",
+        "IMQEntrance.margin_positive_iff",
+        "IMQEntrance.threshold_less_iff",
+        "IMQEntrance.margin_pos_iff_cross_mul",
+        "IMQEntrance.margin_pos_iff_ord_gt_threshold",
+        "IMQEntrance.entrance_canonical_depth",
+        "IMQEntrance.margin_pos_iff_nat_criterion",
+        "IMQEntrance.stage_one_criterion",
+        "IMQEntrance.entrance_downward",
+        "IMQEntrance.interval_nonempty_iff",
+        "IMQEntrance.interval_empty_iff",
+        "IMQEntrance.positive_interval_nonempty_iff",
+        "IMQEntrance.entrance_iff_integer_upper",
+        "IMQEntrance.mem_candidates_iff",
+        "IMQEntrance.candidates_nonempty_iff"
+      ]
+    },
+    {
+      "source": "lean/DeepImaginaryDatum.lean",
+      "file": "DeepImaginaryDatum",
+      "namespace": "IMQDeep",
+      "sha256": "f3fac6fb3bb4b9da61a5342dfae810dabdcac18defa03666fb37be912150a0e8",
+      "authored_theorems": [
+        "IMQDeep.ell_prime",
+        "IMQDeep.ell_ge_five",
+        "IMQDeep.norm_a",
+        "IMQDeep.norm_oma",
+        "IMQDeep.smooth",
+        "IMQDeep.orbit_exclusion",
+        "IMQDeep.j_den_nonzero",
+        "IMQDeep.j_nonreal",
+        "IMQDeep.split_roots",
+        "IMQDeep.residues_pi",
+        "IMQDeep.conjugate_place_good",
+        "IMQDeep.thirty_one_good",
+        "IMQDeep.seven_power_counterexample",
+        "IMQDeep.sieve_root31",
+        "IMQDeep.sieve_root7",
+        "IMQDeep.old_seven_cap_insufficient",
+        "IMQDeep.order_at_pi",
+        "IMQDeep.order_prime_to_ell",
+        "IMQDeep.degree_prime_to_ell",
+        "IMQDeep.remaining_orders",
+        "IMQDeep.torsion_order",
+        "IMQDeep.torsion_gcd",
+        "IMQDeep.field_ramification",
+        "IMQDeep.full_ramification",
+        "IMQDeep.small_ramification",
+        "IMQDeep.entrance_positive",
+        "IMQDeep.margin_numerator",
+        "IMQDeep.frobenius_place",
+        "IMQDeep.frobenius_trace",
+        "IMQDeep.frobenius_discriminant",
+        "IMQDeep.irreducible_discriminant",
+        "IMQDeep.candidates_exact",
+        "IMQDeep.larger_candidates_fail",
+        "IMQDeep.coprime_branch_empty",
+        "IMQDeep.actual_fraction_margin",
+        "IMQDeep.actual_fraction_entrance",
+        "IMQDeep.full_weil_proxy_empty"
+      ]
+    },
+    {
+      "source": "lean/BlurExceedsMargin.lean",
+      "file": "BlurExceedsMargin",
+      "namespace": "BlurMargin",
+      "sha256": "1420fc962269a3df593c94580ec7700e4e281f63fd740a2956887f40300903f7",
+      "authored_theorems": [
+        "BlurMargin.excess_at_top",
+        "BlurMargin.excess_independent_of_depth",
+        "BlurMargin.blur_dominates",
+        "BlurMargin.datum_margins",
+        "BlurMargin.datum_blur",
+        "BlurMargin.datum_excess",
+        "BlurMargin.deeper_datum",
+        "BlurMargin.shallow_datum"
+      ]
+    },
+    {
+      "source": "lean/LargeImaginaryDatum.lean",
+      "file": "LargeImaginaryDatum",
+      "namespace": "IMQLarge",
+      "sha256": "179524813addd1a4818469ef602e78c29b7d82a02d8171e50465180bddcc4000",
+      "authored_theorems": [
+        "IMQLarge.p_prime",
+        "IMQLarge.norm_pi",
+        "IMQLarge.p_split",
+        "IMQLarge.a_is_power",
+        "IMQLarge.norm_a",
+        "IMQLarge.norm_oma",
+        "IMQLarge.smooth",
+        "IMQLarge.orbit_exclusion",
+        "IMQLarge.factor_lengths",
+        "IMQLarge.factor_norms_exact",
+        "IMQLarge.gaussian_factor_product",
+        "IMQLarge.integer_factor_product",
+        "IMQLarge.pair_coverage",
+        "IMQLarge.all_pair_gcds",
+        "IMQLarge.pair_gcd_support",
+        "IMQLarge.all_roots89",
+        "IMQLarge.maximum_root89",
+        "IMQLarge.exceptional_v2",
+        "IMQLarge.exceptional_v5",
+        "IMQLarge.whole_root157",
+        "IMQLarge.ell_count",
+        "IMQLarge.ell_primes",
+        "IMQLarge.ell_B_residues",
+        "IMQLarge.ell_B_nonzero",
+        "IMQLarge.ell_pi_nonzero",
+        "IMQLarge.all_torsion_gcds",
+        "IMQLarge.all_small_ramification",
+        "IMQLarge.all_height_cutoffs",
+        "IMQLarge.all_entrance_cutoffs",
+        "IMQLarge.finite_candidates_exact",
+        "IMQLarge.all_remaining_orders",
+        "IMQLarge.all_extension_degrees",
+        "IMQLarge.sl157_order_formula",
+        "IMQLarge.all_fraction_margins",
+        "IMQLarge.all_fraction_entrances",
+        "IMQLarge.margin157",
+        "IMQLarge.frobenius_ell_coverage",
+        "IMQLarge.all_frobenius_checks"
+      ]
+    },
+    {
+      "source": "lean/RegardedUpToIsOrbit.lean",
+      "file": "RegardedUpToIsOrbit",
+      "namespace": "RegardedUpTo",
+      "sha256": "c620b4868c329581b40f624e52ea5ffae353c4ff1b05df50997c2df800dd0792",
+      "authored_theorems": [
+        "RegardedUpTo.act_A",
+        "RegardedUpTo.act_is_nontrivial",
+        "RegardedUpTo.hull_card_invariant",
+        "RegardedUpTo.union_hull_exceeds_every_member",
+        "RegardedUpTo.orbit_not_forced_by_invariance",
+        "RegardedUpTo.act_sA",
+        "RegardedUpTo.orbit_is_up_to_act",
+        "RegardedUpTo.orbit_vol_invariant",
+        "RegardedUpTo.the_point"
+      ]
+    },
+    {
+      "source": "lean/BasisFreeImage.lean",
+      "file": "BasisFreeImage",
+      "namespace": "BasisFree",
+      "sha256": "63fa66517fd325c405ffac94e1fb347b501e25429185f1bf005ea253efc4d3f4",
+      "authored_theorems": [
+        "BasisFree.lines_card",
+        "BasisFree.irrMats_card",
+        "BasisFree.irreducible_moves_every_line",
+        "BasisFree.sl2_card",
+        "BasisFree.sl2_transitive_on_distinct_pairs",
+        "BasisFree.diagonal_conjugation_normalizes",
+        "BasisFree.normalized_pairs_generate_1",
+        "BasisFree.normalized_pairs_generate_2",
+        "BasisFree.normalized_pairs_generate_3",
+        "BasisFree.normalized_pairs_generate_4",
+        "BasisFree.normalized_pairs_generate_5",
+        "BasisFree.normalized_pairs_generate_6"
+      ]
+    },
+    {
+      "source": "lean/FamilyArithmetic.lean",
+      "file": "FamilyArithmetic",
+      "namespace": "FamilyArith",
+      "sha256": "b9abd70f53e38a8dbf5a6379d711a64e367442cef2614a85cb7a5e0f1e6af997",
+      "authored_theorems": [
+        "FamilyArith.dvd_five_of_both",
+        "FamilyArith.not_dvd_other_factor",
+        "FamilyArith.four_hundred_factors"
+      ]
+    }
+  ],
+  "scope": "fourteen-file-release",
+  "allowed_axioms": [
+    "Quot.sound",
+    "propext"
+  ],
+  "lean_returncode": 0,
+  "source_proof_holes": [],
+  "baseline_authored_theorems": 74,
+  "baseline_audit": {
+    "authored_theorems_found": 74,
+    "axiom_free": 58,
+    "with_axioms": 16,
+    "source_hashes_unchanged": true
+  },
+  "geometry_baseline_audit": {
+    "authored_theorems": 140,
+    "declarations": 481,
+    "authored_axiom_free": 69,
+    "authored_with_axioms": 71,
+    "source_hashes_unchanged": true
+  },
+  "result": "PASS"
+}

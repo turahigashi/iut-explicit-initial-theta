@@ -1,0 +1,2325 @@
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.CC|IMQ.CC|definition
+'IMQ.CC' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.CC|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI|IMQ.GI|inductive
+'IMQ.GI' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.NN|IMQ.NN|definition
+'IMQ.NN' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.NN|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.Na|IMQ.Na|definition
+'IMQ.Na' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.Na|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.Noma|IMQ.Noma|definition
+'IMQ.Noma' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.Noma|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.a|IMQ.a|definition
+'IMQ.a' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.a|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.a_is_pi_pow|IMQ.a_is_pi_pow|theorem
+'IMQ.a_is_pi_pow' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.a_is_pi_pow|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.ab|IMQ.ab|definition
+'IMQ.ab' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.ab|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.am1|IMQ.am1|definition
+'IMQ.am1' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.am1|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.dvdPi|IMQ.dvdPi|definition
+'IMQ.dvdPi' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.dvdPi|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.dvdPib|IMQ.dvdPib|definition
+'IMQ.dvdPib' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.dvdPib|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.eb|IMQ.eb|definition
+'IMQ.eb' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.eb|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.eb_val|IMQ.eb_val|theorem
+'IMQ.eb_val' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.eb_val|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.ell|IMQ.ell|definition
+'IMQ.ell' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.ell|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.gcd_ord_eb|IMQ.gcd_ord_eb|theorem
+'IMQ.gcd_ord_eb' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.gcd_ord_eb|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.instDecidableEqGI|IMQ.instDecidableEqGI|definition
+'IMQ.instDecidableEqGI' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.instDecidableEqGI|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.instReprGI|IMQ.instReprGI|definition
+'IMQ.instReprGI' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.instReprGI|propext
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.isPrimeB|IMQ.isPrimeB|definition
+'IMQ.isPrimeB' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.isPrimeB|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.j_not_rational|IMQ.j_not_rational|theorem
+'IMQ.j_not_rational' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.j_not_rational|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.norm_a|IMQ.norm_a|theorem
+'IMQ.norm_a' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.norm_a|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.norm_oma_factored|IMQ.norm_oma_factored|theorem
+'IMQ.norm_oma_factored' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.norm_oma_factored|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.norm_pi|IMQ.norm_pi|theorem
+'IMQ.norm_pi' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.norm_pi|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.oma|IMQ.oma|definition
+'IMQ.oma' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.oma|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.orbit1|IMQ.orbit1|theorem
+'IMQ.orbit1' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.orbit1|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.orbit2|IMQ.orbit2|theorem
+'IMQ.orbit2' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.orbit2|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.orbit3|IMQ.orbit3|theorem
+'IMQ.orbit3' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.orbit3|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.orbit4|IMQ.orbit4|theorem
+'IMQ.orbit4' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.orbit4|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.orbit5|IMQ.orbit5|theorem
+'IMQ.orbit5' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.orbit5|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.orbit6|IMQ.orbit6|theorem
+'IMQ.orbit6' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.orbit6|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.ord_q|IMQ.ord_q|theorem
+'IMQ.ord_q' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.ord_q|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.ord_qbb|IMQ.ord_qbb|theorem
+'IMQ.ord_qbb' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.ord_qbb|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.p_prime|IMQ.p_prime|theorem
+'IMQ.p_prime' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.p_prime|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.p_split|IMQ.p_split|theorem
+'IMQ.p_split' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.p_split|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.pi|IMQ.pi|definition
+'IMQ.pi' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.pi|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.pi_not_dvd_oma|IMQ.pi_not_dvd_oma|theorem
+'IMQ.pi_not_dvd_oma' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.pi_not_dvd_oma|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.pi_not_dvd_pib|IMQ.pi_not_dvd_pib|theorem
+'IMQ.pi_not_dvd_pib' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.pi_not_dvd_pib|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.pi_pib|IMQ.pi_pib|theorem
+'IMQ.pi_pib' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.pi_pib|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.pib|IMQ.pib|definition
+'IMQ.pib' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.pib|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.pib_not_dvd_a|IMQ.pib_not_dvd_a|theorem
+'IMQ.pib_not_dvd_a' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.pib_not_dvd_a|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.pib_not_dvd_oma|IMQ.pib_not_dvd_oma|theorem
+'IMQ.pib_not_dvd_oma' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.pib_not_dvd_oma|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.pp|IMQ.pp|definition
+'IMQ.pp' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.pp|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.seven_not_dvd_norm_oma|IMQ.seven_not_dvd_norm_oma|theorem
+'IMQ.seven_not_dvd_norm_oma' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.seven_not_dvd_norm_oma|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.seven_not_dvd_ord_q|IMQ.seven_not_dvd_ord_q|theorem
+'IMQ.seven_not_dvd_ord_q' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.seven_not_dvd_ord_q|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.seven_not_dvd_small|IMQ.seven_not_dvd_small|theorem
+'IMQ.seven_not_dvd_small' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.seven_not_dvd_small|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.sieve_bound_is_seventh_root|IMQ.sieve_bound_is_seventh_root|theorem
+'IMQ.sieve_bound_is_seventh_root' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.sieve_bound_is_seventh_root|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.tame|IMQ.tame|theorem
+'IMQ.tame' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.tame|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI._sizeOf_1|IMQ.GI._sizeOf_1|definition
+'IMQ.GI._sizeOf_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI._sizeOf_1|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI._sizeOf_inst|IMQ.GI._sizeOf_inst|definition
+'IMQ.GI._sizeOf_inst' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI._sizeOf_inst|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.add|IMQ.GI.add|definition
+'IMQ.GI.add' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.add|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.casesOn|IMQ.GI.casesOn|definition
+'IMQ.GI.casesOn' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.casesOn|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.conj|IMQ.GI.conj|definition
+'IMQ.GI.conj' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.conj|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.ctorIdx|IMQ.GI.ctorIdx|definition
+'IMQ.GI.ctorIdx' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.ctorIdx|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.im|IMQ.GI.im|definition
+'IMQ.GI.im' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.im|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.mk|IMQ.GI.mk|constructor
+'IMQ.GI.mk' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.mk|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.mul|IMQ.GI.mul|definition
+'IMQ.GI.mul' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.mul|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.noConfusion|IMQ.GI.noConfusion|definition
+'IMQ.GI.noConfusion' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.noConfusion|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.noConfusionType|IMQ.GI.noConfusionType|definition
+'IMQ.GI.noConfusionType' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.noConfusionType|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.nrm|IMQ.GI.nrm|definition
+'IMQ.GI.nrm' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.nrm|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.one|IMQ.GI.one|definition
+'IMQ.GI.one' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.one|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.pw|IMQ.GI.pw|definition
+'IMQ.GI.pw' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.pw|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.re|IMQ.GI.re|definition
+'IMQ.GI.re' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.re|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.rec|IMQ.GI.rec|recursor
+'IMQ.GI.rec' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.rec|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.recOn|IMQ.GI.recOn|definition
+'IMQ.GI.recOn' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.recOn|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.sub|IMQ.GI.sub|definition
+'IMQ.GI.sub' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.sub|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.instDecidableEqGI.decEq|IMQ.instDecidableEqGI.decEq|definition
+'IMQ.instDecidableEqGI.decEq' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.instDecidableEqGI.decEq|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.instReprGI.repr|IMQ.instReprGI.repr|definition
+'IMQ.instReprGI.repr' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.instReprGI.repr|propext
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.mk._flat_ctor|IMQ.GI.mk._flat_ctor|definition
+'IMQ.GI.mk._flat_ctor' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.mk._flat_ctor|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.mk.inj|IMQ.GI.mk.inj|theorem
+'IMQ.GI.mk.inj' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.mk.inj|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.mk.injEq|IMQ.GI.mk.injEq|theorem
+'IMQ.GI.mk.injEq' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.mk.injEq|propext
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.mk.noConfusion|IMQ.GI.mk.noConfusion|definition
+'IMQ.GI.mk.noConfusion' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.mk.noConfusion|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.mk.sizeOf_spec|IMQ.GI.mk.sizeOf_spec|theorem
+'IMQ.GI.mk.sizeOf_spec' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.mk.sizeOf_spec|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.pw._f|IMQ.GI.pw._f|definition
+'IMQ.GI.pw._f' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.pw._f|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.pw._sunfold|IMQ.GI.pw._sunfold|definition
+'IMQ.GI.pw._sunfold' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.pw._sunfold|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.pw._unsafe_rec|IMQ.GI.pw._unsafe_rec|definition
+'IMQ.GI.pw._unsafe_rec' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.pw._unsafe_rec|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.GI.pw.match_1|IMQ.GI.pw.match_1|definition
+'IMQ.GI.pw.match_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.GI.pw.match_1|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.instDecidableEqGI.decEq._proof_1|IMQ.instDecidableEqGI.decEq._proof_1|theorem
+'IMQ.instDecidableEqGI.decEq._proof_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.instDecidableEqGI.decEq._proof_1|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.instDecidableEqGI.decEq._proof_2|IMQ.instDecidableEqGI.decEq._proof_2|theorem
+'IMQ.instDecidableEqGI.decEq._proof_2' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.instDecidableEqGI.decEq._proof_2|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.instDecidableEqGI.decEq._proof_3|IMQ.instDecidableEqGI.decEq._proof_3|theorem
+'IMQ.instDecidableEqGI.decEq._proof_3' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.instDecidableEqGI.decEq._proof_3|
+LEAN_AUDIT_DECL|ImaginaryQuadraticDatum|IMQ.instDecidableEqGI.decEq.match_1|IMQ.instDecidableEqGI.decEq.match_1|definition
+'IMQ.instDecidableEqGI.decEq.match_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|ImaginaryQuadraticDatum|IMQ.instDecidableEqGI.decEq.match_1|
+LEAN_AUDIT_TOTAL|ImaginaryQuadraticDatum|79
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.TT|IMQ7.TT|definition
+'IMQ7.TT' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.TT|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.aMod|IMQ7.aMod|definition
+'IMQ7.aMod' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.aMod|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.card|IMQ7.card|definition
+'IMQ7.card' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.card|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.closure|IMQ7.closure|definition
+'IMQ7.closure' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.closure|propext
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.comp|IMQ7.comp|definition
+'IMQ7.comp' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.comp|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.compInv|IMQ7.compInv|definition
+'IMQ7.compInv' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.compInv|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.compInv13|IMQ7.compInv13|theorem
+'IMQ7.compInv13' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.compInv13|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.compInv17|IMQ7.compInv17|theorem
+'IMQ7.compInv17' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.compInv17|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.compInv37|IMQ7.compInv37|theorem
+'IMQ7.compInv37' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.compInv37|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.compInv41|IMQ7.compInv41|theorem
+'IMQ7.compInv41' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.compInv41|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.compInv53|IMQ7.compInv53|theorem
+'IMQ7.compInv53' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.compInv53|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.compInv61|IMQ7.compInv61|theorem
+'IMQ7.compInv61' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.compInv61|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.conjT|IMQ7.conjT|definition
+'IMQ7.conjT' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.conjT|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.dec|IMQ7.dec|definition
+'IMQ7.dec' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.dec|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.disc7|IMQ7.disc7|definition
+'IMQ7.disc7' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.disc7|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.enc|IMQ7.enc|definition
+'IMQ7.enc' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.enc|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.gen13|IMQ7.gen13|theorem
+'IMQ7.gen13' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.gen13|propext
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.gen17|IMQ7.gen17|theorem
+'IMQ7.gen17' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.gen17|propext
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.gen37|IMQ7.gen37|theorem
+'IMQ7.gen37' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.gen37|propext
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.gen41|IMQ7.gen41|theorem
+'IMQ7.gen41' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.gen41|propext
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.gen53|IMQ7.gen53|theorem
+'IMQ7.gen53' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.gen53|propext
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.gen61|IMQ7.gen61|theorem
+'IMQ7.gen61' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.gen61|propext
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.gensOrder|IMQ7.gensOrder|definition
+'IMQ7.gensOrder' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.gensOrder|propext
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.ident|IMQ7.ident|definition
+'IMQ7.ident' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.ident|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.index_prime_to_seven|IMQ7.index_prime_to_seven|theorem
+'IMQ7.index_prime_to_seven' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.index_prime_to_seven|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.inv7|IMQ7.inv7|definition
+'IMQ7.inv7' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.inv7|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.legendre|IMQ7.legendre|definition
+'IMQ7.legendre' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.legendre|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.mulI|IMQ7.mulI|definition
+'IMQ7.mulI' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.mulI|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.nonsq13|IMQ7.nonsq13|theorem
+'IMQ7.nonsq13' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.nonsq13|propext,Quot.sound
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.nonsq17|IMQ7.nonsq17|theorem
+'IMQ7.nonsq17' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.nonsq17|propext,Quot.sound
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.nonsq37|IMQ7.nonsq37|theorem
+'IMQ7.nonsq37' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.nonsq37|propext,Quot.sound
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.nonsq41|IMQ7.nonsq41|theorem
+'IMQ7.nonsq41' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.nonsq41|propext,Quot.sound
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.nonsq53|IMQ7.nonsq53|theorem
+'IMQ7.nonsq53' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.nonsq53|propext,Quot.sound
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.nonsq61|IMQ7.nonsq61|theorem
+'IMQ7.nonsq61' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.nonsq61|propext,Quot.sound
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.other_place_13_fails|IMQ7.other_place_13_fails|theorem
+'IMQ7.other_place_13_fails' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.other_place_13_fails|propext,Quot.sound
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.other_place_61_fails|IMQ7.other_place_61_fails|theorem
+'IMQ7.other_place_61_fails' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.other_place_61_fails|propext,Quot.sound
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.root13|IMQ7.root13|theorem
+'IMQ7.root13' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.root13|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.root17|IMQ7.root17|theorem
+'IMQ7.root17' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.root17|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.root37|IMQ7.root37|theorem
+'IMQ7.root37' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.root37|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.root41|IMQ7.root41|theorem
+'IMQ7.root41' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.root41|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.root53|IMQ7.root53|theorem
+'IMQ7.root53' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.root53|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.root61|IMQ7.root61|theorem
+'IMQ7.root61' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.root61|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.rootI|IMQ7.rootI|definition
+'IMQ7.rootI' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.rootI|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.sq7|IMQ7.sq7|definition
+'IMQ7.sq7' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.sq7|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.stepOne|IMQ7.stepOne|definition
+'IMQ7.stepOne' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.stepOne|propext
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.tr13|IMQ7.tr13|theorem
+'IMQ7.tr13' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.tr13|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.tr17|IMQ7.tr17|theorem
+'IMQ7.tr17' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.tr17|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.tr37|IMQ7.tr37|theorem
+'IMQ7.tr37' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.tr37|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.tr41|IMQ7.tr41|theorem
+'IMQ7.tr41' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.tr41|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.tr53|IMQ7.tr53|theorem
+'IMQ7.tr53' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.tr53|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.tr61|IMQ7.tr61|theorem
+'IMQ7.tr61' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.tr61|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.traceAt|IMQ7.traceAt|definition
+'IMQ7.traceAt' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.traceAt|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.aMod.go|IMQ7.aMod.go|definition
+'IMQ7.aMod.go' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.aMod.go|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.card._f|IMQ7.card._f|definition
+'IMQ7.card._f' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.card._f|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.card._sunfold|IMQ7.card._sunfold|definition
+'IMQ7.card._sunfold' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.card._sunfold|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.card._unsafe_rec|IMQ7.card._unsafe_rec|definition
+'IMQ7.card._unsafe_rec' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.card._unsafe_rec|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.closure._f|IMQ7.closure._f|definition
+'IMQ7.closure._f' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.closure._f|propext
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.closure._sunfold|IMQ7.closure._sunfold|definition
+'IMQ7.closure._sunfold' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.closure._sunfold|propext
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.closure._unsafe_rec|IMQ7.closure._unsafe_rec|definition
+'IMQ7.closure._unsafe_rec' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.closure._unsafe_rec|propext
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.legendre.pw|IMQ7.legendre.pw|definition
+'IMQ7.legendre.pw' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.legendre.pw|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.mulI.match_1|IMQ7.mulI.match_1|definition
+'IMQ7.mulI.match_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.mulI.match_1|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.stepOne._f|IMQ7.stepOne._f|definition
+'IMQ7.stepOne._f' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.stepOne._f|propext
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.stepOne._sunfold|IMQ7.stepOne._sunfold|definition
+'IMQ7.stepOne._sunfold' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.stepOne._sunfold|propext
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.stepOne._unsafe_rec|IMQ7.stepOne._unsafe_rec|definition
+'IMQ7.stepOne._unsafe_rec' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.stepOne._unsafe_rec|propext
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.aMod.go._f|IMQ7.aMod.go._f|definition
+'IMQ7.aMod.go._f' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.aMod.go._f|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.aMod.go._sunfold|IMQ7.aMod.go._sunfold|definition
+'IMQ7.aMod.go._sunfold' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.aMod.go._sunfold|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.aMod.go._unsafe_rec|IMQ7.aMod.go._unsafe_rec|definition
+'IMQ7.aMod.go._unsafe_rec' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.aMod.go._unsafe_rec|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.aMod.go.match_1|IMQ7.aMod.go.match_1|definition
+'IMQ7.aMod.go.match_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.aMod.go.match_1|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.legendre.pw._f|IMQ7.legendre.pw._f|definition
+'IMQ7.legendre.pw._f' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.legendre.pw._f|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.legendre.pw._sunfold|IMQ7.legendre.pw._sunfold|definition
+'IMQ7.legendre.pw._sunfold' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.legendre.pw._sunfold|
+LEAN_AUDIT_DECL|ModSevenImage|IMQ7.legendre.pw._unsafe_rec|IMQ7.legendre.pw._unsafe_rec|definition
+'IMQ7.legendre.pw._unsafe_rec' does not depend on any axioms
+LEAN_AUDIT_DEPS|ModSevenImage|IMQ7.legendre.pw._unsafe_rec|
+LEAN_AUDIT_TOTAL|ModSevenImage|71
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput|IMQGeom.AnabelianInput|inductive
+'IMQGeom.AnabelianInput' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI|IMQGeom.GI|inductive
+'IMQGeom.GI' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.SL7|IMQGeom.SL7|definition
+'IMQGeom.SL7' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.SL7|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.WeakInput|IMQGeom.WeakInput|inductive
+'IMQGeom.WeakInput' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.WeakInput|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.a|IMQGeom.a|definition
+'IMQGeom.a' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.a|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.actFlag|IMQGeom.actFlag|definition
+'IMQGeom.actFlag' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.actFlag|propext
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.actSet|IMQGeom.actSet|definition
+'IMQGeom.actSet' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.actSet|propext
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.actV|IMQGeom.actV|definition
+'IMQGeom.actV' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.actV|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.allFlags|IMQGeom.allFlags|definition
+'IMQGeom.allFlags' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.allFlags|propext
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.cardBits|IMQGeom.cardBits|definition
+'IMQGeom.cardBits' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.cardBits|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.core_of_datum|IMQGeom.core_of_datum|theorem
+'IMQGeom.core_of_datum' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.core_of_datum|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.core_of_irrational_j|IMQGeom.core_of_irrational_j|theorem
+'IMQGeom.core_of_irrational_j' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.core_of_irrational_j|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.cosetPair|IMQGeom.cosetPair|definition
+'IMQGeom.cosetPair' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.cosetPair|propext
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.counter|IMQGeom.counter|definition
+'IMQGeom.counter' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.counter|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.encV|IMQGeom.encV|definition
+'IMQGeom.encV' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.encV|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.excJ|IMQGeom.excJ|definition
+'IMQGeom.excJ' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.excJ|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.exc_all_rational|IMQGeom.exc_all_rational|theorem
+'IMQGeom.exc_all_rational' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.exc_all_rational|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.flagKey|IMQGeom.flagKey|definition
+'IMQGeom.flagKey' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.flagKey|propext
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.flags_card|IMQGeom.flags_card|theorem
+'IMQGeom.flags_card' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.flags_card|propext
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.flags_transitive|IMQGeom.flags_transitive|theorem
+'IMQGeom.flags_transitive' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.flags_transitive|propext
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.instDecidableEqGI|IMQGeom.instDecidableEqGI|definition
+'IMQGeom.instDecidableEqGI' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.instDecidableEqGI|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.instReprGI|IMQGeom.instReprGI|definition
+'IMQGeom.instReprGI' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.instReprGI|propext
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.jDen|IMQGeom.jDen|definition
+'IMQGeom.jDen' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.jDen|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.jDen_ne_zero|IMQGeom.jDen_ne_zero|theorem
+'IMQGeom.jDen_ne_zero' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.jDen_ne_zero|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.jIsRational|IMQGeom.jIsRational|definition
+'IMQGeom.jIsRational' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.jIsRational|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.jNum|IMQGeom.jNum|definition
+'IMQGeom.jNum' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.jNum|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.j_not_rational|IMQGeom.j_not_rational|theorem
+'IMQGeom.j_not_rational' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.j_not_rational|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.lineOf|IMQGeom.lineOf|definition
+'IMQGeom.lineOf' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.lineOf|propext
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.mfhmp_is_necessary|IMQGeom.mfhmp_is_necessary|theorem
+'IMQGeom.mfhmp_is_necessary' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.mfhmp_is_necessary|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.sl7_card|IMQGeom.sl7_card|theorem
+'IMQGeom.sl7_card' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.sl7_card|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.stabiliser_order|IMQGeom.stabiliser_order|theorem
+'IMQGeom.stabiliser_order' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.stabiliser_order|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.two_xi_ne_pm_xi|IMQGeom.two_xi_ne_pm_xi|theorem
+'IMQGeom.two_xi_ne_pm_xi' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.two_xi_ne_pm_xi|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.witness|IMQGeom.witness|definition
+'IMQGeom.witness' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.witness|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.witness_arithmetic_inhabited|IMQGeom.witness_arithmetic_inhabited|theorem
+'IMQGeom.witness_arithmetic_inhabited' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.witness_arithmetic_inhabited|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.witness_core_fails|IMQGeom.witness_core_fails|theorem
+'IMQGeom.witness_core_fails' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.witness_core_fails|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.witness_core_holds|IMQGeom.witness_core_holds|theorem
+'IMQGeom.witness_core_holds' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.witness_core_holds|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput.Curve|IMQGeom.AnabelianInput.Curve|definition
+'IMQGeom.AnabelianInput.Curve' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput.Curve|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput.HasRationalJ|IMQGeom.AnabelianInput.HasRationalJ|definition
+'IMQGeom.AnabelianInput.HasRationalJ' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput.HasRationalJ|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput.IsArithmetic|IMQGeom.AnabelianInput.IsArithmetic|definition
+'IMQGeom.AnabelianInput.IsArithmetic' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput.IsArithmetic|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput.IsCore|IMQGeom.AnabelianInput.IsCore|definition
+'IMQGeom.AnabelianInput.IsCore' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput.IsCore|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput.IsPuncturedHemiElliptic|IMQGeom.AnabelianInput.IsPuncturedHemiElliptic|definition
+'IMQGeom.AnabelianInput.IsPuncturedHemiElliptic' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput.IsPuncturedHemiElliptic|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput.X0|IMQGeom.AnabelianInput.X0|definition
+'IMQGeom.AnabelianInput.X0' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput.X0|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput.X0_j|IMQGeom.AnabelianInput.X0_j|theorem
+'IMQGeom.AnabelianInput.X0_j' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput.X0_j|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput.X0_phe|IMQGeom.AnabelianInput.X0_phe|theorem
+'IMQGeom.AnabelianInput.X0_phe' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput.X0_phe|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput._sizeOf_1|IMQGeom.AnabelianInput._sizeOf_1|definition
+'IMQGeom.AnabelianInput._sizeOf_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput._sizeOf_1|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput._sizeOf_inst|IMQGeom.AnabelianInput._sizeOf_inst|definition
+'IMQGeom.AnabelianInput._sizeOf_inst' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput._sizeOf_inst|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput.canlift_2_7|IMQGeom.AnabelianInput.canlift_2_7|theorem
+'IMQGeom.AnabelianInput.canlift_2_7' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput.canlift_2_7|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput.casesOn|IMQGeom.AnabelianInput.casesOn|definition
+'IMQGeom.AnabelianInput.casesOn' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput.casesOn|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput.ctorIdx|IMQGeom.AnabelianInput.ctorIdx|definition
+'IMQGeom.AnabelianInput.ctorIdx' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput.ctorIdx|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput.mfhmp_2_1|IMQGeom.AnabelianInput.mfhmp_2_1|theorem
+'IMQGeom.AnabelianInput.mfhmp_2_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput.mfhmp_2_1|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput.mk|IMQGeom.AnabelianInput.mk|constructor
+'IMQGeom.AnabelianInput.mk' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput.mk|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput.noConfusion|IMQGeom.AnabelianInput.noConfusion|definition
+'IMQGeom.AnabelianInput.noConfusion' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput.noConfusion|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput.noConfusionType|IMQGeom.AnabelianInput.noConfusionType|definition
+'IMQGeom.AnabelianInput.noConfusionType' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput.noConfusionType|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput.rec|IMQGeom.AnabelianInput.rec|recursor
+'IMQGeom.AnabelianInput.rec' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput.rec|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput.recOn|IMQGeom.AnabelianInput.recOn|definition
+'IMQGeom.AnabelianInput.recOn' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput.recOn|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI._sizeOf_1|IMQGeom.GI._sizeOf_1|definition
+'IMQGeom.GI._sizeOf_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI._sizeOf_1|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI._sizeOf_inst|IMQGeom.GI._sizeOf_inst|definition
+'IMQGeom.GI._sizeOf_inst' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI._sizeOf_inst|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI.add|IMQGeom.GI.add|definition
+'IMQGeom.GI.add' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI.add|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI.casesOn|IMQGeom.GI.casesOn|definition
+'IMQGeom.GI.casesOn' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI.casesOn|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI.conj|IMQGeom.GI.conj|definition
+'IMQGeom.GI.conj' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI.conj|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI.ctorIdx|IMQGeom.GI.ctorIdx|definition
+'IMQGeom.GI.ctorIdx' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI.ctorIdx|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI.im|IMQGeom.GI.im|definition
+'IMQGeom.GI.im' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI.im|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI.mk|IMQGeom.GI.mk|constructor
+'IMQGeom.GI.mk' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI.mk|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI.mul|IMQGeom.GI.mul|definition
+'IMQGeom.GI.mul' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI.mul|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI.noConfusion|IMQGeom.GI.noConfusion|definition
+'IMQGeom.GI.noConfusion' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI.noConfusion|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI.noConfusionType|IMQGeom.GI.noConfusionType|definition
+'IMQGeom.GI.noConfusionType' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI.noConfusionType|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI.one|IMQGeom.GI.one|definition
+'IMQGeom.GI.one' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI.one|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI.pw|IMQGeom.GI.pw|definition
+'IMQGeom.GI.pw' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI.pw|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI.re|IMQGeom.GI.re|definition
+'IMQGeom.GI.re' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI.re|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI.rec|IMQGeom.GI.rec|recursor
+'IMQGeom.GI.rec' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI.rec|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI.recOn|IMQGeom.GI.recOn|definition
+'IMQGeom.GI.recOn' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI.recOn|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI.sub|IMQGeom.GI.sub|definition
+'IMQGeom.GI.sub' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI.sub|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.WeakInput.Curve|IMQGeom.WeakInput.Curve|definition
+'IMQGeom.WeakInput.Curve' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.WeakInput.Curve|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.WeakInput.HasRationalJ|IMQGeom.WeakInput.HasRationalJ|definition
+'IMQGeom.WeakInput.HasRationalJ' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.WeakInput.HasRationalJ|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.WeakInput.IsArithmetic|IMQGeom.WeakInput.IsArithmetic|definition
+'IMQGeom.WeakInput.IsArithmetic' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.WeakInput.IsArithmetic|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.WeakInput.IsCore|IMQGeom.WeakInput.IsCore|definition
+'IMQGeom.WeakInput.IsCore' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.WeakInput.IsCore|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.WeakInput.IsPuncturedHemiElliptic|IMQGeom.WeakInput.IsPuncturedHemiElliptic|definition
+'IMQGeom.WeakInput.IsPuncturedHemiElliptic' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.WeakInput.IsPuncturedHemiElliptic|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.WeakInput._sizeOf_1|IMQGeom.WeakInput._sizeOf_1|definition
+'IMQGeom.WeakInput._sizeOf_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.WeakInput._sizeOf_1|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.WeakInput._sizeOf_inst|IMQGeom.WeakInput._sizeOf_inst|definition
+'IMQGeom.WeakInput._sizeOf_inst' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.WeakInput._sizeOf_inst|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.WeakInput.canlift_2_7|IMQGeom.WeakInput.canlift_2_7|theorem
+'IMQGeom.WeakInput.canlift_2_7' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.WeakInput.canlift_2_7|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.WeakInput.casesOn|IMQGeom.WeakInput.casesOn|definition
+'IMQGeom.WeakInput.casesOn' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.WeakInput.casesOn|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.WeakInput.ctorIdx|IMQGeom.WeakInput.ctorIdx|definition
+'IMQGeom.WeakInput.ctorIdx' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.WeakInput.ctorIdx|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.WeakInput.mk|IMQGeom.WeakInput.mk|constructor
+'IMQGeom.WeakInput.mk' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.WeakInput.mk|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.WeakInput.noConfusion|IMQGeom.WeakInput.noConfusion|definition
+'IMQGeom.WeakInput.noConfusion' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.WeakInput.noConfusion|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.WeakInput.noConfusionType|IMQGeom.WeakInput.noConfusionType|definition
+'IMQGeom.WeakInput.noConfusionType' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.WeakInput.noConfusionType|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.WeakInput.rec|IMQGeom.WeakInput.rec|recursor
+'IMQGeom.WeakInput.rec' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.WeakInput.rec|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.WeakInput.recOn|IMQGeom.WeakInput.recOn|definition
+'IMQGeom.WeakInput.recOn' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.WeakInput.recOn|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.actSet._f|IMQGeom.actSet._f|definition
+'IMQGeom.actSet._f' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.actSet._f|propext
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.actSet._sunfold|IMQGeom.actSet._sunfold|definition
+'IMQGeom.actSet._sunfold' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.actSet._sunfold|propext
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.actSet._unsafe_rec|IMQGeom.actSet._unsafe_rec|definition
+'IMQGeom.actSet._unsafe_rec' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.actSet._unsafe_rec|propext
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.cardBits._f|IMQGeom.cardBits._f|definition
+'IMQGeom.cardBits._f' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.cardBits._f|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.cardBits._sunfold|IMQGeom.cardBits._sunfold|definition
+'IMQGeom.cardBits._sunfold' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.cardBits._sunfold|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.cardBits._unsafe_rec|IMQGeom.cardBits._unsafe_rec|definition
+'IMQGeom.cardBits._unsafe_rec' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.cardBits._unsafe_rec|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.instDecidableEqGI.decEq|IMQGeom.instDecidableEqGI.decEq|definition
+'IMQGeom.instDecidableEqGI.decEq' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.instDecidableEqGI.decEq|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.instReprGI.repr|IMQGeom.instReprGI.repr|definition
+'IMQGeom.instReprGI.repr' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.instReprGI.repr|propext
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.lineOf.encM|IMQGeom.lineOf.encM|definition
+'IMQGeom.lineOf.encM' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.lineOf.encM|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.witness._proof_1|IMQGeom.witness._proof_1|theorem
+'IMQGeom.witness._proof_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.witness._proof_1|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.witness._proof_2|IMQGeom.witness._proof_2|theorem
+'IMQGeom.witness._proof_2' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.witness._proof_2|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput.mk._flat_ctor|IMQGeom.AnabelianInput.mk._flat_ctor|definition
+'IMQGeom.AnabelianInput.mk._flat_ctor' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput.mk._flat_ctor|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput.mk.inj|IMQGeom.AnabelianInput.mk.inj|theorem
+'IMQGeom.AnabelianInput.mk.inj' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput.mk.inj|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput.mk.injEq|IMQGeom.AnabelianInput.mk.injEq|theorem
+'IMQGeom.AnabelianInput.mk.injEq' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput.mk.injEq|propext
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput.mk.noConfusion|IMQGeom.AnabelianInput.mk.noConfusion|definition
+'IMQGeom.AnabelianInput.mk.noConfusion' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput.mk.noConfusion|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.AnabelianInput.mk.sizeOf_spec|IMQGeom.AnabelianInput.mk.sizeOf_spec|theorem
+'IMQGeom.AnabelianInput.mk.sizeOf_spec' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.AnabelianInput.mk.sizeOf_spec|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI.mk._flat_ctor|IMQGeom.GI.mk._flat_ctor|definition
+'IMQGeom.GI.mk._flat_ctor' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI.mk._flat_ctor|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI.mk.inj|IMQGeom.GI.mk.inj|theorem
+'IMQGeom.GI.mk.inj' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI.mk.inj|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI.mk.injEq|IMQGeom.GI.mk.injEq|theorem
+'IMQGeom.GI.mk.injEq' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI.mk.injEq|propext
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI.mk.noConfusion|IMQGeom.GI.mk.noConfusion|definition
+'IMQGeom.GI.mk.noConfusion' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI.mk.noConfusion|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI.mk.sizeOf_spec|IMQGeom.GI.mk.sizeOf_spec|theorem
+'IMQGeom.GI.mk.sizeOf_spec' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI.mk.sizeOf_spec|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI.pw._f|IMQGeom.GI.pw._f|definition
+'IMQGeom.GI.pw._f' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI.pw._f|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI.pw._sunfold|IMQGeom.GI.pw._sunfold|definition
+'IMQGeom.GI.pw._sunfold' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI.pw._sunfold|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.GI.pw._unsafe_rec|IMQGeom.GI.pw._unsafe_rec|definition
+'IMQGeom.GI.pw._unsafe_rec' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.GI.pw._unsafe_rec|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.WeakInput.mk._flat_ctor|IMQGeom.WeakInput.mk._flat_ctor|definition
+'IMQGeom.WeakInput.mk._flat_ctor' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.WeakInput.mk._flat_ctor|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.WeakInput.mk.inj|IMQGeom.WeakInput.mk.inj|theorem
+'IMQGeom.WeakInput.mk.inj' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.WeakInput.mk.inj|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.WeakInput.mk.injEq|IMQGeom.WeakInput.mk.injEq|theorem
+'IMQGeom.WeakInput.mk.injEq' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.WeakInput.mk.injEq|propext
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.WeakInput.mk.noConfusion|IMQGeom.WeakInput.mk.noConfusion|definition
+'IMQGeom.WeakInput.mk.noConfusion' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.WeakInput.mk.noConfusion|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.WeakInput.mk.sizeOf_spec|IMQGeom.WeakInput.mk.sizeOf_spec|theorem
+'IMQGeom.WeakInput.mk.sizeOf_spec' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.WeakInput.mk.sizeOf_spec|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.instDecidableEqGI.decEq._proof_1|IMQGeom.instDecidableEqGI.decEq._proof_1|theorem
+'IMQGeom.instDecidableEqGI.decEq._proof_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.instDecidableEqGI.decEq._proof_1|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.instDecidableEqGI.decEq._proof_2|IMQGeom.instDecidableEqGI.decEq._proof_2|theorem
+'IMQGeom.instDecidableEqGI.decEq._proof_2' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.instDecidableEqGI.decEq._proof_2|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.instDecidableEqGI.decEq._proof_3|IMQGeom.instDecidableEqGI.decEq._proof_3|theorem
+'IMQGeom.instDecidableEqGI.decEq._proof_3' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.instDecidableEqGI.decEq._proof_3|
+LEAN_AUDIT_DECL|GeometricInput|IMQGeom.instDecidableEqGI.decEq.match_1|IMQGeom.instDecidableEqGI.decEq.match_1|definition
+'IMQGeom.instDecidableEqGI.decEq.match_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricInput|IMQGeom.instDecidableEqGI.decEq.match_1|
+LEAN_AUDIT_TOTAL|GeometricInput|120
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.Selected|IMQGeomFinite.Selected|definition
+'IMQGeomFinite.Selected' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.Selected|
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.canonical_action_mem|IMQGeomFinite.canonical_action_mem|theorem
+'IMQGeomFinite.canonical_action_mem' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.canonical_action_mem|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.canonical_action_ne_zero|IMQGeomFinite.canonical_action_ne_zero|theorem
+'IMQGeomFinite.canonical_action_ne_zero' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.canonical_action_ne_zero|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.canonical_orbit_checked|IMQGeomFinite.canonical_orbit_checked|theorem
+'IMQGeomFinite.canonical_orbit_checked' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.canonical_orbit_checked|propext
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.fibres_disjoint|IMQGeomFinite.fibres_disjoint|theorem
+'IMQGeomFinite.fibres_disjoint' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.fibres_disjoint|
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.flags_transitive_with_representatives|IMQGeomFinite.flags_transitive_with_representatives|theorem
+'IMQGeomFinite.flags_transitive_with_representatives' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.flags_transitive_with_representatives|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.matrixForFlag|IMQGeomFinite.matrixForFlag|definition
+'IMQGeomFinite.matrixForFlag' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.matrixForFlag|propext
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.matrixForFlag_checked|IMQGeomFinite.matrixForFlag_checked|theorem
+'IMQGeomFinite.matrixForFlag_checked' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.matrixForFlag_checked|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.matrixForFlag_spec|IMQGeomFinite.matrixForFlag_spec|theorem
+'IMQGeomFinite.matrixForFlag_spec' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.matrixForFlag_spec|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.projection_select|IMQGeomFinite.projection_select|theorem
+'IMQGeomFinite.projection_select' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.projection_select|
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.select|IMQGeomFinite.select|definition
+'IMQGeomFinite.select' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.select|
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.select_injective|IMQGeomFinite.select_injective|theorem
+'IMQGeomFinite.select_injective' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.select_injective|
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.selectedList|IMQGeomFinite.selectedList|definition
+'IMQGeomFinite.selectedList' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.selectedList|
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.selectedList_cardinality|IMQGeomFinite.selectedList_cardinality|theorem
+'IMQGeomFinite.selectedList_cardinality' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.selectedList_cardinality|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.selectedList_complete|IMQGeomFinite.selectedList_complete|theorem
+'IMQGeomFinite.selectedList_complete' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.selectedList_complete|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.selectedList_length|IMQGeomFinite.selectedList_length|theorem
+'IMQGeomFinite.selectedList_length' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.selectedList_length|propext
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.selectedList_nodup|IMQGeomFinite.selectedList_nodup|theorem
+'IMQGeomFinite.selectedList_nodup' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.selectedList_nodup|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.selectedPoint|IMQGeomFinite.selectedPoint|definition
+'IMQGeomFinite.selectedPoint' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.selectedPoint|
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.selectedPoint_projection|IMQGeomFinite.selectedPoint_projection|theorem
+'IMQGeomFinite.selectedPoint_projection' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.selectedPoint_projection|
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.selectedProjection|IMQGeomFinite.selectedProjection|definition
+'IMQGeomFinite.selectedProjection' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.selectedProjection|
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.selectedProjection_bijective|IMQGeomFinite.selectedProjection_bijective|theorem
+'IMQGeomFinite.selectedProjection_bijective' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.selectedProjection_bijective|
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.selectedProjection_injective|IMQGeomFinite.selectedProjection_injective|theorem
+'IMQGeomFinite.selectedProjection_injective' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.selectedProjection_injective|
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.selectedProjection_point|IMQGeomFinite.selectedProjection_point|theorem
+'IMQGeomFinite.selectedProjection_point' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.selectedProjection_point|
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.selectedProjection_surjective|IMQGeomFinite.selectedProjection_surjective|theorem
+'IMQGeomFinite.selectedProjection_surjective' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.selectedProjection_surjective|
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.simultaneousMatrices|IMQGeomFinite.simultaneousMatrices|definition
+'IMQGeomFinite.simultaneousMatrices' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.simultaneousMatrices|propext
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.simultaneousMatrices_spec|IMQGeomFinite.simultaneousMatrices_spec|theorem
+'IMQGeomFinite.simultaneousMatrices_spec' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.simultaneousMatrices_spec|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.zero_not_flag|IMQGeomFinite.zero_not_flag|theorem
+'IMQGeomFinite.zero_not_flag' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.zero_not_flag|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.selectedList.eq_1|IMQGeomFinite.selectedList.eq_1|theorem
+'IMQGeomFinite.selectedList.eq_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.selectedList.eq_1|
+LEAN_AUDIT_DECL|GeometricFinite|IMQGeomFinite.selectedPoint._proof_1|IMQGeomFinite.selectedPoint._proof_1|theorem
+'IMQGeomFinite.selectedPoint._proof_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricFinite|IMQGeomFinite.selectedPoint._proof_1|
+LEAN_AUDIT_TOTAL|GeometricFinite|29
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.Quadratic|IMQSplit.Quadratic|definition
+'IMQSplit.Quadratic' does not depend on any axioms
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.Quadratic|
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.coeff|IMQSplit.coeff|definition
+'IMQSplit.coeff' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.coeff|propext
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.lineProduct|IMQSplit.lineProduct|definition
+'IMQSplit.lineProduct' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.lineProduct|propext
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.one_center_expansion|IMQSplit.one_center_expansion|theorem
+'IMQSplit.one_center_expansion' does not depend on any axioms
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.one_center_expansion|
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.one_center_initial_form|IMQSplit.one_center_initial_form|theorem
+'IMQSplit.one_center_initial_form' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.one_center_initial_form|propext
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.one_cone_split_modulo|IMQSplit.one_cone_split_modulo|theorem
+'IMQSplit.one_cone_split_modulo' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.one_cone_split_modulo|propext,Quot.sound
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.polyAdd|IMQSplit.polyAdd|definition
+'IMQSplit.polyAdd' does not depend on any axioms
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.polyAdd|
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.polyMul|IMQSplit.polyMul|definition
+'IMQSplit.polyMul' does not depend on any axioms
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.polyMul|
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.quadraticPart|IMQSplit.quadraticPart|definition
+'IMQSplit.quadraticPart' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.quadraticPart|propext
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.reduceQuadratic|IMQSplit.reduceQuadratic|definition
+'IMQSplit.reduceQuadratic' does not depend on any axioms
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.reduceQuadratic|
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.residue109_certificate|IMQSplit.residue109_certificate|theorem
+'IMQSplit.residue109_certificate' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.residue109_certificate|propext
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.shiftedRhs|IMQSplit.shiftedRhs|definition
+'IMQSplit.shiftedRhs' does not depend on any axioms
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.shiftedRhs|
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.zero_center_expansion|IMQSplit.zero_center_expansion|theorem
+'IMQSplit.zero_center_expansion' does not depend on any axioms
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.zero_center_expansion|
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.zero_center_initial_form|IMQSplit.zero_center_initial_form|theorem
+'IMQSplit.zero_center_initial_form' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.zero_center_initial_form|propext
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.zero_cone_factorization109|IMQSplit.zero_cone_factorization109|theorem
+'IMQSplit.zero_cone_factorization109' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.zero_cone_factorization109|propext
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.zero_cone_split_modulo109|IMQSplit.zero_cone_split_modulo109|theorem
+'IMQSplit.zero_cone_split_modulo109' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.zero_cone_split_modulo109|propext
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.zero_cone_zero_set109|IMQSplit.zero_cone_zero_set109|theorem
+'IMQSplit.zero_cone_zero_set109' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.zero_cone_zero_set109|propext
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.one_cone_split_modulo._proof_1|IMQSplit.one_cone_split_modulo._proof_1|theorem
+'IMQSplit.one_cone_split_modulo._proof_1' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.one_cone_split_modulo._proof_1|propext,Quot.sound
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.one_cone_split_modulo._proof_2|IMQSplit.one_cone_split_modulo._proof_2|theorem
+'IMQSplit.one_cone_split_modulo._proof_2' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.one_cone_split_modulo._proof_2|propext,Quot.sound
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.one_cone_split_modulo._proof_3|IMQSplit.one_cone_split_modulo._proof_3|theorem
+'IMQSplit.one_cone_split_modulo._proof_3' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.one_cone_split_modulo._proof_3|propext,Quot.sound
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.one_cone_split_modulo._proof_4|IMQSplit.one_cone_split_modulo._proof_4|theorem
+'IMQSplit.one_cone_split_modulo._proof_4' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.one_cone_split_modulo._proof_4|propext,Quot.sound
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.polyAdd._f|IMQSplit.polyAdd._f|definition
+'IMQSplit.polyAdd._f' does not depend on any axioms
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.polyAdd._f|
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.polyAdd._sunfold|IMQSplit.polyAdd._sunfold|definition
+'IMQSplit.polyAdd._sunfold' does not depend on any axioms
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.polyAdd._sunfold|
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.polyAdd._unsafe_rec|IMQSplit.polyAdd._unsafe_rec|definition
+'IMQSplit.polyAdd._unsafe_rec' does not depend on any axioms
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.polyAdd._unsafe_rec|
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.polyAdd.match_1|IMQSplit.polyAdd.match_1|definition
+'IMQSplit.polyAdd.match_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.polyAdd.match_1|
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.polyMul._f|IMQSplit.polyMul._f|definition
+'IMQSplit.polyMul._f' does not depend on any axioms
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.polyMul._f|
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.polyMul._sunfold|IMQSplit.polyMul._sunfold|definition
+'IMQSplit.polyMul._sunfold' does not depend on any axioms
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.polyMul._sunfold|
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.polyMul._unsafe_rec|IMQSplit.polyMul._unsafe_rec|definition
+'IMQSplit.polyMul._unsafe_rec' does not depend on any axioms
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.polyMul._unsafe_rec|
+LEAN_AUDIT_DECL|SplitReduction|IMQSplit.polyMul.match_1|IMQSplit.polyMul.match_1|definition
+'IMQSplit.polyMul.match_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|SplitReduction|IMQSplit.polyMul.match_1|
+LEAN_AUDIT_TOTAL|SplitReduction|29
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.AnabelianInputEF|IMQGeomEF.AnabelianInputEF|inductive
+'IMQGeomEF.AnabelianInputEF' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.AnabelianInputEF|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.ConcreteChecks|IMQGeomEF.ConcreteChecks|definition
+'IMQGeomEF.ConcreteChecks' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.ConcreteChecks|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.ConditionsEF|IMQGeomEF.ConditionsEF|definition
+'IMQGeomEF.ConditionsEF' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.ConditionsEF|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData|IMQGeomEF.GeometricData|inductive
+'IMQGeomEF.GeometricData' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricRules|IMQGeomEF.GeometricRules|inductive
+'IMQGeomEF.GeometricRules' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricRules|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation|IMQGeomEF.Obligation|inductive
+'IMQGeomEF.Obligation' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Rule|IMQGeomEF.Rule|definition
+'IMQGeomEF.Rule' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Rule|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.arrow_covers_of_datum|IMQGeomEF.arrow_covers_of_datum|theorem
+'IMQGeomEF.arrow_covers_of_datum' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.arrow_covers_of_datum|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.bad_place_conditions|IMQGeomEF.bad_place_conditions|theorem
+'IMQGeomEF.bad_place_conditions' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.bad_place_conditions|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.concrete_checks|IMQGeomEF.concrete_checks|theorem
+'IMQGeomEF.concrete_checks' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.concrete_checks|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.conditions_d_e_f|IMQGeomEF.conditions_d_e_f|theorem
+'IMQGeomEF.conditions_d_e_f' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.conditions_d_e_f|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.conditions_e_f|IMQGeomEF.conditions_e_f|theorem
+'IMQGeomEF.conditions_e_f' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.conditions_e_f|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.correctedLift|IMQGeomEF.correctedLift|definition
+'IMQGeomEF.correctedLift' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.correctedLift|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.corrected_lift_good|IMQGeomEF.corrected_lift_good|theorem
+'IMQGeomEF.corrected_lift_good' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.corrected_lift_good|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.corrected_lift_has_fixed_flag|IMQGeomEF.corrected_lift_has_fixed_flag|theorem
+'IMQGeomEF.corrected_lift_has_fixed_flag' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.corrected_lift_has_fixed_flag|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.corrected_places_distinct|IMQGeomEF.corrected_places_distinct|theorem
+'IMQGeomEF.corrected_places_distinct' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.corrected_places_distinct|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.corrected_section_bijective|IMQGeomEF.corrected_section_bijective|theorem
+'IMQGeomEF.corrected_section_bijective' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.corrected_section_bijective|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.cubicAt|IMQGeomEF.cubicAt|definition
+'IMQGeomEF.cubicAt' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.cubicAt|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.fixedFlag|IMQGeomEF.fixedFlag|definition
+'IMQGeomEF.fixedFlag' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.fixedFlag|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.fixed_flag_valid|IMQGeomEF.fixed_flag_valid|theorem
+'IMQGeomEF.fixed_flag_valid' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.fixed_flag_valid|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.instDecidableEqObligation|IMQGeomEF.instDecidableEqObligation|definition
+'IMQGeomEF.instDecidableEqObligation' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.instDecidableEqObligation|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.instReprObligation|IMQGeomEF.instReprObligation|definition
+'IMQGeomEF.instReprObligation' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.instReprObligation|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.two_torsion_roots_computed|IMQGeomEF.two_torsion_roots_computed|theorem
+'IMQGeomEF.two_torsion_roots_computed' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.two_torsion_roots_computed|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.AnabelianInputEF._sizeOf_1|IMQGeomEF.AnabelianInputEF._sizeOf_1|definition
+'IMQGeomEF.AnabelianInputEF._sizeOf_1' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.AnabelianInputEF._sizeOf_1|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.AnabelianInputEF._sizeOf_inst|IMQGeomEF.AnabelianInputEF._sizeOf_inst|definition
+'IMQGeomEF.AnabelianInputEF._sizeOf_inst' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.AnabelianInputEF._sizeOf_inst|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.AnabelianInputEF.casesOn|IMQGeomEF.AnabelianInputEF.casesOn|definition
+'IMQGeomEF.AnabelianInputEF.casesOn' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.AnabelianInputEF.casesOn|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.AnabelianInputEF.ctorIdx|IMQGeomEF.AnabelianInputEF.ctorIdx|definition
+'IMQGeomEF.AnabelianInputEF.ctorIdx' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.AnabelianInputEF.ctorIdx|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.AnabelianInputEF.geometricRules|IMQGeomEF.AnabelianInputEF.geometricRules|theorem
+'IMQGeomEF.AnabelianInputEF.geometricRules' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.AnabelianInputEF.geometricRules|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.AnabelianInputEF.geometry|IMQGeomEF.AnabelianInputEF.geometry|definition
+'IMQGeomEF.AnabelianInputEF.geometry' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.AnabelianInputEF.geometry|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.AnabelianInputEF.mk|IMQGeomEF.AnabelianInputEF.mk|constructor
+'IMQGeomEF.AnabelianInputEF.mk' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.AnabelianInputEF.mk|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.AnabelianInputEF.noConfusion|IMQGeomEF.AnabelianInputEF.noConfusion|definition
+'IMQGeomEF.AnabelianInputEF.noConfusion' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.AnabelianInputEF.noConfusion|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.AnabelianInputEF.noConfusionType|IMQGeomEF.AnabelianInputEF.noConfusionType|definition
+'IMQGeomEF.AnabelianInputEF.noConfusionType' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.AnabelianInputEF.noConfusionType|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.AnabelianInputEF.rec|IMQGeomEF.AnabelianInputEF.rec|recursor
+'IMQGeomEF.AnabelianInputEF.rec' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.AnabelianInputEF.rec|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.AnabelianInputEF.recOn|IMQGeomEF.AnabelianInputEF.recOn|definition
+'IMQGeomEF.AnabelianInputEF.recOn' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.AnabelianInputEF.recOn|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.AnabelianInputEF.toAnabelianInput|IMQGeomEF.AnabelianInputEF.toAnabelianInput|definition
+'IMQGeomEF.AnabelianInputEF.toAnabelianInput' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.AnabelianInputEF.toAnabelianInput|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.ConcreteChecks._proof_1|IMQGeomEF.ConcreteChecks._proof_1|theorem
+'IMQGeomEF.ConcreteChecks._proof_1' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.ConcreteChecks._proof_1|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.ArrowCovers|IMQGeomEF.GeometricData.ArrowCovers|definition
+'IMQGeomEF.GeometricData.ArrowCovers' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.ArrowCovers|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.CanonicalCusp|IMQGeomEF.GeometricData.CanonicalCusp|definition
+'IMQGeomEF.GeometricData.CanonicalCusp' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.CanonicalCusp|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.Fibre|IMQGeomEF.GeometricData.Fibre|definition
+'IMQGeomEF.GeometricData.Fibre' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.Fibre|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.GlobalSetup|IMQGeomEF.GeometricData.GlobalSetup|definition
+'IMQGeomEF.GeometricData.GlobalSetup' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.GlobalSetup|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.LocalSetup|IMQGeomEF.GeometricData.LocalSetup|definition
+'IMQGeomEF.GeometricData.LocalSetup' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.LocalSetup|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.ModPlace|IMQGeomEF.GeometricData.ModPlace|definition
+'IMQGeomEF.GeometricData.ModPlace' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.ModPlace|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.SameLocalField|IMQGeomEF.GeometricData.SameLocalField|definition
+'IMQGeomEF.GeometricData.SameLocalField' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.SameLocalField|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.ThetaModel|IMQGeomEF.GeometricData.ThetaModel|definition
+'IMQGeomEF.GeometricData.ThetaModel' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.ThetaModel|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData._sizeOf_1|IMQGeomEF.GeometricData._sizeOf_1|definition
+'IMQGeomEF.GeometricData._sizeOf_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData._sizeOf_1|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData._sizeOf_inst|IMQGeomEF.GeometricData._sizeOf_inst|definition
+'IMQGeomEF.GeometricData._sizeOf_inst' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData._sizeOf_inst|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.bad|IMQGeomEF.GeometricData.bad|definition
+'IMQGeomEF.GeometricData.bad' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.bad|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.casesOn|IMQGeomEF.GeometricData.casesOn|definition
+'IMQGeomEF.GeometricData.casesOn' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.casesOn|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.ctorIdx|IMQGeomEF.GeometricData.ctorIdx|definition
+'IMQGeomEF.GeometricData.ctorIdx' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.ctorIdx|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.initialLift|IMQGeomEF.GeometricData.initialLift|definition
+'IMQGeomEF.GeometricData.initialLift' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.initialLift|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.localFlag|IMQGeomEF.GeometricData.localFlag|definition
+'IMQGeomEF.GeometricData.localFlag' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.localFlag|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.mk|IMQGeomEF.GeometricData.mk|constructor
+'IMQGeomEF.GeometricData.mk' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.mk|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.move|IMQGeomEF.GeometricData.move|definition
+'IMQGeomEF.GeometricData.move' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.move|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.noConfusion|IMQGeomEF.GeometricData.noConfusion|definition
+'IMQGeomEF.GeometricData.noConfusion' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.noConfusion|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.noConfusionType|IMQGeomEF.GeometricData.noConfusionType|definition
+'IMQGeomEF.GeometricData.noConfusionType' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.noConfusionType|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.rec|IMQGeomEF.GeometricData.rec|recursor
+'IMQGeomEF.GeometricData.rec' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.rec|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.recOn|IMQGeomEF.GeometricData.recOn|definition
+'IMQGeomEF.GeometricData.recOn' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.recOn|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricRules.arithmetic_theta_model|IMQGeomEF.GeometricRules.arithmetic_theta_model|theorem
+'IMQGeomEF.GeometricRules.arithmetic_theta_model' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricRules.arithmetic_theta_model|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricRules.arrow_marked_covers|IMQGeomEF.GeometricRules.arrow_marked_covers|theorem
+'IMQGeomEF.GeometricRules.arrow_marked_covers' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricRules.arrow_marked_covers|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricRules.casesOn|IMQGeomEF.GeometricRules.casesOn|definition
+'IMQGeomEF.GeometricRules.casesOn' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricRules.casesOn|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricRules.datum_localization|IMQGeomEF.GeometricRules.datum_localization|theorem
+'IMQGeomEF.GeometricRules.datum_localization' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricRules.datum_localization|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricRules.galois_transport|IMQGeomEF.GeometricRules.galois_transport|theorem
+'IMQGeomEF.GeometricRules.galois_transport' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricRules.galois_transport|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricRules.graph_cusp_label|IMQGeomEF.GeometricRules.graph_cusp_label|theorem
+'IMQGeomEF.GeometricRules.graph_cusp_label' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricRules.graph_cusp_label|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricRules.mk|IMQGeomEF.GeometricRules.mk|constructor
+'IMQGeomEF.GeometricRules.mk' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricRules.mk|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricRules.rational_two_field|IMQGeomEF.GeometricRules.rational_two_field|theorem
+'IMQGeomEF.GeometricRules.rational_two_field' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricRules.rational_two_field|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricRules.rec|IMQGeomEF.GeometricRules.rec|recursor
+'IMQGeomEF.GeometricRules.rec' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricRules.rec|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricRules.recOn|IMQGeomEF.GeometricRules.recOn|definition
+'IMQGeomEF.GeometricRules.recOn' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricRules.recOn|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricRules.tate_marked_flag|IMQGeomEF.GeometricRules.tate_marked_flag|theorem
+'IMQGeomEF.GeometricRules.tate_marked_flag' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricRules.tate_marked_flag|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation._sizeOf_1|IMQGeomEF.Obligation._sizeOf_1|definition
+'IMQGeomEF.Obligation._sizeOf_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation._sizeOf_1|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation._sizeOf_inst|IMQGeomEF.Obligation._sizeOf_inst|definition
+'IMQGeomEF.Obligation._sizeOf_inst' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation._sizeOf_inst|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.arrow|IMQGeomEF.Obligation.arrow|constructor
+'IMQGeomEF.Obligation.arrow' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.arrow|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.casesOn|IMQGeomEF.Obligation.casesOn|definition
+'IMQGeomEF.Obligation.casesOn' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.casesOn|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.ctorElim|IMQGeomEF.Obligation.ctorElim|definition
+'IMQGeomEF.Obligation.ctorElim' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.ctorElim|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.ctorElimType|IMQGeomEF.Obligation.ctorElimType|definition
+'IMQGeomEF.Obligation.ctorElimType' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.ctorElimType|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.ctorIdx|IMQGeomEF.Obligation.ctorIdx|definition
+'IMQGeomEF.Obligation.ctorIdx' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.ctorIdx|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.datum|IMQGeomEF.Obligation.datum|constructor
+'IMQGeomEF.Obligation.datum' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.datum|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.field|IMQGeomEF.Obligation.field|constructor
+'IMQGeomEF.Obligation.field' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.field|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.graph|IMQGeomEF.Obligation.graph|constructor
+'IMQGeomEF.Obligation.graph' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.graph|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.noConfusion|IMQGeomEF.Obligation.noConfusion|definition
+'IMQGeomEF.Obligation.noConfusion' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.noConfusion|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.noConfusionType|IMQGeomEF.Obligation.noConfusionType|definition
+'IMQGeomEF.Obligation.noConfusionType' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.noConfusionType|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.ofNat|IMQGeomEF.Obligation.ofNat|definition
+'IMQGeomEF.Obligation.ofNat' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.ofNat|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.ofNat_ctorIdx|IMQGeomEF.Obligation.ofNat_ctorIdx|theorem
+'IMQGeomEF.Obligation.ofNat_ctorIdx' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.ofNat_ctorIdx|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.rec|IMQGeomEF.Obligation.rec|recursor
+'IMQGeomEF.Obligation.rec' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.rec|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.recOn|IMQGeomEF.Obligation.recOn|definition
+'IMQGeomEF.Obligation.recOn' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.recOn|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.tate|IMQGeomEF.Obligation.tate|constructor
+'IMQGeomEF.Obligation.tate' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.tate|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.theta|IMQGeomEF.Obligation.theta|constructor
+'IMQGeomEF.Obligation.theta' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.theta|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.toCtorIdx|IMQGeomEF.Obligation.toCtorIdx|definition
+'IMQGeomEF.Obligation.toCtorIdx' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.toCtorIdx|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.transport|IMQGeomEF.Obligation.transport|constructor
+'IMQGeomEF.Obligation.transport' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.transport|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.correctedLift.eq_1|IMQGeomEF.correctedLift.eq_1|theorem
+'IMQGeomEF.correctedLift.eq_1' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.correctedLift.eq_1|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.instDecidableEqObligation._proof_1|IMQGeomEF.instDecidableEqObligation._proof_1|theorem
+'IMQGeomEF.instDecidableEqObligation._proof_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.instDecidableEqObligation._proof_1|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.instDecidableEqObligation._proof_2|IMQGeomEF.instDecidableEqObligation._proof_2|theorem
+'IMQGeomEF.instDecidableEqObligation._proof_2' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.instDecidableEqObligation._proof_2|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.instReprObligation.repr|IMQGeomEF.instReprObligation.repr|definition
+'IMQGeomEF.instReprObligation.repr' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.instReprObligation.repr|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.AnabelianInputEF.mk._flat_ctor|IMQGeomEF.AnabelianInputEF.mk._flat_ctor|definition
+'IMQGeomEF.AnabelianInputEF.mk._flat_ctor' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.AnabelianInputEF.mk._flat_ctor|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.AnabelianInputEF.mk.inj|IMQGeomEF.AnabelianInputEF.mk.inj|theorem
+'IMQGeomEF.AnabelianInputEF.mk.inj' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.AnabelianInputEF.mk.inj|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.AnabelianInputEF.mk.injEq|IMQGeomEF.AnabelianInputEF.mk.injEq|theorem
+'IMQGeomEF.AnabelianInputEF.mk.injEq' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.AnabelianInputEF.mk.injEq|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.AnabelianInputEF.mk.noConfusion|IMQGeomEF.AnabelianInputEF.mk.noConfusion|definition
+'IMQGeomEF.AnabelianInputEF.mk.noConfusion' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.AnabelianInputEF.mk.noConfusion|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.AnabelianInputEF.mk.sizeOf_spec|IMQGeomEF.AnabelianInputEF.mk.sizeOf_spec|theorem
+'IMQGeomEF.AnabelianInputEF.mk.sizeOf_spec' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.AnabelianInputEF.mk.sizeOf_spec|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.mk._flat_ctor|IMQGeomEF.GeometricData.mk._flat_ctor|definition
+'IMQGeomEF.GeometricData.mk._flat_ctor' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.mk._flat_ctor|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.mk.inj|IMQGeomEF.GeometricData.mk.inj|theorem
+'IMQGeomEF.GeometricData.mk.inj' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.mk.inj|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.mk.injEq|IMQGeomEF.GeometricData.mk.injEq|theorem
+'IMQGeomEF.GeometricData.mk.injEq' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.mk.injEq|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.mk.noConfusion|IMQGeomEF.GeometricData.mk.noConfusion|definition
+'IMQGeomEF.GeometricData.mk.noConfusion' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.mk.noConfusion|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricData.mk.sizeOf_spec|IMQGeomEF.GeometricData.mk.sizeOf_spec|theorem
+'IMQGeomEF.GeometricData.mk.sizeOf_spec' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricData.mk.sizeOf_spec|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.GeometricRules.mk._flat_ctor|IMQGeomEF.GeometricRules.mk._flat_ctor|definition
+'IMQGeomEF.GeometricRules.mk._flat_ctor' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.GeometricRules.mk._flat_ctor|propext
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.arrow.elim|IMQGeomEF.Obligation.arrow.elim|definition
+'IMQGeomEF.Obligation.arrow.elim' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.arrow.elim|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.arrow.sizeOf_spec|IMQGeomEF.Obligation.arrow.sizeOf_spec|theorem
+'IMQGeomEF.Obligation.arrow.sizeOf_spec' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.arrow.sizeOf_spec|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.datum.elim|IMQGeomEF.Obligation.datum.elim|definition
+'IMQGeomEF.Obligation.datum.elim' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.datum.elim|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.datum.sizeOf_spec|IMQGeomEF.Obligation.datum.sizeOf_spec|theorem
+'IMQGeomEF.Obligation.datum.sizeOf_spec' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.datum.sizeOf_spec|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.field.elim|IMQGeomEF.Obligation.field.elim|definition
+'IMQGeomEF.Obligation.field.elim' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.field.elim|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.field.sizeOf_spec|IMQGeomEF.Obligation.field.sizeOf_spec|theorem
+'IMQGeomEF.Obligation.field.sizeOf_spec' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.field.sizeOf_spec|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.graph.elim|IMQGeomEF.Obligation.graph.elim|definition
+'IMQGeomEF.Obligation.graph.elim' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.graph.elim|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.graph.sizeOf_spec|IMQGeomEF.Obligation.graph.sizeOf_spec|theorem
+'IMQGeomEF.Obligation.graph.sizeOf_spec' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.graph.sizeOf_spec|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.tate.elim|IMQGeomEF.Obligation.tate.elim|definition
+'IMQGeomEF.Obligation.tate.elim' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.tate.elim|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.tate.sizeOf_spec|IMQGeomEF.Obligation.tate.sizeOf_spec|theorem
+'IMQGeomEF.Obligation.tate.sizeOf_spec' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.tate.sizeOf_spec|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.theta.elim|IMQGeomEF.Obligation.theta.elim|definition
+'IMQGeomEF.Obligation.theta.elim' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.theta.elim|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.theta.sizeOf_spec|IMQGeomEF.Obligation.theta.sizeOf_spec|theorem
+'IMQGeomEF.Obligation.theta.sizeOf_spec' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.theta.sizeOf_spec|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.transport.elim|IMQGeomEF.Obligation.transport.elim|definition
+'IMQGeomEF.Obligation.transport.elim' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.transport.elim|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.Obligation.transport.sizeOf_spec|IMQGeomEF.Obligation.transport.sizeOf_spec|theorem
+'IMQGeomEF.Obligation.transport.sizeOf_spec' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.Obligation.transport.sizeOf_spec|
+LEAN_AUDIT_DECL|GeometricCompletion|IMQGeomEF.instReprObligation.repr.match_1|IMQGeomEF.instReprObligation.repr.match_1|definition
+'IMQGeomEF.instReprObligation.repr.match_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|GeometricCompletion|IMQGeomEF.instReprObligation.repr.match_1|
+LEAN_AUDIT_TOTAL|GeometricCompletion|118
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.AllExcept|IMQGeomModels.AllExcept|definition
+'IMQGeomModels.AllExcept' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.AllExcept|propext
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.aggregate_is_necessary|IMQGeomModels.aggregate_is_necessary|theorem
+'IMQGeomModels.aggregate_is_necessary' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.aggregate_is_necessary|propext
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.all_except|IMQGeomModels.all_except|theorem
+'IMQGeomModels.all_except' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.all_except|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.altFlag|IMQGeomModels.altFlag|definition
+'IMQGeomModels.altFlag' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.altFlag|propext
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.arrow_is_necessary|IMQGeomModels.arrow_is_necessary|theorem
+'IMQGeomModels.arrow_is_necessary' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.arrow_is_necessary|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.arrow_premise_inhabited|IMQGeomModels.arrow_premise_inhabited|theorem
+'IMQGeomModels.arrow_premise_inhabited' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.arrow_premise_inhabited|propext
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.completeRules|IMQGeomModels.completeRules|theorem
+'IMQGeomModels.completeRules' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.completeRules|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.completeWitness|IMQGeomModels.completeWitness|definition
+'IMQGeomModels.completeWitness' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.completeWitness|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.complete_model_conditions|IMQGeomModels.complete_model_conditions|theorem
+'IMQGeomModels.complete_model_conditions' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.complete_model_conditions|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.complete_model_nondegenerate|IMQGeomModels.complete_model_nondegenerate|theorem
+'IMQGeomModels.complete_model_nondegenerate' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.complete_model_nondegenerate|propext
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.complete_witness_conditions|IMQGeomModels.complete_witness_conditions|theorem
+'IMQGeomModels.complete_witness_conditions' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.complete_witness_conditions|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.corrected_lift_values|IMQGeomModels.corrected_lift_values|theorem
+'IMQGeomModels.corrected_lift_values' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.corrected_lift_values|propext
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.datum_is_necessary|IMQGeomModels.datum_is_necessary|theorem
+'IMQGeomModels.datum_is_necessary' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.datum_is_necessary|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.datum_premise_inhabited|IMQGeomModels.datum_premise_inhabited|theorem
+'IMQGeomModels.datum_premise_inhabited' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.datum_premise_inhabited|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.deleted_conditions_fail|IMQGeomModels.deleted_conditions_fail|theorem
+'IMQGeomModels.deleted_conditions_fail' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.deleted_conditions_fail|propext
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.field_is_necessary|IMQGeomModels.field_is_necessary|theorem
+'IMQGeomModels.field_is_necessary' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.field_is_necessary|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.field_premise_inhabited|IMQGeomModels.field_premise_inhabited|theorem
+'IMQGeomModels.field_premise_inhabited' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.field_premise_inhabited|propext
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.flags_distinct|IMQGeomModels.flags_distinct|theorem
+'IMQGeomModels.flags_distinct' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.flags_distinct|propext
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.flags_valid|IMQGeomModels.flags_valid|theorem
+'IMQGeomModels.flags_valid' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.flags_valid|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.graph_is_necessary|IMQGeomModels.graph_is_necessary|theorem
+'IMQGeomModels.graph_is_necessary' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.graph_is_necessary|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.graph_premise_inhabited|IMQGeomModels.graph_premise_inhabited|theorem
+'IMQGeomModels.graph_premise_inhabited' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.graph_premise_inhabited|propext
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.model|IMQGeomModels.model|definition
+'IMQGeomModels.model' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.model|propext
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.modelFlag|IMQGeomModels.modelFlag|definition
+'IMQGeomModels.modelFlag' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.modelFlag|propext
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.modelMove|IMQGeomModels.modelMove|definition
+'IMQGeomModels.modelMove' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.modelMove|propext
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.move_normalizes|IMQGeomModels.move_normalizes|theorem
+'IMQGeomModels.move_normalizes' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.move_normalizes|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.rule_when_kept|IMQGeomModels.rule_when_kept|theorem
+'IMQGeomModels.rule_when_kept' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.rule_when_kept|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.tate_is_necessary|IMQGeomModels.tate_is_necessary|theorem
+'IMQGeomModels.tate_is_necessary' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.tate_is_necessary|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.tate_premise_inhabited|IMQGeomModels.tate_premise_inhabited|theorem
+'IMQGeomModels.tate_premise_inhabited' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.tate_premise_inhabited|propext
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.theta_is_necessary|IMQGeomModels.theta_is_necessary|theorem
+'IMQGeomModels.theta_is_necessary' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.theta_is_necessary|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.theta_premise_inhabited|IMQGeomModels.theta_premise_inhabited|theorem
+'IMQGeomModels.theta_premise_inhabited' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.theta_premise_inhabited|propext
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.transport_is_necessary|IMQGeomModels.transport_is_necessary|theorem
+'IMQGeomModels.transport_is_necessary' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.transport_is_necessary|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.transport_premise_inhabited|IMQGeomModels.transport_premise_inhabited|theorem
+'IMQGeomModels.transport_premise_inhabited' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.transport_premise_inhabited|propext,Quot.sound
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.model.eq_1|IMQGeomModels.model.eq_1|theorem
+'IMQGeomModels.model.eq_1' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.model.eq_1|propext
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.modelFlag.eq_1|IMQGeomModels.modelFlag.eq_1|theorem
+'IMQGeomModels.modelFlag.eq_1' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.modelFlag.eq_1|propext
+LEAN_AUDIT_DECL|GeometricModels|IMQGeomModels.modelMove.eq_1|IMQGeomModels.modelMove.eq_1|theorem
+'IMQGeomModels.modelMove.eq_1' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|GeometricModels|IMQGeomModels.modelMove.eq_1|propext
+LEAN_AUDIT_TOTAL|GeometricModels|35
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.EntranceNat|IMQEntrance.EntranceNat|definition
+'IMQEntrance.EntranceNat' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.EntranceNat|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.Fraction|IMQEntrance.Fraction|inductive
+'IMQEntrance.Fraction' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.Fraction|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.Less|IMQEntrance.Less|definition
+'IMQEntrance.Less' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.Less|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.Positive|IMQEntrance.Positive|definition
+'IMQEntrance.Positive' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.Positive|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.RepresentsDepth|IMQEntrance.RepresentsDepth|definition
+'IMQEntrance.RepresentsDepth' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.RepresentsDepth|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.SameValue|IMQEntrance.SameValue|definition
+'IMQEntrance.SameValue' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.SameValue|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.candidates|IMQEntrance.candidates|definition
+'IMQEntrance.candidates' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.candidates|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.candidates_nonempty_iff|IMQEntrance.candidates_nonempty_iff|theorem
+'IMQEntrance.candidates_nonempty_iff' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.candidates_nonempty_iff|propext,Quot.sound
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.depth|IMQEntrance.depth|definition
+'IMQEntrance.depth' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.depth|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.depth_represents|IMQEntrance.depth_represents|theorem
+'IMQEntrance.depth_represents' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.depth_represents|propext
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.entrance_canonical_depth|IMQEntrance.entrance_canonical_depth|theorem
+'IMQEntrance.entrance_canonical_depth' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.entrance_canonical_depth|propext
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.entrance_downward|IMQEntrance.entrance_downward|theorem
+'IMQEntrance.entrance_downward' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.entrance_downward|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.entrance_iff_integer_upper|IMQEntrance.entrance_iff_integer_upper|theorem
+'IMQEntrance.entrance_iff_integer_upper' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.entrance_iff_integer_upper|propext,Quot.sound
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.instDecidableEntranceNat|IMQEntrance.instDecidableEntranceNat|definition
+'IMQEntrance.instDecidableEntranceNat' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.instDecidableEntranceNat|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.instDecidableLess|IMQEntrance.instDecidableLess|definition
+'IMQEntrance.instDecidableLess' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.instDecidableLess|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.instDecidablePositive|IMQEntrance.instDecidablePositive|definition
+'IMQEntrance.instDecidablePositive' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.instDecidablePositive|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.instDecidableSameValue|IMQEntrance.instDecidableSameValue|definition
+'IMQEntrance.instDecidableSameValue' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.instDecidableSameValue|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.integer|IMQEntrance.integer|definition
+'IMQEntrance.integer' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.integer|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.interval_empty_iff|IMQEntrance.interval_empty_iff|theorem
+'IMQEntrance.interval_empty_iff' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.interval_empty_iff|propext
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.interval_nonempty_iff|IMQEntrance.interval_nonempty_iff|theorem
+'IMQEntrance.interval_nonempty_iff' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.interval_nonempty_iff|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.margin|IMQEntrance.margin|definition
+'IMQEntrance.margin' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.margin|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.margin_pos_iff_cross_mul|IMQEntrance.margin_pos_iff_cross_mul|theorem
+'IMQEntrance.margin_pos_iff_cross_mul' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.margin_pos_iff_cross_mul|propext
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.margin_pos_iff_nat_criterion|IMQEntrance.margin_pos_iff_nat_criterion|theorem
+'IMQEntrance.margin_pos_iff_nat_criterion' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.margin_pos_iff_nat_criterion|propext
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.margin_pos_iff_ord_gt_threshold|IMQEntrance.margin_pos_iff_ord_gt_threshold|theorem
+'IMQEntrance.margin_pos_iff_ord_gt_threshold' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.margin_pos_iff_ord_gt_threshold|propext
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.margin_positive_iff|IMQEntrance.margin_positive_iff|theorem
+'IMQEntrance.margin_positive_iff' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.margin_positive_iff|propext
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.mem_candidates_iff|IMQEntrance.mem_candidates_iff|theorem
+'IMQEntrance.mem_candidates_iff' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.mem_candidates_iff|propext,Quot.sound
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.positive_interval_nonempty_iff|IMQEntrance.positive_interval_nonempty_iff|theorem
+'IMQEntrance.positive_interval_nonempty_iff' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.positive_interval_nonempty_iff|propext,Quot.sound
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.represents_iff_same_value|IMQEntrance.represents_iff_same_value|theorem
+'IMQEntrance.represents_iff_same_value' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.represents_iff_same_value|propext
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.stage_one_criterion|IMQEntrance.stage_one_criterion|theorem
+'IMQEntrance.stage_one_criterion' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.stage_one_criterion|propext
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.threshold|IMQEntrance.threshold|definition
+'IMQEntrance.threshold' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.threshold|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.threshold_less_iff|IMQEntrance.threshold_less_iff|theorem
+'IMQEntrance.threshold_less_iff' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.threshold_less_iff|propext
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.EntranceNat.eq_1|IMQEntrance.EntranceNat.eq_1|theorem
+'IMQEntrance.EntranceNat.eq_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.EntranceNat.eq_1|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.Fraction._sizeOf_1|IMQEntrance.Fraction._sizeOf_1|definition
+'IMQEntrance.Fraction._sizeOf_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.Fraction._sizeOf_1|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.Fraction._sizeOf_inst|IMQEntrance.Fraction._sizeOf_inst|definition
+'IMQEntrance.Fraction._sizeOf_inst' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.Fraction._sizeOf_inst|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.Fraction.casesOn|IMQEntrance.Fraction.casesOn|definition
+'IMQEntrance.Fraction.casesOn' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.Fraction.casesOn|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.Fraction.ctorIdx|IMQEntrance.Fraction.ctorIdx|definition
+'IMQEntrance.Fraction.ctorIdx' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.Fraction.ctorIdx|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.Fraction.den|IMQEntrance.Fraction.den|definition
+'IMQEntrance.Fraction.den' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.Fraction.den|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.Fraction.den_pos|IMQEntrance.Fraction.den_pos|theorem
+'IMQEntrance.Fraction.den_pos' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.Fraction.den_pos|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.Fraction.mk|IMQEntrance.Fraction.mk|constructor
+'IMQEntrance.Fraction.mk' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.Fraction.mk|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.Fraction.noConfusion|IMQEntrance.Fraction.noConfusion|definition
+'IMQEntrance.Fraction.noConfusion' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.Fraction.noConfusion|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.Fraction.noConfusionType|IMQEntrance.Fraction.noConfusionType|definition
+'IMQEntrance.Fraction.noConfusionType' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.Fraction.noConfusionType|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.Fraction.num|IMQEntrance.Fraction.num|definition
+'IMQEntrance.Fraction.num' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.Fraction.num|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.Fraction.rec|IMQEntrance.Fraction.rec|recursor
+'IMQEntrance.Fraction.rec' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.Fraction.rec|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.Fraction.recOn|IMQEntrance.Fraction.recOn|definition
+'IMQEntrance.Fraction.recOn' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.Fraction.recOn|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.Less.eq_1|IMQEntrance.Less.eq_1|theorem
+'IMQEntrance.Less.eq_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.Less.eq_1|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.RepresentsDepth.eq_1|IMQEntrance.RepresentsDepth.eq_1|theorem
+'IMQEntrance.RepresentsDepth.eq_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.RepresentsDepth.eq_1|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.SameValue.eq_1|IMQEntrance.SameValue.eq_1|theorem
+'IMQEntrance.SameValue.eq_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.SameValue.eq_1|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.candidates.eq_1|IMQEntrance.candidates.eq_1|theorem
+'IMQEntrance.candidates.eq_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.candidates.eq_1|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.candidates_nonempty_iff.match_1|IMQEntrance.candidates_nonempty_iff.match_1|definition
+'IMQEntrance.candidates_nonempty_iff.match_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.candidates_nonempty_iff.match_1|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.candidates_nonempty_iff.match_2|IMQEntrance.candidates_nonempty_iff.match_2|definition
+'IMQEntrance.candidates_nonempty_iff.match_2' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.candidates_nonempty_iff.match_2|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.depth._proof_1|IMQEntrance.depth._proof_1|theorem
+'IMQEntrance.depth._proof_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.depth._proof_1|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.depth.eq_1|IMQEntrance.depth.eq_1|theorem
+'IMQEntrance.depth.eq_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.depth.eq_1|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.entrance_iff_integer_upper._proof_1|IMQEntrance.entrance_iff_integer_upper._proof_1|theorem
+'IMQEntrance.entrance_iff_integer_upper._proof_1' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.entrance_iff_integer_upper._proof_1|propext,Quot.sound
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.instDecidableEntranceNat._aux_1|IMQEntrance.instDecidableEntranceNat._aux_1|definition
+'IMQEntrance.instDecidableEntranceNat._aux_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.instDecidableEntranceNat._aux_1|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.instDecidableLess._aux_1|IMQEntrance.instDecidableLess._aux_1|definition
+'IMQEntrance.instDecidableLess._aux_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.instDecidableLess._aux_1|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.instDecidablePositive._aux_1|IMQEntrance.instDecidablePositive._aux_1|definition
+'IMQEntrance.instDecidablePositive._aux_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.instDecidablePositive._aux_1|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.instDecidableSameValue._aux_1|IMQEntrance.instDecidableSameValue._aux_1|definition
+'IMQEntrance.instDecidableSameValue._aux_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.instDecidableSameValue._aux_1|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.integer._proof_1|IMQEntrance.integer._proof_1|theorem
+'IMQEntrance.integer._proof_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.integer._proof_1|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.integer.eq_1|IMQEntrance.integer.eq_1|theorem
+'IMQEntrance.integer.eq_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.integer.eq_1|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.interval_nonempty_iff.match_1|IMQEntrance.interval_nonempty_iff.match_1|definition
+'IMQEntrance.interval_nonempty_iff.match_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.interval_nonempty_iff.match_1|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.interval_nonempty_iff.match_2|IMQEntrance.interval_nonempty_iff.match_2|definition
+'IMQEntrance.interval_nonempty_iff.match_2' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.interval_nonempty_iff.match_2|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.mem_candidates_iff._simp_2|IMQEntrance.mem_candidates_iff._simp_2|theorem
+'IMQEntrance.mem_candidates_iff._simp_2' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.mem_candidates_iff._simp_2|propext
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.mem_candidates_iff._simp_3|IMQEntrance.mem_candidates_iff._simp_3|theorem
+'IMQEntrance.mem_candidates_iff._simp_3' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.mem_candidates_iff._simp_3|propext,Quot.sound
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.mem_candidates_iff._simp_4|IMQEntrance.mem_candidates_iff._simp_4|theorem
+'IMQEntrance.mem_candidates_iff._simp_4' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.mem_candidates_iff._simp_4|propext
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.mem_candidates_iff.match_4|IMQEntrance.mem_candidates_iff.match_4|definition
+'IMQEntrance.mem_candidates_iff.match_4' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.mem_candidates_iff.match_4|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.mem_candidates_iff.match_5|IMQEntrance.mem_candidates_iff.match_5|definition
+'IMQEntrance.mem_candidates_iff.match_5' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.mem_candidates_iff.match_5|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.positive_interval_nonempty_iff._proof_1|IMQEntrance.positive_interval_nonempty_iff._proof_1|theorem
+'IMQEntrance.positive_interval_nonempty_iff._proof_1' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.positive_interval_nonempty_iff._proof_1|propext,Quot.sound
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.positive_interval_nonempty_iff._proof_2|IMQEntrance.positive_interval_nonempty_iff._proof_2|theorem
+'IMQEntrance.positive_interval_nonempty_iff._proof_2' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.positive_interval_nonempty_iff._proof_2|propext,Quot.sound
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.positive_interval_nonempty_iff._proof_3|IMQEntrance.positive_interval_nonempty_iff._proof_3|theorem
+'IMQEntrance.positive_interval_nonempty_iff._proof_3' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.positive_interval_nonempty_iff._proof_3|propext,Quot.sound
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.positive_interval_nonempty_iff.match_1|IMQEntrance.positive_interval_nonempty_iff.match_1|definition
+'IMQEntrance.positive_interval_nonempty_iff.match_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.positive_interval_nonempty_iff.match_1|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.positive_interval_nonempty_iff.match_2|IMQEntrance.positive_interval_nonempty_iff.match_2|definition
+'IMQEntrance.positive_interval_nonempty_iff.match_2' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.positive_interval_nonempty_iff.match_2|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.threshold.eq_1|IMQEntrance.threshold.eq_1|theorem
+'IMQEntrance.threshold.eq_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.threshold.eq_1|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.Fraction.mk._flat_ctor|IMQEntrance.Fraction.mk._flat_ctor|definition
+'IMQEntrance.Fraction.mk._flat_ctor' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.Fraction.mk._flat_ctor|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.Fraction.mk.congr_simp|IMQEntrance.Fraction.mk.congr_simp|theorem
+'IMQEntrance.Fraction.mk.congr_simp' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.Fraction.mk.congr_simp|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.Fraction.mk.inj|IMQEntrance.Fraction.mk.inj|theorem
+'IMQEntrance.Fraction.mk.inj' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.Fraction.mk.inj|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.Fraction.mk.injEq|IMQEntrance.Fraction.mk.injEq|theorem
+'IMQEntrance.Fraction.mk.injEq' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.Fraction.mk.injEq|propext
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.Fraction.mk.noConfusion|IMQEntrance.Fraction.mk.noConfusion|definition
+'IMQEntrance.Fraction.mk.noConfusion' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.Fraction.mk.noConfusion|
+LEAN_AUDIT_DECL|EntranceMargin|IMQEntrance.Fraction.mk.sizeOf_spec|IMQEntrance.Fraction.mk.sizeOf_spec|theorem
+'IMQEntrance.Fraction.mk.sizeOf_spec' does not depend on any axioms
+LEAN_AUDIT_DEPS|EntranceMargin|IMQEntrance.Fraction.mk.sizeOf_spec|
+LEAN_AUDIT_TOTAL|EntranceMargin|78
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.B|IMQDeep.B|definition
+'IMQDeep.B' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.B|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.GI|IMQDeep.GI|definition
+'IMQDeep.GI' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.GI|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.NN|IMQDeep.NN|definition
+'IMQDeep.NN' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.NN|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.a|IMQDeep.a|definition
+'IMQDeep.a' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.a|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.ab|IMQDeep.ab|definition
+'IMQDeep.ab' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.ab|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.actual_fraction_entrance|IMQDeep.actual_fraction_entrance|theorem
+'IMQDeep.actual_fraction_entrance' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.actual_fraction_entrance|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.actual_fraction_margin|IMQDeep.actual_fraction_margin|theorem
+'IMQDeep.actual_fraction_margin' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.actual_fraction_margin|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.am1|IMQDeep.am1|definition
+'IMQDeep.am1' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.am1|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.candidate|IMQDeep.candidate|definition
+'IMQDeep.candidate' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.candidate|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.candidates_exact|IMQDeep.candidates_exact|theorem
+'IMQDeep.candidates_exact' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.candidates_exact|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.conjugate_place_good|IMQDeep.conjugate_place_good|theorem
+'IMQDeep.conjugate_place_good' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.conjugate_place_good|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.coprime_branch_empty|IMQDeep.coprime_branch_empty|theorem
+'IMQDeep.coprime_branch_empty' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.coprime_branch_empty|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.degree_prime_to_ell|IMQDeep.degree_prime_to_ell|theorem
+'IMQDeep.degree_prime_to_ell' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.degree_prime_to_ell|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.ell|IMQDeep.ell|definition
+'IMQDeep.ell' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.ell|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.ell_ge_five|IMQDeep.ell_ge_five|theorem
+'IMQDeep.ell_ge_five' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.ell_ge_five|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.ell_prime|IMQDeep.ell_prime|theorem
+'IMQDeep.ell_prime' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.ell_prime|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.entrance_positive|IMQDeep.entrance_positive|theorem
+'IMQDeep.entrance_positive' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.entrance_positive|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.field_ramification|IMQDeep.field_ramification|theorem
+'IMQDeep.field_ramification' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.field_ramification|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.frobenius_discriminant|IMQDeep.frobenius_discriminant|theorem
+'IMQDeep.frobenius_discriminant' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.frobenius_discriminant|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.frobenius_place|IMQDeep.frobenius_place|theorem
+'IMQDeep.frobenius_place' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.frobenius_place|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.frobenius_trace|IMQDeep.frobenius_trace|theorem
+'IMQDeep.frobenius_trace' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.frobenius_trace|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.full_ramification|IMQDeep.full_ramification|theorem
+'IMQDeep.full_ramification' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.full_ramification|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.full_weil_proxy_empty|IMQDeep.full_weil_proxy_empty|theorem
+'IMQDeep.full_weil_proxy_empty' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.full_weil_proxy_empty|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.irreducible_discriminant|IMQDeep.irreducible_discriminant|theorem
+'IMQDeep.irreducible_discriminant' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.irreducible_discriminant|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.jDen|IMQDeep.jDen|definition
+'IMQDeep.jDen' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.jDen|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.jNum|IMQDeep.jNum|definition
+'IMQDeep.jNum' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.jNum|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.j_den_nonzero|IMQDeep.j_den_nonzero|theorem
+'IMQDeep.j_den_nonzero' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.j_den_nonzero|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.j_nonreal|IMQDeep.j_nonreal|theorem
+'IMQDeep.j_nonreal' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.j_nonreal|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.larger_candidates_fail|IMQDeep.larger_candidates_fail|theorem
+'IMQDeep.larger_candidates_fail' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.larger_candidates_fail|propext,Quot.sound
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.margin_numerator|IMQDeep.margin_numerator|theorem
+'IMQDeep.margin_numerator' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.margin_numerator|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.norm_a|IMQDeep.norm_a|theorem
+'IMQDeep.norm_a' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.norm_a|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.norm_oma|IMQDeep.norm_oma|theorem
+'IMQDeep.norm_oma' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.norm_oma|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.old_seven_cap_insufficient|IMQDeep.old_seven_cap_insufficient|theorem
+'IMQDeep.old_seven_cap_insufficient' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.old_seven_cap_insufficient|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.oma|IMQDeep.oma|definition
+'IMQDeep.oma' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.oma|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.orbit_exclusion|IMQDeep.orbit_exclusion|theorem
+'IMQDeep.orbit_exclusion' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.orbit_exclusion|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.order_at_pi|IMQDeep.order_at_pi|theorem
+'IMQDeep.order_at_pi' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.order_at_pi|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.order_prime_to_ell|IMQDeep.order_prime_to_ell|theorem
+'IMQDeep.order_prime_to_ell' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.order_prime_to_ell|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.pi|IMQDeep.pi|definition
+'IMQDeep.pi' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.pi|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.quadraticSymbol|IMQDeep.quadraticSymbol|definition
+'IMQDeep.quadraticSymbol' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.quadraticSymbol|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.remaining_orders|IMQDeep.remaining_orders|theorem
+'IMQDeep.remaining_orders' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.remaining_orders|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.residueA|IMQDeep.residueA|definition
+'IMQDeep.residueA' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.residueA|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.residues_pi|IMQDeep.residues_pi|theorem
+'IMQDeep.residues_pi' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.residues_pi|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.rhs|IMQDeep.rhs|definition
+'IMQDeep.rhs' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.rhs|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.seven_power_counterexample|IMQDeep.seven_power_counterexample|theorem
+'IMQDeep.seven_power_counterexample' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.seven_power_counterexample|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.sieve_root31|IMQDeep.sieve_root31|theorem
+'IMQDeep.sieve_root31' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.sieve_root31|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.sieve_root7|IMQDeep.sieve_root7|theorem
+'IMQDeep.sieve_root7' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.sieve_root7|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.small_ramification|IMQDeep.small_ramification|theorem
+'IMQDeep.small_ramification' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.small_ramification|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.smooth|IMQDeep.smooth|theorem
+'IMQDeep.smooth' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.smooth|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.split_roots|IMQDeep.split_roots|theorem
+'IMQDeep.split_roots' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.split_roots|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.t|IMQDeep.t|definition
+'IMQDeep.t' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.t|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.thirty_one_good|IMQDeep.thirty_one_good|theorem
+'IMQDeep.thirty_one_good' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.thirty_one_good|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.torsion_gcd|IMQDeep.torsion_gcd|theorem
+'IMQDeep.torsion_gcd' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.torsion_gcd|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.torsion_order|IMQDeep.torsion_order|theorem
+'IMQDeep.torsion_order' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.torsion_order|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.trace17|IMQDeep.trace17|definition
+'IMQDeep.trace17' does not depend on any axioms
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.trace17|
+LEAN_AUDIT_DECL|DeepImaginaryDatum|IMQDeep.larger_candidates_fail._proof_1|IMQDeep.larger_candidates_fail._proof_1|theorem
+'IMQDeep.larger_candidates_fail._proof_1' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|DeepImaginaryDatum|IMQDeep.larger_candidates_fail._proof_1|propext,Quot.sound
+LEAN_AUDIT_TOTAL|DeepImaginaryDatum|55
+LEAN_AUDIT_DECL|BlurExceedsMargin|BlurMargin.blur|BlurMargin.blur|definition
+'BlurMargin.blur' does not depend on any axioms
+LEAN_AUDIT_DEPS|BlurExceedsMargin|BlurMargin.blur|
+LEAN_AUDIT_DECL|BlurExceedsMargin|BlurMargin.blur_dominates|BlurMargin.blur_dominates|theorem
+'BlurMargin.blur_dominates' does not depend on any axioms
+LEAN_AUDIT_DEPS|BlurExceedsMargin|BlurMargin.blur_dominates|
+LEAN_AUDIT_DECL|BlurExceedsMargin|BlurMargin.datum_blur|BlurMargin.datum_blur|theorem
+'BlurMargin.datum_blur' does not depend on any axioms
+LEAN_AUDIT_DEPS|BlurExceedsMargin|BlurMargin.datum_blur|
+LEAN_AUDIT_DECL|BlurExceedsMargin|BlurMargin.datum_excess|BlurMargin.datum_excess|theorem
+'BlurMargin.datum_excess' does not depend on any axioms
+LEAN_AUDIT_DEPS|BlurExceedsMargin|BlurMargin.datum_excess|
+LEAN_AUDIT_DECL|BlurExceedsMargin|BlurMargin.datum_margins|BlurMargin.datum_margins|theorem
+'BlurMargin.datum_margins' does not depend on any axioms
+LEAN_AUDIT_DEPS|BlurExceedsMargin|BlurMargin.datum_margins|
+LEAN_AUDIT_DECL|BlurExceedsMargin|BlurMargin.deeper_datum|BlurMargin.deeper_datum|theorem
+'BlurMargin.deeper_datum' does not depend on any axioms
+LEAN_AUDIT_DEPS|BlurExceedsMargin|BlurMargin.deeper_datum|
+LEAN_AUDIT_DECL|BlurExceedsMargin|BlurMargin.excess_at_top|BlurMargin.excess_at_top|theorem
+'BlurMargin.excess_at_top' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|BlurExceedsMargin|BlurMargin.excess_at_top|propext,Quot.sound
+LEAN_AUDIT_DECL|BlurExceedsMargin|BlurMargin.excess_independent_of_depth|BlurMargin.excess_independent_of_depth|theorem
+'BlurMargin.excess_independent_of_depth' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|BlurExceedsMargin|BlurMargin.excess_independent_of_depth|propext,Quot.sound
+LEAN_AUDIT_DECL|BlurExceedsMargin|BlurMargin.margin|BlurMargin.margin|definition
+'BlurMargin.margin' does not depend on any axioms
+LEAN_AUDIT_DEPS|BlurExceedsMargin|BlurMargin.margin|
+LEAN_AUDIT_DECL|BlurExceedsMargin|BlurMargin.shallow_datum|BlurMargin.shallow_datum|theorem
+'BlurMargin.shallow_datum' does not depend on any axioms
+LEAN_AUDIT_DEPS|BlurExceedsMargin|BlurMargin.shallow_datum|
+LEAN_AUDIT_DECL|BlurExceedsMargin|BlurMargin.blur.eq_1|BlurMargin.blur.eq_1|theorem
+'BlurMargin.blur.eq_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|BlurExceedsMargin|BlurMargin.blur.eq_1|
+LEAN_AUDIT_DECL|BlurExceedsMargin|BlurMargin.excess_at_top._proof_3|BlurMargin.excess_at_top._proof_3|theorem
+'BlurMargin.excess_at_top._proof_3' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|BlurExceedsMargin|BlurMargin.excess_at_top._proof_3|propext,Quot.sound
+LEAN_AUDIT_DECL|BlurExceedsMargin|BlurMargin.margin.eq_1|BlurMargin.margin.eq_1|theorem
+'BlurMargin.margin.eq_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|BlurExceedsMargin|BlurMargin.margin.eq_1|
+LEAN_AUDIT_TOTAL|BlurExceedsMargin|13
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.B|IMQLarge.B|definition
+'IMQLarge.B' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.B|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.FrobeniusWitness|IMQLarge.FrobeniusWitness|inductive
+'IMQLarge.FrobeniusWitness' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.FrobeniusWitness|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.GI|IMQLarge.GI|definition
+'IMQLarge.GI' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.GI|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.NN|IMQLarge.NN|definition
+'IMQLarge.NN' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.NN|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.a|IMQLarge.a|definition
+'IMQLarge.a' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.a|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.a_is_power|IMQLarge.a_is_power|theorem
+'IMQLarge.a_is_power' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.a_is_power|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.all_entrance_cutoffs|IMQLarge.all_entrance_cutoffs|theorem
+'IMQLarge.all_entrance_cutoffs' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.all_entrance_cutoffs|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.all_extension_degrees|IMQLarge.all_extension_degrees|theorem
+'IMQLarge.all_extension_degrees' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.all_extension_degrees|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.all_fraction_entrances|IMQLarge.all_fraction_entrances|theorem
+'IMQLarge.all_fraction_entrances' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.all_fraction_entrances|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.all_fraction_margins|IMQLarge.all_fraction_margins|theorem
+'IMQLarge.all_fraction_margins' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.all_fraction_margins|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.all_frobenius_checks|IMQLarge.all_frobenius_checks|theorem
+'IMQLarge.all_frobenius_checks' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.all_frobenius_checks|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.all_height_cutoffs|IMQLarge.all_height_cutoffs|theorem
+'IMQLarge.all_height_cutoffs' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.all_height_cutoffs|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.all_pair_gcds|IMQLarge.all_pair_gcds|theorem
+'IMQLarge.all_pair_gcds' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.all_pair_gcds|propext
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.all_remaining_orders|IMQLarge.all_remaining_orders|theorem
+'IMQLarge.all_remaining_orders' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.all_remaining_orders|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.all_roots89|IMQLarge.all_roots89|theorem
+'IMQLarge.all_roots89' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.all_roots89|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.all_small_ramification|IMQLarge.all_small_ramification|theorem
+'IMQLarge.all_small_ramification' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.all_small_ramification|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.all_torsion_gcds|IMQLarge.all_torsion_gcds|theorem
+'IMQLarge.all_torsion_gcds' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.all_torsion_gcds|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.candidate|IMQLarge.candidate|definition
+'IMQLarge.candidate' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.candidate|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.ellCandidates|IMQLarge.ellCandidates|definition
+'IMQLarge.ellCandidates' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.ellCandidates|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.ell_B_nonzero|IMQLarge.ell_B_nonzero|theorem
+'IMQLarge.ell_B_nonzero' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.ell_B_nonzero|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.ell_B_residues|IMQLarge.ell_B_residues|theorem
+'IMQLarge.ell_B_residues' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.ell_B_residues|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.ell_count|IMQLarge.ell_count|theorem
+'IMQLarge.ell_count' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.ell_count|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.ell_pi_nonzero|IMQLarge.ell_pi_nonzero|theorem
+'IMQLarge.ell_pi_nonzero' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.ell_pi_nonzero|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.ell_primes|IMQLarge.ell_primes|theorem
+'IMQLarge.ell_primes' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.ell_primes|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.exceptional_v2|IMQLarge.exceptional_v2|theorem
+'IMQLarge.exceptional_v2' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.exceptional_v2|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.exceptional_v5|IMQLarge.exceptional_v5|theorem
+'IMQLarge.exceptional_v5' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.exceptional_v5|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.factorGI|IMQLarge.factorGI|definition
+'IMQLarge.factorGI' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.factorGI|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.factorNorms|IMQLarge.factorNorms|definition
+'IMQLarge.factorNorms' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.factorNorms|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.factorPairs|IMQLarge.factorPairs|definition
+'IMQLarge.factorPairs' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.factorPairs|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.factor_lengths|IMQLarge.factor_lengths|theorem
+'IMQLarge.factor_lengths' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.factor_lengths|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.factor_norms_exact|IMQLarge.factor_norms_exact|theorem
+'IMQLarge.factor_norms_exact' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.factor_norms_exact|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.finite_candidates_exact|IMQLarge.finite_candidates_exact|theorem
+'IMQLarge.finite_candidates_exact' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.finite_candidates_exact|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.frobeniusCheck|IMQLarge.frobeniusCheck|definition
+'IMQLarge.frobeniusCheck' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.frobeniusCheck|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.frobeniusWitnesses|IMQLarge.frobeniusWitnesses|definition
+'IMQLarge.frobeniusWitnesses' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.frobeniusWitnesses|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.frobenius_ell_coverage|IMQLarge.frobenius_ell_coverage|theorem
+'IMQLarge.frobenius_ell_coverage' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.frobenius_ell_coverage|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.gaussian_factor_product|IMQLarge.gaussian_factor_product|theorem
+'IMQLarge.gaussian_factor_product' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.gaussian_factor_product|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.integer_factor_product|IMQLarge.integer_factor_product|theorem
+'IMQLarge.integer_factor_product' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.integer_factor_product|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.legendreTrace|IMQLarge.legendreTrace|definition
+'IMQLarge.legendreTrace' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.legendreTrace|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.margin157|IMQLarge.margin157|theorem
+'IMQLarge.margin157' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.margin157|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.marginCheck|IMQLarge.marginCheck|definition
+'IMQLarge.marginCheck' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.marginCheck|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.maximum_root89|IMQLarge.maximum_root89|theorem
+'IMQLarge.maximum_root89' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.maximum_root89|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.norm_a|IMQLarge.norm_a|theorem
+'IMQLarge.norm_a' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.norm_a|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.norm_oma|IMQLarge.norm_oma|theorem
+'IMQLarge.norm_oma' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.norm_oma|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.norm_pi|IMQLarge.norm_pi|theorem
+'IMQLarge.norm_pi' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.norm_pi|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.oma|IMQLarge.oma|definition
+'IMQLarge.oma' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.oma|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.orbit_exclusion|IMQLarge.orbit_exclusion|theorem
+'IMQLarge.orbit_exclusion' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.orbit_exclusion|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.p_prime|IMQLarge.p_prime|theorem
+'IMQLarge.p_prime' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.p_prime|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.p_split|IMQLarge.p_split|theorem
+'IMQLarge.p_split' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.p_split|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.pairGCDs|IMQLarge.pairGCDs|definition
+'IMQLarge.pairGCDs' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.pairGCDs|propext
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.pair_coverage|IMQLarge.pair_coverage|theorem
+'IMQLarge.pair_coverage' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.pair_coverage|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.pair_gcd_support|IMQLarge.pair_gcd_support|theorem
+'IMQLarge.pair_gcd_support' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.pair_gcd_support|propext
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.pi|IMQLarge.pi|definition
+'IMQLarge.pi' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.pi|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.positiveMarginCheck|IMQLarge.positiveMarginCheck|definition
+'IMQLarge.positiveMarginCheck' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.positiveMarginCheck|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.pp|IMQLarge.pp|definition
+'IMQLarge.pp' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.pp|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.quadraticSymbol|IMQLarge.quadraticSymbol|definition
+'IMQLarge.quadraticSymbol' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.quadraticSymbol|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.roots89|IMQLarge.roots89|definition
+'IMQLarge.roots89' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.roots89|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.sl157_order_formula|IMQLarge.sl157_order_formula|theorem
+'IMQLarge.sl157_order_formula' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.sl157_order_formula|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.smooth|IMQLarge.smooth|theorem
+'IMQLarge.smooth' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.smooth|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.whole_root157|IMQLarge.whole_root157|theorem
+'IMQLarge.whole_root157' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.whole_root157|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.FrobeniusWitness._sizeOf_1|IMQLarge.FrobeniusWitness._sizeOf_1|definition
+'IMQLarge.FrobeniusWitness._sizeOf_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.FrobeniusWitness._sizeOf_1|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.FrobeniusWitness._sizeOf_inst|IMQLarge.FrobeniusWitness._sizeOf_inst|definition
+'IMQLarge.FrobeniusWitness._sizeOf_inst' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.FrobeniusWitness._sizeOf_inst|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.casesOn|IMQLarge.FrobeniusWitness.casesOn|definition
+'IMQLarge.FrobeniusWitness.casesOn' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.casesOn|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.ctorIdx|IMQLarge.FrobeniusWitness.ctorIdx|definition
+'IMQLarge.FrobeniusWitness.ctorIdx' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.ctorIdx|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.disc|IMQLarge.FrobeniusWitness.disc|definition
+'IMQLarge.FrobeniusWitness.disc' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.disc|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.ell|IMQLarge.FrobeniusWitness.ell|definition
+'IMQLarge.FrobeniusWitness.ell' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.ell|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.mk|IMQLarge.FrobeniusWitness.mk|constructor
+'IMQLarge.FrobeniusWitness.mk' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.mk|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.noConfusion|IMQLarge.FrobeniusWitness.noConfusion|definition
+'IMQLarge.FrobeniusWitness.noConfusion' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.noConfusion|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.noConfusionType|IMQLarge.FrobeniusWitness.noConfusionType|definition
+'IMQLarge.FrobeniusWitness.noConfusionType' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.noConfusionType|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.q|IMQLarge.FrobeniusWitness.q|definition
+'IMQLarge.FrobeniusWitness.q' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.q|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.rec|IMQLarge.FrobeniusWitness.rec|recursor
+'IMQLarge.FrobeniusWitness.rec' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.rec|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.recOn|IMQLarge.FrobeniusWitness.recOn|definition
+'IMQLarge.FrobeniusWitness.recOn' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.recOn|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.residueA|IMQLarge.FrobeniusWitness.residueA|definition
+'IMQLarge.FrobeniusWitness.residueA' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.residueA|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.rootI|IMQLarge.FrobeniusWitness.rootI|definition
+'IMQLarge.FrobeniusWitness.rootI' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.rootI|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.trace|IMQLarge.FrobeniusWitness.trace|definition
+'IMQLarge.FrobeniusWitness.trace' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.trace|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.mk._flat_ctor|IMQLarge.FrobeniusWitness.mk._flat_ctor|definition
+'IMQLarge.FrobeniusWitness.mk._flat_ctor' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.mk._flat_ctor|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.mk.inj|IMQLarge.FrobeniusWitness.mk.inj|theorem
+'IMQLarge.FrobeniusWitness.mk.inj' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.mk.inj|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.mk.injEq|IMQLarge.FrobeniusWitness.mk.injEq|theorem
+'IMQLarge.FrobeniusWitness.mk.injEq' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.mk.injEq|propext
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.mk.noConfusion|IMQLarge.FrobeniusWitness.mk.noConfusion|definition
+'IMQLarge.FrobeniusWitness.mk.noConfusion' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.mk.noConfusion|
+LEAN_AUDIT_DECL|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.mk.sizeOf_spec|IMQLarge.FrobeniusWitness.mk.sizeOf_spec|theorem
+'IMQLarge.FrobeniusWitness.mk.sizeOf_spec' does not depend on any axioms
+LEAN_AUDIT_DEPS|LargeImaginaryDatum|IMQLarge.FrobeniusWitness.mk.sizeOf_spec|
+LEAN_AUDIT_TOTAL|LargeImaginaryDatum|79
+LEAN_AUDIT_DECL|RegardedUpToIsOrbit|RegardedUpTo.A|RegardedUpTo.A|definition
+'RegardedUpTo.A' does not depend on any axioms
+LEAN_AUDIT_DEPS|RegardedUpToIsOrbit|RegardedUpTo.A|
+LEAN_AUDIT_DECL|RegardedUpToIsOrbit|RegardedUpTo.Orbit|RegardedUpTo.Orbit|definition
+'RegardedUpTo.Orbit' does not depend on any axioms
+LEAN_AUDIT_DEPS|RegardedUpToIsOrbit|RegardedUpTo.Orbit|
+LEAN_AUDIT_DECL|RegardedUpToIsOrbit|RegardedUpTo.Single|RegardedUpTo.Single|definition
+'RegardedUpTo.Single' does not depend on any axioms
+LEAN_AUDIT_DEPS|RegardedUpToIsOrbit|RegardedUpTo.Single|
+LEAN_AUDIT_DECL|RegardedUpToIsOrbit|RegardedUpTo.UpToAct|RegardedUpTo.UpToAct|definition
+'RegardedUpTo.UpToAct' does not depend on any axioms
+LEAN_AUDIT_DEPS|RegardedUpToIsOrbit|RegardedUpTo.UpToAct|
+LEAN_AUDIT_DECL|RegardedUpToIsOrbit|RegardedUpTo.VolInvariant|RegardedUpTo.VolInvariant|definition
+'RegardedUpTo.VolInvariant' does not depend on any axioms
+LEAN_AUDIT_DEPS|RegardedUpToIsOrbit|RegardedUpTo.VolInvariant|
+LEAN_AUDIT_DECL|RegardedUpToIsOrbit|RegardedUpTo.act|RegardedUpTo.act|definition
+'RegardedUpTo.act' does not depend on any axioms
+LEAN_AUDIT_DEPS|RegardedUpToIsOrbit|RegardedUpTo.act|
+LEAN_AUDIT_DECL|RegardedUpToIsOrbit|RegardedUpTo.act_A|RegardedUpTo.act_A|theorem
+'RegardedUpTo.act_A' does not depend on any axioms
+LEAN_AUDIT_DEPS|RegardedUpToIsOrbit|RegardedUpTo.act_A|
+LEAN_AUDIT_DECL|RegardedUpToIsOrbit|RegardedUpTo.act_is_nontrivial|RegardedUpTo.act_is_nontrivial|theorem
+'RegardedUpTo.act_is_nontrivial' does not depend on any axioms
+LEAN_AUDIT_DEPS|RegardedUpToIsOrbit|RegardedUpTo.act_is_nontrivial|
+LEAN_AUDIT_DECL|RegardedUpToIsOrbit|RegardedUpTo.act_sA|RegardedUpTo.act_sA|theorem
+'RegardedUpTo.act_sA' does not depend on any axioms
+LEAN_AUDIT_DEPS|RegardedUpToIsOrbit|RegardedUpTo.act_sA|
+LEAN_AUDIT_DECL|RegardedUpToIsOrbit|RegardedUpTo.card|RegardedUpTo.card|definition
+'RegardedUpTo.card' does not depend on any axioms
+LEAN_AUDIT_DEPS|RegardedUpToIsOrbit|RegardedUpTo.card|
+LEAN_AUDIT_DECL|RegardedUpToIsOrbit|RegardedUpTo.cup|RegardedUpTo.cup|definition
+'RegardedUpTo.cup' does not depend on any axioms
+LEAN_AUDIT_DEPS|RegardedUpToIsOrbit|RegardedUpTo.cup|
+LEAN_AUDIT_DECL|RegardedUpToIsOrbit|RegardedUpTo.hull|RegardedUpTo.hull|definition
+'RegardedUpTo.hull' does not depend on any axioms
+LEAN_AUDIT_DEPS|RegardedUpToIsOrbit|RegardedUpTo.hull|
+LEAN_AUDIT_DECL|RegardedUpToIsOrbit|RegardedUpTo.hull_card_invariant|RegardedUpTo.hull_card_invariant|theorem
+'RegardedUpTo.hull_card_invariant' does not depend on any axioms
+LEAN_AUDIT_DEPS|RegardedUpToIsOrbit|RegardedUpTo.hull_card_invariant|
+LEAN_AUDIT_DECL|RegardedUpToIsOrbit|RegardedUpTo.mem|RegardedUpTo.mem|definition
+'RegardedUpTo.mem' does not depend on any axioms
+LEAN_AUDIT_DEPS|RegardedUpToIsOrbit|RegardedUpTo.mem|
+LEAN_AUDIT_DECL|RegardedUpToIsOrbit|RegardedUpTo.orbit_is_up_to_act|RegardedUpTo.orbit_is_up_to_act|theorem
+'RegardedUpTo.orbit_is_up_to_act' does not depend on any axioms
+LEAN_AUDIT_DEPS|RegardedUpToIsOrbit|RegardedUpTo.orbit_is_up_to_act|
+LEAN_AUDIT_DECL|RegardedUpToIsOrbit|RegardedUpTo.orbit_not_forced_by_invariance|RegardedUpTo.orbit_not_forced_by_invariance|theorem
+'RegardedUpTo.orbit_not_forced_by_invariance' does not depend on any axioms
+LEAN_AUDIT_DEPS|RegardedUpToIsOrbit|RegardedUpTo.orbit_not_forced_by_invariance|
+LEAN_AUDIT_DECL|RegardedUpToIsOrbit|RegardedUpTo.orbit_vol_invariant|RegardedUpTo.orbit_vol_invariant|theorem
+'RegardedUpTo.orbit_vol_invariant' does not depend on any axioms
+LEAN_AUDIT_DEPS|RegardedUpToIsOrbit|RegardedUpTo.orbit_vol_invariant|
+LEAN_AUDIT_DECL|RegardedUpToIsOrbit|RegardedUpTo.sA|RegardedUpTo.sA|definition
+'RegardedUpTo.sA' does not depend on any axioms
+LEAN_AUDIT_DEPS|RegardedUpToIsOrbit|RegardedUpTo.sA|
+LEAN_AUDIT_DECL|RegardedUpToIsOrbit|RegardedUpTo.the_point|RegardedUpTo.the_point|theorem
+'RegardedUpTo.the_point' does not depend on any axioms
+LEAN_AUDIT_DEPS|RegardedUpToIsOrbit|RegardedUpTo.the_point|
+LEAN_AUDIT_DECL|RegardedUpToIsOrbit|RegardedUpTo.union_hull_exceeds_every_member|RegardedUpTo.union_hull_exceeds_every_member|theorem
+'RegardedUpTo.union_hull_exceeds_every_member' does not depend on any axioms
+LEAN_AUDIT_DEPS|RegardedUpToIsOrbit|RegardedUpTo.union_hull_exceeds_every_member|
+LEAN_AUDIT_TOTAL|RegardedUpToIsOrbit|20
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.actL|BasisFree.actL|definition
+'BasisFree.actL' does not depend on any axioms
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.actL|
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.card|BasisFree.card|definition
+'BasisFree.card' does not depend on any axioms
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.card|
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.closure|BasisFree.closure|definition
+'BasisFree.closure' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.closure|propext
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.dec|BasisFree.dec|definition
+'BasisFree.dec' does not depend on any axioms
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.dec|
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.detI|BasisFree.detI|definition
+'BasisFree.detI' does not depend on any axioms
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.detI|
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.diagonal_conjugation_normalizes|BasisFree.diagonal_conjugation_normalizes|theorem
+'BasisFree.diagonal_conjugation_normalizes' does not depend on any axioms
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.diagonal_conjugation_normalizes|
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.enc|BasisFree.enc|definition
+'BasisFree.enc' does not depend on any axioms
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.enc|
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.ident|BasisFree.ident|definition
+'BasisFree.ident' does not depend on any axioms
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.ident|
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.irrMats|BasisFree.irrMats|definition
+'BasisFree.irrMats' does not depend on any axioms
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.irrMats|
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.irrMats_card|BasisFree.irrMats_card|theorem
+'BasisFree.irrMats_card' does not depend on any axioms
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.irrMats_card|
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.irreducibleCharPoly|BasisFree.irreducibleCharPoly|definition
+'BasisFree.irreducibleCharPoly' does not depend on any axioms
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.irreducibleCharPoly|
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.irreducible_moves_every_line|BasisFree.irreducible_moves_every_line|theorem
+'BasisFree.irreducible_moves_every_line' does not depend on any axioms
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.irreducible_moves_every_line|
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.lines|BasisFree.lines|definition
+'BasisFree.lines' does not depend on any axioms
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.lines|
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.lines_card|BasisFree.lines_card|theorem
+'BasisFree.lines_card' does not depend on any axioms
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.lines_card|
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.mulI|BasisFree.mulI|definition
+'BasisFree.mulI' does not depend on any axioms
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.mulI|
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.normLine|BasisFree.normLine|definition
+'BasisFree.normLine' does not depend on any axioms
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.normLine|
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.normalized_pairs_generate_1|BasisFree.normalized_pairs_generate_1|theorem
+'BasisFree.normalized_pairs_generate_1' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.normalized_pairs_generate_1|propext
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.normalized_pairs_generate_2|BasisFree.normalized_pairs_generate_2|theorem
+'BasisFree.normalized_pairs_generate_2' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.normalized_pairs_generate_2|propext
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.normalized_pairs_generate_3|BasisFree.normalized_pairs_generate_3|theorem
+'BasisFree.normalized_pairs_generate_3' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.normalized_pairs_generate_3|propext
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.normalized_pairs_generate_4|BasisFree.normalized_pairs_generate_4|theorem
+'BasisFree.normalized_pairs_generate_4' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.normalized_pairs_generate_4|propext
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.normalized_pairs_generate_5|BasisFree.normalized_pairs_generate_5|theorem
+'BasisFree.normalized_pairs_generate_5' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.normalized_pairs_generate_5|propext
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.normalized_pairs_generate_6|BasisFree.normalized_pairs_generate_6|theorem
+'BasisFree.normalized_pairs_generate_6' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.normalized_pairs_generate_6|propext
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.sl2|BasisFree.sl2|definition
+'BasisFree.sl2' does not depend on any axioms
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.sl2|
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.sl2_card|BasisFree.sl2_card|theorem
+'BasisFree.sl2_card' does not depend on any axioms
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.sl2_card|
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.sl2_transitive_on_distinct_pairs|BasisFree.sl2_transitive_on_distinct_pairs|theorem
+'BasisFree.sl2_transitive_on_distinct_pairs' does not depend on any axioms
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.sl2_transitive_on_distinct_pairs|
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.stepOne|BasisFree.stepOne|definition
+'BasisFree.stepOne' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.stepOne|propext
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.traceI|BasisFree.traceI|definition
+'BasisFree.traceI' does not depend on any axioms
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.traceI|
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.card._f|BasisFree.card._f|definition
+'BasisFree.card._f' does not depend on any axioms
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.card._f|
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.card._sunfold|BasisFree.card._sunfold|definition
+'BasisFree.card._sunfold' does not depend on any axioms
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.card._sunfold|
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.card._unsafe_rec|BasisFree.card._unsafe_rec|definition
+'BasisFree.card._unsafe_rec' does not depend on any axioms
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.card._unsafe_rec|
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.closure._f|BasisFree.closure._f|definition
+'BasisFree.closure._f' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.closure._f|propext
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.closure._sunfold|BasisFree.closure._sunfold|definition
+'BasisFree.closure._sunfold' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.closure._sunfold|propext
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.closure._unsafe_rec|BasisFree.closure._unsafe_rec|definition
+'BasisFree.closure._unsafe_rec' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.closure._unsafe_rec|propext
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.normLine.match_1|BasisFree.normLine.match_1|definition
+'BasisFree.normLine.match_1' does not depend on any axioms
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.normLine.match_1|
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.stepOne._f|BasisFree.stepOne._f|definition
+'BasisFree.stepOne._f' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.stepOne._f|propext
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.stepOne._sunfold|BasisFree.stepOne._sunfold|definition
+'BasisFree.stepOne._sunfold' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.stepOne._sunfold|propext
+LEAN_AUDIT_DECL|BasisFreeImage|BasisFree.stepOne._unsafe_rec|BasisFree.stepOne._unsafe_rec|definition
+'BasisFree.stepOne._unsafe_rec' depends on axioms: [propext]
+LEAN_AUDIT_DEPS|BasisFreeImage|BasisFree.stepOne._unsafe_rec|propext
+LEAN_AUDIT_TOTAL|BasisFreeImage|37
+AuditBundle.lean:2442:48: warning: This simp argument is unused:
+  Int.mul_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Int.mul_assoc, Int.mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+LEAN_AUDIT_DECL|FamilyArithmetic|FamilyArith.dvd_five_of_both|FamilyArith.dvd_five_of_both|theorem
+'FamilyArith.dvd_five_of_both' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|FamilyArithmetic|FamilyArith.dvd_five_of_both|propext,Quot.sound
+LEAN_AUDIT_DECL|FamilyArithmetic|FamilyArith.four_hundred_factors|FamilyArith.four_hundred_factors|theorem
+'FamilyArith.four_hundred_factors' does not depend on any axioms
+LEAN_AUDIT_DEPS|FamilyArithmetic|FamilyArith.four_hundred_factors|
+LEAN_AUDIT_DECL|FamilyArithmetic|FamilyArith.not_dvd_other_factor|FamilyArith.not_dvd_other_factor|theorem
+'FamilyArith.not_dvd_other_factor' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|FamilyArithmetic|FamilyArith.not_dvd_other_factor|propext,Quot.sound
+LEAN_AUDIT_DECL|FamilyArithmetic|FamilyArith.dvd_five_of_both._proof_1|FamilyArith.dvd_five_of_both._proof_1|theorem
+'FamilyArith.dvd_five_of_both._proof_1' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|FamilyArithmetic|FamilyArith.dvd_five_of_both._proof_1|propext,Quot.sound
+LEAN_AUDIT_DECL|FamilyArithmetic|FamilyArith.dvd_five_of_both._proof_2|FamilyArith.dvd_five_of_both._proof_2|theorem
+'FamilyArith.dvd_five_of_both._proof_2' depends on axioms: [propext, Quot.sound]
+LEAN_AUDIT_DEPS|FamilyArithmetic|FamilyArith.dvd_five_of_both._proof_2|propext,Quot.sound
+LEAN_AUDIT_TOTAL|FamilyArithmetic|5

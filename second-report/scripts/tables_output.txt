@@ -1,0 +1,257 @@
+Table 1.  The two data.  [P]  Def 3.1 is [IUT1, Def. 3.1].
+  Q(sqrt5), pi=16+3sqrt5
+    Norm(a) = 211^29 (68 digits)
+    Norm(1-a): 68 digits = 2^2 * 3^2 * 5 * 59 * 80621 * C,  C has 59 digits
+    e_g = 1,  e_b = 105,  ord_p(qbb) = 29/7,  ord_p(q) = 58,  ell = 7
+  Q(i),     pi=10+3i
+    Norm(a) = 109^29 (60 digits)
+    Norm(1-a): 60 digits = 2 * 3^2 * 5 * 21577 * C,  C has 53 digits
+    e_g = 1,  e_b = 105,  ord_p(qbb) = 29/7,  ord_p(q) = 58,  ell = 7
+
+Table 2.  Stage margins.  [P] from [IUT4, Prop. 1.4(iii)] with I* empty;
+          margin = j^2 s - (j+2), s = ord_p(qbb).  Positive iff ord_p(q) > 2 ell (j+2)/j^2.
+      j    j^2 s      margin      threshold ord_p(q) >
+      1     29/7        8/7                     42
+      2    116/7       88/7                     14
+      3    261/7      226/7                   70/9
+
+Table 3.  Where the explicit data on record sit.  [P]
+          ord_p(q) = -v_p(j).  Entry condition at j=1 (ell=7): ord_p(q) > 42.
+      datum                          p   ord_p(q)   s=ord/(2*7)   margin  regime
+    Dupuy-Hilado E11a1 (Q)          11         5          5/14    -2.64  vacuous
+    Cremona 14a1 (Q)                 7         3          3/14    -2.79  vacuous
+    Cremona 15a1 (Q)                 5         4           2/7    -2.71  vacuous
+    Cremona 37a1 (Q)                37         1          1/14    -2.93  vacuous
+    first report (Q(sqrt5))        211        58          29/7     1.14  NONTRIVIAL
+    second report (Q(i))           109        58          29/7     1.14  NONTRIVIAL
+    WARNING.  For the four curves over Q the margin formula's own hypotheses fail:
+      11a1: e_b = 105/gcd(105,5) = 21 > p-2 = 9;   14a1: p = ell;   15a1: p divides the torsion level 15;
+      37a1: e > p-2.  Their entries are formula values, not licensed comparisons.
+      Over F_mod = Q there is in any case no mixed place [First, Cor. 3(i)].
+
+Table 4.  Tuple types at a split prime.  [S]+[P]
+          [IUT4, Thm 1.10, Step (v)] fixes lambda by the status of the LAST
+          index v_j alone.  ASCII TRANSCRIPTION (the source's typography is
+          not reproduced here):  'lambda' to be 0 if v_j in V^good;
+          'lambda' to be ord of qbb_{v_j}^{j^2} if v_j in V^bad,
+          where qbb = q^(1/(2 ell)) is the DOUBLE-UNDERLINED q of
+          [IUT1, Ex. 3.2(iv)] -- not q itself.  (An earlier version of this
+          line printed q, naming a quantity 2*ell times larger than the one
+          the arithmetic below actually uses.)
+          d_I = (j+1) - sum_i 1/e_{t_i};  bound = -lambda + d_I + 1;
+          co(t) = -sum_i 1/e_{t_i}  (the COEFFICIENT expression; the packet
+          log_p(R_I^x) lies below co(t)*log p by max(k-1,0)(e-1)/(2e)*log p
+          for k bad entries -- ZERO for k=0,1; 52/105 for k=2, 104/105 for
+          k=3 at e_b=105.  The plain (k-1) form is negative at k=0.)
+
+          CORRECTION 2026-09-07 (external review).  An earlier version put
+          lambda = j^2 s on EVERY type, including the all-good ones, and
+          reported a single 'mixed' row.  Both are fixed: lambda carries the
+          indicator 1{t_j = b}, and tuples are listed individually, since
+          (g,b) and (b,g) have the same co and different bounds.
+       j  tuple      co(t)       bd(t)     co - bd
+       1  gg               -2            1            -3
+       1  gb         -106/105     -226/105           8/7
+       1  bg         -106/105      209/105            -3
+       1  bb           -2/105     -122/105           8/7
+
+       2  ggg              -3            1            -4
+       2  gbb        -107/105    -1427/105          88/7
+       2  bbg        -107/105      313/105            -4
+       2  bbb           -1/35        -63/5          88/7
+
+    -> the difference is 8/7 (j=1), 88/7 (j=2) EXACTLY for the tuples whose
+       last entry is bad, and -3, -4 for those whose last entry is good.
+       So it is constant on each of the two classes, not on all types; and
+       'mixed' does not name a value, since (g,b) and (b,g) differ.
+
+Table 5.  Five conditions, and data in the original family that meet all of them.
+          (1) [First, sec.6] entry: ord_p(q) = 2N > 6 ell
+          (2) [IUT4, Cor. 2.2(ii), (C1)]: ell >= sqrt(H_all),  H_all = log of
+              the product of q-parameters over ALL bad places.  (An earlier
+              version said SELECTED here; (C1) is stated for H_all.)
+          (3) [P] non-vacuity of the ell-term, in units of log p:
+              (ell+1)N/24 > (ell+5)*log(e*_mod ell)/log p     <- BOTH sides in log p
+              CORRECTION 2026-09-07: an earlier version compared the left side
+              (log p units) with the right side in nats.  Fixed; two rows moved.
+          (4) [P] e_b = 15 ell/gcd(15 ell, ord) <= p-2: the condition under
+              which the place may be left OUT of I* in [IUT4, Prop. 1.4(iii)]
+              -- NOT a hypothesis for the estimate to apply (see note below)
+          (5) [IUT1, Def. 3.1(c)]: ell prime to the order of the q-parameter
+              *** THE COLUMN BELOW TESTS ONLY THE DESIGNATED PLACE ***, where
+              the order is 2N, so the check is ell not dividing 2N.  At the
+              REMAINING bad places the condition needs v_p(1-a) prime to ell,
+              for which power-freeness of Norm(1-a) is sufficient; that is an
+              external computation, not this column.  (Continued:)
+     H_all = N log p + log N(1-a) - min(v_2, 8) log 2      <- (C1) uses this
+     H_sel = N log p + log N(1-a) - v_2 log 2 - v_ell log ell  <- selected places
+     CORRECTION 2026-09-07 (round 2): H_sel dropped the place over 7 for every
+     row; it must drop the place over THAT ROW's ell.  At N=114, ell=37 one has
+     v_37 = 2, so the two heights differ there by 2 log 37; they agree only at
+     N=29, where ell = 7 and v_7 = 0.
+        N    ell     H_all  sqrt(H)    e_b   (1)(2)(3)(4)(5)     H_sel
+       29      7    309.02    17.579    105     o   X   X   o   o             309.02
+      114     37   1217.45    34.892    185     o   o   o   o   o  <-all5    1210.23
+      160     53   1707.05    41.316    159     o   o   o   o   o  <-all5    1704.28
+      480     73   5132.24    71.640     73     o   o   o   o   o  <-all5    5129.47
+      480     79   5132.24    71.640     79     o   o   o   o   o  <-all5    5129.47
+     N=29, ell=7 fails (2) and (3).  The other four rows meet all five.
+     (c) HEIGHT.  An earlier version put H_sel in the column used for (2).
+         (C1) is stated for H_all = log(q^forall); the two differ at N=160
+         and N=480 (v_2 = 12, v_7 = 2 there).  The verdicts do not change.
+     The first of the rows LISTED here at which all five hold is N=114, ell=37.
+     This is not monotone in N: at N=116, ell=37 one has e_b = 555 > 209, so
+     condition (4) fails there even though (1) (2) (3) (5) hold.
+
+     CORRECTION 2026-09-07 (external review).  Two errors are fixed here.
+     (a) UNITS.  Condition (3) compared a left side in units of log p with a
+         right side in nats.  Dividing the right side by log p moves N=114 and
+         N=160 from X to o, and the first all-five point from N=480 to N=114.
+     (b) STATUS OF (4).  e_b <= p-2 is NOT a hypothesis of [IUT4, Prop 1.4(iii)].
+         There I* is a CHOSEN subset and the condition p-2 >= e_i is required
+         only for i NOT in I*.  Thm 1.10 Step (v) takes I* to be exactly the set
+         with e_{v_i} > p-2, and (R4) absorbs those into 4(j+1)*ell*_mod -- the
+         same iota-term tabulated in Table 9.  So the estimate applies either
+         way; (4) is the condition under which an index may be left OUT of I*,
+         i.e. the condition for the error-free form of the bound.
+     An earlier version also used e_b = 15 ell without the gcd and omitted (5).
+
+Table 6.  Coefficients of [IUT4, Thm 1.10] at ell = 7.  [S] printed in the source.
+    per-stage coefficient on log(q) (UNROOTED):  j^2/(2 ell) = 1/14, 2/7, 9/14
+    average over j:  (2 ell*+1)(ell*+1)/(12 ell) = 1/3 = (ell+1)/24 = 1/3
+    q-side coefficient 1/(2 ell) = 1/14;  ratio 12/(ell(ell+1)) = 3/14
+    (On the ROOTED log(qbb) = log(q)/(2 ell) the same coefficients read j^2.)
+
+Table 7.  Local degrees and tensor orders.  [P]
+          f_g = 24 is the Frobenius order of X^2-24X+211 mod 3,5,7 (orders 4,3,8; lcm 24).
+          [IUT3, Prop. 3.2] (which is what [IUT4, Thm 1.10] cites here;
+          Thm 3.11(i)(a) is cited only for the notation): EACH FACTOR, BEFORE
+          tensoring, is a direct sum over the places of V over v_Q -- here 2.
+          (Confirmed at [IUT4, Thm 1.10, proof, Step (iv)], author PDF p.27.
+          This is the count BEFORE tensoring: it is neither the number of
+          tuple components after tensoring nor the split into field factors.)
+    a_g = e_g f_g = 24,  a_b = e_b f_b = 210,  lcm = 840
+      N_t(g,g) = 576
+      N_t(g,b) = 5040   -> cylinder weight 1/(N_t 2^2) = 1/20160
+      N_t(b,b) = 44100
+    tensor order:  (g,b) is MAXIMAL (good side unramified) -> normalized gain 0;
+                   (b,b) is not:  gain (e-1)/(2e) = 52/105 log p
+    -> a structural difference that only a mixed profile produces.
+
+Table 8.  Container and seed exponents, and the floor slack.  [P]
+          RESTRICTED to tuples whose LAST entry is bad, so lambda = j^2 s.
+          If the last entry is good then lambda = 0 by [IUT4, Thm 1.10,
+          Step (v)] and none of the columns below applies.
+          [IUT4, Thm 1.10, Step (v)] container p^(floor(lambda)-|I|);
+          [IUT4, Prop. 1.4(iii)] bound -lambda+d_I+1, whose floor leaves slack (A).
+      j   lambda=j^2 s   container floor(l)-|I|   seed ceil(l)   slack (A)
+      1         29/7                     2              5         6/7
+      2        116/7                    13             17         3/7
+      3        261/7                    33             38         5/7
+
+Table 9.  The ratio of the two terms of the averaged upper bound.  [P]
+          [IUT4, Thm 1.10, Step (v)] carries the term 4 iota_vQ ell*_mod with
+          ell*_mod = log(e*_mod ell), iota = 1 when p <= e*_mod ell.
+    e*_mod ell = 7,741,440,  ell*_mod = 15.862 nat = 2.964 log p
+    procession average of the term: (ell+5) ell*_mod = 35.57 log p
+    the q-signal at 211:            (ell+1)/24 * 29 = 9.667 log p
+    ratio = 3.679260571911   <- both sides in log p
+    (printed without the log p in the denominator it would be 19.690881; that form is wrong)
+    -> at these parameters the iota-term is about 3.7x the q-term.  BOTH are
+       terms INSIDE the same upper bound: this says nothing about the distance
+       between that bound and any actual value, nor whether the estimate holds.
+
+Table 10.  The probability measure of [DH-PS, Sec. 7.1] on our datum.  [S]+[P]
+          The measure is stated twice in that paper.  Sec. 1 (p.2) gives the
+          numerator as [F_0,v : Q_p]; Sec. 7.1 (p.22) gives the denominator as
+          [F_0:Q]^(j+1).  Together they determine it, and the degree formula
+          sum_{v|p} [F_0,v : Q_p] = [F_0 : Q] makes it a probability measure.
+    ell = 7,  j runs 1..3;  [F_0:Q] = 2, places above p: 2 of local degree [1, 1]
+      j   tuples 2^(j+1)   Pr per tuple   mass at this j
+      1               4           1/12             1/3
+      2               8           1/24             1/3
+      3              16           1/48             1/3
+    total tuples = 28,  total mass = 1
+    -> normalised; the mixed j=1 tuple carries 1/12.
+    Reading the Sec. 7.1 numerator literally as a K-completion degree instead
+    gives masses far above 1; the Sec. 1 statement fixes the intended field.
+
+Table 11.  Fourteen levels on one curve, and the window that produces them.  [P]
+          L = Q(i), pi = 41+26i (Norm 2357, prime, = 1 mod 4 so split),
+          a = pi^472, E: y^2 = x(x-1)(x-a), F = L(E[15]), K_ell = F(E[ell]).
+    ord_p(q) = 2N = 944;  H = 7324.751610927229;  sqrt(H) = 85.585;  N/3 = 157.333
+    window sqrt(H) <= ell < N/3 contains 14 primes
+      ell   e_b = 15 ell/gcd   e_b <= p-2   margin (j=1) = s-3
+       89             1335            o               205/89
+       97             1455            o               181/97
+      101             1515            o              169/101
+      103             1545            o              163/103
+      107             1605            o              151/107
+      109             1635            o              145/109
+      113             1695            o              133/113
+      127             1905            o               91/127
+      131             1965            o               79/131
+      137             2055            o               61/137
+      139             2085            o               55/139
+      149             2235            o               25/149
+      151             2265            o               19/151
+      157             2355            o                1/157
+    shared primes across blocks: v_2(B) = 9, v_5(B) = 2; both < 89 = the smallest ell in the window,
+      which is why blockwise 89th-power-freeness gives it for B itself.
+      (The exhaustive sieve over each block is external; its inputs -- the
+       nine norms, the 36 pair gcds and the nine 89th-root bounds, largest
+       24,856 -- are in lean/LargeImaginaryDatum.lean.)
+    [IUT1, Def. 3.1(c)] also needs ell prime to the residue characteristics of
+    the bad places; those lie over p AND over every prime dividing Norm(1-a).
+    Checked: none of the fourteen divides Norm(1-a).
+    -> the window closes at ell = 157 from two conditions at once:
+       margin (1/157, the last positive one) and e_b = 15*157 = 2355 = p-2.
+    Order condition of [IUT1, Def. 3.1(c)] at the bad places:
+      Norm(1-a) has 1592 digits; a direct 157th-power bound is about 10^10.14
+      472 = 8*59 has 8 divisors.  The reduction uses 9 blocks:
+      Phi_1, Phi_2, Phi_4, Phi_8, Phi_59, Phi_118, Phi_236 kept whole, plus
+      G_+ = (X^118+i)/(X^2-i) and G_- = (X^118-i)/(X^2+i), with G_+G_- = Phi_472.
+      Degrees [1, 1, 2, 4, 58, 58, 116, 116, 116] sum to 472 = N; that is 36 pairwise gcds to clear.
+      (The sieve itself is EXTERNAL and is not run here.  Its inputs -- the
+       nine norms, the 36 pair gcds and the nine 89th-root bounds, largest
+       24,856 -- are in lean/LargeImaginaryDatum.lean, whose header states
+       that having them does not by itself prove power-freeness;
+       it is not recomputed here.)
+
+Table 12.  The whole tabulated record, not a sample.  [P]
+          Cremona tables of conductor < 10^4 (64687 curves), swept for a
+          SINGLE place of multiplicative reduction with ord_p(q) > 42.
+      (These counts are TRANSCRIBED from an external sweep of Cremona's
+       allcurves.00000-09999, not recomputed here.  ord_3(q) = 44 is likewise
+       taken from that sweep as an INPUT: the Weierstrass coefficients are not
+       read here, so this is the arithmetic that follows FROM 44, not a
+       re-derivation OF 44.)
+      hits with ord_p(q) > 42            80
+      of which the place lies above 2    78   <- excluded by [IUT1, Def. 3.1]
+      remaining (5160j1, 5190c3)          2   place above 3, ord_3(q) = 44
+    at ell = 7:  s = 22/7,  margin = 1/7 > 0   -> the threshold IS reached
+    p = 3 divides the torsion level 15*ell = 105, so the prime-to-p
+      ramification formula does not apply at this place.
+      mu_3 c K by the Weil pairing, and zeta_3 - 1 is a root of the Eisenstein
+      polynomial T^2 + 3T + 3, so e(Q_3(mu_3)/Q_3) = 2 and therefore 2 | e.
+      In particular e >= 2 > 1 = p-2, so the index cannot be left outside
+      I*; the I* = empty shortcut of [IUT4, Prop. 1.4(iii)] is unavailable here.
+      The proposition itself still applies, with this index placed in I*.
+    -> the entry threshold alone is not a filter; it is one of five conditions.
+
+Table 13.  Residue degrees at 109, and the mixed tensor there.  [P]
+      (An earlier version of the abstract attributed these to an external
+       certificate of the first report.  That report is about 211 and says
+       nothing about 109; the values are computed here instead.)
+    places above 109:  i = 33 -> a = 0 (multiplicative);  i = 76 -> a = 36 (good)
+    at the good place: 112 points, a_109 = -2
+    disc = -432 vanishes mod 3 only; at m = 3 the ring order is not
+      decisive, so E[3] is counted directly: psi_3 has 1 root over
+      F_(109^2), i.e. E(F_(109^2))[3] = Z/3, so Frob^2 != 1 and the order is 6.
+      (#E(F_(109^2)) = 12096 is divisible by 27, so counting points cannot decide it.)
+    order of Frobenius on E[3], E[5], E[7]: 6, 12, 3  ->  f_g = lcm = 12
+    f_b = ord(109 mod 105) = 6
+    mixed tensor: 12 * 630 = 7560 = 6 components of degree 1260
+    -> f_g = 12, f_b = 6 here, against 24 and 2 at 211 (Table 1).
+
+RESULT: all tables computed

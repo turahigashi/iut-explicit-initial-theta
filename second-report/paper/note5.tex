@@ -1,0 +1,1327 @@
+\pdfoutput=1
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{hidelinks,
+  pdftitle={An initial Theta-datum over an imaginary quadratic field, and numerical values of the local quantities of inter-universal Teichmuller theory IV},
+  pdfauthor={Toshihisa Urahigashi}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hypothesis}
+\newtheorem{remark}{Remark}
+\newtheorem{question}{Question}
+
+\newcommand{\Fmod}{F_{\mathrm{mod}}}
+\newcommand{\Vmod}{\mathbb{V}_{\mathrm{mod}}}
+\newcommand{\Vbad}{\underline{\mathbb{V}}^{\mathrm{bad}}}
+\newcommand{\Vgood}{\mathbb{V}^{\mathrm{good}}}
+\newcommand{\Vgoodmod}{\mathbb{V}^{\mathrm{good}}_{\mathrm{mod}}}
+\newcommand{\VV}{\mathbb{V}}
+\newcommand{\Ind}[1]{\textup{(Ind#1)}}
+\newcommand{\SA}{\textup{(SA)}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\Norm}{\operatorname{N}}
+\newcommand{\qbb}{\underline{\underline q}}
+\newcommand{\VVu}{\underline{\mathbb V}}
+
+\title{An initial $\Theta$-datum over an imaginary quadratic field,\\
+and numerical values of the local quantities of\\
+inter-universal Teichm\"uller theory IV\\
+\large A second report}
+\author{Toshihisa Urahigashi\\
+\small\texttt{123026.urahigashi.toshihisa@gmail.com}\\[2pt]
+\small DOI \href{https://doi.org/10.5281/zenodo.22601335}{10.5281/zenodo.22601335}}
+\date{Version 0.2.0-draft --- \today\\[3pt]
+\small ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We exhibit an initial $\Theta$-datum in the sense of \cite[Def.~3.1]{IUT1} whose
+field of moduli is the \emph{imaginary quadratic} field $\mathbb{Q}(i)$: the curve
+$E_0:y^2=x(x-1)(x-a)$ with $a=(10+3i)^{29}$ and $\ell=7$, for which the rational
+prime $109$ splits, so that one place of multiplicative and one place of good
+reduction lie above it.  All conditions (a)--(f) are verified; the arithmetic is
+exact and reproduced by a short script, and the geometric conditions (d)--(f) are
+established in \S\ref{s:geom}.  The local invariants are $e_{\mathrm g}=1$,
+$e_{\mathrm b}=105$ and
+$\ord_{109}(\underline{\underline q}_{\mathrm b})=29/7$, so that the
+\emph{ramification} invariants of this datum agree with those of the datum over
+$\mathbb{Q}(\sqrt5)$ in \cite{First}.  The residual data do not: the residue degrees
+are $f_{\mathrm g}=12$, $f_{\mathrm b}=6$ here against $24$ and $2$ there, and the mixed
+tensor algebra has $6$ components of degree $1260$ against $2$ of degree $2520$
+\emph{(the values at $109$ are computed in \path{scripts/tables.py}, Table 13, from
+the point count and the order of Frobenius on $E_0[3]$, $E_0[5]$, $E_0[7]$; the values
+at $211$ are those of \cite{First}.  The consistency check
+$12\cdot630=7560=6\cdot1260$ is asserted there.)}  Everything tabulated in
+\S\ref{s:orders} is computed at $211$ and does not transfer.
+
+Explicit initial $\Theta$-data are needed for any numerically effective use of the
+theory.  Dupuy and Hilado \cite{DH25} construct such data systematically for elliptic
+curves over $\mathbb{Q}$, working out the curve of Cremona label 11a1 in full and
+reporting $5525$ curves of prime conductor for which some $\ell$ works.  The datum below is over
+$\mathbb{Q}(i)$; the point of it is not that an explicit datum is rare but that the
+\emph{configuration} it carries is unavailable over $\mathbb{Q}$.  It is also, in three
+specific respects, easier to construct than the datum of \cite{First}: the nodes are
+already split over the field of moduli, the degree bound is halved, and the existence
+family needs two congruences instead of five, with the condition on $\ell$ becoming
+automatic (\S\ref{s:easier}).  We give that family as
+Proposition~\ref{p:family}: for every $N$ there are infinitely many \emph{arithmetic
+parameters} of this shape over $\mathbb{Q}(i)$ with $\ord_\pi(a)=N$, so the
+configuration is not isolated.  \emph{Turning one of them into an initial
+$\Theta$-datum needs more}: $7\nmid N$ (else $\ell=7$ divides the Tate order $2N$), the
+Galois image condition, and the geometric choices of \S\ref{s:geom}; the proposition is
+an arithmetic statement and does not assert them.
+
+The effective results of \cite{MFHMP} are stated for a mono-complex field, that is,
+for $\mathbb{Q}$ or an imaginary quadratic field \cite[Thm.~A]{MFHMP}, with an
+explicit constant in the degree-two case, and the curve there is in the same Legendre
+form; the datum of \cite{First} lies over a real quadratic field, and the one given
+here does not.  \emph{Whether that bears on the estimate is not addressed here.}
+
+Explicit data also make the quantities in the local estimates of
+\cite[Thm.~1.10]{IUT4} numerical at these inputs.  \emph{Explicit formulas, and the
+plan of evaluating them, are already in \cite{IUT4}, \cite{MFHMP} and \cite{DHPS}};
+what is added here is their exact evaluation on the two data and a set of checks that
+detects the kind of error \S\ref{s:regime} records.  Sections
+\ref{s:margin}--\ref{s:slack} tabulate them for this datum and for that of
+\cite{First}.  Every entry is either a formula printed in the source, marked
+\textup{[S]}, or a computation from it, marked \textup{[P]}; each table names
+the locator of the quantity it tabulates, and every number is reproduced by
+\path{scripts/tables.py}, which uses only the standard library --- with one exception,
+named where it occurs: the counts of the Cremona sweep in \S\ref{s:regime} are
+transcribed from an external computation, and $\ord_3(q)=44$ at the two curves it
+returns is taken from that computation as an input, the arithmetic that follows from
+$44$ being what is recomputed.  Three of the tables
+evaluate, on these explicit inputs, three questions: where the data on record sit
+relative to the threshold at which the stage-one comparison ceases to be vacuous
+(\S\ref{s:regime}); which region of the parameters $(\ell,p,N)$ admits a datum
+satisfying at once that threshold, the choice of $\ell$ made in
+\cite[Cor.~2.2(ii)]{IUT4}, and the condition $I^{*}=\varnothing$ of
+\cite[Prop.~1.4(iii)]{IUT4} (\S\ref{s:region}); and how the two terms of the averaged
+upper bound compare with each other at these parameters (\S\ref{s:slack}).  For a
+candidate that already satisfies the other three, that region is a window
+$\sqrt{H_\forall}\le\ell<N/3$, its left wall the lower half of the source's condition
+(C1) and its right wall the threshold derived here --- the \emph{upper} half of (C1) is
+checked separately and is not binding on any datum tabulated here --- and
+\S\ref{s:fourteen} exhibits a single explicit curve over $\mathbb{Q}(i)$ whose window
+contains \emph{fourteen} primes, with two distinct upper constraints
+simultaneously tight at $\ell=157$.
+\emph{Scope}: this report constructs data and evaluates local quantities on them.  It
+does not compute the hull of the union of the possible images of the actual
+$\Theta$-pilot or compare the two sides of \cite[Cor.~3.12]{IUT3}; nothing here is
+conditional on the hypothesis \SA{} of \cite{First}; and no claim is made about
+\cite[Cor.~3.12]{IUT3}, about \cite[Thm.~A]{MFHMP}, about the objections of
+\cite{SS}, or about $abc$.
+\end{abstract}
+
+\medskip
+\noindent\textbf{2020 Mathematics Subject Classification.}
+Primary 14H25; Secondary 11G05, 14G32, 11R58.
+
+\noindent\textbf{Keywords.}
+inter-universal Teichm\"uller theory, initial $\Theta$-datum, imaginary quadratic
+field, mono-complex field, Legendre curve, split prime, mixed reduction.
+
+\section{What this is, and what it is for}\label{s:why}
+
+\textup{[P]} An initial $\Theta$-datum is a list of conditions
+\cite[Def.~3.1]{IUT1} that a curve, a prime $\ell$, a set of bad places, a section
+and a cusp must jointly satisfy.  Verifying the list against an explicit curve is a
+finite task, and doing it produces an object that others can compute with.
+\textup{[S]} \cite{DH25} does this over $\mathbb{Q}$: it breaks
+\cite[Def.~3.1]{IUT1} into pieces, works out the curve 11a1 in full, and reports that
+for $5525$ curves of prime conductor in the Cremona tables some
+$\ell\in\{7,11,13\}$ makes the mod-$\ell$ representation over $\mathbb{Q}(i,E[30])$
+surjective --- that one condition, not the whole of \cite[Def.~3.1]{IUT1}.  \textup{[P]} \emph{Over $\mathbb{Q}$ the mixed
+profile cannot appear at all}: by \cite[Cor.~3(i)]{First} every place tuple above every
+prime is constant when $\Fmod=\mathbb{Q}$, so no member of that family carries it,
+and the field must be at least quadratic for the configuration to exist.  \cite{First}
+gives a datum over $\mathbb{Q}(\sqrt5)$ that does carry it; the present report gives
+one over $\mathbb{Q}(i)$, and shows that the construction is in several respects
+easier there (\S\ref{s:easier}).  The value of this does not
+depend on any reading of the theory, on any conclusion about $abc$, or on the outcome
+of any dispute: a verified datum is a verified datum.
+
+\textup{[P]} Two further things come out of the construction.  First, the
+configuration in which a rational prime splits in the field of moduli and carries one
+place of multiplicative and one of good reduction occurs here, as it does in
+\cite{First}; by \cite[Cor.~3(i)]{First} it cannot occur when
+$\Fmod=\mathbb{Q}$, so the field must be at least quadratic for it to appear at all.
+Second, it is not isolated: Proposition~\ref{p:family} produces infinitely many
+arithmetic parameters of this shape over $\mathbb{Q}(i)$, of arbitrary depth at the
+split prime --- subject, for the passage to a datum, to $7\nmid N$ and to the conditions
+of \S\ref{s:geom}.
+
+\begin{remark}[where such data are used]\label{r:mfhmp}
+\textup{[S]} \cite[Thm.~A]{MFHMP} is stated for ``a mono-complex number field
+[i.e., $\mathbb{Q}$ or an imaginary quadratic field --- cf.\ Definition 1.2]'',
+Definition 1.2 there reading ``$F$ is mono-complex if $F$ is either the field of
+rational numbers $\mathbb{Q}$ or an imaginary quadratic field''.  It provides the
+constant
+\[
+ h_d(\epsilon)=
+ \begin{cases}
+  3.4\cdot10^{30}\,\epsilon^{-166/81} & (d=1),\\
+  6\cdot10^{31}\,\epsilon^{-174/85} & (d=2),
+ \end{cases}
+ \qquad d=[L:\mathbb{Q}],
+\]
+so the degree-two case is provided for explicitly; and that the curve there is
+$E_{a,b,c}:y^2=x(x-1)(x+a/c)$, the Legendre form used here.  The datum of
+\cite{First} lies over a real quadratic field and so is not of that kind; the datum
+below is.  \emph{That is a statement about where the two data lie, and nothing more:
+whether the configuration bears on the estimate of \cite[Thm.~A]{MFHMP} is an open
+question which this report does not address and on which none of its claims depend.}
+\end{remark}
+
+\begin{remark}[independence]\label{r:indep}
+\textup{[P]} \cite{SS}, \cite{Rpt} and \cite{LANA} are listed because a reader will
+want to know where this sits relative to them; \emph{no statement below uses any of
+them, and no claim below is conditional on how the questions they are about are
+answered}.  In particular nothing here depends on the hypothesis \SA{} of
+\cite{First}.  What is not computed is the hull of the union of the possible images
+of the actual $\Theta$-pilot, and what is not compared is the two sides of
+\cite[Cor.~3.12]{IUT3}: what is asserted is a construction and its verification.
+\end{remark}
+
+\section{The datum}\label{s:datum}
+
+\begin{equation}\label{e:datum}
+\begin{aligned}
+ &L=\Fmod=\mathbb{Q}(i), &&\pi=10+3i,\quad \Norm(\pi)=109,\quad a=\pi^{29},\\
+ &E_0:\,y^2=x(x-1)(x-a), &&\ell=7,\\
+ &F=L(E_0[15]), &&K=F(E_0[7])=L(E_0[105]).
+\end{aligned}
+\end{equation}
+Let $X_F=E_F\setminus\{0\}$.  Select as $\Vbad_{\mathrm{mod}}$ all places of $L$ of
+multiplicative reduction outside residue characteristics $2$ and $7$, including the
+place $v_\pi$.
+
+\begin{theorem}\label{t:datum}
+\textup{[P]} \eqref{e:datum} extends to an initial $\Theta$-datum in the sense of
+\cite[Def.~3.1]{IUT1}.  Above $109$ the set $\VV$ has exactly two elements, one
+selected bad and one good, and
+\[
+ e_{\mathrm g}=1,\qquad e_{\mathrm b}=105,\qquad
+ \ord_{109}(\underline{\underline q}_{\mathrm b})=\frac{29}{7},
+\]
+so every local index in this profile satisfies $e\le p-2=107$.
+\end{theorem}
+
+The arithmetic conditions are verified in \S\ref{s:arith} and the geometric ones in
+\S\ref{s:geom}.  \emph{The slack $107-105=2$ is small, but the inequality $105\le107$ is what is
+required; \S\ref{s:variants} lists roomier primes.}
+
+\section{The arithmetic conditions}\label{s:arith}
+
+The finite integer, rational and residue-field computations of this section are exact
+and are reproduced by \path{scripts/imq_checks.py}.  \emph{Two things in this section
+are not}: the seventh-power-free sieve, which is a separate program over all primes
+below its bound (\S\ref{s:repro}), and the appeals to cited structure theorems, which
+are applications and not computations.
+
+\paragraph{(a) The field of moduli.}
+Writing $\bar a$ for the conjugate of $a$, the six Legendre orbit comparisons
+$\bar a\in\{a,a^{-1},1-a,(1-a)^{-1},a(a-1)^{-1},(a-1)a^{-1}\}$ all fail in
+$\mathbb{Z}[i]$.  Hence $j(E_0)\ne\overline{j(E_0)}$ and
+$\Fmod=\mathbb{Q}(j(E_0))=\mathbb{Q}(i)$.  Computing $j$ exactly in
+$\mathbb{Q}(i)$, its imaginary part, in lowest terms, is a nonzero
+integer of $296$ digits over a denominator of $234$ digits.
+
+\paragraph{The mixed profile above $109$.}
+Since $109=\pi\bar\pi$ splits and $a=\pi^{29}$,
+\[
+ \ord_\pi(a)=29,\qquad \ord_{\bar\pi}(a)=0,\qquad
+ \ord_\pi(1-a)=\ord_{\bar\pi}(1-a)=0 .
+\]
+So $E_0$ has multiplicative reduction at $\pi$ and good reduction at $\bar\pi$, and
+$\VV$ has one selected bad and one good element above $109$.
+
+\paragraph{(b) Selected places, and the extra hypothesis of \cite{IUT4}.}
+$\Norm(a)=109^{29}$ and
+\[
+ \Norm(1-a)=2\cdot3^2\cdot5\cdot21577\cdot C,
+\]
+with $C$ of $53$ digits.  The full norm is seventh-power-free: the exhaustive sieve
+of \path{scripts/imq_sieve7.cpp} tests every prime up to
+$\lfloor C^{1/7}\rfloor=34{,}869{,}670$ and finds none.  Primality of $C$ is not
+asserted.  Every selected place has odd residue characteristic, and
+$7\nmid\Norm(1-a)$.  Since the bad set consists of \emph{all} multiplicative
+places outside $2$ and $7$, the additional good-reduction hypothesis of
+\cite[Thm.~1.10]{IUT4} holds by construction.
+
+\paragraph{(b) Stable reduction.}
+\textup{[S]} \cite[Def.~3.1(b)]{IUT1} asks for stable reduction at every
+$v\in\mathbb V(F)^{\mathrm{non}}$.  \cite[Prop.~1.8(v)]{IUT4} gives it for a curve all
+of whose $l$-torsion is rational, for one prime $l\ge3$ \emph{invertible in
+$\mathcal{O}_k$}.  \textup{[P]} Here $E_0[15]\subset E_0(F)$ by construction, so both
+$l=3$ and $l=5$ are available; a nonarchimedean place has a single residue
+characteristic, so at least one of them is invertible there.  \emph{That is what the
+choice of $15=3\cdot5$ buys}: neither $3$ nor $5$ alone would cover its own residue
+characteristic.  Marking the origin and contracting the components that this
+destabilises carries the semistable model of $E_0$ to a stable model of the marked
+curve of type $(1,1)$, which is what \cite[Def.~3.1(b)]{IUT1} asks for.  No further
+condition on $a$ is needed.
+
+\paragraph{(c) The order at every selected place, and the mod-$\ell$ image.}
+By the norm identity
+$v_q(\Norm(z))=\sum_{\mathfrak p\mid q}f(\mathfrak p/q)v_{\mathfrak p}(z)$,
+seventh-power-freeness gives $v_{\mathfrak p}(1-a)\le6$ at every prime ideal, hence
+prime to $7$.  At $v_\pi$ the base Tate order is $2\cdot29=58$ and $7\nmid58$.
+
+For the image: at $v_\pi$ the Tate inertia contains the transvection
+$T=\bigl(\begin{smallmatrix}1&1\\0&1\end{smallmatrix}\bigr)$, nontrivial because
+$7\nmid58$.  Each rational prime $q\equiv1\pmod4$ has \emph{two} places of
+$\mathbb{Q}(i)$ above it, and they \emph{may} give different Frobenius traces, so a
+witness is a place and not merely a prime.  (They need not: at $q=233$ both places
+send $a$ to $12$, so both give trace $-26$.)  Take the place at which $i$ reduces to the smaller
+root $r$ of $r^2\equiv-1$:
+\[
+ \begin{array}{r|rrrrrr}
+  q          & 13 & 17 & 37 & 41 & 53 & 61\\\hline
+  r          &  5 &  4 &  6 &  9 & 23 & 11\\
+  a_q        &  6 & -6 & -2 & -6 & -6 & -10\\
+  a_q^2-4q\bmod7 &  5 &  3 &  3 &  5 &  6 &  3
+ \end{array}
+\]
+Each discriminant is a nonsquare modulo $7$, so $X^2-a_qX+q$ is irreducible there.
+\emph{The choice of place is not cosmetic}: at $q=13$ the other place has $a_q=2$
+and discriminant $1$, and at $q=61$ it has $a_q=-6$ and discriminant $2$, both
+squares, so those two places are not witnesses.  \textup{[P]} \emph{The passage from these facts to the image is made without choosing
+a basis.}  Write $L$ for the fixed line of $T$ and $g$ for a Frobenius at one of the six
+places.  Since the characteristic polynomial of $g$ is irreducible, $g$ has no
+eigenvector, so $gL\ne L$; hence $T$ and $gTg^{-1}$ are nontrivial transvections with
+\emph{distinct} fixed lines.  As $\mathrm{SL}_2(\mathbb F_7)$ is transitive on ordered
+pairs of distinct lines, the pair may be moved to $(\langle e_1\rangle,\langle
+e_2\rangle)$, where the two transvections read
+$\bigl(\begin{smallmatrix}1&a\\0&1\end{smallmatrix}\bigr)$ and
+$\bigl(\begin{smallmatrix}1&0\\b&1\end{smallmatrix}\bigr)$ with $a,b\ne0$; conjugating
+further by $\mathrm{diag}(a^{-1},1)$ makes $a=1$.  Each of the six remaining pairs
+generates a group of order $336=|\mathrm{SL}_2(\mathbb F_7)|$.  Every step is checked in
+the kernel in \path{lean/BasisFreeImage.lean}: that all $882$ matrices with irreducible
+characteristic polynomial move all eight lines, that the orbit of
+$(\langle e_1\rangle,\langle e_2\rangle)$ has all $56$ elements, and the six closures.
+
+\begin{remark}[correction]\label{r:basis}
+\textup{[P]} An earlier version conjugated $T$ by the \emph{companion matrix} of the
+characteristic polynomial and checked that one pair.  That does not settle the image:
+the actual Frobenius is only conjugate to the companion matrix, and the basis putting
+inertia in the form $T$ need not be the one putting Frobenius in companion form.  The
+argument above quantifies over all matrices with irreducible characteristic polynomial
+and over all pairs of distinct lines, so no basis is chosen anywhere.
+\end{remark}
+  Finally $[F:\Fmod]$ divides
+\[
+ |\mathrm{GL}_2(\mathbb Z/15\mathbb Z)|=23040=2^9\cdot3^2\cdot5 ,
+\]
+which is prime to $7$, while $|\mathrm{PSL}_2(\mathbb F_7)|=168=2^3\cdot3\cdot7$ is
+divisible by $7$; every proper normal subgroup of $\mathrm{SL}_2(\mathbb F_7)$ lies
+in its centre.  So intersecting with the image over $F$ cannot give a proper
+subgroup, and $\mathrm{Gal}(K/F)$ has the required image.
+
+\paragraph{The local invariants.}
+At $\bar\pi$ the reduction is good and the torsion is prime to $109$, so
+$e_{\mathrm g}=1$.  At $\pi$ the curve is split Tate with $\ord_{109}(q)=58$; since
+$\gcd(105,58)=1$, adjoining $E_0[105]$ has ramification index exactly $105$, whence
+$e_{\mathrm b}=105$, and $\ord_{109}(\underline{\underline q}_{\mathrm b})=58/14=29/7$.
+
+\section{The geometric conditions}\label{s:geom}
+
+\paragraph{Split reduction at every selected bad place.}
+$a$ is integral over $\mathbb{Z}[i]$.  At an odd place where $a$ and $a-1$ are both
+units the discriminant $16a^2(a-1)^2$ is a unit, so only the two nodal reductions
+need inspection.  If $a\equiv0$ the special fibre is $y^2=x^2(x-1)$ with tangent
+cone $y^2=-x^2$, which splits because $i\in L$.  If $a\equiv1$, putting $t=x-1$
+gives $y^2=(1+t)t^2$ with tangent cone $y^2=t^2$, already split.  The residue
+characteristics are odd, so the branches are distinct.  \emph{Reduction is
+therefore split multiplicative already over $L$ at every selected bad place, and
+stays split over $F$ and $K$.}  This is not deduced from rational $2$-torsion
+alone.
+
+\paragraph{(d) Quotient and core.}
+Write $V=E_0[7](K)$, fix a line $W\subset V$ and $0\ne\xi\in Q=V/W$, and let
+$\pi_W:E_K\to E'=E_K/W$ with $\psi:E'\to E_K$, $\psi\pi_W=[7]$.  Restriction gives
+$\bar\pi_W:Q\simeq\ker\psi$, so this kernel is constant over $K$.  Put
+$\underline X_K=E'\setminus\ker\psi$,
+$\underline C_K=[\underline X_K/\{\pm1\}]$ and $C_K=[X_K/\{\pm1\}]$.  The cover
+$\underline X_K\to X_K$ has geometric quotient $Q$; its extension to the
+compactifications is unramified above the zero cusp with $K$-rational fibre there,
+so the cusp decomposition group maps trivially to $Q$.  Passing to the inversion
+quotients gives type $(1,7\text{-tors})^\pm$ as in \cite[Def.~2.1]{EtTh}.  Let
+$\epsilon$ be the cusp corresponding to $\pm\bar\pi_W(\xi)$.
+
+By \cite[Prop.~2.1]{MFHMP} an arithmetic once-punctured elliptic curve in
+characteristic zero has one of the four \emph{rational} invariants
+$2^{14}31^35^{-3}$, $2^2 73^3 3^{-4}$, $1728$, $0$.  The present $j$ is not
+rational, so $X_{\overline K}$ --- where $X_K:=E_K\setminus\{0\}$ is the
+once-punctured curve --- is nonarithmetic; the finite \'etale map
+$X_{\overline K}\to C_{\overline K}$ puts these orbicurves in the same
+commensurability class, so $C_{\overline K}$ is nonarithmetic as well.  It is a
+punctured hemi-elliptic orbicurve, so \cite[Prop.~2.7]{CanLift} makes it a
+$\overline K$-core, and \cite[Prop.~2.3(i)]{CanLift} descends this to $C_K$, which
+is then the core of the finite \'etale cover $\underline C_K$ required by
+\cite[Def.~3.1(d)]{IUT1}.  For a completion $K_v$, extend $K\hookrightarrow
+\overline K$ to $\overline K\hookrightarrow\overline{K_v}$ and apply
+\cite[Prop.~2.3(ii)]{CanLift} to these algebraically closed fields of
+characteristic zero, then (i) again; base change preserves finite \'etaleness.
+This covers the complex completions, and no real completion occurs since $i\in K$.
+The geometric theta covers of (d) are supplied by
+\cite[Prop.~2.2, Def.~2.3]{EtTh}.  \emph{We note that $j$ is not an algebraic
+integer, so $E_0$ has no complex multiplication; but no non-CM criterion is used
+above.}
+
+\paragraph{(e) and (f): places and cusp, simultaneously.}
+At each selected bad moduli place $u$ choose a place of $F$ above $u$ and a place
+$w$ of $K$ above that.  The split Tate sequence
+$0\to\mu_7\to E(K_w)[7]\to\mathbb Z/7\to0$, with the class of $q^{1/7}$ mapping to
+$1$, determines a marked flag $(W_w,\pm\xi_w)$ in $V$: changing the root moves the
+lift only by $\mu_7$, and reversing the graph orientation changes the sign.  The
+group $\mathrm{SL}_2(V)$ acts transitively on such flags --- lift a nonzero
+quotient class to $t$ and choose $s\in W$ with $\det(s,t)=1$ --- so, by the image
+statement of \S\ref{s:arith}, there is $\sigma_u\in\mathrm{Gal}(K/F)$ with
+$\sigma_u(W_w,\pm\xi_w)=(W,\pm\xi)$.  Put $v(u)=\sigma_u w$, with the convention
+$|b|_{\sigma_u w}=|\sigma_u^{-1}b|_w$; the resulting isomorphism
+$\sigma_u^{-1}:K_{v(u)}\simeq K_w$ commutes with localization, so the fixed global
+pair acquires the required local marking at $v(u)$.  \emph{The global $W$ and
+$\epsilon$ are not replaced place by place.}
+
+Since $\sigma_u$ fixes $F$, the place $v(u)$ lies above the same $u$; distinct
+moduli-place fibres are disjoint, so \emph{the choices at different $u$ do not
+interfere and can be made simultaneously}.  Choosing one arbitrary lift at each
+remaining moduli place gives $\VV\xrightarrow{\ \sim\ }\Vmod$ as required by
+\cite[Def.~3.1(e)]{IUT1}, which asks for a set-theoretic section and imposes
+neither equivariance nor a single common Galois element.
+
+Locally the quotient is $E(q)\to E(q^7)$, $z\mapsto z^7$, with dual
+$E(q^7)\to E(q)$, $z\mapsto z$; the latter multiplies the period of the graph by
+$7$.  \emph{Two things have to hold, and we separate them so that each can be checked
+against \cite[Def.~2.5]{EtTh}.}  \emph{First}, the fundamental-group quotient factors
+through $\widehat{\mathbb Z}\to\mathbb Z/7$, which is the displayed local picture.
+\emph{Second}, the chosen cusp splitting is compatible with the $\pm$ structure: since
+$\ker\psi=\{q^r\bmod q^{7\mathbb Z}:r\in\mathbb Z/7\}$ and $\pi_W(q^{1/7})=q$, the
+localization of the fixed cusp $\epsilon$ \emph{is} the canonical $\pm1$ cusp of
+\cite[Def.~3.1(f)]{IUT1}: the label counts deck translations by the period $q$,
+and no Tate order or ramification index enters it.  Rational full $2$-torsion gives
+the field condition of \cite[Def.~3.1(e)]{IUT1}; the Weil pairings give
+$\mu_{12}\subset F$ and $\mu_7\subset K$.
+
+\section{An arithmetic existence family}\label{s:family}
+
+The configuration is not isolated.  Put
+$f(T)=(T^2+1)((T-1)^2+1)=T^4-2T^3+3T^2-2T+2$, of discriminant
+$400=2^4 5^2$.
+
+\begin{proposition}\label{p:family}
+\textup{[P]} Let $p$ be a rational prime that splits in $\mathbb{Q}(i)$ with
+$p\ne5$ --- equivalently here $p\ge13$ --- and let $N$ be a positive integer.  There are infinitely many positive integers $A$ such that,
+for $a=A-i$ and the two places $\pi,\bar\pi$ of $\mathbb{Q}(i)$ above $p$,
+\[
+ \ord_\pi(a)=N,\qquad \ord_{\bar\pi}(a)=0,\qquad
+ \ord_\pi(1-a)=\ord_{\bar\pi}(1-a)=0,
+\]
+and $\Norm(a)\Norm(1-a)/p^N$ is a positive seventh-power-free integer.
+\end{proposition}
+
+\begin{proof}[Construction]
+Hensel gives $r_N$ with $r_N^2\equiv-1\pmod{p^{N+1}}$ and $r_N\equiv r_1\pmod p$.
+Impose
+\[
+ A\equiv r_N+p^{N}\pmod{p^{N+1}},\qquad A\equiv0\ \text{or}\ 1\pmod5,
+\]
+put $M=5p^{N+1}$, $A=A_0+Mx$ and $G_N(x)=p^{-N}f(A_0+Mx)$, a quartic in $x$.  \emph{The
+exclusion of $p=5$ is needed for the two congruences to be simultaneously solvable}: if
+$p=5$ then $r_N\equiv\pm2\pmod5$, so $A\equiv r_N+5^{N}\equiv\pm2\pmod5$ for $N\ge1$,
+which meets neither $A\equiv0$ nor $A\equiv1$; the moduli $5$ and $p^{N+1}$ must also be
+coprime for the two to be combined.  The
+first congruence forces $\ord_\pi(a)=N$ exactly; since $\pi\mid(A-i)$ implies
+$\pi\nmid(A+i)$, this is $v_p(A^2+1)$.  \emph{The prime $p$ itself does not divide the
+other factor}: $A\equiv r_1\pmod p$, so
+\[
+ (A-1)^2+1\equiv(r_1-1)^2+1=1-2r_1\pmod p ,
+\]
+and if this vanished then $2r_1\equiv1$, whence $4r_1^2\equiv1$ and, using
+$r_1^2\equiv-1$, $p\mid5$ --- excluded.  Hence $v_p(f(A))=v_p(A^2+1)=N$ and
+$p\nmid G_N(x)$.
+
+Only two congruences are needed, because of the following three facts, each checked
+exhaustively.  \emph{(i)} $v_2(f(A))=1$ for every $A$: if $A$ is odd then
+$A^2+1\equiv2\pmod 8$ and $(A-1)^2+1$ is odd, and if $A$ is even the roles are
+exchanged.  So no condition modulo $2$ is required and $2^7\nmid f(A)$ always.
+\emph{(ii)} If $q\equiv3\pmod4$ then $A^2+1\equiv0\pmod q$ has no solution, so
+$q\nmid f(A)$; this removes $3,7,11,19,23,\dots$ at once.  \emph{(iii)} In particular $7\nmid f(A)$ for every $A$, so
+\emph{no selected bad place has residue characteristic $7$}.  \textup{[P]}
+\emph{This is not the same as the order condition of \cite[Def.~3.1(c)]{IUT1}}, which
+asks that $\ell$ not divide $v_{\mathfrak p}(a)$; that is secured at the places away
+from $\pi$ by seventh-power-freeness, and at $\pi$ itself only by the extra requirement
+$7\nmid N$, since the Tate order there is $2N$.  \emph{These are orders at places of
+$L$, and \cite[Def.~3.1(c)]{IUT1} asks about places of $F$}: for $w\mid v$ the Tate
+order is multiplied by $e(w/v)$, and since $F=L(E_0[15])$ is Galois over $L$ with
+$[F:L]\mid|\mathrm{GL}_2(\mathbb Z/15)|=23040=2^{9}3^{2}5$, every $e(w/v)$ is prime to
+$7$.  So an order prime to $7$ downstairs stays prime to $7$ at every bad place of $F$.  The second congruence makes
+$v_5(f(A))=0$.
+
+Hence a prime $q$ with $q^{7}\mid G_N(x)$ satisfies $q\equiv1\pmod4$ and $q\ge13$.
+\emph{This is a statement about seventh powers, not about divisors}: $2$ divides
+$G_N(x)$, since $v_2(f(A))=1$ always.  Such a $q$ is neither $5$ nor $p$, by the two
+paragraphs above, and is not $2$; \emph{therefore $q\nmid M=5p^{N+1}$}, so multiplication
+by $M$ is invertible modulo $q^{7}$ and the roots in $x$ correspond bijectively to the
+roots of $f$.  Such $q$
+are prime to $\operatorname{disc}(f)=400$, so $f$ has at most four simple roots
+modulo $q$, each lifting uniquely modulo $q^7$.  With
+$0<G_N(x)<C_N(X+1)^4$ for $1\le x\le X$ and $C_N=M^4/p^N$, the number of excluded
+$x$ is at most
+\[
+ \sum_{\substack{q\ \mathrm{prime},\ 13\le q\le Q_N\\ q\equiv1\ (4)}}
+ 4\Bigl(\frac{X}{q^7}+1\Bigr)
+ \le 7.38\times10^{-8}\,X+4C_N^{1/7}(X+1)^{4/7},
+ \qquad Q_N:=\bigl\lfloor(C_N(X+1)^4)^{1/7}\bigr\rfloor,
+\]
+whose second term is $o(X)$ for fixed $N$ and whose first coefficient is far below
+$1$.  Infinitely many $x$ therefore remain.  \emph{The constant is proved, not
+estimated}: summing $4q^{-7}$ exactly over the primes $q\equiv1\pmod4$ with
+$13\le q\le100$ and bounding the rest by $4\int_{100}^{\infty}x^{-7}\,dx=2/(3\cdot10^{12})$
+--- which over-counts, since it runs over all integers --- gives
+$7.3794978287\ldots\times10^{-8}<7.38\times10^{-8}$ in exact rational arithmetic
+(\path{scripts/imq_family.py}).  \emph{A truncated positive sum is only a lower bound},
+so the earlier floating-point check did not establish this inequality.
+
+\textup{[P]} \emph{The range matters}: written over all $q$ the term $+1$ would sum
+to infinity.  Only $q\le Q_N$ can produce an exclusion, so the $+1$ contributions are
+counted over that finite range; the main terms $X/q^{7}$ are then extended to the full
+sum, which only increases them.  The density bound is unaffected.
+\end{proof}
+
+\emph{This is an arithmetic existence statement.  It does not verify (d)--(f) for
+each member; those are the geometric conditions of \S\ref{s:geom}, established for
+the datum \eqref{e:datum}.}
+
+\section{\texorpdfstring{Three ways in which $\mathbb{Q}(i)$ is simpler}{Three ways in which Q(i) is simpler}}\label{s:easier}
+
+\textup{[P]} Compared with the datum of \cite{First} over $\mathbb{Q}(\sqrt5)$:
+
+\begin{enumerate}[label=(\roman*),itemsep=2pt]
+\item \emph{The node is already split.}  Over $\mathbb{Q}_{211}$ the element $-1$ is
+ a nonsquare, so \cite{First} adjoins $i$ to split the bad node.  Here $109\equiv1
+ \pmod4$ and $i\in\Fmod$, so both nodal types split over $L$ itself
+ (\S\ref{s:geom}).
+\item \emph{The degree bound is halved.}  Write
+ $G=|\mathrm{GL}_2(\mathbb Z/15\mathbb Z)|=23040$.  Here $[F:\Fmod]$ divides $G$,
+ whereas in \cite{First} it divides $2G=46080$: no factor of $2$ is spent on
+ adjoining $i$.
+\item \emph{The family needs two congruences instead of five.}  The five conditions
+ of the family in \cite{First} reduce here to the two of
+ Proposition~\ref{p:family}, and $\operatorname{disc}(f)=400$ rather than
+ $144400=20^2 19^2$.  Comparing the two excluded densities \emph{as the same
+ quantity} --- the sum $\sum4/q^7$ over the primes each family must exclude, not the
+ integral majorant $1/69984$ that \cite{First} uses in its counting step --- the
+ value falls from $4.93\times10^{-6}$ to $7.38\times10^{-8}$, a factor of $66.8$.
+ One term accounts for almost all of it: every $q\equiv3\pmod4$ is excluded here
+ automatically, \emph{including $q=\ell=7$}, and $4/7^7=4.86\times10^{-6}$ is
+ $98.5\%$ of the density for \cite{First}.  So the structural gain and the numerical
+ gain are the same fact: the condition on $\ell$ becomes automatic rather than a
+ separate check.
+\end{enumerate}
+
+\section{Roomier variants}\label{s:variants}
+
+\textup{[P]} The constraint that keeps $I^{*}$ empty is $e_{\mathrm b}\le p-2$ with
+\[
+ e_{\mathrm b}=\frac{15\ell}{\gcd(15\ell,2N)},
+\]
+$p$ split in $\Fmod$.  \emph{It reduces to $e_{\mathrm b}=15\ell$ only when the gcd is
+$1$}, as it is at $(N,\ell)=(29,7)$, where $\gcd(105,58)=1$; the figures below are for
+that fixed pair.  Varying $N$ changes the gcd --- at $(114,37)$ it is $3$ --- and also
+requires $\ell\nmid2N$ to be rechecked.  For $\ell=7$ and $N=29$ this asks
+$p\ge107$; the datum above uses the first such prime, so the slack $p-2-e_{\mathrm b}$
+is $2$.  Larger split primes give more: $113$, $137$, $149$, $157$, $173$, $181$,
+$193$ leave $6,30,42,50,66,74,86$.  Every imaginary quadratic field of class number
+one admits a split prime $\ge107$.  We have kept $p=109$, and $N=29$, so that the
+local invariants agree exactly with \cite{First}.  \emph{$N$ is not free}: moving it
+changes $\gcd(15\ell,2N)$, hence $e_{\mathrm b}$, and the condition $\ell\nmid2N$ of
+\cite[Def.~3.1(c)]{IUT1} has to hold as well.
+
+\section{The stage margins and their thresholds}\label{s:margin}
+
+\textup{[P]} With $I^{*}=\varnothing$ admissible in \cite[Prop.~1.4(iii)]{IUT4}, and
+\emph{for a tuple whose last entry is bad} --- the case in which $\lambda=j^2s$ rather
+than $0$, by Step (v) of the proof of \cite[Thm.~1.10]{IUT4} --- the difference
+$\mathrm{co}-\mathrm{bd}$ at stage $j$ is $j^2s-(j+2)$, and it is positive exactly when
+$\ord_p(q)>2\ell(j+2)/j^2$.  \emph{These are evaluations of the coefficients in the
+bound}, not a comparison of the actual $\Theta$-pilot with anything.
+
+\begin{center}
+\begin{tabular}{cccc}
+\toprule
+$j$ & $j^2s$ & $j^2s-(j+2)$ & positive iff $\ord_p(q)>$\\
+\midrule
+1 & $29/7$  & $8/7$   & $42$\\
+2 & $116/7$ & $88/7$  & $14$\\
+3 & $261/7$ & $226/7$ & $70/9$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textup{[P]} \emph{The binding stage is $j=1$, by a factor of three over $j=2$ and of
+more than five over $j=3$.}  Everything about the threshold is therefore decided at
+the first stage.
+
+\section{Where the data on record sit}\label{s:regime}
+
+\textup{[P]} $\ord_p(q)=-v_p(j_{E})$ at a place of multiplicative reduction.  At
+$\ell=7$ the stage-one threshold of \S\ref{s:margin} reads $\ord_p(q)>42$.
+
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+datum & $p$ & $\ord_p(q)$ & $s$ & $s-3$\\
+\midrule
+\cite{DH25}, Cremona 11a1 over $\mathbb{Q}$ & 11 & 5 & $5/14$ & $-2.64$\\
+Cremona 14a1 over $\mathbb{Q}$ & 7 & 3 & $3/14$ & $-2.79$\\
+Cremona 15a1 over $\mathbb{Q}$ & 5 & 4 & $2/7$  & $-2.71$\\
+Cremona 37a1 over $\mathbb{Q}$ & 37 & 1 & $1/14$ & $-2.93$\\
+\cite{First} over $\mathbb{Q}(\sqrt5)$ & 211 & \textbf{58} & $29/7$ & $\mathbf{+1.14}$\\
+the present datum over $\mathbb{Q}(i)$ & 109 & \textbf{58} & $29/7$ & $\mathbf{+1.14}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textup{[P]} \emph{The last column of the four $\mathbb{Q}$-rows is the value of the
+formula, not a licensed comparison}: at 11a1
+$e_{\mathrm b}=105/\gcd(105,5)=21>p-2=9$; at 14a1 $p=\ell$
+(which \cite[Def.~3.1(c)]{IUT1} does not allow at a bad place at all), at 15a1
+$p\mid15$, and at 37a1 $e_{\mathrm b}=105>35$.  They are printed to show the scale of
+$\ord_p(q)$ on record, nothing more.
+
+\textup{[P]} The sample above is not the whole record.  Sweeping the Cremona tables
+of conductor below $10^4$ --- $64687$ curves --- for a \emph{single} place of
+multiplicative reduction with $\ord_p(q)>42$ returns $80$ curves.  Of these, $78$ have
+that place above $2$, which \cite[Def.~3.1]{IUT1} excludes: bad places of residue
+characteristic two are not admitted.  The remaining two, Cremona \texttt{5160j1} and
+\texttt{5190c3}, have the place above $3$ with $\ord_3(q)=44$, so that at $\ell=7$
+
+\[
+  s=\tfrac{44}{14}=\tfrac{22}{7},\qquad s-3=\tfrac17>0 .
+\]
+
+\textup{[P]} So the threshold \emph{is} reached inside the tabulated range, and it is
+reached by curves that have been on record since long before this line of work.  What
+those two curves do not do is admit the simplified form of the estimate: with $p-2=1$
+and $e\ge2$ (see below), those places must be put into the set $I^{*}$ of
+\cite[Prop.~1.4(iii)]{IUT4}.  \emph{The estimate still applies}: Step (v)
+of \cite[Thm.~1.10]{IUT4} is written for exactly this case and absorbs such places into
+$4(j+1)\,\ell^{*}_{\mathrm{mod}}$.  What is not available at those curves is the
+$I^{*}=\varnothing$ form, which is the one the margin of \S\ref{s:margin} is computed
+from; the margin is therefore not the applicable quantity there.
+
+\textup{[P]} \emph{No number is put on $e$ at those two curves.}  The prime-to-$p$
+expression $15\ell/\gcd(15\ell,\ord_p(q))$ is not available when $p$
+divides the torsion level, and here $p=3$ divides $105$.  What can be said without it is
+enough: full $3$-torsion forces $\mu_3\subset K$ by the Weil pairing, and
+$\zeta_3-1$ is a root of the Eisenstein polynomial $T^2+3T+3$, so
+$\mathbb{Q}_3(\mu_3)/\mathbb{Q}_3$ is totally ramified of index $2$ and $e\ge2>1=p-2$.
+\emph{This also settles the number that the unavailable expression would have
+returned}: $2\mid e$, so $e=105$ is not merely unproved at those places but impossible.  The threshold of \S\ref{s:margin} is therefore not by itself
+a useful filter; it is one of five conditions, and \S\ref{s:region} treats them
+together.  The two data of \cite{First} and above were built with $a=\pi^{29}$, which
+forces $\ord_p(q)=58$ at a prime large enough for $e_{\mathrm b}\le p-2$ to hold as
+well.
+
+\section{Tuple types}\label{s:tuple}
+
+\textup{[S]} \cite[Thm.~1.10, Step (v)]{IUT4} fixes $\lambda$ by the status of the
+\emph{last} index alone, verbatim: ``$\lambda$'' to be $0$ if $\underline
+v_j\in\underline{\mathbb V}^{\mathrm{good}}$; ``$\lambda$'' to be ``$\ord(-)$'' of the
+element $\qbb_{\underline v_j}^{\,j^2}$ [\dots] if $\underline v_j\in\Vbad$.
+\emph{The $q$ carries the double underline}: it is the $2\ell$-th root of
+\cite[Ex.~3.2(iv)]{IUT1}, not $q$ itself, which is why $\lambda=j^2s$ with
+$s=\ord_p(\qbb)=29/7$ and not $j^2\ord_p(q)=58j^2$.  \textup{[P]} Write $d_I=(j+1)-\sum_i e_{t_i}^{-1}$, and put
+\[
+  \mathrm{co}(t):=-\sum_i e_{t_i}^{-1},\qquad
+  \mathrm{bd}(t):=-\lambda+d_I+1 .
+\]
+\emph{$\mathrm{co}(t)$ is the coefficient expression, not the log-volume of the
+tensor packet}, and the two differ once a tuple has more than one bad entry.  The good
+side is unramified, so a factor $R_{\mathrm g}$ costs nothing.  With $k$ bad entries
+$R_I$ is non-maximal \emph{exactly when $k\ge2$}; for $k=0,1$ it is maximal.  The packet
+$\log_p(R_I^{\times})$ therefore has normalized log-volume
+$\mathrm{co}(t)\log p+\mu^{\log}(R_I)$, that is, \emph{below} $\mathrm{co}(t)\log p$ by
+\[
+  -\mu^{\log}(R_I)=\tfrac{\max\{k-1,0\}(e-1)}{2e}\log p,\qquad e=e_{\mathrm b}=105,
+\]
+which is $\tfrac{52}{105}\log p$ for $k=2$ --- the gain recorded in \S\ref{s:orders} ---
+and $\tfrac{104}{105}\log p$ for $k=3$.  So the rows unaffected are those with
+\emph{at most one} bad entry; among the rows printed below, $(\mathrm b,\mathrm b)$,
+$(\mathrm g,\mathrm b,\mathrm b)$ and $(\mathrm b,\mathrm b,\mathrm g)$ carry the
+$k=2$ defect and $(\mathrm b,\mathrm b,\mathrm b)$ the $k=3$ one.  \emph{Nothing in the
+table depends on this}: the columns are $\mathrm{co}$ and $\mathrm{bd}$ as defined.  (Earlier drafts called $\mathrm{co}$ the ``seed'',
+which collided with the $\lceil\lambda\rceil$ of \S\ref{s:container}; the two are
+different quantities and are now named apart.)
+
+\begin{center}
+\begin{tabular}{clrrr}
+\toprule
+$j$ & tuple & $\mathrm{co}(t)$ & $\mathrm{bd}(t)$ & $\mathrm{co}-\mathrm{bd}$\\
+\midrule
+1 & $(\mathrm g,\mathrm g)$ & $-2$ & $1$ & $-3$\\
+1 & $(\mathrm g,\mathrm b)$ & $-106/105$ & $-226/105$ & $\mathbf{8/7}$\\
+1 & $(\mathrm b,\mathrm g)$ & $-106/105$ & $209/105$ & $-3$\\
+1 & $(\mathrm b,\mathrm b)$ & $-2/105$ & $-122/105$ & $\mathbf{8/7}$\\
+\midrule
+2 & $(\mathrm g,\mathrm g,\mathrm g)$ & $-3$ & $1$ & $-4$\\
+2 & $(\mathrm g,\mathrm b,\mathrm b)$ & $-107/105$ & $-1427/105$ & $\mathbf{88/7}$\\
+2 & $(\mathrm b,\mathrm b,\mathrm g)$ & $-107/105$ & $313/105$ & $-4$\\
+2 & $(\mathrm b,\mathrm b,\mathrm b)$ & $-1/35$ & $-63/5$ & $\mathbf{88/7}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textup{[P]} \emph{The difference is constant on each of two classes, not on all
+types.}  It is $8/7$ at $j=1$ and $88/7$ at $j=2$ exactly for the tuples whose last
+entry is bad, and $-3$, $-4$ for those whose last entry is good.  In particular
+``mixed'' does not name a value: $(\mathrm g,\mathrm b)$ and $(\mathrm b,\mathrm g)$
+have the same $\mathrm{co}$ and different bounds.  The cancellation behind the constant value on
+the first class is $d_I+\sum_ie_{t_i}^{-1}=j+1$; see \cite[\S6]{First}.
+
+\begin{remark}[correction]\label{r:lambda}
+\textup{[P]} An earlier version of this table set $\lambda=j^{2}s$ for \emph{every}
+type, including the all-good ones, and reported a single ``mixed'' row.  Both are
+corrected above.  The all-good rows change from $(-22/7,\,8/7)$ and $(-109/7,\,88/7)$ to
+$(1,-3)$ and $(1,-4)$; the rows for tuples ending in a bad place are unchanged.
+\end{remark}
+
+\section{How much probability each tuple carries}\label{s:prob}
+
+\textup{[S]} \cite{DHPS} puts a probability measure on the tuples, and the tables
+above are per-tuple quantities, so it is worth recording what weight each of them
+receives on the present data.  The measure is stated twice; we quote both as printed.  In \cite[\S1,
+p.~2]{DHPS} the numerator is the local degree of the \emph{base} field,
+$\Pr(v)=[F_{0,v}:\mathbb{Q}_p]/[F_0:\mathbb{Q}_p]$; in \cite[\S7.1,
+p.~22]{DHPS} the denominator is $[F_0:\mathbb{Q}]^{j+1}$.  Read together the two
+statements fix the measure, and the degree formula
+$\sum_{v\mid p}[F_{0,v}:\mathbb{Q}_p]=[F_0:\mathbb{Q}]$ then makes it a probability
+measure:
+\[
+  \Pr(v_0,\dots,v_j)=\frac{2}{\ell-1}\prod_{i=0}^{j}
+  \frac{[F_{0,v_i}:\mathbb{Q}_p]}{[F_0:\mathbb{Q}]}.
+\]
+
+\textup{[P]} For both data of \S\ref{s:datum} the prime splits in $F_0$, so there
+are two places above it, each of local degree $1$, and $[F_0:\mathbb{Q}]=2$.  With
+$\ell=7$ the index $j$ runs over $1,2,3$:
+
+\begin{center}
+\begin{tabular}{rrrr}
+\toprule
+$j$ & tuples $2^{j+1}$ & $\Pr$ per tuple & mass at this $j$\\
+\midrule
+1 & 4  & $1/12$ & $1/3$\\
+2 & 8  & $1/24$ & $1/3$\\
+3 & 16 & $1/48$ & $1/3$\\
+\midrule
+ & 28 & & $1$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textup{[P]} So the mixed $j=1$ tuple of \S\ref{s:tuple} --- the one carrying the
+$8/7$ of that table --- carries $1/12$ of the mass, and each index $j$ contributes
+$1/3$ regardless of how many tuples it has.  Two remarks on reading the source
+here.  \emph{We adopt a reading for the sole purpose of evaluating the displayed
+formula, and make no claim about what either point does to the arguments of that
+paper.}  The
+numerator in \cite[\S7.1]{DHPS} is printed with a completion degree of $K$ rather
+than of $F_0$; taken literally the tuples would carry masses well above $1$, and it
+is the \S1 statement that identifies the field.  We do not consider what either point
+does to the estimates of that paper; we record the reading only because the tables
+here evaluate that very formula on explicit data, so the normalisation has to be
+pinned down, and we use it as the degree normalisation of
+\cite[Rem.~1.7.1]{IUT4}.
+
+\section{The region cut out by five conditions}\label{s:region}
+
+Five conditions can be asked of a datum in this family.  \emph{Only (2) and (5) are
+hypotheses the source imposes.}  (1) is the threshold derived in \S\ref{s:margin};
+(3) is a non-vacuity criterion of ours; and (4), as explained below, is not a
+hypothesis at all but the condition under which a place may be left out of the
+set $I^{*}$ of \cite[Prop.~1.4(iii)]{IUT4}.
+
+\begin{enumerate}[label=(\arabic*),itemsep=1pt]
+\item $\ord_p(q)=2N>6\ell$ \hfill \emph{the stage-one threshold, \S\ref{s:margin}}
+\item $\sqrt{H_\forall}\le\ell\le10\delta\sqrt{H_\forall}\log(2\delta H_\forall)$
+ \hfill \textup{[S]} \cite[Cor.~2.2(ii), (C1)]{IUT4}, \emph{both sides}
+\item $\dfrac{\ell+1}{24}N\log p>(\ell+5)\log(e^{*}_{\mathrm{mod}}\ell)$, both sides in nats
+ \hfill \textup{[P]} from \cite[Thm.~1.10, Step (v)]{IUT4}
+\item $e_{\mathrm b}=15\ell/\gcd(15\ell,\ord_p(q))\le p-2$
+ \hfill \textup{[P]} $I^{*}=\varnothing$ in \cite[Prop.~1.4(iii)]{IUT4}
+\item $\ell\nmid\ord_p(q)$ \hfill \textup{[S]} \cite[Def.~3.1(c)]{IUT1}
+\end{enumerate}
+
+\textup{[P]} \emph{Condition (4) is not a restriction on the source's estimate, and it
+is worth being exact about this.}  \cite[Prop.~1.4(iii)]{IUT4} reads ``Let
+$I^{*}\subseteq I$ be a subset such that for each $i\in I\setminus I^{*}$, it holds that
+$p-2\ge e_i$'', so $I^{*}$ is \emph{chosen} and the inequality is required only outside
+it; the bound then carries $4|I^{*}|/p$ and $\sum_{i\in I^{*}}\{3+\log(e_i)\}$.
+\cite[Thm.~1.10, Step (v)]{IUT4} takes $I^{*}$ to be exactly the set of $i$ with
+$e_{v_i}>p_{v_{\mathbb Q}}-2$, and by (R4) absorbs them into
+$4(j+1)\,\ell^{*}_{\mathrm{mod}}$ --- the same term tabulated in \S\ref{s:slack}.  So
+the estimate applies whether or not (4) holds; what (4) buys is the error-free form,
+with $I^{*}=\varnothing$.
+
+\textup{[P]} \emph{Two heights occur here and must be kept apart.}  Condition (C1) of
+\cite[Cor.~2.2(ii)]{IUT4} is stated for $\log(q^{\forall})$, which keeps every
+nonarchimedean place; write $H_{\forall}$ for it.  The height over the \emph{selected}
+bad places, which drops those over $2$ and $\ell$, is a different number; write
+$H_{\mathrm{sel}}$.  For $a=\pi^N$ over $\mathbb{Q}(\sqrt5)$, with $B=\Norm(1-a)$,
+\[
+ H_{\forall}=N\log p+\log B-\min(v_2(B),8)\log2,\qquad
+ H_{\mathrm{sel}}(\ell)=N\log p+\log B-v_2(B)\log2-v_\ell(B)\log\ell .
+\]
+\textup{[P]} \emph{$H_{\mathrm{sel}}$ drops the place over that row's own $\ell$, not
+over a fixed prime.}  The two heights agree only at $N=29$, where $\ell=7$ and
+$v_7(B)=0$; at $N=114$, $\ell=37$ one has $v_{37}(B)=2$ and they differ by $2\log37$.
+\emph{Condition (2) is tested against $H_{\forall}$}; both are printed below.
+
+\begin{center}
+\begin{tabular}{rrrrrcr}
+\toprule
+$N$ & $\ell$ & $H_{\forall}$ & $\sqrt{H_{\forall}}$ & $e_{\mathrm b}$ & (1)(2)(3)(4)(5) & $H_{\mathrm{sel}}$\\
+\midrule
+29  & 7  & $309.02$  & $17.58$ & 105 & \texttt{o X X o o} & $309.02$\\
+\textbf{114} & \textbf{37} & $1217.45$ & $34.89$ & 185 & \texttt{\textbf{o o o o o}} & $1210.23$\\
+160 & 53 & $1707.05$ & $41.32$ & 159 & \texttt{o o o o o} & $1704.28$\\
+480 & 73 & $5132.24$ & $71.64$ & 73 & \texttt{o o o o o} & $5129.47$\\
+480 & 79 & $5132.24$ & $71.64$ & 79 & \texttt{o o o o o} & $5129.47$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textup{[P]} \emph{Of the rows listed, $N=114$, $\ell=37$ is the first that passes all
+five}, at the same prime $p=211$ and in the same family as \cite{First}.  \emph{The
+conditions are not monotone in $N$ and do not stay satisfied}: in the same family
+$N=116$, $\ell=37$ gives $e_{\mathrm b}=15\cdot37/\gcd(232,555)=555>209$ and fails (4).
+
+\textup{[P]} \emph{Condition (5) has two parts and they are not on the same footing.}
+At the designated place the order is $\ord_p(q)=2N$, and $\ell\nmid2N$ is an integer
+check.  At the remaining bad places it asks that $v_{\mathfrak p}(1-a)$ be prime to
+$\ell$, for which freedom of $\Norm(1-a)$ from $\ell$-th powers is \emph{sufficient but
+not necessary} --- a valuation of $\ell+1$ is prime to $\ell$ and not $\ell$-th-power-free.  For the datum
+\eqref{e:datum} of the present report that computation is shipped:
+\path{scripts/imq_sieve7.cpp} runs the exhaustive sieve to $\lfloor C^{1/7}\rfloor$
+(it is not the sieve for the datum of \cite{First}).  \emph{For the larger data of
+\S\ref{s:region} and \S\ref{s:fourteen} it is not}: the cyclotomic factorization
+$a-1=\prod_{d\mid N}\Phi_d(\pi)$ reduces the search, but on its own it excludes an
+$\ell$-th power only for factors whose norm is small enough, and the certificate for the
+reduced search is external to this report.  The rows above should be read accordingly.
+
+\begin{remark}[corrections]
+\textbf{[P]} An earlier version of this table compared the two sides of condition (3)
+\emph{in different units} --- the left in $\log p$, the right in nats --- which put
+\texttt{X} in column (3) for $N=114$ and $N=160$ and made $N=480$ look like the first
+point at which all five hold.  With both sides in nats --- equivalently, dividing both
+by $\log p>0$, which is the form the code uses --- the first of the rows
+listed at which all five hold is $N=114$ --- not every $N$ beyond it: $N=116$,
+$\ell=37$ fails (4).  The
+same earlier version used $e_{\mathrm b}=15\ell$ without the $\gcd$, omitted condition
+(5), and reported a sieve analysis in a form the cyclotomic factorisation replaces by
+a finite blockwise one.
+All four are corrected here.  The rows $N=114$ and $N=160$ are due to an external
+computation, which also supplied the certified values of $H$ used above for
+calibration.
+\end{remark}
+
+\section{A curve carrying fourteen candidate levels}\label{s:fourteen}
+
+\textup{[P]} The five conditions of \S\ref{s:region} do not act independently.  Raising
+$N$ helps (1) and (3) but raises $H$, which by (2) forces $\ell$ up, which by (4)
+forces $p$ up.  For a datum of the shape $a=\pi^N$ the tension resolves into a
+\emph{window}: once (3), (4) and (5) hold, and once the upper half of (C1) is checked,
+the admissible $\ell$ are the primes with
+\[
+  \sqrt{H_\forall}\ \le\ \ell\ <\ \tfrac{N}{3},
+\]
+the left end being the \emph{lower} half of the source's condition
+\cite[Cor.~2.2(ii), (C1)]{IUT4} and the right end the threshold derived in
+\S\ref{s:margin} --- \emph{the latter is ours, not the source's}.  \emph{Condition (C1)
+is two-sided, and the window is not by itself equivalent to it}: we check the upper half
+separately at each datum tabulated, and we do \emph{not} show that $\ell<N/3$ implies it
+in general.  At the datum below that upper half,
+$\ell\le10\delta\sqrt H\log(2\delta H)$ with
+$\delta=2^{12}\cdot3^{3}\cdot5\cdot d$, where $d$ \emph{bounds} the degree in
+$x_E\in U_X(\overline{\mathbb Q})^{\le d}$ \cite[Cor.~2.2]{IUT4}, is not binding: the
+smallest admissible value here is $d=2=[\mathbb{Q}(a):\mathbb{Q}]$, giving
+$\delta=1105920$ and a bound of about $2.2\times10^{10}$, and the bound only grows
+with $d$; against a window whose right end is $157.33\ldots$.  \cite[Def.~3.1(c)]{IUT1} additionally requires
+$\ell\ge5$ and $\ell$ prime to the residue characteristics of the bad places.  The
+bad places lie above $p$ \emph{and} above every prime dividing $\Norm(1-a)$, so the
+second condition is not settled by $\ell<p$; what settles it is that
+$\ell\nmid\Norm(1-a)$, which we checked for each of the fourteen.  A datum is therefore interesting to the extent that this window
+is wide.
+
+\textup{[P]} Take
+\[
+  L=\mathbb{Q}(i),\quad \pi=41+26i,\quad \Norm(\pi)=2357,\quad a=\pi^{472},\quad
+  E:y^2=x(x-1)(x-a),
+\]
+with $F=L(E[15])$ and $K_\ell=F(E[\ell])$.  Here $2357$ is prime and $\equiv1\pmod4$,
+so it splits in $L$, and one place above it is multiplicative and one good.  Then
+$\ord_p(q)=944$, the finite Tate height is $H=7324.7516\ldots$, and the window
+$85.58\le\ell<157.33$ contains \emph{fourteen} primes:
+
+\begin{center}
+\begin{tabular}{rrrr}
+\toprule
+$\ell$ & $e_{\mathrm b}$ & $e_{\mathrm b}\le p-2$ & margin $s-3$ at $j=1$\\
+\midrule
+ 89 & 1335 & yes & $205/89$\\
+ 97 & 1455 & yes & $181/97$\\
+101 & 1515 & yes & $169/101$\\
+103 & 1545 & yes & $163/103$\\
+107 & 1605 & yes & $151/107$\\
+109 & 1635 & yes & $145/109$\\
+113 & 1695 & yes & $133/113$\\
+127 & 1905 & yes & $91/127$\\
+131 & 1965 & yes & $79/131$\\
+137 & 2055 & yes & $61/137$\\
+139 & 2085 & yes & $55/139$\\
+149 & 2235 & yes & $25/149$\\
+151 & 2265 & yes & $19/151$\\
+\textbf{157} & \textbf{2355} & \textbf{yes} & $\mathbf{1/157}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textup{[P]} At $\ell=157$ \emph{two upper constraints are simultaneously tight}:
+$1/157$ is the last positive stage-one margin, since $472/3=157.33\ldots$; and
+$e_{\mathrm b}=15\cdot157=2355=p-2$ exactly.  \emph{Both are upper constraints}; the
+left wall of the window, $\sqrt{H_\forall}=85.58\ldots$, is what makes $89$ the first admissible
+prime and has nothing to do with $157$.
+
+\textup{[P]} \emph{What the fourteen are, exactly.}  They are the $\ell$ for which the
+five numerical filters of \S\ref{s:region} hold at this curve.  \emph{They are not
+fourteen verified initial $\Theta$-data}: no theorem here applies
+\cite[Def.~3.1]{IUT1}(a)--(f) to each of them, the basis-free image argument of
+\S\ref{s:arith} is carried out for the datum of \eqref{e:datum} and not for these, and
+the order condition at the non-designated bad places is in the state described in
+\S\ref{s:region}.  Two further remarks.  \emph{It is fourteen levels on one curve, not
+fourteen curves}: $F_{\mathrm{mod}}$, $E$ and $p$ are fixed and only $\ell$ moves.
+And the order condition of \cite[Def.~3.1(c)]{IUT1} at every bad place is what costs
+the work here.  $\Norm(1-a)$ has $1592$ digits, so a direct $157$-th power bound runs
+to about $10^{10.14}$.  The reduction uses \emph{nine blocks}: the cyclotomic factors
+$\Phi_1,\Phi_2,\Phi_4,\Phi_8,\Phi_{59},\Phi_{118},\Phi_{236}$ kept whole, together with
+\[
+ G_{+}=\frac{X^{118}+i}{X^{2}-i},\qquad G_{-}=\frac{X^{118}-i}{X^{2}+i},
+ \qquad G_{+}G_{-}=\Phi_{472},
+\]
+whose degrees $1,1,2,4,58,58,116,116,116$ sum to $472$.  \emph{It is $\Phi_{472}$ that
+splits, not $\Phi_4$.}  Clearing the $\binom92=36$ pairwise gcds then reduces the
+problem to a sieve small enough to run exhaustively, which is why the condition can
+be settled for all fourteen levels at once rather than one at a time.  \emph{The digit
+count, the factor count and the gcd count are checked by} \path{scripts/tables.py};
+\emph{The sieve is shipped and runs}: \path{scripts/powerfree_certificate.py}
+rebuilds the nine blocks from $\pi$ by exact Gaussian division --- each $\Phi_d(\pi)$
+from $\prod_{e\mid d}(\pi^e-1)^{\mu(d/e)}$, with the product of all nine asserted equal
+to $\pi^{472}-1$ --- then sieves each block norm exhaustively to its own $89$th-root
+bound, the largest being $24{,}856$, and finds no $89$th power; $8{,}318$ primes are
+tested in all.  It then checks the only way blockwise freeness could fail to give
+freeness of $B$: the $36$ pairwise gcds show that just $2$ and $5$ meet two blocks, and
+$v_2(B)=9$, $v_5(B)=2$, both below $89$.  Output in
+\path{scripts/powerfree_certificate_output.json}; the same constants are recorded in
+\path{lean/LargeImaginaryDatum.lean}, whose header states that having them does not by
+itself prove power-freeness.  \emph{This establishes the sufficient condition, not
+fourteen initial $\Theta$-data.}
+
+\section{Coefficients printed in the source}\label{s:coeff}
+
+\textup{[S]} Step (v) of the proof of \cite[Thm.~1.10]{IUT4} carries the coefficient
+$j^2/(2\ell)$ on $\log(q)$ --- the \emph{unrooted} $q$, since
+$\qbb=q^{1/(2\ell)}$ makes $\log(q^{j^2/(2\ell)})=j^2\log\qbb$, so on $\log\qbb$ the
+coefficient would be $j^2$ --- and prints the average over
+$j\in\{1,\dots,\ell^{*}\}$ first as $(2\ell^{*}+1)(\ell^{*}+1)/(12\ell)$ and then as
+$(\ell+1)/24$.  At $\ell=7$:
+\[
+ \tfrac1{14},\ \tfrac27,\ \tfrac9{14}\quad\text{average}\ \tfrac13,
+ \qquad\text{$q$-side}\ \tfrac1{2\ell}=\tfrac1{14},
+ \qquad\text{ratio}\ \tfrac{12}{\ell(\ell+1)}=\tfrac3{14}.
+\]
+\textup{[P]} The two printed forms agree, and the average is $\ell(\ell+1)/12$ times
+the stage-one coefficient.
+
+\section{Local degrees and tensor orders}\label{s:orders}
+
+\textup{[P]} This section is computed for the datum of \cite{First} at $211$; the
+corresponding numbers for the datum of \eqref{e:datum} at $109$ differ, as noted in the
+abstract.  At $211$ the good completion is unramified of degree $24$: the reduction
+has $188$ points, trace $24$, and $X^2-24X+211$ has Frobenius of order $4,3,8$ modulo
+$3,5,7$, with least common multiple $24$.  The bad completion has $e=105$, $f=2$.  So
+$a_{\mathrm g}=24$, $a_{\mathrm b}=210$, and the tensor orders are
+\[
+ N_{(\mathrm g,\mathrm g)}=576,\qquad N_{(\mathrm g,\mathrm b)}=5040,
+ \qquad N_{(\mathrm b,\mathrm b)}=44100 .
+\]
+\textup{[P]} \emph{The mixed tensor order is maximal and the all-bad one is not.}
+Because the good side is unramified, $\mathcal O_{\mathrm g}\otimes\mathcal O_{\mathrm b}$
+is the full ring of integers, with normalized gain $0$; for $(\mathrm b,\mathrm b)$ the
+gain is $(e-1)/(2e)=52/105$ in units of $\log p$.  \textup{[S]}
+\cite[Prop.~3.2]{IUT3} --- which is what \cite[Thm.~1.10]{IUT4} cites here, using
+\cite[Thm.~3.11(i)(a)]{IUT3} only for the notation --- records that \emph{each of the $j+1$
+factors, before tensoring}, is a direct sum indexed by the places of $\VVu$ over
+$v_{\mathbb Q}$ --- $2$ of them here, $1$ over $\Fmod=\mathbb{Q}$.  \emph{This is not
+the number of tuple components after tensoring} (that is $2^{j+1}$), nor the number of
+field factors into which a local tensor product splits.
+
+\section{Containers, seeds, and the floor slack}\label{s:container}
+
+\textup{[S]} Step (v) works inside a container whose exponent is
+$\lfloor\lambda\rfloor-|I|$.  \emph{The exponent alone does not name a set}: in
+\cite[Prop.~1.4(iii)]{IUT4} it multiplies $\log_p(R_I^{\times})$, and the table below
+records exponents, not lattices.  ``Seed'' in that table means the same thing rounded
+the other way: $\lceil\lambda\rceil$ is the least integer exponent of the same lattice
+$\log_p(R_I^{\times})$ that is at least $\lambda$, so the two columns are the upward
+and downward discretisations of one real number against one reference lattice.  And
+the bound of \cite[Prop.~1.4(iii)]{IUT4} takes a floor, leaving a slack.
+
+\textup{[P]} \emph{The table is restricted to tuples whose final entry lies in
+$\Vbad$}, so that $\lambda=j^2s$.  If the final entry is good then $\lambda=0$ by Step
+(v) of \cite[Thm.~1.10]{IUT4}, and none of the numerical columns below applies.
+
+\begin{center}
+\begin{tabular}{ccccc}
+\toprule
+$j$ & $\lambda=j^2s\ (\underline v_j\in\Vbad)$ & exponent $\lfloor\lambda\rfloor-|I|$ & seed $\lceil\lambda\rceil$ & floor slack\\
+\midrule
+1 & $29/7$  & 2  & 5  & $6/7$\\
+2 & $116/7$ & 13 & 17 & $3/7$\\
+3 & $261/7$ & 33 & 38 & $5/7$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{The slack in the averaged bound}\label{s:slack}
+
+\textup{[S]} Step (v) of the proof of \cite[Thm.~1.10]{IUT4} carries, besides the
+terms of \cite[Prop.~1.4(iii)]{IUT4}, a term $4\iota_{v_{\mathbb Q}}\ell^{*}_{\mathrm{mod}}$
+with $\ell^{*}_{\mathrm{mod}}=\log(e^{*}_{\mathrm{mod}}\ell)$ and $\iota=1$ when
+$p\le e^{*}_{\mathrm{mod}}\ell$; here
+$e^{*}_{\mathrm{mod}}=2^{12}3^{3}5\,e_{\mathrm{mod}}$ with
+$e_{\mathrm{mod}}\le d_{\mathrm{mod}}=2$.
+
+\textup{[P]} For the datum of \cite{First}, $e^{*}_{\mathrm{mod}}\ell=7\,741\,440$, so
+$\iota=1$ at $p=211$ and $\ell^{*}_{\mathrm{mod}}=2.964\log p$.  After the
+procession-normalized average the term contributes $(\ell+5)\ell^{*}_{\mathrm{mod}}
+=35.57\log p$, whereas the entire $q$-signal at $211$ is
+$\tfrac{\ell+1}{24}\cdot29=9.667\log p$:
+\[
+ \boxed{\ \frac{(\ell+5)\,\ell^{*}_{\mathrm{mod}}}
+   {\frac{\ell+1}{24}\cdot\frac{\ord_p(q)}{d_{\mathrm{mod}}}\cdot\log p}
+ =3.6792605719\ldots\ }
+\]
+\textup{[P]} \emph{The $q$-term is written with the unrooted $q$}: here
+$\ord_p(q)=58$ and $d_{\mathrm{mod}}=[\Fmod:\mathbb{Q}]=2$, so
+$\tfrac{\ell+1}{24}\cdot\ord_p(q)/d_{\mathrm{mod}}=29/3$.  \emph{That this equals
+$\tfrac{\ell+1}{24}\ord_p(\qbb)\,\ell$ is particular to $d_{\mathrm{mod}}=2$}, since
+$\ord_p(\qbb)=\ord_p(q)/(2\ell)$.  \emph{Inside the averaged bound, the $\iota$-term
+exceeds the $q$-term by a factor of nearly four.}  This compares two terms of one upper bound; it says nothing
+about the distance from that bound to the quantity it bounds, and it is not a criticism
+of the bound.  Note also that at $p=211$ one has $e_{\mathrm b}=105\le209$, so
+$I^{*}=\varnothing$ is available here and the $\iota$-term is the price of the
+\emph{uniform} form, not something forced by this datum.
+
+\begin{remark}[correction]\label{r:box}
+\textup{[P]} An earlier version printed this ratio without the $\log p$ in the
+denominator, where the numerator is in nats and the denominator in units of $\log p$;
+as printed it evaluates to $19.6908\ldots$, not $3.68$.  The intended quantity, with
+both in nats, is the boxed one.
+\end{remark}
+
+\section{What the numbers suggest, with the reservations attached}\label{s:interp}
+
+\textup{[P]} The tables above are meant to stand on their own, and each is checked by
+\path{scripts/tables.py}.  We nonetheless set out what they appear to indicate, as
+four readings, each paired with the reservation that limits it.  \emph{Nothing above depends on any of them}; where a
+reading is echoed elsewhere --- (R1) in the abstract, (R2) in \S\ref{s:regime}, (R3) in
+\S\ref{s:slack} --- it is as a remark, never as a step.
+
+\begin{enumerate}[label=(R\arabic*),leftmargin=*]
+\item \textbf{The admissible region is thin.}  For data of the shape $a=\pi^N$, and
+for a candidate at which conditions (3), (4) and (5) of \S\ref{s:region} already hold,
+the two remaining conditions reduce to $\sqrt{H_\forall}\le\ell<N/3$ \emph{together
+with the upper half of} (C1) --- which is not binding at any datum tabulated here, and
+which we have not shown to be non-binding in general (\S\ref{s:fourteen}).  So the room
+available to numerical work on these estimates is set by \cite[Cor.~2.2(ii)]{IUT4} from
+below and by the stage-one threshold from above.
+\emph{Reservation:} the window is not by itself the admissible region --- $N=116$,
+$\ell=37$ lies inside it and fails (4), with $e_{\mathrm b}=555>209$ --- and this is
+computed for one shape of datum in two families.  A datum not of the form $a=\pi^N$
+need not give a window of this kind, and we have not looked.
+
+\item \textbf{The entry threshold is not, by itself, a criterion.}  Two curves in the
+tabulated range clear it while requiring $I^{*}\ne\varnothing$ (\S\ref{s:regime}), so
+``does the stage-one comparison say anything?'' is not settled by the threshold alone.
+\emph{Reservation:} the sweep covers Cremona conductor below $10^4$ and a single
+multiplicative place.  Larger conductors, and configurations with several bad places,
+are untouched.
+
+\item \textbf{At these parameters the $\iota$-term of the averaged bound dominates its
+$q$-term}, by a factor of about $3.7$ (\S\ref{s:slack}).  \emph{Reservation:} this compares two terms \emph{inside} an
+upper bound.  It is not a statement about the distance between that bound and the true
+value --- which is what tightness would mean --- and it says nothing whatever about
+whether the estimate holds.  A bound may be far from tight
+and perfectly correct --- indeed \cite[Thm.~1.10]{IUT4} is stated for an arbitrary
+datum, so slack at a particular one is what one should expect.
+
+\item \textbf{These estimates can be evaluated on explicit input.}  Fourteen
+candidate levels on one curve, together with the data of \cite{DH25} over $\mathbb{Q}$ and the family of
+Proposition~\ref{p:family}, give enough explicit input for the local quantities to be
+computed rather than discussed.  \emph{Reservation:} constructing a datum and
+evaluating what the theory does with it are different tasks.  Ordinary normalised
+log-volumes of the lattices involved, coefficients, and ratios of terms in the explicit
+bounds are computed here; what is \emph{not} computed is the hull of the union of the
+possible images of the actual $\Theta$-pilot, either side of the comparison of
+\cite[Cor.~3.12]{IUT3}, or membership in the exceptional sets that the effective
+statements exclude.
+\end{enumerate}
+
+\textup{[P]} One reading we deliberately do \emph{not} offer: that any of this bears on
+whether \cite[Cor.~3.12]{IUT3} holds.  The quantities tabulated here are inputs to the
+estimates, not their outputs, and no step of the present report examines the inference
+those estimates rest on.
+
+\begin{remark}[what this report draws on]\label{r:respect}
+\textup{[P]} A report consisting of tables can read as an audit of the papers it draws
+on.  It is not one, and the reason is worth stating precisely.  The conditions
+in \S\ref{s:region} are of two kinds, and we keep them apart: (2) is
+\cite[Cor.~2.2(ii)]{IUT4} and (4) is the condition under which
+\cite[Prop.~1.4(iii)]{IUT4} may be applied with $I^{*}=\varnothing$; (5) is
+\cite[Def.~3.1(c)]{IUT1}; and (1) and (3) are conditions imposed here.  The source's own conditions can be tabulated at
+all only because they are stated precisely enough to be checked against a named curve,
+and several errors in earlier drafts of this report were caught by those same
+statements.  The explicit data of \cite{DH25} are what these questions are evaluated
+against.  The programme described in \cite{LANA} is a separate formalization effort
+that may prove complementary; we do not claim that its targets coincide with the
+interface assumed here.  The exchange recorded in \cite{SS} and
+\cite{Rpt} located the point at which the inference has to be understood; this report
+does not enter it and takes no position on it.  The distinction that governs everything
+above is between computing with a definition and understanding a proof: only the former
+is attempted here.
+\end{remark}
+
+\section{Scope}\label{s:scope}
+
+\noindent\textbf{Claimed.}  \eqref{e:datum} is an initial $\Theta$-datum with a
+mixed local profile above $109$ and with $\Fmod$ imaginary quadratic; the family of
+Proposition~\ref{p:family} exists.
+
+\smallskip\noindent\textbf{Not claimed.}  That \cite[Thm.~A]{MFHMP} is affected or
+that any estimate is; that the $abc$ conjecture or any statement of
+\cite{IUT1,IUT2,IUT3,IUT4} is false; that the hypothesis \SA{} of \cite{First} holds;
+that the analysis of \cite{SS}, the responses of \cite{Rpt} or the findings of
+\cite{LANA} bear on the datum.  Ordinary normalised log-volumes of the lattices
+involved are computed here; what is not computed is the hull of the union of the
+possible images of the actual $\Theta$-pilot, and what is not compared is the two
+sides of \cite[Cor.~3.12]{IUT3}.  The relation of this datum to the estimates, if any, is left to a further
+report; \emph{the construction stands whatever that relation turns out to be}.
+
+\section{Reproduction}\label{s:repro}
+
+\path{scripts/imq_checks.py} reproduces the exact arithmetic of \S\ref{s:arith}
+(the six orbit comparisons, the exact $j$, the orders at $\pi$ and $\bar\pi$, the
+norms and the Frobenius traces) using only the standard library.  \emph{It does not
+reproduce the image argument}: the closure computation it also prints is an auxiliary
+check on a chosen companion representative, labelled as such in its output, and the
+basis-free argument is \path{lean/BasisFreeImage.lean}.  \path{scripts/imq_family.py} checks the three facts used in
+Proposition~\ref{p:family} and the excluded density.
+\path{scripts/tables.py} prints every table of
+\S\ref{s:margin}--\S\ref{s:slack}, with the normalisations asserted rather than
+printed, and exits zero; the fourteen levels of \S\ref{s:fourteen} and the sweep of
+\S\ref{s:regime} are its Tables 11 and 12, each checking its own conclusion by
+\texttt{assert} --- that the window holds exactly fourteen primes, that the two upper
+constraints are simultaneously tight at $157$, and that at the two curves reaching the
+threshold in the tabulated range the place must be put into $I^{*}$.  \emph{The counts
+of the sweep itself are transcribed, not recomputed there.}  \path{scripts/imq_sieve7.cpp} performs the seventh-power-free sieve
+\emph{for the cofactor $C$ of the datum of \eqref{e:datum} over $\mathbb{Q}(i)$}, not
+for \cite{First}.  It is
+self-contained --- the only operation it needs on $C$ is division by a machine word,
+done on the decimal representation --- and runs in about a second.
+
+\path{lean/BasisFreeImage.lean} carries the basis-free image argument of
+\S\ref{s:arith}: twelve theorems, six of which depend on no axiom at all and six only
+on \texttt{propext}, with no \texttt{sorryAx} and no \texttt{Classical.choice}.
+
+Independently of those programs, two files under \path{lean/} ---
+\path{ImaginaryQuadraticDatum.lean} and \path{ModSevenImage.lean} --- re-prove in the
+Lean~4 kernel, importing nothing beyond \texttt{Init}, the integer identities and the
+finite predicates of \S\ref{s:arith}: the norm factorisations, the valuations, the
+point counts and traces $a_q$ at the witness places (recomputed there from the curve
+rather than read off from this report), and the finite group computations.  \emph{The residue degrees are
+not among them}; they are computed in \path{scripts/tables.py}, Table 13.
+
+\textup{[P]} \emph{One doc-string in those files is out of date, deliberately.}  Seven
+of the fourteen are pinned by SHA-256 to the bytes released with \cite{First}, and the
+auditor treats any difference as an error, so a comment inside them cannot be edited
+without giving up that guarantee.  \path{ModSevenImage.lean} accordingly still carries two descriptions we have since
+retracted: its header presents the companion-matrix closure as an assertion about the
+mod-$7$ image, and a doc-string says that the two places above a split $q$ ``give
+different traces''.  Both are corrected here and neither enters a proof --- the file's
+theorems are finite computations about a chosen representative, and the traces are
+computed there from the curve.  The image argument is \path{BasisFreeImage.lean}, whose
+own header states that it replaces the earlier one; the counterexample to the trace
+claim, at $q=233$, is in \S\ref{s:arith}.
+\emph{Four things are deliberately not in the kernel}, and the trust chain is only as
+short as this list allows: the seventh-power-free sieve is not run there (what is
+proved is that $34{,}869{,}670=\lfloor C^{1/7}\rfloor$, which is what makes the
+external search exhaustive); the identification of these numeric predicates with the
+actual Galois representation, places and cusps of the named curve is a field of the
+interface below, not a theorem; the geometric arguments of \S\ref{s:geom} are not
+verified by these programs; and \emph{Proposition~\ref{p:family} is formalised only in
+part}.  \emph{That last one is worth stating plainly.}  Its proof combines finite
+algebra with Hensel lifting, a sieve over all primes, a density bound and an
+asymptotic; \emph{only the finite algebra is in the kernel}.
+\path{lean/FamilyArithmetic.lean} carries three theorems --- that a prime dividing both
+$r^2+1$ and $(r-1)^2+1$ divides $5$, its contrapositive, and the factorisation
+$400=2^4\cdot5^2$ --- with no \texttt{sorryAx} and no \texttt{Classical.choice}.
+\emph{The third is a numeric identity and not a discriminant theorem}: neither $f$ nor
+the discriminant occurs in its statement, and $\operatorname{disc}(f)=400$ is computed
+by ordinary means outside Lean.  \emph{The rest is prose.}  The density bound and the
+infinitude of surviving $x$ are \emph{not formalised here} --- which is a statement
+about this development, not a claim that they could not be.  That matters, because a gap in the prose part
+passes every machine check in this bundle --- as one did: the root count needed
+$q\nmid M$, the case $q=p$ was missing, and external review, not the kernel, found it.
+\emph{The theorem now in the kernel is exactly the one that was missing.}  Four further files treat \S\ref{s:geom} in the manner of an abstract interface: the cited results of anabelian geometry are the fields of a
+structure \texttt{AnabelianInput}, each carrying its locator, and the corehood of the
+datum's orbicurve is derived relative to any structure satisfying it.  Three things
+there are proved outright, with no interface and no assumption: that $j(E_0)$ is
+irrational, by an exact computation in which the unreduced numerator of the imaginary
+part of $j(E_0)$ has $298$ digits (the reduced fraction reported in \S\ref{s:arith}
+has $296$ and $234$) --- so that the
+antecedent of \cite[Prop.~2.1]{MFHMP} is \emph{discharged} rather than assumed, the
+four exceptional invariants being rational; that $\mathrm{SL}_2(\mathbb F_7)$ acts
+transitively on the $24$ marked flags, which is what lets one global quotient and
+cusp be matched at every bad place at once; and that $2\xi\ne\pm\xi$ for every
+nonzero $\xi$, which separates the cusp $2\epsilon$ from $\epsilon$.  The file also
+records two checks: a model in which the interface holds non-vacuously, and a model
+showing that dropping \cite[Prop.~2.1]{MFHMP} makes the conclusion underivable.
+
+Conditions (e) and (f) are derived in the same style.  The section
+$\VV\to\mathbb V_{\mathrm{mod}}$ is proved \emph{bijective} rather than assumed, from
+the transitivity above; the local conditions at the bad places and the arrow-marked
+covers follow from seven further interface fields, each carrying its locator in
+\cite{IUT1} or \cite{EtTh}.  Each of the seven comes with two checks: a model in
+which its premise is actually inhabited, and a model in which that one field is
+deleted, the other six still hold, and the conclusion fails.
+
+\textup{[P]} \emph{Two kinds of arithmetic occur in these scripts and we do not call
+both exact.}  The valuations, norms, residue degrees, point counts, ramification
+indices, tuple coefficients and the right wall $N/3$ are integer or
+\texttt{Fraction} computations and are exact.  The heights, the logarithms in
+condition~(3) and the ratio of \S\ref{s:slack} are IEEE double evaluations of
+$\log$ and $\sqrt{\ }$, and are exact only to display precision.  \emph{Where a
+floating-point value decides a comparison, the margin is wide}: the left wall gives
+$\sqrt{H_\forall}=85.58\ldots$ against the smallest admissible $\ell=89$, and
+condition~(3) holds by a factor near $7.9$ across the window.  \emph{Those margins are
+for the fourteen-level window only}; elsewhere they are smaller --- at $N=114$,
+$\ell=37$ the gap to the left wall is $2.10\ldots$ and condition~(3) holds by a factor
+of $1.31\ldots$ --- so we do not claim a single margin for the report.  No verdict here
+is claimed to follow from an interval certificate, which we have not computed.
+
+\path{scripts/lean_audit.py} checks \emph{every} declaration with
+\texttt{\#print axioms}, including those the elaborator generates.  Its default scope
+is all \emph{fourteen} files: the run of 2026-09-07 reports $263$ stated theorems and
+$768$ declarations in all, of which $565$ depend on no axiom, $138$ on
+\texttt{propext} and $65$ on \texttt{propext} and \texttt{Quot.sound}, and returns
+\textsc{pass}.  Of those, \path{BasisFreeImage.lean}
+contributes $12$ stated theorems and $37$ declarations, the twelve splitting $6$
+axiom-free and $6$ on \texttt{propext}.  \emph{An earlier version of the auditor named
+only eleven files and so did not cover that one}, which is the file carrying the
+argument of \S\ref{s:arith}; the omission was found in external review and is
+corrected.  Seven of the fourteen --- the files of the first report --- are additionally
+pinned by SHA-256, and carry $140$ stated theorems and $481$ declarations; their axiom
+split $327/107/47$ is what the auditor prints under \texttt{-{}-through
+GeometricModels}, which it labels a partial scope.  Nothing depends on
+\texttt{sorryAx} or on \texttt{Classical.choice}; those two are not in the auditor's allowed set, so their
+appearance is a failure rather than a note.  \emph{What the Lean files do not cover
+is stated in their headers}: the cited anabelian results are assumed and not proved;
+the links between the abstract interface and the concrete curve --- the $j$ of
+\S\ref{s:arith}, and the finite predicates standing for places, flags and cusps ---
+are named fields of the structures rather than theorems; and the sieve is not run,
+what is proved being that $34869670=\lfloor C^{1/7}\rfloor$, which is what makes the
+search exhaustive.  The geometric arguments of \S\ref{s:geom} are not
+verified by these programs.
+
+
+\begin{remark}[related work]
+\textup{[S]} The LANA project reports that its plan is to work first toward the
+formalization of the basic parts of anabelian geometry, and that its July 2026 interim
+report provides a basis for eventual formalization in Lean rather than carrying one
+out.  \textup{[P]} The Lean development described above does something different and
+independent: it re-proves in the kernel the arithmetic of two explicit data against
+\cite[Def.~3.1]{IUT1}, and states the results of anabelian geometry it uses as the
+fields of an interface rather than proving them.  Were every field of that interface
+proved, the conditional statements here would become unconditional.  We do not claim
+that those fields are what LANA is formalizing: besides the anabelian theorems cited,
+the interface also carries the identification of the abstract places, labels and cusps
+with those of a named curve (\S\ref{s:repro}), which is a separate obligation.
+\end{remark}
+
+\section*{Disclosure}
+
+Large language models were used substantially in locating passages, cross-checking
+computations, drafting, and adversarial review; the author is responsible for the
+claims.  The arithmetic of \S\ref{s:arith} and \S\ref{s:family} was verified by the
+author's programs; the geometric arguments of \S\ref{s:geom} were drafted with
+machine assistance against the sources cited there and then checked against those
+sources.  The correction history of \cite{First} applies here as well, since the
+present datum reuses its structure.  Several statements in earlier drafts of the
+tabulations of \S\ref{s:margin}--\S\ref{s:slack} were withdrawn after external
+review: an incorrect ramification index, an omitted hypothesis of
+\cite[Def.~3.1(c)]{IUT1}, a table applying a formula outside its domain, and a sieve
+analysis reduced by a cyclotomic factorisation to a finite blockwise sieve.  The corrections are marked where they occur, except that the caveat on the four
+$\mathbb{Q}$-rows of \S\ref{s:regime} stood only in the script until this version.
+
+\begin{thebibliography}{MFHMP}
+\bibitem[First]{First} T.~Urahigashi, \emph{An explicit initial $\Theta$-datum with
+ mixed reduction at a split prime}, version 0.1.3-draft (2026),
+ DOI \href{https://doi.org/10.5281/zenodo.22537342}{10.5281/zenodo.22537342}
+ (all versions).
+\bibitem[CanLift]{CanLift} S.~Mochizuki, \emph{The absolute anabelian geometry of
+ canonical curves}, Doc. Math., Kazuya Kato's fiftieth birthday, Extra Vol.\
+ (2003), 609--640.
+\bibitem[EtTh]{EtTh} S.~Mochizuki, \emph{The \'etale theta function and its
+ Frobenioid-theoretic manifestations}, Publ. Res. Inst. Math. Sci. \textbf{45}
+ (2009), no.~1, 227--349.
+\bibitem[IUT1]{IUT1} S.~Mochizuki, \emph{Inter-universal Teichm\"uller theory I},
+ Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 3--207.
+\bibitem[IUT2]{IUT2} S.~Mochizuki, \emph{Inter-universal Teichm\"uller theory II},
+ Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 209--401.
+\bibitem[IUT3]{IUT3} S.~Mochizuki, \emph{Inter-universal Teichm\"uller theory III},
+ Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 403--626.
+\bibitem[IUT4]{IUT4} S.~Mochizuki, \emph{Inter-universal Teichm\"uller theory IV},
+ Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 627--723.
+\bibitem[LANA]{LANA} Project LANA, \emph{Project LANA interim report on IUT
+ theory}, July 2026, 50 pp.
+\bibitem[Rpt]{Rpt} S.~Mochizuki, \emph{Report on discussions, held during the period
+ March 15--20, 2018, concerning inter-universal Teichm\"uller theory}, RIMS, Kyoto
+ University, February 2019 version, 45 pp.
+\bibitem[SS]{SS} P.~Scholze, J.~Stix, \emph{Why $abc$ is still a conjecture},
+ manuscript, July 16, 2018.
+\bibitem[DH25]{DH25} T.~Dupuy, A.~Hilado, \emph{The statement of Mochizuki's
+ Corollary 3.12: initial theta data}, arXiv:2004.13228v2 [math.NT], 19 June 2025,
+ 20~pp.  (Version~1, 28 April 2020, is a different and longer paper.)
+\bibitem[DHPS]{DHPS} T.~Dupuy, A.~Hilado, \emph{Probabilistic Szpiro, baby Szpiro,
+ and explicit Szpiro from Mochizuki's Corollary 3.12}, arXiv:2004.13108v2 [math.NT],
+ 29 April 2020.
+\bibitem[MFHMP]{MFHMP} S.~Mochizuki, I.~Fesenko, Y.~Hoshi, A.~Minamide,
+ W.~Porowski, \emph{Explicit estimates in inter-universal Teichm\"uller theory},
+ Kodai Math. J. \textbf{45} (2022), no.~2, 175--236, DOI 10.2996/kmj45201.
+\end{thebibliography}
+
+\end{document}

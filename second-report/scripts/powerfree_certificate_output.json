@@ -1,0 +1,110 @@
+{
+  "pi": [
+    41,
+    26
+  ],
+  "N": 472,
+  "ell_min": 89,
+  "B_digits": 1592,
+  "blocks": [
+    {
+      "name": "Phi_1",
+      "norm_digits": 4,
+      "root_bound": 1,
+      "power_factors": []
+    },
+    {
+      "name": "Phi_2",
+      "norm_digits": 4,
+      "root_bound": 1,
+      "power_factors": []
+    },
+    {
+      "name": "Phi_4",
+      "norm_digits": 7,
+      "root_bound": 1,
+      "power_factors": []
+    },
+    {
+      "name": "Phi_8",
+      "norm_digits": 14,
+      "root_bound": 1,
+      "power_factors": []
+    },
+    {
+      "name": "Phi_59",
+      "norm_digits": 196,
+      "root_bound": 157,
+      "power_factors": []
+    },
+    {
+      "name": "Phi_118",
+      "norm_digits": 196,
+      "root_bound": 157,
+      "power_factors": []
+    },
+    {
+      "name": "Phi_236",
+      "norm_digits": 392,
+      "root_bound": 24856,
+      "power_factors": []
+    },
+    {
+      "name": "G_plus",
+      "norm_digits": 392,
+      "root_bound": 24856,
+      "power_factors": []
+    },
+    {
+      "name": "G_minus",
+      "norm_digits": 392,
+      "root_bound": 24855,
+      "power_factors": []
+    }
+  ],
+  "pair_gcds": {
+    "Phi_1|Phi_2": 4,
+    "Phi_1|Phi_4": 4,
+    "Phi_1|Phi_8": 4,
+    "Phi_1|Phi_59": 1,
+    "Phi_1|Phi_118": 1,
+    "Phi_1|Phi_236": 1,
+    "Phi_1|G_plus": 1,
+    "Phi_1|G_minus": 1,
+    "Phi_2|Phi_4": 20,
+    "Phi_2|Phi_8": 4,
+    "Phi_2|Phi_59": 1,
+    "Phi_2|Phi_118": 1,
+    "Phi_2|Phi_236": 1,
+    "Phi_2|G_plus": 1,
+    "Phi_2|G_minus": 1,
+    "Phi_4|Phi_8": 4,
+    "Phi_4|Phi_59": 1,
+    "Phi_4|Phi_118": 1,
+    "Phi_4|Phi_236": 1,
+    "Phi_4|G_plus": 1,
+    "Phi_4|G_minus": 1,
+    "Phi_8|Phi_59": 1,
+    "Phi_8|Phi_118": 1,
+    "Phi_8|Phi_236": 1,
+    "Phi_8|G_plus": 1,
+    "Phi_8|G_minus": 1,
+    "Phi_59|Phi_118": 1,
+    "Phi_59|Phi_236": 1,
+    "Phi_59|G_plus": 1,
+    "Phi_59|G_minus": 1,
+    "Phi_118|Phi_236": 1,
+    "Phi_118|G_plus": 1,
+    "Phi_118|G_minus": 1,
+    "Phi_236|G_plus": 1,
+    "Phi_236|G_minus": 1,
+    "G_plus|G_minus": 1
+  },
+  "shared": {
+    "2": 9,
+    "5": 2
+  },
+  "overall_result": "PASS",
+  "primes_tested": 8318,
+  "limitation": "Establishes 89th-power-freeness of B, which is SUFFICIENT for the order condition at the remaining bad places.  It is not a construction of fourteen initial Theta-data."
+}

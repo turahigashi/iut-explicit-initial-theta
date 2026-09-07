@@ -1,0 +1,67 @@
+=== the datum ===
+  pi = 10 + 3i,  Norm(pi) = 109
+  OK   Norm(pi) = 109
+  OK   109 = 1 mod 4, so 109 splits in Q(i)
+  OK   pi * conj(pi) = 109
+
+=== (a) the field of moduli: six Legendre orbit comparisons ===
+  OK   conj(a) = a              fails (as required)
+  OK   conj(a)*a = 1            fails (as required)
+  OK   conj(a) = 1-a            fails (as required)
+  OK   conj(a)*(1-a) = 1        fails (as required)
+  OK   conj(a)*(a-1) = a        fails (as required)
+  OK   conj(a)*a = a-1          fails (as required)
+  OK   j(E_0) is not rational, so F_mod = Q(i)
+  OK   Im(j) != 0   |Im numerator| has 298 digits, denominator 237
+
+=== the mixed profile above 109 ===
+  OK   ord_pi(a) = 29   got 29
+  OK   ord_pibar(a) = 0   got 0
+  OK   ord_pi(1-a) = 0   got 0
+  OK   ord_pibar(1-a) = 0   got 0
+
+=== (b) norms ===
+  OK   Norm(a) = 109^29
+  OK   v_2(Norm(1-a)) = 1   got 1
+  OK   v_3(Norm(1-a)) = 2   got 2
+  OK   v_5(Norm(1-a)) = 1   got 1
+  OK   v_21577(Norm(1-a)) = 1   got 1
+  Norm(1-a) has 60 digits; cofactor C has 53 digits
+  OK   7 does not divide Norm(1-a)
+  floor(C^(1/7)) = 34,869,670   <- the exhaustive bound used by imq_sieve7.cpp
+  OK   sieve bound = 34,869,670
+  C = 62680848855374732989482471526907792905767672615779497
+
+=== (c) orders at the selected places ===
+  OK   7 does not divide the base Tate order 2*29 = 58
+  OK   7 does not divide 2*v_3 = 4
+  OK   7 does not divide 2*v_5 = 2
+  OK   7 does not divide 2*v_21577 = 2
+
+=== (c) the mod-7 image ===
+  OK   q= 13: trace    6, disc 5 nonsquare mod 7  [actual arithmetic]
+  OK   q= 13: AUXILIARY, companion representative: <T, C T C^-1> has order 336
+  OK   q= 17: trace   -6, disc 3 nonsquare mod 7  [actual arithmetic]
+  OK   q= 17: AUXILIARY, companion representative: <T, C T C^-1> has order 336
+  OK   q= 37: trace   -2, disc 3 nonsquare mod 7  [actual arithmetic]
+  OK   q= 37: AUXILIARY, companion representative: <T, C T C^-1> has order 336
+  OK   q= 41: trace   -6, disc 5 nonsquare mod 7  [actual arithmetic]
+  OK   q= 41: AUXILIARY, companion representative: <T, C T C^-1> has order 336
+  OK   q= 53: trace   -6, disc 6 nonsquare mod 7  [actual arithmetic]
+  OK   q= 53: AUXILIARY, companion representative: <T, C T C^-1> has order 336
+  OK   q= 61: trace  -10, disc 3 nonsquare mod 7  [actual arithmetic]
+  OK   q= 61: AUXILIARY, companion representative: <T, C T C^-1> has order 336
+  OK   all 6 witnesses have irreducible char. poly mod 7  [actual]
+  OK   AUXILIARY ONLY: for each witness the CHOSEN COMPANION representative C gives <T, C T C^-1> = SL_2(F_7).  This is NOT a proof about the actual image: g is only conjugate to C, and the conjugating basis need not fix T.  The basis-free argument is in lean/BasisFreeImage.lean (12 theorems).
+  OK   |GL_2(Z/15)| = 23040 = 2^9 3^2 5
+  OK   7 does not divide 23040, so [F:F_mod] is prime to 7
+  OK   7 divides |PSL_2(F_7)| = 168
+
+=== local invariants ===
+  OK   ord_109(q) = 2*29 = 58
+  OK   gcd(58, 105) = 1, so e_b = 105 exactly
+  OK   e_b = 105 <= 107 = p-2, so 109 is tamely ramified
+  OK   ord_109(qbb_b) = 58/14 = 29/7   = 29/7
+
+==============================================
+RESULT: PASS - all checks hold

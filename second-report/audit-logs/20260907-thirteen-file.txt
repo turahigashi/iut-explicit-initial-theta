@@ -1,0 +1,21 @@
+Lean audit: thirteen-file-release
+  ImaginaryQuadraticDatum: authored theorems=27, kernel declarations=79, kernel theorems=33
+  ModSevenImage: authored theorems=33, kernel declarations=71, kernel theorems=33
+  GeometricInput: authored theorems=14, kernel declarations=120, kernel theorems=33
+  GeometricFinite: authored theorems=20, kernel declarations=29, kernel theorems=22
+  SplitReduction: authored theorems=9, kernel declarations=29, kernel theorems=13
+  GeometricCompletion: authored theorems=11, kernel declarations=118, kernel theorems=37
+  GeometricModels: authored theorems=26, kernel declarations=35, kernel theorems=29
+  EntranceMargin: authored theorems=16, kernel declarations=78, kernel theorems=38
+  DeepImaginaryDatum: authored theorems=37, kernel declarations=55, kernel theorems=38
+  BlurExceedsMargin: authored theorems=8, kernel declarations=13, kernel theorems=11
+  LargeImaginaryDatum: authored theorems=38, kernel declarations=79, kernel theorems=41
+  RegardedUpToIsOrbit: authored theorems=9, kernel declarations=20, kernel theorems=9
+  BasisFreeImage: authored theorems=12, kernel declarations=37, kernel theorems=12
+  authored theorems=260; all declarations=763; axiom-free declarations=564; with-axiom declarations=199
+  axiom sets: {'(none)': 564, 'propext': 138, 'propext, Quot.sound': 61}
+  original baseline: {'authored_theorems_found': 74, 'axiom_free': 58, 'with_axioms': 16, 'source_hashes_unchanged': True}
+  previous release baseline: {'authored_theorems': 140, 'declarations': 481, 'authored_axiom_free': 69, 'authored_with_axioms': 71, 'source_hashes_unchanged': True}
+RESULT: PASS
+Audit artifacts: audit-logs/
+EXIT=0
