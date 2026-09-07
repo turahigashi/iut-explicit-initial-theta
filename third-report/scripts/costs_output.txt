@@ -1,0 +1,156 @@
+Table 1.  The p-primary torsion term m_i.  k = Q_p(zeta_p), e = p-1, f = 1.
+          [S] [IUT4, Prop. 1.4(ii)]: for the log of the unit group,
+            mu^log(log O^x) = -(1/e + m/(e f)) log p,
+          where p^m is the order of the p-primary torsion of O^x.
+          CORRECTION 2026-09-07 (round 2): an earlier version attributed this
+          to the ceiling in a_i of [IUT4, Prop. 1.2].  The values were right
+          and the derivation was not: a_i is the coefficient of the hull
+          bound, m_i is the torsion variable, and they are different objects.
+      p    e   f   m    mu/log p    without m     cost of m
+      3    2   1   1          -1         -1/2           1/2
+      5    4   1   1        -1/2         -1/4           1/4
+      7    6   1   1        -1/3         -1/6           1/6
+    -> the cost is log3/2, log5/4, log7/6: not uniform in p, and largest
+       where p is smallest.  The normalization itself is [IUT4, Prop. 1.4(i)].
+
+Table 2.  Residue degree.  Unramified extensions of Q_5.  [S]+[P]
+          [IUT4, Prop. 1.4(i),(ii)].  The lattice index grows with f;
+          the NORMALIZED log-volume does not move.
+      f   [O : log-units]   raw log index / log5   mu / log5
+      1                5                      1          -1
+      2               25                      2          -1
+      3              125                      3          -1
+    -> using the raw index instead of the normalized volume counts f twice.
+
+Table 3.  The tensor order.  k = Q_5(sqrt 5), R = O (x)_{Z_5} O in O x O.  [S]+[P]
+          [IUT4, Prop. 1.1, Prop. 1.4(iii)].
+          R = {(u,v) in O^2 : u = v mod pi}, so [O^2 : R] = |O/pi| = 5, and
+          dim_{Q_5}(k x k) = 4.  (O^2 is a Z_5-module, not a Q_5 vector space;
+          the ambient Q_5-space is k x k, of dimension 4.)
+      det of the transition matrix = -20,  v_5 = 1,  index 5,
+      dim 4,  mu(R)/log5 = -1/4
+    -> treating the tensor order as its own normalization loses exactly log5/4.
+
+Table 4.  The floor.  [S]+[P]
+          [IUT4, Prop. 1.4(iii)] passes from the container to the smooth bound
+          by -floor(A) <= -A + 1, so the slack is 1 + floor(A) - A.  In the
+          moderate tame model here d_I + a_I = |I| is an integer, so it is
+            1 + floor(lambda) - lambda.
+          CORRECTION 2026-09-07 (round 2): an earlier version used
+          ceil(lambda) - lambda.  The two agree off the integers and differ
+          ON them: at lambda = 3 and 4 the slack is 1, not 0.
+      lambda        1 + floor - lambda      ceil - lambda (wrong)
+               3                     1                        0
+         472/157               156/157                  156/157
+         627/157                 1/157                    1/157
+               4                     1                        0
+    -> at lambda = 472/157 the slack is 156/157, and the entry margin of that
+       same curve is 1/157.  Their RATIO is 156; they are not comparable in
+       kind either -- one is a defect between a container and a smooth bound,
+       the other a margin between the two sides of a comparison.
+
+Table 5.  Ramification support.  Curve 5190c3, K_0 = Q(i, E[210]).  [S]+[P]
+          [IUT4, Thm 1.10 Steps (iii),(viii); Rem. 1.10.5(iii)].
+      Delta from [a1..a6] = 2^6 * 3^44 * 5 * 173   (computed, then divided)
+      at 173: v(Delta) = 1 and c4 = 25 mod 173 (a unit) -> multiplicative
+      actual ramification support: [2, 3, 5, 7, 173]  (5 primes)
+      all primes below the cutoff 3,870,720: 274,666
+      ratio = 274666/5 = 54933.2
+    -> replacing the input support by an all-prime proxy multiplies the count
+       by 5.49e4 at this curve.  No PNT threshold is used; the count is exact.
+
+Table 6.  Weights.  A split prime with e_b = 2355, e_g = 1.  [S]+[P]
+          [IUT4, Rem. 1.7.1]: the moduli place weights are the local degrees
+          over [F_0:Q], not the ramification indices.
+      weight from e alone : 2355/2356
+      correct weight      : 1/2    (both places, since the prime splits)
+      ratio               : 2355/1178
+      two-factor tuples: gg, gb, bg, bb each 1/4, summing to 1
+    -> weighting by e sends the bad side to 2355/2356 instead of 1/2.
+
+Table 7.  A mean that agrees while the components do not.  [S]+[P]
+          [IUT4, Prop. 1.7; Rem. 1.10.7(ii)].  (Q_p x Q_p) (x) (Q_p x Q_p)
+          has four components.
+      all four components   [0, 8, 8, 16]   mean 8
+      diagonal two only     [0, 16]       mean 8
+      mixed-component probability: 1/2 against 0
+    -> the means agree, so checking the mean does not detect the collapse.
+
+Table 8.  Where the ramification index jumps.  pi = 41+26i, p = 2357, ell = 157.
+          [P] e_b <= p-2 is NOT a hypothesis of [IUT4, Prop. 1.4(iii)]:
+          there I* is a chosen subset and the inequality is asked only
+          outside it.  It is the condition for leaving the place OUT of I*.
+          e_b = 15 ell / gcd(15 ell, 2N).
+       N    gcd(2355, 2N)    e_b   e_b <= 2355
+     471            471       5           yes
+     472              1    2355           yes
+     474              3     785           yes
+     475              5     471           yes
+    -> one step in N moves e_b by a factor of 471.  The curve used in note5
+       (N = 472) is the one where the gcd is 1 and e_b is maximal.  It has
+       FOURTEEN CANDIDATE LEVELS, not fourteen verified initial Theta-data.
+
+Table 9.  An ideal gcd is not a norm gcd.  pi = 16+3sqrt5, N = 110, p = 661.
+          [P]  661 splits; sqrt5 has the two roots 115 and 546 there.  Reducing
+          a = (16+3 sqrt5)^110 and t = 1 - a + a^2 at each root shows that the
+          661-factor of the numerator and that of the denominator sit at
+          DIFFERENT primes, so cancelling total norms removes one too many.
+      sqrt5 mod 661   a mod 661   v(1-a)   v(t), t = 1-a+a^2
+              115           1        1                  0
+              546         365        0                  1
+      height with the correct ideal gcd : 1174.636200642495
+      height after cancelling norms     : 1168.1424468026432
+      difference                        : 6.493753839852
+      log 661                           : 6.493753839852
+    -> the error is exactly log 661, and the reason is visible in the table:
+       the two valuations never sit at the same prime, while the total norms
+       carry 661 twice and cancel it once too often.
+
+Table 10.  The two-adic boundary.  pi = 10+3i.  [P]
+          The finite height contribution at 2 is NOT v_2 itself but
+            max(v_2(N(1-a)) - 8, 0) * log 2,
+          the remainder left by a cap at 8 = v_2(256), the numerator constant
+          of j = 256 t^3/(a^2 b^2).  The cap is OURS: [IUT4, Cor. 2.2(i)]
+          defines log(q^forall) and log(q^{/=2}) and prints no such cutoff.
+          RECOVERED 2026-09-07 (round 2): an earlier version
+          omitted this item because v_2 itself (1, 9, 1, 11) did not match the
+          reported 0, log2, 0, 3log2.  Both were right; the definitions differed.
+       N   v_2(N(1-a))   max(v_2-8,0)   contribution
+     199             1              0   0
+     200             9              1   log 2
+     201             1              0   0
+     400            11              3   3 log 2
+    -> one step in N moves it between 0 and log 2; the cap at 8 is what makes
+       the two quantities differ, and it is why the naive reading failed.
+
+Table 11.  Two permitted upper-bound expressions at the same p.  [S]+[P]
+          ell = 157, p = 2357, e_b = 2355, e_g = 1.  RECOVERED 2026-09-07.
+      every e_i <= p-2 = 2355, so I* is empty and the extra error term of
+      [IUT4, Prop. 1.4(iii)] is EXACTLY 0.
+      the uniform coarse term, averaged over j: (ell+5) log(e*_mod ell)
+        = 162 * log(1105920 * 157) = 3073.534296832696
+    -> 0 against 3073.53.  This compares TWO PERMITTED UPPER BOUNDS at one
+       fixed p, averaged over j.  It is not the actual indeterminacy and not
+       the gap in [IUT3, Cor. 3.12]; no such claim is made.
+
+Table 12.  The finite statistic: every clause of the Proposition.  [P]
+    (a) B factors through pi on T_3, by e_g:
+          e_g =   1   c_g = 0          factors: True
+          e_g =   2   c_g = 1/2        factors: False
+          e_g =   3   c_g = 2/3        factors: False
+          e_g =   5   c_g = 4/5        factors: False
+          e_g = 105   c_g = 104/105    factors: False
+    (b) at a FIXED stage it factors for every e_g, so the claim would be
+        vacuous there; the equivalence lives on the union:
+          e_g =   1   j = 1,2,3: [True, True, True]
+          e_g =   2   j = 1,2,3: [True, True, True]
+          e_g = 105   j = 1,2,3: [True, True, True]
+    (c) e_b = 105 > 1 and s = 29/7 > 2c_b = 208/105:  13 classes, 13 values, injective: True
+    (d) at s = 2c_b exactly:  B(g,g) = 1 = B(b,b) = 1  -> not injective
+    (e') injective <=> r = s/c_b not in E_m: 741 rational r tested, 0 mismatches; |E_3| = 15
+         sup E_m = 2 at j=1,d=2 for m = 2..7: [Fraction(2, 1), Fraction(2, 1), Fraction(2, 1), Fraction(2, 1), Fraction(2, 1), Fraction(2, 1)]  -> s > 2c_b suffices at every cutoff
+    (e) |T_3| = 28,  distinct values of B = 13
+    -> the coefficient sees how many bad places there are, and, when the
+       last is bad, at which stage; the good places are invisible to it.
+
+RESULT: all tables computed

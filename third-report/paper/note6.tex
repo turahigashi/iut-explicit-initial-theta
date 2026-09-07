@@ -1,0 +1,575 @@
+\pdfoutput=1
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{hidelinks,
+  pdftitle={The cost of each distinction in the local computations of IUT IV},
+  pdfauthor={Toshihisa Urahigashi}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{remark}{Remark}
+
+\newcommand{\Fmod}{F_{\mathrm{mod}}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\Norm}{\operatorname{N}}
+\newcommand{\mulog}{\mu^{\log}}
+
+\title{The cost of each distinction in the local computations\\
+of inter-universal Teichm\"uller theory IV}
+\author{Toshihisa Urahigashi\\
+\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
+\date{Version 1.0.0 --- 7 September 2026\\[3pt]
+\small ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}\\[3pt]
+\small DOI \href{https://doi.org/10.5281/zenodo.22646137}{10.5281/zenodo.22646137}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The local estimates of \cite[\S1]{IUT4} are assembled from several steps that are kept
+apart in the source: a $p$-primary torsion term, a normalization that divides by the
+local degree, a tensor order sitting inside its own normalization, a floor function, a
+ramification support, and a weighting of places.  Each separation is drawn explicitly
+there.  This report computes, in actual local fields and for named curves, \emph{what
+each of them is worth}: how much the estimate moves if that one distinction is elided
+and nothing else is changed.  The answers are exact rationals or exact multiples of
+$\log p$ --- $\log3/2$, $\log5/4$, $\log5/4$ again for a different reason, $156/157$,
+a factor of $5.49\times10^{4}$, a weight of $2355/2356$ against $1/2$, and $\log661$ at
+a single prime.  \path{scripts/costs.py} computes twelve tables --- standard library
+only, each asserting its own conclusion, exit zero --- of which the ones displayed here
+are those the argument uses.
+
+\textup{[S]} marks a formula or hypothesis printed in the source and \textup{[P]} an
+exact computation from it.  \emph{Nothing here is a correction to \cite{IUT4}.} Every
+distinction measured below is one the source itself makes --- with the single
+exception of \S\ref{s:wt}, noted there; the numbers say what an
+implementation loses by collapsing it, which is a question only an explicit datum can
+answer.  \emph{No claim is made about \cite[Cor.~3.12]{IUT3}, about the objections of
+\cite{SS}, or about $abc$.}
+\end{abstract}
+
+\section{What this is}\label{s:what}
+
+\textup{[S]} \cite[Thm.~1.10]{IUT4} fixes a collection of initial $\Theta$-data as in
+\cite[Def.~3.1]{IUT1}, but \emph{it is not stated for an arbitrary one}: it supposes
+in addition that one is in the situation of \cite[Cor.~3.12]{IUT3}, and that $E_F$ has
+good reduction at every $v\in\mathbb V(F)^{\mathrm{good}}\cap\mathbb V(F)^{\mathrm{non}}$
+not dividing $2\ell$.  \textup{[P]} Its proof passes through a chain of local statements --- \cite[Prop.~1.1]{IUT4}
+through \cite[Prop.~1.7]{IUT4} --- each of which separates quantities that a reader
+might be tempted to identify.  This report evaluates them on named local fields and
+named curves.  \emph{Several of them are computable without a full initial
+$\Theta$-datum} --- and \emph{some of the curves used below are not known to carry
+one}, the $N=472$ curve of \cite[\S13]{Second} being a curve with fourteen
+\emph{candidate} levels.  What the verified data of \cite{First,Second} add is
+\S\ref{s:bdry} and \S\ref{s:recovered}, where the parameters of an actual datum enter.
+
+\textup{[P]} The pattern is the same in every section.  We take the source's own
+statement, instantiate it in a local field or at a curve that is named, compute the
+quantity exactly, then compute it again with one distinction removed, and print the
+difference.  The difference is the cost of that distinction.  It is a number about an
+implementation, not about the theory: \emph{a bound that keeps all the distinctions is
+correct whether or not the cost of any one of them is large.}
+
+\begin{remark}[why this is worth writing down]\label{r:why}
+\textup{[P]} Two of the costs below were found because an earlier draft of
+\cite{Second} got them wrong --- an incorrect ramification index, and a formula applied
+where its hypothesis failed.  In both cases what caught the error was the source's own
+statement being sharp enough to check against a specific curve.  A table of costs is
+the form in which that sharpness becomes reusable.
+\end{remark}
+
+\section{Notation}\label{s:not}
+
+\textup{[S]} For a finite extension $k/\mathbb{Q}_p$ with ring of integers
+$\mathcal{O}$, ramification index $e$ and residue degree $f$, we write $\mulog$ for the
+log-volume normalized by $[k:\mathbb{Q}_p]$, as in \cite[Prop.~1.4(i)]{IUT4} --- the
+notation of \cite[Prop.~1.1, Prop.~1.2]{IUT4} supplies $d_i$ and $a_i$, which enter
+later --- so that
+$\mulog(\mathcal{O})=0$ and $\mulog$ of a sublattice of index $p^{m}$ is
+$-\,m\log p/[k:\mathbb{Q}_p]$.  All values below are given in units of $\log p$ unless
+stated otherwise.
+
+\section{The $p$-primary torsion term}\label{s:tors}
+
+\textup{[S]} \cite[Prop.~1.4(ii)]{IUT4} gives, for a finite extension of
+$\mathbb{Q}_p$ with ramification index $e$, residue degree $f$, and $p$-primary torsion
+of order $p^{m}$ in the units,
+\[
+ \mulog\bigl(\log\mathcal{O}^{\times}\bigr)=-\Bigl(\frac1e+\frac{m}{ef}\Bigr)\log p .
+\]
+\textup{[P]} Take $k=\mathbb{Q}_p(\zeta_p)$, so $e=p-1$, $f=1$ and $m=1$.  Dropping the
+torsion term deletes $m/(ef)$:
+
+\begin{center}
+\begin{tabular}{rrrrrrr}
+\toprule
+$p$ & $e$ & $f$ & $m$ & $\mulog/\log p$ & without $m$ & cost\\
+\midrule
+3 & 2 & 1 & 1 & $-1$ & $-1/2$ & $1/2$\\
+5 & 4 & 1 & 1 & $-1/2$ & $-1/4$ & $1/4$\\
+7 & 6 & 1 & 1 & $-1/3$ & $-1/6$ & $1/6$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textup{[P]} So the cost is $\tfrac12\log3$, $\tfrac14\log5$, $\tfrac16\log7$: it is
+\emph{not} uniform in $p$, and it is largest where $p$ is smallest.
+
+\begin{remark}[correction]\label{r:tors}
+\textup{[P]} An earlier version derived these from the ceiling in $a_i$ of
+\cite[Prop.~1.2]{IUT4}.  The values were right and the derivation was not: $a_i$ is a
+coefficient of the hull bound and $m_i$ is the torsion variable, and they are different
+objects.  The normalization itself is \cite[Prop.~1.4(i)]{IUT4}.
+\end{remark}
+
+\section{The normalization by the local degree}\label{s:norm}
+
+\textup{[S]} \cite[Prop.~1.4(i),(ii)]{IUT4} states its bounds for the normalized volume.
+\textup{[P]} In the unramified extensions of $\mathbb{Q}_5$ of degrees $1,2,3$ the
+lattice index moves and the normalized volume does not:
+
+\begin{center}
+\begin{tabular}{rrrr}
+\toprule
+$f$ & index & raw $\log$ index$/\log5$ & $\mulog/\log5$\\
+\midrule
+1 & 5 & 1 & $-1$\\
+2 & 25 & 2 & $-1$\\
+3 & 125 & 3 & $-1$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textup{[P]} Reading the raw index as a log-volume therefore counts the residue degree
+a second time, and the error grows linearly in $f$.  This is the cheapest distinction to
+state and the easiest to lose, because both quantities are ``the index''.
+
+\section{The tensor order inside its normalization}\label{s:tens}
+
+\textup{[S]} \cite[Prop.~1.1]{IUT4} and \cite[Prop.~1.4(iii)]{IUT4} distinguish an order
+from the normalization in which it sits.  \textup{[P]} Let $k=\mathbb{Q}_5(\sqrt5)$,
+$\pi=\sqrt5$, and $R=\mathcal{O}\otimes_{\mathbb{Z}_5}\mathcal{O}$ inside
+$\mathcal{O}\times\mathcal{O}$.  Then
+\[
+  R=\{(u,v)\in\mathcal{O}^{2}: u\equiv v \bmod \pi\},\qquad
+  [\mathcal{O}^{2}:R]=|\mathcal{O}/\pi|=5,\qquad
+  \dim_{\mathbb{Q}_5}(k\times k)=4,
+\]
+in which $\mathcal{O}^{2}$ is a $\mathbb{Z}_5$-lattice of rank $4$ and $k\times k$ is
+the $\mathbb{Q}_5$-vector space it spans,
+so $\mulog(R)=-\tfrac14\log5$.  \textup{[P]} Treating $R$ as its own normalization sets
+this to $0$ and loses exactly $\log5/4$.  \emph{Numerically this is the same as the cost of
+the torsion term at $p=5$ in \S\ref{s:tors}, namely $1/(p-1)=1/4$, and it has a
+different origin;} the coincidence is a reason to keep the two apart rather than to
+merge them.  \emph{It is not the same as anything in \S\ref{s:norm}}: there the $f=4$
+discrepancy between the raw and the normalized volume would be $3\log5$.
+
+\section{The floor}\label{s:floor}
+
+\textup{[S]} \cite[Prop.~1.4(iii)]{IUT4} passes from the container to the smooth bound
+by $-\lfloor A\rfloor\le-A+1$, so the slack is $1+\lfloor A\rfloor-A$.  \textup{[P]} In
+the moderate tame model here $d_I+a_I=|I|$ is an integer, so the slack is
+$1+\lfloor\lambda\rfloor-\lambda$:
+
+\begin{center}
+\begin{tabular}{rrr}
+\toprule
+$\lambda$ & $1+\lfloor\lambda\rfloor-\lambda$ & $\lceil\lambda\rceil-\lambda$ (wrong)\\
+\midrule
+$3$ & $\mathbf 1$ & $0$\\
+$472/157$ & $156/157$ & $156/157$\\
+$627/157$ & $1/157$ & $1/157$\\
+$4$ & $\mathbf 1$ & $0$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{remark}[correction]\label{r:floor}
+\textup{[P]} An earlier version used $\lceil\lambda\rceil-\lambda$.  The two agree off
+the integers and differ \emph{on} them: at $\lambda=3$ and $\lambda=4$ the slack is $1$,
+not $0$.
+\end{remark}
+
+\textup{[P]} At $\lambda=472/157$ --- the value carried by the curve of
+\cite[\S13]{Second}, which has \emph{fourteen candidate levels} --- the slack is
+$156/157$, while the stage-one entry margin of that same curve is $1/157$.  \emph{Their ratio is $156$, and they are not
+comparable quantities at all:} one is a defect between a container and a smooth bound, the other a margin
+between the two sides of a comparison.  Placing them side by side without saying which
+is which is easy to lose, and that is why the two are printed together here.
+
+\section{The ramification support of the input}\label{s:supp}
+
+\textup{[S]} \cite[Thm.~1.10]{IUT4}, Step (iii), and \cite[Rem.~1.10.5(iii)]{IUT4} work
+with the ramification support of the input.  \emph{Step (viii) then bounds that support
+from above by a sum over all primes below a cutoff}, so the source draws both, and what
+is measured here is the size of the gap between them at one curve.  An earlier version
+of this paragraph said the source used the support \emph{rather than} all primes; that
+misdescribed Step (viii) (external review, 2026-09-07).  \textup{[P]} Take the curve
+\texttt{5190c3}, with
+\[
+ \Delta = 2^{6}\cdot3^{44}\cdot5\cdot173 ,
+\]
+and the torsion field $K_0=\mathbb{Q}(i,E[210])$.  Its ramification support is
+$\{2,3,5,7,173\}$ --- five primes.  \emph{That this list is exactly the support is an
+ordinary number-theoretic statement about the curve and the torsion field, not a
+consequence of the factorization}.  It is proved as follows.  Away from those five
+primes $E$ has good reduction and $210$ is invertible, so by the criterion of
+N\'eron--Ogg--Shafarevich the field $K_0$ is unramified there.  Conversely $2$ ramifies
+in $\mathbb{Q}(i)$; the Weil pairing puts $\mathbb{Q}(\mu_{210})$ inside $K_0$, and
+$3,5,7$ ramify in it; and at $173$ one has $v(\Delta)=1$ with $c_4$ a unit, so the
+reduction is multiplicative and the Tate parameter has valuation $1$ after at most an
+unramified quadratic extension --- rationalizing the $3$-torsion then requires an
+element of valuation $1/3$, so $173$ ramifies as well.  Both inclusions follow.
+\textup{[P]} What the script checks is the arithmetic this rests on: what the script checks is that it is
+consistent with $\Delta$ and with the ramification of $\mathbb{Q}(i,\mu_{210})$.  The number of \emph{all} primes below the cutoff
+$3\,870\,720$ is $274\,666$, computed by sieve, with no appeal to any effective prime
+number theorem.  The ratio is
+\[
+  \frac{274666}{5}=54933.2 .
+\]
+
+\textup{[P]} So replacing the input support by the all-prime proxy that Step (viii)
+uses multiplies the count of primes by $5.49\times10^{4}$ at this curve.  \emph{It is the only cost
+tabulated here that is a factor rather than an additive term}; the comparison is of
+counts of primes, not of every quantity in the report.
+
+\section{The weighting of places}\label{s:wt}
+
+\textup{[S]} \cite[Rem.~1.7.1]{IUT4} weights the places of the moduli field by their
+local degrees over $[\Fmod:\mathbb{Q}]$.  \textup{[P]} \emph{Weighting them by their
+ramification indices instead is not an alternative the source anywhere draws}: unlike
+the other sections here, this one measures an elision that only an implementation could
+make.  At a split prime with $e_{\mathrm b}=2355$ and $e_{\mathrm g}=1$:
+
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+weight from $e$ alone, bad side & $2355/2356$\\
+correct weight, bad side & $1/2$\\
+ratio & $2355/1178$\\
+\midrule
+two-factor tuples $\mathrm{gg},\mathrm{gb},\mathrm{bg},\mathrm{bb}$ & $1/4$ each\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textup{[P]} Weighting by $e$ sends the bad side to $2355/2356$, that is, to almost all
+of the mass, where the correct weight gives it half.  The auxiliary degrees cancel; the
+place count does not.
+
+\section{A mean that agrees while the components do not}\label{s:mean}
+
+\textup{[S]} \cite[Prop.~1.7]{IUT4} sums over ordered tuples, and
+\cite[Rem.~1.10.7(ii)]{IUT4} keeps the mixed components.  \textup{[P]} In
+$(\mathbb{Q}_p\times\mathbb{Q}_p)\otimes(\mathbb{Q}_p\times\mathbb{Q}_p)$ there are four
+components.  \emph{Assigning them the illustrative values $0,8,8,16$} --- these are
+chosen to display the phenomenon, not read off a datum --- the mean is $8$, and the two
+diagonal components alone, with $0,16$, have mean $8$ as well.
+
+\textup{[P]} \emph{The means agree.} What differs is the probability carried by a mixed
+component: $1/2$ against $0$.  So a check on the mean cannot detect the collapse of the
+mixed components, and any verification of an implementation that compares only averages
+will pass a program that has lost them.
+
+\section{Two boundaries in the explicit families}\label{s:bdry}
+
+\textup{[P]} $e_{\mathrm b}\le p-2$ is \emph{not} a hypothesis of
+\cite[Prop.~1.4(iii)]{IUT4}: there $I^{*}$ is a chosen subset and the inequality is
+asked only outside it.  It is the condition under which the place may be left out of
+$I^{*}$, that is, the condition for the error-free form of the bound.  \textup{[P]}
+For $\pi=41+26i$, $p=2357$, $\ell=157$ and $a=\pi^{N}$ one has
+$e_{\mathrm b}=15\ell/\gcd(15\ell,2N)$, so a single step in $N$ moves it by a factor of
+$471$:
+
+\begin{center}
+\begin{tabular}{rrrr}
+\toprule
+$N$ & $\gcd(2355,2N)$ & $e_{\mathrm b}$ & $e_{\mathrm b}\le2355$\\
+\midrule
+471 & 471 & 5 & yes\textsuperscript{$\dagger$}\\
+\textbf{472} & \textbf{1} & \textbf{2355} & yes\\
+474 & 3 & 785 & yes\\
+475 & 5 & 471 & yes\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textup{[P]} \textsuperscript{$\dagger$}\emph{The row $N=471$ is a local arithmetic
+candidate only}: there $\ell=157$ divides $2N=942$, so \cite[Def.~3.1(c)]{IUT1} is not
+satisfied and it is not a datum to compare with.  The row is printed because the gcd
+computation is the point.  The curve of \cite[\S13]{Second} --- the one with
+\emph{fourteen candidate levels}, not fourteen verified initial $\Theta$-data --- has
+$N=472$, where the gcd is $1$ and $e_{\mathrm b}$ is maximal.
+
+\textup{[P]} The second boundary concerns gcds of ideals against gcds of norms.  For
+$\pi=16+3\sqrt5$ and $N=110$ the prime $661$ splits, and $\sqrt5$ has the two roots
+$115$ and $546$ modulo $661$.  \emph{Those residues are not square roots of $5$ to
+higher precision} --- $115^{2}-5=20\cdot661$ is not $0$ modulo $661^{2}$ --- so they are
+Hensel-lifted before use; deciding that a valuation is exactly $1$ needs a genuine
+local square root, not a root modulo $661$.  Reducing $a=(16+3\sqrt5)^{110}$ and
+$t=1-a+a^{2}$ at each lifted root:
+
+\begin{center}
+\begin{tabular}{rrrr}
+\toprule
+$\sqrt5\bmod661$ & $a\bmod661$ & $v(1-a)$ & $v(t)$\\
+\midrule
+115 & 1 & 1 & 0\\
+546 & 365 & 0 & 1\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textup{[P]} \emph{The $661$ of the numerator and that of the denominator sit at
+different primes.}  The total norms nonetheless carry $661$ twice, so cancelling them
+removes it once too often.  Writing $D=\Norm(a^{2}b^{2})$ and $U=\Norm(256t^{3})$ for
+$b=1-a$, and taking the Legendre invariant $j=256t^{3}/(a^{2}b^{2})$, the two finite
+heights normalized by the degree are
+\[
+  H_{\mathrm{ideal}}=\tfrac12\log\frac{D}{G_{\mathrm{ideal}}},\qquad
+  H_{\mathrm{norms}}=\tfrac12\log\frac{D}{\gcd(U,D)} ,
+\]
+where $G_{\mathrm{ideal}}=\Norm\bigl((256t^{3},a^{2}b^{2})\bigr)=2^{8}$.
+\emph{The identity $t+ab=1$ fixes the support of the common factor, not its exponent},
+so the $2$-adic valuation has to be computed.  Since $t$ and $ab$ share no prime ideal,
+the only common prime is the $2$ coming from $256$; and $2$ is inert in
+$\mathbb{Q}(\sqrt5)$, so $v_{(2)}(x)=\tfrac12 v_2(\Norm x)$.  Here $a\equiv5$ and
+$b\equiv4\pmod 8$, whence $v_{(2)}(a)=v_{(2)}(t)=0$ and $v_{(2)}(b)=2$.  Therefore
+$v_{(2)}(256t^{3})=8$ and $v_{(2)}(a^{2}b^{2})=4$, so the ideal gcd is $(2)^{4}$ and its
+norm is $2^{8}$.  The norm gcd carries $661^{2}$ in
+addition.  Both are computed from the curve in \path{scripts/costs.py}, giving
+\[
+  H_{\mathrm{ideal}}=1174.636200642495,\qquad
+  H_{\mathrm{norms}}=1168.142446802643,\qquad
+  H_{\mathrm{ideal}}-H_{\mathrm{norms}}=\log661
+\]
+to twelve places.  \emph{The reason is in the table, not only in the decimals}: a
+check carried out on the norms alone cannot see which prime a valuation
+belongs to.
+
+\section{A finite statistic for the tame local coefficient}\label{s:statistic}
+
+\textup{[P]} \emph{This section is about the coefficient of $\log p$ in the simplified
+bound, not about an actual possible-image log-volume.}  Fix a stage cutoff $m\ge2$ and
+write
+\[
+ T_m=\coprod_{j=1}^{m}\{\mathrm g,\mathrm b\}^{j+1},\qquad
+ c_{\mathrm g}=1-e_{\mathrm g}^{-1},\quad c_{\mathrm b}=1-e_{\mathrm b}^{-1},\quad
+ s=\ord_p(\underline{\underline q})>0 .
+\]
+\textup{[P]} In the tame specialization with every $e_i\le p-2$ --- so that
+$I^{*}=\varnothing$ is available, which is a \emph{specialization} of
+\cite[Prop.~1.4(iii)]{IUT4} and not a hypothesis satisfied by arbitrary tuples --- the
+coefficient collapses to two counts and one indicator:
+\[
+ \boxed{\;B(t)=1+c_{\mathrm g}n_{\mathrm g}(t)+c_{\mathrm b}n_{\mathrm b}(t)
+        -s\,j(t)^2\mathbf 1_{\{t_j=\mathrm b\}}\;}
+\]
+
+\begin{proposition}\label{p:statistic}
+\textup{[P]} Put $\pi(t)=(n_{\mathrm b}(t),\bot)$ when $t_j=\mathrm g$ and
+$\pi(t)=(n_{\mathrm b}(t),j)$ when $t_j=\mathrm b$.  \emph{On $T_m$} with $m\ge2$, $B$
+factors through $\pi$ if and only if $e_{\mathrm g}=1$.  If moreover $e_{\mathrm b}>1$
+and $s>2c_{\mathrm b}$, the induced map is injective.
+\end{proposition}
+
+\begin{proof}
+Sufficiency is substitution.  For necessity, $(\mathrm g,\mathrm g)$ and
+$(\mathrm g,\mathrm g,\mathrm g)$ have the same $\pi$ and their $B$ differ by
+$c_{\mathrm g}$; this uses $m\ge2$.  For injectivity write $c=c_{\mathrm b}>0$: the
+good-ending values are $\ge1$ while the largest bad-ending value at stage $1$ is
+$1+2c-s<1$, and the maximum at stage $j+1$ minus the minimum at stage $j$ is
+$c(j+1)-s(2j+1)<0$, so the stages occupy disjoint ranges.
+\end{proof}
+
+\textup{[P]} \emph{The domain is part of the statement.}  At a \emph{fixed} stage
+$n_{\mathrm g}=j+1-n_{\mathrm b}$, so $B$ factors through $\pi$ for every
+$e_{\mathrm g}$ and the factorization says nothing; the equivalence lives on $T_m$,
+where the two counts are independent.  The strict inequality is also needed: at
+$s=2c_{\mathrm b}$ the classes $(0,\bot)$ and $(2,1)$ take the same value.
+
+\begin{remark}[the exact criterion, and why $s>2c_{\mathrm b}$ suffices]
+\label{r:exact-criterion}
+\textup{[P]} The condition $s>2c_{\mathrm b}$ is \emph{sufficient but not necessary}.
+Put $r=s/c_{\mathrm b}$ and
+\[
+ E_m=\Bigl\{\tfrac{d}{j^{2}}:1\le j\le m,\ 1\le d\le j+1\Bigr\}\cup
+      \Bigl\{\tfrac{d}{k^{2}-j^{2}}:1\le j<k\le m,\ 1\le d\le k\Bigr\}.
+\]
+Then, for $e_{\mathrm g}=1$ and $c_{\mathrm b}>0$, \emph{the induced map is injective
+if and only if $r\notin E_m$}: a good-ending class meets a bad-ending one at stage $j$
+exactly when $r=(n-h)/j^{2}$ with $1\le n-h\le j+1$, and two bad-ending stages $j<k$
+meet exactly when $r=(n_k-n_j)/(k^{2}-j^{2})$ with $1\le n_k-n_j\le k$; within one
+group $c_{\mathrm b}>0$ separates.  \emph{This criterion is due to an external
+reviewer of the present note.}
+
+\textup{[P]} It also explains the crude condition.  The first family is maximised at
+$j=1$, $d=2$, giving $2$; the second is bounded by $k/(k^{2}-(k-1)^{2})=k/(2k-1)<1$.
+Hence $\sup E_m=2$ \emph{for every} $m$, so $r>2$ --- that is, $s>2c_{\mathrm b}$ ---
+already misses $E_m$ at every cutoff.  For the profile of \cite{Second},
+$r=\tfrac{29}{7}\big/\tfrac{104}{105}=\tfrac{435}{104}>2$.
+\end{remark}
+
+\textup{[P]} For the profile of \cite{Second} --- $e_{\mathrm g}=1$,
+$e_{\mathrm b}=105$, $s=29/7$, so $c_{\mathrm b}=104/105$ and $2c_{\mathrm b}<s$ --- the
+hypotheses hold, and $T_3$ has $28$ tuples with $13$ distinct values.  \emph{So the
+good places are invisible to this coefficient}: it sees how many bad places there are,
+and, when the last place is bad, at which stage it is applied.
+
+\begin{remark}\label{r:statistic-scope}
+\textup{[P]} This is a minimal statistic \emph{for the single function $B$}: its fibres
+agree with those of $\pi$ under the stated hypotheses.  It is not a claim that the
+statistic supports any later operation in the source's proof, and it is not a statement
+about actual log-volumes.
+\end{remark}
+
+\section{Two items recovered}\label{s:recovered}
+
+\textup{[P]} Two items were listed as not established in an earlier version of this
+report.  Both are now settled, and in each case the author's own computation had been
+correct while the quantity being compared was not the one reported.
+
+\paragraph{The two-adic boundary.}
+\textup{[P]} For $\pi=10+3i$ the finite height contribution at $2$ is not $v_2$ itself
+but the remainder left by a cap at $8$.  \emph{The cap is ours, and it comes from this
+family, not from a general statement}: \cite[Cor.~2.2(i)]{IUT4} defines
+$\log(q^{\forall})$ and $\log(q^{\neq2})$ and prints no such cutoff.  At the prime
+$\mathfrak{p}=(1+i)$ of $\mathbb{Q}(i)$ one has $v_{\mathfrak p}(2)=2$ and
+$v_{\mathfrak p}(a)=v_{\mathfrak p}(1-a+a^2)=0$, so from $j=256t^3/(a^2b^2)$,
+\[
+ v_{\mathfrak p}(j)=16-2v_{\mathfrak p}(1-a),\qquad
+ v_{\mathfrak p}(1-a)=v_2\bigl(\Norm(1-a)\bigr),
+\]
+and the normalized local finite height $\tfrac12\max\{-v_{\mathfrak p}(j),0\}\log2$ is
+\[
+ \max\bigl\{v_2(\Norm(1-a))-8,\ 0\bigr\}\log2 .
+\]
+
+\begin{center}
+\begin{tabular}{rrrl}
+\toprule
+$N$ & $v_2(\Norm(1-a))$ & $\max\{v_2-8,0\}$ & contribution\\
+\midrule
+199 & 1 & 0 & $0$\\
+200 & 9 & 1 & $\log2$\\
+201 & 1 & 0 & $0$\\
+400 & 11 & 3 & $3\log2$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textup{[P]} \emph{The values $1,9,1,11$ computed earlier were right}; they are $v_2$,
+and the reported quantity is the excess over the cap.  One step in $N$ moves the
+contribution between $0$ and $\log2$.
+
+\paragraph{Two permitted upper bounds at one prime.}
+\textup{[P]} At $\ell=157$, $p=2357$ one has $e_{\mathrm b}=2355$ and
+$e_{\mathrm g}=1$, both $\le p-2=2355$, so $I^{*}=\varnothing$ is available and the
+extra error term of \cite[Prop.~1.4(iii)]{IUT4} is \emph{exactly $0$}.  The uniform
+coarse term, averaged over $j$, is
+\[
+ (\ell+5)\log(e^{*}_{\mathrm{mod}}\ell)=162\log(1105920\cdot157)
+ =3073.534296832696\ldots
+\]
+
+\textup{[P]} \emph{This compares two permitted upper-bound expressions at one fixed
+prime}, averaged over $j$.  It is not the actual indeterminacy, and it is not a gap in
+\cite[Cor.~3.12]{IUT3}; no such claim is made here.
+
+\section{What is not established here}\label{s:notdone}
+
+\textup{[P]} \emph{Nothing remains on this list.}  The two items an earlier version
+placed here --- the two-adic boundary and the comparison of a precise against a coarser
+local error term --- are established in \S\ref{s:recovered}.  They are recorded here
+because the reason for the earlier omission is worth keeping --- \emph{both are
+resolved in \S\ref{s:recovered} of the present note and neither remains open} --- in
+both cases the author's arithmetic was correct and the \emph{quantity being compared}
+was not the one reported, so the check failed for a reason that no amount of
+recomputation would have
+found.
+
+\section{Scope}\label{s:scope}
+
+\noindent\textbf{Claimed.}  The values printed above, as exact rationals or exact
+multiples of $\log p$, for the local fields and curves named with them.
+
+\smallskip\noindent\textbf{Not claimed.}  That any statement of \cite{IUT1,IUT3,IUT4} is
+in error; that any estimate in those papers is affected; that the $abc$ conjecture, the
+objections of \cite{SS}, or \cite[Cor.~3.12]{IUT3} are touched by anything here.  No
+log-volume of an actual $\Theta$-pilot object is computed, no hull is compared, and no
+membership in any exceptional set is addressed.  \emph{The costs above are costs of
+eliding a distinction in an implementation; they are not defects of the source, which
+draws every one of those distinctions explicitly and is cited for each.}
+
+\section*{Reproduction}
+
+\path{scripts/costs.py} prints all twelve tables using only the standard library,
+asserts each conclusion --- including the sieve count $\pi(3\,870\,720)=274666$, the
+factorization of $\Delta$, the four values of $e_{\mathrm b}$, and the agreement of the
+two means --- and exits zero.  \emph{Table 12 checks every clause of
+Proposition~\ref{p:statistic}}: the equivalence with $e_{\mathrm g}=1$ on $T_3$, that
+at a \emph{fixed} stage the factorization holds for every $e_{\mathrm g}$ and so would
+be vacuous there, the injectivity under $e_{\mathrm b}>1$ and $s>2c_{\mathrm b}$, the
+collision of $(0,\bot)$ with $(2,1)$ at $s=2c_{\mathrm b}$ exactly, and the counts
+$|T_3|=28$ with $13$ distinct values.  \emph{That proposition is the one statement
+here that was wrong twice before it was right} --- first in its domain, then in its
+injectivity hypothesis --- which is why each clause is asserted rather than only
+stated.
+
+\textup{[P]} \emph{Four different kinds of warrant appear in this note and we do not
+run them together.}  \emph{(1)} Exact rational or integer computation: the tables, and
+the two heights of \S\ref{s:bdry}, computed from the curve.  \emph{(2)} Finite
+exhaustive check over a stated range: Table 12's clauses, verified on $T_3$ and on the
+rational $r$ enumerated there --- a check on a finite set, not a proof for all $m$.
+\emph{(3)} Ordinary proof: Proposition~\ref{p:statistic} and
+Remark~\ref{r:exact-criterion}, which are proved for all $m$ in the text and are
+\emph{not} formalised anywhere.  \emph{(4)} Kernel verification, \emph{narrowly}: in
+\cite{Second} the files \path{ImaginaryQuadraticDatum.lean} and
+\path{ModSevenImage.lean} re-prove the integer identities and finite predicates of the
+datum $a=(10+3i)^{29}$ --- norm factorisations, valuations, point counts and traces at
+the witness places, and the finite group computations --- and
+\path{FamilyArithmetic.lean} the finite algebra behind that report's existence family;
+in \cite{First} the corresponding statements for $a=(16+3\sqrt5)^{29}$.  \emph{No
+statement of the present note is among them}, and nothing here is discharged by them.
+In particular the curve of \cite[\S13]{Second} with $N=472$ carries \emph{fourteen
+candidate levels}, not fourteen verified initial $\Theta$-data.
+
+\textup{[P]} Within (1), one more line is worth drawing: $D$, $U$, $G_{\mathrm{ideal}}$
+and $\gcd(U,D)$ are exact integers and the displayed formulas for
+$H_{\mathrm{ideal}}$, $H_{\mathrm{norms}}$ are exact; the twelve-place decimals printed
+for them are floating-point evaluations of those exact expressions.
+
+\section*{Disclosure}
+
+Large language models were used substantially in locating passages, carrying out
+computations, drafting and adversarial review; the author is responsible for the claims.
+Every number above was recomputed by the author independently of the process that first
+produced it, and the two items where an earlier recomputation had failed were
+recorded rather than dropped silently; both are settled in \S\ref{s:recovered}.
+
+\begin{thebibliography}{Second}
+\bibitem[First]{First} T.~Urahigashi, \emph{An explicit initial $\Theta$-datum with
+ mixed reduction at a split prime}, Zenodo, DOI 10.5281/zenodo.22537342, 2026.
+\bibitem[Second]{Second} T.~Urahigashi, \emph{An initial $\Theta$-datum over an
+ imaginary quadratic field, and numerical values of the local quantities of
+ inter-universal Teichm\"uller theory IV}, 2026.
+\bibitem[DH25]{DH25} T.~Dupuy, A.~Hilado, \emph{The statement of Mochizuki's
+ Corollary 3.12: initial theta data}, arXiv:2004.13228v2 [math.NT], 19 June 2025.
+\bibitem[IUT1]{IUT1} S.~Mochizuki, \emph{Inter-universal Teichm\"uller theory I},
+ Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 3--207.
+\bibitem[IUT3]{IUT3} S.~Mochizuki, \emph{Inter-universal Teichm\"uller theory III},
+ Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 403--626.
+\bibitem[IUT4]{IUT4} S.~Mochizuki, \emph{Inter-universal Teichm\"uller theory IV},
+ Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 627--723.
+\bibitem[SS]{SS} P.~Scholze, J.~Stix, \emph{Why $abc$ is still a conjecture},
+ manuscript, July 16, 2018.
+\end{thebibliography}
+
+\end{document}

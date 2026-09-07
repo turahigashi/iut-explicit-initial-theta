@@ -1,5 +1,24 @@
 # Draft changes
 
+## 0.3.0 — 2026-09-07
+
+- Adds the **third report**: what each separation drawn in [IUT IV, §1] is worth, in
+  exact rationals or exact multiples of log p, at the data of the first two reports and
+  at named curves from the literature.  DOI 10.5281/zenodo.22646137.
+- `third-report/scripts/costs.py` computes twelve tables from the standard library and
+  asserts each conclusion.  Its printed output is held by a frozen presentation
+  contract, so a row that changes or vanishes fails rather than passing quietly.
+- `third-report/scripts/note6_regression_gate.py` holds **31 named single-token
+  defects**, every one of them found by external review and none of them noticed by the
+  script as first written; the shipped script rejects all 31.  An absent mutation target
+  counts as a failure, never as a silent pass.
+- Two attributions corrected in the third report after review: the contrast between
+  weighting by local degrees and by ramification indices (§8) and the cap at
+  8 = v_2(256) in the two-adic contribution (§12) are this paper's, not the source's.
+  The abstract's claim that every distinction measured is one the source itself draws
+  now names §8 as its exception.
+- **The first and second reports' files are unchanged.**
+
 ## 0.2.1 — 2026-09-07
 
 - Corrects one mathematical error in the second report, §9: the ramification indices
