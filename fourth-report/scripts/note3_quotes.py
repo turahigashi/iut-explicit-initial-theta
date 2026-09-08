@@ -25,13 +25,13 @@ DIR holds the reader's own copies of the sources, as PDFs named in the manifest.
 program extracts the text itself and checks each PDF's SHA-256 against the manifest,
 refusing to run on a printing the manifest does not name: an earlier version recorded
 those hashes and never looked at them, so it would happily report a match found in a
-different edition (external review, 2026-09-08).
+different edition (internal check, 2026-09-08).
 
 WHAT A MATCH DOES AND DOES NOT ESTABLISH.  The search is a word-sequence match that
 drops inline mathematics and ignores brackets, punctuation and case.  It therefore
 locates a CANDIDATE passage; it does not establish verbatim identity.  It cannot see a
 quotation that stops early inside the source's own bracket without an ellipsis, that
-drops a qualifying clause, or that alters a formula -- external review found one of
+drops a qualifying clause, or that alters a formula -- an internal check found one of
 each while this program reported them as found.  Every candidate still needs an eye.
 """
 import argparse, hashlib, json, re, shutil, subprocess, sys, tempfile, unicodedata, pathlib
@@ -99,7 +99,7 @@ def main():
     man = json.loads(pathlib.Path(a.manifest).read_text())
     # The manifest must still describe the manuscript.  It had silently drifted three
     # quotations behind after an edit, so the search was checking strings the paper no
-    # longer contained (external review, 2026-09-08).
+    # longer contained (internal check, 2026-09-08).
     paper = pathlib.Path(a.paper)
     if paper.is_file():
         body = re.sub(r"(?<!\\)%.*", "", paper.read_text())

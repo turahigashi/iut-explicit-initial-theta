@@ -1,5 +1,17 @@
 # Draft changes
 
+## 0.4.2 — 2026-09-08
+
+- Corrects a statement about process, not about mathematics.  The fourth report and
+  the two scripts shipped with it described the checks that produced several of their
+  corrections as `external review`.  No external review took place: the checks are the
+  author's own, carried out with the help of language models, and are now described as
+  an internal check.  The same wording is being corrected in the second and third
+  reports and in the remaining scripts.
+- No mathematical statement, number, quotation, locator or manifest entry changes.
+  The quotation checker still reports 40 quotations, 25 located in the cited source,
+  0 not located there.
+
 ## 0.4.1 — 2026-09-08
 
 - **The fourth report now cites Scholze–Stix.**  Its Proposition 10 names the ratio

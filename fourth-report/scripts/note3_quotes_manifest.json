@@ -1,8 +1,8 @@
 {
  "note": "Every passage quoted in note3, with the source it is attributed to and the SHA-256 of the PDF it was checked against.  The sources are not distributed; supply your own copies under the names in each entry's \"pdf\" field.  The checker extracts the text itself and refuses to run on a printing whose hash the manifest does not name.",
  "how_to_run": "python3 scripts/note3_quotes.py --sources DIR --manifest scripts/note3_quotes_manifest.json",
- "attribution": "Assigned by reading the prose around each quotation.  Proximity to the nearest \\cite is not reliable: it put the [MT] introduction's sentences on [IUT2].  An earlier manifest also marked three entries as the paper's own labels; external review showed all three stand verbatim in [IUT3], so no entry now claims that status.",
- "limitation": "The check is a word-sequence match with mathematics dropped and punctuation ignored, so it LOCATES a candidate passage; it does not establish verbatim identity.  External review found a quotation that stopped early inside the source's bracket without an ellipsis, and a dropped qualifying clause, both of which this search reported as located.  Every candidate needs an eye.",
+ "attribution": "Assigned by reading the prose around each quotation.  Proximity to the nearest \\cite is not reliable: it put the [MT] introduction's sentences on [IUT2].  An earlier manifest also marked three entries as the paper's own labels; an internal check showed all three stand verbatim in [IUT3], so no entry now claims that status.",
+ "limitation": "The check is a word-sequence match with mathematics dropped and punctuation ignored, so it LOCATES a candidate passage; it does not establish verbatim identity.  An internal check found a quotation that stopped early inside the source's bracket without an ellipsis, and a dropped qualifying clause, both of which this search reported as located.  Every candidate needs an eye.",
  "sources": {
   "IUT1": {
    "sha256": "7360e3ed27c235b5497a0743d3ed1646fbb97688547d16b7c784fc7f127f1f03",
