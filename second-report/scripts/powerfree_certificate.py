@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Executable 89th-power-free certificate for the fourteen-level datum.
 
-Three independent reviews reconstructed this computation and asked that it be shipped
+Three internal checks reconstructed this computation and asked that it be shipped
 rather than described as external.  It is finite and small -- the largest search bound
 is 24,856 -- so there is no reason for it to live outside the bundle.
 
@@ -121,7 +121,7 @@ def build_blocks(pi, N):
 
 
 def self_test() -> int:
-    """Negative control supplied by external review (round 15).
+    """Negative control supplied by an internal check (round 15).
 
     Two synthetic blocks of norm 17^44 and 17^46: each is 89th-power free on its own,
     but their product is 17^90, which is not.  The pairwise gcd is 17^44.  The earlier
@@ -172,7 +172,7 @@ def main() -> int:
             out["pair_gcds"][f"{names[i]}|{names[j]}"] = g
             # FAIL-CLOSED.  An earlier version tested a hard-coded list (2,3,5,7,11,13)
             # and would have PASSED while ignoring a gcd with a larger prime factor
-            # (external review, round 15).  Factor the gcd completely instead.
+            # (internal check, round 15).  Factor the gcd completely instead.
             if g > 1:
                 m, d = g, 2
                 while d * d <= m:

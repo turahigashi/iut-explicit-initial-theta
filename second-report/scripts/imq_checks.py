@@ -145,7 +145,7 @@ def trace_at(q):
 # C.  So a closure computation on one chosen pair proves nothing about the actual image.
 # The traces and the irreducibility below ARE actual arithmetic; the closure below them
 # is an auxiliary check on a representative.  The image argument is basis-free and lives
-# in lean/BasisFreeImage.lean (external review, 2026-09-07).
+# in lean/BasisFreeImage.lean (internal check, 2026-09-07).
 T = (1, 1, 0, 1)                                            # Tate transvection
 witnesses = []
 for q in [13, 17, 37, 41, 53, 61]:

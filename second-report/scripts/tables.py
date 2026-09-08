@@ -78,7 +78,7 @@ def t3():
         print(f"    {nm:28s} {p:>5} {o:>9}   {str(s):>11} {float(m):>8.2f}  "
               f"{'NONTRIVIAL' if m > 0 else 'vacuous'}")
     print("    WARNING.  For the four curves over Q the margin formula's own hypotheses fail:")
-    # CORRECTED 2026-09-07 (external review, round 19).  An earlier version applied
+    # CORRECTED 2026-09-07 (internal check, round 19).  An earlier version applied
     # THIS datum's torsion level 105 to curves that do not have it.  [IUT1, Def 3.1(b)]
     # makes E[6] rational over F, so at the reference level 7 the field K contains
     # E[42]; both primes are prime to 42, with Tate orders 5 and 1.
@@ -107,7 +107,7 @@ def t4():
     print("          for k bad entries -- ZERO for k=0,1; 52/105 for k=2, 104/105 for")
     print("          k=3 at e_b=105.  The plain (k-1) form is negative at k=0.)")
     print("")
-    print("          CORRECTION 2026-09-07 (external review).  An earlier version put")
+    print("          CORRECTION 2026-09-07 (internal check).  An earlier version put")
     print("          lambda = j^2 s on EVERY type, including the all-good ones, and")
     print("          reported a single 'mixed' row.  Both are fixed: lambda carries the")
     print("          indicator 1{t_j = b}, and tuples are listed individually, since")
@@ -191,7 +191,7 @@ def t5():
     print("     This is not monotone in N: at N=116, ell=37 one has e_b = 555 > 209, so")
     print("     condition (4) fails there even though (1) (2) (3) (5) hold.")
     print("")
-    print("     CORRECTION 2026-09-07 (external review).  Two errors are fixed here.")
+    print("     CORRECTION 2026-09-07 (internal check).  Two errors are fixed here.")
     print("     (a) UNITS.  Condition (3) compared a left side in units of log p with a")
     print("         right side in nats.  Dividing the right side by log p moves N=114 and")
     print("         N=160 from X to o, and the first all-five point from N=480 to N=114.")
@@ -342,7 +342,7 @@ def t11():
     # The two rational primes that can appear in more than one cyclotomic block, and
     # their total valuations in B = Norm(1-a).  Both are below 89, which is what lets
     # blockwise 89th-power-freeness give 89th-power-freeness of B itself.  Computed
-    # here rather than transcribed (external review, 2026-09-07).
+    # here rather than transcribed (internal check, 2026-09-07).
     v2b, v5b = _v(_Nm, 2), _v(_Nm, 5)
     assert (v2b, v5b) == (9, 2) and max(v2b, v5b) < win[0]
     print(f"    shared primes across blocks: v_2(B) = {v2b}, v_5(B) = {v5b}; both < "
@@ -456,7 +456,7 @@ def t13():
     # The order in that RING equals the order of the action only when phi mod m is not
     # scalar, and that has to be checked rather than assumed: here disc = ap^2 - 4P is
     # -432 = -2^4 * 3^3, so it vanishes mod 3 and the ring computation proves nothing
-    # at m = 3 (external review, 2026-09-07).  m = 5, 7 are settled by the discriminant;
+    # at m = 3 (internal check, 2026-09-07).  m = 5, 7 are settled by the discriminant;
     # m = 3 is settled below on the curve itself.
     disc = ap*ap - 4*P
     assert disc == -432 and disc % 3 == 0 and disc % 5 != 0 and disc % 7 != 0

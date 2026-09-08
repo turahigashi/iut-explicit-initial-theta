@@ -9,7 +9,7 @@
 // division by a machine word, done digit by digit on the decimal representation.
 //
 // C MUST be supplied on stdin; the program exits 2 on empty or non-numeric input
-// rather than reporting success on nothing (external review, 2026-09-07).
+// rather than reporting success on nothing (internal check, 2026-09-07).
 //
 //   g++ -O2 -std=c++17 -o imq_sieve7 imq_sieve7.cpp
 //   printf '%s\n' <C> | ./imq_sieve7
@@ -42,7 +42,7 @@ static uint64_t divmod(const Big& n, uint64_t q, Big& out) {
 // Search cap.  If the true floor(C^(1/7)) reaches it, the binary search below
 // SATURATES and returns the cap; sieving only that far and then reporting
 // seventh_power_free = true would be a verdict on an incomplete search.  main()
-// therefore refuses rather than reporting (external review, 2026-09-07).
+// therefore refuses rather than reporting (internal check, 2026-09-07).
 static const uint64_t ROOT_CAP = 100000000;          // 10^8
 
 static uint64_t seventh_root(const Big& C) {
@@ -76,7 +76,7 @@ int main() {
     }
     // `std::cin >> s` reads ONE whitespace-delimited token and would silently ignore
     // the rest, so a C wrapped across two lines would be sieved as its first fragment
-    // and reported free -- a verdict on a number nobody supplied (external review,
+    // and reported free -- a verdict on a number nobody supplied (internal check,
     // 2026-09-07).  Refuse if anything but whitespace follows.
     {
         std::string extra;

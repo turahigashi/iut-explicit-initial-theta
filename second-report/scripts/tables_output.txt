@@ -46,7 +46,7 @@ Table 4.  Tuple types at a split prime.  [S]+[P]
           for k bad entries -- ZERO for k=0,1; 52/105 for k=2, 104/105 for
           k=3 at e_b=105.  The plain (k-1) form is negative at k=0.)
 
-          CORRECTION 2026-09-07 (external review).  An earlier version put
+          CORRECTION 2026-09-07 (internal check).  An earlier version put
           lambda = j^2 s on EVERY type, including the all-good ones, and
           reported a single 'mixed' row.  Both are fixed: lambda carries the
           indicator 1{t_j = b}, and tuples are listed individually, since
@@ -106,7 +106,7 @@ Table 5.  Five conditions, and data in the original family that meet all of them
      This is not monotone in N: at N=116, ell=37 one has e_b = 555 > 209, so
      condition (4) fails there even though (1) (2) (3) (5) hold.
 
-     CORRECTION 2026-09-07 (external review).  Two errors are fixed here.
+     CORRECTION 2026-09-07 (internal check).  Two errors are fixed here.
      (a) UNITS.  Condition (3) compared a left side in units of log p with a
          right side in nats.  Dividing the right side by log p moves N=114 and
          N=160 from X to o, and the first all-five point from N=480 to N=114.

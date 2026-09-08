@@ -65,7 +65,7 @@ check(abs(d_qi - 7.38e-8)/7.38e-8 < 5e-3,
 
 # --- the bound the proposition actually uses, PROVED rather than approximated -------
 # A truncated positive sum is a LOWER bound, so the float check above does not
-# establish the "<=" in the proof (external review, round 15).  Here it is exactly:
+# establish the "<=" in the proof (internal check, round 15).  Here it is exactly:
 # a finite rational partial sum over the primes up to 100, plus an integral tail that
 # over-counts by summing over ALL integers n > 100.
 from fractions import Fraction as Fr

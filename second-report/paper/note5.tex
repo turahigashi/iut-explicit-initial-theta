@@ -38,10 +38,10 @@ inter-universal Teichm\"uller theory IV\\
 \large A second report}
 \author{Toshihisa Urahigashi\\
 \small\texttt{123026.urahigashi.toshihisa@gmail.com}\\[2pt]
-\small Version 1.0.1\\[1pt]
+\small Version 1.0.3\\[1pt]
 \small DOI \href{https://doi.org/10.5281/zenodo.22601333}{10.5281/zenodo.22601333} (all versions);\\[1pt]
 \small this version \href{https://doi.org/10.5281/zenodo.22634210}{10.5281/zenodo.22634210}}
-\date{Version 0.2.0-draft --- \today\\[3pt]
+\date{8 September 2026\\[3pt]
 \small ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}}
 
 \begin{document}
@@ -53,8 +53,9 @@ field of moduli is the \emph{imaginary quadratic} field $\mathbb{Q}(i)$: the cur
 $E_0:y^2=x(x-1)(x-a)$ with $a=(10+3i)^{29}$ and $\ell=7$, for which the rational
 prime $109$ splits, so that one place of multiplicative and one place of good
 reduction lie above it.  All conditions (a)--(f) are verified; the arithmetic is
-exact and reproduced by a short script, and the geometric conditions (d)--(f) are
-established in \S\ref{s:geom}.  The local invariants are $e_{\mathrm g}=1$,
+exact, the geometric conditions (d)--(f) are established in \S\ref{s:geom}, and
+the computations, including the separate exhaustive power-freeness sieve, are
+described in \S\ref{s:repro}.  The local invariants are $e_{\mathrm g}=1$,
 $e_{\mathrm b}=105$ and
 $\ord_{109}(\underline{\underline q}_{\mathrm b})=29/7$, so that the
 \emph{ramification} invariants of this datum agree with those of the datum over
@@ -70,7 +71,10 @@ $12\cdot630=7560=6\cdot1260$ is asserted there.)}  Everything tabulated in
 Explicit initial $\Theta$-data are needed for any numerically effective use of the
 theory.  Dupuy and Hilado \cite{DH25} construct such data systematically for elliptic
 curves over $\mathbb{Q}$, working out the curve of Cremona label 11a1 in full and
-reporting $5525$ curves of prime conductor for which some $\ell$ works.  The datum below is over
+reporting $5525$ curves of prime conductor for which the mod-$\ell$ representation
+over $\mathbb Q(i,E[30])$ is surjective for some $\ell\in\{7,11,13\}$
+\cite[\S2.11, p.~16]{DH25}.  This count does not certify all the conditions of
+initial $\Theta$-data for all those curves.  The datum below is over
 $\mathbb{Q}(i)$; the point of it is not that an explicit datum is rare but that the
 \emph{configuration} it carries is unavailable over $\mathbb{Q}$.  It is also, in three
 specific respects, easier to construct than the datum of \cite{First}: the nodes are
@@ -140,11 +144,17 @@ field, mono-complex field, Legendre curve, split prime, mixed reduction.
 \cite[Def.~3.1]{IUT1} that a curve, a prime $\ell$, a set of bad places, a section
 and a cusp must jointly satisfy.  Verifying the list against an explicit curve is a
 finite task, and doing it produces an object that others can compute with.
-\textup{[S]} \cite{DH25} does this over $\mathbb{Q}$: it breaks
+\textup{[S]} \cite[\S2.10]{DH25} does this over $\mathbb{Q}$: it breaks
 \cite[Def.~3.1]{IUT1} into pieces, works out the curve 11a1 in full, and reports that
 for $5525$ curves of prime conductor in the Cremona tables some
 $\ell\in\{7,11,13\}$ makes the mod-$\ell$ representation over $\mathbb{Q}(i,E[30])$
-surjective --- that one condition, not the whole of \cite[Def.~3.1]{IUT1}.  \textup{[P]} \emph{Over $\mathbb{Q}$ the mixed
+surjective \cite[\S2.11, p.~16]{DH25} --- that one condition, not the whole
+of \cite[Def.~3.1]{IUT1}.
+Zhou also describes constructions of $\mu_6$-initial $\Theta$-data over
+$\mathbb Q$, including Frey--Hellegouarch curves
+\cite[Prop.~2.5, Lemma~2.6]{Zhou}.
+These are rational-moduli constructions.
+\textup{[P]} \emph{Over $\mathbb{Q}$ the mixed
 profile cannot appear at all}: by \cite[Cor.~3(i)]{First} every place tuple above every
 prime is constant when $\Fmod=\mathbb{Q}$, so no member of that family carries it,
 and the field must be at least quadratic for the configuration to exist.  \cite{First}
@@ -1297,8 +1307,7 @@ author's programs; the geometric arguments of \S\ref{s:geom} were drafted with
 machine assistance against the sources cited there and then checked against those
 sources.  The correction history of \cite{First} applies here as well, since the
 present datum reuses its structure.  Several statements in earlier drafts of the
-tabulations of \S\ref{s:margin}--\S\ref{s:slack} were withdrawn after external
-review: an incorrect ramification index, an omitted hypothesis of
+tabulations of \S\ref{s:margin}--\S\ref{s:slack} were withdrawn after an internal check: an incorrect ramification index, an omitted hypothesis of
 \cite[Def.~3.1(c)]{IUT1}, a table applying a formula outside its domain, and a sieve
 analysis reduced by a cyclotomic factorisation to a finite blockwise sieve.  The corrections are marked where they occur, except that the caveat on the four
 $\mathbb{Q}$-rows of \S\ref{s:regime} stood only in the script until this version.
@@ -1338,6 +1347,16 @@ $\mathbb{Q}$-rows of \S\ref{s:regime} stood only in the script until this versio
 \bibitem[MFHMP]{MFHMP} S.~Mochizuki, I.~Fesenko, Y.~Hoshi, A.~Minamide,
  W.~Porowski, \emph{Explicit estimates in inter-universal Teichm\"uller theory},
  Kodai Math. J. \textbf{45} (2022), no.~2, 175--236, DOI 10.2996/kmj45201.
+\bibitem[Zhou]{Zhou} Z.-P.~Zhou,
+\emph{The inter-universal Teichm\"uller theory and new Diophantine
+results over the rational numbers.~I},
+arXiv:2503.14510v1 [math.NT], submitted 8 March 2025, 41~pp.
+\bibitem[Cremona-data]{CremonaData} J.~E.~Cremona,
+\emph{Elliptic curve data}, \texttt{ecdata},
+file \texttt{allcurves.00000-09999},
+\url{https://github.com/JohnCremona/ecdata}, commit
+\href{https://github.com/JohnCremona/ecdata/tree/052d21ef383c1416dd98017c9ae55158822d29ac}{\texttt{052d21ef383c}}
+(14 July 2014).
 \end{thebibliography}
 
 \end{document}

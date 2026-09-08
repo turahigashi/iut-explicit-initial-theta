@@ -39,7 +39,7 @@ TARGETS = (
     ("RegardedUpToIsOrbit", "RegardedUpTo"),
     ("BasisFreeImage", "BasisFree"),
     # ADDED 2026-09-07.  The finite arithmetic behind Proposition 2 -- specifically the
-    # exclusion of q = p that external review found missing from the sieve's root count.
+    # exclusion of q = p that an internal check found missing from the sieve's root count.
     ("FamilyArithmetic", "FamilyArith"),
 )
 # Names in the original 27 + 33 + 14 theorem baseline. This checks preservation

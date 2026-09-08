@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fail if a retraction made in the paper has not reached the shipped artifacts.
 
-Every round-3 and round-4 review, from three independent reviewers, gave the same
+Every round-3 and round-4 review, from three internal checks, gave the same
 primary reason for withholding publication: the prose was corrected and the code,
 the stored stdout, the run instructions or the audit scope were not.  Prose review
 does not catch that reliably -- the corrected sentence reads fine and the stale
@@ -52,7 +52,7 @@ RETRACTED = [
      "computed in scripts/tables.py, Table 13"),
     ("and (5) are conditions imposed here", ["paper/note5.tex"],
      "(5) is [IUT1, Def. 3.1(c)]; (1) and (3) are imposed here"),
-    # --- added after round 5 (two independent reviewers, same seven items) ---
+    # --- added after round 5 (two internal checks, same seven items) ---
     ("accumulated thm 7.42", ["scripts/tables.py", "scripts/tables_output.txt"],
      "row removed: the locator is not in this report's bibliography"),
     ("computed from scratch", ["scripts/tables.py"],

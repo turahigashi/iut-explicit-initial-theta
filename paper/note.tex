@@ -32,7 +32,7 @@
 at a split prime}
 \author{Toshihisa Urahigashi\\
 \small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 0.1.3-draft --- \today\\[3pt]
+\date{Version 0.1.5 --- 8 September 2026\\[3pt]
 \small DOI \href{https://doi.org/10.5281/zenodo.22537342}{\texttt{10.5281/zenodo.22537342}} (all versions)\qquad ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}}
 
 \begin{document}
@@ -69,8 +69,9 @@ shown to be wrong; we would regard such a demonstration as the more valuable
 outcome, since it would make explicit what the collection of possible images is
 at a tuple of mixed reduction type.
 
-We ask how the admitted configuration is treated (Question~\ref{q:hyp}).  All
-arithmetic is exact and is reproduced by a short script.
+We ask how the admitted configuration is treated (Question~\ref{q:hyp}).
+The exact computations and the separate power-freeness certificate are
+described in Section~\ref{s:repro}.
 \end{abstract}
 
 \medskip
@@ -84,7 +85,16 @@ split prime, mixed reduction, log-volume, tensor packet.
 \section{Introduction}\label{s:intro}
 
 Explicit initial $\Theta$-data are needed for any numerically effective use of the
-theory; \cite{MFHMP} is devoted to obtaining such uses.  This note contributes one,
+theory; \cite{MFHMP} is devoted to obtaining such uses.  Dupuy and Hilado work out initial $\Theta$-data for the curve 11a1
+over $\mathbb Q$ \cite[\S2.10]{DH25}.
+Zhou describes constructions of $\mu_6$-initial $\Theta$-data from
+elliptic curves over $\mathbb Q$, including Frey--Hellegouarch curves
+\cite[Prop.~2.5, Lemma~2.6]{Zhou}.
+These constructions concern rational moduli, whereas the mixed-place
+profile considered here requires a moduli field with more than one
+place above the selected rational prime.
+
+This note contributes one,
 constructed so that every condition of \cite[Def.~3.1]{IUT1} can be checked
 individually, and then asks how a configuration it exhibits is handled.
 
@@ -852,6 +862,13 @@ that no further errors remain, and retain the withdrawal undertaking of
  RIMS, Kyoto University; consulted February 2019 version, 45 pp.
 \bibitem[SS]{SS} P.~Scholze, J.~Stix, \emph{Why $abc$ is still a conjecture},
  manuscript, July 16, 2018.
+\bibitem[DH25]{DH25} T.~Dupuy, A.~Hilado,
+\emph{The statement of Mochizuki's Corollary 3.12: initial theta data},
+arXiv:2004.13228v2 [math.NT], 19 June 2025, 20~pp.
+\bibitem[Zhou]{Zhou} Z.-P.~Zhou,
+\emph{The inter-universal Teichm\"uller theory and new Diophantine
+results over the rational numbers.~I},
+arXiv:2503.14510v1 [math.NT], submitted 8 March 2025, 41~pp.
 \end{thebibliography}
 
 \end{document}

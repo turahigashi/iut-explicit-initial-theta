@@ -1,5 +1,25 @@
 # Draft changes
 
+## 0.5.0 — 2026-09-08
+
+- **Citations added.**  The first report (both versions) and the second report now
+  cite Zhou, *The inter-universal Teichmüller theory and new Diophantine results over
+  the rational numbers. I*, arXiv:2503.14510v1, for constructions of mu_6-initial
+  Theta-data over Q, and Dupuy--Hilado §2.10 for the curve 11a1, and say how those
+  rational-moduli constructions differ from the mixed-place profile considered here.
+  Dupuy--Hilado is now cited by its exact version and date.
+- **An overstatement in two abstracts is withdrawn.**  Both said the arithmetic "is
+  reproduced by a short script".  Establishing the data also uses a separate
+  exhaustive power-freeness certificate, in the second report an exhaustive sieve in
+  C++; the abstracts now point to the reproduction section instead.
+- **The title blocks are made coherent.**  The second report printed two different
+  version numbers, and all three documents printed the build date rather than a
+  release date.
+- The scripts shipped with the second report describe their own checks as an internal
+  check rather than an external review; no computation changes and the frozen output
+  is unchanged.
+- No numerical value, theorem, proof or verbatim quotation changes.
+
 ## 0.4.2 — 2026-09-08
 
 - Corrects a statement about process, not about mathematics.  The fourth report and
