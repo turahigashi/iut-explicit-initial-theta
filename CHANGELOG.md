@@ -1,5 +1,21 @@
 # Draft changes
 
+## 0.4.1 — 2026-09-08
+
+- **The fourth report now cites Scholze–Stix.**  Its Proposition 10 names the ratio
+  `chi = 12/(l(l+1))` between the stage-one and the averaged procession-normalized
+  coefficient of [IUT IV, Thm. 1.10].  That is exactly the factor on which [SS]'s final
+  inequality (1.5) turns, and [SS] reaches it by averaging with the same coefficient the
+  source prints.  The report derived `chi` from the source's own two numbers and cited
+  no one; a reader who knows [SS] would see the coincidence at once, so the citation
+  belonged there.  §7 now records it, together with the fact that the source's own
+  corresponding constant is a **different** one — [IUT IV] uses `12/l^2`, which is larger,
+  with slack `1/(2 l^2)`; the source bounds where [SS] computes exactly.
+- **This records that the averaging coefficient is common to both sides and the final
+  constant is not.  It decides nothing about [IUT III, Cor. 3.12] or about the objection
+  of [SS].**
+- No other statement of the fourth report changes; the mathematics is unchanged.
+
 ## 0.4.0 — 2026-09-08
 
 - Adds the **fourth report**, `fourth-report/`: what the source states about split bad

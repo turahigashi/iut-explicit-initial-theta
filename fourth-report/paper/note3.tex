@@ -32,7 +32,7 @@ inter-universal Teichm\"uller theory\\
 \large A fourth report: what the source states, and what follows}
 \author{Toshihisa Urahigashi\\
 \small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.0.0 --- 8 September 2026\\[3pt]
+\date{Version 1.0.1 --- 8 September 2026\\[3pt]
 \small ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}\\[3pt]
 \small DOI \href{https://doi.org/10.5281/zenodo.22648945}{10.5281/zenodo.22648945}}
 
@@ -707,8 +707,33 @@ $(\ell+1)/24=\bigl(\ell(\ell+1)/12\bigr)\cdot\bigl(1/(2\ell)\bigr)$.
 \end{proof}
 
 This is an identity between two quantities printed in the source; it is not a
-statement about which region either coefficient is evaluated on, and it is not used
-below.
+statement about which region either coefficient is evaluated on.
+
+\textup{[S]} \emph{The same ratio carries the final inequality of} \cite{SS}.  There
+the right-hand side of their (1.4) is averaged over the same range, giving the
+coefficient $\frac{(\ell^{*}+1)(2\ell^{*}+1)}{12\ell}$ on $\deg(q_E)$ --- the form
+\cite[Thm.~1.10, Step (v)]{IUT4} prints --- and solving for $\tfrac16\deg(q_E)$ yields
+their (1.5),
+\[
+ \tfrac16\deg(q_E)\ \le\ \Bigl(1-\tfrac{12}{\ell(\ell+1)}\Bigr)^{-1}\cdot\mathfrak d(P).
+\]
+\textup{[P]} \emph{That factor is $\chi$}: the ratio of the stage-one coefficient
+$1/(2\ell)$ to the averaged $(\ell+1)/24$ is $12/(\ell(\ell+1))$.  So Proposition
+\ref{p:chi} is the identity on which \cite{SS}'s final inequality turns, and the
+reading that the two sides use different normalizations is not available: the
+coefficient is the one the source prints.
+
+\textup{[S]} \emph{The source's own corresponding constant is a different one.}  In
+assembling the local bounds of Steps (v)--(vii), \cite[Thm.~1.10]{IUT4} uses
+$\frac{\ell+1}{4}\cdot\frac16\cdot\frac{12}{\ell^{2}}\ge\frac1{2\ell}$, that is
+$12/\ell^{2}$, not $12/(\ell(\ell+1))$.  \textup{[P]} The two are not equal, and
+$12/\ell^{2}>12/(\ell(\ell+1))$; the inequality just quoted has slack
+$\frac{\ell+1}{2\ell^{2}}-\frac1{2\ell}=\frac1{2\ell^{2}}$, so the source \emph{bounds}
+where \cite{SS} computes exactly.  \emph{What this records is that the averaging
+coefficient is common to both and the final constant is not.  It decides nothing about
+\cite[Cor.~3.12]{IUT3} or about the objection of} \cite{SS}.
+
+Neither coefficient is used in any other statement of this report.
 
 \begin{remark}[on explicit formulations]
 \textup{[S]} \cite[\S4.10, eq.~(4.4)]{DH} writes the multiradial representation of
@@ -779,6 +804,8 @@ No independent human verification or absence of further errors is asserted.
 \begin{thebibliography}{First-full}
 \bibitem[First]{First} T.~Urahigashi, \emph{An explicit initial $\Theta$-datum with
  mixed reduction at a split prime}, Zenodo, DOI 10.5281/zenodo.22537342, 2026.
+\bibitem[SS]{SS} P.~Scholze, J.~Stix, \emph{Why $abc$ is still a conjecture},
+ manuscript, July 16, 2018.
 \bibitem[First-full]{Firstfull} T.~Urahigashi,
 \emph{An explicit initial $\Theta$-datum with mixed reduction over a split prime,
 and the local estimates of inter-universal Teichm\"uller theory IV},
