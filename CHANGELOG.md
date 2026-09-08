@@ -1,5 +1,14 @@
 # Draft changes
 
+## 0.6.1 — 2026-09-09
+
+- Title blocks now print the **concept** DOI, which resolves to the latest version.
+  The fourth report printed the DOI of its version 1.0.0 on a document that is now
+  1.0.3, the third report printed its own 1.0.0, and the second named a "this version"
+  DOI that its later versions no longer are.  The fifth report's bibliography was
+  already correct: it cites the concept DOI marked "(all versions)" and names the
+  consulted version in words.
+
 ## 0.6.0 — 2026-09-09
 
 - **Adds the fifth report**: *Two constants in the numerical estimates of inter-universal
