@@ -32,7 +32,7 @@ inter-universal Teichm\"uller theory\\
 \large A fourth report: what the source states, and what follows}
 \author{Toshihisa Urahigashi\\
 \small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.0.2 --- 8 September 2026\\[3pt]
+\date{Version 1.0.3 --- 8 September 2026\\[3pt]
 \small ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}\\[3pt]
 \small DOI \href{https://doi.org/10.5281/zenodo.22648945}{10.5281/zenodo.22648945}}
 
@@ -53,7 +53,7 @@ the condition under which Step (v) of \cite{IUT4} leaves a place out of the set 
 it defines --- \cite[Prop.~1.4(iii)]{IUT4} yields the stage margin
 $j^2s-(j+2)$; where the source places the evaluation, quoted verbatim from the
 proof of \cite[Cor.~3.12]{IUT3}; two constraints on the indeterminacies, namely
-that $\Ind2$ acts by a unit scalar and therefore leaves the generated hull
+that $\Ind2$ acts by a unit scalar and therefore leaves the holomorphic hull
 unchanged, and that labels are not recoverable from a raw procession; and the
 identity between the two forms in which \cite[Thm.~1.10]{IUT4} prints the
 procession-normalized coefficient, which is $\ell(\ell+1)/12$ times the stage-one
@@ -618,7 +618,9 @@ $\mathrm{Ism}(G_K)=\mathbb{Z}_p^{\times}$.
 \textup{[P]} At a fixed \emph{nonarchimedean} tuple $t$, let $C_t$ denote the
 holomorphic hull of \cite[Rem.~3.9.5(i)]{IUT3} in \emph{both} of its branches: the
 smallest $\lambda\cdot\mathcal O$ containing the region when that region is relatively
-compact, and the whole ambient object when it is not.  Then for every $g$ in the group
+compact, and the whole ambient object when it is not.  Assume that $U$ contains a
+relatively compact subset whose log-volume is greater than $-\infty$, as required
+by that definition.  Then for every $g$ in the group
 above, $C_t(g_tU)=C_t(U)$ and $C_t\bigl(\bigcup_g g_tU\bigr)=C_t(U)$.
 \end{proposition}
 
@@ -644,8 +646,9 @@ region with full support is not of the form $\lambda\cdot\mathcal O$ --- and it 
 needed: the argument above uses only that $g_t$ is an isometry.
 \end{proof}
 
-\emph{This is proved by exhibiting a common $B_t$-module, not inferred from equality
-of the individual volumes.}  It concerns $\Ind2$ alone: it does not extend to
+\emph{In the relatively compact branch, this is proved using the same family of
+$\lambda\mathcal O$ containers; in the other branch, it follows from the definition
+of the hull.}  It concerns $\Ind2$ alone: it does not extend to
 $\Ind1$, $\Ind3$, the input fibre or the $q$-comparison, and it does not say that an
 arbitrary automorphism of $G_K$ acts as a ring isomorphism.
 
@@ -708,27 +711,31 @@ $(\ell+1)/24=\bigl(\ell(\ell+1)/12\bigr)\cdot\bigl(1/(2\ell)\bigr)$.
 This is an identity between two quantities printed in the source; it is not a
 statement about which region either coefficient is evaluated on.
 
-\textup{[S]} \emph{The same ratio carries the final inequality of} \cite{SS}.  There
-the right-hand side of their (1.4) is averaged over the same range, giving the
-coefficient $\frac{(\ell^{*}+1)(2\ell^{*}+1)}{12\ell}$ on $\deg(q_E)$ --- the form
-\cite[Thm.~1.10, Step (v)]{IUT4} prints --- and solving for $\tfrac16\deg(q_E)$ yields
-their (1.5),
+\textup{[S]} In \cite[\S1.3, p.~4]{SS}, formula (1.5) is introduced as holding
+``in essential approximation''.  Its coefficient on $\deg(q_E)$ is
+$\frac{(\ell^{*}+1)(2\ell^{*}+1)}{12\ell}$, the form printed in
+\cite[Thm.~1.10, Step (v)]{IUT4}.  The \emph{unnumbered} display immediately after
+(1.5), obtained there by substitution into (1.4), is
 \[
- \tfrac16\deg(q_E)\ \le\ \Bigl(1-\tfrac{12}{\ell(\ell+1)}\Bigr)^{-1}\cdot\mathfrak d(P).
+ \tfrac16\deg(q_E)\ \lessapprox\ \Bigl(1-\tfrac{12}{\ell(\ell+1)}\Bigr)^{-1}\cdot\mathfrak d(P).
 \]
+The following sentence in \cite[p.~4]{SS} retains an error, handled by adding a
+term linear in $\ell$ on the right.  The display is not an error-free inequality.
 \textup{[P]} \emph{That factor is $\chi$}: the ratio of the stage-one coefficient
-$1/(2\ell)$ to the averaged $(\ell+1)/24$ is $12/(\ell(\ell+1))$.  So Proposition
-\ref{p:chi} is the identity on which \cite{SS}'s final inequality turns, and the
-reading that the two sides use different normalizations is not available: the
-coefficient is the one the source prints.
+$1/(2\ell)$ to the averaged $(\ell+1)/24$ is $12/(\ell(\ell+1))$.  Proposition
+\ref{p:chi} thus identifies the averaged Tate-divisor coefficient under these
+conventions.  It does not identify the full estimates, their positive or error
+terms, or the regions to which they apply.
 
 \textup{[S]} \emph{The source's own corresponding constant is a different one.}  In
-assembling the local bounds of Steps (v)--(vii), \cite[Thm.~1.10]{IUT4} uses
+assembling the local bounds of Steps (v)--(vii), \cite[Thm.~1.10, proof Step (viii),
+p.~30]{IUT4} uses
 $\frac{\ell+1}{4}\cdot\frac16\cdot\frac{12}{\ell^{2}}\ge\frac1{2\ell}$, that is
 $12/\ell^{2}$, not $12/(\ell(\ell+1))$.  \textup{[P]} The two are not equal, and
 $12/\ell^{2}>12/(\ell(\ell+1))$; the inequality just quoted has slack
-$\frac{\ell+1}{2\ell^{2}}-\frac1{2\ell}=\frac1{2\ell^{2}}$, so the source \emph{bounds}
-where \cite{SS} computes exactly.  \emph{What this records is that the averaging
+$\frac{\ell+1}{2\ell^{2}}-\frac1{2\ell}=\frac1{2\ell^{2}}$.  This is an exact
+comparison of these two scalar constants; the display in \cite{SS} still has the
+approximation and error just stated.  \emph{What this records is that the averaging
 coefficient is common to both and the final constant is not.  It decides nothing about
 \cite[Cor.~3.12]{IUT3} or about the objection of} \cite{SS}.
 
@@ -780,7 +787,7 @@ integers is also retained as an error record in the first report.
 Every passage quoted above was checked against the English original of the version
 listed in the bibliography.  \emph{The two steps are different}: the shipped
 \path{scripts/note3_quotes.py} \emph{locates} a candidate passage by a word-sequence
-match that drops mathematics and ignores punctuation, and reports eleven of the forty
+match that drops mathematics and ignores punctuation, and reports twelve of the forty-one
 entries as too short to locate at all; verbatim identity was then checked by reading.
 The mechanical step used string match on the extracted text and, where text
 extraction interleaves floats --- which it does on p.~150 of \cite{IUT3} --- by

@@ -1,0 +1,506 @@
+\pdfoutput=1
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage{hyperref}
+\hypersetup{hidelinks,
+ pdftitle={Two constants in the numerical estimates of inter-universal Teichmuller theory IV},
+ pdfauthor={Toshihisa Urahigashi}}
+\newtheorem{proposition}{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newcommand{\Fmod}{F_{\mathrm{mod}}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\qpilot}{\underline{\underline{q}}}
+\newcommand{\thetapilot}{\underline{\underline{\Theta}}}
+\newcommand{\Smark}{\textup{[S]}}
+\newcommand{\Pmark}{\textup{[P]}}
+\title{Two constants in the numerical estimates of\\
+ inter-universal Teichm\"uller theory IV\\[4pt]
+ \large $12/(\ell(\ell+1))$ and $12/\ell^2$: a fifth report}
+\author{Toshihisa Urahigashi\\
+ \small\texttt{123026.urahigashi.toshihisa@gmail.com}}
+\date{Version 1.0.0 --- 8 September 2026\\[3pt]
+ \small ORCID \href{https://orcid.org/0009-0004-0460-6242}{0009-0004-0460-6242}}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+The constants $\chi=12/(\ell(\ell+1))$ and $\tau=12/\ell^2$
+occur at different steps of the numerical estimates surrounding IUT IV.
+The first is the exact ratio of the stage-one coefficient $1/(2\ell)$ to the
+mean of $j^{2}/(2\ell)$ over $j=1,\dots,(\ell-1)/2$, and appears in
+Scholze--Stix's approximate calculation.  The second is used in the upper-bound rearrangement in the
+proof of IUT IV, Theorem~1.10.  We locate both in the original texts and
+compute their difference with exact rational arithmetic.  With all other
+inputs fixed, the latter rearrangement adds $H/(2\ell^2)$ to the unnormalized
+expression, or $1/\ell$ after division by $H/(2\ell)$; its reciprocal factor
+is strictly larger.  Tables at $\ell=7,157$ also give the contributions from
+the designated split primes of two explicit curves.  These curves serve only
+as numerical illustrations; none of the algebraic propositions depends on
+their initial-data admissibility.  What is compared here are two scalar expressions under a common set of inputs;
+this is not a comparison of the two sources' full estimates, whose positive
+terms, divisor supports and approximation conventions differ and are kept
+separate throughout.  These calculations do not determine a possible-image hull
+or adjudicate IUT or the Scholze--Stix objection.
+\end{abstract}
+
+\section{The objects and the comparison being made}\label{s:scope}
+
+The coefficient identity in \cite[\S7]{Fourth} is the starting point.
+Here we identify a larger sufficient constant used in an upper-bound
+estimate, compare it with the sharp threshold for the scalar rearrangement
+defined below, and quantify
+the difference both before and after the source's root normalization.
+The finite-sum identity is elementary and is not claimed as a new discovery.
+Nor is priority claimed for comparing the two constants: the purpose is
+to record the exact source steps, common-input conditions and numerical
+differences in one place.
+
+We reserve \Smark{} for the explicitly quoted text or mathematical display
+of a source; \Pmark{} marks the deductions proved here, including the
+comparison of the displayed expressions.  A source assertion and a proof
+of that assertion are different things.  The hypotheses of the algebraic
+comparison below are written out; their satisfaction by an actual
+possible-image hull is not supplied by the arithmetic checks.
+All references to pages of IUT I and IV are to the consulted author
+versions, May 2020 and April 2020 respectively.  Publication metadata are
+listed separately.  For Scholze--Stix we use the manuscript of July 16, 2018.
+
+Write $H$ for a normalized degree of an \emph{unrooted} Tate-parameter
+divisor and set
+\begin{equation}\label{e:constants}
+ m=\frac{\ell-1}{2},\qquad r=\frac1{2\ell},\qquad
+ Q=rH,\qquad b=\frac{\ell+1}{24},\qquad c=\frac{\ell+1}{4}.
+\end{equation}
+Until a source application is specified, these are real or rational
+quantities, with $\ell$ an odd integer at least~5 and $H>0$.
+In IUT IV the relevant $H$ is $\log(\mathfrak q)$, the normalized degree
+of the divisor supported on the \emph{selected} bad places
+\cite[Thm.~1.10, pp.~22--23]{IUT4}.  The prose normalization there gives the following equality in our notation:
+\begin{equation}\label{e:root}
+ \Pmark\qquad |\log(\qpilot)|=\frac1{2\ell}\log(\mathfrak q)
+ \qquad\text{\cite[Thm.~1.10, p.~23]{IUT4}}.
+\end{equation}
+Here the double-underlined $\qpilot$ is the source's pilot notation;
+it is not an additional Tate parameter to which a second root should be applied.
+
+Scholze--Stix define $q_E$ by summing over \emph{all} finite places of
+multiplicative reduction, and use $\deg(q_E)/(2\ell)$ for the rooted
+quantity \cite[\S1.2, p.~2; \S1.3, pp.~3--4]{SS}.
+Consequently, using the same elliptic curve is not alone enough to identify
+their $\deg(q_E)$ with IUT IV's selected $H$.
+Equality requires the same support, or explicit accounting for the omitted
+contribution.  Under the extra good-reduction hypothesis of Theorem~1.10,
+the selected and actual bad places agree outside $2\ell$; the contribution
+over $2\ell$ must still be checked.  Likewise the positive terms appearing
+in the two texts are not identified merely by giving them the same symbol.
+
+\section{What is printed in Scholze--Stix}\label{s:ss}
+
+Their setup in \S1.2 fixes a degree bound for $k$, restricts the local data
+at $2$ and infinity, and uses split semistable reduction.  The prime
+$\ell=\ell(P)$ is also constrained by the height window (1.3), the
+mod-$\ell$ image, and the local Tate extension condition; an exceptional
+list is set aside \cite[\S1.2, pp.~2--3]{SS}.
+The substitutions in \S\ref{s:tables} evaluate coefficients, and do not
+assert these additional conditions for either displayed level.
+
+\Smark{} Their (1.4), p.~3 \cite[p.~3, (1.4); p.~4, (1.5)]{SS}, is
+\begin{equation}\label{e:ss14}
+ -|\log(\qpilot)|\le -|\log(\thetapilot)|.
+\end{equation}
+On p.~4 the introduction to (1.5) reads
+``The right side of (1.4) is in essential approximation''.
+The immediately following parenthesis defines $\mathfrak d(P)_v$ as the
+$v$-part of the logarithmic root discriminant.  Retaining the source's
+$\ell^*$, the displayed average is
+\begin{equation}\label{e:ss15}
+ \Smark\qquad
+ \begin{aligned}
+ -|\log(\thetapilot)|&\approx
+ \frac1{\ell^*}\sum_v\sum_{j=1}^{\ell^*}
+ \left(j\cdot\mathfrak d(P)_v-
+ j^2\frac1{2\ell[k:\mathbb Q]}v(q_v)\log N(v)\right)
+ \\&=\frac{\ell^*+1}{2}\left(\mathfrak d(P)-\frac16\deg(q_E)\right).
+ \end{aligned}
+\end{equation}
+The intermediate sum-of-squares evaluation in their display is omitted;
+no approximation sign is replaced by an equality.  In our deductions
+$m=\ell^*=(\ell-1)/2$.  The following \emph{unnumbered} display is
+\begin{equation}\label{e:ssfinal}
+ \Smark\qquad
+ \frac16\deg(q_E)\lessapprox
+ \left(1-\frac{12}{\ell(\ell+1)}\right)^{-1}\cdot\mathfrak d(P).
+\end{equation}
+The next sentence says the error is handled
+``with a linear term in $\ell$ on the right side''.
+It then states that this achieves Claim~6; the following sentence begins
+the authors' objection to the reasoning for (1.5), proposing (1.6) with
+the $j^2$ factor missing.  We are quoting the approximate calculation
+they describe, not attributing their endorsement to it.
+Thus \eqref{e:ssfinal} must not be quoted as an
+error-free inequality with $\le$, nor called their equation~(1.5).
+The exact bound proved below is instead conditional on an explicitly
+specified additive error.
+
+\begin{proposition}[the two finite moments; \Pmark]\label{p:moments}
+For odd $\ell\ge5$,
+\[
+ \frac1m\sum_{j=1}^m j=c,\qquad
+ \frac1m\sum_{j=1}^m\frac{j^2}{2\ell}=b=\frac c6,
+ \qquad \frac br=\frac{\ell(\ell+1)}{12}.
+\]
+In particular the unique number $t$ for which $bt=r$ is
+\begin{equation}\label{e:chi}
+ \chi=\frac rb=\frac{12}{\ell(\ell+1)},\qquad
+ A=\frac1\chi=\frac{\ell(\ell+1)}{12}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+The sums are $m(m+1)/2$ and $m(m+1)(2m+1)/6$.
+Substituting $m=(\ell-1)/2$ gives $c=(\ell+1)/4$ and
+$b=(m+1)(2m+1)/(12\ell)=(\ell+1)/24$.
+Dividing $r$ by this positive $b$ gives \eqref{e:chi}.
+\end{proof}
+
+This explains both $(\ell+1)/4$ and $1/6$ in the algebra of
+\eqref{e:ss15}: $c$ is the first moment and $1/6=b/c$.
+SS also discuss the geometric origin of $1/6$ in their height comparison
+(1.2), p.~2 \cite[p.~2, (1.2)]{SS}: the respective degrees there are $1/12$ and $1/2$.
+That discussion is subject to their bounded local data; it does not assert
+an exact equality between every height and $\deg(q_E)/6$.
+Their displayed sums and rearrangement account for the denominator
+$\ell(\ell+1)$.  Our comparison with the $\ell^2$ denominator uses the
+specific IUT IV estimate below, without attributing an unstated motive
+or claiming a first occurrence of this comparison.
+
+\section{The sufficient constant used in IUT IV}\label{s:iv}
+
+\Pmark{} Reading the negative terms in Theorem~1.10, proof, Step~(v), p.~29
+\cite[Thm.~1.10, proof, Step~(v), p.~29]{IUT4}, gives the following equality of
+negative terms in the first two lines of its procession-normalized upper
+bound (with $\ell^*=(\ell-1)/2$ as in the source):
+\[
+ -\frac{(2\ell^*+1)(\ell^*+1)}{12\ell}\log(\mathfrak q_{v_{\mathbb Q}})
+ =-\frac{\ell+1}{24}\log(\mathfrak q_{v_{\mathbb Q}}).
+\]
+The same display has different term
+$\frac{\ell+5}{4}\log(\mathfrak d^K_{v_{\mathbb Q}})$.
+This is the average of $j+1$, whereas \eqref{e:ss15} averages $j$.
+\textup{[S]} \emph{The same rearrangement, with the same slack, is in print
+elsewhere.}  \cite[p.~70]{JoshiIV} writes: ``Hence one may replace the term
+$-\frac16\cdot\log(q)$ in (6.11.3) by $-\frac16\cdot\bigl(1-\frac{12}{\ell^2}\bigr)\cdot
+\log(q)$ and still have an excess contribution greater than
+$\frac1{2\ell}\log(q)$.''  No priority is claimed here for the rearrangement or
+for its slack; what this report adds is the exact comparison with $\chi$ of
+\S\ref{s:ss}.  \emph{This report takes no position on the further claims of}
+\cite{JoshiIV}.
+
+The next upper bound factors out $(\ell+1)/4$ and replaces the remaining
+positive coefficients by larger ones.  For example,
+\[
+ \Pmark\qquad \frac{\ell+5}{4}
+ =\frac{\ell+1}{4}\left(1+\frac4{\ell+1}\right)
+ \le\frac{\ell+1}{4}\left(1+\frac4\ell\right).
+\]
+Thus the common negative coefficient does not make the full positive
+parts of the two sources equal.
+
+The occurrence of $12/\ell^2$ can be located independently of this
+interpretation.  \Smark{} The statement of Theorem~1.10, p.~23
+\cite[Thm.~1.10, p.~23; proof, Step~(viii), p.~30]{IUT4}, contains
+$-\frac16(1-12/\ell^2)\log(\mathfrak q)$ in its displayed choice of $C_\Theta$.
+The proof, Step~(viii), p.~30, ends the explanation of that upper-bound
+display with the complete estimate clause:
+\begin{quote}
+\Smark{} ``--- where we apply the estimate
+$\frac{\ell+1}{4}\cdot\frac16\cdot\frac{12}{\ell^2}\ge\frac1{2\ell}$
+[cf.\ the fact that $\ell\ge1$].''
+\end{quote}
+Let
+\[
+ \tau=\frac{12}{\ell^2},\qquad
+ u=b\tau=\frac{\ell+1}{2\ell^2},\qquad
+ \epsilon=u-r=\frac1{2\ell^2}.
+\]
+The following identity pinpoints the change in the upper bound.
+
+\begin{proposition}[the rearrangement and its slack; \Pmark]\label{p:slack}
+For $H>0$ and any real $D$, define the numerical expression
+\[
+ K_t(H,D)=c\left(D-\frac{1-t}{6}H\right)-rH.
+\]
+Then
+\begin{align*}
+ K_\chi(H,D)&=cD-bH,\\
+ K_\tau(H,D)&=cD-bH+\frac{H}{2\ell^2},\\
+ \frac{K_\tau(H,D)-K_\chi(H,D)}{Q}&=\frac1\ell.
+\end{align*}
+Among $t\in\mathbb R$, the inequality
+$K_t(H,D)\ge cD-bH$ holds if and only if $t\ge\chi$.
+\end{proposition}
+\begin{proof}
+Subtracting $cD-bH$ leaves $(bt-r)H$.
+At $t=\chi$ it is zero.  At $t=\tau$ it is
+$((\ell+1)/(2\ell^2)-1/(2\ell))H=H/(2\ell^2)$.
+Division by $Q=H/(2\ell)$ gives $1/\ell$.
+Since $b,H>0$, its sign is the sign of $t-\chi$.
+\end{proof}
+
+In Step~(viii) the terms represented by $D$ include different, conductor
+and other positive estimates; a further prime-counting estimate follows
+on pp.~30--31.  Proposition~\ref{p:slack} compares the expressions with
+\emph{these other terms held fixed}.  In particular, $1/\ell$ is the
+change of this normalized numerical expression, not a measured change
+in the actual $C_\Theta$ or in a possible-image hull.
+
+\section{Comparison of the two reciprocal scalar factors}\label{s:order}
+
+The comparison below is between two \emph{scalar expressions} evaluated on a
+common set of inputs, which Proposition~\ref{p:bound} states as a hypothesis.
+It is not a comparison of the full estimates of \cite{SS} and \cite{IUT4}: no
+map identifying their supports, positive terms, error terms or approximation
+conventions is given here, and none is claimed.
+
+\begin{proposition}[an explicit error and common inputs; \Pmark]\label{p:bound}
+Let $H>0$, let $D,R$ be real, and put $U=D+R/c\ge0$.
+Suppose a real number $h$ satisfies the two bounds
+\[
+ -rH\le h\le c(D-H/6)+R.
+\]
+Then
+\begin{equation}\label{e:strictbound}
+ \frac H6\le F_\chi U\le F_\tau U,
+ \qquad F_\chi=\frac1{1-\chi},\quad F_\tau=\frac1{1-\tau}.
+\end{equation}
+The second inequality is strict when $U>0$.  The exact differences are
+\begin{align}
+ \tau-\chi&=\frac{12}{\ell^2(\ell+1)},&
+ \frac\tau\chi-1&=\frac1\ell,\label{e:difftau}\\
+ F_\tau-F_\chi&=
+ \frac{12\ell}{(\ell^2-12)(\ell(\ell+1)-12)},&
+ \frac{F_\tau}{F_\chi}-1&=
+ \frac{12}{(\ell+1)(\ell^2-12)}.\label{e:difffactor}
+\end{align}
+\end{proposition}
+\begin{proof}
+The two assumed bounds give $(b-r)H\le cD+R$.
+As $b=c/6$ and $r=b\chi$, division by $c$ gives
+$(1-\chi)H/6\le U$.  For odd $\ell\ge5$,
+$0<\chi<\tau<1$, so $0<F_\chi<F_\tau$.
+The displayed differences follow by subtraction and division of fractions.
+\end{proof}
+
+The hypothesis involving $h$ is an explicit conditional comparison;
+the approximate symbol in SS is not silently replaced by it.
+For nonnegative common $U$, the $\chi$ bound is tighter.
+This orders the two \emph{scalar forms}, not the complete inequalities of
+the two sources, whose positive terms and errors have not been equated.
+Although $\tau$ and $\chi$ have the same leading order $12/\ell^2$,
+their difference has order $\ell^{-3}$.  The same is true of the absolute
+and relative differences of the reciprocal factors in
+\eqref{e:difffactor}.  The normalized expression difference in
+Proposition~\ref{p:slack} instead has order $\ell^{-1}$.
+These are different comparisons, with different denominators.
+
+\subsection*{The permitted levels}
+
+The algebra above requires positive reciprocal denominators.
+$1-\chi>0$ is equivalent to $\ell(\ell+1)>12$, and $1-\tau>0$
+to $\ell^2>12$.  At the odd prime $\ell=3$ the first denominator
+vanishes and the second is negative.  This is a boundary of the algebra,
+not a source counterexample.
+
+\Smark{} IUT I, Definition~3.1(c), p.~62 \cite[Def.~3.1(c), p.~62]{IUT1}, begins:
+``$\ell$ is a prime number $\ge5$ such that the image of the outer
+homomorphism $G_F\to GL_2(\mathbb F_\ell)$ determined by the
+$\ell$-torsion points of $E_F$ contains the subgroup
+$SL_2(\mathbb F_\ell)\subseteq GL_2(\mathbb F_\ell)$;''
+The same item also requires $\ell$ to be prime to the selected residue
+characteristics and Tate orders.  IUT IV, Theorem~1.10,
+p.~22, additionally assumes full $15$-torsion over $F$ and states
+$\ell\ne5$.  \Pmark{} The lower bound and primality therefore give $\ell\ge7$.
+Indeed the proof's terminal estimates on p.~31 use that range and
+$d_{\rm mod}=[\Fmod:\mathbb Q]\ge1$
+\cite[Thm.~1.10, proof, Step~(viii), p.~31]{IUT4}:
+\[
+ \Smark\qquad
+ (1-12/\ell^2)^{-1}\le2,\qquad
+ (1-12/\ell^2)^{-1}(1+12d_{\rm mod}/\ell)
+ \le1+20d_{\rm mod}/\ell.
+\]
+These are the source's two estimates with its stated restrictions
+$\ell\ge7$ and $d_{\rm mod}\ge1$.
+At $\ell=5,d_{\rm mod}=1$ the second estimate fails, since its left side
+is $85/13>5$.  Level~5 can illustrate the elementary formulas but not
+this theorem's terminal estimate.  The range $\ell\ge7$ by itself
+does not establish the remaining initial-data, reduction or lattice
+hypotheses of that theorem, including its precise torsion-generated
+choice of $F$ on p.~22.
+
+\section{Exact values at two levels}\label{s:tables}
+
+All entries below are reduced rational numbers.  The script compares
+the printed rows with independent finite-sum evaluations and the identities
+proved above.  It does not convert an arithmetic parameter into admissible
+initial data.
+
+\begin{center}\small\renewcommand{\arraystretch}{1.8}\everymath{\displaystyle}
+\begin{tabular}{rrrrrrr}
+\toprule
+$\ell$ & $\chi$ & $\tau$ & $A$ & $r$ & $u$ & $\epsilon$\\
+\midrule
+% BEGIN EXACT TABLE coefficients
+$7$ & $\frac{3}{14}$ & $\frac{12}{49}$ & $\frac{14}{3}$ & $\frac{1}{14}$ & $\frac{4}{49}$ & $\frac{1}{98}$ \\
+$157$ & $\frac{6}{12403}$ & $\frac{12}{24649}$ & $\frac{12403}{6}$ & $\frac{1}{314}$ & $\frac{79}{24649}$ & $\frac{1}{49298}$ \\
+% END EXACT TABLE coefficients
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{center}\small\renewcommand{\arraystretch}{1.8}\everymath{\displaystyle}
+\begin{tabular}{rrrrr}
+\toprule
+$\ell$ & $F_\chi$ & $F_\tau$ & $F_\tau-F_\chi$ & $F_\tau/F_\chi-1$\\
+\midrule
+% BEGIN EXACT TABLE factors
+$7$ & $\frac{14}{11}$ & $\frac{49}{37}$ & $\frac{21}{407}$ & $\frac{3}{74}$ \\
+$157$ & $\frac{12403}{12397}$ & $\frac{24649}{24637}$ & $\frac{942}{305424889}$ & $\frac{6}{1946323}$ \\
+% END EXACT TABLE factors
+\bottomrule
+\end{tabular}
+\end{center}
+
+To connect these coefficients with explicit curves, use the first report's
+initial datum \cite[Thm.~1 and the arithmetic conditions]{First}:
+\[
+ L=\mathbb Q(\sqrt5),\quad a=(16+3\sqrt5)^{29},\quad
+ E:y^2=x(x-1)(x-a),\quad\ell=7,\quad p=211.
+\]
+Its fields are $F=L(i,E[15])$ and $K=F(E[7])$.
+For comparison, the second report's section entitled
+\emph{A curve carrying fourteen candidate levels} \cite[\S13]{Second} uses
+\[
+ L=\mathbb Q(i),\quad a=(41+26i)^{472},\quad
+ E:y^2=x(x-1)(x-a),\quad p=2357,
+\]
+and includes $\ell=157$ among the candidates, with
+$F=L(E[15])$, $K=F(E[157])$.
+The latter section explicitly distinguishes candidate levels from a
+verification of all initial-data conditions at each level.
+We retain that distinction: the second row below is a coefficient
+evaluation at that explicit curve and level, not a new admissibility theorem.
+
+In both designated quadratic fibres, one place is multiplicative and one
+good.  At $211$, the multiplicative reduction becomes split upon the
+unramified extension adjoining $i$, which leaves the Tate order unchanged;
+at $2357$, it is already split over the indicated quadratic field.
+If $N=\ord_{\pi}(a)$, the unrooted Tate order at the bad place is
+$2N$, with $\ord_p(p)=1$.  Each base-field place has weight $1/2$, so
+\begin{equation}\label{e:fibre}
+ H_p=N\log p,\qquad Q_p=Nr\log p,\qquad
+ (K_\tau-K_\chi)_p=N\epsilon\log p.
+\end{equation}
+These are contributions from that rational prime only.
+No equality of the total selected degree with $H_p$ is asserted.
+In particular, an extension's ramification index is not a second factor
+to insert into \eqref{e:fibre}: the normalized degree is invariant under
+base extension \cite[Def.~1.9(i), pp.~21--22]{IUT4}.
+
+\begin{center}\small\renewcommand{\arraystretch}{1.8}\everymath{\displaystyle}
+\begin{tabular}{rrrrrrr}
+\toprule
+$\ell$ & $p$ & $N$ & $Q_p/\log p$ & $bH_p/\log p$ & $uH_p/\log p$ & $\epsilon H_p/\log p$\\
+\midrule
+% BEGIN EXACT TABLE data
+$7$ & $211$ & $29$ & $\frac{29}{14}$ & $\frac{29}{3}$ & $\frac{116}{49}$ & $\frac{29}{98}$ \\
+$157$ & $2357$ & $472$ & $\frac{236}{157}$ & $\frac{9322}{3}$ & $\frac{37288}{24649}$ & $\frac{236}{24649}$ \\
+% END EXACT TABLE data
+\bottomrule
+\end{tabular}
+\end{center}
+
+For example, the absolute difference of the reciprocal factors at
+$\ell=157$ is $942/305424889$, while the designated-prime contribution to
+the unnormalized expression difference is $(236/24649)\log2357$.
+After division by that fibre's $Q_p$, the latter is exactly $1/157$.
+A small difference of reciprocal factors and this normalized difference
+are not contradictory measurements; they answer different questions.
+None is an actual volume of a union of possible images.
+
+\section*{Reproducibility and limits}
+
+Run \texttt{python3 scripts/constant\_comparison.py} from the report bundle.
+It uses the standard-library \texttt{Fraction} type, evaluates both finite
+moments, checks the algebra and signs, and verifies all six printed table
+rows against the TeX source.  It also requires the supplied frozen output
+file and checks exact agreement with the newly computed output.
+A successful run ends with
+\texttt{RESULT: PASS} and \texttt{EXIT:0}; failure returns a nonzero exit
+status.  Running with Python optimization enabled is rejected.
+Finite numerical checks supplement the proofs; they do not prove the
+identification of source objects or compute omitted source error terms.
+
+The exact comparison orders two scalar expressions under common inputs.
+It does not remove the approximation in SS, identify all its positive
+terms with IUT IV's, or apply a global lower bound to a single prime.
+In comments on the August 2018 SS manuscript, Mochizuki distinguishes
+the linear relationships between
+copies of $\mathbb R$ associated with prime-strips via the $\Theta$-link
+from relationships between the log-volumes of regions before and after
+indeterminacies, which he describes as dependent on the region's geometry.
+For the latter relationship he writes:
+\Smark{} ``In particular, this relationship is highly non-linear.''
+\cite[(C14), p.~4]{Cmt}.
+His report makes the same distinction and illustrates it by a region and
+its symmetrization \cite[\S12, (MlLV), (LVEx), pp.~24--26]{Rpt}.
+These are attributed claims about the geometric comparison, not consequences
+of the scalar propositions above.  Those propositions do not identify that
+comparison with multiplication by either reciprocal factor.
+
+No conclusion is drawn about Corollary~3.12, the correctness of IUT, the
+validity of the SS objection, or $abc$.
+Large language models assisted drafting, source comparison and computations;
+the checks reported here are internal checks.
+
+\begin{thebibliography}{Fourth}
+\bibitem[SS]{SS} P.~Scholze and J.~Stix,
+\emph{Why $abc$ is still a conjecture}, manuscript, July 16, 2018, 10~pp.
+\url{https://www.math.uni-bonn.de/people/scholze/WhyABCisStillaConjecture.pdf}.
+\bibitem[IUT1]{IUT1} S.~Mochizuki,
+\emph{Inter-universal Teichm\"uller theory I}, consulted author version,
+May 2020. Published in Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 3--207,
+\href{https://doi.org/10.4171/PRIMS/57-1-1}{doi:10.4171/PRIMS/57-1-1}.
+\bibitem[IUT4]{IUT4} S.~Mochizuki,
+\emph{Inter-universal Teichm\"uller theory IV}, consulted author version,
+April 2020. Published in Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 627--723,
+\href{https://doi.org/10.4171/PRIMS/57-1-4}{doi:10.4171/PRIMS/57-1-4}.
+\bibitem[Cmt]{Cmt} S.~Mochizuki,
+\emph{Comments on the manuscript (2018-08 version) by Scholze--Stix concerning
+inter-universal Teichm\"uller theory (IUTch)}, September 2018, 5~pp.
+\url{https://www.kurims.kyoto-u.ac.jp/~motizuki/Cmt2018-08.pdf}.
+\bibitem[Rpt]{Rpt} S.~Mochizuki,
+\emph{Report on discussions, held during the period March 15--20, 2018,
+concerning inter-universal Teichm\"uller theory (IUTch)},
+consulted author version, February 2019, 45~pp.
+\url{https://www.kurims.kyoto-u.ac.jp/~motizuki/Rpt2018.pdf}.
+\bibitem[JoshiIV]{JoshiIV} K.~Joshi,
+\emph{Construction of Arithmetic Teichm\"uller Spaces IV: Proof of the
+$abc$-conjecture}, arXiv:2403.10430v2 [math.AG], 24 February 2025;
+preliminary version for comments.
+\bibitem[First]{First} T.~Urahigashi,
+\emph{An explicit initial $\Theta$-datum with mixed reduction at a split prime},
+first report, consulted version 0.1.5 (2026),
+\href{https://doi.org/10.5281/zenodo.22537342}{doi:10.5281/zenodo.22537342} (all versions).
+\bibitem[Second]{Second} T.~Urahigashi,
+\emph{An initial $\Theta$-datum over an imaginary quadratic field, and numerical
+values of the local quantities of inter-universal Teichm\"uller theory IV},
+second report, consulted version 1.0.3 (2026),
+\href{https://doi.org/10.5281/zenodo.22601333}{doi:10.5281/zenodo.22601333} (all versions).
+\bibitem[Fourth]{Fourth} T.~Urahigashi,
+\emph{Split bad primes and the tuple structure of inter-universal
+Teichm\"uller theory}, fourth report, consulted version 1.0.2 (2026),
+\href{https://doi.org/10.5281/zenodo.22648944}{doi:10.5281/zenodo.22648944} (all versions).
+\end{thebibliography}
+\end{document}

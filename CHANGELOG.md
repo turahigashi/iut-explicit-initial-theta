@@ -1,5 +1,31 @@
 # Draft changes
 
+## 0.6.0 — 2026-09-09
+
+- **Adds the fifth report**: *Two constants in the numerical estimates of inter-universal
+  Teichmüller theory IV — 12/(ℓ(ℓ+1)) and 12/ℓ²*.  It locates both constants in the
+  sources and compares them with exact rational arithmetic.  The comparison is between
+  two scalar expressions under a common set of inputs, stated as a hypothesis; it is not
+  a comparison of the two sources' full estimates, and no map identifying their supports,
+  positive terms or approximation conventions is given.
+- The fifth report cites Joshi, *Construction of Arithmetic Teichmüller Spaces IV*,
+  arXiv:2403.10430v2, p. 70, which puts the same rearrangement and the same slack term in
+  print; no priority is claimed for either.
+- **Corrects the fourth report, §7.**  It called the reciprocal-coefficient display of
+  Scholze–Stix "their (1.5)"; that display is unnumbered and follows (1.5).  It also
+  printed the relation as ≤, where the source states it in essential approximation and
+  the following sentence retains an error.  A sentence claiming that a reading with
+  different normalizations "is not available" is withdrawn: the coefficient agreeing does
+  not identify the full estimates, their positive or error terms, or their regions.
+- **Corrects the third report**: the injectivity proposition now states the hypotheses
+  e_g = 1, c_b > 0 and s > 0 that its proof uses, and the log-shell statement assumes
+  what the cited definition requires.
+- **Neutral naming for abc.**  Five disclaimers said "the abc conjecture is false"; they
+  now say "any conclusion about the abc inequality", which is also the wider disclaimer.
+  The Scholze–Stix title is a bibliographic fact and is unchanged.
+- Scripts shipped with the third and fourth reports describe their checks as an internal
+  check.  No computation changes; the frozen outputs are unchanged.
+
 ## 0.5.0 — 2026-09-08
 
 - **Citations added.**  The first report (both versions) and the second report now

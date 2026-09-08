@@ -77,7 +77,7 @@ def c3():
     # The index is COMPUTED from the transition matrix, not asserted as a literal.
     # An earlier version set `idx, dim = 5, 4` and asserted only mu == -1/dim, so
     # changing the printed index to 25 left all twelve tables exiting zero -- the
-    # assert did not check the number it printed (external review, round 3).
+    # assert did not check the number it printed (internal check, round 3).
     # Basis of R inside O^2 = <(1,1), (pi,-pi), (5,5)... >: with u = A+B*pi, v = A-B*pi,
     # the map (A,B,C,D) -> (u,v) has the integer matrix below in the basis
     # {(1,0),(pi,0),(0,1),(0,pi)} of O^2 over Z_5.
@@ -88,7 +88,7 @@ def c3():
     # The determinant and the index are unchanged by generators that do not lie in R,
     # so check the defining congruence: with u = M[0][j] + M[1][j] pi and
     # v = M[2][j] + M[3][j] pi, membership in R is u = v mod pi, i.e. the constant
-    # terms agree mod 5 (external review, 2026-09-07).
+    # terms agree mod 5 (internal check, 2026-09-07).
     assert all((M[0][j] - M[2][j]) % 5 == 0 for j in range(4)), M
 
     def _det(A):
@@ -147,7 +147,7 @@ def c5():
     # Delta is computed from the Weierstrass coefficients of 5190c3 as they stand in
     # Cremona's allcurves.00000-09999, not read in as a literal.  An earlier version
     # started from the integer and factored it, so the curve never entered the check
-    # (external review, round 3).
+    # (internal check, round 3).
     a1, a2, a3, a4, a6 = 1, 0, 1, -654067329, 6428594779636
     b2 = a1*a1 + 4*a2
     b4 = 2*a4 + a1*a3
@@ -248,7 +248,7 @@ def _heights_at(q):
     the 2 coming from 256; 2 is inert here.  gcd(U, D) additionally carries 661^2 --
     the cancellation the table is about.  An earlier version of this script assigned
     both heights as literals and checked only their difference, so it did not compute
-    them at all (external review, 2026-09-07).
+    them at all (internal check, 2026-09-07).
     """
     def mul(x, y): return (x[0]*y[0] + 5*x[1]*y[1], x[0]*y[1] + x[1]*y[0])
     def sub(x, y): return (x[0] - y[0], x[1] - y[1])
@@ -274,7 +274,7 @@ def _heights_at(q):
     # tied it to that curve: perturbing the DENOMINATOR exponent left every assertion
     # below passing while both printed heights moved by 55 log 211, and perturbing the
     # numerator exponent changed j without moving these two heights at all -- a
-    # different defect, not a harmless one (external review,
+    # different defect, not a harmless one (internal check,
     # 2026-09-07; found independently by two reviewers inside the residue this
     # script's own paper had classified as harmless).  For that curve
     # b2 = -4(1+a), b4 = 2a, b6 = 0, b8 = -a^2, so c4 = 16 t and Delta = 16 a^2(a-1)^2,
@@ -290,7 +290,7 @@ def _heights_at(q):
     # G_ideal: t+ab=1 gives the SUPPORT (only the 2 from 256), not the exponent.
     # 2 is inert in Q(sqrt5), so v_(2)(x) = v_2(N(x))/2.  a = 5, b = 4 mod 8, hence
     # v_(2)(a) = v_(2)(t) = 0 and v_(2)(b) = 2; so v_(2)(256t^3) = 8, v_(2)(a^2b^2) = 4,
-    # the ideal gcd is (2)^4 and its norm is 2^8 (external review, round 2).
+    # the ideal gcd is (2)^4 and its norm is 2^8 (internal check, round 2).
     def _v2N(x):
         n = abs(nrm(x)); k = 0
         while n % 2 == 0: n //= 2; k += 1
@@ -321,7 +321,7 @@ def c9():
     # mod q^4.  They are not square roots of 5 there -- 115^2-5 = 20*661 is not 0 mod
     # q^2 -- so the element used did not satisfy sqrt(5)^2 = 5 and was not a local
     # embedding at all.  The valuations happened to come out right; that is not a
-    # reason the method was (external review, 2026-09-07).
+    # reason the method was (internal check, 2026-09-07).
     def _lift(r, k):
         m, x = q, r
         while m < q**k:
@@ -562,7 +562,7 @@ if __name__ == "__main__":
     # computed" printed all the same; and a printed row could change or vanish with
     # every assertion still passing.  Each table's output is now compared against a
     # frozen fixture, which is a separately reviewed artifact and is never regenerated
-    # by a test or packaging run (external review, 2026-09-07).
+    # by a test or packaging run (internal check, 2026-09-07).
     assert tuple(which) == ((int(sys.argv[1]),) if len(sys.argv) > 1 else tuple(range(1, 13)))
     assert all(1 <= i <= len(TABLES) for i in which)
     from contextlib import redirect_stdout

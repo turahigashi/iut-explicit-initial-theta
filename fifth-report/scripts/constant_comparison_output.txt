@@ -1,0 +1,14 @@
+Exact rational coefficient comparison; source applicability is not certified.
+TABLE: coefficients
+$7$ & $\frac{3}{14}$ & $\frac{12}{49}$ & $\frac{14}{3}$ & $\frac{1}{14}$ & $\frac{4}{49}$ & $\frac{1}{98}$ \\
+$157$ & $\frac{6}{12403}$ & $\frac{12}{24649}$ & $\frac{12403}{6}$ & $\frac{1}{314}$ & $\frac{79}{24649}$ & $\frac{1}{49298}$ \\
+TABLE: factors
+$7$ & $\frac{14}{11}$ & $\frac{49}{37}$ & $\frac{21}{407}$ & $\frac{3}{74}$ \\
+$157$ & $\frac{12403}{12397}$ & $\frac{24649}{24637}$ & $\frac{942}{305424889}$ & $\frac{6}{1946323}$ \\
+TABLE: data
+$7$ & $211$ & $29$ & $\frac{29}{14}$ & $\frac{29}{3}$ & $\frac{116}{49}$ & $\frac{29}{98}$ \\
+$157$ & $2357$ & $472$ & $\frac{236}{157}$ & $\frac{9322}{3}$ & $\frac{37288}{24649}$ & $\frac{236}{24649}$ \\
+Checked: 99 odd algebraic levels, 2 displayed prime levels, 6 printed rows.
+Checked: kernel slack, reciprocal differences, signs, range and table synchronization.
+RESULT: PASS
+EXIT:0

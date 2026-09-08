@@ -37,7 +37,7 @@ def run(path, argvs):
             for a in argvs]
     # A baseline killed by a signal reports a negative return code; treating that as
     # "non-zero, so nothing to test" is right, but treating it as a normal failure hid
-    # the difference (external review, 2026-09-07).
+    # the difference (internal check, 2026-09-07).
     if any(rc < 0 for rc in rcs0):
         print(f"{path}: does not pass unmutated; nothing to test "
               f"(terminated by signal {[-rc for rc in rcs0 if rc < 0]})", flush=True)
@@ -78,7 +78,7 @@ def run(path, argvs):
     # (PEP 701) and not before, so the mutant COUNT is version-dependent; the version
     # is printed with it.  An earlier version reported "killed by an assertion" for
     # every non-zero exit, which conflated a check noticing a defect with the mutant
-    # merely failing to run (external review, 2026-09-07).
+    # merely failing to run (internal check, 2026-09-07).
     print(f"{path}: mutants={len(toks)}  killed={len(toks)-len(surv)}  "
           f"survived={len(surv)}  (of the killed, {byassert} by an assertion, "
           f"{byother} by another error, {len(slow)} by exceeding {cap:.0f}s)"
