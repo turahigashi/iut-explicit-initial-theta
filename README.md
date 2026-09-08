@@ -3,7 +3,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22537342.svg)](https://doi.org/10.5281/zenodo.22537342)
 
 Draft paper, version 0.1.3-draft.
-Archived at DOI [10.5281/zenodo.22537342](https://doi.org/10.5281/zenodo.22537342) (all versions); this version is 10.5281/zenodo.22544085.
+Archived at DOI [10.5281/zenodo.22537342](https://doi.org/10.5281/zenodo.22537342) (all versions).
 
 ```
 paper/note.tex      the first report (12 pages) -- the paper of record
@@ -92,8 +92,7 @@ records of the preceding draft.
 
 **An initial Θ-datum over an imaginary quadratic field, and numerical values of the
 local quantities of inter-universal Teichmüller theory IV.**
-version 1.0.1, DOI [10.5281/zenodo.22634210](https://doi.org/10.5281/zenodo.22634210)
-(all versions: [10.5281/zenodo.22601333](https://doi.org/10.5281/zenodo.22601333)).
+version 1.0.1, DOI [10.5281/zenodo.22601333](https://doi.org/10.5281/zenodo.22601333) (all versions).
 
 The datum is `E_0: y^2 = x(x-1)(x-a)` with `a = (10+3i)^29` and `ℓ = 7` over
 `Q(i)`, for which 109 splits into one multiplicative and one good place.  All of
@@ -123,7 +122,7 @@ objections of Scholze–Stix, or about the abc conjecture.
 ## The third report — the cost of each distinction (September 2026)
 
 `third-report/paper/note6.pdf` (9 pages), DOI
-[10.5281/zenodo.22646137](https://doi.org/10.5281/zenodo.22646137).
+[10.5281/zenodo.22646136](https://doi.org/10.5281/zenodo.22646136).
 
 The local estimates of [IUT IV, §1] are assembled from several steps that the source
 keeps apart: a *p*-primary torsion term, a normalization dividing by the local degree,
@@ -173,7 +172,8 @@ The file names carry an older working numbering; the reports are numbered as fol
 | first | `paper/note.tex` | [10.5281/zenodo.22537342](https://doi.org/10.5281/zenodo.22537342) |
 | second | `second-report/paper/note5.tex` | [10.5281/zenodo.22601333](https://doi.org/10.5281/zenodo.22601333) |
 | third | `third-report/paper/note6.tex` | [10.5281/zenodo.22646136](https://doi.org/10.5281/zenodo.22646136) |
-| fourth | `fourth-report/paper/note3.tex` | [10.5281/zenodo.22648945](https://doi.org/10.5281/zenodo.22648945) |
+| fourth | `fourth-report/paper/note3.tex` | [10.5281/zenodo.22648944](https://doi.org/10.5281/zenodo.22648944) |
+| fifth | `fifth-report/paper/constant_comparison.tex` | [10.5281/zenodo.22659796](https://doi.org/10.5281/zenodo.22659796) |
 
 `paper/paper.tex` is the expanded version of the **first** report, cited as `[First-full]`;
 the first report is the version of record.
@@ -181,7 +181,7 @@ the first report is the version of record.
 ## The fourth report — split bad primes and the tuple structure (September 2026)
 
 `fourth-report/paper/note3.pdf` (12 pages), DOI
-[10.5281/zenodo.22648945](https://doi.org/10.5281/zenodo.22648945).
+[10.5281/zenodo.22648944](https://doi.org/10.5281/zenodo.22648944) (all versions).
 
 It collects statements that are **either quoted from a source or proved outright**: that a
 tensor packet admits place tuples of mixed reduction type and that selecting only nonsplit
@@ -209,3 +209,32 @@ printing; it refuses if the manifest has drifted from the manuscript; and it rep
 passage as **located**, which is a candidate found by a word-sequence match, not a verdict of
 verbatim identity.
 
+## The fifth report — two constants (September 2026)
+
+`fifth-report/paper/constant_comparison.pdf` (7 pages), DOI
+[10.5281/zenodo.22659796](https://doi.org/10.5281/zenodo.22659796) (all versions).
+
+The constants `χ = 12/(ℓ(ℓ+1))` and `τ = 12/ℓ²` occur at **different steps** of the
+numerical estimates surrounding [IUT IV].  The first is the exact ratio of the stage-one
+coefficient `1/(2ℓ)` to the mean of `j²/(2ℓ)` over `j = 1, …, (ℓ−1)/2`, and appears in the
+approximate calculation of Scholze–Stix.  The second is used in the upper-bound
+rearrangement in the proof of [IUT IV, Thm. 1.10], quoted from Step (viii).  Both are
+located in the sources and their difference is computed with exact rational arithmetic.
+
+**What is compared are two scalar expressions under a common set of inputs, stated as a
+hypothesis.**  This is not a comparison of the two sources' full estimates, whose positive
+terms, divisor supports and approximation conventions differ and are kept separate.  The
+same rearrangement and the same slack term are already in print in Joshi,
+arXiv:2403.10430v2, p. 70; no priority is claimed for either.
+
+```
+cd fifth-report
+python3 scripts/constant_comparison.py
+python3 scripts/note3_quotes.py --sources YOUR_PDFS --manifest scripts/quotes_manifest.json \
+        --paper paper/constant_comparison.tex
+```
+
+The first prints the tables and exits zero, comparing its output against the frozen file
+beside it.  The second checks the six quoted passages against your own copies of the
+sources, pinned by SHA-256.  **These calculations do not determine a possible-image hull,
+and they adjudicate neither the theory nor the objection.**
