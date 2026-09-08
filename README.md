@@ -117,7 +117,7 @@ by these programs, and Proposition 2 is formalised only in part.
 Scope: this report constructs data and evaluates local quantities on them.  It does not
 compute the hull of the union of the possible images of the actual Θ-pilot or compare
 the two sides of [IUT III, Cor. 3.12]; no claim is made about Corollary 3.12, about the
-objections of Scholze–Stix, or about the abc conjecture.
+objections of Scholze–Stix, or about the abc inequality.
 
 ## The third report — the cost of each distinction (September 2026)
 
@@ -161,7 +161,7 @@ in the source are marked [S] and exact computations from them [P]; the two place
 the distinction being measured is the author's own rather than the source's — the
 weighting contrast of §8 and the two-adic cap of §12 — are marked as such in the text.
 No claim is made about [IUT III, Cor. 3.12], about the objections of Scholze–Stix, or
-about the abc conjecture.
+about the abc inequality.
 
 ## The reports, and which file is which
 
@@ -199,15 +199,12 @@ cd fourth-report
 python3 scripts/check_round3.py
 python3 scripts/check_normalization.py
 python3 scripts/check_crt_family.py
-python3 scripts/note3_quotes.py --sources YOUR_PDFS --manifest scripts/note3_quotes_manifest.json \
-        --paper paper/note3.tex
 ```
 
-The last checks the forty quoted passages against your own copies of the sources.  It
-verifies each source PDF's SHA-256 against the manifest and refuses to run on a different
-printing; it refuses if the manifest has drifted from the manuscript; and it reports a
-passage as **located**, which is a candidate found by a word-sequence match, not a verdict of
-verbatim identity.
+Each prints its tables and exits zero.  A quotation checker is included as
+`scripts/note3_quotes.py`; it needs your own copies of the cited printings, and what it
+reports is a **candidate located by a word-sequence match, not a verdict of verbatim
+identity** — every candidate still needs an eye on the source.
 
 ## The fifth report — two constants (September 2026)
 
@@ -234,7 +231,7 @@ python3 scripts/note3_quotes.py --sources YOUR_PDFS --manifest scripts/quotes_ma
         --paper paper/constant_comparison.tex
 ```
 
-The first prints the tables and exits zero, comparing its output against the frozen file
-beside it.  The second checks the six quoted passages against your own copies of the
-sources, pinned by SHA-256.  **These calculations do not determine a possible-image hull,
-and they adjudicate neither the theory nor the objection.**
+The first prints the tables and exits zero.  The second needs your own copies of the cited
+printings, and reports a **candidate located by a word-sequence match, not a verdict of
+verbatim identity**.  **These calculations do not determine a possible-image hull, and they
+adjudicate neither the theory nor the objection.**
