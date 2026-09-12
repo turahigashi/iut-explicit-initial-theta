@@ -1,156 +1,69 @@
 # Draft changes
 
-## 0.6.1 — 2026-09-09
+## 0.1.7 — 2026-09-12
 
-- Title blocks now print the **concept** DOI, which resolves to the latest version.
-  The fourth report printed the DOI of its version 1.0.0 on a document that is now
-  1.0.3, the third report printed its own 1.0.0, and the second named a "this version"
-  DOI that its later versions no longer are.  The fifth report's bibliography was
-  already correct: it cites the concept DOI marked "(all versions)" and names the
-  consulted version in words.
+**The source application of Theorems `t:cmp` and `t:fix0` is withdrawn.**
+Version 0.1.6 stated hypothesis (SA), listed the failure modes (F1)-(F5), and
+undertook to withdraw the application if one were established. A direct
+re-reading of IUT IV showed that v0.1.6 **did not establish an identification of
+the kind (F2) describes**. That undertaking is discharged here. **This is not a
+proof that (SA) is false**, nor that no other argument could establish its
+inclusion.
 
-## 0.6.0 — 2026-09-09
+Four locators, in the new subsection §7.1 "The withdrawal":
 
-- **Adds the fifth report**: *Two constants in the numerical estimates of inter-universal
-  Teichmüller theory IV — 12/(ℓ(ℓ+1)) and 12/ℓ²*.  It locates both constants in the
-  sources and compares them with exact rational arithmetic.  The comparison is between
-  two scalar expressions under a common set of inputs, stated as a hypothesis; it is not
-  a comparison of the two sources' full estimates, and no map identifying their supports,
-  positive terms or approximation conventions is given.
-- The fifth report cites Joshi, *Construction of Arithmetic Teichmüller Spaces IV*,
-  arXiv:2403.10430v2, p. 70, which puts the same rearrangement and the same slack term in
-  print; no priority is claimed for either.
-- **Corrects the fourth report, §7.**  It called the reciprocal-coefficient display of
-  Scholze–Stix "their (1.5)"; that display is unnumbered and follows (1.5).  It also
-  printed the relation as ≤, where the source states it in essential approximation and
-  the following sentence retains an error.  A sentence claiming that a reading with
-  different normalizations "is not available" is withdrawn: the coefficient agreeing does
-  not identify the full estimates, their positive or error terms, or their regions.
-- **Corrects the third report**: the injectivity proposition now states the hypotheses
-  e_g = 1, c_b > 0 and s > 0 that its proof uses, and the log-shell statement assumes
-  what the cited definition requires.
-- **Neutral naming for abc.**  Five disclaimers said "the abc conjecture is false"; they
-  now say "any conclusion about the abc inequality", which is also the wider disclaimer.
-  The Scholze–Stix title is a bibliographic fact and is unchanged.
-- Scripts shipped with the third and fourth reports describe their checks as an internal
-  check.  No computation changes; the frozen outputs are unchanged.
+- (W1) IUT IV, Prop. 1.2(iii) bounds `φ(p^λ·S)` with `S = (R_I)~`, and its
+  right-hand side is a multiple of `S`. The lattice `L = log_p(R_I^×)` occurs as
+  the *intermediate* term of Prop. 1.2(ii), namely
+  `φ(p^λ S) ⊆ p^{⌊λ−d_I−a_I⌋} L ⊆ p^{⌊λ−d_I−a_I⌋−b_I} S` — note `−b_I` lies
+  **outside** the floor — which Prop. 1.4(iii) also states. The region compared
+  in Theorem 5 is `L_t`, i.e. `L` itself, not an input `p^λ S`.
+- (W2) Prop. 1.2 defines `φ` as inducing an automorphism of `L`, so the admitted
+  automorphisms carry `L` onto itself.
+- (W3) Step (v) states that (Ind1),(Ind2) "are taken into account by the
+  arbitrary nature of the automorphism φ". We record this as **the source's own
+  treatment**; we do **not** identify the typed component transport
+  `E_{σ⁻¹t} → E_t` with an automorphism `φ: E_t → E_t`, and do not claim to have
+  shown independently that the treatment covers it.
+- (W4) The same proof calls λ "asymmetric with respect to the choice of i† in
+  S±_{j+1}", symmetrizes, and says this "does not affect the computation of the
+  upper bound" — a statement about the **weighted average**, not about an
+  individual tuple. Step (v)'s containment is stated for
+  `p^{⌊λ⌋−|I|}·2^{−|I|}·L_t` times a nonpositive power of `p`; since
+  `d_I + a_I = |I|` here, that exponent equals `⌊λ−d_I−a_I⌋` (2 at `j=1`, 13 at
+  `j=2`), so at `k=0` the module named **is** the `p²L_t` of §6.
 
-## 0.5.0 — 2026-09-08
+New in §7.1: **Proposition 7** — with `m = ⌊λ−d_I−a_I⌋` and **`m ≥ 1`** (both
+tuples satisfy it: `m = 2`, `13`), `φ(p^λ S) ⊆ p^m L` and `p^m L ⊊ L` hold
+simultaneously, so `L ⊄ p^m L` is not a counterexample to the first. Hence **the
+lattice noncontainments and numerical comparisons recorded in §6 do not, by
+themselves, refute the fixed-input estimates of IUT IV.** It cites only
+Prop. 1.2(ii)/1.4(iii) and Prop. 1.2's definition of φ — it does **not** depend
+on (W3) or (W4). Remark 9 states its scope: **not** a no-go result for explicit
+counterexamples to IUT, not a proof that (SA) is false, not a statement about
+IUT III Cor. 3.12 or about abc.
 
-- **Citations added.**  The first report (both versions) and the second report now
-  cite Zhou, *The inter-universal Teichmüller theory and new Diophantine results over
-  the rational numbers. I*, arXiv:2503.14510v1, for constructions of mu_6-initial
-  Theta-data over Q, and Dupuy--Hilado §2.10 for the curve 11a1, and say how those
-  rational-moduli constructions differ from the mixed-place profile considered here.
-  Dupuy--Hilado is now cited by its exact version and date.
-- **An overstatement in two abstracts is withdrawn.**  Both said the arithmetic "is
-  reproduced by a short script".  Establishing the data also uses a separate
-  exhaustive power-freeness certificate, in the second report an exhaustive sieve in
-  C++; the abstracts now point to the reproduction section instead.
-- **The title blocks are made coherent.**  The second report printed two different
-  version numbers, and all three documents printed the build date rather than a
-  release date.
-- The scripts shipped with the second report describe their own checks as an internal
-  check rather than an external review; no computation changes and the frozen output
-  is unchanged.
-- No numerical value, theorem, proof or verbatim quotation changes.
+Retained unchanged: Theorem 1 and §§3-4, which never used (SA); and the rational
+calculations, whose constants `d_I = 104/105`, `a_I = 106/105`,
+`b_I = −106/105`, `λ = 29/7`, `⌊λ−d_I−a_I⌋ = 2` were rechecked against IUT IV,
+Props. 1.1, 1.2, 1.4 and found correct. What failed is the identification of
+which source quantity they compare with. (F1)-(F5) and §8's question are kept as
+the record of the reading that did not hold, with §8's second question no longer
+pressed.
 
-## 0.4.2 — 2026-09-08
+§5 now opens by saying that its permutation identities concern the chosen tensor
+model and do not assert stability of the actual possible-image family, membership
+of the proposed seed, or compatibility with the source's hull evaluation, and
+that `T_σ` is not identified with (Ind1) as a whole. Step (v) is cited as
+invoking Prop. 1.4(iii); the "weighted average" quotation is from Step (iv).
 
-- Corrects a statement about process, not about mathematics.  The fourth report and
-  the two scripts shipped with it described the checks that produced several of their
-  corrections as `external review`.  No external review took place: the checks are the
-  author's own, carried out with the help of language models, and are now described as
-  an internal check.  The same wording is being corrected in the second and third
-  reports and in the remaining scripts.
-- No mathematical statement, number, quotation, locator or manifest entry changes.
-  The quotation checker still reports 40 quotations, 25 located in the cited source,
-  0 not located there.
-
-## 0.4.1 — 2026-09-08
-
-- **The fourth report now cites Scholze–Stix.**  Its Proposition 10 names the ratio
-  `chi = 12/(l(l+1))` between the stage-one and the averaged procession-normalized
-  coefficient of [IUT IV, Thm. 1.10].  That is exactly the factor on which [SS]'s final
-  inequality (1.5) turns, and [SS] reaches it by averaging with the same coefficient the
-  source prints.  The report derived `chi` from the source's own two numbers and cited
-  no one; a reader who knows [SS] would see the coincidence at once, so the citation
-  belonged there.  §7 now records it, together with the fact that the source's own
-  corresponding constant is a **different** one — [IUT IV] uses `12/l^2`, which is larger,
-  with slack `1/(2 l^2)`; the source bounds where [SS] computes exactly.
-- **This records that the averaging coefficient is common to both sides and the final
-  constant is not.  It decides nothing about [IUT III, Cor. 3.12] or about the objection
-  of [SS].**
-- No other statement of the fourth report changes; the mathematics is unchanged.
-
-## 0.4.0 — 2026-09-08
-
-- Adds the **fourth report**, `fourth-report/`: what the source states about split bad
-  primes and the tuple structure, and what follows.  DOI 10.5281/zenodo.22648945.
-- **A blanket guarantee is withdrawn.**  An earlier draft of the fourth report claimed that
-  no statement in it was conditional on a reading of the source.  It now says that every
-  assertion is quoted or proved, that S(R) does not imply R, and states the scope of each
-  proposition — a fixed nonarchimedean tuple, a fixed stage.
-- Proposition 9 of the fourth report is proved for the holomorphic hull of
-  [IUT III, Rem. 3.9.5(i)] **in both of its branches**; an earlier draft identified that hull
-  with the module generated by the region, which does not hold in general.
-- Corrects three statements in already-published text that claimed more scrutiny than took
-  place: the second and third reports said findings came from "external review", when the
-  checking was the author's own, carried out with language models as the Disclosure sections
-  state.  The word "external" is removed; the findings and the mathematics are unchanged.
-- The companion draft `paper/paper.tex` now says what it is: the expanded version of the
-  first report, which is the version of record, with its unconditional sections
-  distinguished from those that assume (SA).  Its citation label is `[First-full]`
-  throughout, replacing `[Full]` and `[FullPaper]`.
-- README gains a table mapping each report to its file and DOI.
-
-## 0.3.0 — 2026-09-07
-
-- Adds the **third report**: what each separation drawn in [IUT IV, §1] is worth, in
-  exact rationals or exact multiples of log p, at the data of the first two reports and
-  at named curves from the literature.  DOI 10.5281/zenodo.22646137.
-- `third-report/scripts/costs.py` computes twelve tables from the standard library and
-  asserts each conclusion.  Its printed output is held by a frozen presentation
-  contract, so a row that changes or vanishes fails rather than passing quietly.
-- `third-report/scripts/note6_regression_gate.py` holds **31 named single-token
-  defects**, every one of them found by external review and none of them noticed by the
-  script as first written; the shipped script rejects all 31.  An absent mutation target
-  counts as a failure, never as a silent pass.
-- Two attributions corrected in the third report after review: the contrast between
-  weighting by local degrees and by ramification indices (§8) and the cap at
-  8 = v_2(256) in the two-adic contribution (§12) are this paper's, not the source's.
-  The abstract's claim that every distinction measured is one the source itself draws
-  now names §8 as its exception.
-- **The first and second reports' files are unchanged.**
-
-## 0.2.1 — 2026-09-07
-
-- Corrects one mathematical error in the second report, §9: the ramification indices
-  printed for Dupuy–Hilado's curves 11a1 and 37a1 carried over the torsion level 105
-  of *this* paper's datum, which those curves do not have.  Since [IUT I, Def. 3.1(b)]
-  makes the 2·3-torsion rational over F, at the reference level ℓ = 7 the field K
-  contains E[42]; both primes are prime to 42 with Tate orders 5 and 1, so e_b ≥ 42.
-  **The exclusions those rows state are unchanged** (42 > 9 and 42 > 35), and the
-  datum, its tables, Proposition 2, the fourteen candidate levels and the Lean
-  development are untouched.
-- Aligns the remaining descriptions of the 89th-power-free certificate with the fact
-  that it ships and runs.
-- Zenodo 10.5281/zenodo.22634210.
-
-## 0.2.0 — 2026-09-07
-
-- Adds the **second report**: an initial Θ-datum over the imaginary quadratic field
-  Q(i) — the curve y² = x(x−1)(x−a) with a = (10+3i)²⁹ and ℓ = 7, at which 109 splits
-  into one multiplicative and one good place — and numerical values of the local
-  quantities of [IUT IV, Thm 1.10] and [Prop. 1.4(iii)] at that input.
-  DOI 10.5281/zenodo.22601335.
-- Fourteen Lean files (Init only): 263 stated theorems, 768 declarations, 565
-  axiom-free, no `sorryAx`, no `Classical.choice`; audit log included.  Seven of them
-  are pinned by SHA-256 to the bytes released with the first report.
-- Adds an executable 89th-power-free certificate for the fourteen candidate levels,
-  with its own negative control (`--self-test`).
-- The first report's files are unchanged.
-
+**Second report 1.0.5 and fourth report 1.0.4** carry a forward reference only.
+Both display the values `8/7` and `88/7`; each now states that the first report
+has withdrawn that source application in its v0.1.7, points at [First, §7] for
+the locators and the scope-limiting proposition, and records that **no statement
+of that report used the application**. No numerical value changes and nothing in
+either report is withdrawn. The third report (`note6`) and the fifth
+(`constant_comparison`) need no note.
 
 ## 0.1.2-draft — 2026-09-06
 
@@ -220,7 +133,7 @@ Version DOI 10.5281/zenodo.22544085.  Concept DOI 10.5281/zenodo.22537342 resolv
 to the latest version.
 
 - ★Added the two references we had missed at the first deposit, and a Remark on the
-  relation.  ★The first two drafts of that Remark were wrong; three independent audits
+  relation.  ★The first two drafts of that Remark were wrong; three internal checks
   found six errors, each confirmed verbatim against the sources.
 
   Round 1 (four errors):

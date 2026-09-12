@@ -32,7 +32,7 @@
 at a split prime}
 \author{Toshihisa Urahigashi\\
 \small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 0.1.6 --- 8 September 2026\\[3pt]
+\date{Version 0.1.7 --- 12 September 2026\\[3pt]
 \small DOI \href{https://doi.org/10.5281/zenodo.22537342}{\texttt{10.5281/zenodo.22537342}} (all versions)\qquad ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}}
 
 \begin{document}
@@ -59,17 +59,26 @@ configuration be removed by a different choice of $\Vbad_{\mathrm{mod}}$: the
 additional good-reduction hypothesis of \cite[Thm.~1.10]{IUT4} does not permit an
 actual bad place outside $2\ell$ to be treated as chosen-good.
 
-Under one hypothesis \SA{} about the source, isolated in \S\ref{s:sa} and
-discussed in \S\ref{s:fals}, the upper bound obtained in
-\cite[Thm.~1.10, proof, Step~(v)]{IUT4} by applying \cite[Prop.~1.2(iii)]{IUT4} to
-a fixed target component is incompatible with the region it is applied to, with
-margin $8/7$ at $j=1$ and $88/7$ at $j=2$.  We state \SA{} separately, list the
-ways it can fail, and undertake to withdraw that application if the reading is
-shown to be wrong; we would regard such a demonstration as the more valuable
-outcome, since it would make explicit what the collection of possible images is
-at a tuple of mixed reduction type.
+Version~0.1.6 proposed, under one hypothesis \SA{} about the source, a
+conditional application of the local estimate in
+\cite[Thm.~1.10, proof, Step~(v)]{IUT4}, which invokes
+\cite[Prop.~1.4(iii)]{IUT4}; the same numerical upper expression is obtained in
+the present range from \cite[Prop.~1.2(iii)]{IUT4}.  It undertook to withdraw that
+application if the reading were shown to be wrong.  A direct audit of
+\cite{IUT4} has since shown that version~0.1.6 did not establish an
+identification of the kind \textup{(F2)} of \S\ref{s:fals} describes, and \textbf{that
+source application is withdrawn in the present version}.  This is not a proof
+that \SA{} is false, nor that no other argument could establish its inclusion.  What is retained is the exact rational calculation, every constant of
+which we have checked against \cite[Prop.~1.1, Prop.~1.2, Prop.~1.4]{IUT4},
+together with a record of the adapter premise that was not justified and the
+locators that show this (\S\ref{s:fals}).  We regard identifying that gap as the
+more valuable outcome, as version~0.1.6 undertook to.  The audit also yields a \emph{limited}
+result (Proposition~\ref{p:nogo}): the lattice noncontainments and numerical
+comparisons recorded here do not, by themselves, refute the fixed-input estimates
+of \cite{IUT4}.  Its scope is stated with it.
 
-We ask how the admitted configuration is treated (Question~\ref{q:hyp}).
+We ask that the admitted configuration of \S\ref{s:datum} be checked
+(Question~\ref{q:hyp}).
 The exact computations and the separate power-freeness certificate are
 described in Section~\ref{s:repro}.
 \end{abstract}
@@ -96,22 +105,31 @@ place above the selected rational prime.
 
 This note contributes one,
 constructed so that every condition of \cite[Def.~3.1]{IUT1} can be checked
-individually, and then asks how a configuration it exhibits is handled.
+individually, and records a withdrawn source application separately from the
+construction.
 
 The datum is stated in \S\ref{s:datum} and verified condition by condition.
 \S\ref{s:dich} shows that the configuration it exhibits is not incidental, in two
 senses: it is forced by the shape of \cite[Def.~3.1(e)]{IUT1}
 (Proposition~\ref{p:dich}), and for this curve it cannot be removed by choosing
 $\Vbad_{\mathrm{mod}}$ differently (Proposition~\ref{p:unavoid},
-Remark~\ref{r:cost}).  \S\S\ref{s:sa}--\ref{s:cmp} draw a consequence, conditional
-on one hypothesis about the source which we isolate and state separately;
-\S\S\ref{s:fals}--\ref{s:ask} say what would falsify it and what we ask.
+Remark~\ref{r:cost}).  \S\S\ref{s:sa}--\ref{s:cmp} state the source-adapter hypothesis \SA{} and the
+exact local comparison that version~0.1.6 drew from it.  \S\ref{s:fals} records
+that a direct re-reading of \cite{IUT4} has since shown that version~0.1.6 did
+not establish an identification of the kind \textup{(F2)} describes, withdraws
+the source application, and states what survives;
+\S\ref{s:ask} says what we ask now.
 \S\ref{s:repro} records the computations.
 
-Our purpose is to have the question answered.  We do not argue that the theory
-fails; we were unable to locate the treatment of this configuration, and we would
-regard being shown it as the useful outcome.  Two features of the situation should
-be said at once.
+\emph{We proposed a reading of the source and asked to be told whether it was
+right.  Re-reading the source answered that question against our own reading.
+What follows is that correction.}
+
+We do not argue that the theory fails.  The source question raised in
+version~0.1.6 is not pursued further here: \S\ref{s:withdrawn} shows that that
+version's own application of the source was not justified, and withdraws it.  Our remaining purpose is to have the explicit datum of
+\S\ref{s:datum} independently checked against \cite[Def.~3.1]{IUT1}
+(Question~\ref{q:hyp}).  Two features of the situation should be said at once.
 
 \begin{itemize}[itemsep=2pt]
 \item The configuration cannot arise when $\Fmod=\mathbb{Q}$
@@ -138,14 +156,22 @@ of the report on the March 2018 discussions.
 \noindent\textbf{Claimed.}  (i) The datum of \S\ref{s:datum} is an initial
 $\Theta$-datum with a mixed local profile above $211$.  This is independent of \SA{}; the arithmetic
 in it is machine-checkable, and the remaining ingredients are standard facts and
-cited constructions, identified as such in \S\ref{s:datum}.  (ii) \emph{Assuming} \SA{}, the local
-comparison of \S\ref{s:cmp} fails, with margin $8/7$.
+cited constructions, identified as such in \S\ref{s:datum}.  (ii) The exact
+rational comparison of \S\ref{s:cmp} is correct arithmetic, and its constants
+agree with \cite[Prop.~1.1, Prop.~1.2, Prop.~1.4]{IUT4}.  \SA{} is \emph{not}
+asserted, and the reading of that comparison as an application to \cite{IUT4} is
+\textbf{withdrawn} (\S\ref{s:fals}).  (iii) That withdrawal is not merely a
+retraction: Proposition~\ref{p:nogo} shows, from the source, that the
+comparisons of \S\ref{s:cmp} do not by themselves refute the fixed-input
+estimates of \cite[Prop.~1.2, Prop.~1.4]{IUT4}.  Its scope is stated with it; in
+particular \SA{} is not shown to be false.
 
 \smallskip\noindent\textbf{Not claimed.}  Any conclusion about the $abc$ inequality;
 that the lower bound of \cite[Cor.~3.12]{IUT3} is false; that the global
 inequality of \cite[Thm.~1.10]{IUT4} is false; that the objections of \cite{SS}
 are correct or the responses of \cite{Rpt} incorrect; that the estimate cannot be
-repaired.  What is at issue is one application of one local bound.
+repaired.  What was at issue in version~0.1.6 was one application of one local
+bound; that application is withdrawn in \S\ref{s:withdrawn}.
 
 \section{The datum}\label{s:datum}
 
@@ -402,12 +428,17 @@ the multiplicative places of odd residue characteristic and does not impose
 a splitting restriction.  Its chosen-good places may still have bad reduction.
 The additional good-reduction hypothesis of \cite[Thm.~1.10]{IUT4} removes
 that freedom outside $2\ell$: every actual bad place there must be selected.
-Thus omitting $v_\pi$ from the present datum would prevent that IV application.
+\textup{[P]} Thus omitting $v_\pi$ from the present datum would prevent that IV
+application.
 
-For this admitted mixed profile, how does the fixed-tuple estimate in Step~(v)
-apply to the possible-image hull after the specified factor transports?
-If a further restriction on the data is required, which stated hypothesis
-imposes it, and which applications remain within its scope?
+\emph{We ask:} does the datum of Theorem~\ref{t:datum} satisfy all of the
+conditions \textup{(a)--(f)} of \cite[Def.~3.1]{IUT1}, including the claimed
+mixed profile above $211$?  If not, which condition fails?
+
+\textup{[P]} Version~0.1.6 also asked here how the fixed-tuple estimate of
+Step~(v) applies to the possible-image hull after the specified factor
+transports.  That question belonged to the source application withdrawn in
+\S\ref{s:withdrawn} and is not asked here.
 \end{question}
 
 \begin{remark}[related work, added after the first deposit]\label{r:lana}
@@ -432,12 +463,13 @@ that this is reflected in the log-volume computation for the hull in
 
 \textup{[S]} \cite[\S10.4]{LANA} continues that the hull computation ``is made
 at each place individually, but the effects of $\Ind1$, $\Ind2$ and $\Ind3$ cannot
-be detected locally''.  \textup{[P]} This does not contradict
-Theorem~\ref{t:cmp}, which is conditional: if that reading is correct then \SA{}
-fails, and what is withdrawn is the source application, not the rational
-calculation.  Nor have we identified the regions, admitted transports, hull and
-normalized readout of \cite{LANA} with the fixed mixed tensor component used here;
-without that identification the two statements are not yet about the same objects.
+be detected locally''.  \textup{[P]} Version~0.1.6 observed that if this reading is correct then \SA{}
+fails, and that what would be withdrawn is the source application, not the
+rational calculation.  The present version withdraws the source application for
+the separate reasons recorded in \S\ref{s:withdrawn}.  This does \emph{not}
+establish the local-indeterminacy assertion of \cite{LANA}, the identification
+required in \textup{(F5)}, or the falsity of \SA{}; that identification we still
+have not carried out.
 We record the cross-check as \textup{(F5)} in \S\ref{s:fals}.
 
 \textup{[S]} One point of contact is exact.  The LGP element of
@@ -474,11 +506,20 @@ that it does not appear in \cite{IUT1,IUT2,IUT3,IUT4}.
 \end{remark}
 
 The selection and tuple statements preceding this question are independent of
-\SA{}.  Our proposed interpretation of the comparison itself is conditional
-on \SA{}, as specified next.  We do not infer an independent probability for
+\SA{}.  Our proposed interpretation of the comparison itself was conditional
+on \SA{}, stated next and \textbf{withdrawn in \S\ref{s:withdrawn}}.  We do not infer an independent probability for
 the splitting of bad primes from a density theorem.
 
 \section{The hypothesis \texorpdfstring{\SA}{(SA)}}\label{s:sa}
+
+\textup{[P]} \emph{This section records the attempted source application of
+version~0.1.6, whose conclusion is withdrawn in \S\ref{s:withdrawn}.}  The
+permutation identities below are statements about the explicitly chosen tensor
+model.  They do \emph{not} assert stability of the actual possible-image family,
+membership of the proposed seed, or compatibility with the source's hull
+evaluation; those identifications belong to the withdrawn reading and are not
+established here.  In particular $T_\sigma$ denotes the pure permutation of
+positions defined below, and is not identified with $\Ind1$ as a whole.
 
 Fix one lattice of Theorem~\ref{t:datum}, a column $(n,\circ)$,
 a stage $j$ and $p=211$.  Write $E=I^{\mathbb{Q}}(S^\pm_{j+1};
@@ -494,7 +535,8 @@ $\log({}^AF_{v_{\mathbb{Q}}})=\bigotimes_{\alpha\in A}\log({}^\alpha F_{v_{\math
 summands are indexed by tuples $t\in\{\mathrm{g},\mathrm{b}\}^{\,j+1}$; $\Ind1$
 permutes the outer label factors, while $\Ind2$ acts within the
 place-indexed factors and does not freely permute the places.
-Writing $\mathrm{Peel}_{\alpha,v}=\bigoplus_{t\,:\,t_\alpha=v}V_t$, a whole-factor
+Write $E_t$ for the $t$-summand of the chosen tensor model.
+Writing $\mathrm{Peel}_{\alpha,v}=\bigoplus_{t\,:\,t_\alpha=v}E_t$, a whole-factor
 permutation satisfies $T_\sigma(\mathrm{Peel}_{\alpha,v})
 =\mathrm{Peel}_{\sigma(\alpha),v}$: \emph{the place is unchanged and only the
 position moves}.  In particular a coefficient is never re-created at the target
@@ -513,8 +555,10 @@ slot.
 \]
 \end{hypothesis}
 
-\SA{} is a \emph{reading} of the source, not a computation.  Its proposed
-derivation has four steps.  The cited constructions are \textup{[S]};
+\SA{} is a \emph{reading} of the source, not a computation, and it is
+\textbf{withdrawn in \S\ref{s:withdrawn}}.  It is retained in full here as the
+record of the reading that failed, so that the point of failure can be located.
+Its proposed derivation has four steps.  The cited constructions are \textup{[S]};
 their identification with the admitted regions and the comparison target
 in these steps remains \textup{[H]}.
 \begin{enumerate}[label=(SA\arabic*),leftmargin=3.1em,itemsep=1pt]
@@ -588,24 +632,29 @@ $\{v_i\}_{i\in S^\pm_{j+1}}$, takes ``$i^\dagger$'' to be $j\in S^\pm_{j+1}$ ---
 ``$\ord(-)$'' of the element $\underline{\underline q}_{\,\underline v_j}^{\,j^2}$
 if $\underline v_j\in\Vbad$,
 \end{quote}
-and then computes ``the weighted average, over possible collections
-$\{v_i\}_{i\in S^\pm_{j+1}}$, of these estimates''.  So $\lambda$ is determined by
+and Step~(iv) of the same proof computes ``the weighted average [\dots], over
+possible collections $\{v_i\}_{i\in S^\pm_{j+1}}$, of these estimates''.  So $\lambda$ is determined by
 the distinguished slot alone, and the average runs over tuples.  For
 $t=(\mathrm{g},\mathrm{b})$ with $j=1$ the distinguished slot is $t_1=\mathrm{b}$,
 whence $\lambda=\ord_{211}(\underline{\underline q}_{\mathrm{b}}^{\,1})=29/7$; for
 $j=2$ it is $4\cdot29/7=116/7$.  Note the exponent $j^2$: taking $\lambda$ to be
 $\ord(\underline{\underline q})$ alone would omit it.
 
-\begin{theorem}\label{t:cmp}
-\textup{[P], conditional on [H].} Assume \SA{}.  For \eqref{e:datum} at $j=1$ and $t=(\mathrm{g},\mathrm{b})$, in
+\begin{theorem}[exact comparison; its source application withdrawn in
+version~0.1.7]\label{t:cmp}
+\textup{[P]} For \eqref{e:datum} at $j=1$ and $t=(\mathrm{g},\mathrm{b})$, in
 the normalization by $\log211$:
 \[
  \underbrace{-\lambda+d_I+1=-\tfrac{29}{7}+\tfrac{104}{105}+1=-\tfrac{226}{105}}
-   _{\text{bound from \cite[Prop.~1.2(iii)]{IUT4}}}
+   _{\text{normalized log-volume of the right-hand side of \cite[Prop.~1.2(iii)]{IUT4}}}
  \qquad\text{versus}\qquad
  \underbrace{-\tfrac{106}{105}}_{\text{hull of }L_t},
  \qquad\text{margin }\ \tfrac{8}{7}>0 .
 \]
+\textup{[H], withdrawn.}  Version~0.1.6 read this, under \SA{}, as an
+incompatibility with the bound of \cite[Thm.~1.10, proof, Step~(v)]{IUT4}.
+\textbf{That reading is withdrawn}; see \S\ref{s:fals}.  The two numbers above
+are not asserted to be values of one source quantity.
 \end{theorem}
 
 \begin{remark}[where the bound comes from, and why no error terms occur]
@@ -618,8 +667,9 @@ $e_i\le p-2$, then $a_i=1/e_i=-b_i$''.
 
 The bound used in Theorem~\ref{t:cmp} is \cite[Prop.~1.2(iii)]{IUT4}, stated
 \emph{precisely} under the hypothesis of the present situation: ``Suppose that
-$p>2$, and that $e_i\le p-2$ for all $i\in I$.  Then
-$\phi(p^\lambda\cdot(R_I)^{\sim})\subseteq p^{\lambda-d_I-1}\cdot(R_I)^{\sim}$.''
+$p>2$, and that $e_i\le p-2$ for all $i\in I$.  Then we have:
+$\phi(p^\lambda\cdot(R_I)^{\sim})\subseteq p^{\lambda-d_I-1}\cdot(R_I)^{\sim}$
+for any $\lambda\in e_i^{-1}\cdot\mathbb Z$, $i\in I$.''
 Here $\lambda=29/7=435/105$ also belongs to
 $e_{i^\dagger}^{-1}\mathbb Z$, as required for the chosen slot.
 Every $e_i\le105\le209=p-2$ here, so it applies directly and the corresponding
@@ -634,20 +684,28 @@ inequality $d_I+a_I\ge|I|$ of \cite[Prop.~1.4(iii)]{IUT4}.
 \end{remark}
 
 \begin{remark}[the ``nonpositive integer power'']
-Enlarging the intermediate container is permitted, but the accompanying loss of
+Enlarging the intermediate module is permitted, but the accompanying loss of
 volume must then be carried into the subsequent bound.  Here
 $\lfloor\lambda\rfloor-|I|=\lfloor29/7\rfloor-2=2$.
 Writing $C(L_t)$ for the terminal fractional-ideal hull, hull formation
 commutes with multiplication by $p^2$, so $C(p^2L_t)=p^2C(L_t)$.
 This is a proper subideal of the nonzero fractional ideal $C(L_t)$.
-Thus the intermediate container and its hull cannot contain the seed $L_t$;
-this conclusion concerns hulls as well as the lattice inclusion.
+Thus this particular intermediate module $p^2L_t$ and its hull cannot contain
+the seed $L_t$; the conclusion concerns hulls as well as the lattice inclusion.
+We do \emph{not} assert that $p^2L_t$ is the final container of the actual union
+of possible images.  Nor do we assert the converse: \S\ref{s:withdrawn},
+\textup{(W4)}, records that the module for which
+\cite[Thm.~1.10, proof, Step~(v)]{IUT4} states its containment is
+$p^{\lfloor\lambda\rfloor-|I|}\cdot2^{-|I|}\cdot L_t$ times a nonpositive power
+of $p$, which at $j=1$ is $p^{2-k}L_t$ and so \emph{may} be $p^2L_t$.  What does
+not follow either way is that $L_t$ itself lies in it.
 \end{remark}
 
-\begin{remark}[what is not refuted]
+\begin{remark}[what is not in question]
 \cite[Prop.~1.4]{IUT4} itself is not in question: its estimate for the input
-regions it is stated for stands.  At issue is its application to the fixed target
-component of the union of possible images.
+regions it is stated for stands.  The withdrawn application concerned its use
+against the fixed target component of the union of possible images; see
+\S\ref{s:withdrawn}.
 \end{remark}
 
 \subsection*{A variant with the label $0$ fixed}\label{s:fix0}
@@ -656,9 +714,9 @@ One might ask whether fixing label $0$ in every stage eliminates the transport.
 That label is distinct from the slot $j$ designated in Step~(v) when $j\ge1$.
 The same datum provides a test of this proposed restriction.
 
-\begin{theorem}\label{t:fix0}
-\textup{[P], conditional on [H].} Assume \SA{} with the indicated whole
-transposition still admitted.  For the same datum \eqref{e:datum}, take $j=2$, source tuple
+\begin{theorem}[exact comparison; its source application withdrawn in
+version~0.1.7]\label{t:fix0}
+\textup{[P]} For the same datum \eqref{e:datum}, take $j=2$, source tuple
 $(\mathrm{b},\mathrm{b},\mathrm{g})$, target $t=(\mathrm{b},\mathrm{g},\mathrm{b})$
 and $\sigma=(1\,2)$, which \emph{fixes the label $0$}.  Here
 $\lambda=\ord(\underline{\underline q}^{\,j^2})=4\cdot\tfrac{29}{7}=\tfrac{116}{7}$,
@@ -668,6 +726,9 @@ and in the same normalization
  \qquad \text{hull of }L_t=-\tfrac{107}{105},
  \qquad\text{margin }\tfrac{88}{7}>0 .
 \]
+\textup{[H], withdrawn.}  As in Theorem~\ref{t:cmp}, the reading of this
+comparison as an application to \cite{IUT4} is \textbf{withdrawn}
+(\S\ref{s:fals}).
 \end{theorem}
 
 Here $d_I=\tfrac{208}{105}$, $a_I=\tfrac{107}{105}$ and $d_I+a_I=3=|I|$.  In
@@ -691,13 +752,18 @@ other factors.  For this seed mechanism the relevant issue is whether the
 allowed orbit of $j$ reaches a good, or sufficiently shallow, source factor.
 \end{remark}
 
-\section{What would falsify this}\label{s:fals}
+\section{How the reading could fail, and the withdrawal}\label{s:fals}
 
 Theorem~\ref{t:datum} stands or falls on its arithmetic and the quoted
 conditions; if a condition of \cite[Def.~3.1]{IUT1} fails, we ask that it
-be identified.  The conditional numerical implication is distinct from its
-proposed source application.  The latter may fail at the following points;
-these are not asserted to exhaust all possible readings.
+be identified.  The exact numerical comparison is distinct from its proposed
+source application.  Version~0.1.6 listed the points at which the latter could
+fail, reproduced below unchanged, and undertook to withdraw the application if
+one of them were established.  \textbf{The present audit shows that
+version~0.1.6 did not establish an identification of the kind \textup{(F2)}
+describes; we therefore withdraw its source application (\S\ref{s:withdrawn}).  This is not
+a proof that \SA{} is false, nor of the differences \textup{(F2)} enumerates.}
+The list was not asserted to exhaust all possible readings.
 \begin{enumerate}[label=(F\arabic*),leftmargin=3.0em,itemsep=2pt]
 \item The particular whole transposition reaching the good factor is not
  admitted by $\Ind1$, contrary to (SA2).  The relevant issue is the orbit
@@ -744,10 +810,135 @@ identify it with the separate objection answered in \cite[\S12]{Rpt}, or
 with the argument in \cite{SS}; those comparisons require their own
 source and normalization analysis.  A demonstration that our source
 application fails at any of these points would settle that application.
-\emph{We would withdraw the source application of
+Version~0.1.6 undertook: \emph{we would withdraw the source application of
 Theorems~\ref{t:cmp} and~\ref{t:fix0}, and would regard the demonstration
-as the more valuable outcome}.  The conditional rational calculation
-would remain, with its unsuccessful source-adapter premise identified.
+as the more valuable outcome}; the rational calculation would remain, with its
+unsuccessful source-adapter premise identified.  \textbf{That undertaking is
+discharged in \S\ref{s:withdrawn}.}
+
+\subsection{The withdrawal}\label{s:withdrawn}
+
+\textup{[S]/[P]} We audited the application directly against \cite{IUT4}.  Four
+locators show that it was not justified, an unresolved identification of the
+kind \textup{(F2)} describes.  Each separates what the source states from what we
+infer.  They do \emph{not} prove \SA{} false.
+
+\begin{enumerate}[label=(W\arabic*),leftmargin=3.2em,itemsep=3pt]
+\item \emph{The bound is stated for a different input.}
+ Write $S=(R_I)^{\sim}$ and $L=\log_p(R_I^{\times})$.
+ \cite[Prop.~1.2(iii)]{IUT4} bounds $\phi(p^{\lambda}S)$, and its right-hand side
+ is a scalar multiple of $S$; the lattice $L$ occurs as the \emph{intermediate}
+ term of \cite[Prop.~1.2(ii)]{IUT4}, namely in
+ $\phi(p^{\lambda}S)\subseteq p^{\lfloor\lambda-d_I-a_I\rfloor}L
+ \subseteq p^{\lfloor\lambda-d_I-a_I\rfloor-b_I}S$ --- note that $-b_I$ lies 
+ \emph{outside} the floor --- which
+ \cite[Prop.~1.4(iii)]{IUT4} also states.  The region compared against the bound
+ in Theorem~\ref{t:cmp} is $L_t$, that is $L$ itself, not an input of the form
+ $p^{\lambda}S$.  Comparing the log-volume of $L_t$ with a bound for
+ $\phi(p^{\lambda}S)$ does not, by itself, contradict the fixed-input estimate.
+\item \emph{The admitted automorphisms preserve $L_t$.}
+ \cite[Prop.~1.2]{IUT4} defines $\phi$ as an automorphism of
+ $\log_p(R_I^{\times})\otimes\mathbb{Q}_p$ ``that induces an automorphism of the
+ submodule $\log_p(R_I^{\times})$''.  Any such $\phi$ therefore carries
+ $\log_p(R_I^{\times})$ onto itself.  A lattice statement of the form
+ $L_t\not\subseteq p^2L_t$ then follows from $p^2L_t\subsetneq L_t$ alone; note
+ that its log-volume gap is $2$ after division by $\log p$, not the $8/7$ of
+ Theorem~\ref{t:cmp}, which is
+ the $(R_I)^{\sim}$-side comparison including the floor slack --- a further sign
+ that the two sides were not comparing one source quantity.
+\item \emph{The source attributes $\Ind1$ and $\Ind2$ to the arbitrariness of
+ $\phi$.}  \cite[Thm.~1.10, proof, Step~(v)]{IUT4} states: ``the indeterminacies
+ (Ind1) and (Ind2) are taken into account by the arbitrary nature of the
+ automorphism `$\phi$' ''.  We record this as the source's own treatment.  We do
+ \emph{not} identify the typed component transport $E_{\sigma^{-1}t}\to E_t$
+ with an automorphism $\phi:E_t\to E_t$ --- that type distinction is the one
+ already recorded in \textup{(F2)} --- and we do \emph{not} claim here to have
+ shown independently that this treatment covers that transport.  What follows
+ for us is only that version~0.1.6 exhibited no effect of $\Ind1$ lying outside
+ the range the source has already quantified over.
+\item \emph{The source's symmetrization, and the intermediate module it names.}
+ \cite[Thm.~1.10, proof]{IUT4} observes that ``$\lambda$'' is ``asymmetric with
+ respect to the choice of `$i^{\dagger}\in I$' in $S^{\pm}_{j+1}$'', symmetrizes
+ over that choice, and states that after passing to \emph{weighted averages} the
+ symmetrization ``does not affect the computation of the upper bound''.  That is
+ the whole of what we quote: it concerns the averaged upper bound, not the
+ evaluation at an individual tuple.
+
+ \emph{The module Step~(v) names.}  Step~(v) states its containment for
+ ``$p^{\lfloor\lambda\rfloor-|I|}\cdot2^{-|I|}\cdot\log_p(R_I^{\times})$''
+ multiplied by a suitable nonpositive integer power of $p_{v_{\mathbb{Q}}}$ ---
+ note the \emph{floor} on $\lambda$.  Since $d_I+a_I=|I|$ here
+ (Remark~\ref{r:tame}), $\lfloor\lambda\rfloor-|I|$ and
+ $\lfloor\lambda-d_I-a_I\rfloor$ agree: both are $2$ at $j=1$ and $13$ at $j=2$.
+ At $j=1$ the factor $2^{-|I|}$ is a unit at $p=211$, so that module is
+ $p^{2-k}L_t$ for some $k\ge0$, and at $k=0$ it \emph{is} the $p^2L_t$ of
+ \S\ref{s:cmp}.  That the module $p^2L_t$ occurs in the source is one thing;
+ that the source asserts $L_t$ itself to be contained in it is another, and is
+ not asserted.
+\end{enumerate}
+
+\begin{proposition}[the recorded comparisons do not refute the fixed-input
+estimates]\label{p:nogo}
+\textup{[P]}  Assume the hypotheses and notation of \cite[Prop.~1.2]{IUT4}, and
+let $\phi$ be a $\mathbb{Q}_p$-linear automorphism satisfying $\phi(L)=L$ as in
+that proposition.  Write $S=(R_I)^{\sim}$, $L=L_t=\log_p(R_I^{\times})$ and
+$m=\lfloor\lambda-d_I-a_I\rfloor$, and assume in addition that $m\ge1$.  Both
+tuples of Theorems~\ref{t:cmp} and~\ref{t:fix0} satisfy this: $m=2$ at $j=1$ and
+$m=13$ at $j=2$ for \eqref{e:datum}.  Then
+\[
+ \phi(p^{\lambda}S)\ \subseteq\ p^{m}L
+ \qquad\text{and}\qquad
+ p^{m}L\ \subsetneq\ L
+\]
+hold \emph{simultaneously}: the first is \cite[Prop.~1.2(ii)]{IUT4}, also stated
+in \cite[Prop.~1.4(iii)]{IUT4}; the second holds because
+$[L:p^{m}L]=p^{mr}>1$ for $r=\operatorname{rank}L\ge1$ and $m\ge1$.
+Consequently
+\[
+ L\not\subseteq p^{m}L
+\]
+is \emph{not} a counterexample to $\phi(p^{\lambda}S)\subseteq p^{m}L$.  Hence
+\textbf{the lattice noncontainments and numerical comparisons recorded in
+\S\ref{s:cmp} do not, by themselves, refute the fixed-input estimates of
+\cite{IUT4}.}
+\end{proposition}
+
+\begin{proof}
+The two displayed statements are about different sets: the first bounds the image
+of $p^{\lambda}S$ under any admitted $\phi$, the second compares $L$ with its own
+$p^{m}$-multiple.  No admitted $\phi$ maps $p^{\lambda}S$ onto $L$: by
+\cite[Prop.~1.2]{IUT4} every such $\phi$ induces an automorphism of $L$, so
+$\phi(p^{\lambda}S)\subseteq p^{m}L\subsetneq L=\phi(L)$, whence
+$p^{\lambda}S\ne L$ since $\phi$ is injective.  The hypothesis $m\ge1$ is needed
+for the strictness: at $m=0$ the second display would read $L\subseteq L$.  A set-theoretic failure of $L\subseteq p^{m}L$ therefore
+places no constraint on the first inclusion.
+\end{proof}
+
+\begin{remark}[scope of Proposition~\ref{p:nogo}]
+It concerns \emph{the comparisons recorded in \S\ref{s:cmp}} and the fixed-input
+estimates of \cite[Prop.~1.2, Prop.~1.4]{IUT4}.  It is \emph{not} a no-go result
+for explicit counterexamples to \cite{IUT1,IUT2,IUT3,IUT4}; not a statement that
+the datum of Theorem~\ref{t:datum} cannot enter some other argument; not a proof
+that \SA{} is false, nor that no other argument could establish its inclusion;
+and not a statement about \cite[Cor.~3.12]{IUT3} or about $abc$.  Other adapters
+are neither excluded nor proposed here.
+\end{remark}
+
+\noindent\textbf{What is withdrawn.}  The source application of
+Theorems~\ref{t:cmp} and~\ref{t:fix0}: the reading under which their numbers are
+an incompatibility with \cite{IUT4}.  Hypothesis \SA{} is not asserted.
+
+\noindent\textbf{What stands.}  Theorem~\ref{t:datum} and all of
+\S\S\ref{s:datum}--\ref{s:dich}, which never used \SA{}; and the rational
+calculations themselves, whose constants
+$d_I=104/105$, $a_I=106/105$, $b_I=-106/105$, $\lambda=29/7$,
+$\lfloor\lambda-d_I-a_I\rfloor=2$ we have rechecked against
+\cite[Prop.~1.1, Prop.~1.2, Prop.~1.4]{IUT4} and found correct.  What failed is
+the identification of which source quantity they are to be compared with.
+
+\noindent\textbf{What this does not claim.}  That \cite[Prop.~1.2]{IUT4} or
+\cite[Prop.~1.4]{IUT4} is in error; that the objections of \cite{SS} are
+answered or unanswered; anything about \cite[Cor.~3.12]{IUT3} or about $abc$.
 
 \section{What we ask}\label{s:ask}
 
@@ -758,12 +949,13 @@ does not preserve the extra hypothesis of IV.  The nonconstant and
 mixed-status tuple statements in \S\ref{s:dich} are distinct elementary
 consequences of the section defining $\VV$.
 
-Second, we ask whether the full reading (SA1)--(SA4), including the
-fixed target and its normalized readout, is correct for this datum.
-Theorems~\ref{t:cmp} and~\ref{t:fix0} are offered as conditional local
-comparisons and a request to decide that reading, not as a settled
-adjudication of the theory.  If the application is wrong, identifying the
-failed clause and the source-compatible comparison would answer the question.
+Second, version~0.1.6 asked whether the full reading (SA1)--(SA4) is correct for
+this datum.  \textbf{We no longer press that question}: \S\ref{s:withdrawn} shows that
+version~0.1.6's adapter premise was not justified, and the application is
+withdrawn.  Whether the inclusion asserted by \SA{} could be established by some
+other argument is left open.  Theorems~\ref{t:cmp} and~\ref{t:fix0} are retained as
+exact local calculations and as the record of a reading that failed, not as
+claims about \cite{IUT4}.
 
 \section{Reproduction}\label{s:repro}
 
@@ -797,8 +989,8 @@ not a formalization of the source-adapter hypothesis or an IUT counterexample.
 Large language models were used substantially in locating passages,
 cross-checking computations, drafting, and adversarial review.
 The author is responsible for the claims.  The exact computations and the
-source arguments are separately inspectable; \SA{} remains a proposed
-reading of the source, with its failure conditions stated above.
+source arguments are separately inspectable.  \SA{} was a proposed reading of
+the source; it is withdrawn in \S\ref{s:withdrawn}, which gives the locators.
 
 The correction history is material.  An earlier version used $29/7$
 instead of $j^2(29/7)$ at $j=2$, giving the erroneous margin $1/7$.
@@ -817,14 +1009,15 @@ factorization $488095744=2^{14}31^3$ checked against
 nonconstant tuples with mixed reduction, the generalization of the
 log-unit equality beyond $e\le p-2$, and the claim that fixing label $0$
 would require banning every nontrivial permutation.  We do not claim
-that no further errors remain, and retain the withdrawal undertaking of
-\S\ref{s:fals}.
+that no further errors remain.  The withdrawal undertaking of \S\ref{s:fals} has
+been discharged in the present version: see \S\ref{s:withdrawn}.
 
 \begin{thebibliography}{MFHMP}
 \bibitem[First-full]{Firstfull} T.~Urahigashi, \emph{An explicit initial $\Theta$-datum
  with mixed reduction over a split prime, and the local estimates of
  inter-universal Teichm\"uller theory IV}, companion draft, version
- 0.1.3-draft (2026).  Included as \href{paper.pdf}{\texttt{paper.pdf}},
+ 0.1.7 (2026); its \S\S7--9 predate and are superseded by \S\ref{s:withdrawn}
+ here, as its supersession notice records.  Included as \href{paper.pdf}{\texttt{paper.pdf}},
  with the source and reproducibility scripts in the same package.
 \bibitem[CanLift]{CanLift} S.~Mochizuki, \emph{The absolute anabelian geometry of
  canonical curves}, Doc. Math., Kazuya Kato's fiftieth birthday, Extra Vol.\

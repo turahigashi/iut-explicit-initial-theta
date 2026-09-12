@@ -2,12 +2,25 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22537342.svg)](https://doi.org/10.5281/zenodo.22537342)
 
-Draft paper, version 0.1.3-draft.
+Draft paper, **version 0.1.7**.
 Archived at DOI [10.5281/zenodo.22537342](https://doi.org/10.5281/zenodo.22537342) (all versions).
 
+Published versions of this revision: first report **0.1.7**, second report **1.0.5**,
+fourth report **1.0.4** (2026-09-12). The bundle shipped with all three is
+`iut-explicit-initial-theta-v0.7.0.zip`. Cite the concept DOIs above, which always
+resolve to the latest version.
+
+> **v0.1.7 — Theorem 1 stands; the source application of Theorems 5 and 6 is withdrawn.**
+> A direct re-reading of IUT IV showed that v0.1.6 did not establish an
+> identification of the kind (F2) describes, discharging that version's
+> undertaking to withdraw. This is **not** a proof that (SA) is false. The exact
+> rational calculation is retained, with the adapter premise that was not
+> justified identified; see `paper/note.tex`, §7.1 "The withdrawal".
+
 ```
-paper/note.tex      the first report (12 pages) -- the paper of record
-paper/paper.tex     the companion full draft (22 pages), cited as [Full]
+paper/note.tex      the first report (15 pages) -- the paper of record
+paper/paper.tex     the companion full draft (23 pages), cited as [First-full]
+                    -- its SS.7-9 predate and are superseded by note.tex SS.7
 scripts/checks.py   displayed arithmetic and exact comparison certificates
 scripts/check_round3.py   corrected margins and rigorous selected-degree ratios
 scripts/check_normalization.py   local/global weights and coefficient identities
@@ -39,7 +52,7 @@ theorems. These computations do not certify the geometric constructions or (SA).
 
 ## The two results
 
-- **Theorem 1.1** — `F₀=ℚ(√5)`, `π=16+3√5` (Norm 211, split), `a=π²⁹`,
+- **Theorem 1** (`t:datum`) — `F₀=ℚ(√5)`, `π=16+3√5` (Norm 211, split), `a=π²⁹`,
   `E₀: y²=x(x−1)(x−a)`, `ℓ=7`, `F=F₀(i,E₀[15])`, `K=F(E₀[7])`, with the
   compatible cover, section and cusp constructed in §4 and all multiplicative
   places outside 2,7 selected as bad, yields an initial Θ-datum satisfying
@@ -47,16 +60,22 @@ theorems. These computations do not certify the geometric constructions or (SA).
   two places, one multiplicative and one good; `e_g=1`, `e_b=105`,
   `ord(q̲_b)=29/7`; tame since `105 ≤ 209 = p−2`.
   *Independent of (SA); uses exact arithmetic and cited geometric results.*
-- **Theorem 1.2** — assuming the hypothesis (SA) of §7, the upper bound
-  `−226/105` obtained from Proposition 1.4(iii) is incompatible with the value
-  `−106/105` of the region it is applied to; margin `8/7`.
-  *Conditional on one stated reading of the source.*
+- **Theorems 5 and 6** (`t:cmp`, `t:fix0`) — the exact rational comparison: `−λ+d_I+1 = −226/105`
+  against `−106/105`, margin `8/7`. The arithmetic is correct and its constants
+  agree with IUT IV, Props. 1.1, 1.2, 1.4.
+  ***Its source application is withdrawn in v0.1.7***: IUT IV, Prop. 1.2 bounds
+  `φ(p^λ·(R_I)~)`, not `log_p(R_I^×)`; the same φ carries `log_p(R_I^×)` onto
+  itself; Step (v) absorbs (Ind1),(Ind2) into "the arbitrary nature of the
+  automorphism φ"; and the `i†`-asymmetry is symmetrized there, which "does not
+  affect the computation of the upper bound".
 
 ## What is and is not claimed
 
-(SA) is a **reading**, not a computation. §11 lists four objections to its derivation;
-**(F2)** is named as the likeliest, and the paper undertakes to withdraw
-Theorem 1.2 if (F2) is shown to hold.
+(SA) was a **reading**, not a computation. §7 lists five failure modes (F1)-(F5)
+and named **(F2)** as the likeliest. **v0.1.6 did not establish an identification
+of the kind (F2) describes, and the source application is withdrawn.** This is
+not a proof that (SA) is false. (SA) and the five failure modes are retained in
+the paper as the record of the reading that did not hold.
 
 Not claimed: that `abc` is false; that the lower bound of IUT III Corollary 3.12
 is false; that the global inequality of IUT IV Theorem 1.10 is false; that
@@ -92,7 +111,7 @@ records of the preceding draft.
 
 **An initial Θ-datum over an imaginary quadratic field, and numerical values of the
 local quantities of inter-universal Teichmüller theory IV.**
-version 1.0.1, DOI [10.5281/zenodo.22601333](https://doi.org/10.5281/zenodo.22601333) (all versions).
+version 1.0.5, DOI [10.5281/zenodo.22601333](https://doi.org/10.5281/zenodo.22601333) (all versions).
 
 The datum is `E_0: y^2 = x(x-1)(x-a)` with `a = (10+3i)^29` and `ℓ = 7` over
 `Q(i)`, for which 109 splits into one multiplicative and one good place.  All of
@@ -100,7 +119,7 @@ The datum is `E_0: y^2 = x(x-1)(x-a)` with `a = (10+3i)^29` and `ℓ = 7` over
 and [Prop. 1.4(iii)] are evaluated at that input.
 
 ```
-second-report/paper/note5.pdf         the paper (20 pages)
+second-report/paper/note5.pdf         the paper (21 pages)
 second-report/scripts/                reproduction; python3 scripts/tables.py etc.
 second-report/lean/                   14 files, Init-only
 second-report/audit-logs/             the Lean audit of 2026-09-07
