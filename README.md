@@ -193,6 +193,7 @@ The file names carry an older working numbering; the reports are numbered as fol
 | third | `third-report/paper/note6.tex` | [10.5281/zenodo.22646136](https://doi.org/10.5281/zenodo.22646136) |
 | fourth | `fourth-report/paper/note3.tex` | [10.5281/zenodo.22648944](https://doi.org/10.5281/zenodo.22648944) |
 | fifth | `fifth-report/paper/constant_comparison.tex` | [10.5281/zenodo.22659796](https://doi.org/10.5281/zenodo.22659796) |
+| Step (v) short note | `stepv-local-noncontainment/paper/stepv_local_noncontainment.tex` | [10.5281/zenodo.23166432](https://doi.org/10.5281/zenodo.23166432) |
 
 `paper/paper.tex` is the expanded version of the **first** report, cited as `[First-full]`;
 the first report is the version of record.
@@ -254,3 +255,30 @@ The first prints the tables and exits zero.  The second needs your own copies of
 printings, and reports a **candidate located by a word-sequence match, not a verdict of
 verbatim identity**.  **These calculations do not determine a possible-image hull, and they
 adjudicate neither the theory nor the objection.**
+
+## Step (v) short note (October 2026)
+
+**A local non-containment in Step (v) of IUT IV, Theorem 1.10.**
+`stepv-local-noncontainment/paper/stepv_local_noncontainment.pdf` (6 pages), DOI
+[10.5281/zenodo.23166432](https://doi.org/10.5281/zenodo.23166432) (all versions).
+
+An explicit initial Θ-datum, with two places of multiplicative reduction above the prime 30965771, for
+which the projection of the union of possible images of a Θ-pilot object to one summand contains an
+element, obtained from a theta value by a permutation of labels allowed by the indeterminacy (Ind1),
+that does not lie in the module through which Step (v) of the proof of [IUT IV, Thm. 1.10] bounds that
+component; the corresponding component of the holomorphic hull therefore has larger log-volume than the
+bound obtained in Step (v).  **No assertion is made about Corollary 3.12 itself, the final global
+inequality of Theorem 1.10, or the abc conjecture.**
+
+The first report in this repository compared a different datum, at the prime 211, with the local
+estimates of IUT IV; the source application of that comparison was withdrawn in its version 0.1.7. This
+note is a separate paper, not a revision of the first report: its datum has two places above the prime,
+both of multiplicative reduction, and it neither cites nor relies on the first report.
+
+The files in `stepv-local-noncontainment/` are licensed under CC BY 4.0; the rest of the repository
+remains under Apache-2.0.
+
+```
+cd stepv-local-noncontainment/paper
+pdflatex -interaction=nonstopmode -halt-on-error stepv_local_noncontainment.tex   # run twice
+```
