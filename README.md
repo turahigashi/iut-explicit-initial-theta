@@ -259,16 +259,21 @@ adjudicate neither the theory nor the objection.**
 ## Step (v) short note (October 2026)
 
 **A local non-containment in Step (v) of IUT IV, Theorem 1.10.**
-`stepv-local-noncontainment/paper/stepv_local_noncontainment.pdf` (6 pages), DOI
-[10.5281/zenodo.23166432](https://doi.org/10.5281/zenodo.23166432) (all versions).
+`stepv-local-noncontainment/paper/stepv_local_noncontainment.pdf` (7 pages), version 2.0.0, DOI
+[10.5281/zenodo.23737179](https://doi.org/10.5281/zenodo.23737179).
+All versions: [10.5281/zenodo.23166432](https://doi.org/10.5281/zenodo.23166432).
 
-An explicit initial Θ-datum, with two places of multiplicative reduction above the prime 30965771, for
-which the projection of the union of possible images of a Θ-pilot object to one summand contains an
-element, obtained from a theta value by a permutation of labels allowed by the indeterminacy (Ind1),
-that does not lie in the module through which Step (v) of the proof of [IUT IV, Thm. 1.10] bounds that
-component; the corresponding component of the holomorphic hull therefore has larger log-volume than the
-bound obtained in Step (v).  **No assertion is made about Corollary 3.12 itself, the final global
-inequality of Theorem 1.10, or the abc conjecture.**
+This note presents an explicit local non-containment calculation for a datum with two places of
+multiplicative reduction above the prime 30965771. A pure tensor obtained from a theta value by a label
+permutation remains outside the comparison module under every factorwise log-shell-preserving
+automorphism. Its application to the possible-image union in Step (v) of IUT IV, Theorem 1.10 is
+conditional on the membership and orbit-closure readings (M) and (R) in Section 4, including the
+compatibility with the cited constructions of the local-coordinate descriptions used in Lemmas 3
+and 4. Under those assumptions, the corresponding hull component has larger log-volume than the
+displayed bound. A complete identification with the source construction is not established in this note.
+
+**No assertion is made about Corollary 3.12 itself, the final global inequality of Theorem 1.10,
+or the abc conjecture.** This is a preprint; it has not been refereed.
 
 The first report in this repository compared a different datum, at the prime 211, with the local
 estimates of IUT IV; the source application of that comparison was withdrawn in its version 0.1.7. This

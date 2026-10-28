@@ -4,6 +4,7 @@
 \usepackage[bottom]{footmisc}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{booktabs}
+\usepackage{needspace}
 \usepackage[hidelinks]{hyperref}
 \hypersetup{pdftitle={A local non-containment in Step (v) of IUT IV, Theorem 1.10},
   pdfauthor={Toshihisa Urahigashi}}
@@ -45,19 +46,22 @@
 \title{A local non-containment in Step~(v) of IUT~IV, Theorem~1.10}
 \author{Toshihisa Urahigashi}
 \email{123026.urahigashi.toshihisa@gmail.com}
-\date{Draft, 5 October 2026}
+\date{Draft, 5 October 2026; revised 28 October 2026}
 
 \begin{abstract}
 Step~(v) of the proof of Theorem~1.10 in the fourth paper of Mochizuki's series on inter-universal
 Teichm\"uller theory estimates, prime by prime, the log-volume of the holomorphic hull of the union of
 possible images of a $\Theta$-pilot object defined in Corollary~3.12 of the third paper. For each tuple of
-places it bounds the log-volume of the component of this hull by that of an explicit module, which depends on the
-order of the $q$-parameter at the place carrying the label $j$. We give an explicit initial $\Theta$-datum, with
-two places of multiplicative reduction above the prime $30965771$, and an element of the projection of the union
-to one summand, obtained from a theta value by a permutation of labels allowed by the indeterminacy (Ind1), that
-does not lie in this module; the corresponding component of the hull has larger log-volume than the bound obtained
-in Step~(v).  No assertion is made here about Corollary 3.12 itself, the final global inequality of Theorem 1.10, or the
-abc conjecture.
+places it uses an explicit comparison module, depending on the order of the $q$-parameter at the place
+carrying the label $j$. We give an explicit initial $\Theta$-datum, with two places of multiplicative
+reduction above the prime $30965771$, and a pure tensor obtained from a theta value by a label permutation
+whose image under any factorwise log-shell-preserving automorphism lies outside this module.
+Under the membership and orbit-closure readings stated in Section~\ref{s:union}, an element of this form
+belongs to the projection of the possible-image union, and the corresponding hull component has
+larger log-volume than the displayed upper bound. The full identification with the source's intended
+construction remains unverified here; the example is offered as a concrete local consistency test
+and a basis for further discussion. No conclusion is drawn about the truth of Corollary~3.12 itself,
+the final global inequality of Theorem~1.10, or the abc conjecture.
 \end{abstract}
 
 \maketitle
@@ -279,8 +283,28 @@ The integer calculations of \S\S\ref{s:datum}--\ref{s:local} were independently 
 
 \section{Two elements of the union}\label{s:union}
 
+\paragraph{Readings and scope.}
+This note presents an explicit local non-containment calculation.
+Its application to $U_j$ is conditional on \textup{(M)} and \textup{(R)}, including
+the compatibility with the cited constructions of the local-coordinate descriptions
+used in Lemmas~\ref{l:member} and~\ref{l:transport}.
+A complete identification with the source construction is not established in this note.
+
+\begin{itemize}
+\item[\textup{(M)}] At a selected bad place, the local region of the $\Theta$-pilot is
+$\theta\Lambda$, where $\theta$ is the relevant splitting-monoid generator and the unit
+lattice $\Lambda$ contains $1\otimes\cdots\otimes1$; its image under the relevant Kummer
+comparison of \cite[Thm.~3.11(ii)]{IUT3} is counted among the possible-image regions.
+\item[\textup{(R)}] The family of possible-image regions is stable under the packet
+maps induced by the procession automorphisms defining (Ind1), including the label
+permutations used below, and under (Ind2).
+\end{itemize}
+These are readings of \cite[Prop.~3.7(v), Def.~3.8(i), Thm.~3.11, Cor.~3.12]{IUT3},
+not a new definition of $U_j$. The local non-containment calculation in
+Theorem~\ref{t:main} does not require these readings; its application to $U_j$ does.
+
 \begin{lemma}\label{l:member}
-Let $\bv$ be a tuple with $\underline v_j\in\Vbad$, and let $\theta\in k_{v_j}$ be a generator of the component
+Assume \textup{(M)}. Let $\bv$ be a tuple with $\underline v_j\in\Vbad$, and let $\theta\in k_{v_j}$ be a generator of the component
 labelled $j$ at $\underline v_j$ of the splitting monoid, that is, the theta value $\qq_{v_j}^{\,j^2}$ up to a root
 of unity \cite[p.~11]{IUT3}; so $\operatorname{ord}(\theta)=j^2\rho(v_j)$. Let $x\in k_{\bv}$ be the pure tensor
 with $\theta$ at the factor of label $j$ and $1$ at the other factors. Then $U_j$ contains an element $X$ with
@@ -300,7 +324,7 @@ images of \cite[Cor.~3.12]{IUT3} are the images of the $\Theta$-pilot object rel
 packets just described, in the multiradial representation of \cite[Thm.~3.11(i)]{IUT3}, subject to (Ind1), (Ind2),
 (Ind3), and $U_j$ is their union \cite[pp.~173--174]{IUT3}. Let $g$ be the element with $\theta$ in the factor of
 label $j$ and $1$ in the other factors, in the packet of the Hodge theater in which the $\Theta$-pilot object is
-formed. By the above it lies in the corresponding region of the $\Theta$-pilot object, so $U_j$ contains
+formed. By \textup{(M)} it lies in the corresponding region of the $\Theta$-pilot object, and its Kummer image is counted among the possible images; hence $U_j$ contains
 $X=\kappa(g)$, where $\kappa$ is the Kummer isomorphism of packets onto $\cI^{\Q}(\Sj;\Dp)$ of
 \cite[Thm.~3.11(ii)(a)]{IUT3}, built place by place from isomorphisms of log-shells \cite[Prop.~3.2]{IUT3}. In that
 Hodge theater the $\Q$-spans of the log-shells are the fields $k_v$ themselves, and the component of $g$ at $\bv$ is
@@ -314,11 +338,22 @@ log-shells, so
 \]
 \end{proof}
 
+\smallskip
+\noindent\emph{Choice of theta representative.}
+Under the small-ramification assumption in (1.2), the local non-containment estimate is
+independent of the choice within the $\mu_{2\ell}$-orbit of the theta value
+\cite[Rem.~3.11.4(i), p.~171]{IUT3}, with the local field fixed.
+Indeed, if $\zeta\in\mu_{2\ell}(k_{v_j})$, then multiplication by $\zeta$ is
+$\Qp$-linear and preserves $\log_p(\cO_{k_{v_j}}^\times)$, by (1.2) and
+$\operatorname{ord}(\zeta)=0$. It can therefore be absorbed into $\chi_j$.
+This does not require $\chi_j$ to fix $1$ or to preserve multiplication, and it does
+not establish membership in $U_j$ independently of \textup{(M)}.
+
 For a permutation $\sigma$ of $\Sj$ and a tuple $\bv$, let $\sigma_*\colon k_{\bv}\to k_{\bv\circ\sigma^{-1}}$ send the
 factor of label $i$ to the factor of label $\sigma(i)$: $\sigma_*(\otimes_i z_i)=\otimes_i z_{\sigma^{-1}(i)}$.
 
 \begin{lemma}\label{l:transport}
-Let $\sigma$ be a permutation of $\Sj$ with $\sigma(0)=0$, let $X\in U_j$, let $\bv$ be a tuple, and put
+Assume \textup{(R)}. Let $\sigma$ be a permutation of $\Sj$ with $\sigma(0)=0$, let $X\in U_j$, let $\bv$ be a tuple, and put
 $\bw=\bv\circ\sigma^{-1}$. The images of $X$ under the indeterminacy (Ind1) attached to $\sigma$, followed by (Ind2),
 exist and lie in $U_j$, and the component at $\bw$ of each of them has the form $\psi(\sigma_*(\pr_{\bv}X))$ with
 $\psi=\otimes_i\psi_i$, $\psi_i\in\cA(k_{w_i})$. In particular $\psi(\sigma_*(\pr_{\bv}X))\in\pr_{\bw}(U_j)$.
@@ -333,7 +368,7 @@ identity at the other stages, is an automorphism of the procession of \cite[Thm.
 the source regards as ``subject to arbitrary permutation automorphisms'' \cite[p.~10]{IUT3}; cf.\
 \cite[Prop.~6.9(i), p.~169]{IUT1}. (Ind1) consists of the indeterminacies induced by such automorphisms, and
 (Ind2) of the action of independent copies of $\mathrm{Ism}$ on the direct summands of the factors
-\cite[Thm.~3.11(i), p.~154]{IUT3}; the images of possible images under them are possible images. The packet is a
+\cite[Thm.~3.11(i), p.~154]{IUT3}. By \textup{(R)}, their images of possible-image regions are again possible-image regions. The packet is a
 tensor product over the labels of direct sums over the places \cite[Prop.~3.2]{IUT3}, and a morphism of
 $\mathcal D^{\vdash}$-prime-strips is a collection of morphisms indexed by the places \cite[Def.~4.1(iv),
 p.~96]{IUT1}; so a member of the poly-isomorphism over $\sigma$ maps each summand $k_{\bv}$ to
@@ -346,27 +381,40 @@ compatible with the log-shells \cite[Prop.~1.2(vi), p.~32]{IUT3}. Hence each mem
 are $R(X)$ for maps $R$ of the packet with $\pr_{\bw}\circ R=\psi\circ\sigma_*\circ\pr_{\bv}$.
 \end{proof}
 
+\smallskip
+\noindent\emph{Related expositions.}
+Hoshi \cite[\S25, p.~93 of the author's version]{HoshiII} describes the hull of the
+union of the orbit of the $\Theta$-pilot under the indeterminacies.
+After fixing identifications, Dupuy--Hilado \cite[\S4.6, pp.~19--20]{DH1}
+describe procession automorphisms by permuting tensor factors and applying factorwise
+automorphisms, with target the summand indexed by the permuted tuple.
+These descriptions support the reading used here, but do not independently verify this example;
+see also the qualification concerning their formulas in \cite[Rem.~4.10.1]{DH1}.
+
 \section{The non-containment}\label{s:main}
 
 Let $D_2$ be as in Proposition~\ref{p:datum} and $j=3$, so $\mathbb S^\pm_4=\{0,1,2,3\}$. Let
-$\bu=(b_1,b_1,b_2,b_1)$, whose factor of label $3$ lies over $b_1$, let $\theta$ and $x=1\otimes1\otimes1\otimes\theta
-\in k_{\bu}$ be as in Lemma~\ref{l:member}, with $\operatorname{ord}(\theta)=9\cdot\tfrac17=\tfrac97$, and let $X\in U_3$
-be the element given there, so that $\pr_{\bu}(X)=\chi(x)$. For $\sigma=(2\,3)$ put $\bv=\bu\circ\sigma^{-1}
-=(b_1,b_1,b_1,b_2)$ and
+$\bu=(b_1,b_1,b_2,b_1)$, whose factor of label $3$ lies over $b_1$, and take the local theta value
+$\theta=\qq_{b_1}^{\,9}$ up to a root of unity, with $\operatorname{ord}(\theta)=\tfrac97$.
+Put $x=1\otimes1\otimes1\otimes\theta\in k_{\bu}$.
+For $\sigma=(2\,3)$ put $\bv=\bu\circ\sigma^{-1}=(b_1,b_1,b_1,b_2)$ and
 \[
 y=\sigma_*(x)=1\otimes1\otimes\theta\otimes1\ \in\ k_{b_1}\otimes k_{b_1}\otimes k_{b_1}\otimes k_{b_2}.
 \]
-By Lemma~\ref{l:transport}, $\pr_{\bv}(U_3)$ contains an element $\psi(\sigma_*(\chi(x)))=\psi'(y)$, where
+Under \textup{(M)}, Lemma~\ref{l:member} gives $X\in U_3$ with $\pr_{\bu}(X)=\chi(x)$.
+Under \textup{(R)}, Lemma~\ref{l:transport} then gives an element $\psi(\sigma_*(\chi(x)))=\psi'(y)$ of $\pr_{\bv}(U_3)$, where
 $\psi'=\otimes_i\psi'_i$ with $\psi'_i=\psi_i\circ\chi_{\sigma^{-1}(i)}\in\cA(k_{v_i})$, since
 $\sigma_*\circ\chi=(\otimes_i\chi_{\sigma^{-1}(i)})\circ\sigma_*$.
 
 \begin{theorem}\label{t:main}
-For the initial $\Theta$-datum $D_2$, $j=3$ and $\bv=(b_1,b_1,b_1,b_2)$, the projection $\pr_{\bv}(U_3)$ of the
-union of possible images of \cite[Cor.~3.12]{IUT3} is not contained in the module $M_{\bv}$ from which
-\cite[Thm.~1.10, Step~(v)]{IUT4} obtains its bound for this component. More precisely, no element $\psi(y)$ with
-$\psi=\otimes_i\psi_i$, $\psi_i\in\cA(k_{v_i})$, lies in $M_{\bv}$. Consequently the component
-$\pr_{\bv}(\overline U_3)$ of the holomorphic hull has log-volume at least $-2\log p$ (possibly $+\infty$), whereas
-the bound~\eqref{eq:bound} for it is $-\tfrac{97}{35}\log p$.
+For the initial $\Theta$-datum $D_2$, $j=3$ and $\bv=(b_1,b_1,b_1,b_2)$, no element
+$\psi(y)$ with $\psi=\otimes_i\psi_i$, $\psi_i\in\cA(k_{v_i})$, lies in the module
+$M_{\bv}$ of \S\ref{s:source}.
+Under the readings \textup{(M)} and \textup{(R)} of \S\ref{s:union}, it follows that
+$\pr_{\bv}(U_3)\not\subseteq M_{\bv}$ and that the component
+$\pr_{\bv}(\overline U_3)$ of the holomorphic hull has log-volume at least $-2\log p$
+(possibly $+\infty$), whereas the displayed upper bound~\eqref{eq:bound} is
+$-\tfrac{97}{35}\log p$.
 \end{theorem}
 
 \begin{proof}
@@ -382,17 +430,37 @@ $\psi(y)\in M_{\bv}$, then, $M_{\bv}$ being an $\RIt$-module,
 \[
 -\tfrac{97}{35}\log p\ \ge\ \mulog(M_{\bv})\ \ge\ \mulog(p^2\cdot\RIt)=-2\log p,
 \]
-which is false: $-\tfrac{97}{35}<-2$, with margin $\tfrac{27}{35}\log p$. As $\pr_{\bv}(U_3)$ contains an element of
-this form, it is not contained in $M_{\bv}$. For the hull: if $U_3$ is not relatively compact, its holomorphic hull
+which is false: $-\tfrac{97}{35}<-2$, with margin $\tfrac{27}{35}\log p$.
+Under \textup{(M)} and \textup{(R)}, Lemmas~\ref{l:member} and~\ref{l:transport} show that $\pr_{\bv}(U_3)$ contains an element of this form, so it is not contained in $M_{\bv}$. For the hull: if $U_3$ is not relatively compact, its holomorphic hull
 is the whole packet \cite[Rem.~3.9.5(i)]{IUT3}, of log-volume $+\infty$. Otherwise the hull is $\eta\cdot\cO$ for an
 element $\eta$ with nonzero components \cite[ibid.]{IUT3}, so $\pr_{\bv}(\overline U_3)$ is an $\RIt$-module
 containing $\psi(y)$, hence $p^2\cdot\RIt$, and its log-volume is at least $\mulog(p^2\cdot\RIt)=-2\log p$.
 \end{proof}
 
-Thus, for the union of possible images and its holomorphic hull as defined in \cite[Cor.~3.12]{IUT3}, the bound that
-Step~(v) obtains for the component at the tuple $\bv$ does not hold. It is noted in \cite[\S6.2, footnote~7]{DH} that
-(Ind1) contains permutations between different tensor factors, which the automorphisms used there to estimate the
-hull do not include.
+\Needspace{12\baselineskip}
+\smallskip
+\noindent\emph{Exact volume of the comparison module.}
+For the same datum, \cite[Props.~1.2, 1.4(i)]{IUT4} give
+\[
+ a_I=\frac{3}{105}+\frac{1}{35}=\frac{2}{35},\qquad
+ b_I=-\frac{2}{35},\qquad
+ \left\lfloor\lambda-\dd_I-a_I\right\rfloor
+ =\left\lfloor\frac{26}{7}\right\rfloor=3.
+\]
+Hence, in the fractional-ideal notation of \S\ref{s:source},
+\[
+ M_{\bv}=p^{107/35}\RIt,\qquad
+ \mulog(M_{\bv})=-\frac{107}{35}\log p.
+\]
+The difference between the lower bound $-2\log p$ for any hull containing such an
+image and this exact module volume is $\tfrac{37}{35}\log p$.
+This refines the comparison with the module itself; the difference from the displayed
+upper bound~\eqref{eq:bound} remains $\tfrac{27}{35}\log p$.
+
+Thus, under \textup{(M)} and \textup{(R)}, the projected possible-image union and its holomorphic hull are incompatible with the component bound attributed to Step~(v).
+Dupuy--Hilado \cite[\S6.2, footnote~7]{DH} note that their simplified example for
+estimating the hull in \S6.2 of their paper does not include the permutations between tensor factors
+present in the actual (Ind1), so the computation in that subsection cannot be applied directly.
 
 The example above concerns the local containment and the local upper bound used in Step~(v) for a single
 component. It does not by itself decide the global
@@ -422,6 +490,19 @@ Shinichi Mochizuki, \emph{The absolute anabelian geometry of canonical curves},
 Taylor Dupuy and Anton Hilado, \emph{Probabilistic {S}zpiro, baby {S}zpiro, and
   explicit {S}zpiro from {M}ochizuki's {C}orollary 3.12}, 2020,
   arXiv:2004.13108v2 [math.NT].
+
+\bibitem[DH1]{DH1}
+Taylor Dupuy and Anton Hilado, \emph{The statement of {M}ochizuki's {C}orollary 3.12,
+  initial theta data, and the first two indeterminacies}, 2020,
+  \href{https://arxiv.org/abs/2004.13228v1}{arXiv:2004.13228v1} [math.NT].
+  All section and page references to this item refer specifically to version~1.
+
+\bibitem[HoshiII]{HoshiII}
+Yuichiro Hoshi, \emph{Introduction to inter-universal {T}eichm\"uller theory, continued}
+  (in Japanese), RIMS K\^oky\^uroku Bessatsu \textbf{B72} (2018), 209--307.
+  The cited author's version is available at
+  \href{https://www.kurims.kyoto-u.ac.jp/~yuichiro/introduction_to_inter-universal_teichmuller_theory_continued.pdf}{the author's RIMS webpage};
+  its p.~93 contains the concluding paragraph of \S25.
 
 \bibitem[EtTh]{EtTh}
 Shinichi Mochizuki, \emph{The \'etale theta function and its
