@@ -1,0 +1,50 @@
+== 21 certificates
+  [ok]   certificate for 65454201749 (11 digits, witness 2)
+  [ok]   certificate for 112891241443 (12 digits, witness 7)
+  [ok]   certificate for 346699625893 (12 digits, witness 2)
+  [ok]   certificate for 497036080117 (12 digits, witness 5)
+  [ok]   certificate for 1413183631661 (13 digits, witness 2)
+  [ok]   certificate for 2879984876957 (13 digits, witness 2)
+  [ok]   certificate for 92570817983261 (14 digits, witness 10)
+  [ok]   certificate for 93229818386659 (14 digits, witness 3)
+  [ok]   certificate for 2602480915492613 (16 digits, witness 3)
+  [ok]   certificate for 19439871776484811 (17 digits, witness 3)
+  [ok]   certificate for 26746145815244461 (17 digits, witness 10)
+  [ok]   certificate for 49171274417317430023 (20 digits, witness 6)
+  [ok]   certificate for 1135420554769957570151 (22 digits, witness 7)
+  [ok]   certificate for 8238318162609993196301 (22 digits, witness 2)
+  [ok]   certificate for 54500186628957963367249 (23 digits, witness 14)
+  [ok]   certificate for 154072586477232178581475729 (27 digits, witness 19)
+  [ok]   certificate for 1984003939995100146692750879 (28 digits, witness 11)
+  [ok]   certificate for 7546302221502292729989416349739 (31 digits, witness 2)
+  [ok]   certificate for 38269129828752271745435515342932155533891 (41 digits, witness 3)
+  [ok]   certificate for 486685363594452319041420748071613404758945479 (45 digits, witness 3)
+  [ok]   certificate for 56406340220143710508313748934073550973772664592051 (50 digits, witness 3)
+  [ok]   N(pi) = 30965771
+  [ok]   D_3: prod_{d | 6} Phi_d(pi, pibar^5) = pi^6 - pibar^30
+== D_3: |N(Phi_1(pi, pibar^5))|: 38 digits
+  [ok]   D_3: |N(Phi_1(pi, pibar^5))| = 2^2 * 5^2 * 29 * 1301 * 7546302221502292729989416349739
+  [ok]   D_3: |N(Phi_1(pi, pibar^5))|: every listed factor is prime (trial division below 10^10, certificate above)
+  [ok]   D_3: |N(Phi_1(pi, pibar^5))|: the listed factors are distinct
+  [ok]   D_3: no odd prime to the seventh power in N(Phi_1)
+== D_3: |N(Phi_2(pi, pibar^5))|: 38 digits
+  [ok]   D_3: |N(Phi_2(pi, pibar^5))| = 2^8 * 19 * 149 * 19801 * 1984003939995100146692750879
+  [ok]   D_3: |N(Phi_2(pi, pibar^5))|: every listed factor is prime (trial division below 10^10, certificate above)
+  [ok]   D_3: |N(Phi_2(pi, pibar^5))|: the listed factors are distinct
+  [ok]   D_3: no odd prime to the seventh power in N(Phi_2)
+== D_3: |N(Phi_3(pi, pibar^5))|: 75 digits
+  [ok]   D_3: |N(Phi_3(pi, pibar^5))| = 17^2 * 1291 * 166911169 * 26746145815244461 * 486685363594452319041420748071613404758945479
+  [ok]   D_3: |N(Phi_3(pi, pibar^5))|: every listed factor is prime (trial division below 10^10, certificate above)
+  [ok]   D_3: |N(Phi_3(pi, pibar^5))|: the listed factors are distinct
+  [ok]   D_3: no odd prime to the seventh power in N(Phi_3)
+== D_3: |N(Phi_6(pi, pibar^5))|: 75 digits
+  [ok]   D_3: |N(Phi_6(pi, pibar^5))| = 19 * 61 * 118621 * 154072586477232178581475729 * 38269129828752271745435515342932155533891
+  [ok]   D_3: |N(Phi_6(pi, pibar^5))|: every listed factor is prime (trial division below 10^10, certificate above)
+  [ok]   D_3: |N(Phi_6(pi, pibar^5))|: the listed factors are distinct
+  [ok]   D_3: no odd prime to the seventh power in N(Phi_6)
+== D_2: |N(1 - a)|: 53 digits
+  [ok]   D_2: |N(1 - a)| = 2^2 * 11^2 * 56406340220143710508313748934073550973772664592051
+  [ok]   D_2: |N(1 - a)|: every listed factor is prime (trial division below 10^10, certificate above)
+  [ok]   D_2: |N(1 - a)|: the listed factors are distinct
+OK
+exit status 0, elapsed 0 s

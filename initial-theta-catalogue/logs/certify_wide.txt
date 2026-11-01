@@ -1,0 +1,82 @@
+p = 30965771, pi = 14164 + 5825*sqrt5, a = pi^6 / pibar^30
+  [ok] p is prime: True
+  [ok] p = +-1 mod 5 (split in Q(sqrt5)): True
+  [ok] p = 3 mod 4 (Q_p(sqrt-1) unramified quadratic): 3
+  [ok] Norm(pi) = p: 30965771
+  [ok] p > e*_mod * l = 7741440: True
+  [ok] p > 30965760: True
+  [ok] pi vanishes at v_pi: 0
+  [ok] pibar vanishes at v_pibar: 0
+  [ok] pibar is a unit at v_pi: True
+  [ok] pi is a unit at v_pibar: True
+  [ok] a * pibar^(kn) = pi^n  (A pibar^(kn) = pi^n p^(kn)): True
+  [ok] p does not divide N(pibar^(kn) - pi^n): True
+  [ok] 7 does not divide N(a) = p^(n - kn): True
+  [ok] 7 does not divide N(pibar^(kn) - pi^n): True
+  [ok] prod_{d|n} Phi_d(pi, pibar^k) = pi^n - pibar^(kn): (-5380381038366431349587397669612286011743416885841761554046013022521164846780028272257970303468852846960876736505870340648459313897040, 2406179549327648907662421080248040039540915508210991053895176514947371198039322609925695349468311570946677710896595695251889219502800)
+  [ok] product of the norms = N(numerator): 532668398572065444494735646826911254051839336752733065126796702016922167571327987742116281713516135617522953539417222850508386751251891552952462198819024755275297230892055903605581921656824769288709458082398371054675681561600
+  [ok] two factors share a place only above a prime dividing n: []
+  [ok] N(Phi_1): no seventh power of an odd prime (primes up to 224197): []
+  [ok] N(Phi_2): no seventh power of an odd prime (primes up to 224197): []
+  [ok] sieve control: the planted prime is found: True
+  [ok] N(Phi_3): no seventh power of an odd prime (primes up to 50264324899, C sieve): []
+  [ok] N(Phi_6): no seventh power of an odd prime (primes up to 50264324899, C sieve): []
+  [ok] 2 is inert in Q(sqrt5): True
+  [ok] N(numerator): even valuation at the inert prime 2: 0
+  [ok] above 2 (not selected): order of 1 - a and pole order of j prime to 7: (True, True)
+  [ok] 3 is inert in Q(sqrt5): True
+  [ok] N(numerator): even valuation at the inert prime 3: 0
+  [ok] order of 1 - a at the place above 3 is prime to 7: True
+  [ok] orbit comparison abar == a: False
+  [ok] orbit comparison abar == 1/a: False
+  [ok] orbit comparison abar == 1-a: False
+  [ok] orbit comparison abar == 1/(1-a): False
+  [ok] orbit comparison abar == a/(a-1): False
+  [ok] orbit comparison abar == (a-1)/a: False
+  [ok] Tate orders 2n, 2kn prime to 7: (True, True)
+  [ok] mod-7 witness: Frobenius characteristic polynomial irreducible: True
+  [ok] Tate order 12: qOrd = e T / 14 is an integer: 0
+  [ok] Tate order 12: tame, e <= p - 2: True
+  [ok] Tate order 60: qOrd = e T / 14 is an integer: 0
+  [ok] Tate order 60: tame, e <= p - 2: True
+  [ok] gap_j = union_j - stepv_j: [Fraction(-99, 35), Fraction(-11, 35), Fraction(242, 35)]
+  [ok] final display - procession bound = (betabar + 1)/7: 67/245
+  [ok] label 3: gap > 0 (weighted average upper bound of Step (v) exceeded): True
+  [ok] average over labels: excess over the final display > 0: True
+  [ok] summand (b1,b1,b1,b2), j = 3: -lambda + d_I + 1 + ceil(9 rho1) < 0: True
+  [ok] n even and kn even, so sqrt(a) = pi^(n/2) / pibar^(kn/2) lies in F0: (0, 0)
+  e_b1: 35
+  D_b1: 34
+  qOrd_b1: 30
+  rho_b1: 6/7
+  e_b2: 7
+  D_b2: 6
+  qOrd_b2: 30
+  rho_b2: 30/7
+  factor_norm_digits: {'1': 38, '2': 38, '3': 75, '6': 75}
+  pairwise_norm_gcd_primes: {'1,2': [2], '1,3': [], '1,6': [], '2,3': [], '2,6': [19], '3,6': []}
+  ord_1_minus_a_above_2: 5
+  pole_order_j_above_2: 2
+  sieve_planted_prime: 50264324899
+  sieve_bound: 50264324899
+  sieve_count_primes: 2130379216
+  v_2(N(numerator)): 10
+  v_3(N(numerator)): 0
+  mod7_witness: [41, 13, -6, 5]
+  betabar: 32/35
+  rho_gap: 24/7
+  union_lower_bounds: ['-18/7', '-48/7', '-81/7']
+  stepv_label_bounds: ['9/35', '-229/35', '-647/35']
+  gaps: ['-99/35', '-11/35', '242/35']
+  average_gap: 44/35
+  procession_bound: -289/35
+  final_display: -1956/245
+  excess_over_final_display: 241/245
+  summand_collision_coefficient_j3: -129/5
+  tower_same_profile: True
+  seventh-power check Phi_1: bound 224197, method python, offenders []
+  seventh-power check Phi_2: bound 224197, method python, offenders []
+  seventh-power check Phi_3: bound 50264324899, method C sieve, offenders []
+  seventh-power check Phi_6: bound 50264324899, method C sieve, offenders []
+OK
+exit status 0, elapsed 124 s

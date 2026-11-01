@@ -1,0 +1,133 @@
+
+== Claim 1: p prime, split, N(pi) = p, size
+  [ok]   pi in w-basis is (-5013, -1838)
+  [ok]   N(pi) = p (w-basis)
+  [ok]   N(pi) = p (sympy, sqrt5 form)
+  [ok]   p prime by trial division up to isqrt(p) = 5564
+  [ok]   p prime (sympy.isprime)
+  [ok]   p = 4 mod 5, i.e. +-1 mod 5 (split in F0)
+  [ok]   p > 30965760 = 2^14*3^3*5*2*7 (margin 59)
+  [ok]   p > 7741440 = 2^12*3^3*5*2*7
+
+== Claim 2: the two places above p
+  [ok]   p = 3 mod 4 and 5^((p+1)/4)^2 = 5 mod p
+  [ok]   two distinct roots of t^2 - t - 1 mod p
+  [ok]   pi vanishes at exactly one place above p (v_pi)
+  [ok]   a mod the other place = 2922918, not 0 or 1
+  [ok]   a = pi^15 mod the other place agrees with pow(pi mod place, 15)
+  [ok]   ord_v_pi(a) = 15 (exact division by pi; expected 15)
+  [ok]   ord_v_pi(a) = v_p(N(a)) = 15 (norm route: N(a) = p^15, other place prime to a)
+  [ok]   v_pi does not divide a - 1 (a - 1 = -1 mod v_pi)
+  [ok]   ord_v_pi(a - 1) = 0
+
+== Claim 3: bad share (at most one degree-one place above each r not in {2, 7})
+    a - 1 = x + y*w with x (58 digits), y (59 digits)
+    content gcd(x, y) of a - 1 in the basis {1, w} = 2 = {2: 1}
+  [ok]   content(a - 1) has no prime factor outside {2, 7}
+  [ok]   5 does not divide N(a - 1) (N(a - 1) mod 5 = 1): (sqrt5) does not divide a - 1
+  [ok]   5 does not divide N(a) = p^15: (sqrt5) does not divide a
+  [ok]   (pi) is a prime ideal (N(pi) = p prime), so v_pi is the only place dividing a = pi^15
+  [ok]   above p: v_pi | a, v_pi does not divide a - 1, the other place divides neither
+  [ok]   N(a - 1) agrees with sympy (sqrt5 form)
+    N(a - 1) has 113 digits; v_2 = 2, v_3 = 0, v_5 = 0, v_7 = 0
+  [ok]   v_2(N(a - 1)) = 2 * v_2(content): the inert place above 2 has order 1 (excluded, divides 2l)
+
+== Claim 4: good reduction above 7
+    N(a) mod 7 = 6, N(1 - a) mod 7 = 4, p mod 7 = 3
+  [ok]   7 does not divide N(a)
+  [ok]   7 does not divide N(1 - a)
+
+== Claim 5: j(E0) is not rational
+  [ok]   denominator a^2 (a - 1)^2 is nonzero
+  [ok]   w-coordinate of j * N(den) is nonzero (569 digits)
+  [ok]   conj(a) is not in the S3-orbit {a, 1-a, 1/a, 1/(1-a), a/(a-1), (a-1)/a}
+
+== Claim 6: Tate orders prime to 7
+    ord_v_pi(256 (a^2-a+1)^3) = 0, ord_v_pi(a^2 (a-1)^2) = 30
+  [ok]   ord_v_pi(j) = -30 (expected -30), so ord_v_pi(q) = 30
+  [ok]   30 is prime to 7
+  [ok]   prod_{d | 15} Phi_d(pi) = pi^15 - 1 exactly
+  [ok]   prod_d N(Phi_d(pi)) = |N(a - 1)|
+  [ok]   N_1 = N(Phi_1(pi)): 8 digits, seventh-root bound B_1 = 11 (own Newton = sympy.integer_nthroot)
+  [ok]   N_3 = N(Phi_3(pi)): 15 digits, seventh-root bound B_3 = 138 (own Newton = sympy.integer_nthroot)
+  [ok]   N_5 = N(Phi_5(pi)): 30 digits, seventh-root bound B_5 = 19075 (own Newton = sympy.integer_nthroot)
+  [ok]   N_15 = N(Phi_15(pi)): 60 digits, seventh-root bound B_15 = 363942203 (own Newton = sympy.integer_nthroot)
+    gcd(N_1, N_3) = 1 
+    gcd(N_1, N_5) = 1 
+    gcd(N_1, N_15) = 1 
+    gcd(N_3, N_5) = 1 
+    gcd(N_3, N_15) = 1 
+    gcd(N_5, N_15) = 1 
+    primes dividing two blocks: []
+  [ok]   order of pi^15 - 1 at the inert place above 3 = v_3(content) = 0, and v_3(N(a - 1)) = 0 = 2 * that
+    order of pi^15 - 1 at the ramified place above 5 = v_5(N(a - 1)) = 0
+  [ok]   order at the place above 3 is 0 or prime to 7
+  [ok]   order at the place above 5 is 0 or prime to 7
+    (residues: pi = (0, 1) mod 3 in the w-basis, pi = 3 mod sqrt5 [w = 3 mod sqrt5])
+    sieve + both methods: 144.8 s
+  [ok]   N_1: 5 primes <= 11 tested (= sympy.primepi)
+  [ok]   N_1: method A and method B find the same prime divisors <= bound
+      prime divisors <= bound with multiplicity: {2: 2}
+  [ok]   N_1: no prime r outside {2, 7} with r^7 | N_1
+  [ok]   N_3: 33 primes <= 138 tested (= sympy.primepi)
+  [ok]   N_3: method A and method B find the same prime divisors <= bound
+      prime divisors <= bound with multiplicity: {}
+  [ok]   N_3: no prime r outside {2, 7} with r^7 | N_3
+  [ok]   N_5: 2166 primes <= 19075 tested (= sympy.primepi)
+  [ok]   N_5: method A and method B find the same prime divisors <= bound
+      prime divisors <= bound with multiplicity: {31: 1, 541: 1, 1361: 1, 1721: 1}
+  [ok]   N_5: no prime r outside {2, 7} with r^7 | N_5
+  [ok]   N_15: 19511243 primes <= 363942203 tested (= sympy.primepi)
+  [ok]   N_15: method A and method B find the same prime divisors <= bound
+      prime divisors <= bound with multiplicity: {181: 1, 691: 1, 10111: 1}
+  [ok]   N_15: no prime r outside {2, 7} with r^7 | N_15
+  [ok]   control N_15*363942193^7: 19511243 primes <= 363942203 tested (= sympy.primepi)
+  [ok]   control N_15*363942193^7: method A and method B find the same prime divisors <= bound
+      prime divisors <= bound with multiplicity: {181: 1, 691: 1, 10111: 1, 363942193: 7}
+  [ok]   positive control detected: 363942193 with multiplicity 7 >= 7
+  [ok]   control N_15*999983^7: 19511243 primes <= 363942203 tested (= sympy.primepi)
+  [ok]   control N_15*999983^7: method A and method B find the same prime divisors <= bound
+      prime divisors <= bound with multiplicity: {181: 1, 691: 1, 10111: 1, 999983: 7}
+  [ok]   positive control detected: 999983 with multiplicity 7 >= 7
+  [ok]   control N_15*99999989^6: 19511243 primes <= 363942203 tested (= sympy.primepi)
+  [ok]   control N_15*99999989^6: method A and method B find the same prime divisors <= bound
+      prime divisors <= bound with multiplicity: {181: 1, 691: 1, 10111: 1, 99999989: 6}
+  [ok]   negative control: 99999989 found with multiplicity 6 = 6 and not flagged
+  [ok]   every prime outside {2, 3, 5, 7} divides at most one block (pairwise gcds)
+  [ok]   hence v_r(N(a - 1)) <= 6 for every prime r outside {2, 3, 5, 7}; at 3 and 5 it is 0 and 0
+  [ok]   for each of the 7 small prime divisors found [31, 181, 541, 691, 1361, 1721, 10111]: exactly one place above it divides a - 1 (consistent with claim 3)
+
+== Claim 7: mod-7 image witnesses at degree-one good places
+    first good degree-one places (q, w mod q, a_q, a_q mod 7, disc mod 7, a_q^2/q mod 7):
+      (11, 4, 0, 0, 5, 0)
+      (11, 8, 0, 0, 5, 0)
+      (19, 5, 4, 4, 3, 6)
+      (19, 15, 8, 1, 2, 3)
+  [ok]   not contained in any Borel subgroup: witness (q, w mod q, a_q, a_q mod 7, disc mod 7, u) = (11, 4, 0, 0, 5, 0)
+  [ok]   not contained in any split Cartan normalizer subgroup: witness (q, w mod q, a_q, a_q mod 7, disc mod 7, u) = (19, 5, 4, 4, 3, 6)
+  [ok]   not contained in any nonsplit Cartan normalizer subgroup: witness (q, w mod q, a_q, a_q mod 7, disc mod 7, u) = (19, 15, 8, 1, 2, 3)
+  [ok]   not contained in any exceptional subgroup: witness (q, w mod q, a_q, a_q mod 7, disc mod 7, u) = (19, 5, 4, 4, 3, 6)
+  [ok]   a_11 recomputed as -sum Legendre symbols = 0
+
+== Claim 8: local profile at p
+  [ok]   ord_v_pi(q) = 30 (= -ord_v_pi(j))
+  [ok]   e_g = 1 at the good place (p prime to 105 = 3*5*7)
+  [ok]   e_b = 105/gcd(105, 30) = 7 (expected 7)
+  [ok]   tame: p does not divide e_b, and e_b <= p - 2
+  [ok]   different exponent of K_b (tame) = e_b - 1 = 6
+  [ok]   order of q^(1/(2l)) in the uniformizer of K_b = e_b*30/14 = 15 (expected 15)
+    (reduction at v_pi is non-split multiplicative: -1 is not a square mod p; this does not change e_b)
+
+== Claim 9: margins (units of log p, l* = 3)
+    Q = 15/14, dbar = 3/7, U = -15/16, B_exact = -19/7, B_final = -123/49
+  [ok]   Q = 15/14
+  [ok]   dbar = 3/7
+  [ok]   U = -15/16 (also = (1/3) sum -j^2 Q 2^-j)
+  [ok]   B_exact = -19/7
+  [ok]   B_final = -123/49
+  [ok]   U - B_final = 1233/784 (expected 1233/784) > 0
+  [ok]   U - B_exact = 199/112 (expected 199/112) > 0
+
+runtime 145.0 s
+OK
+exit status 0, elapsed 145 s

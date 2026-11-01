@@ -1,0 +1,175 @@
+== D_211  l=7 p=211  places=[('g', 'good', 1, '0'), ('b', 'bad', 105, '29/7')]  rho constant above p: False
+  j= 1 GB    tuple=('g', 'b') margin=226/105 (2.1524)  NON-CONTAINMENT
+  j= 1 GB_L  tuple=('g', 'b') margin=8/7 (1.1429)  NON-CONTAINMENT
+  j= 2 GB    tuple=('g', 'g', 'b') margin=1531/105 (14.5810)  NON-CONTAINMENT
+  j= 2 GB_L  tuple=('g', 'g', 'b') margin=88/7 (12.5714)  NON-CONTAINMENT
+  j= 3 GB    tuple=('g', 'g', 'g', 'b') margin=3706/105 (35.2952)  NON-CONTAINMENT
+  j= 3 GB_L  tuple=('g', 'g', 'g', 'b') margin=226/7 (32.2857)  NON-CONTAINMENT
+== D_109  l=7 p=109  places=[('g', 'good', 1, '0'), ('b', 'bad', 105, '29/7')]  rho constant above p: False
+  j= 1 GB    tuple=('g', 'b') margin=226/105 (2.1524)  NON-CONTAINMENT
+  j= 1 GB_L  tuple=('g', 'b') margin=8/7 (1.1429)  NON-CONTAINMENT
+  j= 2 GB    tuple=('g', 'g', 'b') margin=1531/105 (14.5810)  NON-CONTAINMENT
+  j= 2 GB_L  tuple=('g', 'g', 'b') margin=88/7 (12.5714)  NON-CONTAINMENT
+  j= 3 GB    tuple=('g', 'g', 'g', 'b') margin=3706/105 (35.2952)  NON-CONTAINMENT
+  j= 3 GB_L  tuple=('g', 'g', 'g', 'b') margin=226/7 (32.2857)  NON-CONTAINMENT
+== D_2  l=7 p=30965771  places=[('b1', 'bad', 105, '1/7'), ('b2', 'bad', 35, '6/7')]  rho constant above p: False
+  j= 2 BB    tuple=('b2', 'b1', 'b2') margin=-158/105 (-1.5048)  contained
+  j= 3 BB    tuple=('b2', 'b1', 'b2', 'b2') margin=17/21 (0.8095)  NON-CONTAINMENT
+== D_3  l=7 p=30965771  places=[('b1', 'bad', 35, '6/7'), ('b2', 'bad', 7, '30/7')]  rho constant above p: False
+  j= 2 BB    tuple=('b2', 'b1', 'b2') margin=331/35 (9.4571)  NON-CONTAINMENT
+  j= 3 BB    tuple=('b2', 'b1', 'b2', 'b2') margin=911/35 (26.0286)  NON-CONTAINMENT
+== D_18  l=7 p=30965771  places=[('g', 'good', 1, '0'), ('b', 'bad', 35, '18/7')]  rho constant above p: False
+  j= 1 GB    tuple=('g', 'b') margin=3/5 (0.6000)  NON-CONTAINMENT
+  j= 1 GB_L  tuple=('g', 'b') margin=-3/7 (-0.4286)  contained
+  j= 2 GB    tuple=('g', 'g', 'b') margin=291/35 (8.3143)  NON-CONTAINMENT
+  j= 2 GB_L  tuple=('g', 'g', 'b') margin=44/7 (6.2857)  NON-CONTAINMENT
+  j= 3 GB    tuple=('g', 'g', 'g', 'b') margin=741/35 (21.1714)  NON-CONTAINMENT
+  j= 3 GB_L  tuple=('g', 'g', 'g', 'b') margin=127/7 (18.1429)  NON-CONTAINMENT
+== D_15  l=7 p=30965819  places=[('g', 'good', 1, '0'), ('b', 'bad', 7, '15/7')]  rho constant above p: False
+  j= 1 GB    tuple=('g', 'b') margin=2/7 (0.2857)  NON-CONTAINMENT
+  j= 1 GB_L  tuple=('g', 'b') margin=-6/7 (-0.8571)  contained
+  j= 2 GB    tuple=('g', 'g', 'b') margin=47/7 (6.7143)  NON-CONTAINMENT
+  j= 2 GB_L  tuple=('g', 'g', 'b') margin=32/7 (4.5714)  NON-CONTAINMENT
+  j= 3 GB    tuple=('g', 'g', 'g', 'b') margin=122/7 (17.4286)  NON-CONTAINMENT
+  j= 3 GB_L  tuple=('g', 'g', 'g', 'b') margin=100/7 (14.2857)  NON-CONTAINMENT
+== D_2357(l=89)  l=89 p=2357  places=[('g', 'good', 1, '0'), ('b', 'bad', 1335, '472/89')]  rho constant above p: False
+  j= 1 GB    tuple=('g', 'b') margin=4411/1335 (3.3041)  NON-CONTAINMENT
+  j= 1 GB_L  tuple=('g', 'b') margin=205/89 (2.3034)  NON-CONTAINMENT
+  j= 2 GB    tuple=('g', 'g', 'b') margin=25651/1335 (19.2142)  NON-CONTAINMENT
+  j= 2 GB_L  tuple=('g', 'g', 'b') margin=1532/89 (17.2135)  NON-CONTAINMENT
+  j= 3 GB    tuple=('g', 'g', 'g', 'b') margin=61051/1335 (45.7311)  NON-CONTAINMENT
+  j= 3 GB_L  tuple=('g', 'g', 'g', 'b') margin=3803/89 (42.7303)  NON-CONTAINMENT
+  j=44 GB    tuple=(g,...,g,b) margin=13704211/1335 (10265.3266)  NON-CONTAINMENT
+  j=44 GB_L  tuple=(g,...,g,b) margin=909698/89 (10221.3258)  NON-CONTAINMENT
+  first positive stage: {'GB': 1, 'GB_L': 1}
+== D_2357(l=97)  l=97 p=2357  places=[('g', 'good', 1, '0'), ('b', 'bad', 1455, '472/97')]  rho constant above p: False
+  j= 1 GB    tuple=('g', 'b') margin=43/15 (2.8667)  NON-CONTAINMENT
+  j= 1 GB_L  tuple=('g', 'b') margin=181/97 (1.8660)  NON-CONTAINMENT
+  j= 2 GB    tuple=('g', 'g', 'b') margin=25411/1455 (17.4646)  NON-CONTAINMENT
+  j= 2 GB_L  tuple=('g', 'g', 'b') margin=1500/97 (15.4639)  NON-CONTAINMENT
+  j= 3 GB    tuple=('g', 'g', 'g', 'b') margin=60811/1455 (41.7945)  NON-CONTAINMENT
+  j= 3 GB_L  tuple=('g', 'g', 'g', 'b') margin=3763/97 (38.7938)  NON-CONTAINMENT
+  j=48 GB    tuple=(g,...,g,b) margin=16309411/1455 (11209.2172)  NON-CONTAINMENT
+  j=48 GB_L  tuple=(g,...,g,b) margin=1082638/97 (11161.2165)  NON-CONTAINMENT
+  first positive stage: {'GB': 1, 'GB_L': 1}
+== D_2357(l=101)  l=101 p=2357  places=[('g', 'good', 1, '0'), ('b', 'bad', 1515, '472/101')]  rho constant above p: False
+  j= 1 GB    tuple=('g', 'b') margin=4051/1515 (2.6739)  NON-CONTAINMENT
+  j= 1 GB_L  tuple=('g', 'b') margin=169/101 (1.6733)  NON-CONTAINMENT
+  j= 2 GB    tuple=('g', 'g', 'b') margin=25291/1515 (16.6937)  NON-CONTAINMENT
+  j= 2 GB_L  tuple=('g', 'g', 'b') margin=1484/101 (14.6931)  NON-CONTAINMENT
+  j= 3 GB    tuple=('g', 'g', 'g', 'b') margin=60691/1515 (40.0601)  NON-CONTAINMENT
+  j= 3 GB_L  tuple=('g', 'g', 'g', 'b') margin=3743/101 (37.0594)  NON-CONTAINMENT
+  j=50 GB    tuple=(g,...,g,b) margin=17696971/1515 (11681.1690)  NON-CONTAINMENT
+  j=50 GB_L  tuple=(g,...,g,b) margin=1174748/101 (11631.1683)  NON-CONTAINMENT
+  first positive stage: {'GB': 1, 'GB_L': 1}
+== D_2357(l=103)  l=103 p=2357  places=[('g', 'good', 1, '0'), ('b', 'bad', 1545, '472/103')]  rho constant above p: False
+  j= 1 GB    tuple=('g', 'b') margin=3991/1545 (2.5832)  NON-CONTAINMENT
+  j= 1 GB_L  tuple=('g', 'b') margin=163/103 (1.5825)  NON-CONTAINMENT
+  j= 2 GB    tuple=('g', 'g', 'b') margin=25231/1545 (16.3307)  NON-CONTAINMENT
+  j= 2 GB_L  tuple=('g', 'g', 'b') margin=1476/103 (14.3301)  NON-CONTAINMENT
+  j= 3 GB    tuple=('g', 'g', 'g', 'b') margin=60631/1545 (39.2434)  NON-CONTAINMENT
+  j= 3 GB_L  tuple=('g', 'g', 'g', 'b') margin=3733/103 (36.2427)  NON-CONTAINMENT
+  j=51 GB    tuple=(g,...,g,b) margin=18411991/1545 (11917.1463)  NON-CONTAINMENT
+  j=51 GB_L  tuple=(g,...,g,b) margin=1222213/103 (11866.1456)  NON-CONTAINMENT
+  first positive stage: {'GB': 1, 'GB_L': 1}
+== D_2357(l=107)  l=107 p=2357  places=[('g', 'good', 1, '0'), ('b', 'bad', 1605, '472/107')]  rho constant above p: False
+  j= 1 GB    tuple=('g', 'b') margin=3871/1605 (2.4118)  NON-CONTAINMENT
+  j= 1 GB_L  tuple=('g', 'b') margin=151/107 (1.4112)  NON-CONTAINMENT
+  j= 2 GB    tuple=('g', 'g', 'b') margin=25111/1605 (15.6455)  NON-CONTAINMENT
+  j= 2 GB_L  tuple=('g', 'g', 'b') margin=1460/107 (13.6449)  NON-CONTAINMENT
+  j= 3 GB    tuple=('g', 'g', 'g', 'b') margin=60511/1605 (37.7016)  NON-CONTAINMENT
+  j= 3 GB_L  tuple=('g', 'g', 'g', 'b') margin=3713/107 (34.7009)  NON-CONTAINMENT
+  j=53 GB    tuple=(g,...,g,b) margin=19884511/1605 (12389.1034)  NON-CONTAINMENT
+  j=53 GB_L  tuple=(g,...,g,b) margin=1319963/107 (12336.1028)  NON-CONTAINMENT
+  first positive stage: {'GB': 1, 'GB_L': 1}
+== D_2357(l=109)  l=109 p=2357  places=[('g', 'good', 1, '0'), ('b', 'bad', 1635, '472/109')]  rho constant above p: False
+  j= 1 GB    tuple=('g', 'b') margin=3811/1635 (2.3309)  NON-CONTAINMENT
+  j= 1 GB_L  tuple=('g', 'b') margin=145/109 (1.3303)  NON-CONTAINMENT
+  j= 2 GB    tuple=('g', 'g', 'b') margin=25051/1635 (15.3217)  NON-CONTAINMENT
+  j= 2 GB_L  tuple=('g', 'g', 'b') margin=1452/109 (13.3211)  NON-CONTAINMENT
+  j= 3 GB    tuple=('g', 'g', 'g', 'b') margin=60451/1635 (36.9731)  NON-CONTAINMENT
+  j= 3 GB_L  tuple=('g', 'g', 'g', 'b') margin=3703/109 (33.9725)  NON-CONTAINMENT
+  j=54 GB    tuple=(g,...,g,b) margin=20642011/1635 (12625.0832)  NON-CONTAINMENT
+  j=54 GB_L  tuple=(g,...,g,b) margin=1370248/109 (12571.0826)  NON-CONTAINMENT
+  first positive stage: {'GB': 1, 'GB_L': 1}
+== D_2357(l=113)  l=113 p=2357  places=[('g', 'good', 1, '0'), ('b', 'bad', 1695, '472/113')]  rho constant above p: False
+  j= 1 GB    tuple=('g', 'b') margin=3691/1695 (2.1776)  NON-CONTAINMENT
+  j= 1 GB_L  tuple=('g', 'b') margin=133/113 (1.1770)  NON-CONTAINMENT
+  j= 2 GB    tuple=('g', 'g', 'b') margin=24931/1695 (14.7086)  NON-CONTAINMENT
+  j= 2 GB_L  tuple=('g', 'g', 'b') margin=1436/113 (12.7080)  NON-CONTAINMENT
+  j= 3 GB    tuple=('g', 'g', 'g', 'b') margin=60331/1695 (35.5935)  NON-CONTAINMENT
+  j= 3 GB_L  tuple=('g', 'g', 'g', 'b') margin=3683/113 (32.5929)  NON-CONTAINMENT
+  j=56 GB    tuple=(g,...,g,b) margin=22199491/1695 (13097.0448)  NON-CONTAINMENT
+  j=56 GB_L  tuple=(g,...,g,b) margin=1473638/113 (13041.0442)  NON-CONTAINMENT
+  first positive stage: {'GB': 1, 'GB_L': 1}
+== D_2357(l=127)  l=127 p=2357  places=[('g', 'good', 1, '0'), ('b', 'bad', 1905, '472/127')]  rho constant above p: False
+  j= 1 GB    tuple=('g', 'b') margin=3271/1905 (1.7171)  NON-CONTAINMENT
+  j= 1 GB_L  tuple=('g', 'b') margin=91/127 (0.7165)  NON-CONTAINMENT
+  j= 2 GB    tuple=('g', 'g', 'b') margin=193/15 (12.8667)  NON-CONTAINMENT
+  j= 2 GB_L  tuple=('g', 'g', 'b') margin=1380/127 (10.8661)  NON-CONTAINMENT
+  j= 3 GB    tuple=('g', 'g', 'g', 'b') margin=59911/1905 (31.4493)  NON-CONTAINMENT
+  j= 3 GB_L  tuple=('g', 'g', 'g', 'b') margin=3613/127 (28.4488)  NON-CONTAINMENT
+  j=63 GB    tuple=(g,...,g,b) margin=28096711/1905 (14748.9297)  NON-CONTAINMENT
+  j=63 GB_L  tuple=(g,...,g,b) margin=1865113/127 (14685.9291)  NON-CONTAINMENT
+  first positive stage: {'GB': 1, 'GB_L': 1}
+== D_2357(l=131)  l=131 p=2357  places=[('g', 'good', 1, '0'), ('b', 'bad', 1965, '472/131')]  rho constant above p: False
+  j= 1 GB    tuple=('g', 'b') margin=3151/1965 (1.6036)  NON-CONTAINMENT
+  j= 1 GB_L  tuple=('g', 'b') margin=79/131 (0.6031)  NON-CONTAINMENT
+  j= 2 GB    tuple=('g', 'g', 'b') margin=24391/1965 (12.4127)  NON-CONTAINMENT
+  j= 2 GB_L  tuple=('g', 'g', 'b') margin=1364/131 (10.4122)  NON-CONTAINMENT
+  j= 3 GB    tuple=('g', 'g', 'g', 'b') margin=59791/1965 (30.4280)  NON-CONTAINMENT
+  j= 3 GB_L  tuple=('g', 'g', 'g', 'b') margin=3593/131 (27.4275)  NON-CONTAINMENT
+  j=65 GB    tuple=(g,...,g,b) margin=29909071/1965 (15220.9013)  NON-CONTAINMENT
+  j=65 GB_L  tuple=(g,...,g,b) margin=1985423/131 (15155.9008)  NON-CONTAINMENT
+  first positive stage: {'GB': 1, 'GB_L': 1}
+== D_2357(l=137)  l=137 p=2357  places=[('g', 'good', 1, '0'), ('b', 'bad', 2055, '472/137')]  rho constant above p: False
+  j= 1 GB    tuple=('g', 'b') margin=2971/2055 (1.4457)  NON-CONTAINMENT
+  j= 1 GB_L  tuple=('g', 'b') margin=61/137 (0.4453)  NON-CONTAINMENT
+  j= 2 GB    tuple=('g', 'g', 'b') margin=24211/2055 (11.7815)  NON-CONTAINMENT
+  j= 2 GB_L  tuple=('g', 'g', 'b') margin=1340/137 (9.7810)  NON-CONTAINMENT
+  j= 3 GB    tuple=('g', 'g', 'g', 'b') margin=59611/2055 (29.0078)  NON-CONTAINMENT
+  j= 3 GB_L  tuple=('g', 'g', 'g', 'b') margin=3563/137 (26.0073)  NON-CONTAINMENT
+  j=68 GB    tuple=(g,...,g,b) margin=32733811/2055 (15928.8618)  NON-CONTAINMENT
+  j=68 GB_L  tuple=(g,...,g,b) margin=2172938/137 (15860.8613)  NON-CONTAINMENT
+  first positive stage: {'GB': 1, 'GB_L': 1}
+== D_2357(l=139)  l=139 p=2357  places=[('g', 'good', 1, '0'), ('b', 'bad', 2085, '472/139')]  rho constant above p: False
+  j= 1 GB    tuple=('g', 'b') margin=2911/2085 (1.3962)  NON-CONTAINMENT
+  j= 1 GB_L  tuple=('g', 'b') margin=55/139 (0.3957)  NON-CONTAINMENT
+  j= 2 GB    tuple=('g', 'g', 'b') margin=24151/2085 (11.5832)  NON-CONTAINMENT
+  j= 2 GB_L  tuple=('g', 'g', 'b') margin=1332/139 (9.5827)  NON-CONTAINMENT
+  j= 3 GB    tuple=('g', 'g', 'g', 'b') margin=59551/2085 (28.5616)  NON-CONTAINMENT
+  j= 3 GB_L  tuple=('g', 'g', 'g', 'b') margin=3553/139 (25.5612)  NON-CONTAINMENT
+  j=69 GB    tuple=(g,...,g,b) margin=33703711/2085 (16164.8494)  NON-CONTAINMENT
+  j=69 GB_L  tuple=(g,...,g,b) margin=2237323/139 (16095.8489)  NON-CONTAINMENT
+  first positive stage: {'GB': 1, 'GB_L': 1}
+== D_2357(l=149)  l=149 p=2357  places=[('g', 'good', 1, '0'), ('b', 'bad', 2235, '472/149')]  rho constant above p: False
+  j= 1 GB    tuple=('g', 'b') margin=2611/2235 (1.1682)  NON-CONTAINMENT
+  j= 1 GB_L  tuple=('g', 'b') margin=25/149 (0.1678)  NON-CONTAINMENT
+  j= 2 GB    tuple=('g', 'g', 'b') margin=23851/2235 (10.6716)  NON-CONTAINMENT
+  j= 2 GB_L  tuple=('g', 'g', 'b') margin=1292/149 (8.6711)  NON-CONTAINMENT
+  j= 3 GB    tuple=('g', 'g', 'g', 'b') margin=59251/2235 (26.5105)  NON-CONTAINMENT
+  j= 3 GB_L  tuple=('g', 'g', 'g', 'b') margin=3503/149 (23.5101)  NON-CONTAINMENT
+  j=74 GB    tuple=(g,...,g,b) margin=38765611/2235 (17344.7924)  NON-CONTAINMENT
+  j=74 GB_L  tuple=(g,...,g,b) margin=2573348/149 (17270.7919)  NON-CONTAINMENT
+  first positive stage: {'GB': 1, 'GB_L': 1}
+== D_2357(l=151)  l=151 p=2357  places=[('g', 'good', 1, '0'), ('b', 'bad', 2265, '472/151')]  rho constant above p: False
+  j= 1 GB    tuple=('g', 'b') margin=2551/2265 (1.1263)  NON-CONTAINMENT
+  j= 1 GB_L  tuple=('g', 'b') margin=19/151 (0.1258)  NON-CONTAINMENT
+  j= 2 GB    tuple=('g', 'g', 'b') margin=23791/2265 (10.5038)  NON-CONTAINMENT
+  j= 2 GB_L  tuple=('g', 'g', 'b') margin=1284/151 (8.5033)  NON-CONTAINMENT
+  j= 3 GB    tuple=('g', 'g', 'g', 'b') margin=59191/2265 (26.1329)  NON-CONTAINMENT
+  j= 3 GB_L  tuple=('g', 'g', 'g', 'b') margin=3493/151 (23.1325)  NON-CONTAINMENT
+  j=75 GB    tuple=(g,...,g,b) margin=39820471/2265 (17580.7819)  NON-CONTAINMENT
+  j=75 GB_L  tuple=(g,...,g,b) margin=2643373/151 (17505.7815)  NON-CONTAINMENT
+  first positive stage: {'GB': 1, 'GB_L': 1}
+== D_2357(l=157)  l=157 p=2357  places=[('g', 'good', 1, '0'), ('b', 'bad', 2355, '472/157')]  rho constant above p: False
+  j= 1 GB    tuple=('g', 'b') margin=2371/2355 (1.0068)  NON-CONTAINMENT
+  j= 1 GB_L  tuple=('g', 'b') margin=1/157 (0.0064)  NON-CONTAINMENT
+  j= 2 GB    tuple=('g', 'g', 'b') margin=23611/2355 (10.0259)  NON-CONTAINMENT
+  j= 2 GB_L  tuple=('g', 'g', 'b') margin=1260/157 (8.0255)  NON-CONTAINMENT
+  j= 3 GB    tuple=('g', 'g', 'g', 'b') margin=59011/2355 (25.0577)  NON-CONTAINMENT
+  j= 3 GB_L  tuple=('g', 'g', 'g', 'b') margin=3463/157 (22.0573)  NON-CONTAINMENT
+  j=78 GB    tuple=(g,...,g,b) margin=43070011/2355 (18288.7520)  NON-CONTAINMENT
+  j=78 GB_L  tuple=(g,...,g,b) margin=2859088/157 (18210.7516)  NON-CONTAINMENT
+  first positive stage: {'GB': 1, 'GB_L': 1}
+CROSS-CHECKS: closed form = enumeration (l = 7, j <= 3); 27/35 [Note], 8/7 and 88/7 [First] reproduced; 129/5, 291/35 consistent

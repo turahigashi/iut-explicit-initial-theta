@@ -1,0 +1,72 @@
+candidate p = 30965819, pi = -5932 + -919*sqrt5 (sign -1), N = 15; 5 rejected before it by the cheap checks
+  [ok] gcd of the coefficients of a - 1 has no prime factor other than 2 and 7: True
+  [ok] sqrt5 divides a - 1 (must be False: the ramified place above 5 is good): False
+  [ok] p is prime: True
+  [ok] p = +-1 mod 5 (split in Q(sqrt5)): True
+  [ok] Norm(pi) = p: 30965819
+  [ok] e*_mod * l (source, 2^12) = 7741440: 7741440
+  [ok] enlarged constant (2^14) times l = 30965760: 30965760
+  [ok] p > e*_mod * l (iota_p = 0 in the source): True
+  [ok] p > 2^14*3^3*5*e_mod*l (iota_p = 0 for the enlarged constant): True
+  [ok] 5 is a square mod p: True
+  [ok] pi vanishes at its place: 0
+  [ok] pi is a unit at the conjugate place: True
+  [ok] Norm(a) = p^N: 23080146658673691372892313389313711078634324118346678576189326967907821961496616831493806594640729876351465525299
+  [ok] a mod v_pibar is not 0 or 1 (good reduction): True
+  [ok] v_p(Norm(1-a)) = 0: 0
+  [ok] 7 does not divide Norm(a): True
+  [ok] 7 does not divide Norm(1-a) (good reduction above l): True
+  [ok] orbit comparison abar == a: False
+  [ok] orbit comparison abar == 1/a: False
+  [ok] orbit comparison abar == 1-a: False
+  [ok] orbit comparison abar == 1/(1-a): False
+  [ok] orbit comparison abar == a/(a-1): False
+  [ok] orbit comparison abar == (a-1)/a: False
+  [ok] Tate order 2N at v_pi prime to 7: 1
+  [ok] product of cyclotomic blocks = pi^N - 1: (-17166830325844094568515062189711105240647878191039440868869, -7676939276686533599251661985503597672111543394564222365515)
+  [ok] every block norm is nonzero: True
+  [ok] sieve control: planted 13^7 is found: True
+  [ok] sieve control: 13^6 * 17^3 has no seventh power: True
+  [ok] block Phi_1(pi): no prime outside 2*7 to a seventh power in the norm: []
+  [ok] block Phi_3(pi): no prime outside 2*7 to a seventh power in the norm: []
+  [ok] block Phi_5(pi): no prime outside 2*7 to a seventh power in the norm: []
+  [ok] block Phi_15(pi): no prime outside 2*7 to a seventh power in the norm: []
+  [ok] 3 is inert in Q(sqrt5): -1
+  [ok] place above 3: order of pi^N - 1 not divisible by 7 (or zero): True
+  [ok] 5 is ramified in Q(sqrt5): 0
+  [ok] place above 5: order of pi^N - 1 not divisible by 7 (or zero): True
+  [ok] mod-7 witness excluding Borel: True
+  [ok] mod-7 witness excluding splitN: True
+  [ok] mod-7 witness excluding nonsplitN: True
+  [ok] mod-7 witness excluding exc: True
+  [ok] Borel witness: characteristic polynomial irreducible mod 7: 0
+  [ok] e_b <= p - 2 (tame, I* empty): True
+  [ok] e_b * ord(qq_b) is an integer (qOrd in the uniformizer of K_b): 1
+  [ok] B_final >= B_exact (the source's two weakenings): True
+  [ok] averaged lower bound for the hull exceeds the exact procession-normalized bound: True
+  [ok] averaged lower bound for the hull exceeds the final displayed bound (iota = 0): True
+  [ok] e_b = 7: 7
+  [ok] qOrd_b in the uniformizer of K_b = 15: 15
+  [ok] different exponent at b = 6: 6
+  [ok] averaged lower bound for the hull = -15/16: -15/16
+  [ok] exact procession-normalized bound = -19/7: -19/7
+  [ok] final displayed bound (iota = 0) = -123/49: -123/49
+  [ok] margin against the final displayed bound = 1233/784: 1233/784
+  e_b: 7
+  ord_qq_b: 15/7
+  qOrd_b_uniformizer: 15
+  dbar: 3/7
+  Q: 15/14
+  union_lower: -15/16
+  B_exact: -19/7
+  B_final: -123/49
+  margin_exact: 199/112
+  margin_final: 1233/784
+  sieve_limit: 363942203
+  primes_sieved: 19511243
+  max_exponent_per_block: {1: {'max_exponent': 2, 'at': 2, 'seventh_powers_at': []}, 3: {'max_exponent': 0, 'at': 0, 'seventh_powers_at': []}, 5: {'max_exponent': 1, 'at': 31, 'seventh_powers_at': []}, 15: {'max_exponent': 1, 'at': 181, 'seventh_powers_at': []}}
+  mod7_witnesses: {'Borel': [11, 4, 0, 5], 'splitN': [19, 9, 4, 3], 'exc': [19, 9, 4, 6], 'nonsplitN': [19, 10, 8, 2]}
+  gcd_a_minus_1: 1
+  gcd_primes: []
+OK
+exit status 0, elapsed 27 s

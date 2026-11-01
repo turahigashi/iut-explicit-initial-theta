@@ -1,0 +1,472 @@
+\documentclass[11pt]{amsart}
+\usepackage[a4paper,margin=1in]{geometry}
+\raggedbottom
+\usepackage[bottom]{footmisc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{needspace}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Explicit initial Theta-data and the two readings of Step (v) of IUT IV, Theorem 1.10: a catalogue},
+  pdfauthor={Toshihisa Urahigashi}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Qp}{\mathbb Q_p}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\dd}{\mathfrak d}
+\newcommand{\qq}{\underline{\underline{q}}{}}
+\newcommand{\Fmod}{F_{\mathrm{mod}}}
+\newcommand{\VV}{\underline{\mathbb V}}
+\newcommand{\Vbadmod}{\mathbb V^{\mathrm{bad}}_{\mathrm{mod}}}
+\newcommand{\Vbad}{\underline{\mathbb V}^{\mathrm{bad}}}
+\newcommand{\mulog}{\mu^{\log}}
+\newcommand{\RIt}{(R_I)^{\sim}}
+\newcommand{\pr}{\operatorname{pr}}
+\newcommand{\Nm}{\operatorname{N}}
+\newcommand{\Sj}{\mathbb S^{\pm}_{j+1}}
+\newcommand{\bv}{\mathbf v}
+\newcommand{\bu}{\mathbf u}
+
+\begin{document}
+
+\title[Explicit initial $\Theta$-data and Step~(v): a catalogue]{Explicit initial $\Theta$-data and the two readings of Step~(v) of IUT~IV, Theorem~1.10: a catalogue}
+\author{Toshihisa Urahigashi}
+\email{123026.urahigashi.toshihisa@gmail.com}
+\date{Version 1.0.0, 2 November 2026}
+
+\begin{abstract}
+We collect the explicit initial $\Theta$-data, in the sense of Definition~3.1 of the first paper of Mochizuki's
+series on inter-universal Teichm\"uller theory, that the author has constructed over $\Q(\sqrt5)$ and $\Q(i)$:
+three published earlier and four given here, one of them for fourteen values of $\ell$. Each has a split rational
+prime above which the two places of the field of moduli are either one of good and one of multiplicative reduction,
+or both of multiplicative reduction with different orders of the $q$-parameter. For each datum we tabulate the local
+invariants and compare, in Step~(v) of the proof of Theorem~1.10 in the fourth paper, the displayed comparison module
+with the hull component of the union of possible images. Under the reading in which the theta value stays at the
+label $j$, as in Step~(v) and in what the public Lean formalization lana-agents/iut calls the reading of IUT~IV,
+every comparison is a containment. Under the reading in which label permutations act before the hull is taken,
+which the same formalization calls the literal reading, and under stated membership hypotheses, every datum gives a
+non-containment for a single component; at primes with a good and a bad place the excess grows like $j^2$, and for
+three data the weighted average over the components also exceeds the bound displayed at the prime. No conclusion is
+drawn about Corollary~3.12, the final inequality of Theorem~1.10, or the abc conjecture.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+Explicit initial $\Theta$-data in the sense of \cite[Def.~3.1]{IUT1} are needed whenever the estimates of
+\cite{IUT4} are to be evaluated on actual numbers. Dupuy and Hilado computed one for the curve 11a1 over $\Q$
+\cite[\S2.10]{DH1}, and Zhou constructed families from Frey--Hellegouarch curves \cite{Zhou1,Zhou2}; in these
+constructions the field of moduli is $\Q$, so a rational prime carries a single place of it. The author has published
+three data over quadratic fields \cite{First,Second,Note}. This note collects them with four further data, all over
+$\Q(\sqrt5)$ or $\Q(i)$, and records for each the local invariants above one split prime and the comparisons in
+Step~(v) of \cite[Thm.~1.10, proof]{IUT4}.
+
+The comparisons depend on how the label permutations contained in the indeterminacy (Ind1) enter the union of
+possible images of \cite[Cor.~3.12]{IUT3}. That they permute tensor factors, and that a simplified computation of the
+hull may omit this, is noted in \cite[\S6.2, footnote~7]{DH}; procession automorphisms are described as permutations
+of tensor factors in \cite[\S4.6]{DH1}. The public Lean repository \cite{LANAiut} formalizes two readings of
+Corollary~3.12, one with the theta value at the label $j$ (its reading of IUT~IV) and one with the theta value at any
+label (its literal reading), shows that the first implies the second, and records in prose that the two give the same
+regions when the orders of the $q$-parameters agree at all places above each prime, that two bad places with different
+orders already break this, and that at primes with a good and a bad place, which arise from the Belyi reduction, the
+literal reading is governed by the minimum rather than the average. The data below are explicit instances of these
+cases.
+
+What is new here is the data themselves and the numbers: initial $\Theta$-data whose field of moduli is not $\Q$
+(we have not found such data in the literature; an explicit example of this kind was asked for in \cite{MO}), data
+realizing both kinds of prime just described, and exact values of the comparisons of Step~(v) on them. The
+distinctions between the readings, and the mechanism by which the readings differ, are not new; see \S\ref{s:prior}.
+
+We do not claim that Corollary~3.12, the final inequality of Theorem~1.10 or the abc conjecture is false, that either
+reading is the one the source intends, or that the hypotheses of \S\ref{s:readings} identify the source's union of
+possible images.
+
+\section{Step (v) and the readings}\label{s:readings}
+
+We use the notation of \cite[\S1]{Note}. For a rational prime $p$ and a place $v$ of $\Fmod$ above $p$ let $k_v$ be
+the completion of $K$ at the selected place above $v$, $e_v$ its ramification index over $\Qp$, $\dd_v=(e_v-1)/e_v$
+the order of its different when $p\nmid e_v$, and $\rho(v)=\operatorname{ord}_p(\qq_v)$ if $v\in\Vbadmod$,
+$\rho(v)=0$ otherwise. For $j\in\{1,\dots,\ell^*\}$ and a tuple $\bv=(v_0,\dots,v_j)$ of places above $p$, Step~(v)
+compares the component at $\bv$ of the union $U_j$ of possible images with a module $M_{\bv}$; when every $e_{v_i}\le
+p-2$,
+\begin{equation}\label{eq:bound}
+\mulog(M_{\bv})\le\Bigl(-j^2\rho(v_j)+\dd_I+1\Bigr)\log p,\qquad \dd_I=\textstyle\sum_{i=0}^{j}\dd_{v_i}
+\end{equation}
+\cite[Prop.~1.4(iii), p.~13]{IUT4}, \cite[(1)]{Note}. All values below are in units of $\log p$.
+
+We consider the following readings of \cite[Cor.~3.12]{IUT3}; none is proved here.
+\begin{itemize}
+\item[(V)] The theta value stays at the label $j$, as in Step~(v) and in the reading of IUT~IV of \cite{LANAiut}.
+(The file \nolinkurl{Iut/Concrete/Ind1Invariance.lean} of \cite{LANAiut} also records that taking the hull for each
+image under (Ind1) separately gives the value of IUT~IV.)
+\item[(L)] Label permutations fixing $0$ act on possible-image regions before the hull is taken; this is (R) of
+\cite[\S3]{Note}. (L$^0$) also admits permutations moving $0$, as in \cite[(SA2)]{FirstFull}.
+\item[(M$_{\mathrm b}$)] At a bad place the region of the $\Theta$-pilot object is the theta value times a lattice
+containing $1$, and its Kummer image is a possible image; this is (M) of \cite[\S3]{Note}, which gives
+\cite[Lemma~3]{Note}.
+\item[(M$_{\mathrm g}$)] At a good place the region of the $\Theta$-pilot object at a tuple whose factor of label $j$
+lies over it contains $1\otimes\cdots\otimes1$, the theta value being $1$ there, and its Kummer image is a possible
+image; a source basis for this is given in \cite[\S7, (SA1)]{FirstFull}. The proof of
+\cite[Lemma~3]{Note} then gives, at such a tuple $\bu$, an element $X\in U_j$ with $\pr_{\bu}(X)=\chi(1)$,
+$\chi=\otimes_i\chi_i$, $\chi_i\in\cA(k_{u_i})$.
+\end{itemize}
+Under (V), for every datum and every tuple, the elements of \cite[Lemma~3]{Note} lie in $M_{\bv}$: this is
+\cite[Prop.~6]{Note} with $b=v_j$, and at a good $v_j$ the same argument with $\lambda=0$ applies to $\chi(1)$.
+
+Under (L), elements are moved by \cite[Lemma~4]{Note}. We use three kinds, with lower bounds for the hull component
+obtained from \cite[(1.1)--(1.3)]{Note} and the argument of \cite[Thm.~5]{Note} (if $U_j$ is not relatively compact
+its hull has log-volume $+\infty$ and every finite bound fails).
+\begin{itemize}
+\item[(BB)] Two bad places $b_s,b_l$ above $p$ with $\rho(b_s)<\rho(b_l)$, $j\ge2$, assuming (M$_{\mathrm b}$) and
+(L): the theta value of $b_s$ is moved by a transposition $(t\ j)$, $1\le t<j$, to a tuple with $v_t=b_s$ and
+$v_j=b_l$; the hull component is $\ge-\lceil j^2\rho(b_s)\rceil$.
+\item[(GB)] A good place $g$ and a bad place $b$ above $p$, assuming (M$_{\mathrm g}$) and (L) if $j\ge2$, (L$^0$)
+if $j=1$: the element $\chi(1)$ at a tuple with label $j$ over $g$ is moved to a tuple with label $j$ over $b$; the
+hull component is $\ge0$.
+\item[(GB$_L$)] The variant of \cite[Thm.~8.1]{FirstFull}, under its hypothesis (SA): the moved region contains the
+log-unit lattice, and the hull component is $\ge-\sum_i e_{v_i}^{-1}$.
+\end{itemize}
+
+\begin{proposition}\label{p:closed}
+Let $j\ge1$ and let $\bv$ range over the tuples of places above $p$. Among the elements just described, the largest
+excess of the hull component over the bound \eqref{eq:bound} is
+\begin{align*}
+\text{(BB)}\quad & j^2\rho(b_l)-\lceil j^2\rho(b_s)\rceil-1-\dd_{b_s}-\dd_{b_l}-(j-1)\,\dd_{\min},
+ &&\bv=(b_*,b_s,b_*,\dots,b_*,b_l),\\
+\text{(GB)}\quad & j^2\rho(b)-\dd_b-1, &&\bv=(g,\dots,g,b),\\
+\text{(GB$_L$)}\quad & j^2\rho(b)-(j+2), &&\text{any }\bv\text{ with }v_j=b,
+\end{align*}
+where $\dd_{\min}$ is the least $\dd_v$ over the places above $p$ and $b_*$ a place attaining it. A positive value is a
+non-containment of the component at $\bv$ in $M_{\bv}$.
+\end{proposition}
+
+\begin{proof}
+The bound \eqref{eq:bound} at $\bv$ is $-j^2\rho(v_j)+\sum_i\dd_{v_i}+1$. In (BB) and (GB) the lower bound does not
+depend on the factors other than the moved one and the one of label $j$, so their $\dd$ is minimized; in (GB) the good
+place has $\dd=0$. In (GB$_L$), $\sum_i(e_{v_i}^{-1}+\dd_{v_i})=j+1$ for tame $e_{v_i}$. The values were also checked
+against an enumeration of all tuples for $\ell=7$ and $j\le3$ (\S\ref{s:repro}).
+\end{proof}
+
+\section{The data}\label{s:data}
+
+All data have $E_0\colon y^2=x(x-1)(x-a)$ over $F_0=\Fmod$, $F=F_0(\sqrt{-1},E_0[15])$, $K=F(E_0[\ell])$, and
+$\Vbadmod$ the places of multiplicative reduction outside $2\ell$, as in \cite[\S2]{Note}; $\pi$ generates a prime of
+$F_0$ of degree one over $p=\Nm(\pi)$, and $\bar\pi$ is its conjugate. Table~\ref{tab:data} lists them.
+
+\begin{table}[ht]
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lllllll@{}}
+\toprule
+datum & $\pi$ & $p$ & $a$ & $\ell$ & $(e,\rho)$ above $p$ & proof\\
+\midrule
+$D_{211}$ & $16+3\sqrt5$ & $211$ & $\pi^{29}$ & $7$ & $g\,(1,0)$, $b\,(105,\tfrac{29}7)$ & \cite[Thm.~1]{First}\\
+$D_{109}$ & $10+3i$ & $109$ & $\pi^{29}$ & $7$ & $g\,(1,0)$, $b\,(105,\tfrac{29}7)$ & \cite{Second}\\
+$D_2$ & $14164+5825\sqrt5$ & $30965771$ & $\pi\bar\pi^{6}$ & $7$ & $b_1(105,\tfrac17)$, $b_2(35,\tfrac67)$ & \cite[Prop.~2]{Note}\\
+$D_3$ & as $D_2$ & $30965771$ & $\pi^{6}\bar\pi^{-30}$ & $7$ & $b_1(35,\tfrac67)$, $b_2(7,\tfrac{30}7)$ & Prop.~\ref{p:D3}\\
+$D_{18}$ & as $D_2$ & $30965771$ & $\pi^{18}$ & $7$ & $g\,(1,0)$, $b\,(35,\tfrac{18}7)$ & Prop.~\ref{p:D18}\\
+$D_{15}$ & $-5932-919\sqrt5$ & $30965819$ & $\pi^{15}$ & $7$ & $g\,(1,0)$, $b\,(7,\tfrac{15}7)$ & Prop.~\ref{p:D15}\\
+$D_{2357}^{(\ell)}$ & $41+26i$ & $2357$ & $\pi^{472}$ & $\ell\in\Lambda$ & $g\,(1,0)$, $b\,(15\ell,\tfrac{472}\ell)$ & $\dagger$\\
+\bottomrule
+\end{tabular}
+\caption{The data; $\pi$ lies in $\Z[\sqrt5]$ or $\Z[i]$, and $F_0=\Q(\pi)$. $\Lambda=\{89,97,101,103,107,109,113,127,131,137,139,149,151,157\}$. In every case $e\le p-2$ at
+both places, so \eqref{eq:bound} applies. $\dagger$: the arithmetic conditions are in \cite[\S13]{Second}; the full
+verification of \cite[Def.~3.1]{IUT1} for all $\ell\in\Lambda$ is in a companion report in preparation, and the values
+for $D_{2357}^{(\ell)}$ below are conditional on it.}\label{tab:data}
+\end{table}
+
+\begin{proposition}\label{p:new}
+The data $D_3$, $D_{18}$ and $D_{15}$ extend to initial $\Theta$-data in the sense of \cite[Def.~3.1]{IUT1} satisfying
+the hypotheses of \cite[Thm.~1.10]{IUT4}, with $\Fmod=F_0$ and the local data of Table~\ref{tab:data}; for each,
+$p>e^*_{\mathrm{mod}}\cdot\ell=7741440$.
+\end{proposition}
+
+The proofs are in Appendix~\ref{s:proofs}; each is the proof of \cite[Prop.~2]{Note} with the changes stated there.
+
+\section{The comparisons}\label{s:comparisons}
+
+\begin{theorem}\label{t:component}
+For each positive entry of Table~\ref{tab:component}, under the readings stated for its column, the component of $U_j$
+at the tuple of Proposition~\ref{p:closed} is not contained in $M_{\bv}$, and the log-volume of its hull exceeds the
+bound \eqref{eq:bound} by at least the value shown. Under (V) the elements considered lie in $M_{\bv}$ for every
+datum and every tuple.
+\end{theorem}
+
+\begin{proof}
+Proposition~\ref{p:closed} with the values of Table~\ref{tab:data}, and the remark on (V) in \S\ref{s:readings}.
+\end{proof}
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{@{}lllll@{}}
+\toprule
+datum & kind & $j=1$ & $j=2$ & $j=3$\\
+\midrule
+$D_2$ & (BB) & --- & $-\tfrac{158}{105}$ & $\tfrac{17}{21}$ \ (\cite[Thm.~5]{Note}: $\tfrac{27}{35}$)\\
+$D_3$ & (BB) & --- & $\tfrac{331}{35}$ & $\tfrac{911}{35}$\\
+$D_{211}$, $D_{109}$ & (GB) / (GB$_L$) & $\tfrac{226}{105}$ / $\tfrac87$ & $\tfrac{1531}{105}$ / $\tfrac{88}7$ & $\tfrac{3706}{105}$ / $\tfrac{226}7$\\
+$D_{18}$ & (GB) / (GB$_L$) & $\tfrac35$ / $-\tfrac37$ & $\tfrac{291}{35}$ / $\tfrac{44}7$ & $\tfrac{741}{35}$ / $\tfrac{127}7$\\
+$D_{15}$ & (GB) / (GB$_L$) & $\tfrac27$ / $-\tfrac67$ & $\tfrac{47}7$ / $\tfrac{32}7$ & $\tfrac{122}7$ / $\tfrac{100}7$\\
+\bottomrule
+\end{tabular}
+\caption{Largest excess of the hull component over \eqref{eq:bound}, in units of $\log p$. (BB) assumes (M$_{\mathrm b}$)
+and (L); (GB) assumes (M$_{\mathrm g}$), and (L) for $j\ge2$, (L$^0$) for $j=1$; (GB$_L$) assumes (SA) of
+\cite{FirstFull}. For $D_2$, $j=3$, the tuple of Proposition~\ref{p:closed} is $(b_2,b_1,b_2,b_2)$; the tuple
+$(b_1,b_1,b_1,b_2)$ of \cite[Thm.~5]{Note} gives $\tfrac{27}{35}$.}\label{tab:component}
+\end{table}
+
+For $D_{2357}^{(\ell)}$ the values are $\tfrac{472j^2}\ell-2+\tfrac1{15\ell}$ (GB) and $\tfrac{472j^2}\ell-(j+2)$
+(GB$_L$), positive for every $j\ge1$ and $\ell\in\Lambda$; at $\ell=157$ they are $\tfrac{2371}{2355}$ and
+$\tfrac1{157}$ for $j=1$, and about $18288.8$ and $18210.8$ for $j=\ell^*=78$. At primes with a good and a bad place the
+excess grows like $j^2\rho(b)$, the order of the term $-j^2\rho(v_j)$ of \eqref{eq:bound} itself; at the bad-bad
+primes of $D_2$ and $D_3$ it is of the order $j^2(\rho(b_l)-\rho(b_s))$.
+
+\begin{theorem}\label{t:average}
+For $D_2$, $D_3$, $D_{18}$ and $D_{15}$ the two places above $p$ have degree one, so the tuples have equal weights, and
+$p>e^*_{\mathrm{mod}}\ell$, so the terms with $\log(\mathfrak s^{\le}_p)$ vanish \cite[pp.~23, 25]{IUT4}. Under
+(M$_{\mathrm b}$), (M$_{\mathrm g}$) and (L), the weighted average over the tuples of the hull components at stage $j$ is
+at least $L_j=-\mathbb E_{\bv}\bigl[\min_{1\le t\le j}c(v_t)\bigr]$, where $c(b)=\lceil j^2\rho(b)\rceil$ for a bad
+place and $c(g)=0$ for a good one. The weighted average that Step~(v) displays at stage $j$ is
+$B_j=(j+1)\bar\dd-j^2\bar\rho+1$, and the final bound displayed at $p$ is
+$F_p=\tfrac{\ell+1}4\bigl\{(1+\tfrac4\ell)\bar\dd-\tfrac\ell3\bar\rho+\tfrac4\ell\bigr\}$ \cite[pp.~28--29]{IUT4}, where
+$\bar\dd$ and $\bar\rho$ are the averages over the two places. The values are in Table~\ref{tab:average}.
+\end{theorem}
+
+\begin{proof}
+For a tuple $\bv$ and $t\in\{1,\dots,j\}$, \cite[Lemma~3]{Note} or (M$_{\mathrm g}$) at the tuple $\bv\circ(t\ j)$ and
+\cite[Lemma~4]{Note} with the transposition $(t\ j)$, which fixes $0$, give an element of the component at $\bv$
+whose factors have order at most $c(v_t)$ in total \cite[(1.1)--(1.3)]{Note}; so the hull component at $\bv$ has
+log-volume at least $-\min_tc(v_t)$. For $B_j$: $\log(\dd^K_p)=\bar\dd\log p$, $\log(q_p)=2\ell\bar\rho\log p$ and
+$\log(\mathfrak s^{\Q}_p)=\log p$ in the displays of \cite[pp.~28--29]{IUT4}. The values were computed exactly
+(\S\ref{s:repro}).
+\end{proof}
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{@{}lllll@{}}
+\toprule
+datum & $L_1-B_1$ & $L_2-B_2$ & $L_3-B_3$ & $\tfrac13\sum_jL_j-F_p$\\
+\midrule
+$D_2$ & $-\tfrac{727}{210}$ & $-\tfrac{517}{140}$ & $-\tfrac{1333}{420}$ & $-\tfrac{5477}{1470}$\\
+$D_3$ & $-\tfrac{114}{35}$ & $-\tfrac{67}{70}$ & $\tfrac{1851}{280}$ & $\tfrac{3089}{5880}$\\
+$D_{18}$ & $-\tfrac{153}{70}$ & $-\tfrac9{140}$ & $\tfrac{197}{35}$ & $\tfrac{2687}{2940}$\\
+$D_{15}$ & $-\tfrac{16}7$ & $-\tfrac14$ & $\tfrac{31}7$ & $\tfrac{251}{588}$\\
+\bottomrule
+\end{tabular}
+\caption{Averaged comparisons at $p$ (units of $\log p$). A positive entry means that the averaged lower bound for the
+hull exceeds the displayed bound. For $D_2$ no averaged bound is exceeded; its non-containment is in a single
+component.}\label{tab:average}
+\end{table}
+
+\begin{remark}
+Two variants change the numbers but not the signs of the last column. If the members of the poly-isomorphism over
+the transposition are taken to have identity components, as one may after identifying the members of the capsule with
+the model of \cite[Def.~4.1(iii)]{IUT1}, the rounding $\lceil\cdot\rceil$ can be dropped; the last column
+becomes $\tfrac{241}{245}$, $\tfrac{1059}{980}$, $\tfrac{249}{392}$ for $D_3$, $D_{18}$, $D_{15}$. If permutations
+moving $0$ are admitted as well (L$^0$), the minimum runs over $t\in\{0,\dots,j\}$, and without rounding the last
+column becomes $\tfrac{1217}{490}$, $\tfrac{4323}{1960}$, $\tfrac{1233}{784}$.
+\end{remark}
+
+\section{A global check for \texorpdfstring{$D_2$}{D2}}\label{s:global}
+
+For $D_2$ the bad places are $b_1,b_2$ above $p$, the place above $R$ (the large prime factor of $\Nm(1-a)$, see
+\cite[Prop.~2]{Note}) where $\operatorname{ord}(q)=2$, and the two places above $11$, where $\operatorname{ord}(q)=2$
+each; so $\log q=\tfrac12(14\log p+2\log R+4\log11)=240.09\ldots$ in the normalization of \cite[Thm.~1.10]{IUT4}. The
+final inequality of Theorem~1.10 holds for $D_2$ with a wide margin, its left side $\tfrac16\log q\approx40.0$ being
+far below the constant $20e^*_{\mathrm{mod}}\ell=154828800$ on its right. The inequality that \cite{LANAiut}
+formulates for Step~(xi), $(s-1)|\log q|\le\mulog(\mathrm{hull}(\mathrm{VC}(I)))$ with $s=\ell(\ell+1)/12$ and
+$|\log q|=\log q/2\ell$ (file \nolinkurl{Iut/WallEquiv/README.md}), also holds for $D_2$: the left side is $62.88\ldots$,
+while by the formula $\sum_c w_c\sum_j\rho_{c_j}\log p$ for the prime components recorded there, with
+$\rho=1-1/e$ at the tame places above $p$ and $R$ and the other components nonnegative, the right side is at least
+$3\bigl(\tfrac12(\tfrac{104}{105}+\tfrac{34}{35})\log p+\tfrac12\cdot\tfrac{104}{105}\log R\bigr)=221.0\ldots$.
+The place above $R$, where $q$ has order only $2$, supplies most of this.
+
+\section{Earlier work and dates}\label{s:prior}
+
+\begin{itemize}
+\item Explicit initial $\Theta$-data: \cite[\S2.10]{DH1} (11a1 over $\Q$, $\ell=13$); \cite{Zhou1,Zhou2} (families,
+$\Fmod=\Q$); \cite[Def.~4.1]{MFHMP} ($\mu_6$-initial $\Theta$-data, no numerical example); an explicit example over an
+extension of $\Q(i)$ was asked for in \cite{MO}.
+\item The permutations of tensor factors in (Ind1): \cite[\S4]{DH1} (2020); \cite[\S6.2, footnote~7]{DH} (2020).
+\item The two readings, the agreement when the orders of $q$ agree above each prime, the failure at two bad places with
+different orders, the minimum versus the average, and primes with a good and a bad place from the Belyi reduction:
+\cite{LANAiut}, file \nolinkurl{Iut/Concrete/Literal.lean}, first committed on 11~October 2026 (UTC); the per-image hull,
+file \nolinkurl{Iut/Concrete/Ind1Invariance.lean}, the same day.
+\item The question of the source of $\lambda=\operatorname{ord}(q^{j^2})$ in Step~(v): \cite{Takkun} (July 2026). The last
+estimate of Step~(v) restated without an independent proof: \cite[Prop.~6.10.9]{JoshiIV}.
+\item A different loss in the hull of a tensor packet, from boxing the integral structure: \cite{Zeng} (30 October 2026).
+\item The data of this note: $D_{211}$ on 6 September 2026 \cite{First}, $D_{109}$ on 7 September 2026 \cite{Second},
+$D_2$ on 6 October 2026 \cite{NoteV1}; $D_3$, $D_{18}$, $D_{15}$ and the values of \S\ref{s:comparisons} are new here.
+\end{itemize}
+
+\section{Reproducibility}\label{s:repro}
+
+The values of Tables~\ref{tab:component} and~\ref{tab:average} are computed with exact rational arithmetic by two
+standard-library Python programs: \texttt{catalogue.py} (Proposition~\ref{p:closed}, with an enumeration of all tuples
+for $\ell=7$, $j\le3$, and checks against the values $\tfrac{27}{35}$, $\tfrac87$, $\tfrac{88}7$ recorded in
+\cite{Note,First}) and \texttt{averaged.py} (Theorem~\ref{t:average}). The arithmetic inputs of
+Proposition~\ref{p:new} are checked by the programs listed in Appendix~\ref{s:proofs}. All these programs, with
+their output, are in the archive deposited with this note.
+
+\appendix
+
+\section{Proofs for the new data}\label{s:proofs}
+
+In each case the proof of \cite[Prop.~2]{Note} and of its Table~1 applies with the changes below; in particular
+\cite[Cor.~2.2]{IUT4} is not used, and conditions (d)--(f) are constructed directly from $j\notin\Q$, the split
+multiplicative reduction at the selected places and the image containing $\mathrm{SL}_2(\F_7)$, as there.
+
+\begin{proposition}\label{p:D3}
+$D_3$: $a=\pi^6\bar\pi^{-30}$ with $\pi=14164+5825\sqrt5$.
+\end{proposition}
+\begin{proof}[Changes]
+Now $\operatorname{ord}_{b_1}(j)=-12$ and $\operatorname{ord}_{b_2}(j)=-60$, so $j\notin\Q$. At $b_2$, where $a$ has a
+pole of even order, the change of variables $x=aX$, $y=a\sqrt a\,Y$, with $\sqrt a=\pi^3\bar\pi^{-15}\in F_0$, gives
+$Y^2=X(X-1)(X-a^{-1})$ with $\operatorname{ord}_{b_2}(a^{-1})=30$. The numerator of $1-a$ is
+$-\prod_{d\mid6}\Phi_d(\pi,\bar\pi^{5})$, with the homogeneous cyclotomic forms $\Phi_d$, no two of which have a common
+prime divisor outside $2,3$. None of the four norms $\Nm(\Phi_d(\pi,\bar\pi^5))$ ($38$, $38$, $75$ and $75$ digits) is
+divisible by the seventh power of an odd prime (checked by a segmented sieve up to the seventh roots and independently
+by a complete factorization with primality certificates), $1-a$ is a unit at the place above $3$ and has order $5$ at
+the place above $2$. At the place above $7$, $a$ and $1-a$ are units. For the image, the place of degree one above
+$41$ with $\sqrt5\equiv13$ gives $a_{41}=-6$, and $X^2+6X+41$ is irreducible over $\F_7$; the transvection comes from
+$b_1$, where $\operatorname{ord}(q)=12$. At $b_1$ and $b_2$ the orders of $q$ are $12$ and $60$, so
+$e=35$ and $7$, the differents have orders $34$ and $6$, and $\rho=\tfrac67$ and $\tfrac{30}7$.
+\end{proof}
+
+\begin{proposition}\label{p:D18}
+$D_{18}$: $a=\pi^{18}$ with $\pi=14164+5825\sqrt5$.
+\end{proposition}
+\begin{proof}[Changes]
+The six Legendre orbit comparisons of $a$ fail in $\Z[\sqrt5]$, so $j\notin\Q$. We have
+$a-1=\prod_{d\mid18}\Phi_d(\pi)$; no norm of a factor is divisible by the seventh power of a prime (a sieve up to the
+seventh roots of the norms, at most $2634850$), two factors meet only above $2$ and $3$, which are inert, the order of
+$1-a$ at the place above $3$ is $0$, and the place above $2$ is not selected. So every positive order of $1-a$ at a
+selected place is at most $6$, the only positive order of $a$ is $18$, at $v_\pi$, and $7$ divides neither
+$\Nm(a)=p^{18}$ nor $\Nm(1-a)$. For the image, the place of degree one above $31$ with $\sqrt5\equiv6$ gives
+$a_{31}=-8$, and $a_{31}^2-4\cdot31\equiv3\pmod7$ is not a square; the transvection comes from $v_\pi$, as $7\nmid36$.
+Above $p$, $\bar\pi$ gives a good place $g$ with $e=1$; at $b=v_\pi$ the curve is split Tate over
+$\Qp(\sqrt{-1})$ with $\operatorname{ord}_p(q)=36$, so $e=105/\gcd(105,36)=35$, the different has order $34$ and
+$\rho=\tfrac{18}7$.
+\end{proof}
+
+\begin{proposition}\label{p:D15}
+$D_{15}$: $a=\pi^{15}$ with $\pi=-5932-919\sqrt5$, $p=30965819$.
+\end{proposition}
+\begin{proof}[Changes]
+$p$ is prime, $p\equiv4\pmod5$ and $p\equiv3\pmod4$; $p=\pi\bar\pi$ splits in $F_0$ and both places have degree one.
+At $b=v_\pi$, $\operatorname{ord}(a)=15$; at $g=v_{\bar\pi}$, $a$ is a unit and $a\not\equiv1$; $1-a$ is a unit at both,
+so $\operatorname{ord}_b(j)=-30$, $\operatorname{ord}_g(j)\ge0$ and $j\notin\Q$. The content of $a-1$ in
+$\Z[(1+\sqrt5)/2]$ is $2$, and $5\nmid\Nm(a-1)$; hence at a split odd prime at most one place divides $a-1$, no
+inert odd prime and not the ramified prime $5$ does, and at the place above $2$ (inert) $1-a$ has order $1$, where
+$\operatorname{ord}(j)=6\ge0$. We have $\pi^{15}-1=\Phi_1(\pi)\Phi_3(\pi)\Phi_5(\pi)\Phi_{15}(\pi)$; the norms of the
+blocks are pairwise coprime and none has a seventh-power prime factor other than at $2$ and $7$ (trial division up to
+the seventh roots, at most $363942203$, by two methods with positive and negative controls), and $a-1$ has order $0$ at
+the places above $3$ and $5$. So the orders of $1-a$ at selected places lie in $\{1,\dots,6\}$, the order of $a$ at $b$
+is $15$, and $7$ divides neither $\Nm(a)$ nor $\Nm(1-a)$. For the image, at a place of degree one above $11$ the
+reduction is good with $a_{11}=0$, and $X^2+4$ is irreducible over $\F_7$; the transvection comes from $b$, where
+$\operatorname{ord}_w(q)=30e(w|b)$ is prime to $7$. At $b$ the curve is non-split multiplicative over $\Qp$ and split over
+$\Qp(\sqrt{-1})$, with $\operatorname{ord}_p(q)=30$, so $e=7$, the different has order $6$ and $\rho=\tfrac{15}7$; at
+$g$, $e=1$.
+\end{proof}
+
+The arithmetic inputs were checked by two programs for each datum, the second written independently from the
+specification:
+\begin{itemize}
+\item $D_3$: \nolinkurl{certify_wide.py}, \nolinkurl{independent_check_wide.py};
+\item $D_{18}$: \nolinkurl{certify_datum.py}, \nolinkurl{independent_check.py};
+\item $D_{15}$: \nolinkurl{certify_mixed15.py}, \nolinkurl{independent_check_mixed15.py}.
+\end{itemize}
+For $D_3$, the complete factorization of the four norms, with primality certificates, is checked by
+\nolinkurl{check_pratt_factorizations.py}.
+
+\subsection*{Use of AI tools}
+Generative AI tools (large language models: \mbox{Claude} by \mbox{Anthropic}, and \mbox{ChatGPT} and \mbox{Codex} by
+\mbox{OpenAI}) were used extensively in this work, under the author's direction, in finding the data and the proofs,
+in the computations and in the writing. The author takes full responsibility for the contents of this note.
+
+\begin{thebibliography}{LANA-iut}
+
+\bibitem[DH]{DH}
+Taylor Dupuy and Anton Hilado, \emph{Probabilistic {S}zpiro, baby {S}zpiro, and explicit {S}zpiro from {M}ochizuki's
+  {C}orollary 3.12}, 2020, arXiv:2004.13108v2 [math.NT].
+
+\bibitem[DH1]{DH1}
+Taylor Dupuy and Anton Hilado, \emph{The statement of {M}ochizuki's {C}orollary 3.12, initial theta data, and the
+  first two indeterminacies}, 2020, arXiv:2004.13228 [math.NT]; \S4 and \S4.6 refer to version~1, \S2.10 to
+  version~2 (2025).
+
+\bibitem[First]{First}
+Toshihisa Urahigashi, \emph{An explicit initial $\Theta$-datum with mixed reduction at a split prime}, version
+  0.1.7, Zenodo, \href{https://doi.org/10.5281/zenodo.22537342}{doi:10.5281/zenodo.22537342}.
+
+\bibitem[First-full]{FirstFull}
+Toshihisa Urahigashi, \emph{An explicit initial $\Theta$-datum with mixed reduction over a split prime, and the local
+  estimates of inter-universal {T}eichm\"uller theory~{IV}}, version 0.1.7, in the deposit of \cite{First}; its
+  \S\S7--9 record a reading whose application to the source was withdrawn in that version.
+
+\bibitem[IUT1]{IUT1}
+Shinichi Mochizuki, \emph{Inter-universal {T}eichm\"uller theory {I}: construction of {H}odge theaters}, Publ. Res.
+  Inst. Math. Sci. \textbf{57} (2021), 3--207.
+
+\bibitem[IUT3]{IUT3}
+Shinichi Mochizuki, \emph{Inter-universal {T}eichm\"uller theory {III}: canonical splittings of the
+  log-theta-lattice}, Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 403--626.
+
+\bibitem[IUT4]{IUT4}
+Shinichi Mochizuki, \emph{Inter-universal {T}eichm\"uller theory {IV}: log-volume computations and set-theoretic
+  foundations}, Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 627--723; page numbers refer to the preprint
+  version of April 2020.
+
+\bibitem[JoshiIV]{JoshiIV}
+Kirti Joshi, \emph{Construction of arithmetic {T}eichm\"uller spaces {IV}}, arXiv:2403.10430v2 [math.NT].
+
+\bibitem[LANA-iut]{LANAiut}
+lana-agents, \emph{iut}, Lean repository, \url{https://github.com/lana-agents/iut}, consulted at commit
+  \texttt{ecb3c86} (1 November 2026).
+
+\bibitem[MFHMP]{MFHMP}
+Shinichi Mochizuki, Ivan Fesenko, Yuichiro Hoshi, Arata Minamide, and Wojciech Porowski, \emph{Explicit estimates in
+  inter-universal {T}eichm\"uller theory}, Kodai Math. J. \textbf{45} (2022), no.~2, 175--236.
+
+\bibitem[MO]{MO}
+\emph{Explicit example of elliptic curve of the kind needed for {IUTT}}, MathOverflow question 299845 (2018).
+
+\bibitem[Note]{Note}
+Toshihisa Urahigashi, \emph{A local non-containment in Step~(v) of {IUT}~{IV}, Theorem~1.10}, version 3.0.0, Zenodo,
+  1 November 2026, \href{https://doi.org/10.5281/zenodo.23852752}{doi:10.5281/zenodo.23852752}.
+
+\bibitem[Note-v1]{NoteV1}
+Toshihisa Urahigashi, \emph{A local non-containment in Step~(v) of {IUT}~{IV}, Theorem~1.10}, version 1.0.0, Zenodo,
+  6 October 2026, \href{https://doi.org/10.5281/zenodo.23166433}{doi:10.5281/zenodo.23166433}.
+
+\bibitem[Second]{Second}
+Toshihisa Urahigashi, \emph{An initial $\Theta$-datum over an imaginary quadratic field, and numerical values of the
+  local quantities of inter-universal {T}eichm\"uller theory~{IV}}, version 1.0.5, Zenodo,
+  \href{https://doi.org/10.5281/zenodo.22601333}{doi:10.5281/zenodo.22601333}.
+
+\bibitem[Takkun]{Takkun}
+Takkun-kohinata, \emph{IUT\_LEAN}, GitHub repository, \url{https://github.com/Takkun-kohinata/IUT_LEAN} (July 2026).
+
+\bibitem[Zeng]{Zeng}
+Chunping Zeng, \emph{An integral-structure inflation in the hull operation of {IUT} {C}orollary 3.12}, Zenodo, 30
+  October 2026, \href{https://doi.org/10.5281/zenodo.23811410}{doi:10.5281/zenodo.23811410}.
+
+\bibitem[Zhou1]{Zhou1}
+Zhong-Peng Zhou, \emph{The inter-universal {T}eichm\"uller theory and new {D}iophantine results over the rational
+  numbers.~{I}}, arXiv:2503.14510 [math.NT], 2025.
+
+\bibitem[Zhou2]{Zhou2}
+Zhong-Peng Zhou, \emph{The inter-universal {T}eichm\"uller theory and new {D}iophantine results over rational
+  numbers.~{II}}, arXiv:2510.05448 [math.NT], 2025.
+
+\end{thebibliography}
+
+\end{document}

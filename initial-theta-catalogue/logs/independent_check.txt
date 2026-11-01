@@ -1,0 +1,36 @@
+  [ok] p prime (sympy)
+  [ok] norm(pi) = p
+  [ok] p > 2^12*3^3*5*2*7 = e*_mod*l (source)
+  [ok] p > 2^14*3^3*5*2*7 (enlarged constant)
+  [ok] 7 divides neither N(a) nor N(1-a) (good reduction above l = 7)
+  [ok] j(E0) is not rational (j - jbar != 0)
+  [ok] 5 has two square roots mod p
+  [ok] pi vanishes at exactly one place above p
+  [ok] a mod the conjugate place is not 0, 1
+    a mod v_pibar = 3420864
+  [ok] prod Phi_d(pi) = pi^18 - 1
+  [ok] N(Phi_1(pi)) (8 digits): no seventh power of a prime outside 2*7 (bound 11)
+    factorization: {2: 2, 661: 1, 11701: 1}
+  [ok] N(Phi_2(pi)) (8 digits): no seventh power of a prime outside 2*7 (bound 11)
+    factorization: {2: 2, 5: 2, 61: 1, 5081: 1}
+  [ok] N(Phi_3(pi)) (15 digits): no seventh power of a prime outside 2*7 (bound 138)
+    factorization: {3529: 1, 36469: 1, 7457371: 1}
+  [ok] N(Phi_6(pi)) (15 digits): no seventh power of a prime outside 2*7 (bound 138)
+    factorization: {8359969: 1, 114594031: 1}
+  [ok] N(Phi_9(pi)) (45 digits): no seventh power of a prime outside 2*7 (bound 2634850)
+  [ok] N(Phi_18(pi)) (45 digits): no seventh power of a prime outside 2*7 (bound 2634850)
+  [ok] v_3(N(a-1)) even (3 inert)
+  [ok] order of a - 1 at the place above 3 is 0 or prime to 7
+    order at 3: 0
+  [ok] a degree-one good place with Frobenius irreducible mod 7
+    witness (q, sqrt5 mod q, a_q): (31, 6, -8)
+  [ok] Tate order 2N = 36 at v_pi prime to 7
+  [ok] e_b = 35
+  [ok] tame and I* empty: e_b <= p - 2
+  [ok] ord_p of the 2l-th root of q at b = 18/7
+  [ok] qOrd_b = e_b * 18/7 = 90
+  [ok] margin over the exact bound = 677/280
+  [ok] margin over the final displayed bound = 4323/1960
+    dbar = 17/35  Q = 9/7  union >= -9/8  Bexact = -124/35  Bfinal = -816/245
+OK
+exit status 0, elapsed 1 s

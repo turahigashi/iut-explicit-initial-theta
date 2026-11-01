@@ -194,6 +194,7 @@ The file names carry an older working numbering; the reports are numbered as fol
 | fourth | `fourth-report/paper/note3.tex` | [10.5281/zenodo.22648944](https://doi.org/10.5281/zenodo.22648944) |
 | fifth | `fifth-report/paper/constant_comparison.tex` | [10.5281/zenodo.22659796](https://doi.org/10.5281/zenodo.22659796) |
 | Step (v) short note | `stepv-local-noncontainment/paper/stepv_local_noncontainment.tex` | [10.5281/zenodo.23166432](https://doi.org/10.5281/zenodo.23166432) |
+| catalogue of the data | `initial-theta-catalogue/paper/initial_theta_catalogue.tex` | [10.5281/zenodo.23870448](https://doi.org/10.5281/zenodo.23870448) (version 1.0.0) |
 
 `paper/paper.tex` is the expanded version of the **first** report, cited as `[First-full]`;
 the first report is the version of record.
@@ -291,3 +292,22 @@ remains under Apache-2.0.
 cd stepv-local-noncontainment/paper
 pdflatex -interaction=nonstopmode -halt-on-error stepv_local_noncontainment.tex   # run twice
 ```
+
+## Catalogue of the data (November 2026)
+
+**Explicit initial Θ-data and the two readings of Step (v) of IUT IV, Theorem 1.10: a catalogue.**
+`initial-theta-catalogue/paper/initial_theta_catalogue.pdf` (7 pages), version 1.0.0, DOI
+[10.5281/zenodo.23870448](https://doi.org/10.5281/zenodo.23870448).
+
+The note collects the explicit initial Θ-data constructed over Q(√5) and Q(i) — the three of the first
+report, the second report and the Step (v) short note, and four new ones, one of them for fourteen values
+of ℓ — with their local invariants above one split prime and the comparisons of Step (v) of IUT IV,
+Theorem 1.10, under the two readings of Corollary 3.12 formalized in
+[lana-agents/iut](https://github.com/lana-agents/iut). Under the reading of IUT IV every comparison is a
+containment; under the literal reading and stated membership hypotheses each datum gives a
+non-containment for a single component. **No conclusion is drawn about Corollary 3.12, the final
+inequality of Theorem 1.10, or the abc conjecture.** The programs that compute the tables and check the
+arithmetic of the new data are in the same folder; see `initial-theta-catalogue/README.md`.
+
+The files in `initial-theta-catalogue/` are licensed under CC BY 4.0; the rest of the repository remains
+under Apache-2.0.

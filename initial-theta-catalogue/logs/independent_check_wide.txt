@@ -1,0 +1,34 @@
+  [ok] p prime
+  [ok] norm(pi) = p
+  [ok] p > 2^14*3^3*5*2*7
+  [ok] a = pi^36/p^30 equals pi^6/pibar^30
+  [ok] j(E0) is not rational
+  [ok] X^6 - Y^6 factors into four forms over Q
+  [ok] product of the norms of the four forms = N(pi^6 - pibar^30)
+  [ok] p does not divide N(numerator of 1 - a)
+  [ok] 7 does not divide N(numerator of 1 - a)
+    digits of the four norms: [38, 38, 75, 75]
+  [ok] two norms of < 50 digits and two of >= 50
+    factorint: {2: 2, 5: 2, 29: 1, 1301: 1, 7546302221502292729989416349739: 1}
+  [ok] small norm: no odd prime to a seventh power
+    factorint: {2: 8, 19: 1, 149: 1, 19801: 1, 1984003939995100146692750879: 1}
+  [ok] small norm: no odd prime to a seventh power
+    wheel bound: 50264324899  integers tested: 11488988552
+    large norm 0: prime divisors up to the bound {19: 1, 61: 1, 118621: 1}
+  [ok] large norm 0: no odd prime up to its seventh root to a seventh power
+    large norm 1: prime divisors up to the bound {17: 2, 1291: 1, 166911169: 1}
+  [ok] large norm 1: no odd prime up to its seventh root to a seventh power
+  [ok] two forms share a place only above 2 or 3
+  [ok] above 3: order of 1 - a prime to 7 (v_3 even, half not divisible by 7 unless 0)
+    v_2 = 10, v_3 = 0
+  [ok] mod-7 witness by point counting
+    witness: (41, 13, -6)
+  [ok] Tate orders prime to 7
+  [ok] profile e = (35, 7), qOrd = (30, 30)
+    union lower bounds: [Fraction(-18, 7), Fraction(-48, 7), Fraction(-81, 7)]  Step (v) label bounds: [Fraction(9, 35), Fraction(-229, 35), Fraction(-647, 35)]
+    gaps: [Fraction(-99, 35), Fraction(-11, 35), Fraction(242, 35)]  final display: -1956/245  excess: 241/245
+  [ok] gaps = (-99/35, -11/35, 242/35)
+  [ok] excess over the final display = 241/245
+  [ok] summand collision coefficient = -129/5
+OK
+exit status 0, elapsed 329 s
