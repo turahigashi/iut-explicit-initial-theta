@@ -46,7 +46,7 @@
 \title{A local non-containment in Step~(v) of IUT~IV, Theorem~1.10}
 \author{Toshihisa Urahigashi}
 \email{123026.urahigashi.toshihisa@gmail.com}
-\date{Draft, 5 October 2026; revised 28 October 2026}
+\date{Draft, 5 October 2026; revised 28 October 2026 and 1 November 2026}
 
 \begin{abstract}
 Step~(v) of the proof of Theorem~1.10 in the fourth paper of Mochizuki's series on inter-universal
@@ -60,7 +60,13 @@ Under the membership and orbit-closure readings stated in Section~\ref{s:union},
 belongs to the projection of the possible-image union, and the corresponding hull component has
 larger log-volume than the displayed upper bound. The full identification with the source's intended
 construction remains unverified here; the example is offered as a concrete local consistency test
-and a basis for further discussion. No conclusion is drawn about the truth of Corollary~3.12 itself,
+and a basis for further discussion. The orbit-closure reading corresponds to what the public Lean
+formalization lana-agents/iut calls the literal reading of Corollary~3.12, as opposed to the reading with
+the theta value at the label $j$ used in Step~(v). Using the distinctions recorded there, we place the example
+in a two-by-two classification,
+by reading and by whether the orders of the $q$-parameters at the places above $p$ agree: for the
+elements considered here, a non-containment can occur only for the orbit-closure reading at a prime where
+they differ. No conclusion is drawn about the truth of Corollary~3.12 itself,
 the final global inequality of Theorem~1.10, or the abc conjecture.
 \end{abstract}
 
@@ -302,6 +308,7 @@ permutations used below, and under (Ind2).
 These are readings of \cite[Prop.~3.7(v), Def.~3.8(i), Thm.~3.11, Cor.~3.12]{IUT3},
 not a new definition of $U_j$. The local non-containment calculation in
 Theorem~\ref{t:main} does not require these readings; its application to $U_j$ does.
+Section~\ref{s:readings} compares \textup{(R)} with the reading used in Step~(v).
 
 \begin{lemma}\label{l:member}
 Assume \textup{(M)}. Let $\bv$ be a tuple with $\underline v_j\in\Vbad$, and let $\theta\in k_{v_j}$ be a generator of the component
@@ -467,6 +474,95 @@ component. It does not by itself decide the global
 inequality obtained later in Theorem~1.10 after summing over all places. No assertion is made here concerning
 Corollary~3.12 itself or the abc conjecture.
 
+\section{Two readings and two kinds of data}\label{s:readings}
+
+\paragraph{The two readings.}
+Step~(v) places the theta value at the label $j$ ($i^\dagger=j$) and accounts for (Ind1) through the
+arbitrary nature of the automorphism $\phi$ and a symmetrization over $i^\dagger$ \cite[pp.~27--28]{IUT4}.
+The reading \textup{(R)} lets the label permutations of (Ind1) act on the possible-image regions before the
+holomorphic hull is taken, so that, at a given tuple, the theta value may sit at a label other than $j$.
+That the actual (Ind1) includes permutations between tensor factors, which a simplified computation of the hull
+may omit, was already noted in \cite[\S6.2, footnote~7]{DH}.
+Both readings are formalized in the public Lean repository \cite{LANAiut}, in the file
+\texttt{Iut/Concrete/Literal.lean}. There, IUT~IV's reading (the label $j$) underlies the hypothesis
+\texttt{Cor312VariantHolds}, the reading with the theta value at any label of $\Sj$ is called the
+literal reading of Corollary~3.12 (\texttt{Cor312LiteralHolds}), and the former is shown to imply the
+latter. The elements used in Theorem~\ref{t:main} lie in the literal region of \cite{LANAiut}; we use
+only permutations fixing the label~$0$. The same file records, in prose, that the two readings give the
+same regions when $\operatorname{ord}_p(q_v)$ is the same at all places $v$ of $\Fmod$ above each prime
+$p$; that two bad places above $p$ with different $\operatorname{ord}_p(q_v)$ already break this; and
+that under the literal union the hull at a tuple is governed by the minimum of
+$\operatorname{ord}_p(q_v)$ over the labels rather than by the average used in Step~(v). The file
+\texttt{Iut/Concrete/Ind1Invariance.lean} of \cite{LANAiut} contains Lean theorems
+(\texttt{rhsDataOn\_perm}, \texttt{rhsDataOn\_singleton}) stating, in that model, that the
+procession-normalized log-volume of the hull is invariant under the label permutations and that every
+single-label reading gives IUT~IV's value; it reads IUT~IV as taking the holomorphic hull for each
+(Ind1)-image separately.
+
+\smallskip
+\paragraph{Two kinds of data.}
+For a place $v$ of $\Fmod$ above $p$, put $\rho(v)=\operatorname{ord}_p(\qq_v)$ if $\underline v\in\Vbad$,
+as in \S\ref{s:source}, and $\rho(v)=0$ otherwise; so Step~(v) uses $\lambda=j^2\rho(v_j)$. Following
+\cite{LANAiut}, we distinguish whether $\rho$ is constant on the places of $\Fmod$ above $p$; this is the
+condition under which the two readings give the same regions.
+
+\begin{proposition}\label{p:cells}
+Let $\bv$ be a tuple and $\lambda=j^2\rho(v_j)$. Let $y\in k_{\bv}$ be a pure tensor whose factor of some
+label $i_0$ is a theta value $\theta\in k_{v_{i_0}}$ at a place $b=v_{i_0}$ with $\underline b\in\Vbad$, so that
+$\operatorname{ord}(\theta)=j^2\rho(b)$, and whose other factors are $1$. Let $\psi=\otimes_i\psi_i$ with
+$\psi_i\in\cA(k_{v_i})$. If $\rho(b)\ge\rho(v_j)$, then $\psi(y)\in C_{\bv}\subseteq M_{\bv}$.
+\end{proposition}
+
+\begin{proof}
+By (1.1) every component of $y$ has $\operatorname{ord}$ equal to $j^2\rho(b)\ge\lambda$, so
+$y\in p^\lambda\cdot\RIt$. Each $\psi_i$ maps $\log_p(\cO_{k_{v_i}}^\times)$ onto itself, so $\psi$ is a
+$\Qp$-linear automorphism of $k_{\bv}$ that induces an automorphism of $\log_p(R_I^\times)$, that is, one of the
+automorphisms $\phi$ of \cite[Prop.~1.2]{IUT4}. Hence
+$\psi(y)\in\phi(p^\lambda\cdot\RIt)\subseteq C_{\bv}\subseteq M_{\bv}$ by \cite[Prop.~1.2(ii), p.~10]{IUT4}.
+\end{proof}
+
+Under the reading with the theta value at the label $j$ we have $b=v_j$. Under \textup{(R)} at a prime above
+which $\rho$ is constant, $\rho(b)=\rho(v_j)$ if $\underline v_j\in\Vbad$, and $\rho(v_j)=0$ otherwise. In these three cells
+Proposition~\ref{p:cells} applies to every element provided by Lemma~\ref{l:member}, and by
+Lemma~\ref{l:transport} where \textup{(R)} is assumed, so these elements lie in $M_{\bv}$. For these
+elements, therefore, a non-containment as in Theorem~\ref{t:main} requires the reading
+\textup{(R)}, a prime above which $\rho$ is not constant, and two bad places above it with $\rho(b)<\rho(v_j)$
+(Table~\ref{tab:cells}).
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+ & $\rho$ constant above $p$ & $\rho$ not constant above $p$\\
+\midrule
+theta value at the label $j$ (Step~(v)) & in $M_{\bv}$ & in $M_{\bv}$\\
+label permutations before the hull, \textup{(R)} & in $M_{\bv}$ & not in $M_{\bv}$ for $D_2$, $j=3$\\
+\bottomrule
+\end{tabular}
+\caption{Whether the elements of Lemmas~\ref{l:member} and~\ref{l:transport} lie in the module $M_{\bv}$ of
+Step~(v): Proposition~\ref{p:cells} for three cells, Theorem~\ref{t:main} for the fourth.}\label{tab:cells}
+\end{table}
+
+The datum $D_2$ lies in the fourth cell: above the prime $p=30965771$, $\rho$ takes the values
+$1/7$ and $6/7$ at the two bad places $b_1,b_2$. This is the situation of two bad places above $p$ with different
+$\operatorname{ord}_p(q_v)$, in which \cite{LANAiut} records that the regions of the two readings differ.
+Under \textup{(M)} and \textup{(R)}, Theorem~\ref{t:main} shows that for $D_2$ and $j=3$ the difference is not
+absorbed by the allowance $\dd_I+1$ in the bound~\eqref{eq:bound}: the hull component exceeds that bound by at
+least $\tfrac{27}{35}\log p$. The second column also contains primes with both
+good and bad places above them, which \cite{LANAiut} notes arise from the Belyi reduction in the argument from
+Theorem~1.10 to the abc conjecture; Lemma~\ref{l:member} concerns bad places only, and this note does not treat that case. We do
+not decide which reading the source intends. Under the reading with the theta value at the label $j$, the
+example has no bearing on Step~(v).
+
+\smallskip
+\paragraph{Dates.}
+Version~1.0.0 of this note, with the datum $D_2$ and Theorem~\ref{t:main}, was published on 6~October 2026
+\cite{NoteV1}. The file \texttt{Iut/Concrete/Literal.lean} was added to \cite{LANAiut} on 11~October 2026
+(UTC; commit \texttt{e22fdf9}); the statements summarized above are in its revision of the same day (commit
+\texttt{2b2190d}), and \texttt{Ind1Invariance.lean} was added in commit \texttt{08c7e5d}, also on 11~October
+2026 (UTC). Version~2.0.0 of this note (29~October 2026) stated the readings \textup{(M)} and \textup{(R)}
+but did not cite \cite{LANAiut}; the present version adds the comparison.
+
 \subsection*{Use of AI tools}
 Generative AI tools (large language models: \mbox{Claude} by \mbox{Anthropic}, and \mbox{ChatGPT} and \mbox{Codex} by \mbox{OpenAI}) were used
 extensively in this work, under the author's direction, in
@@ -480,7 +576,7 @@ the contents of this note.
   \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
 }
 \providecommand{\href}[2]{#2}
-\begin{thebibliography}{MFHMP}
+\begin{thebibliography}{LANA-iut}
 
 \bibitem[CanLift]{CanLift}
 Shinichi Mochizuki, \emph{The absolute anabelian geometry of canonical curves},
@@ -525,11 +621,22 @@ Shinichi Mochizuki, \emph{The \'etale theta function and its
   \textbf{57} (2021), 627--723, page numbers refer to the preprint version of
   April 2020.
 
+\bibitem[LANA-iut]{LANAiut}
+lana-agents, \emph{iut: inter-universal {T}eichm\"uller theory, the ABC/IUT trunk}, Lean
+  repository, \url{https://github.com/lana-agents/iut}, files
+  \texttt{Iut/Concrete/Literal.lean} and \texttt{Iut/Concrete/Ind1Invariance.lean};
+  consulted at commit \texttt{c800fb8} (1 November 2026).
+
 \bibitem[MFHMP]{MFHMP}
 Shinichi Mochizuki, Ivan Fesenko, Yuichiro Hoshi, Arata Minamide, and Wojciech
   Porowski, \emph{Explicit estimates in inter-universal {T}eichm\"uller
   theory}, Kodai Math. J. \textbf{45} (2022), no.~2, 175--236, numbering as in
   the accepted manuscript of May 2022.
+
+\bibitem[Note-v1]{NoteV1}
+Toshihisa Urahigashi, \emph{A local non-containment in Step~(v) of {IUT}~{IV}, Theorem~1.10},
+  version 1.0.0, Zenodo, 6 October 2026,
+  \href{https://doi.org/10.5281/zenodo.23166433}{doi:10.5281/zenodo.23166433}.
 
 \bibitem[Sil]{Sil}
 Joseph~H. Silverman, \emph{The arithmetic of elliptic curves}, second ed.,

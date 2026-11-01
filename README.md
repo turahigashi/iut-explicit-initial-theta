@@ -259,8 +259,8 @@ adjudicate neither the theory nor the objection.**
 ## Step (v) short note (October 2026)
 
 **A local non-containment in Step (v) of IUT IV, Theorem 1.10.**
-`stepv-local-noncontainment/paper/stepv_local_noncontainment.pdf` (7 pages), version 2.0.0, DOI
-[10.5281/zenodo.23737179](https://doi.org/10.5281/zenodo.23737179).
+`stepv-local-noncontainment/paper/stepv_local_noncontainment.pdf` (9 pages), version 3.0.0, DOI
+[10.5281/zenodo.23852752](https://doi.org/10.5281/zenodo.23852752).
 All versions: [10.5281/zenodo.23166432](https://doi.org/10.5281/zenodo.23166432).
 
 This note presents an explicit local non-containment calculation for a datum with two places of
@@ -271,6 +271,10 @@ conditional on the membership and orbit-closure readings (M) and (R) in Section 
 compatibility with the cited constructions of the local-coordinate descriptions used in Lemmas 3
 and 4. Under those assumptions, the corresponding hull component has larger log-volume than the
 displayed bound. A complete identification with the source construction is not established in this note.
+Section 6 relates the reading (R) to the literal reading of Corollary 3.12 formalized in the public Lean
+repository [lana-agents/iut](https://github.com/lana-agents/iut), and, using the distinctions recorded there, places the example in a
+two-by-two classification by reading and by whether the orders of the q-parameters at the places above p
+agree.
 
 **No assertion is made about Corollary 3.12 itself, the final global inequality of Theorem 1.10,
 or the abc conjecture.** This is a preprint; it has not been refereed.
