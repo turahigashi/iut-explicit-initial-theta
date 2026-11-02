@@ -195,6 +195,7 @@ The file names carry an older working numbering; the reports are numbered as fol
 | fifth | `fifth-report/paper/constant_comparison.tex` | [10.5281/zenodo.22659796](https://doi.org/10.5281/zenodo.22659796) |
 | Step (v) short note | `stepv-local-noncontainment/paper/stepv_local_noncontainment.tex` | [10.5281/zenodo.23166432](https://doi.org/10.5281/zenodo.23166432) |
 | catalogue of the data | `initial-theta-catalogue/paper/initial_theta_catalogue.tex` | [10.5281/zenodo.23870448](https://doi.org/10.5281/zenodo.23870448) (version 1.0.0) |
+| programmer's walkthrough | `iut-walkthrough/paper/iut_walkthrough.tex` | [10.5281/zenodo.23880260](https://doi.org/10.5281/zenodo.23880260) (version 1.0.0) |
 
 `paper/paper.tex` is the expanded version of the **first** report, cited as `[First-full]`;
 the first report is the version of record.
@@ -311,3 +312,23 @@ arithmetic of the new data are in the same folder; see `initial-theta-catalogue/
 
 The files in `initial-theta-catalogue/` are licensed under CC BY 4.0; the rest of the repository remains
 under Apache-2.0.
+
+## A programmer's walkthrough (November 2026)
+
+**A programmer's walkthrough of inter-universal Teichmüller theory: running the multiradial algorithm on
+explicit initial Θ-data.** `iut-walkthrough/paper/iut_walkthrough.pdf` (15 pages), version 1.0.0, DOI
+[10.5281/zenodo.23880260](https://doi.org/10.5281/zenodo.23880260).
+
+A program, with an interactive web page, that runs on explicit numbers those operations of IUT that can be
+written as procedures, on the seven initial Θ-data of the catalogue above. It computes the Tate parameters
+and local data p-adically, keeps the two Hodge theaters of a Θ-link as type-separated copies of the local
+fields, computes log-shells, Kummer read-outs, containers, possible images and the log-volume of the
+holomorphic hull of their union for three readings of the label indeterminacy, and places side by side the
+two quantities that Step (xi) of the proof of Corollary 3.12 compares. Infinite objects are computed in
+finite windows. **The purpose is expository; no conclusion is drawn about Corollary 3.12, Theorem 1.10 of
+IUT IV, or the abc conjecture.** Turning the objects and processes of IUT into data types has been done
+earlier and on a broader scale in [motizukipdf](https://github.com/oneman/motizukipdf); the container
+formulas and the readings are taken from [lana-agents/iut](https://github.com/lana-agents/iut). See
+`iut-walkthrough/README.md` for the files and how to rerun the program (Python 3.10 or later, sympy).
+
+The files in `iut-walkthrough/` are licensed under CC BY 4.0.
