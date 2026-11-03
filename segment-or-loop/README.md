@@ -1,6 +1,8 @@
 # Segment or loop? A homotopy-type-theoretic overview of the dispute over Corollary 3.12 of inter-universal Teichmüller theory
 
-Version 1.0.0, 4 November 2026 (24 pages). DOI [10.5281/zenodo.23931344](https://doi.org/10.5281/zenodo.23931344).
+Version 1.1.0, 4 November 2026 (24 pages). DOI [10.5281/zenodo.23933109](https://doi.org/10.5281/zenodo.23933109).
+Version 1.0.0: [10.5281/zenodo.23931344](https://doi.org/10.5281/zenodo.23931344). Version 1.1.0 adds pointers to Part II of
+the companion note (its version 2.0.0) and updates the two DOIs; the Lean files are unchanged.
 
 The dispute over Corollary 3.12 of IUT III has been conducted in many vocabularies: the identification and labelling
 of isomorphic copies, monodromy, segment, loop and universal cover, the properties IPL, SHE and APT, logical AND and
@@ -16,8 +18,9 @@ proposition gives the source of the underlying mathematics. The quantitative cor
 **No claim is made about the truth of Corollary 3.12, Theorem 1.10 of IUT IV, or the abc conjecture.**
 
 A companion note in undergraduate mathematics, *Reading the IUT dispute through indexed identifications*, is in
-[`../indexed-identifications/`](../indexed-identifications/) (DOI
-[10.5281/zenodo.23931346](https://doi.org/10.5281/zenodo.23931346)).
+[`../indexed-identifications/`](../indexed-identifications/) (version 2.0.0, DOI
+[10.5281/zenodo.23933108](https://doi.org/10.5281/zenodo.23933108)). Its Part II extends the model to the components
+of tensor packets and the label permutations of (Ind1).
 
 ## Files
 

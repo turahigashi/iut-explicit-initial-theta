@@ -26,6 +26,10 @@
 \newcommand{\Gloop}{\Gamma_{\mathrm{loop}}}
 \newcommand{\Guni}{\Gamma_{\mathrm{uni}}}
 \newcommand{\id}{\mathrm{id}}
+\newcommand{\Sj}{\mathbb{S}_{j+1}}
+\newcommand{\Sa}{S_{\mathrm a}}
+\newcommand{\Sb}{S_{\mathrm b}}
+\newcommand{\lean}[1]{\texttt{#1}}
 
 % labels
 \newcommand{\lab}[2]{{\upshape\fcolorbox{#1}{#1!8}{\scriptsize\sffamily\bfseries\textcolor{#1}{#2}}}}
@@ -43,6 +47,7 @@
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{setup}[theorem]{Setup}
@@ -53,7 +58,7 @@
 
 \title{Reading the IUT dispute through indexed identifications:\\ an educational model in undergraduate mathematics}
 \author{Toshihisa Urahigashi\\\small ORCID 0009-0004-0460-6242\\\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.0.0, 4 November 2026\\\small\href{https://doi.org/10.5281/zenodo.23931346}{doi:10.5281/zenodo.23931346}}
+\date{Version 2.0.0, 4 November 2026\\\small\href{https://doi.org/10.5281/zenodo.23933108}{doi:10.5281/zenodo.23933108}}
 
 \begin{document}
 \maketitle
@@ -70,8 +75,19 @@ Scholze--Stix (omit $j^2$ and the inequality is empty; keep it and the identific
 blurring must be by a factor of at least $O(l^2)$) then sit on one line, the inequality $(k-1)Q\le E$. What is agreed is that an
 identification which does not return to $1$ around a loop leads to a contradiction if it is used consistently. What is
 disputed is whether the \q{license}, in Mochizuki's word, to identify up to \q{relatively small error terms} can be
-obtained independently of the conclusion. The model does not decide this question. A companion paper states the same
-model in homotopy type theory and checks its quantitative core by computer.
+obtained independently of the conclusion. The model does not decide this question.
+
+Part~II, new in this version, opens the single number $E$. Read backwards from the public Lean formalization
+lana-agents/iut, the notation needs four more things: values on the components of tensor packets; indices that pair a
+permutation of the factors with identifications on the components; a rule for the order in which the hull of a union
+and an average are taken; and a record of the construction that a compared number comes from. In a model with one prime,
+its places and the label permutations of (Ind1), the hull over all positions of the theta value is governed, at each
+component, by the smallest $q$-order among the factors, whereas the computation of IUT~IV uses an average. After
+averaging over the components the difference is an expected order statistic, and it vanishes exactly when all places
+above the prime have the same $q$-order. For every reading of the union, Corollary~3.12 together with the upper bound of
+IV implies the height bound: in one reading the content is carried by the upper bound of IV, in the other by
+Corollary~3.12 itself. Which reading the source intends is not decided. A companion paper states the model of Part~I in
+homotopy type theory; the quantitative core of Part~II is checked in Lean.
 \end{abstract}
 
 \section{Introduction}
@@ -112,8 +128,10 @@ and hence of the desired \textbf{bounds} on \textbf{heights} is an \emph{essenti
 \subsection{The plan of this note}
 This note writes these ``identifications'' with a symbol that carries, as an index, the identification that is used.
 Only undergraduate mathematics is needed: sets and maps, the group of positive real numbers under multiplication,
-graphs (vertices, edges, cycles) and inequalities. No category theory, homotopy type theory or anabelian geometry is
-used.
+graphs (vertices, edges, cycles) and inequalities; Part~II also uses permutations of a finite set and weighted
+averages. No category theory, homotopy type theory or anabelian geometry is used.
+
+Part~I gives each container a single number.
 \begin{itemize}
 \item Section~\ref{s:loop} looks at identifications that do not return around a loop, using unit conversion and the
 angle on a circle.
@@ -125,9 +143,19 @@ options of Scholze--Stix to a one-line inequality.
 \item Section~\ref{s:toy} rereads Mochizuki's elementary numerical model in the same notation.
 \item Section~\ref{s:cor} shows how the shape of a height bound comes out of Corollary~3.12 together with the upper bound
 of IUT~IV.
-\item Section~\ref{s:table} puts the two positions in one table, Section~\ref{s:down} compares, one level down, the
-presented reals of~\cite{U}, and Section~\ref{s:ex} gives exercises.
+\item Section~\ref{s:table} puts the two positions in one table, and Section~\ref{s:down} compares, one level down,
+the presented reals of~\cite{U}.
 \end{itemize}
+Part~II, new in version 2.0.0, opens the error $E$.
+\begin{itemize}
+\item Section~\ref{s:why} explains why one number is not enough, and Section~\ref{s:comp} extends the notation.
+\item Section~\ref{s:model2} sets up a model with components, and Section~\ref{s:hull2} computes the hull in two
+readings of the union.
+\item Section~\ref{s:dispute2} writes the dispute in the extended notation, and Section~\ref{s:corr2} gives the
+correspondences and states what remains.
+\end{itemize}
+Section~\ref{s:sum} summarizes, Section~\ref{s:ex} gives exercises, and Appendix~\ref{app:lean} lists the Lean
+declarations that check Part~II.
 
 \subsection{What this note does not claim}
 \begin{itemize}
@@ -138,8 +166,13 @@ ordered one-dimensional real vector spaces~\cite[\S2.1.4]{SS}. Mochizuki, on the
 among the \q{\emph{erroneous attempts by SS to simplify IUTch} \dots{} to such an extent that it leads to meaningless
 contradictions}~\cite[\S4]{R18}. The model is a tool for seeing the shape of
 the dispute; it is not IUT itself.
-\item The content of the multiradial algorithm (Theorem~3.11 of IUT~III) and of anabelian geometry is not treated. In the
-model, the size of the error they produce is represented by a single number~$E$.
+\item The content of the multiradial algorithm (Theorem~3.11 of IUT~III) and of anabelian geometry is not treated. In
+Part~I the size of the error they produce is represented by a single number~$E$. In Part~II the part of the error
+produced by the label permutations of (Ind1) is computed in a model, and the part produced by (Ind2) and (Ind3) is still
+a single number.
+\item The model of Part~II has one prime, the places above it and the label permutations; regions are represented by
+their log-volumes. The regions themselves, the differents, the archimedean places and the normalizations of IV are not
+modelled.
 \end{itemize}
 
 \subsection{Relation to earlier explanations}
@@ -158,6 +191,16 @@ recorded at each place. The correspondence between the diagrammatic language of 
 diagrams and the compatibility (9-1)), the notation of this note and the identity types of homotopy type theory is given
 in~\cite[\S6.4]{Ur}.
 
+Part~II follows the public Lean formalization~\cite{LANAiut}, which states two readings of the union in
+Corollary~3.12---the theta value at any label of $\mathbb{S}^\pm_{j+1}$, or at the label $j$ as in IUT~IV---and
+records that under the first the hull is governed by a minimum rather than by an average. That the actual (Ind1)
+includes permutations between tensor factors, which a simplified computation may omit, was noted earlier by
+Dupuy--Hilado~\cite[\S6.2, footnote~7]{DH}. An explicit initial $\Theta$-datum for which, under the readings
+stated there, the union in the literal reading is not contained in the module used in Step~(v) is given
+in~\cite{Note}. In the setting of Part~I, the inequality of Proposition~\ref{p:cor} is
+stated in~\cite{TK} as the condition for the containment used in Step~(v) of IUT~IV. What Part~II adds is the
+undergraduate formulation, the size of the difference between the two readings, and Theorem~\ref{t:two}.
+
 \subsection{Labels}
 The labels in the text mean the following.
 \begin{itemize}[label={}]
@@ -172,6 +215,8 @@ this note.
 \item \tagH\ A reading or interpretation of this note (not a proof).
 \end{itemize}
 Definitions and examples without a label are standard or expository.
+
+\part{One number}
 
 \section{Identifications that do not return around a loop}\label{s:loop}
 
@@ -256,7 +301,7 @@ spaces.}}{\cite[\S2.1.4]{SS}}
 chosen; changing the unit multiplies values by a positive real number. In this note we use from the start containers
 with a chosen unit, that is, labelled copies of $\R$.
 
-\begin{definition}[Identifications]\tagR
+\begin{definition}[Identifications]\label{d:ident}\tagR
 \known{\cite[Prop.~2.4\,(ii)]{Ur}, \cite[\S2.1.4]{SS}}
 An \emph{identification} from the container $\R_\alpha$ to $\R_\beta$ is a map $f(x)=\lambda x$ given by multiplication
 by a positive number $\lambda$; we call $\lambda=\lambda_f$ the \emph{scale} of $f$. For $x\in\R_\alpha$ and
@@ -266,7 +311,7 @@ and read it as ``$x$ and $y$ are identified by $f$''.
 \end{definition}
 
 \subsection{Four rules}
-\begin{proposition}[Rules]\tagP\tagR
+\begin{proposition}[Rules]\label{p:rules}\tagP\tagR
 \known{\cite[Prop.~2.4]{Ur}; for (R4), \cite[footnote~8]{SS} and \cite[Cor.~3.12]{IUT3}}
 \begin{enumerate}[label=(R\arabic*)]
 \item \emph{Identity and inverse.} $x\approx_{\id}x$. If $x\approx_f y$, then $y\approx_{f^{-1}}x$, and
@@ -715,6 +760,401 @@ when an independent decidable search produces a witness---Appendix~B.12)}}{\cite
 identification of scale $1/k\ne1$ cannot be avoided. The relation with locators, and a formulation that treats both
 levels in the single language of homotopy type theory, are left to~\cite[\S7]{Ur}.
 
+\part{Components}
+
+\section{What one number cannot hold}\label{s:why}
+
+In Part~I the error $E$ was a single number, and the dispute became the inequality $(k-1)Q\le E$
+(Proposition~\ref{p:cor}). In the source, $E$ is not a free parameter. It comes from the indeterminacies
+(Ind1), (Ind2), (Ind3) acting on the regions of the multiradial representation, and these regions live in
+\emph{tensor packets}.
+
+\srcquote{\q{we consider, for each element $\ast\in\mathbb{S}^\pm_{j+1}$, and for each [say, for simplicity,
+\emph{nonarchimedean}] $v_{\mathbb{Q}}\in\mathbb{V}_{\mathbb{Q}}$,
+\begin{itemize}
+\item[$\cdot$] the \emph{direct sum of the} \textbf{log-shells} associated to the prime-strip labeled by the
+given element $\ast\in\mathbb{S}^\pm_{j+1}$ at the $\underline{v}\in\underline{\mathbb{V}}$ that lie over
+$v_{\mathbb{Q}}$;
+\end{itemize}
+we then form
+\begin{itemize}
+\item[$\cdot$] the \textbf{tensor product}, over the elements $\ast\in\mathbb{S}^\pm_{j+1}$, of these
+\emph{direct sums}.
+\end{itemize}
+This collection of tensor products associated to $v_{\mathbb{Q}}\in\mathbb{V}_{\mathbb{Q}}$ will be referred
+to as the \textbf{tensor packet} associated to the collection of prime-strips indexed by elements of
+$\mathbb{S}^\pm_{j+1}$.}}{\cite[Introduction]{IUT3}}
+
+When the dispute is written in a proof assistant, the regions and the indeterminacies have to be
+represented. The public Lean formalization~\cite{LANAiut} does this with tuples of places, their weights and
+the permutations of the labels, and it distinguishes two readings of the union in Corollary~3.12.
+
+\srcquote{\q{The indeterminacy (Ind1) contains the permutation automorphisms of the label sets $S_{j+1}$ of
+the procession (IUT III, Introduction): the theta value $q^{j^2}$ of the capsule $S_{j+1}$ may sit at any
+label. IUT IV, proof of Theorem 1.10, Steps (iv)--(v), computes with the theta value at the label $j$
+only.}}{\cite[\texttt{Iut/Concrete/Literal.lean}]{LANAiut}; code markup rendered as mathematics}
+
+Read backwards from such a formalization, the notation of Section~\ref{s:indexed} lacks four things.
+\begin{enumerate}[label=(\arabic*)]
+\item \emph{Values on components.} A value is not one number but a family of numbers, one for each component
+of a tensor packet.
+\item \emph{Indices that are pairs.} An identification is a permutation of the components together with an
+identification on each component; composing two of them is composition in a wreath product.
+\item \emph{An order for collecting possible images.} The hull of a union, which takes at each component the
+largest possible image, and the average over the components do not commute.
+\item \emph{Inclusions and provenance.} Regions may be enlarged, which is what (Ind3) allows, and a number
+that is compared has to carry the construction it comes from.
+\end{enumerate}
+Section~\ref{s:comp} adds these to the notation. Section~\ref{s:model2} builds a model with components,
+Section~\ref{s:hull2} computes the hull in two readings of the union, and Section~\ref{s:dispute2} writes
+the dispute in the extended notation.
+
+\section{Indexed identifications with components}\label{s:comp}
+
+\begin{definition}[Components and values]\label{d:comp}\tagR
+\known{\cite[Introduction]{IUT3} (tensor packets), \cite{LANAiut}}
+Let $C$ be a finite set, the \emph{components}, with weights $w(c)\ge0$. A \emph{value} on $C$ is a function
+$x:C\to\R$; we think of $x(c)$ as the log-volume of a region in the component~$c$. For two values we write
+$x\sqsubseteq y$ if $x(c)\le y(c)$ for every $c$ (the region of $x$ is contained in that of $y$). The
+\emph{average} of $x$ is $\mu(x):=\sum_{c\in C}w(c)\,x(c)$.
+\end{definition}
+
+\tagH\ In the model the regions in one component are nested, like balls with a common centre, so a region is
+determined by its log-volume, inclusion is the order of log-volumes, and the union of finitely many regions
+is the largest of them. This simplification is what makes a hull a maximum.
+
+\begin{definition}[Identifications with components]\label{d:wreath}\tagR
+\known{wreath products of groups; Definition~\ref{d:ident} for one component}
+An \emph{identification with components} is a pair $(\sigma,f)$ of a permutation $\sigma$ of $C$ with
+$w(\sigma c)=w(c)$ for all $c$ and a family $f=(f_c)_{c\in C}$ of identifications in the sense of
+Definition~\ref{d:ident}, one for each component. It acts on values by
+\[\bigl((\sigma,f)\cdot x\bigr)(c):=\lambda_{f_c}\,x(\sigma^{-1}c),\]
+and we write $x\approx_{(\sigma,f)}y$ for $y=(\sigma,f)\cdot x$.
+\end{definition}
+
+\begin{proposition}[Rules with components]\label{p:rules2}\tagP\tagR
+\known{wreath products; for one component and $\sigma=\id$, Proposition~\ref{p:rules}}
+\begin{enumerate}[label=(R\arabic*$^{+}$)]
+\item \emph{Identity and inverse.} $x\approx_{(\id,\id)}x$. If $x\approx_{(\sigma,f)}y$, then
+$y\approx_{(\sigma^{-1},f')}x$, where $\lambda_{f'_c}=1/\lambda_{f_{\sigma c}}$.
+\item \emph{Composition.} If $x\approx_{(\sigma,f)}y$ and $y\approx_{(\tau,g)}z$, then
+$x\approx_{(\tau\sigma,h)}z$ with $\lambda_{h_c}=\lambda_{g_c}\,\lambda_{f_{\tau^{-1}c}}$.
+\item \emph{Action on numbers.} Values change componentwise as in (R3). If every $f_c$ has scale $1$, the
+average is an invariant: $\mu((\sigma,f)\cdot x)=\mu(x)$.
+\item \emph{Sets of indices, hulls and averages.} For a finite set $S$ of identifications with components, the
+possible images $S(x)$ are as in (R4). The \emph{hull} $H_S(x)(c):=\max_{s\in S}(s\cdot x)(c)$ is the least
+value $y$ with $s\cdot x\sqsubseteq y$ for all $s\in S$, and $\mu(H_S(x))\ge\mu(s\cdot x)$ for every $s\in S$.
+\item \emph{Inclusions.} If $x\sqsubseteq y$, then $\mu(x)\le\mu(y)$. If $S\subseteq S'$, then
+$H_S(x)\sqsubseteq H_{S'}(x)$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+For (R1$^+$) and (R2$^+$), compute
+$\bigl((\tau,g)\cdot((\sigma,f)\cdot x)\bigr)(c)=\lambda_{g_c}\lambda_{f_{\tau^{-1}c}}\,x(\sigma^{-1}\tau^{-1}c)$
+and use $(\tau\sigma)^{-1}=\sigma^{-1}\tau^{-1}$; the inverse is the pair whose composite with $(\sigma,f)$ is
+$(\id,\id)$. For (R3$^+$), substitute $c=\sigma c'$ in $\sum_cw(c)\,x(\sigma^{-1}c)$ and use $w(\sigma
+c')=w(c')$. (R4$^+$) and (R5$^+$) hold because a maximum is the least upper bound and the weights are
+nonnegative.
+\end{proof}
+
+\begin{definition}[Provenance]\label{d:prov}\tagR\ 
+A number of the form $\mu(H_S(x))$ is recorded together with $S$ and $x$. Two inequalities may be chained
+through such numbers only if they refer to the same record, or if (R5$^+$) gives the inequality between the
+two numbers that the chaining needs.
+\end{definition}
+
+\begin{remark}\tagH\
+Compared with Section~\ref{s:indexed}, (R1) and (R3) hold componentwise, (R2) becomes composition in a wreath
+product, and (R4) acquires the hull and the average. These two do not commute: by (R3$^+$) every possible image
+has the same average, while the average of the hull is in general larger (Section~\ref{s:hull2}). This is the
+precise sense in which ``taking the union'' and ``measuring'' must be done in a declared order. The
+$\Theta$-link $\ell$ of Part~I relates the $\Theta$-pilot to the $q$-pilot, whose log-volume is the single
+number $a=-Q$; in Part~II only the identifications on the $\Theta$ side and the natural identification $c$,
+of scale $1$ on every component, are used.
+\end{remark}
+
+\section{The model with components}\label{s:model2}
+
+\srcquote{\q{where we write $\mathbb{S}^\pm_{j+1}\overset{\mathrm{def}}{=}\{0,1,\ldots,j\}$, for
+$j=0,\ldots,l^{\divideontimes}$, and we think of each of these finite sets as being subject to arbitrary
+permutation automorphisms. That is to say, we think of the set $\mathbb{S}^\pm_{j+1}$ as a \textbf{container}
+for the labels $0,1,\ldots,j$. Thus, for each $j$, one need only contend with an \emph{indeterminacy of $j+1$
+possibilities} for the element of this container that corresponds to $j$.} \dots\par
+\q{It turns out that this reduction will yield just the right estimates in the log-volume computations to be
+performed in [IUTchIV].}}{\cite[Introduction]{IUT3}}
+
+\srcquote{Step~(iv): \q{In particular, for \emph{each collection} $\{v_i\}_{i\in\mathbb{S}^\pm_{j+1}}$ of
+[not necessarily distinct!] elements of $\mathbb{V}(F_{\mathrm{mod}})_{v_{\mathbb{Q}}}$, we must estimate the
+component of the log-volume in question corresponding to the \emph{tensor product} of the $\mathbb{Q}$-spans
+of the \emph{log-shells} associated to this collection $\{v_i\}_{i\in\mathbb{S}^\pm_{j+1}}$ and then compute
+the \emph{weighted average} [cf. the discussion of Remark 1.7.1], over possible collections
+$\{v_i\}_{i\in\mathbb{S}^\pm_{j+1}}$, of these estimates.}\par
+Step~(v), applying Proposition~1.4\,(iii) of IUT~IV, takes ``$i^\dagger$'' to be $j$ and ``$\lambda$'' to be the order of the theta value $\qq^{\,j^2}_{\underline{v}_j}$
+at the place of the factor~$j$ ($0$ if this place is good). It continues: \q{That is to say, the
+\emph{indeterminacies} (Ind1) and (Ind2) are taken into account by the \emph{arbitrary} nature of the
+automorphism ``$\phi$'' [cf. Proposition 1.2]} \dots\par
+\q{Also, we note that, unlike the other terms that appear in these \emph{upper bounds}, ``$\lambda$'' is
+\emph{asymmetric} with respect to the choice of ``$i^\dagger\in I$'' in $\mathbb{S}^\pm_{j+1}$.} \dots\par
+\q{it follows immediately from the first equality of the first display of Proposition 1.7 that, after passing
+to \emph{weighted averages}, the operation of \emph{symmetrizing} with respect to the choice of
+``$i^\dagger\in I$'' in $\mathbb{S}^\pm_{j+1}$ does \emph{not affect} the computation of the \emph{upper bound}
+under consideration.}}{\cite[proof of Thm.~1.10, Steps~(iv), (v)]{IUT4}}
+
+\begin{setup}[The model with components]\label{setup2}\tagR
+\known{\cite[Introduction]{IUT3}, \cite[proof of Thm.~1.10, Steps~(iv), (v)]{IUT4}, \cite{LANAiut}}
+Consider the following data.
+\begin{enumerate}[label=(\alph*)]
+\item \emph{One prime and its places.} A finite set $V$ of places above one prime, with weights $w_v>0$,
+$\sum_vw_v=1$, and $q$-orders $Q_v\ge0$; $Q_v=0$ at a good place and $Q_v>0$ at a bad place. Put
+$Q:=\sum_vw_vQ_v$; as in Setup~\ref{setup}, $a=-Q$.
+\item \emph{Levels, factors and components.} For each level $j=1,\dots,l^*$ the factors are indexed by
+$\Sj=\{0,1,\dots,j\}$, and the components of level $j$ are the tuples $t=(t_0,\dots,t_j)\in V^{j+1}$, with
+weight $w(t):=w_{t_0}w_{t_1}\cdots w_{t_j}$.
+\item \emph{The $\Theta$-pilot.} $b=(b_j)_j$ with $b_j(t):=-j^2Q_{t_j}$: the theta value $q^{j^2}$ sits in
+the factor~$j$.
+\item \emph{Label permutations.} A permutation $\tau$ of $\Sj$ acts on the components of level $j$ by
+$t\mapsto t\circ\tau^{-1}$, which preserves the weights, and on values by $(\tau\cdot x)(t):=x(t\circ\tau)$.
+Thus $(\tau\cdot b_j)(t)=-j^2Q_{t_{\tau(j)}}$: the theta value now sits in the factor $\tau(j)$.
+\item \emph{Procession-normalized values.} For a family $x=(x_j)_j$ put
+\[\bar\mu(x):=\frac1{l^*}\sum_{j=1}^{l^*}\ \sum_{t\in V^{j+1}}w(t)\,x_j(t).\]
+Then $\bar\mu(b)=-kQ$, with $k$ the mean of $j^2$ as in Setup~\ref{setup} (Exercise~10).
+\item \emph{The rest of the blur.} The identifications on the components have scale $1$, as $c$ has in
+Setup~\ref{setup}. What (Ind2) and (Ind3) add to a hull is represented, as in Part~I, by one number $E\ge0$,
+and $C\ge0$ is the constant of the upper bound of IV; neither depends on the $Q_v$.
+\end{enumerate}
+\end{setup}
+
+\begin{definition}[Readings of the union]\label{d:readings}\tagR
+\known{\cite{LANAiut} (\texttt{litLabels}, \texttt{ivLabels})}
+A \emph{reading} is a family $S=(S_j)_j$ of sets $S_j$ of permutations of $\Sj$, each containing the identity.
+Its hull is $H_S(b)_j(t):=\max_{\tau\in S_j}(\tau\cdot b_j)(t)$, and its value is $M(S):=\bar\mu(H_S(b))$. We
+use:
+\begin{itemize}
+\item $\Sa$: all permutations of $\Sj$, so that the element labelled $j$ may sit in any of the $j+1$ places;
+\item $\Sb$: the permutations with $\tau(j)=j$, so that the theta value stays in the factor~$j$;
+\item the \emph{symmetrization} $b^{\mathrm{sym}}_j(t):=\frac1{j+1}\sum_{i=0}^{j}\bigl(-j^2Q_{t_i}\bigr)$,
+the average at each component of the $j+1$ values that the theta value can give.
+\end{itemize}
+\end{definition}
+
+\begin{remark}\tagH\
+In Setup~\ref{setup2}, (b) is the structure of the tensor packets quoted above: a tensor product over $\Sj$ of
+direct sums over the places, decomposed into components indexed by collections $\{v_i\}_{i\in\Sj}$; (c) is the
+choice $i^\dagger=j$ in Step~(v) of IV; and the sum in (e) is the weighted average of Step~(iv) followed by the
+average over $j$. The reading $\Sa$ is the one in which the $j+1$ possibilities of the introduction of IUT~III
+enter the union of possible images; $\Sb$ is the computation of Step~(v), and $b^{\mathrm{sym}}$ is its
+symmetrization over $i^\dagger$. The two readings are those called the literal reading and IV's reading
+in~\cite{LANAiut}. The normalizations of IV (the factors $1/(j+1)$ and $1/2l$) and the differents are omitted.
+\end{remark}
+
+\section{The hull in the two readings}\label{s:hull2}
+
+\begin{proposition}\label{p:hull2}\tagP\tagR
+\known{elementary; the qualitative content is in~\cite{LANAiut}; for (iv), \cite[Prop.~1.7]{IUT4}, formalized
+in~\cite{LANAiut}}
+In Setup~\ref{setup2}, for every level $j$ and every component $t$:
+\begin{enumerate}[label=(\roman*)]
+\item $H_{\Sa}(b)_j(t)=-j^2\min_{0\le i\le j}Q_{t_i}$: the hull is governed by the smallest $q$-order among the
+factors of~$t$.
+\item $H_{\Sb}(b)=b$.
+\item $b^{\mathrm{sym}}_j(t)\le H_{\Sa}(b)_j(t)$: where the hull takes the largest of the possible values, the
+symmetrization takes their average.
+\item For every permutation $\tau=(\tau_j)_j$, $\bar\mu(\tau\cdot b)=\bar\mu(b)$; and
+$\bar\mu(b^{\mathrm{sym}})=\bar\mu(b)=-kQ$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+(i) For each $i\in\Sj$ the transposition of $j$ and $i$ sends $j$ to $i$, so the possible values at $t$ are
+exactly $-j^2Q_{t_i}$ for $i=0,\dots,j$, and the largest is $-j^2\min_iQ_{t_i}$. (ii) If $\tau(j)=j$, then
+$(\tau\cdot b_j)(t)=b_j(t)$. (iii) An average is at most the maximum. (iv) The map $t\mapsto t\circ\tau$ is a
+bijection of $V^{j+1}$ that preserves $w$ (R3$^+$). For each $i$ we have $\sum_tw(t)\,Q_{t_i}=\sum_vw_vQ_v=Q$,
+because the factor $i$ of a tuple is drawn from $w$ independently of the others (Exercise~10); hence the average
+of $b^{\mathrm{sym}}_j$ is $-j^2Q$, the same as that of $b_j$.
+\end{proof}
+
+\begin{proposition}[The difference is an order statistic]\label{p:gain}\tagP\tagR
+\known{elementary probability}
+For $n\ge1$ let $m_n:=\sum_{t\in V^n}w(t)\min_iQ_{t_i}$, the expected value of the smallest of $n$ independent
+draws of the $q$-order, a place $v$ being drawn with probability $w_v$. Then
+\[M(\Sa)-M(\Sb)=\frac1{l^*}\sum_{j=1}^{l^*}j^2\,\bigl(Q-m_{j+1}\bigr)\ \ge\ 0,\]
+and the difference is $0$ if and only if all places have the same $q$-order.
+\end{proposition}
+\begin{proof}
+By Proposition~\ref{p:hull2}\,(i), $M(\Sa)=-\frac1{l^*}\sum_jj^2m_{j+1}$; by (ii) and (iv),
+$M(\Sb)=-kQ=-\frac1{l^*}\sum_jj^2Q$. Since $\min_iQ_{t_i}\le Q_{t_j}$, we have $m_{j+1}\le Q$. If all $Q_v$
+are equal, then $\min_iQ_{t_i}=Q_{t_j}$ for every $t$. If $Q_u<Q_v$ for two places, the tuples with $t_0=u$
+and $t_j=v$ have positive weight and satisfy $\min_iQ_{t_i}<Q_{t_j}$ (recall $j\ge1$), so $m_{j+1}<Q$.
+\end{proof}
+
+\begin{proposition}[Two places]\label{p:two}\tagP\ {\footnotesize (elementary)}\par
+Let $V$ consist of a bad place with weight $w\in(0,1)$ and $q$-order $Q_{\mathrm b}>0$ and a good place with
+weight $1-w$. Then $Q=wQ_{\mathrm b}$ and $m_{j+1}=w^{j+1}Q_{\mathrm b}$; at a component, $H_{\Sa}(b)_j(t)$ is
+$-j^2Q_{\mathrm b}$ if every factor of $t$ sits at the bad place and $0$ otherwise. Hence
+\[M(\Sa)=-Q\,A(w),\qquad A(w):=\frac1{l^*}\sum_{j=1}^{l^*}j^2w^j,\qquad M(\Sb)=-kQ.\]
+\end{proposition}
+\begin{proof}
+The smallest $q$-order among the factors is $Q_{\mathrm b}$ if all factors sit at the bad place, which happens
+with weight $w^{j+1}$, and $0$ otherwise. Hence $M(\Sa)=-\frac1{l^*}\sum_jj^2w^{j+1}Q_{\mathrm b}=
+-wQ_{\mathrm b}\cdot\frac1{l^*}\sum_jj^2w^j$.
+\end{proof}
+
+\srcquote{\q{The two regions coincide when $\mathrm{ord}_p(q_v)$ is the same for all places $v$ of
+$F_{\mathrm{mod}}$ (in $V$) above each prime $p$ (e.g. when there is a single place above $p$): then the theta
+values at all labels of a tuple have the same order. This fails in general; two bad places above $p$ with
+different $\mathrm{ord}_p(q_v)$ already break it.}\par
+\q{Under the literal union over the labels, the holomorphic hull at a tuple $c$ is governed by
+$\min_l\mathrm{ord}_p(q_{c(l)})$ rather than by the average of $\mathrm{ord}_p(q_v)$ over the places that IUT
+IV, Step (v), obtains via Proposition 1.7. So the literal reading does not suffice for the Theorem 1.10 / ABC
+argument: the points produced by the Belyi reduction have good and bad places above the same prime, where
+$\min_l\mathrm{ord}_p(q_{c(l)})=0$.}}{\cite[\texttt{Iut/Concrete/Literal.lean}]{LANAiut}; code markup rendered as
+mathematics}
+
+\tagH\ Proposition~\ref{p:hull2}\,(i) is the minimum of this description, Proposition~\ref{p:gain} says when the
+two readings agree, and Proposition~\ref{p:two} is the situation with good and bad places above one prime.
+What the model adds is the size of the difference: an expected order statistic, which for two places equals
+$(k-A(w))\,Q$.
+
+\section{The dispute with components}\label{s:dispute2}
+
+\begin{definition}\label{d:cor2}\tagR
+\known{\cite[Cor.~3.12]{IUT3}, \cite[Thm.~1.10]{IUT4}}
+For a reading $S$ we write
+\[\mathrm{Cor}(S):\quad -Q\le M(S)+E,\qquad\qquad \mathrm{IV}(S):\quad M(S)+E\le-kQ+C.\]
+\end{definition}
+
+\begin{lemma}\label{l:half}\tagP\ {\footnotesize (elementary)}\par
+For every $n\ge1$, $\sum_{j=1}^{n}j^2\,2^{-j}=6-(n^2+4n+6)/2^n\le n$. Hence $A(w)\le A(\tfrac12)\le1$ for
+$0\le w\le\frac12$ and every $l^*\ge1$.
+\end{lemma}
+\begin{proof}
+The identity follows by induction on $n$. For $n\ge6$ the sum is less than $6\le n$; for $n=1,\dots,5$ it is
+$\frac12,\frac32,\frac{21}8,\frac{29}8,\frac{141}{32}$. Finally, $A$ is increasing on $w\ge0$.
+\end{proof}
+
+\begin{theorem}\label{t:two}\tagP\tagR
+\known{elementary; for (i), \cite{LANAiut} (\texttt{cor312Literal\_of\_variant})}
+In Setup~\ref{setup2}:
+\begin{enumerate}[label=(\roman*)]
+\item \emph{Monotonicity.} If $S_j\subseteq S'_j$ for all $j$, then $M(S)\le M(S')$. Hence $\mathrm{Cor}(S)$
+implies $\mathrm{Cor}(S')$, and $\mathrm{IV}(S')$ implies $\mathrm{IV}(S)$. In particular
+$\mathrm{Cor}(\Sb)\Rightarrow\mathrm{Cor}(\Sa)$ and $\mathrm{IV}(\Sa)\Rightarrow\mathrm{IV}(\Sb)$.
+\item \emph{Conservation.} For every reading $S$, $\mathrm{Cor}(S)$ and $\mathrm{IV}(S)$ together imply
+$(k-1)Q\le C$.
+\item \emph{The reading $\Sb$.} $\mathrm{IV}(\Sb)\Leftrightarrow E\le C$, and
+$\mathrm{Cor}(\Sb)\Leftrightarrow(k-1)Q\le E$.
+\item \emph{The reading $\Sa$, with two places as in Proposition~\ref{p:two}.} If $A(w)\le1$, in particular if
+$w\le\frac12$, then $\mathrm{Cor}(\Sa)$ holds for every $Q_{\mathrm b}>0$ and every $E\ge0$; for $E=0$,
+$\mathrm{Cor}(\Sa)$ holds if and only if $A(w)\le1$. Since $A(w)<k$, $\mathrm{IV}(\Sa)$ fails as soon as
+$Q_{\mathrm b}>(C-E)/\bigl(w(k-A(w))\bigr)$.
+\item \emph{Replacing $q$ by $q^N$.} In the situation of (iv), replace $Q_{\mathrm b}$ by $NQ_{\mathrm b}$ with
+$N>0$, and let $l^*\ge2$, so that $k>1$. If $A(w)\le1$, $\mathrm{Cor}(\Sa)$ holds for every $N$, while
+$\mathrm{Cor}(\Sb)$ fails as soon as $N>E/\bigl((k-1)wQ_{\mathrm b}\bigr)$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+(i) By (R5$^+$), $H_S(b)\sqsubseteq H_{S'}(b)$, so $M(S)\le M(S')$; then $-Q\le M(S)+E\le M(S')+E$, and
+$M(S)+E\le M(S')+E\le-kQ+C$.
+(ii) $-Q\le M(S)+E\le-kQ+C$.
+(iii) $M(\Sb)=-kQ$ by Proposition~\ref{p:hull2}\,(ii) and (iv).
+(iv) By Proposition~\ref{p:two}, $\mathrm{Cor}(\Sa)$ reads $-Q\le-QA(w)+E$; this holds if $A(w)\le1$ and, for
+$E=0$, only then. Lemma~\ref{l:half} gives $A(w)\le1$ for $w\le\frac12$. $\mathrm{IV}(\Sa)$ reads
+$-QA(w)+E\le-kQ+C$, that is $wQ_{\mathrm b}\,(k-A(w))\le C-E$; and $A(w)<k$ because $w^j<1$.
+(v) The condition $A(w)\le1$ does not involve $Q_{\mathrm b}$, and by (iii) $\mathrm{Cor}(\Sb)$ reads
+$(k-1)NwQ_{\mathrm b}\le E$.
+\end{proof}
+
+\begin{corollary}[A mixed pair says nothing]\label{c:mixed}\tagP\tagR
+\known{elementary}
+In the situation of Theorem~\ref{t:two}\,(iv) with $w\le\frac12$ and $E\le C$, the statements
+$\mathrm{Cor}(\Sa)$ and $\mathrm{IV}(\Sb)$ hold together for every $Q_{\mathrm b}>0$. They give no bound on $Q$.
+\end{corollary}
+\begin{proof}
+Theorem~\ref{t:two}\,(iv) and (iii).
+\end{proof}
+
+\begin{remark}[Why provenance matters]\label{r:prov}\tagH\
+If the two hulls $M(\Sa)$ and $M(\Sb)$ were treated as one number, the two statements of
+Corollary~\ref{c:mixed} would give $(k-1)Q\le C$ for every $Q_{\mathrm b}$, which is false in the model as soon
+as $Q_{\mathrm b}>C/((k-1)w)$. The record of Definition~\ref{d:prov} forbids this chaining. A pair of statements
+for one reading always contains a statement that carries the height bound (Theorem~\ref{t:two}\,(ii)): for $\Sb$
+it is $\mathrm{Cor}(\Sb)$, the inequality $(k-1)Q\le E$ of Part~I; for $\Sa$ it is $\mathrm{IV}(\Sa)$. The
+reading decides where the content sits, not whether it is there.
+\end{remark}
+
+\section{Correspondences and what remains}\label{s:corr2}
+
+\subsection{With Scholze--Stix}
+\tagH\ In the reading $\Sa$ with $A(w)\le1$, the label permutations alone produce a blur
+\[M(\Sa)-M(\Sb)=(k-A(w))\,Q\ \ge\ (k-1)\,Q,\]
+which is the size required in Proposition~\ref{p:three}\,(c), and Corollary~3.12 then holds whatever $Q$ is
+(Theorem~\ref{t:two}\,(iv), (v)). This is the situation of option~(c) of Scholze--Stix quoted in
+Section~\ref{s:theta}: a blurring by a factor of at least $O(\ell^2)$, after which the inequality says nothing
+about $Q$. In the reading $\Sb$ the label permutations blur nothing, and Corollary~3.12 is the inequality
+$(k-1)Q\le E$ of Part~I with $E$ coming from (Ind2) and (Ind3) alone. Scholze--Stix discuss neither label
+permutations nor places; the correspondence is one of shape.
+
+\subsection{With the formalizations}
+\tagH\ The literal reading and IV's reading of~\cite{LANAiut} are $\Sa$ and $\Sb$, and the implication from
+IV's reading to the literal one, proved there, is Theorem~\ref{t:two}\,(i) in the model. The resolution adopted
+in~\cite{LANAiut} is to take the hull for each (Ind1)-image separately.
+
+\srcquote{\q{Hence the procession-normalized log-volume of the hull is (Ind1)-invariant} \dots\ \q{and every
+single-label reading gives IUT IV's value} \dots\ \q{IUT IV takes the holomorphic hull over (Ind2), (Ind3) for
+each (Ind1)-image separately, and the label $j$ is a representative.}}{\cite[\texttt{Iut/Concrete/Literal.lean}]{LANAiut}}
+
+\tagH\ In the model this is Proposition~\ref{p:hull2}\,(iv): every image $\tau\cdot b$ has the value
+$\bar\mu(b)=-kQ$, so measuring each image separately gives the value of $\Sb$. Whether this is what
+Corollary~3.12 defines is the first point of Section~\ref{ss:remains}.
+
+That the actual (Ind1) includes permutations between tensor factors was noted earlier by Dupuy and Hilado.
+
+\srcquote{\q{The only reason this subsection can't directly be applied is because the actual ind1 has some
+permutations among different tensor product factors of $\mathbb{A}^{\otimes j+1}_{\underline{V},p}$. The
+permutation of these factors does not appear in this example.}}{\cite[\S6.2, footnote~7]{DH}}
+
+In the setting of Part~I, the inequality of Proposition~\ref{p:cor} is stated in~\cite{TK} as the condition for
+the containment used in Step~(v) of IV.
+
+\srcquote{\q{the satisfiability of (P) for actual curves is logically equivalent to the ledger absorbing the
+Gauss gain, i.e. to $L\ge(l(l+1)/12-1)\cdot|\log(q)|$ --- the height inequality itself.}}{\cite[\texttt{REQUEST\_theta\_hull\_derivation.md}]{TK}}
+
+An explicit initial $\Theta$-datum, with two bad places of different $q$-orders above one prime, for which, under
+the readings stated there, the union in the literal reading is not contained in the module used in Step~(v), is
+given in~\cite[\S\S4--6]{Note}.
+
+\subsection{What remains}\label{ss:remains}
+\tagH\ The extended notation does not decide the dispute. It separates two points.
+\begin{enumerate}[label=(\arabic*)]
+\item \emph{Which reading is the source's.} Corollary~3.12 speaks of the hull of the union of the possible
+images under (Ind1), (Ind2), (Ind3) (Section~\ref{s:cor}), and the introduction of IUT~III gives the element
+labelled $j$ its $j+1$ possibilities; read literally, this is $\Sa$. Step~(v) of IV computes with $i^\dagger=j$
+and symmetrizes over $i^\dagger$, which gives the value of $\Sb$. Mochizuki writes that, at the bad places,
+(Ind1) and (Ind2) affect the log-volumes only to essentially negligible order:
+\srcquote{(Ind3$>$1+2) \q{once one constructs the \emph{output} of the \textbf{multiradial representation} of
+the $\Theta$-pilot [cf. [IUTchIII], Theorem 3.11, (ii)] via \textbf{tensor-packets of log-shells} in such a way
+that each local portion of this output is \emph{stable} with respect to the indeterminacy (Ind3), these local
+portions of the output are \emph{automatically ``essentially stable''} [i.e., stable up to discrepancies at the
+valuations $\in\underline{\mathbb{V}}^{\mathrm{bad}}$ that affect the resulting log-volumes only up to
+\emph{very small/essentially negligible order}] with respect to the indeterminacies (Ind1), (Ind2) [cf.
+[IUTchIII], Theorem 3.11, (i)].}}{\cite[\S3.11]{Ess}}
+In the model the discrepancy between the two readings is $0$ at a prime above which all places have the same
+$q$-order, and otherwise an expected order statistic proportional to the $q$-orders
+(Proposition~\ref{p:gain}). The model does not decide which reading the source intends.
+\item \emph{In the reading $\Sb$, whether Theorem~3.11 gives the license}, that is, whether $(k-1)Q\le E$
+holds with $E$ small enough for IV. This is the dispute of Part~I, unchanged.
+\end{enumerate}
+By Theorem~\ref{t:two}\,(ii), whichever reading is taken, Corollary~3.12 together with the upper bound of IV
+implies the height bound: in the reading $\Sa$ the content is carried by the upper bound of IV, in the reading
+$\Sb$ by Corollary~3.12.
+
+\subsection{Relation to the companion paper}
+\tagH\ The companion paper~\cite{Ur} observes, at the end of its \S4, that the result of descent changes
+according to over the orbits of which groupoid the union is taken. Part~II gives two such groupoids concretely,
+the full symmetric groups of the $\Sj$ (the reading $\Sa$) and the stabilizers of $j$ (the reading $\Sb$), and
+Proposition~\ref{p:gain} computes the difference. The hull along the whole loop in~\cite{Ur}, which is
+Proposition~\ref{p:orbit} here, concerns another orbit, that of the monodromy, which is infinite; the orbits of
+Part~II are finite.
+
 \section{Summary}\label{s:sum}
 \begin{itemize}
 \item Written with indexed identifications, ``identify or not'' becomes a formula about which edges of which diagram are
@@ -727,6 +1167,13 @@ compatible with the estimate $E\le C$ of IV. In the model this is equivalent to 
 of an upper bound for $Q$ (Prop.~\ref{p:cor} and Cor.~\ref{c:height}).
 \item The model does not decide this question. What decides it is the size of the error produced by the actual
 construction.
+\item \emph{Part~II.} With components, the error splits: the label permutations of (Ind1) produce a part that can be
+computed, and (Ind2), (Ind3) the rest. Whether the union of possible images includes the images with the theta value in
+another factor ($\Sa$) or not ($\Sb$) changes the hull by an expected order statistic, which is $0$ when all places
+above the prime have the same $q$-order (Props.~\ref{p:hull2}--\ref{p:two}).
+\item For every reading, Corollary~3.12 and the upper bound of IV together imply the height bound; the reading decides
+only which of the two statements carries it (Thm.~\ref{t:two}). A pair taken from two readings gives nothing
+(Cor.~\ref{c:mixed}).
 \end{itemize}
 
 \section{Exercises}\label{s:ex}
@@ -765,6 +1212,32 @@ Show that in a connected diagram all of whose edges have scale $1$, every closed
 consistent family of values can be built from any value at any vertex. This is the case of the presented reals of
 Section~\ref{s:down}.
 \end{exercise}
+\begin{exercise}
+In Setup~\ref{setup2}, show that $\sum_{t\in V^{j+1}}w(t)\,Q_{t_i}=Q$ for every factor $i$, by writing the sum over $t$
+as $j+1$ sums over the entries. Deduce $\bar\mu(b)=-kQ$.
+\end{exercise}
+\begin{exercise}
+Take $l=5$, so $l^*=2$, and two places as in Proposition~\ref{p:two}. Compute $A(w)$ and find the largest $w$ with
+$A(w)\le1$.
+\end{exercise}
+\begin{exercise}
+Take $l=7$ and $w=\frac12$ in Proposition~\ref{p:two}. Compute $M(\Sa)$, $M(\Sb)$ and their difference in terms of
+$Q$, and compare the difference with the blur $(k-1)Q$ required in Proposition~\ref{p:three}\,(c).
+\end{exercise}
+\begin{exercise}[Insulating the label $0$]
+The introduction of IUT~III insulates the ``core label~0'' from the label indeterminacies. Suppose that the
+permutations of $\Sa$ must fix $0$, so that the theta value of level $j$ may sit only in the factors $1,\dots,j$. Show
+that for two places $M=-Q\,A_0(w)$ with $A_0(w)=\frac1{l^*}\sum_jj^2w^{j-1}$. For $l=7$ and $w=\frac12$, does
+$\mathrm{Cor}$ hold for every $E\ge0$? How large must $E$ be?
+\end{exercise}
+\begin{exercise}
+Explain why the two statements of Corollary~\ref{c:mixed} cannot be combined, by Theorem~\ref{t:two}\,(ii), into a
+bound on~$Q$.
+\end{exercise}
+\begin{exercise}
+Show that for a fixed $w<1$ one has $A(w)\le w(1+w)/\bigl(l^*(1-w)^3\bigr)$, so that $A(w)\to0$ as $l\to\infty$. What
+does this say about $\mathrm{Cor}(\Sa)$ for large $l$?
+\end{exercise}
 
 \subsection*{Answers}
 \begin{enumerate}[label=\arabic*.]
@@ -787,7 +1260,63 @@ actual IV the constant $C$ also depends on $l$, so the model says nothing about 
 by $\lambda_f$ (Proposition~\ref{p:inv}).
 \item A product of scales equal to $1$ is $1$. As in the proof of Proposition~\ref{p:graph}\,(iii), put values along a
 spanning tree; the conditions on the edges outside the tree then hold as well.
+\item The sum over $t$ is a product of $j+1$ sums over the places, one for each factor:
+$\sum_tw(t)\,Q_{t_i}=\bigl(\sum_vw_vQ_v\bigr)\prod_{i'\ne i}\bigl(\sum_vw_v\bigr)=Q$. Hence the average of $b_j$ is
+$-j^2Q$, and $\bar\mu(b)=-\frac1{l^*}\sum_jj^2Q=-kQ$.
+\item $A(w)=(w+4w^2)/2$, and $A(w)\le1$ means $4w^2+w-2\le0$, that is $w\le(\sqrt{33}-1)/8\approx0.593$.
+\item $k=14/3$ and $A(\frac12)=\frac13(\frac12+1+\frac98)=\frac78$, so $M(\Sa)=-\frac78Q$, $M(\Sb)=-\frac{14}3Q$ and the
+difference is $\frac{91}{24}Q$. The required blur is $(k-1)Q=\frac{11}3Q=\frac{88}{24}Q$; the difference exceeds it by
+$\frac18Q=(1-A(\frac12))\,Q$, so $\mathrm{Cor}(\Sa)$ holds with $E=0$. The ratio of the two is $91/88$.
+\item The smallest $q$-order among the factors $1,\dots,j$ is $Q_{\mathrm b}$ if these $j$ factors sit at the bad
+place, with weight $w^j$, so $M=-\frac1{l^*}\sum_jj^2w^jQ_{\mathrm b}=-Q\,A_0(w)$. For $l=7$ and $w=\frac12$,
+$A_0=\frac13(1+2+\frac94)=\frac74>1$, so $\mathrm{Cor}$ does not hold for $E=0$; it needs $E\ge(A_0-1)Q=\frac34Q$. The
+difference with $\Sb$ is $(k-A_0)Q=\frac{35}{12}Q$, which is $35/44$ of the required $\frac{11}3Q$.
+\item $\mathrm{Cor}(\Sa)$ is a statement about $M(\Sa)$ and $\mathrm{IV}(\Sb)$ one about $M(\Sb)$, whereas
+Theorem~\ref{t:two}\,(ii) needs one number in both. Chaining them would need $M(\Sa)\le M(\Sb)$, the opposite of (i);
+in the model $M(\Sa)-M(\Sb)=(k-A(w))\,Q>0$.
+\item $\sum_{j\ge1}j^2w^j=w(1+w)/(1-w)^3$, so $A(w)\le w(1+w)/\bigl(l^*(1-w)^3\bigr)\to0$. For large $l$, $A(w)\le1$
+for every fixed $w<1$: at every prime with a good place, $\mathrm{Cor}(\Sa)$ holds whatever $Q$ is.
 \end{enumerate}
+
+\appendix
+\section{Verification in Lean}\label{app:lean}
+The file \texttt{lean/Components.lean} checks the quantitative core of Part~II in Lean~4 (version 4.30.0) with
+Mathlib. It treats one level $j$ with an arbitrary finite set of places for Propositions~\ref{p:hull2}
+and~\ref{p:gain}, and two places, encoded as \texttt{Bool}, from Proposition~\ref{p:two} on. The statements
+$\mathrm{Cor}(S)$ and $\mathrm{IV}(S)$ are \lean{Cor312} and \lean{IVbound}. Every declaration depends at most on the
+axioms \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}; there is no \texttt{sorry}. Proposition~1.7 of
+IUT~IV, of which Proposition~\ref{p:hull2}\,(iv) is the case in the model, is formalized in~\cite{LANAiut} (theorem
+\lean{weighted\_average\_eq} in \texttt{Iut4Sec1/Combinatorics/WeightedAverage.lean}).
+
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{3.4cm}>{\raggedright\arraybackslash}X@{}}
+\toprule
+In the text & Lean declarations\\
+\midrule
+Setup~\ref{setup2}\,(e), Exercise~3 & \lean{kmean\_eq\_l}, \lean{kmean\_gt\_one}\\
+Prop.~\ref{p:hull2}\,(i) & \lean{hull\_univ\_theta}, \lean{hull\_univ\_theta\_min}\\
+Prop.~\ref{p:hull2}\,(ii) & \lean{hull\_fix\_theta}\\
+Prop.~\ref{p:hull2}\,(iii) & \lean{thetaSym\_le\_hull}, \lean{symm\_le\_hull}\\
+Prop.~\ref{p:hull2}\,(iv) & \lean{tupleWeight\_comp}, \lean{wavg\_act}, \lean{wavg\_factor}, \lean{wavg\_thetaSym},
+\lean{wavg\_symm}\\
+Prop.~\ref{p:gain} & \lean{wavg\_hull\_univ}, \lean{le\_hull}, \lean{hull\_univ\_const}; the converse (the difference is
+$0$ only if all $q$-orders agree) is proved on paper only\\
+Prop.~\ref{p:two} & \lean{hull\_univ\_two}, \lean{wavg\_hull\_two}, \lean{wavg\_theta\_two}, \lean{muA\_eq},
+\lean{muB\_eq}\\
+Lemma~\ref{l:half} & \lean{sum\_sq\_half}, \lean{Afun\_half\_le\_one}, \lean{Afun\_mono},
+\lean{Afun\_le\_one\_of\_le\_half}\\
+Thm.~\ref{t:two}\,(i) & \lean{hull\_mono}, \lean{wavg\_mono} (the general case is these two lemmas averaged over the
+levels); \lean{muB\_le\_muA}, \lean{cor312\_A\_of\_B}, \lean{iv\_B\_of\_A} (two places)\\
+Thm.~\ref{t:two}\,(ii) & \lean{conservation}\\
+Thm.~\ref{t:two}\,(iii) & \lean{cor312\_B\_iff}, \lean{iv\_B\_iff}\\
+Thm.~\ref{t:two}\,(iv) & \lean{cor312\_A\_of}, \lean{cor312\_A\_iff}, \lean{Afun\_lt\_kmean}, \lean{iv\_A\_fails}\\
+Thm.~\ref{t:two}\,(v) & \lean{cor312\_A\_scaled}, \lean{cor312\_B\_fails\_scaled}\\
+Cor.~\ref{c:mixed} & \lean{mixed\_pair\_holds}\\
+\bottomrule
+\end{tabularx}
+\end{center}
+The log in \texttt{logs/} records the output of \texttt{lake env lean Components.lean}, the \texttt{\#print axioms}
+lines and the exit code.
 
 \section*{Acknowledgements and use of AI}
 The idea of this note (to write the shape of the dispute in undergraduate mathematics, with symbols for indexed
@@ -795,11 +1324,20 @@ identifications in place of the equality sign) is the author's. Generative AI to
 extensively, under the author's direction, in working out the propositions and their proofs and in the writing. The author
 takes full responsibility for the contents of this note.
 
-\begin{thebibliography}{IUT3}
+\begin{thebibliography}{LANA-iut}\raggedright
 \bibitem[Alien]{Alien}
 Shinichi Mochizuki, \emph{The mathematics of mutually alien copies: from {G}aussian integrals to inter-universal
 {T}eichm\"uller theory}, in: Inter-universal Teichm\"uller Theory Summit 2016, RIMS K\^oky\^uroku Bessatsu \textbf{B84}
 (2021), 23--192.
+
+\bibitem[DH]{DH}
+Taylor Dupuy and Anton Hilado, \emph{Probabilistic {S}zpiro, baby {S}zpiro, and explicit {S}zpiro from {M}ochizuki's
+{C}orollary 3.12}, arXiv:2004.13108v2 [math.NT], 2020.
+
+\bibitem[Ess]{Ess}
+Shinichi Mochizuki, \emph{On the essential logical structure of inter-universal {T}eichm\"uller theory in terms of
+logical {AND} ``$\wedge$''/logical {OR} ``$\vee$'' relations: report on the occasion of the publication of the four main
+papers on inter-universal {T}eichm\"uller theory}, RIMS Preprint 1968, November 2022; version of March 2024.
 
 \bibitem[IUT3]{IUT3}
 Shinichi Mochizuki, \emph{Inter-universal {T}eichm\"uller theory {III}: canonical splittings of the log-theta-lattice},
@@ -812,10 +1350,21 @@ foundations}, Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 627--723.
 \bibitem[LANA]{LANA}
 Project LANA, \emph{Project LANA interim report on IUT theory}, last updated 20 July 2026.
 
+\bibitem[LANA-iut]{LANAiut}
+lana-agents, \emph{iut: inter-universal {T}eichm\"uller theory, the ABC/IUT trunk}, Lean repository,
+\url{https://github.com/lana-agents/iut}, files \texttt{Iut/Concrete/Literal.lean} and
+\texttt{Iut4Sec1/Combinatorics/WeightedAverage.lean}, consulted at commit \texttt{553076a} (3 November 2026); the passages
+quoted from the first file were added on 11 October 2026 (commits \texttt{2b2190d} and \texttt{08c7e5d}), and the second
+file on 19 July 2026 (commit \texttt{696cc65}).
+
 \bibitem[MO]{MO}
 Samuel Mimram and \'Emile Oleon, \emph{Classifying covering types in homotopy type theory}, in: 34th EACSL Annual Conference
 on Computer Science Logic (CSL 2026), LIPIcs \textbf{363} (2026), 21:1--21:20,
 \href{https://doi.org/10.4230/LIPIcs.CSL.2026.21}{doi:10.4230/LIPIcs.CSL.2026.21}; arXiv:2512.10064.
+
+\bibitem[Note]{Note}
+Toshihisa Urahigashi, \emph{A local non-containment in Step~(v) of {IUT}~{IV}, Theorem~1.10}, version 3.0.0, Zenodo,
+1 November 2026, \href{https://doi.org/10.5281/zenodo.23852752}{doi:10.5281/zenodo.23852752}.
 
 \bibitem[R18]{R18}
 Shinichi Mochizuki, \emph{Report on discussions, held during the period March 15--20, 2018, concerning inter-universal
@@ -823,6 +1372,10 @@ Shinichi Mochizuki, \emph{Report on discussions, held during the period March 15
 
 \bibitem[SS]{SS}
 Peter Scholze and Jakob Stix, \emph{Why abc is still a conjecture}, manuscript, 2018.
+
+\bibitem[TK]{TK}
+Takkun-kohinata, \emph{IUT\_LEAN}, Lean repository, \url{https://github.com/Takkun-kohinata/IUT_LEAN}, file
+\texttt{REQUEST\_theta\_hull\_derivation.md}, commit \texttt{9d56c46} (15 July 2026).
 
 \bibitem[U]{U}
 Toshihisa Urahigashi, \emph{A choice-free {L}ean formalization of {B}ishop--{C}heng dominated convergence over presented
@@ -832,6 +1385,6 @@ reals}, manuscript, version 0.7.8, 5 September 2026, file \texttt{paper/paper.pd
 
 \bibitem[Ur]{Ur}
 Toshihisa Urahigashi, \emph{Segment or loop? A homotopy-type-theoretic overview of the dispute over {C}orollary 3.12 of
-inter-universal {T}eichm\"uller theory}, version 1.0.0, Zenodo, 4 November 2026, \href{https://doi.org/10.5281/zenodo.23931344}{doi:10.5281/zenodo.23931344}.
+inter-universal {T}eichm\"uller theory}, version 1.1.0, Zenodo, 4 November 2026, \href{https://doi.org/10.5281/zenodo.23933109}{doi:10.5281/zenodo.23933109}.
 \end{thebibliography}
 \end{document}

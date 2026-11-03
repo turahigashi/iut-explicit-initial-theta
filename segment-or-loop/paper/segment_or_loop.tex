@@ -68,7 +68,7 @@
 \title{Segment or loop? A homotopy-type-theoretic overview of the dispute over Corollary~3.12 of
 inter-universal Teichm\"uller theory}
 \author{Toshihisa Urahigashi\\\small ORCID 0009-0004-0460-6242\\\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.0.0, 4 November 2026\\\small\href{https://doi.org/10.5281/zenodo.23931344}{doi:10.5281/zenodo.23931344}}
+\date{Version 1.1.0, 4 November 2026\\\small\href{https://doi.org/10.5281/zenodo.23933109}{doi:10.5281/zenodo.23933109}}
 
 \begin{document}
 \maketitle
@@ -177,7 +177,8 @@ propositions and theorems are labelled \tagP\ or \tagP\,\tagR, and there is no p
 \item It makes no judgement on Corollary~3.12, on Theorem~1.10 of IV, or on the abc conjecture.
 \item The model of Section~\ref{s:step} is an abstraction of the comparison of Step~(xi); how the theory constructs the
 blurring $E$, and how IV estimates it, lie outside the model. Each component of the model is given a source, but the
-faithfulness of the model is not itself a theorem.
+faithfulness of the model is not itself a theorem. Part~II of the companion note~\cite{UE} computes, in a model with the
+components of tensor packets, the part of $E$ produced by the label permutations of (Ind1).
 \item Quotations are verbatim from the original texts, with the emphasis of the originals; omissions are marked by
 ``\dots'', and double quotation marks inside a quotation are rendered as single ones.
 \end{itemize}
@@ -197,7 +198,9 @@ each party, item by item, with propositions in this framework.
 Together with this paper we publish a companion paper~\cite{UE}, an educational version that writes the model of this
 paper without homotopy type theory, using only undergraduate mathematics (sets and maps, multiplication of positive real
 numbers, graphs, inequalities). In~\cite{UE}, Mochizuki's elementary numerical model and the three options of
-Scholze--Stix are put on the same one-line inequality, using a symbol for indexed identifications.
+Scholze--Stix are put on the same one-line inequality, using a symbol for indexed identifications. Its Part~II, added
+in its version 2.0.0, extends that symbol to the components of tensor packets and computes the part of the blurring
+produced by the label permutations of (Ind1).
 
 \subsection{Labels}\label{ss:labels}
 The labels in the text mean the following.
@@ -586,7 +589,9 @@ labels are to be deleted \q{\textbf{not} via the \emph{naive, simple-minded} app
 identified naively, one ends up requiring values on the loop (Proposition~\ref{p:fixed}). In descent, the values are
 enlarged to the set of possible images (Proposition~\ref{p:univ}), so this does not happen. However, the result
 changes according to along which identifications one descends (over the orbits of which groupoid the union is taken).
-This is the subject of Section~\ref{s:step}.
+This is the subject of Section~\ref{s:step}. With the components of tensor packets, the label permutations of (Ind1)
+give a further, finite groupoid; Part~II of~\cite{UE} computes the union over it in two readings and shows, in a model,
+that in either reading Corollary~3.12 together with the upper bound of IV implies the height bound.
 
 \section{Step (xi): two paths and 2-cells}\label{s:step}
 
@@ -1294,6 +1299,6 @@ reals}, manuscript, version 0.7.8, 5 September 2026, file \texttt{paper/paper.pd
 
 \bibitem[UE]{UE}
 Toshihisa Urahigashi, \emph{Reading the {IUT} dispute through indexed identifications: an educational model in
-undergraduate mathematics}, version 1.0.0, Zenodo, 4 November 2026, \href{https://doi.org/10.5281/zenodo.23931346}{doi:10.5281/zenodo.23931346}.
+undergraduate mathematics}, version 2.0.0, Zenodo, 4 November 2026, \href{https://doi.org/10.5281/zenodo.23933108}{doi:10.5281/zenodo.23933108}.
 \end{thebibliography}
 \end{document}
