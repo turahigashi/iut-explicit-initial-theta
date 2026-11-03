@@ -1,0 +1,31 @@
+$ lake env lean SegmentOrLoop.lean
+'SegmentOrLoop.segment_section' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SegmentOrLoop.monodromy_relabel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SegmentOrLoop.loopSection_iff_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SegmentOrLoop.all_values_consistent_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SegmentOrLoop.uni_edge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SegmentOrLoop.orbit_hull_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SegmentOrLoop.Step.no_strict_cell' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SegmentOrLoop.Step.cor312_iff_lax' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SegmentOrLoop.Step.cor312_iff_blur' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SegmentOrLoop.Step.height_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SegmentOrLoop.Step.loop_hull_trivial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SegmentOrLoop.package_does_not_decide' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SegmentOrLoop.possibleImages_universal' does not depend on any axioms
+'SegmentOrLoop.link_value_not_recoverable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SegmentOrLoop.route_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SegmentOrLoop.loopSection_iff_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SegmentOrLoop.Step.cor312_needs_blur' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SegmentOrLoop.package_holds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SegmentOrLoop.unlabelled_swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SegmentOrLoop.labelled_distinct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SegmentOrLoop.OneLevelDown.paths_in_a_set_agree' does not depend on any axioms
+'SegmentOrLoop.OneLevelDown.round01_close' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SegmentOrLoop.OneLevelDown.round01_depends_on_locator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SegmentOrLoop.OneLevelDown.possibleRoundings_blur' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SegmentOrLoop.OneLevelDown.possibleRoundings_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SegmentOrLoop.OneLevelDown.restoreLeast' does not depend on any axioms
+'SegmentOrLoop.OneLevelDown.least_witness_unique' does not depend on any axioms
+'SegmentOrLoop.OneLevelDown.no_invariant_identification' depends on axioms: [propext, Classical.choice, Quot.sound]
+lean exit code: 0
+toolchain: leanprover/lean4:v4.30.0; Mathlib: tag v4.30.0, commit c5ea00351c28e24afc9f0f84379aa41082b1188f

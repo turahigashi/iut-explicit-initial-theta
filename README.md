@@ -196,6 +196,8 @@ The file names carry an older working numbering; the reports are numbered as fol
 | Step (v) short note | `stepv-local-noncontainment/paper/stepv_local_noncontainment.tex` | [10.5281/zenodo.23166432](https://doi.org/10.5281/zenodo.23166432) |
 | catalogue of the data | `initial-theta-catalogue/paper/initial_theta_catalogue.tex` | [10.5281/zenodo.23870448](https://doi.org/10.5281/zenodo.23870448) (version 1.0.0) |
 | programmer's walkthrough | `iut-walkthrough/paper/iut_walkthrough.tex` | [10.5281/zenodo.23880260](https://doi.org/10.5281/zenodo.23880260) (version 1.0.0) |
+| segment or loop (HoTT overview) | `segment-or-loop/paper/segment_or_loop.tex` | [10.5281/zenodo.23931344](https://doi.org/10.5281/zenodo.23931344) (version 1.0.0) |
+| indexed identifications (educational) | `indexed-identifications/paper/indexed_identifications.tex` | [10.5281/zenodo.23931346](https://doi.org/10.5281/zenodo.23931346) (version 1.0.0) |
 
 `paper/paper.tex` is the expanded version of the **first** report, cited as `[First-full]`;
 the first report is the version of record.
@@ -332,3 +334,24 @@ formulas and the readings are taken from [lana-agents/iut](https://github.com/la
 `iut-walkthrough/README.md` for the files and how to rerun the program (Python 3.10 or later, sympy).
 
 The files in `iut-walkthrough/` are licensed under CC BY 4.0.
+
+## Segment or loop? and indexed identifications (November 2026)
+
+Two companion notes, published together and citing each other.
+
+**Segment or loop? A homotopy-type-theoretic overview of the dispute over Corollary 3.12 of inter-universal
+Teichmüller theory.** `segment-or-loop/paper/segment_or_loop.pdf` (24 pages), version 1.0.0, DOI
+[10.5281/zenodo.23931344](https://doi.org/10.5281/zenodo.23931344). The vocabularies of the dispute (identification
+and labels, monodromy, segment, loop and universal cover, IPL, SHE and APT, logical AND and OR, descent, commutativity
+up to indeterminacies, the size of the blurring) are stated as propositions of homotopy type theory about families of
+ordered real lines over graphs. Corollary 3.12 becomes equivalent to a lax 2-cell between two paths, an inequality of
+the shape of a height bound. The quantitative core is checked in Lean 4 (`segment-or-loop/lean/`).
+
+**Reading the IUT dispute through indexed identifications: an educational model in undergraduate mathematics.**
+`indexed-identifications/paper/indexed_identifications.pdf` (16 pages), version 1.0.0, DOI
+[10.5281/zenodo.23931346](https://doi.org/10.5281/zenodo.23931346). The same model written with sets, maps,
+positive real numbers, graphs and inequalities, with a symbol for indexed identifications, exercises and answers.
+
+None of the results of either note is new mathematically; the contribution is the formulation and the
+correspondences. **No claim is made about the truth of Corollary 3.12, Theorem 1.10 of IUT IV, or the abc
+conjecture.** The files in `segment-or-loop/` and `indexed-identifications/` are licensed under CC BY 4.0.
