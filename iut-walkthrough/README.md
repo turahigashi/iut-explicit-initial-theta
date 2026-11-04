@@ -1,6 +1,7 @@
 # A programmer's walkthrough of inter-universal Teichmüller theory
 
-Version 1.0.0, 2 November 2026 (15 pages). DOI [10.5281/zenodo.23880260](https://doi.org/10.5281/zenodo.23880260).
+Version 1.1.0, 5 November 2026 (17 pages). DOI [10.5281/zenodo.23955994](https://doi.org/10.5281/zenodo.23955994).
+Version 1.0.0: [10.5281/zenodo.23880260](https://doi.org/10.5281/zenodo.23880260).
 
 A program, with an interactive web page, that runs on explicit numbers those operations of
 inter-universal Teichmüller theory (IUT) that can be written as procedures. Its input is one of the
@@ -8,11 +9,19 @@ seven explicit initial Θ-data of the author's catalogue
 ([doi:10.5281/zenodo.23870448](https://doi.org/10.5281/zenodo.23870448)). It computes the Tate parameters
 and local data p-adically, arranges labels and processions, keeps the two Hodge theaters of a Θ-link as
 type-separated copies of the local fields so that only a "cable" passes between them, computes log-shells,
-Kummer read-outs, containers, possible images and the log-volume of the holomorphic hull of their union
-(exactly, in a model in which (Ind2) acts by units, for three readings of the label indeterminacy), and
-places side by side the two quantities that Step (xi) of the proof of Corollary 3.12 of IUT III compares.
+Kummer read-outs, containers, possible images and the log-volume of the holomorphic hull of their union,
+for three readings of the label indeterminacy and two models of the indeterminacy (Ind2): multiplication by
+units, and all ℤ_p-linear automorphisms of the log-shells of the factors as in lana-agents/iut, for which the
+hull is given by the closed form of the author's note
+([doi:10.5281/zenodo.23954194](https://doi.org/10.5281/zenodo.23954194)), exact where p is odd and e ≤ p − 2
+and bracketed elsewhere. It places side by side the two quantities that Step (xi) of the proof of
+Corollary 3.12 of IUT III compares.
 Infinite objects are computed in finite windows. IPL, SHE and APT (IUT III, Remark 3.11.1) appear as the
 shape of the code and as records of its execution; the inference (xi-f) is displayed, not evaluated.
+
+Version 1.1.0 adds the second model of (Ind2). In the reading of IUT IV the two models give the two forms of
+the comparison that lana-agents/iut calls the Scholze–Stix inequality and the variant of Corollary 3.12, and
+the program computes their difference Δ(D) for each datum and reading (Table 4 of the note).
 
 **No conclusion is drawn about Corollary 3.12, Theorem 1.10 of IUT IV, or the abc conjecture.** The
 purpose is expository. Turning the objects and processes of IUT into data types, with IPL and APT proved for a
@@ -42,7 +51,7 @@ SHA256SUMS                     checksums of the files above
 ```
 
 The page recomputes the containers, shrinkages and outcomes in exact rational arithmetic each time it is
-opened, and displays whether they agree with the program's output.
+opened, in both models of (Ind2), and displays whether they agree with the program's output.
 
 ## The animation tab
 
@@ -57,5 +66,6 @@ adaptation is not endorsed by the authors of the original.
 ## 日本語の概要
 
 IUT のうち手続きとして書ける操作を、具体的な初期Θデータ（著者の一覧の 7 つ）の上で実際に走らせるプログラムと、
-その入出力・アニメーション・工場の図を持つ一枚の HTML ページ。系3.12・定理1.10・abc 予想については何も結論しない。
+その入出力・アニメーション・工場の図を持つ一枚の HTML ページ。版 1.1.0 で、不定性 (Ind2) の二つ目の模型
+（各因子の log-殻の ℤ_p 格子自己同型すべて）と、比較の二つの形の差を加えた。系3.12・定理1.10・abc 予想については何も結論しない。
 プログラムの出力とページは日本語。

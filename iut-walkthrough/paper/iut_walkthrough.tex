@@ -32,7 +32,7 @@
 \title{A programmer's walkthrough of\\ inter-universal Teichm\"uller theory:\\
 running the multiradial algorithm\\ on explicit initial $\Theta$-data}
 \author{Toshihisa Urahigashi\\\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.0.0, 2 November 2026}
+\date{Version 1.1.0, 5 November 2026\\\small\href{https://doi.org/10.5281/zenodo.23955994}{doi:10.5281/zenodo.23955994}}
 
 \begin{document}
 \maketitle
@@ -46,9 +46,14 @@ copies of the local fields separated by type, so that only a ``cable''---the uni
 value-group object---passes between them, after an analogy that the source itself draws. It then computes
 log-shells, Kummer read-outs, the containers of the multiradial representation and the possible images of the
 theta values, and evaluates the log-volume of the holomorphic hull of their union, as an exact combination of
-logarithms, in a model in which the indeterminacy (Ind2) acts by units, for three readings of the label
-indeterminacy. Finally it places side by
-side the two quantities that Step~(xi) of the proof of Corollary~3.12 of IUT~III compares. Infinite objects are
+logarithms, for three readings of the label indeterminacy and two models of the indeterminacy (Ind2):
+multiplication by units, and all $\Z_p$-linear automorphisms of the log-shells of the factors, as in the Lean
+formalization lana-agents/iut. For the second model the hull is given by a closed form from the author's earlier
+note; it is exact where $p$ is odd and $e\le p-2$, and bracketed elsewhere. Finally it places side by
+side the two quantities that Step~(xi) of the proof of Corollary~3.12 of IUT~III compares. In the reading of
+IUT~IV the two models give the two forms of the comparison that lana-agents/iut calls the Scholze--Stix inequality
+and the variant of Corollary~3.12, and the program computes their difference for each datum; version~1.1.0 adds the
+second model. Infinite objects are
 computed in finite windows, and the program prints how its output stabilizes as the windows grow. The
 properties IPL, SHE and APT of Remark~3.11.1 of IUT~III appear as the shape of the code and as records of its
 execution; the inference~(xi-f) is displayed, not evaluated. The purpose is expository. No conclusion is drawn
@@ -92,7 +97,10 @@ inequality. In the reading in which the theta value stays at its label, as in St
 Theorem~1.10 of~\cite{IUT4}, the comparison has the form $(s-1)\,|\log(\qq)|\le V$ of the inequality that the
 Lean formalization~\cite{LANAiut} calls the Scholze--Stix inequality~\cite{SS}, where $V$ is the log-volume of
 the container (Section~\ref{sec:xi}); the same reduction is the toy form in~\cite[\S3]{Formal}, by which a height that
-is multiplied by $N$ but unchanged up to a mild error is bounded. That the inequality holds on data of small height is
+is multiplied by $N$ but unchanged up to a mild error is bounded. If (Ind2) acts through all $\Z_p$-linear
+automorphisms of the log-shells of the factors, as in~\cite{LANAiut}, the comparison becomes
+$(s-1)\,|\log(\qq)|\le V+\Delta(D)$, the form of the variant of Corollary~3.12 there, with a gap $\Delta(D)>0$ that
+the program computes by the closed form of~\cite{Gap}. That the inequality holds on data of small height is
 expected whatever the status of Corollary~3.12 (for $D_2$ it was checked in~\cite[\S5]{Cat}), and we draw no
 conclusion from it.
 
@@ -115,7 +123,10 @@ invariants are those of~\cite{Cat}. Section~\ref{sec:related} gives details.
 field of moduli is not $\Q$; the value of the hull term for each datum and reading, computed by enumerating the
 tuples of places where they are few and otherwise by a closed form that is checked against the enumeration; finite
 windows and the stabilization of the output; IPL, SHE and APT as records of the execution of one program on
-numbers; and two visual presentations of the same computation.
+numbers; and two visual presentations of the same computation. Version~1.1.0 adds a second model of (Ind2), the
+group of all $\Z_p$-linear automorphisms of the log-shells of the factors used in~\cite{LANAiut}, whose hull is
+computed by the closed form of~\cite{Gap}, and with it the gap between the two forms of the comparison for each
+datum and reading (Table~\ref{tab:gap}).
 
 \paragraph{Contents.} Section~\ref{sec:design} states the design rules. Section~\ref{sec:steps} follows the
 steps from the initial $\Theta$-datum to Step~(xi). Section~\ref{sec:windows} lists the windows and
@@ -169,6 +180,10 @@ permutations fixing $0$; this set is the $\F_\ell^{\divideontimes}$-capsule $\ma
 \cite[Prop.~6.9(iii)]{IUT1} includes in $\mathbb{S}^\pm_{j+1}$. We do not claim that any of these is the
 reading the source intends.
 
+The group by which the indeterminacy (Ind2) acts is a second parameter, with two values
+(Section~\ref{sec:algo}). It is a choice of model rather than a reading of the label indeterminacy, and the program
+reports both values side by side.
+
 \subsection{IPL, SHE and APT as the shape of the code}\label{sec:aptshe}
 Remark~3.11.1(iii)--(v) of~\cite{IUT3} describes the output of the algorithm of Theorem~3.11 by three properties,
 which we paraphrase. \emph{IPL}: the output data are linked to the input prime-strip by the full
@@ -206,9 +221,9 @@ $K$ of \cite[Def.~3.1]{IUT1} are those of~\cite{Cat}; the set $\Vbad$ is describ
   them requires factoring the norms, which is done in a window;
 \item at the places above $p$ of multiplicative reduction, the Tate parameter itself, $p$-adically, from $t=1/j$ and the series
   $q=t+744t^2+750420t^3+872769632t^4+\cdots$ obtained by inverting $t=\Delta(q)/E_4(q)^3$;
-\item the ramification index of $K$ over $\Q_p$ at a bad place $w$, as
-  $e(\Fmod{}_{,w}/\Q_p)\cdot15\ell/\gcd(15\ell,\ord_w q)$. At the places above $p$, where $\Fmod{}_{,w}=\Q_p$, this is
-  the formula used in the proofs of~\cite[App.~A]{Cat}, and it reproduces Table~1 there; at the other bad places the
+\item at a bad place $w$, the ramification index of $K$ over $\Q_p$, taken to be
+  $e(\Fmod{}_{,w}/\Q_p)\cdot15\ell/\gcd(15\ell,\ord_w q)$. At the places above $p$, where
+  $\Fmod{}_{,w}=\Q_p$, this is the formula used in the proofs of~\cite[App.~A]{Cat}, and it reproduces Table~1 there; at the other bad places the
   program applies it as an assumption. At good places outside $2\cdot3\cdot5\cdot\ell$, where $K/\Fmod$ is
   unramified, the index is $e(\Fmod{}_{,w}/\Q_p)$;
 \item the conditions of \cite[Def.~3.1]{IUT1} that can be decided from these numbers: $\ell\ge5$ is prime;
@@ -290,30 +305,61 @@ $V$ below.
 
 The possible images of the $\Theta$-pilot of label $j$ in the component $T$ are modelled as the regions
 $\qq_{v_t}^{\,j^2}\cdot(\text{tensor product of the log-shells})$ for $t\in P_R(j)$, the positions allowed by
-(Ind1) in the reading $R$. The indeterminacy (Ind2) is modelled by multiplication by units, which does not move
-these lattices. Admitting more automorphisms can only enlarge the union of possible images, so the values of
-$-|\log(\Th)|$ computed here remain lower bounds; in~\cite{LANAiut}, where (Ind2) acts through all $\Z_p$-linear
-automorphisms of the log-shells of the factors (a deliberately larger group; file
-\nolinkurl{Iut/Concrete/ThetaRegion.lean}), the resulting enlargement is the (Ind2)-term of
-\nolinkurl{Iut/WallEquiv/Gap.lean}, whose value is open there. The indeterminacy (Ind3) admits sublattices, which do not change the hull.
-Multiplication by an element of $K_{v_t}$ of $p$-adic valuation $c$ moves the hull of the tensor packet to a
-principal ideal of its maximal order whose exponents are all proportional to $c$, so the hulls of the possible
-images in a component are totally ordered; the hull of their union is the largest of them, and its log-volume is
-the container minus
+(Ind1) in the reading $R$, moved by the indeterminacy (Ind2). The program has two models of (Ind2). In the first,
+(Ind2) acts by multiplication by units, which does not move these lattices, so that the hull of the union is the
+one for the identity alone. In the second, (Ind2) acts through all $\Z_p$-linear automorphisms of the log-shells of
+the factors, the group of~\cite{LANAiut} (file \nolinkurl{Iut/Concrete/ThetaRegion.lean}), which is stated there to
+contain the image of the group $\mathrm{Ism}$ of the source and to be in general larger, a deliberate enlargement.
+The hull for the group of the source therefore lies between the two. The indeterminacy (Ind3) admits sublattices,
+which do not change the hull in either model.
+
+In the first model, multiplication by an element of $K_{v_t}$ of $p$-adic valuation $c$ moves the hull of the
+tensor packet to a principal ideal of its maximal order whose exponents are all proportional to $c$, so the hulls
+of the possible images in a component are totally ordered; the hull of their union is the largest of them, and its
+log-volume is the container minus
 \[
 \min_{t\in P_R(j)}\,j^2\,r_{v_t}\log p .
 \]
-The program computes the weighted sum over the tuples by enumeration when there are at most $256$ of them, and
-otherwise by the closed form $\sum_k(r_{(k)}-r_{(k-1)})\bigl(\sum_{i\ge k}c_{(i)}\bigr)^{|P_R(j)|}$ over the sorted
-values $r_{(1)}<r_{(2)}<\cdots$ ($r_{(0)}=0$), the expected value of the minimum of $|P_R(j)|$ independent
-choices. Averaging over $j$ gives, in this model,
+In the second model, put $\kappa_v(\theta)=\max\{k\in\Z:\theta\,\cI_v\subseteq p^k\cI_v\}$ for
+$\theta\in K_v^\times$. The images of $\theta\cdot(\text{tensor product})$, with $\theta=\qq_{v_t}^{\,j^2}$ in the
+factor $t$, span $p^{\kappa_{v_t}(\theta)}$ times the tensor product, since the automorphisms of the lattice
+$\cI_{v_t}$ move a primitive element of $\theta\,\cI_{v_t}$ to every vector of a basis, and the hull depends only on
+the $\Z_p$-span \cite[Lemmas~4.1--4.3]{Gap}. The union over $t\in P_R(j)$ spans $p^{\min_t\kappa}$ times the tensor
+product, so the hull of the union has log-volume the container minus
+\[
+\min_{t\in P_R(j)}\,\kappa_{v_t}\bigl(\qq_{v_t}^{\,j^2}\bigr)\log p ;
+\]
+in reading (V) this is the closed form of~\cite[Thm.~3.2]{Gap}. One has
+\[
+\lfloor\ord_p\theta-c_v\rfloor\;\le\;\kappa_v(\theta)\;\le\;\lfloor\ord_p\theta\rfloor,\qquad
+c_v=\min\bigl(a_v+b_v,\ \rho_v-\rho'_v\bigr),
+\]
+where $a_v,b_v$ are the constants of \cite[Prop.~1.2(i)]{IUT4} (see \cite[Thm.~3.3]{Gap}), and
+$\rho'_v=1+\ord_p(2)-n_0/e$ with $n_0=\lfloor e/(p-1)\rfloor+1$: since $\log(1+\mathfrak{m}^n)=\mathfrak{m}^n$ for
+$n>e/(p-1)$, every element of $K_v$ of valuation at least $-\rho'_v$ lies in $\cI_v$, and every element of $\cI_v$
+has valuation at least $-\rho_v$. At a \emph{small} place, where $p$ is odd and $e\le p-2$, one has $c_v=0$, and
+$\kappa_v(\theta)=\lfloor\ord_p\theta\rfloor$ exactly. At the other places the program brackets $\kappa_v(\theta)$,
+whose value depends on the unit part of $\theta$ and on $K_v$ \cite[Ex.~5.2]{Gap}.
+
+The program computes the weighted sums over the tuples by enumeration when there are at most $256$ of them, and
+otherwise by the closed form $\sum_k(f_{(k)}-f_{(k-1)})\bigl(\sum_{i\ge k}c_{(i)}\bigr)^{|P_R(j)|}$ over the sorted
+values $f_{(1)}\le f_{(2)}\le\cdots$ ($f_{(0)}=0$) of $f(v)=j^2r_v$ in the first model, and of each end of the
+bracket for $\kappa_v$ in the second: the expected value of the minimum of $|P_R(j)|$ independent choices.
+Averaging over $j$ gives
 \[
 -|\log(\Th)|\;\ge\;V-\Sigma_R,\qquad V=\frac1{\ell^*}\sum_{j}\text{container}_j,\quad
 \Sigma_R=\frac1{\ell^*}\sum_j\text{shrinkage}_j,
 \]
-where the inequality accounts only for the places that are not used (above $2,3,5,\ell$, and above any part of the
-global data not factored in the window), whose contributions in the model are nonnegative. In reading (V),
-$\Sigma_{\mathrm V}=s\,|\log(\qq)|$.
+where $\Sigma_R$ is computed in the first model, or in the second model with the upper ends
+$\lfloor\ord_p\theta\rfloor$, which give the largest shrinkage; the inequality accounts only for the places that are
+not used (above $2,3,5,\ell$, and above any part of the global data not factored in the window), whose
+contributions in the model are nonnegative. In reading (V) and the first model, $\Sigma_{\mathrm V}=s\,|\log(\qq)|$.
+The difference of the shrinkages of the two models is the gap
+\[
+\Delta_R(D)=\Sigma^{\mathrm{units}}_R-\Sigma^{\mathrm{lattice}}_R\;\ge\;0,
+\]
+which the program computes as an interval from the two ends of the bracket; it is exact when every bad place is
+small. In reading (V) it is the gap $\Delta(D)$ of~\cite{Gap} (Section~\ref{sec:xi}).
 
 \subsection{Integration: Step (xi)}\label{sec:xi}
 Step~(xi) of the proof of Corollary~3.12 of~\cite{IUT3} presents ``two tautologically equivalent ways'' of
@@ -336,7 +382,12 @@ computed value of $-|\log(\Th)|$ is only a lower bound.
 
 The comparison is equivalent to $\Sigma_R-|\log(\qq)|\le V$. In reading (V) it is $(s-1)\,|\log(\qq)|\le V$, which
 has the form of the inequality \nolinkurl{Wall.SSIneq} of~\cite{LANAiut}; there, Step~(xi) is proved equivalent to
-it in lattice models (\nolinkurl{xi_iff_ss_model}, file \nolinkurl{Iut/WallEquiv/Basic.lean}). The proof of
+it in lattice models (\nolinkurl{xi_iff_ss_model}, file \nolinkurl{Iut/WallEquiv/Basic.lean}). In the second
+model of (Ind2) the comparison in reading (V) is $(s-1)\,|\log(\qq)|\le V+\Delta_{\mathrm V}(D)$, which has the form of
+the variant of Corollary~3.12 of~\cite{LANAiut}. There the gap $\Delta(D)$ between the variant and
+\nolinkurl{SSIneq} is proved to be a weighted average of (Ind2)-terms, whose value is left open (file
+\nolinkurl{Iut/WallEquiv/Gap.lean}); \cite{Gap} determines them, and shows that $\Delta(D)>0$ for every initial
+$\Theta$-datum and that $\Delta(D)$ is bounded by a quantity that does not involve the size of the $q$-orders. The proof of
 Theorem~1.10 of~\cite{IUT4} bounds the container further, in terms of the log-different and the log-conductor, to
 arrive at its final inequality, a height inequality; the program does not carry out that step. The same reduction,
 with an estimate of the hull in place of $V$, is the theorem \nolinkurl{corThreeTwelve_of_thmThreeElevenFive} in the
@@ -407,7 +458,7 @@ $D_{2357}^{(157)}$ & 2357 & $-11.84$ & 2062.29 & $-22413.48$ & 2060.47 & 2061.38
 \bottomrule
 \end{tabular}
 \caption{The two sides of Step~(xi) on the seven data of~\cite{Cat}, with $\Vbad$ as in Section~\ref{sec:data}, in the
-model of Section~\ref{sec:algo}, with the
+first model of (Ind2) of Section~\ref{sec:algo}, with the
 complete factorizations of the norms where they were found (for $D_{3}$ from~\cite{Cat}; for
 $D_{211},D_{109},D_{18},D_{15}$ by elliptic-curve factorization, the factors being probable primes by the BPSW test).
 For $D_{2357}^{(157)}$ a cofactor of $1564$ digits remains, and $V$ and the lower bounds include the lower bound
@@ -421,8 +472,40 @@ alone. For $D_{2357}^{(157)}$ in reading (V) it is undecided in the window: the 
 above the $1564$-digit cofactor would cover if its radical exceeded about $10^{521}$; its prime factors all exceed
 $10^6$ and it is not a prime power. As said in the introduction, none of this bears on Corollary~3.12.
 
+Table~\ref{tab:gap} lists the gap $\Delta_R(D)$ between the two models of (Ind2) (Section~\ref{sec:algo}).
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{lcccc}
+\toprule
+datum & bad places (small, not small) & $\Delta_{\mathrm V}(D)$ & $\Delta_{\mathrm L}(D)$ & $\Delta_{\mathrm L^0}(D)$\\
+\midrule
+$D_{211}$ & 4, 1 & 25.894--27.253 & 12.947--13.796 & 6.473--7.578\\
+$D_{109}$ & 6, 0 & 22.707 & 11.353 & 5.677\\
+$D_{2}$ & 3, 2 & 28.516--30.914 & 18.251--20.649 & 12.400--14.798\\
+$D_{3}$ & 14, 5 & 93.174--102.006 & 52.581--60.758 & 33.003--41.788\\
+$D_{18}$ & 14, 3 & 53.621--57.936 & 28.020--31.821 & 14.501--18.559\\
+$D_{15}$ & 13, 2 & 45.765--49.165 & 22.882--26.000 & 11.441--15.267\\
+$D_{2357}^{(157)}$ & 3, 6 & 15.114--28.219 & 0.029--4.294 & 0.015--4.507\\
+\bottomrule
+\end{tabular}
+\caption{The gap $\Delta_R(D)$ between the shrinkages of the two models of (Ind2), with the data of
+Table~\ref{tab:results}. A single value is exact (all bad places small); otherwise the interval comes from the
+bracket for $\kappa_v$ at the places that are not small.}\label{tab:gap}
+\end{table}
+
+In reading (V) the gaps are those of~\cite[\S5]{Gap}, whose table bounds them from above with the constants
+$a_v,b_v$ alone; the bound $\rho_v-\rho'_v$ lowers the upper ends for $D_{211}$, $D_3$ and $D_{18}$ (for $D_{211}$ to
+$27.253$ from $27.933$). The gaps decrease from (V) to (L) to (L$^0$): with more positions allowed, the minimum over the
+positions is more often taken at a good place, where the theta value is $1$ and the two models agree. Since the
+second model has the smaller shrinkage, the comparison holds in it whenever it holds in the first. Over the three
+global windows of the page (Section~\ref{sec:page}) and the three readings, the outcomes differ in one case: for $D_3$
+in reading (V) and the intermediate window, the first model
+leaves the comparison undecided with deficit $0.87$, while the second decides that it holds. For $D_{2357}^{(157)}$ in
+reading (V) the second model lowers the deficit by $\Delta_{\mathrm V}$, which does not decide it.
+
 Replacing $\ord_w(q)$ by $c\cdot\ord_w(q)$ at every bad place while keeping the container (a hypothetical input, not
-a datum) multiplies $|\log(\qq)|$ and $\Sigma_R$ by $c$, so the computed inequality holds exactly when
+a datum) multiplies $|\log(\qq)|$ and, in the first model of (Ind2), $\Sigma_R$ by $c$, so the computed inequality holds exactly when
 $c\le c^*=V/(\Sigma_R-|\log(\qq)|)$; for $D_{211}$ in reading (V), $c^*=2.965$. Since $V$ is only a lower bound, the
 true threshold is at least $c^*$.
 
@@ -431,8 +514,8 @@ The page is a single HTML file that needs nothing but a browser; its text is in 
 \begin{enumerate}
 \item \emph{Data}: the comparisons of Step~(v) of~\cite[Thm.~1.10, proof]{IUT4} from~\cite{Cat}, for each datum and
   reading.
-\item \emph{Running the computation}: the steps of Section~\ref{sec:steps} with inputs (datum, reading, global window,
-  the hypothetical factor $c$, $p$-adic digits, Kummer levels) and their outputs, including the number line of
+\item \emph{Running the computation}: the steps of Section~\ref{sec:steps} with inputs (datum, reading, model of
+  (Ind2), global window, the hypothetical factor $c$, $p$-adic digits, Kummer levels) and their outputs, including the number line of
   Step~(xi) and the toys of Section~\ref{sec:toys}.
 \item \emph{Animation}: the same computation as an animation. Its composition (two circles for the symmetries of the
   labels, Frobenius-like lines opening into \'etale-like planes, a triangle of log-shells with the indeterminacies)
@@ -449,7 +532,7 @@ The page is a single HTML file that needs nothing but a browser; its text is in 
 The heavy computations (Tate parameters, logarithm series, Kummer read-outs, factorizations) are exported by the
 program to a data block in the page. Each time it is opened, the page recomputes the containers, the shrinkages and
 $|\log(\qq)|$ as exact combinations of logarithms and checks that they, and the outcomes, agree with the program for all
-$7\times3\times3$ combinations of datum, global window and reading; it enumerates the tuples of places above $p$ for
+$7\times3\times3$ combinations of datum, global window and reading, in both models of (Ind2); it enumerates the tuples of places above $p$ for
 $j\le3$ and checks the sums against the closed form (63 capsules); and it displays the program's own checks that the
 local data reproduce Table~1 of~\cite{Cat} and that the log-shell radii agree with the valuations of the series.
 
@@ -491,12 +574,14 @@ log-volumes, as Remark~3.11.1(viii) explains.
 \section{What is computed, given and chosen}\label{sec:limits}
 \paragraph{Computed.} The places, valuations and Tate parameters of the curve; the conditions of Definition~3.1 that
 are decidable from them; the log-shell radii, with a check of the series; the Kummer read-outs; the containers,
-possible images, hulls and log-volumes, exactly, in the model of Section~\ref{sec:algo}; the comparison of
-Step~(xi); the toys.
+possible images, hulls and log-volumes, exactly, in the first model of (Ind2) of Section~\ref{sec:algo}, and in the
+second model exactly at the small places and as an interval elsewhere; the comparison of Step~(xi); the gap between
+the two models; the toys.
 
 \paragraph{Given.} That the theta values are $\qq^{\,j^2}$ up to roots of unity, from the theory of the \'etale theta
 function as used in~\cite{IUT2}; the formula for $e$ of~\cite{Cat} at places other than those above $p$; the
-log-volume formula for the hull of a tensor packet of~\cite{LANAiut}; the archimedean container
+log-volume formula for the hull of a tensor packet of~\cite{LANAiut}; the closed form of the hull in the second model
+of (Ind2), proved on paper in~\cite{Gap}; the archimedean container
 of~\cite[Thm.~1.10, proof, Step~(vii)]{IUT4}; the conditions of Definition~3.1 that the program does not check, such
 as the image of Galois containing $\mathrm{SL}_2(\F_\ell)$, which are established in~\cite{Cat} and the sources cited
 there.
@@ -506,7 +591,10 @@ and $5$ (Section~\ref{sec:data}); the places above $2,3,5,\ell$, whose contribut
 
 \paragraph{Limitations.} The anabelian reconstructions are not implemented: the theaters are given as typed copies of
 fields, not reconstructed from groups, and the Kummer read-out is a round trip. The records of APT and SHE hold by
-construction. Automorphisms in (Ind2) other than multiplication by units are not modelled.
+construction. The group of (Ind2) of the source is not modelled; by~\cite{LANAiut}, the two models bracket it. In
+the second model, $\kappa_v(\theta)$ at the places that are not small is only bracketed, since the program does not
+compute the log-shells as lattices in $K_v$, nor the unit parts of the theta values at places other than those
+above $p$.
 The model measures the theta values by their valuations in a container shared by the two columns; this is the
 bookkeeping of the proof of Theorem~1.10 of~\cite{IUT4}, and the one in which the comparison takes the form of a
 height inequality. A reader who holds that the output of the algorithm must be measured in another way will not find
@@ -540,7 +628,9 @@ The analysis of the step from Theorem~3.11 to Corollary~3.12 by the LANA project
 repository~\cite{LANAiut} underlies Sections~\ref{sec:readings}, \ref{sec:algo} and~\ref{sec:xi}: the log-volume of the
 hull of a tensor packet of log-shells, the readings of IUT~IV and the literal reading together with the minimum
 versus the average, and the equivalence, in its models, of Step~(xi) with an inequality of the form considered by
-Scholze and Stix~\cite{SS}. Mochizuki's report~\cite{Formal} describes the formalization of the step from
+Scholze and Stix~\cite{SS}. Its file \nolinkurl{Iut/WallEquiv/Gap.lean} reduces the difference between this
+inequality and its variant of Corollary~3.12 to (Ind2)-terms and leaves their value open; the author's
+note~\cite{Gap} determines them, and Section~\ref{sec:algo} uses its closed form. Mochizuki's report~\cite{Formal} describes the formalization of the step from
 Theorem~3.11 to Corollary~3.12 in Lean as a means of communicating the logical structure of the theory, and names IPL
 and APT among its central aspects. The permutations of tensor factors in (Ind1) are discussed
 in~\cite[\S4]{DH1} and \cite[\S6.2, footnote~7]{DH}. Explicit initial $\Theta$-data over $\Q$ are given
@@ -567,7 +657,7 @@ python3 iut_compute.py --windows --data D211
 python3 iut_compute.py --export-json run_data.json
 \end{verbatim}
 print the steps for all data, the toys, the windows, and the data block of the page. Each run of \texttt{-{}-all} takes
-about ten seconds, and the export about a minute. The recorded outputs are in the supplement, with the page and checksums.
+about fifteen seconds, and the export a little over a minute. Both models of (Ind2) are printed in every run. The recorded outputs are in the supplement, with the page and checksums.
 The output of the program is in Japanese.
 
 \section{The code and the source}\label{app:map}
@@ -583,6 +673,8 @@ IUT I, Corollary 3.7; IUT III, Definition 3.8 & \code{theta\_link}, \code{Cable}
 IUT III, Definition 1.1 & \code{padic\_log\_unit}, \code{log\_shell\_radius}, \code{LogShell.verify}\\
 Kummer theory & \code{kummer\_recover}\\
 IUT III, Theorem 3.11; Remark 3.11.1 & \code{IUTAlgorithm.run}, \code{placements}, \code{run\_with\_record}\\
+(Ind2): the two models; \cite[Thms.~3.2, 3.3]{Gap}; IUT IV, Proposition 1.2(i) & \code{IUTAlgorithm(ind2=...)},
+\code{kappa\_range}, \code{log\_shell\_ab}, \code{log\_shell\_inner}\\
 IUT III, Corollary 3.12, Step (xi) & \code{integrate}\\
 IUT III, Remark 3.11.1(vi)--(viii) & \code{NaiveLink}, \code{DistinctLabels}, \code{ForcedIdentification}\\
 \bottomrule
@@ -624,6 +716,11 @@ version 0.1.7, Zenodo, \href{https://doi.org/10.5281/zenodo.22537342}{doi:10.528
 Shinichi Mochizuki, \emph{On the formalization of {IUT}: a preliminary progress report [joint work in progress
 with {Y.~Hoshi}, {G.~Yamashita}, {Y.~Yang}, \dots]}, April 2026.
 
+\bibitem[Gap]{Gap}
+Toshihisa Urahigashi, \emph{The gap between the two walls is positive: a closed form for the (Ind2)-terms of
+lana-agents/iut}, version 1.0.0, Zenodo, 5 November 2026,
+\href{https://doi.org/10.5281/zenodo.23954194}{doi:10.5281/zenodo.23954194}.
+
 \bibitem[Hoshi1]{Hoshi1}
 Yuichiro Hoshi, \emph{Introduction to inter-universal {T}eichm\"uller theory} (in Japanese), RIMS
 K\^oky\^uroku Bessatsu \textbf{B76} (2019), 79--183.
@@ -653,7 +750,7 @@ Project LANA, \emph{Project LANA interim report on IUT theory}, last updated 20 
 
 \bibitem[LANA-iut]{LANAiut}
 lana-agents, \emph{iut}, Lean repository, \url{https://github.com/lana-agents/iut}, consulted at commit
-\texttt{cfe4eb5} (2 November 2026); the files cited are unchanged since commit \texttt{ecb3c86} (1 November 2026).
+\texttt{553076a} (3 November 2026); the files cited are unchanged since commit \texttt{ecb3c86} (1 November 2026).
 
 \bibitem[MFHMP]{MFHMP}
 Shinichi Mochizuki, Ivan Fesenko, Yuichiro Hoshi, Arata Minamide, and Wojciech Porowski, \emph{Explicit

@@ -11,6 +11,9 @@
     ・無限の対象（p 進数、副有限群、全素数の積）は、有限の窓（p 進の桁数・Kummer の段・素因数分解の範囲）で計算し、
       窓を伸ばしたときに何が変わらなくなるかを出力する。人はその列を見て外挿する。
     ・二つの読みが分かれる箇所（Θ-パイロットのラベルをどう動かすか）は、入力 --reading の一か所だけ。
+    ・不定性 (Ind2) の群は二つの模型で計算し、両方を出す：単数倍（可能な像の格子を動かさない）と、各因子の log-殻を
+      保つ ℤ_p 線形な自己同型すべて（lana-agents/iut の tensorAut）。二つの差が、lana-agents/iut の Gap.lean で
+      値が未解決とされた (Ind2) の項で、その値は [Gap]（Zenodo 10.5281/zenodo.23954194）の閉じた式で決まる。
 
   出力の最後の「統合」が IUT III 系3.12 の証明の段階 (xi) に当たる。そこで原典は二つの計算（Fig. 3.8 の「同語反復的に
   同値な二つの方法」）を結ぶ推論 (xi-f) を置く。このプログラムは二つの計算を両方とも実際に行い、数として並べる。
@@ -23,7 +26,7 @@
   §4 劇場                 IUT I §3–§6             型で分けた体の写し。q-パイロット・Θ-パイロット・log-殻・大域次数
   §5 リンク               I 系3.7、III 定義3.8・定義1.1  Θ-リンク＝ケーブル（単数部分と値群部分）、log-リンク＝p 進対数
   §6 多放射的アルゴリズム   III 定理3.11、注意3.11.1   入力＝ケーブル＋エタール側データ、出力＝可能な像の合併の包と log 体積
-                          不定性 (Ind1)(Ind2)(Ind3)  (Ind1) だけが値を動かす。ここが読みの分岐
+                          不定性 (Ind1)(Ind2)(Ind3)  (Ind1) が値を動かす（読みの分岐）。(Ind2) は二つの模型（単数・格子）
   §7 統合                 III 系3.12 証明 (xi)・(xii)  方法 A（q-パイロットを直接）と方法 B（アルゴリズム経由）を計算して比べる
                           IV 定理1.10              二つを合わせると高さの不等式になる。そのデータでの値を出す
   §8 注意3.11.1 の玩具     III 注意3.11.1 (vi)–(viii) 素朴な Θ-リンク、異なるラベル、強制的同一視（自明な多放射表現）
@@ -496,6 +499,38 @@ def log_shell_radius(p, e):
     return 1 + (1 if p == 2 else 0) - Fr(best, e)
 
 
+def log_shell_inner(p, e):
+    """log-殻の内側の半径の下限 ρ′：n > e/(p−1) なら log(1 + 𝔪^n) = 𝔪^n なので、n0 = ⌊e/(p−1)⌋ + 1 として
+    (1/2p)·𝔪^{n0} ⊆ 𝓘_v、つまり ord_p ≥ −ρ′ の元はみな 𝓘_v に入る。ρ′ = 1 + ord_p(2) − n0/e。小さい素点では ρ′ = ρ"""
+    n0 = e // (p - 1) + 1
+    return 1 + (1 if p == 2 else 0) - Fr(n0, e)
+
+
+def log_shell_ab(p, e):
+    """IV 命題1.2(i) の定数の和 a + b（p^a·𝒪_v ⊆ log(𝒪_v^×) ⊆ p^{−b}·𝒪_v）。a = ⌈e/(p−2)⌉/e（p = 2 なら 2）、
+    b = ⌊log_p(pe/(p−1))⌋ − 1/e。床は整数の比較で正確に取る。小さい素点（p 奇・e ≤ p−2）では 0"""
+    a = Fr(2) if p == 2 else Fr(-(-e // (p - 2)), e)
+    k = 0
+    while p ** (k + 1) * (p - 1) <= p * e:
+        k += 1
+    return a + k - Fr(1, e)
+
+
+def kappa_range(v, s):
+    """κ_v(θ) = max{k ∈ ℤ : θ·𝓘_v ⊆ p^k·𝓘_v} の区間 (下端, 上端)（ord_p θ = s）。(Ind2) を格子の自己同型すべてにした
+    模型で、θ·𝓘_v の GL(𝓘_v) 軌道が張る格子は p^κ·𝓘_v（[Gap] 補題4.1）。上端は ⌊s⌋（体積の比較、[Gap] 定理3.3）。
+    下端は ⌊s − (a+b)⌋（IV 命題1.2(i)、[Gap] 定理3.3）と ⌊s − (ρ − ρ′)⌋（𝓘_v ⊆ {ord_p ≥ −ρ}、{ord_p ≥ −ρ′} ⊆ 𝓘_v）の
+    大きい方。θ = 1 なら κ = 0。小さい素点（p 奇・e ≤ p−2）では 𝓘_v が 𝒪_v 加群なので κ = ⌊s⌋（両端が一致する）"""
+    if s == 0:
+        return 0, 0
+    hi = math.floor(s)
+    p, e = v.prime, v.e
+    lo = max(math.floor(s - log_shell_ab(p, e)), math.floor(s - (v.rho - log_shell_inner(p, e))))
+    if p != 2 and e <= p - 2:
+        assert lo == hi, (v, s)
+    return min(lo, hi), hi
+
+
 # =====================================================================================================
 # §3 ラベル（IUT I §4・§6）
 # =====================================================================================================
@@ -799,6 +834,11 @@ READINGS = {
     "L0": "(L) に加えて 0 を動かす置換も許す＝カプセルのすべての位置（lana-agents/iut の「字義どおりの読み」）",
 }
 
+IND2 = {
+    "units": "単数倍。可能な像の格子を動かさない（版 1.0.0 の模型。恒等写像だけの群と同じ包）",
+    "lattice": "各因子の log-殻 𝓘 を保つ ℤ_p 線形な自己同型すべて（lana-agents/iut の tensorAut。IV 命題1.2 の ⊗𝓘 を保つ任意の自己同型でも同じ値）",
+}
+
 
 def placements(reading, j):
     """(Ind1)：エタール像の置換対称性。Θ-パイロットのラベル j の値が、容器のどの因子に乗りうるか。読みの分岐はここだけ"""
@@ -813,14 +853,17 @@ def placements(reading, j):
 
 class IUTAlgorithm:
     """定理3.11 の多放射的構成アルゴリズムを、可能な像の log 体積の計算として実行する。
-    入力：ケーブル、エタール側データ、それに一つの劇場の環（ring）。ring は容器を格子として実現するのにだけ使う。"""
+    入力：ケーブル、エタール側データ、それに一つの劇場の環（ring）。ring は容器を格子として実現するのにだけ使う。
+    ind2 は不定性 (Ind2) の群の模型（IND2）：units（単数倍）か lattice（各因子の log-殻を保つ格子の自己同型すべて）。"""
 
     name = "IUT（定理3.11 の計算）"
 
-    def __init__(self, reading="V", window_ind3=3, enumerate_limit=256):
+    def __init__(self, reading="V", window_ind3=3, enumerate_limit=256, ind2="units"):
+        assert ind2 in IND2, ind2
         self.reading = reading
         self.window_ind3 = window_ind3
         self.enumerate_limit = enumerate_limit
+        self.ind2 = ind2
 
     def run(self, cable, etale, ring):
         ls = etale.ell_star
@@ -828,33 +871,41 @@ class IUTAlgorithm:
         for v in etale.places:
             by_prime.setdefault(v.prime, []).append(v)
         total = LogSum()
-        detail = {"container": LogSum(), "theta_shift": LogSum(), "per_label": []}
+        # theta_shift は −|log Θ| の下からの値に使う縮み（格子の模型では κ の上端で）、theta_shift_low は κ の下端での縮み。
+        # 単数の模型では二つは等しい
+        detail = {"container": LogSum(), "theta_shift": LogSum(), "theta_shift_low": LogSum(), "per_label": []}
         for j in range(1, ls + 1):
             labels = list(range(0, j + 1))                       # 𝕊^±_{j+1}
-            cont_j, shift_j = LogSum(), LogSum()
+            cont_j, shift_j, low_j = LogSum(), LogSum(), LogSum()
             for p, vs in by_prime.items():
                 if any(v.e is None for v in vs):
                     continue                                     # 2・3・5・ℓ の上：容器は 0 以上（捨てる）
                 # テンソル packet ⊗_{t ∈ 𝕊} (⊕_{v|p} 𝓘_v) は、因子ごとに素点を選んだ組 T ごとの成分に分かれる。重み Π w_{v_t}
-                cont, shift = self._packet(vs, labels, j, etale, ring)
-                cont_j, shift_j = cont_j + cont, shift_j + shift
+                cont, shift, low = self._packet(vs, labels, j, etale, ring)
+                cont_j, shift_j, low_j = cont_j + cont, shift_j + shift, low_j + low
             arch = LogSum({'π': j + 1})                          # アルキメデス素点：IV 定理1.10 段階 (vii) の容器 π^{j+1}·B_I
             cont_j = cont_j + arch
             detail["per_label"].append((j, cont_j, shift_j))
             total = total + cont_j - shift_j
             detail["container"] = detail["container"] + cont_j
             detail["theta_shift"] = detail["theta_shift"] + shift_j
+            detail["theta_shift_low"] = detail["theta_shift_low"] + low_j
         total = total * Fr(1, ls)                                 # procession 正規化（j について平均）
-        detail["container"] = detail["container"] * Fr(1, ls)
-        detail["theta_shift"] = detail["theta_shift"] * Fr(1, ls)
+        for key in ("container", "theta_shift", "theta_shift_low"):
+            detail[key] = detail[key] * Fr(1, ls)
         return Output(total, cable.value_part, ring.label, detail)
 
+    def _kappa(self, etale, v, j):
+        """因子 v に Θ-パイロットのラベル j の値 θ = q̲̲_v^{j²} が乗ったときの κ_v(θ) の区間（θ = 1 なら 0）"""
+        return kappa_range(v, etale.theta_valuation.get((j, v), Fr(0)))
+
     def _packet(self, vs, labels, j, etale, ring):
-        """一つの素数 p での、ラベル j の容器の包の体積と、Θ-パイロットによる縮み（可能な像の合併の包）"""
+        """一つの素数 p での、ラベル j の容器の包の体積と、Θ-パイロットによる縮み（可能な像の合併の包）。
+        縮みは二つ返す（theta_shift と theta_shift_low に当たる。単数の模型では等しい）"""
         n = len(labels)
         P = placements(self.reading, j)
         if len(vs) ** n <= self.enumerate_limit:
-            cont, shift = LogSum(), LogSum()
+            cont, shift, low = LogSum(), LogSum(), LogSum()
             for T in itertools.product(vs, repeat=n):            # 組 T = (v_0, …, v_j)
                 w = Fr(1)
                 for v in T:
@@ -862,36 +913,56 @@ class IUTAlgorithm:
                 # 容器：⊗ 𝓘_{v_t} の包。成分の log 体積は Σ_t ρ(v_t)·log p（III 命題3.9(i)、IV 命題1.4(iii) の加法性）
                 regions = [ring.lattice(v, -v.rho * v.e) for v in T]
                 c = sum((L.log_vol() for L in regions), LogSum())
-                # 可能な像：(Ind1) で値が因子 t に乗る × (Ind2) 単数倍（格子は変わらない）× (Ind3) 部分格子（包は変わらない）
-                images = []
-                for t in P:
-                    s = etale.theta_valuation.get((j, T[t]), Fr(0))
-                    for k in range(self.window_ind3 + 1):         # (Ind3) の窓：一段ずつ小さい格子も可能な像
-                        images.append(s + Fr(k, T[t].e))
-                hull_shift = min(images)                          # 合併の包＝いちばん大きい格子（成分の中で格子は全順序）
+                if self.ind2 == "units":
+                    # 可能な像：(Ind1) で値が因子 t に乗る × (Ind2) 単数倍（格子は変わらない）× (Ind3) 部分格子（包は変わらない）
+                    images = []
+                    for t in P:
+                        s = etale.theta_valuation.get((j, T[t]), Fr(0))
+                        for k in range(self.window_ind3 + 1):     # (Ind3) の窓：一段ずつ小さい格子も可能な像
+                            images.append(s + Fr(k, T[t].e))
+                    hi = lo = min(images)                         # 合併の包＝いちばん大きい格子（成分の中で格子は全順序）
+                else:
+                    # 可能な像：(Ind1) で値が因子 t に乗る × (Ind2) 因子ごとの GL(𝓘) × (Ind3) 部分格子。位置 t の像が張る格子は
+                    # p^{κ_t}·(⊗𝓘)（[Gap] 補題4.3）、合併が張る格子は p^{min κ_t}·(⊗𝓘)。包は張る格子だけで決まり（補題4.2）、
+                    # 部分格子は κ を下げないので包を変えない
+                    ks = [self._kappa(etale, T[t], j) for t in P]
+                    hi, lo = Fr(min(k[1] for k in ks)), Fr(min(k[0] for k in ks))
                 cont = cont + c * w
-                shift = shift + LogSum.log(vs[0].prime, hull_shift) * w
+                shift = shift + LogSum.log(vs[0].prime, hi) * w
+                low = low + LogSum.log(vs[0].prime, lo) * w
             # 閉じた式と照合（窓を伸ばしても変わらない量）
-            c2, s2 = self._closed(vs, n, j, P, etale)
-            assert c2.c == cont.c and s2.c == shift.c, (c2, cont, s2, shift)
-            return cont, shift
+            c2, s2, l2 = self._closed(vs, n, j, P, etale)
+            assert c2.c == cont.c and s2.c == shift.c and l2.c == low.c, (c2, cont, s2, shift, l2, low)
+            return cont, shift, low
         for v in vs:                                             # 組が多いときも、容器は環の中の格子として実現する
             ring.lattice(v, -v.rho * v.e)
         return self._closed(vs, n, j, P, etale)
 
     def _closed(self, vs, n, j, P, etale):
-        """組の数が多いとき（ℓ が大きい）の閉じた式。重みは確率なので、容器は (j+1)·ρ̄、縮みは E[min_{t∈P} ord(θ_{v_t})]"""
+        """組の数が多いとき（ℓ が大きい）の閉じた式。重みは確率なので、容器は (j+1)·ρ̄、縮みは E[min_{t∈P} f(v_t)]。
+        f は単数の模型では ord(θ_v)、格子の模型では κ_v(θ_v) の上端と下端"""
         p = vs[0].prime
         rho_bar = sum((v.weight * v.rho for v in vs), Fr(0))
         cont = LogSum.log(p, n * rho_bar)
-        vals = sorted((etale.theta_valuation.get((j, v), Fr(0)), v.weight) for v in vs)
-        # min を取る位置の数 = |P|。E[min] = Σ_k (r_(k) − r_(k−1))·(重み ≥ r_(k) の和)^{|P|}
+        if self.ind2 == "units":
+            f_hi = f_lo = {v: etale.theta_valuation.get((j, v), Fr(0)) for v in vs}
+        else:
+            ks = {v: self._kappa(etale, v, j) for v in vs}
+            f_hi = {v: Fr(k[1]) for v, k in ks.items()}
+            f_lo = {v: Fr(k[0]) for v, k in ks.items()}
+        return cont, LogSum.log(p, self._emin(vs, f_hi, len(P))), LogSum.log(p, self._emin(vs, f_lo, len(P)))
+
+    @staticmethod
+    def _emin(vs, f, npos):
+        """E[min_{npos 個の独立な選択} f(v)]（重み w_v で選ぶ）。値を並べて r_(1) ≤ r_(2) ≤ … とすると
+        Σ_k (r_(k) − r_(k−1))·(重み ≥ r_(k) の和)^npos、r_(0) = 0。重みの和は 1 なので最初の項は r_(1)（負でもよい）"""
+        vals = sorted((f[v], v.weight) for v in vs)
         Emin, prev = Fr(0), Fr(0)
         for idx, (r, _) in enumerate(vals):
             tail = sum(w for (rr, w) in vals[idx:])
-            Emin += (r - prev) * tail ** len(P)
+            Emin += (r - prev) * tail ** npos
             prev = r
-        return cont, LogSum.log(p, Emin)
+        return Emin
 
 
 # =====================================================================================================
@@ -971,6 +1042,26 @@ def integrate(datum, reading="V", verbose=True):
     pr(f"  内訳：容器（log-殻のテンソル packet の包、j について平均）= {d['container'].value():.4f}")
     pr(f"        Θ-パイロットによる縮み（可能な像の合併の包、読み {reading}）= {d['theta_shift'].value():.4f}")
 
+    # (Ind2) の群を、各因子の log-殻を保つ ℤ_p 線形な自己同型すべて（lana-agents/iut の tensorAut）に替えた模型
+    alg_l = IUTAlgorithm(reading, ind2="lattice")
+    outl1, touchedl = run_with_record(alg_l, cable, etale, th10, [th00])
+    outl0, _ = run_with_record(alg_l, cable, etale, th00, [th10])
+    assert outl1.possible.c == outl0.possible.c
+    dl = outl1.detail
+    gap_lo = d["theta_shift"] - dl["theta_shift"]                # 差の下端（κ の上端で）
+    gap_hi = d["theta_shift"] - dl["theta_shift_low"]            # 差の上端（κ の下端で）
+    rng = lambda a, b: f"{a.value():.4f}" if a.c == b.c else f"{a.value():.4f} 〜 {b.value():.4f}"
+    pr("\n[段階 (xi-b)、(Ind2) の群を替える] 各因子の log-殻 𝓘 を保つ ℤ_p 線形な自己同型すべて（lana-agents/iut の tensorAut）")
+    pr("  位置 t の可能な像が張る格子は p^κ·(⊗𝓘)（κ = κ_v(θ) = max{k : θ𝓘_v ⊆ p^k𝓘_v}、[Gap] 補題4.1・4.3）。"
+       "合併の包は p^{min κ}·包(⊗𝓘)")
+    pr(f"  APT：同じ run() を劇場 (1,0) の環で → −|log Θ| ≥ {outl1.possible.value():.4f}、劇場 (0,0) の環で → {outl0.possible.value():.4f}"
+       f"（SHE：触った環 {touchedl}）")
+    pr(f"  縮み = {rng(dl['theta_shift_low'], dl['theta_shift'])}（小さい素点（p 奇・e ≤ p−2）では κ = ⌊ord θ⌋ で正確。"
+       "そうでない素点では κ を ⌊ord θ − (a+b)⌋・⌊ord θ − (ρ − ρ′)⌋ と ⌊ord θ⌋ で挟む）")
+    pr(f"  単数の模型との差 Δ_{reading} = {rng(gap_lo, gap_hi)}（縮みの差。lana-agents/iut の Gap.lean の (Ind2) の項の平均）")
+    pr("  （原典の (Ind2) の群での包は、恒等写像だけの群（単数の模型と同じ包）と tensorAut（lana-agents/iut によれば原典の Ism の像を"
+       "含む「意図的な拡大」）の間にある）")
+
     pr("\n[段階 (xi-d)〜(xi-f)] 二つの方法（Fig. 3.8「同語反復的に同値な二つの方法」）")
     wayA = -th10.degree(th10.q_pilot())
     wayB = out1.possible
@@ -992,6 +1083,15 @@ def integrate(datum, reading="V", verbose=True):
     else:
         verdict = f"この窓では決まらない（不足 {lhs - rhs2:.4f}）"
     pr(f"  計算した二つの数の比較：−|log q| = {lhs:.4f} と −|log Θ| ≥ {rhs2:.4f}：{verdict}")
+    wayBl = outl1.possible
+    rhs1l, rhs2l = wayBl.value(), (wayBl + extra).value()
+    if lhs <= rhs1l:
+        verdict_l = "成り立つ（分解済みの部分の容器だけで）"
+    elif lhs <= rhs2l:
+        verdict_l = "成り立つ（分解していない因数の下限を足して）"
+    else:
+        verdict_l = f"この窓では決まらない（不足 {lhs - rhs2l:.4f}）"
+    pr(f"  (Ind2) を格子の模型にしたとき：−|log Θ| ≥ {rhs2l:.4f}：{verdict_l}（縮みが小さくなるので、成り立つのは単数の模型で成り立つときを含む）")
     if lhs > rhs2 and datum.unfactored:
         need = lhs - rhs1                                  # 分解していない因数の素点が埋めるべき量
         coef = Fr(datum.ell + 5, 4) * Fr(1, 2) * Fr(14, 15)
@@ -1008,13 +1108,21 @@ def integrate(datum, reading="V", verbose=True):
         lhsV, rhsV = ((s - 1) * absq).value(), (V + extra).value()
         pr(f"  読み (V) では比較は (s−1)·|log q| ≤ 容器 と同じ：{lhsV:.4f} {'≤' if lhsV <= rhsV else '>'} {rhsV:.4f}（容器は下からの値）。"
            "lana-agents/iut の SSIneq の形。IV 定理1.10 の証明は容器を log-different などでさらに上から見積もり、高さの不等式を得る")
+        pr(f"  格子の模型では比較は (s−1)·|log q| ≤ 容器 + Δ_V と同じ（lana-agents/iut の変種 (Var) の形）。Δ_V = {rng(gap_lo, gap_hi)} は"
+           " [Gap] の Δ(D)。二つの壁の差は Δ_V だけで、その上界は q の位数の大きさを含まない（[Gap] 系3.5）")
     return dict(wayA=lhs, wayB=rhs2, verdict=verdict, V=(V + extra).value(), absq=absq.value(), s=float(s),
                 shift=d["theta_shift"].value(),
                 exact=dict(absq=ls_json(absq), container=ls_json(V), shift=ls_json(d["theta_shift"]), extra=ls_json(extra),
                            wayB_lower=ls_json(wayB)),
                 apt=[out1.possible.value(), out0.possible.value(), out1.possible.c == out0.possible.c],
                 she={str(k): n for k, n in touched1.items()}, ipl=out1.link is cable.value_part,
-                q2_same=out2.possible.c == out1.possible.c)
+                q2_same=out2.possible.c == out1.possible.c,
+                lattice=dict(wayB=rhs2l, verdict=verdict_l,
+                             shift=[dl["theta_shift_low"].value(), dl["theta_shift"].value()],
+                             gap=[gap_lo.value(), gap_hi.value()], gap_exact=gap_lo.c == gap_hi.c,
+                             exact=dict(shift_low=ls_json(dl["theta_shift_low"]), shift_high=ls_json(dl["theta_shift"]),
+                                        wayB_lower=ls_json(wayBl)),
+                             apt=[outl1.possible.value(), outl0.possible.value(), outl1.possible.c == outl0.possible.c]))
 
 
 # =====================================================================================================

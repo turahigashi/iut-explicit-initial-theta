@@ -318,15 +318,20 @@ under Apache-2.0.
 ## A programmer's walkthrough (November 2026)
 
 **A programmer's walkthrough of inter-universal Teichmüller theory: running the multiradial algorithm on
-explicit initial Θ-data.** `iut-walkthrough/paper/iut_walkthrough.pdf` (15 pages), version 1.0.0, DOI
-[10.5281/zenodo.23880260](https://doi.org/10.5281/zenodo.23880260).
+explicit initial Θ-data.** `iut-walkthrough/paper/iut_walkthrough.pdf` (17 pages), version 1.1.0, DOI
+[10.5281/zenodo.23955994](https://doi.org/10.5281/zenodo.23955994) (version 1.0.0:
+[10.5281/zenodo.23880260](https://doi.org/10.5281/zenodo.23880260)).
 
 A program, with an interactive web page, that runs on explicit numbers those operations of IUT that can be
 written as procedures, on the seven initial Θ-data of the catalogue above. It computes the Tate parameters
 and local data p-adically, keeps the two Hodge theaters of a Θ-link as type-separated copies of the local
 fields, computes log-shells, Kummer read-outs, containers, possible images and the log-volume of the
 holomorphic hull of their union for three readings of the label indeterminacy, and places side by side the
-two quantities that Step (xi) of the proof of Corollary 3.12 compares. Infinite objects are computed in
+two quantities that Step (xi) of the proof of Corollary 3.12 compares. Version 1.1.0 adds a second model of the
+indeterminacy (Ind2), the group of all ℤ_p-linear automorphisms of the log-shells of the factors used in
+lana-agents/iut, whose hull is given by the closed form of the note in `ind2-gap/`; in the reading of IUT IV the
+two models give the Scholze–Stix inequality and the variant of Corollary 3.12, and the program computes their
+difference for each datum. Infinite objects are computed in
 finite windows. **The purpose is expository; no conclusion is drawn about Corollary 3.12, Theorem 1.10 of
 IUT IV, or the abc conjecture.** Turning the objects and processes of IUT into data types has been done
 earlier and on a broader scale in [motizukipdf](https://github.com/oneman/motizukipdf); the container
