@@ -362,3 +362,20 @@ quantitative core of Part II is checked in Lean 4 (`indexed-identifications/lean
 None of the results of either note is new mathematically; the contribution is the formulation and the
 correspondences. **No claim is made about the truth of Corollary 3.12, Theorem 1.10 of IUT IV, or the abc
 conjecture.** The files in `segment-or-loop/` and `indexed-identifications/` are licensed under CC BY 4.0.
+
+## The gap between the two walls (November 2026)
+
+**The gap between the two walls is positive: a closed form for the (Ind2)-terms of lana-agents/iut.**
+`ind2-gap/paper/ind2_gap.pdf` (10 pages), version 1.0.0, DOI
+[10.5281/zenodo.23954194](https://doi.org/10.5281/zenodo.23954194).
+
+[lana-agents/iut](https://github.com/lana-agents/iut) proves that the difference Δ(D) between its variant of
+Corollary 3.12 and the Scholze–Stix inequality is a weighted average of (Ind2)-terms at the bad residue
+characteristics, and leaves their value open. The note determines the (Ind2)-terms in closed form, on lana's
+definitions as they stand. It follows that Δ(D) > 0 for every initial Θ-datum, that Δ(D) is bounded above by a
+quantity that does not involve the size of the q-orders, and that its average over the labels is given by the class
+number of Q(√−ℓ). The values for the data of the catalogue are computed with the program of the walkthrough above.
+The proofs are on paper and have not been checked in Lean. **No claim is made about the truth of (Var), (SS),
+Corollary 3.12, or the abc conjecture.** See `ind2-gap/README.md` for the files and how to rerun the scripts.
+
+The files in `ind2-gap/` are licensed under CC BY 4.0.

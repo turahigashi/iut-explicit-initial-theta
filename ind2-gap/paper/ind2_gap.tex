@@ -1,0 +1,522 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2124}{\ensuremath{\mathbb{Z}}}
+\DeclareUnicodeCharacter{0394}{\ensuremath{\Delta}}
+\DeclareUnicodeCharacter{2265}{\ensuremath{\geq}}
+\DeclareUnicodeCharacter{00B2}{\ensuremath{{}^2}}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{geometry}
+\geometry{margin=2.6cm}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\hypersetup{pdftitle={The gap between the two walls is positive},pdfauthor={Toshihisa Urahigashi}}
+\setlist{itemsep=2pt,topsep=4pt}
+\raggedbottom
+\emergencystretch=3em
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Zp}{\mathbb{Z}_p}
+\newcommand{\Qp}{\mathbb{Q}_p}
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\Ocal}{\mathcal{O}}
+\newcommand{\ordp}{\operatorname{ord}_p}
+\newcommand{\fr}{\operatorname{frac}}
+\newcommand{\hull}{\operatorname{hull}}
+\newcommand{\mulog}{\mu^{\log}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\Vbad}{\mathbb{V}_{\mathrm{mod}}^{\mathrm{bad}}}
+\newcommand{\qb}{\underline{q}}
+\newcommand{\itwo}{\mathrm{ind2}}
+\newcommand{\leanus}{\textunderscore\allowbreak}
+\newcommand{\lean}[1]{{\ttfamily\let\_\leanus #1}}
+
+% labels
+\newcommand{\lab}[2]{{\upshape\fcolorbox{#1}{#1!8}{\scriptsize\sffamily\bfseries\textcolor{#1}{#2}}}}
+\newcommand{\tagS}{\lab{blue}{S}}
+\newcommand{\tagX}{\lab{Purple}{X}}
+\newcommand{\tagP}{\lab{ForestGreen}{P}}
+\newcommand{\tagR}{\lab{teal}{R}}
+\newcommand{\tagN}{\lab{BrickRed}{N}}
+\newcommand{\tagH}{\lab{BurntOrange}{H}}
+\newcommand{\known}[1]{\par\noindent{\footnotesize\upshape Known mathematics: #1}\par\smallskip}
+\newcommand{\q}[1]{``#1''}
+\newcommand{\xquote}[2]{\begin{quote}\small\tagX\ #1\par\nopagebreak\hfill{\footnotesize #2}\end{quote}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{The gap between the two walls is positive:\\ a closed form for the (Ind2)-terms of lana-agents/iut}
+\author{Toshihisa Urahigashi\\\small ORCID 0009-0004-0460-6242\\\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
+\date{Version 1.0.0, 5 November 2026\\\small\href{https://doi.org/10.5281/zenodo.23954194}{doi:10.5281/zenodo.23954194}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The public Lean formalization lana-agents/iut writes the comparison step in the proof of Corollary~3.12 of
+inter-universal Teichm\"uller theory (IUT)~III---the ``wall''---in two forms: a variant of Corollary~3.12, (Var),
+and the Scholze--Stix inequality, (SS). The difference $\Delta(D)$ of their right-hand sides is a weighted average of
+(Ind2)-terms at the bad residue characteristics. The repository proves $\Delta(D)\ge0$ and records as open whether
+these terms are zero or positive.
+
+We determine these terms in closed form. The (Ind2)-term equals $(\ordp\theta-\kappa_v(\theta))\log p$, where
+$\theta=\qb_v^{\,j^2}$ is the theta value and $\kappa_v(\theta)$ is the largest integer $k$ with
+$\theta\,\I_v\subseteq p^k\I_v$, $\I_v$ being the log-shell. Consequently the term is always at least
+$\fr(\ordp\theta)\log p$, with equality when $p$ is odd and $e_v\le p-2$ (there the log-shell is a fractional
+ideal). At a bad place $\ordp\theta$ is never an integer, because $\ell$ does not divide the order of $q$.
+Hence $\Delta(D)>0$ for every initial $\Theta$-datum, and in this formalization (SS) is strictly stronger than (Var).
+
+On the other hand $\Delta(D)$ is bounded above by a quantity that does not involve the size of the $q$-orders (the
+values $\log p$ at the bad places and the ramification indices). The two walls are height inequalities of the same
+shape that differ by a term of conductor type. The average over the labels is given by the class number of
+$\Q(\sqrt{-\ell})$. We compute the values for six explicit initial $\Theta$-data.
+
+No claim is made about the truth of (Var), (SS), Corollary~3.12, or the abc conjecture.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+
+\subsection{Motivation}
+The ultimate aim of this work is to understand exactly the algorithm by which IUT computes the height inequality.
+The computation of IUT~IV combines, step by step, theta values, log-shells, the indeterminacies (Ind1), (Ind2),
+(Ind3), holomorphic hulls and log-volumes, and produces the two sides of the height inequality. To write this
+algorithm down exactly, including the value produced at each step, every step must have a determined value. The
+(Ind2)-term, whose value the public formalization lana-agents/iut leaves open, is one of these steps. This note
+determines it.
+
+\subsection{The two walls and their gap}
+The repository lana-agents/iut~\cite{lana} (``lana'' below) is a public Lean formalization that builds the objects of
+IUT. Its directory \lean{Iut/WallEquiv/} collects formulations of the step from Theorem~3.11 to Corollary~3.12 of
+IUT~III~\cite{IUT3}, the \q{wall} in the words of the interim report of Project LANA~\cite[\S0.2]{LANA}, and proves
+equivalences between them in its models. The file \lean{Gap.lean} treats the difference between two of them.
+
+\xquote{``Christian's question: \emph{is the LANA wall any weaker than the Scholze--Stix wall?}''\quad
+``\textbf{Open}: whether the (Ind2)-terms at the bad primes are \lean{0} or \lean{> 0} (the indeterminacy
+automorphisms at a prime are all \lean{ℤ\_p}-lattice automorphisms of the factor log-shells, \lean{tensorAut}, which
+need not commute with the theta values); so the sign \lean{Δ(D) ≥ 0} is all that is proved.''}{\cite{lana},
+\lean{Iut/WallEquiv/Gap.lean}, module docstring}
+
+For initial $\Theta$-data $D$ the two walls are the following inequalities (notation in Section~\ref{s:setting}).
+\begin{itemize}
+\item[(Var)] $-|\log q|\le R$, where $R=-|\log\Theta|$ is the log-volume of the holomorphic hull of the
+$\Theta$-pilot region: a variant of Corollary~3.12.
+\item[(SS)] $-|\log q|\le\mulog(\mathrm{LGP}\cdot\hull(VC(I)))$: the Scholze--Stix inequality~\cite{SS}, written with
+IUT's container $\hull(VC(I))$.
+\end{itemize}
+lana defines the gap $\Delta(D)=R-\mulog(\mathrm{LGP}\cdot\hull(VC(I)))\ge0$, proves that (SS) is equivalent to
+$-|\log q|\le R-\Delta(D)$ (\lean{ss\_iff\_le\_rhs\_sub\_gap}), and proves that $\Delta(D)$ is a weighted average of
+the (Ind2)-terms at the bad residue characteristics (\lean{gap\_eq}). The same repository expects positivity:
+
+\xquote{``they do not commute with the multiplication by \lean{q\^{}\{j²\}} in general, so \lean{ind2Term > 0} is to be
+expected when \lean{ord(q\^{}\{j²\})} is not a multiple of the ramification index, but this is not
+formalized.''}{\cite{lana}, \lean{Iut/WallEquiv/README.md}, section ``The gap between (Var) and (SS) (\lean{Gap.lean})''}
+
+\subsection{Results}
+Working with lana's definitions as they stand, we determine the (Ind2)-terms.
+\begin{itemize}
+\item Theorem~\ref{t:closed} (closed form): $\itwo=(\ordp\theta-\kappa_v(\theta))\log p$.
+\item Theorem~\ref{t:bounds} (bounds): $\itwo\ge\fr(\ordp\theta)\log p$ and $\itwo<(1+a_v+b_v)\log p$, with equality in
+the lower bound when $p$ is odd and $e_v\le p-2$; here $a_v,b_v$ are the constants of Proposition~1.2 of
+IUT~IV~\cite{IUT4}.
+\item Theorem~\ref{t:pos} (positivity): $\itwo>0$ at every bad place. Hence $\Delta(D)>0$ for every initial
+$\Theta$-datum, and (SS) is strictly stronger than (Var).
+\item Corollary~\ref{c:size} (size): $\Delta(D)<\sum_uw_u(\log p_u+3+\log e_u)$; the right-hand side does not involve
+the size of the $q$-orders.
+\item Proposition~\ref{p:classno} (label average): if $\ordp(\qb_v)=n/\ell$, the average of $\fr(\ordp\theta)$ over the
+labels is $\tfrac12-\chi_\ell(n)\,h(-\ell)/(\ell-1)$ when $\ell\equiv3\bmod4$; at small places this is the average of
+the term in units of $\log p$.
+\end{itemize}
+Our answer to lana's question is therefore: in lana's formalization the LANA wall is strictly weaker than the
+Scholze--Stix wall, but only by a quantity of conductor type, which does not grow with the size of $q$.
+
+\subsection{Relation to earlier work}
+\begin{itemize}
+\item \tagX\ Positivity itself is expected, under a condition, in lana's documentation quoted above. We give a proof
+and the exact value.
+\item \tagX\ Dupuy and Hilado describe (Ind2) as acting through the $\Qp$-linear automorphisms arising from
+$\Zp$-lattice automorphisms of $\I_v$~\cite[\S4.8]{DH1}, and bound the hull under such automorphisms \emph{from
+above}~\cite[\S6.2]{DH2}; the floor $\lfloor\ordp(a)-\ordp(\beta)\rfloor$ appears in their estimate (6.6)--(6.7).
+Theorem~\ref{t:closed} shows that the hull actually reaches the position of this rounding.
+\item \tagS\ Proposition~1.2(ii) of IUT~IV~\cite{IUT4} likewise bounds $\phi(p^\lambda(R_I)^{\sim})$ from above by
+inclusions involving a floor, and (iii) replaces the floor by an allowance of $1$. Neither states an equality.
+\item \tagP\ The lattice lemma (Lemma~\ref{l:orbit}) is elementary and not new. What is new, to the author's
+knowledge, is its application to lana's definitions to determine the (Ind2)-terms, and the positivity, bounds and
+label average that follow.
+\end{itemize}
+
+\subsection{What is not claimed}
+\begin{itemize}
+\item The object of this note is the definitions of lana's formalization. lana states that its (Ind2) group is a
+\q{deliberate enlargement} that contains the image of $\mathrm{Ism}$ (Section~\ref{s:setting}). For the group of the
+original papers the value lies between $0$ and the value found here (Section~\ref{s:groups}).
+\item Nothing is claimed about the truth of (Var), (SS), Corollary~3.12 or the abc conjecture.
+\item The proofs are on paper. They have not been checked in Lean on top of lana's definitions.
+\end{itemize}
+
+\subsection{Labels}
+\tagS\ a statement of the original papers of IUT or of Mochizuki's documents. \tagX\ a statement of others (lana,
+Project LANA, Dupuy--Hilado). \tagP\ a statement proved here; \tagP\ alone marks an elementary fact. \tagR\ known
+mathematics, applied here in a new way; the known mathematics is named. \tagN\ a result new in this note, to the
+author's knowledge. \tagH\ a reading or interpretation, not a proof.
+
+\section{Setting}\label{s:setting}
+We follow lana's definitions; Lean names are given in parentheses.
+\begin{itemize}
+\item \emph{Initial $\Theta$-data} $D$: a number field $F$, an elliptic curve $E/F$, a prime $\ell\ge5$,
+$\ell^*=(\ell-1)/2$, $K=F(E[\ell])$, the field of moduli $F_{\mathrm{mod}}$ and a nonempty set $\Vbad$ of bad places
+(\lean{bad\_nonempty}). At a bad place $w$ the order of the Tate parameter $q_w$ is prime to $\ell$
+(\lean{q\_order\_coprime}; IUT~I, Definition~3.1(c)~\cite{IUT1}).
+\item \emph{Capsules and labels}: the labels of capsule $i=0,\dots,\ell^*-1$ are $\{0,\dots,i+1\}$, and the
+distinguished label is $j=i+1$ (\lean{distinguished}). Thus $j$ runs through $1,\dots,\ell^*$.
+\item \emph{Packets}: for a prime $p$ and a map (tuple) $c$ from the labels to the places of $F_{\mathrm{mod}}$ over $p$,
+$T_c=\bigotimes_lK_{v_l}$, the tensor product over $\Qp$, where $v_l$ is the place of $K$ over $c(l)$ given by the
+section of places.
+\item \emph{Log-shells}: $\I_v=(2p)^{-1}\log_p(\Ocal_v^{\times})\subseteq K_v$, a $\Zp$-lattice
+(\lean{factorLogShell}); $\bigotimes\I$ is the $\Zp$-submodule spanned by the pure tensors of log-shell elements
+(\lean{LocalTheory.shell} $=$ \lean{tensorLogShell}).
+\item \emph{Integral structure and hull}: $\Ocal$ is the integral closure of $\Zp$ in $T_c$ (\lean{integral}). The
+hull $\hull(U)$ of a subset $U$ is the intersection of all $b\,\Ocal$, $b$ a unit, that contain $U$
+(\lean{leastHull}; IUT~III, Remark~3.9.5(i)~\cite{IUT3}).
+\item \emph{Log-volume}: $\mulog(S)=\log\bigl(\mu(S)/\mu(\Ocal)\bigr)/[T_c:\Qp]$ (\lean{componentVol}). Multiplication by
+$p$ shifts it by $-\log p$, and multiplication by $y$ in the factor of label $l$ by $-\ordp(y)\log p$
+(\lean{componentVol\_prod\_incl\_smul\_integral}), with $\ordp$ normalized by $\ordp(p)=1$.
+\item \emph{The (Ind2) group}: $\mathrm{tensorAut}$ consists of the tensor products $\bigotimes_lg_l$ of
+$\Qp$-linear automorphisms $g_l$ of the factors with $g_l(\I_{v_l})=\I_{v_l}$ (\lean{tensorAut}).
+\item \emph{Theta values}: $\qb_v$ is a $2\ell$-th root of the Tate parameter at a bad place $v$, and $1$ elsewhere
+(\lean{qrootOf}); $\theta=\qb_{v}^{\,j^2}$, with $v=v_j$, sits in the factor of label $j$ (\lean{scaleElt}). One has
+$\ordp(\qb_v)=\operatorname{ord}_w(q_w)/(2\ell\,e_w)$, where $w$ is the place of $F$ below $v$ and $e_w$ the
+ramification index of $F_w/\Qp$ (\lean{ordp\_qrootOf}).
+\item \emph{The $\Theta$-pilot component} (in IUT~IV's reading):
+$\Theta_{i,p,c}=\bigcup_{\phi\in\mathrm{tensorAut}}\phi\bigl(\theta\cdot\bigotimes\I\bigr)$
+(\lean{thetaFinite\_eq}).
+\item \emph{The (Ind2)-term} (\lean{ind2Term}):
+\[\itwo(i,p,c)=\mulog\bigl(\hull(\Theta_{i,p,c})\bigr)-\mulog\bigl(\theta\cdot\hull(\textstyle\bigotimes\I)\bigr).\]
+\item \emph{The gap} (\lean{gap\_eq}):
+\[\Delta(D)=\frac1{\ell^*}\sum_i\sum_p\sum_c w_c\,\itwo(i,p,c),\]
+with $w_c=\prod_lw(c(l))$ and $w(u)=[F_{\mathrm{mod},u}:\Qp]/[F_{\mathrm{mod}}:\Q]$.
+The weights of the places over $p$ sum to $1$ (\lean{weight\_sum\_one}).
+\end{itemize}
+
+\xquote{``This class contains the image of \lean{Ism} and is in general larger: a \textbf{deliberate enlargement},
+which makes the theta region larger and the hypothesis \lean{Cor312VariantHolds} weaker than with \lean{Ism}
+exactly.''}{\cite{lana}, \lean{Iut/Concrete/LocalConstruct/IndAut.lean}, module docstring}
+
+We use the constants of IUT~IV, Proposition~1.2~\cite{IUT4}, for the ramification index $e$ of $K_v/\Qp$:
+\[a=\tfrac1e\lceil\tfrac{e}{p-2}\rceil\ (p>2),\quad a=2\ (p=2),\qquad
+b=\Bigl\lfloor\frac{\log(pe/(p-1))}{\log p}\Bigr\rfloor-\frac1e .\]
+By Proposition~1.2(i) of IUT~IV, $p^a\Ocal_v\subseteq\log_p(\Ocal_v^\times)\subseteq p^{-b}\Ocal_v$, with equality
+in both inclusions when $p>2$ and $e\le p-2$; then $a=1/e=-b$.
+
+\begin{definition}
+A finite place $v\mid p$ of $K$ is \emph{small} if $p$ is odd and $e_v\le p-2$. At a small place
+$\log_p(\Ocal_v^\times)=p^{1/e_v}\Ocal_v$, so $\I_v$ is an $\Ocal_v$-module.
+\end{definition}
+
+\section{Main results}
+
+\begin{definition}
+For a finite place $v\mid p$ of $K$ and $\theta\in K_v^{\times}$ put
+\[\kappa_v(\theta)=\max\{k\in\Z:\ \theta\,\I_v\subseteq p^k\,\I_v\}.\]
+The maximum exists because $\theta\,\I_v$ is again a $\Zp$-lattice.
+\end{definition}
+
+\begin{theorem}[closed form]\label{t:closed}\tagP\tagN\
+Let $v=v_j$ and $\theta=\qb_v^{\,j^2}$. Then
+\[\itwo(i,p,c)=\bigl(\ordp\theta-\kappa_v(\theta)\bigr)\log p .\]
+In particular the term depends only on $j$ and $v_j$, not on the places at the other labels.
+\end{theorem}
+
+\begin{theorem}[bounds]\label{t:bounds}\tagP\tagN\
+With the same notation and $e_v$ the ramification index of $K_v/\Qp$,
+\[\fr(\ordp\theta)\,\log p\ \le\ \itwo(i,p,c)\ \le\ \bigl(\ordp\theta-\lfloor\ordp\theta-a_v-b_v\rfloor\bigr)\log p\
+<\ (1+a_v+b_v)\log p .\]
+If $v$ is small then $a_v+b_v=0$, the two bounds coincide, and $\itwo(i,p,c)=\fr(\ordp\theta)\log p$.
+\end{theorem}
+
+\begin{theorem}[positivity]\label{t:pos}\tagP\tagN\
+\begin{enumerate}[label=(\roman*)]
+\item If $v_j$ is a bad place, then $\ordp\theta\notin\Z$ for every $j=1,\dots,\ell^*$, and $\itwo(i,p,c)>0$.
+\item $\Delta(D)>0$ for every initial $\Theta$-datum $D$. Hence in lana's formalization (SS) is strictly stronger than
+(Var): (Var) holds and (SS) fails exactly when $-|\log q|\in(R-\Delta(D),R]$
+(\lean{variant\_and\_not\_ss\_iff}), and this interval has positive length $\Delta(D)$.
+\end{enumerate}
+\end{theorem}
+
+\begin{corollary}[formula and size of the gap]\label{c:size}\tagP\
+For $u\in\Vbad$ let $v(u)$ be the place of $K$ over $u$, $r_u=\ordp(\qb_{v(u)})$, and $p_u$ the residue
+characteristic. Then
+\[\Delta(D)=\frac1{\ell^*}\sum_{j=1}^{\ell^*}\sum_{u\in\Vbad}w_u\,\bigl(j^2r_u-\kappa_{v(u)}(\qb_{v(u)}^{\,j^2})\bigr)\log p_u,\]
+\[\frac1{\ell^*}\sum_{j=1}^{\ell^*}\sum_{u\in\Vbad}w_u\,\fr(j^2r_u)\log p_u\ \le\ \Delta(D)\ <\
+\sum_{u\in\Vbad}w_u\bigl(\log p_u+3+\log e_{v(u)}\bigr).\]
+If every bad place is small, the lower bound is an equality. The upper bound does not involve the size of the
+$q$-orders.
+\end{corollary}
+
+\begin{proposition}[label average and class number]\label{p:classno}\tagP\tagR\
+\known{Dirichlet's class number formula.}
+Suppose $r_u=n_u/\ell$ with $n_u\in\Z$ and $\ell\nmid n_u$. Then
+\[\frac1{\ell^*}\sum_{j=1}^{\ell^*}\fr\Bigl(\frac{j^2n_u}{\ell}\Bigr)=
+\begin{cases}\dfrac12-\chi_\ell(n_u)\,\dfrac{h(-\ell)}{\ell-1}&(\ell\equiv3\bmod4),\\[2mm]
+\dfrac12&(\ell\equiv1\bmod4),\end{cases}\]
+where $\chi_\ell$ is the Legendre symbol and $h(-\ell)$ the class number of $\Q(\sqrt{-\ell})$. For $\ell=7$ one has
+$h(-7)=1$, so the average is $1/3$ if $n_u$ is a quadratic residue and $2/3$ otherwise.
+\end{proposition}
+
+\section{Proofs}
+
+\subsection{The lattice lemmas}
+\begin{lemma}\label{l:orbit}\tagP\
+Let $L$ be a free $\Zp$-module of finite rank, $M\subseteq L\otimes\Qp$ a $\Zp$-lattice, and
+$\kappa=\max\{k:M\subseteq p^kL\}$. Then the $\Zp$-submodule spanned by $\bigcup_{g\in\GL(L)}g(M)$ is $p^{\kappa}L$.
+\end{lemma}
+\begin{proof}
+Since $g(M)\subseteq g(p^\kappa L)=p^\kappa L$, the span lies in $p^\kappa L$. Conversely, by maximality of $\kappa$
+there is $x\in M\setminus p^{\kappa+1}L$, and $y=p^{-\kappa}x$ lies in $L\setminus pL$. By Nakayama's lemma $y$
+extends to a basis of $L$, so for every vector $e$ of a basis of $L$ there is $g\in\GL(L)$ with $g(y)=e$. Then
+$p^\kappa e=g(x)\in g(M)$. The vectors $p^\kappa e$ span $p^\kappa L$.
+\end{proof}
+
+\begin{lemma}\label{l:span}\tagP\
+For $U\subseteq T_c$ and a unit $b$, $U\subseteq b\,\Ocal$ if and only if $\operatorname{span}_{\Zp}U\subseteq b\,\Ocal$.
+Hence $\hull(U)=\hull(\operatorname{span}_{\Zp}U)$.
+\end{lemma}
+\begin{proof}
+$b\,\Ocal$ is a $\Zp$-submodule.
+\end{proof}
+
+\begin{lemma}\label{l:tensor}\tagP\
+The $\Zp$-submodule spanned by $\Theta_{i,p,c}$ is $p^{\kappa}\bigotimes\I$, where $\kappa=\kappa_{v_j}(\theta)$.
+\end{lemma}
+\begin{proof}
+Since $\theta$ acts on the factor of label $j$,
+$\theta\cdot\bigotimes\I=\I_{v_1}\otimes\cdots\otimes\theta\I_{v_j}\otimes\cdots$. For
+$\phi=\bigotimes_lg_l\in\mathrm{tensorAut}$ one has $g_l(\I_{v_l})=\I_{v_l}$, so
+$\phi(\theta\cdot\bigotimes\I)=\I_{v_1}\otimes\cdots\otimes g_j(\theta\I_{v_j})\otimes\cdots$. Writing $A$ for the free
+module formed by the other factors, the span of the union of these images is
+$A\otimes\operatorname{span}\bigl(\bigcup_{g_j}g_j(\theta\I_{v_j})\bigr)$. By Lemma~\ref{l:orbit} with $L=\I_{v_j}$ and
+$M=\theta\I_{v_j}$, this is $A\otimes p^\kappa\I_{v_j}=p^\kappa\bigotimes\I$.
+\end{proof}
+
+\subsection{Proof of Theorem~\ref{t:closed}}
+By Lemmas~\ref{l:span} and~\ref{l:tensor}, $\hull(\Theta_{i,p,c})=\hull(p^\kappa\bigotimes\I)$. The hull commutes with
+multiplication by units (lana, \lean{leastHull\_units\_smul}), so this is $p^\kappa\,\hull(\bigotimes\I)$. Put
+$X=\hull(\bigotimes\I)$. Log-volumes of unit multiples shift additively (\lean{componentVol\_units\_smul}):
+multiplication by $p^\kappa$ shifts by $-\kappa\log p$, and multiplication by $\theta$ by $-\ordp(\theta)\log p$
+(\lean{componentVol\_prod\_incl\_smul\_integral}). Hence
+\[\itwo=\bigl(\mulog(X)-\kappa\log p\bigr)-\bigl(\mulog(X)-\ordp(\theta)\log p\bigr)=(\ordp\theta-\kappa)\log p.\qedhere\]
+
+\subsection{Proof of Theorem~\ref{t:bounds}}
+\emph{Lower bound.} Compare the Haar measures of the two sides of $\theta\I_v\subseteq p^\kappa\I_v$ in $K_v$. With
+$n=[K_v:\Qp]$, multiplication by $\theta$ multiplies measures by $p^{-n\ordp\theta}$ and multiplication by $p^\kappa$
+by $p^{-n\kappa}$, so $\kappa\le\ordp\theta$. As $\kappa$ is an integer, $\kappa\le\lfloor\ordp\theta\rfloor$, and
+Theorem~\ref{t:closed} gives
+\[\itwo\ge(\ordp\theta-\lfloor\ordp\theta\rfloor)\log p=\fr(\ordp\theta)\log p.\]
+\emph{Upper bound.} IUT~IV, Proposition~1.2(i), gives
+$\theta\I_v\subseteq p^{\lfloor\ordp\theta-a_v-b_v\rfloor}\I_v$ (lana, \lean{exists\_mul\_mem\_logShell}). Hence $\kappa\ge\lfloor\ordp\theta-a_v-b_v\rfloor$,
+and Theorem~\ref{t:closed} gives the upper bound; $x-\lfloor x-c\rfloor<1+c$ gives the last inequality.
+
+\emph{Small places.} Here $a_v+b_v=0$ (IUT~IV, Proposition~1.2; lana, \lean{logLatticeA\_add\_B\_eq\_zero}), so the
+two bounds coincide.\qed
+
+\subsection{Proof of Theorem~\ref{t:pos}}
+(i) $\ordp\theta=j^2\ordp(\qb_v)=j^2\operatorname{ord}_w(q_w)/(2\ell e_w)$. If this were an integer $m$, then
+$j^2\operatorname{ord}_w(q_w)=2\ell e_wm$, and the prime $\ell$ would divide $j^2\operatorname{ord}_w(q_w)$. But
+$1\le j\le\ell^*<\ell$, so $\ell\nmid j$, and $\ell\nmid\operatorname{ord}_w(q_w)$ (\lean{q\_order\_coprime}). Hence
+$\fr(\ordp\theta)>0$, and $\itwo>0$ by Theorem~\ref{t:bounds}.
+
+(ii) Each term of the formula for $\Delta(D)$ is the product of $w_c>0$ (\lean{weight\_pos}) and $\itwo\ge0$
+(\lean{ind2Term\_nonneg}). Since $\Vbad$ is nonempty, take $u\in\Vbad$, let $p$ be its residue characteristic and $c$
+a tuple with $c(j)=u$; by (i) that term is positive.\qed
+
+\subsection{Proofs of Corollary~\ref{c:size} and Proposition~\ref{p:classno}}
+\emph{Corollary~\ref{c:size}.} By Theorem~\ref{t:closed} the term depends only on $c(j)$. Since the weights over $p$
+sum to $1$, $\sum_cw_c\,f(c(j))=\sum_uw_u\,f(u)$. At places that are not bad, $\qb=1$ and the term is $0$. This gives
+the formula; the lower bound and the case of equality follow from Theorem~\ref{t:bounds}. The upper bound follows from
+the bound $(1+a_v+b_v)\log p$ of Theorem~\ref{t:bounds} and from $(a_v+b_v)\log p\le3+\log e_v$ (lana,
+\lean{logLatticeA\_add\_B\_le}).\qed
+
+\emph{Proposition~\ref{p:classno}.} As $j$ runs through $1,\dots,\ell^*$, $j^2\bmod\ell$ runs through the set $Q$ of
+quadratic residues, each once. The sum is therefore $\frac1\ell\sum_{x\in nQ}x$ (representatives in
+$1,\dots,\ell-1$), and $nQ$ is $Q$ if $n$ is a residue and the set $N$ of non-residues otherwise. If
+$\ell\equiv1\bmod4$, then $-1\in Q$ and $\sum_Qx=\ell(\ell-1)/4$. If $\ell\equiv3\bmod4$ and $\ell>3$, Dirichlet's
+class number formula $h(-\ell)=\frac1\ell\bigl(\sum_Nx-\sum_Qx\bigr)$ and $\sum_Q+\sum_N=\ell(\ell-1)/2$ give
+$\sum_Qx=\ell(\ell-1)/4-\ell h(-\ell)/2$. Divide by $\ell^*$.\qed
+
+\section{Examples}\label{s:examples}
+\tagP\ We computed the six explicit initial $\Theta$-data of the author's catalogue~\cite{Cat} ($\ell=7$, $\ell^*=3$,
+$s=\ell(\ell+1)/12=14/3$). The catalogue takes as $\Vbad$ the places of multiplicative reduction outside $2\ell$. We take this set minus
+the places above $3$ and $5$, since above $3$ and $5$ the ramification of $K$ depends on the construction of $F$; in
+these data no other place is left out, and $\ell\nmid\operatorname{ord}q$ at every place we keep. IUT~I,
+Definition~3.1(b), requires $\Vbad$ only to be a nonempty set of nonarchimedean places of odd residue characteristic
+such that $X_F$ has bad (multiplicative) reduction at the places of $F$ over it, and notes that $X_F$ may have bad
+reduction over $\mathbb{V}_{\mathrm{mod}}^{\mathrm{good}}$ as well; Definition~3.1(c) requires $\ell$ to be prime to
+the residue characteristics of $\Vbad$ and to the $q$-orders there. So this choice is allowed~\cite{IUT1}. The lower bound is the sum of
+fractional parts in Theorem~\ref{t:bounds} and depends only on the data. The upper bound uses the constants $a,b$ of
+IUT~IV, Proposition~1.2. For the ramification index of $K_v/\Qp$ we take
+$e(F_{\mathrm{mod},u}/\Qp)\cdot15\ell/\gcd(15\ell,\operatorname{ord}_uq)$; above the special prime this is the formula
+of Appendix~A of the catalogue, at the other places it is an assumption. The assumption affects only which places are
+small and the upper bound.
+
+\begin{center}
+\begin{tabular}{lcrrrr}
+\toprule
+datum & bad places & lower bound & upper bound & $(s-1)|\log q|$ & ratio\\
+ & (small, not small) & of $\Delta(D)$ & of $\Delta(D)$ & & \\
+\midrule
+D211 & 4, 1 & 25.894 & 27.933 & 79.937 & 0.324--0.349\\
+D109 & 6, 0 & 22.707 & 22.707 (exact) & 70.085 & 0.324\\
+D2 & 3, 2 & 28.516 & 30.914 & 62.881 & 0.453--0.492\\
+D3 & 14, 5 & 93.174 & 102.691 & 295.492 & 0.315--0.348\\
+D18 & 14, 3 & 53.621 & 58.621 & 161.059 & 0.333--0.364\\
+D15 & 13, 2 & 45.765 & 49.165 & 135.160 & 0.339--0.364\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{example}[D109]\tagP\
+There are six bad places, with residue characteristics $109$, $21577$, $6065177$, $534775081$,
+$1174770007439769673$ and $16450055877403724897$. All weights are $1/2$, and $r_u$ is $29/7$ at $109$ and $1/7$ at the
+others. Even at the smallest, $p=109$, one has $e_v=105\le p-2$ (by the formula of Appendix~A of the catalogue), so all
+six places are small. Both $n_u=29$ and $n_u=1$ are quadratic residues modulo $7$, so by Proposition~\ref{p:classno}
+the label average is $1/3$ and
+\[\Delta(D_{109})=\sum_u\frac12\cdot\frac13\log p_u=\frac16\sum_u\log p_u=22.7068\ldots\]
+The ratio to $(s-1)|\log q|=70.085$ is $0.324$.
+\end{example}
+
+\begin{example}[a model of a place that is not small]\tagP\
+Let $K_v=\Q_3(\varpi)$ with $\varpi^4=3$ ($p=3$, $e=4$). We computed $\I_v$ and $\kappa$ exactly. For $\theta=\varpi$,
+$\ordp\theta=1/4$ and $\kappa=-1$, so the term is $\tfrac54\log3$, which exceeds $\log p$. For $\theta=\varpi^4$,
+$\kappa=1$ and the term is $0$; for $\theta=(1+\varpi)\varpi^4$, $\kappa=0$ and the term is $\log3$: the value
+depends on the unit part. All three lie inside the upper bound $(\ordp\theta-\lfloor\ordp\theta-a-b\rfloor)\log p$ of
+Theorem~\ref{t:bounds}, here with $a+b=7/4$. This model is for illustration only and is not a bad place of actual data
+(at a bad place $\ordp\theta\notin\Z$).
+\end{example}
+
+\tagH\ In these data the $q$-order is $2$ at most bad places, which is small, so $\Delta(D)$ is between three and five
+tenths of the main term $(s-1)|\log q|$. That $\Delta(D)$ is small holds only in the direction of growing $q$-orders;
+its actual size is set by the values $\log p$ at the bad places.
+
+\section{Discussion}
+
+\subsection{How the two walls relate}
+\tagP\ With lana's identity $\Delta(D)=R+s|\log q|-V$, where $V=\mulog(\hull(VC(I)))$ (\lean{gap\_eq\_rhs\_add}), the
+two walls read
+\[\text{(SS)}\quad(s-1)|\log q|\le V,\qquad\qquad\text{(Var)}\quad(s-1)|\log q|\le V+\Delta(D).\]
+\tagH\ $V$ is bounded above in terms of ramification and does not involve the $q$-orders (lana,
+\lean{Iut/WallEquiv/VcI.lean}); by Corollary~\ref{c:size}, $\Delta(D)$ is a quantity of the same kind. So the two
+walls are height inequalities of the same shape that differ only in a term of conductor type on the right-hand side.
+The difference is positive (Theorem~\ref{t:pos}).
+
+\subsection{Readings of the (Ind2) group}\label{s:groups}
+\begin{itemize}
+\item \tagP\ IUT~IV, Proposition~1.2, considers arbitrary $\Qp$-linear automorphisms $\phi$ preserving
+$\bigotimes\I$, a larger group than $\mathrm{tensorAut}$. The value does not change for that group: since $\theta$
+acts on one factor only, $\theta\cdot\bigotimes\I\subseteq p^k\bigotimes\I$ if and only if
+$\theta\I_{v_j}\subseteq p^k\I_{v_j}$, so Lemma~\ref{l:orbit} applied to $L=\bigotimes\I$ yields the same $\kappa$.
+\item \tagP\ For a smaller group $G\subseteq\mathrm{tensorAut}$ the union only shrinks, so the term lies between $0$
+and the value found here. The image of the group $\mathrm{Ism}$ of the original papers is such a case (lana's
+documentation).
+\item \tagP\ At a small place, if $G$ consists only of multiplications by $\Zp^{\times}$ and field automorphisms, the
+term is $0$, because $\sigma(\theta)\I_v=\theta\I_v$. If moreover every bad place is small, then $\Delta(D)=0$ and
+(SS) and (Var) coincide.
+\item \tagH\ Where the value for the group of the original papers lies in this range depends on how far that group
+moves $\theta\I_v$. The proof of Lemma~\ref{l:orbit} uses elements that send a primitive element of $\theta\I_v$ to a
+basis vector. Whether the image of $\mathrm{Ism}$ contains such elements is not decided here.
+\end{itemize}
+
+\subsection{Comparison with the estimate of IUT~IV}
+\tagS\ IUT~IV, Proposition~1.2(iii) states: if $p>2$ and $e_i\le p-2$ for all $i\in I$, then
+$\phi(p^\lambda\cdot(R_I)^{\sim})\subseteq p^{\lambda-\mathfrak{d}_I-1}\cdot(R_I)^{\sim}$ for every
+$\lambda\in\frac1{e_i}\Z$, $i\in I$~\cite{IUT4}.
+
+\tagH\ Besides the different term $\mathfrak{d}_I$, this estimate allows $1$ for rounding. The term $\mathfrak{d}_I$
+comes from comparing $\bigotimes_iR_i$ with its normalization $(R_I)^{\sim}$ (the proof of (ii) uses Proposition~1.1
+for this). In lana's $\Delta(D)$ the hull is taken on both sides, so this comparison, the shell defect, cancels (the
+docstring of \lean{gap\_eq}; for the shell defect see \lean{Iut/WallEquiv/VcI.md}), and only the rounding part
+remains. Theorem~\ref{t:bounds} shows that under lana's group this rounding loss actually occurs, and at small places
+its size is exactly $\fr(\ordp\theta)\in(0,1)$ in units of $\log p$. Averaged over the labels it is about $1/2$ by
+Proposition~\ref{p:classno} ($1/3$ or $2/3$ for $\ell=7$). Compared with the $1$ that the estimate of IV allows for
+rounding, the actual loss is about half of it on average over the labels.
+
+\section{Reproducibility}
+The folder \texttt{ind2-gap/} of the repository
+\url{https://github.com/turahigashi/iut-explicit-initial-theta} (tag \texttt{v0.15.0}), also deposited with this note,
+contains the following scripts and their outputs. They use the program \texttt{iut\_compute.py} of the author's
+walkthrough~\cite{Walk}, which is in the same repository.
+\begin{itemize}
+\item \texttt{scripts/check\_delta.py}: the table of Section~\ref{s:examples} (lower bounds by fractional parts, upper
+bounds by the constants $a,b$), and Proposition~\ref{p:classno} checked in exact rational arithmetic for twelve primes
+$\ell\equiv3\bmod4$ ($7\le\ell\le83$) and six primes $\ell\equiv1\bmod4$ ($5\le\ell\le41$), for all $n$.
+\item \texttt{scripts/delta2.py}: the same lower bounds, with upper bounds from the inner and outer radii of the
+log-shells.
+\item \texttt{scripts/shell\_lattice.py}, \texttt{scripts/gl\_check.py}: the log-shell $\I_v=(2p)^{-1}\log(1+\mathfrak m)$
+of $\Qp(p^{1/e})$ in exact rational arithmetic, and the span of $\theta\I_v$ under random elements of $\GL(\I_v)$
+compared with $p^\kappa\I_v$ (Lemma~\ref{l:orbit}, Example~5.2) for $(p,e)=(11,3),(3,4),(5,6)$.
+\end{itemize}
+
+\section*{Acknowledgements and use of AI}
+The question studied in this note---to determine the value of the (Ind2)-terms that lana-agents/iut leaves
+open---arose in the author's discussions with generative AI tools; the author judged it important and decided to make
+it the subject of this note. Its ultimate aim, to understand exactly the algorithm by which IUT computes the height
+inequality, is the author's research direction. Generative AI tools (large language models) were used extensively,
+under the author's direction, in finding the proofs, in the computations and in the writing. The author takes full
+responsibility for the contents of this note.
+
+\begin{thebibliography}{IUT4}\raggedright
+\bibitem[Cat]{Cat}
+Toshihisa Urahigashi, \emph{Explicit initial $\Theta$-data and the two readings of Step (v) of IUT IV, Theorem 1.10:
+a catalogue}, version 1.0.0, Zenodo, 2026, \href{https://doi.org/10.5281/zenodo.23870448}{doi:10.5281/zenodo.23870448}.
+
+\bibitem[DH1]{DH1}
+Taylor Dupuy and Anton Hilado, \emph{The statement of {M}ochizuki's {C}orollary 3.12, initial theta data, and the
+first two indeterminacies}, arXiv:2004.13228 [math.NT], 2020.
+
+\bibitem[DH2]{DH2}
+Taylor Dupuy and Anton Hilado, \emph{Probabilistic {S}zpiro, baby {S}zpiro, and explicit {S}zpiro from {M}ochizuki's
+{C}orollary 3.12}, arXiv:2004.13108 [math.NT], 2020.
+
+\bibitem[IUT1]{IUT1}
+Shinichi Mochizuki, \emph{Inter-universal {T}eichm\"uller theory {I}: construction of {H}odge theaters}, Publ. Res.
+Inst. Math. Sci. \textbf{57} (2021), 3--207.
+
+\bibitem[IUT3]{IUT3}
+Shinichi Mochizuki, \emph{Inter-universal {T}eichm\"uller theory {III}: canonical splittings of the log-theta-lattice},
+Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 403--626.
+
+\bibitem[IUT4]{IUT4}
+Shinichi Mochizuki, \emph{Inter-universal {T}eichm\"uller theory {IV}: log-volume computations and set-theoretic
+foundations}, Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 627--723.
+
+\bibitem[lana]{lana}
+lana-agents, \emph{iut}: a Lean~4 formalization of inter-universal {T}eichm\"uller theory, GitHub repository,
+\url{https://github.com/lana-agents/iut}, commit \texttt{553076a} (3 November 2026).
+
+\bibitem[LANA]{LANA}
+Project LANA, \emph{Project LANA interim report on IUT theory}, 20 July 2026,
+\url{https://ncatlab.org/nlab/files/LANAProject-Report-July2026.pdf}.
+
+\bibitem[SS]{SS}
+Peter Scholze and Jakob Stix, \emph{Why abc is still a conjecture}, 2018.
+
+\bibitem[Walk]{Walk}
+Toshihisa Urahigashi, \emph{A programmer's walkthrough of inter-universal {T}eichm\"uller theory}, version 1.0.0,
+Zenodo, 2026, \href{https://doi.org/10.5281/zenodo.23880260}{doi:10.5281/zenodo.23880260}.
+\end{thebibliography}
+
+\end{document}
