@@ -1,0 +1,552 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{geometry}
+\geometry{margin=2.6cm}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\hypersetup{pdftitle={Fourteen initial Theta-data on one curve over Q(i)},pdfauthor={Toshihisa Urahigashi}}
+\setlist{itemsep=2pt,topsep=4pt}
+\raggedbottom
+\emergencystretch=3em
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\Fmod}{F_{\mathrm{mod}}}
+\newcommand{\Vbadmod}{\mathbb{V}^{\mathrm{bad}}_{\mathrm{mod}}}
+\newcommand{\VV}{\underline{\mathbb{V}}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\Nm}{\operatorname{N}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\Gal}{\mathrm{Gal}}
+\newcommand{\qq}{\underline{\underline{q}}}
+\newcommand{\tS}{\textup{[S]}}
+\newcommand{\tP}{\textup{[P]}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Fourteen initial $\Theta$-data on one curve over $\mathbb{Q}(i)$}
+\author{Toshihisa Urahigashi\\\small ORCID 0009-0004-0460-6242\\\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
+\date{Version 1.0.0, 6 November 2026\\\small\href{https://doi.org/10.5281/zenodo.23990717}{doi:10.5281/zenodo.23990717}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let $E\colon y^2=x(x-1)(x-a)$ with $a=(41+26i)^{472}$, a curve over $\Q(i)$. We prove that for each prime $\ell$ in
+\[
+ \Lambda=\{89,97,101,103,107,109,113,127,131,137,139,149,151,157\}
+\]
+the curve extends to an initial $\Theta$-datum in the sense of \cite[Def.~3.1]{IUT1}, and that this datum satisfies
+the hypotheses of \cite[Thm.~1.10]{IUT4}. The field of moduli is $\Q(i)$. Above the split prime $2357$ there is one
+place of multiplicative and one of good reduction, with ramification indices $15\ell$ and $1$. The curve and the
+fourteen levels come from \cite[\S13]{Second}. That report showed that the levels pass five numerical conditions, and
+said explicitly that they had not been verified to be initial $\Theta$-data; the present report gives the verification.
+The proof uses the individual $\ell$ only through five integer facts and one Frobenius witness per level. The norm of
+$1-a$ has $1592$ digits, and its factorization is not used. Instead, the valuation of $1-a$ at each split place is
+bounded through the cyclotomic factor $\Phi_d(\pi)$, where $d$ is the order of $\pi$ modulo the place, and the
+$138{,}731$ primes that this bound does not exclude are tested directly; the inert places and the places above $2357$
+are treated directly. The fourteen levels are the primes in
+$[\sqrt{\log\mathfrak q^{\forall}},\,472/3)$, and they satisfy condition~(C1) of \cite[Cor.~2.2]{IUT4}. Nothing is
+claimed about \cite[Cor.~3.12]{IUT3} or about $abc$.
+\end{abstract}
+
+\section{Introduction}\label{s:intro}
+
+\tS{} An initial $\Theta$-datum \cite[Def.~3.1]{IUT1} is a list of objects --- a number field $F$, a once-punctured
+elliptic curve $X_F$ over $F$, a prime $\ell$, an orbicurve $\underline C_K$, a set $\VV$ of places of a field $K$, a
+set $\Vbadmod$ of places of the field of moduli, and a cusp $\underline\epsilon$ --- subject to conditions (a)--(f).
+Dupuy and Hilado work out the curve 11a1 over $\Q$
+\cite[\S2.10]{DH1}, and Zhou describes constructions of $\mu_6$-initial $\Theta$-data over $\Q$
+\cite[Prop.~2.5, Lemma~2.6]{Zhou1}. Over quadratic fields, \cite{First} gives a datum over $\Q(\sqrt5)$ and
+\cite{Second} one over $\Q(i)$, both at $\ell=7$, and the catalogue \cite{Cat} lists these and several others.
+
+\tS{} In \cite[\S13]{Second} the curve of this report appears with the fourteen levels of $\Lambda$, and two parts of
+condition~(c) are settled there: $\ell\nmid\Nm(1-a)$, and the sufficient condition for the order condition that
+$\Nm(1-a)$ is free of $89$th powers. The same section says that the fourteen levels are \emph{not} verified initial
+$\Theta$-data: the argument for the Galois image had been carried out only for the datum at $\ell=7$, and conditions
+(a)--(f) had not been checked at these levels. In \cite{Cat} the curve is listed as $D_{2357}^{(\ell)}$, with its values marked as
+conditional on such a verification. \tP{} This report supplies it:
+
+\begin{itemize}
+\item the image condition at each level, from a transvection at the bad place above $2357$ and one Frobenius witness
+ per level (\S\ref{ss:image});
+\item the order condition at every selected place, by an argument that does not use the factorization of $1-a$ and
+ that is independent of the computation of \cite[\S13]{Second} (Proposition~\ref{p:arith}(d));
+\item the remaining conditions of \cite[Def.~3.1]{IUT1} and the hypotheses of \cite[Thm.~1.10]{IUT4}, by the arguments
+ of \cite[\S\S3--4]{Second} with $\ell$ in place of $7$ (\S\ref{s:proof}).
+\end{itemize}
+
+\tP{} \emph{Scope.} This report constructs data and verifies their defining conditions. Beyond the local invariants
+of Theorem~\ref{t:main}(iii) and the margin quoted in Remark~\ref{r:window}, it does not evaluate quantities of
+\cite[Cor.~3.12]{IUT3} or \cite[Thm.~1.10]{IUT4} at these data, and it makes no claim about either statement or about
+$abc$. Each statement is marked \tS{} if it is a statement of a cited source, paraphrased with its
+locator, and \tP{} if it is proved or computed here.
+
+\section{The datum and the theorem}\label{s:datum}
+
+\begin{equation}\label{e:datum}
+\begin{aligned}
+ &L=\Q(i), &&\pi=41+26i,\quad \Nm(\pi)=2357,\quad a=\pi^{472},\\
+ &E\colon y^2=x(x-1)(x-a), &&\ell\in\Lambda,\\
+ &F=L(E[15]), &&K=F(E[\ell])=L(E[15\ell]).
+\end{aligned}
+\end{equation}
+Let $X_F=E_F\setminus\{0\}$ and $C_F=[X_F/\{\pm1\}]$. Take as $\Vbadmod$ the set of places of $L$ of odd residue
+characteristic at which $E$ has multiplicative reduction. By \S\ref{ss:ab} below, these are the place $v_\pi$ and
+the places of odd residue characteristic dividing $1-a$; by Proposition~\ref{p:arith}(e) none of them lies above
+$\ell$, so the same set is obtained by taking the places of multiplicative reduction outside $2\ell$, as in \cite[\S2]{Note} and \cite[\S3]{Cat}.
+
+\begin{theorem}\label{t:main}
+\tP{} Let $\ell\in\Lambda$.
+\begin{enumerate}[label=(\roman*)]
+\item The data \eqref{e:datum} extend to an initial $\Theta$-datum
+ $(\overline F/F,X_F,\ell,\underline C_K,\VV,\Vbadmod,\underline\epsilon)$ in the sense of \cite[Def.~3.1]{IUT1}, with
+ $\Fmod=L$.
+\item This datum satisfies the hypotheses of \cite[Thm.~1.10]{IUT4}: $E_F$ has good reduction at every
+ nonarchimedean place of $F$ that lies over $\mathbb{V}_{\mathrm{mod}}\setminus\Vbadmod$ and does not divide $2\ell$, and
+ $F=\Fmod(\sqrt{-1},E_{\Fmod}[2\cdot3\cdot5])$ in the sense stated there.
+\item Above $2357$ there are exactly two places of $L$, the place $v_\pi\in\Vbadmod$ and the place $v_{\bar\pi}$ of good
+ reduction. At the places of $\VV$ above them, the ramification indices of $K$ over $\Q_{2357}$ are
+ \[
+  e_{\mathrm b}=15\ell,\qquad e_{\mathrm g}=1,
+ \]
+ and $\ord_{2357}(\qq_{\mathrm b})=472/\ell$, where $\qq_{\mathrm b}$ is the $2\ell$-th root of the $q$-parameter of
+ \cite[Example~3.2(iv)]{IUT1}. In particular $e\le2357-2=2355$ at both places, and $e_{\mathrm b}=2355$ exactly
+ when $\ell=157$.
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}[one curve, fourteen levels]\label{r:uniform}
+\tP{} The field of moduli, the curve, the prime $2357$ and the set $\Vbadmod$ do not depend on $\ell$; only $\ell$ and,
+with it, $K$, the covering, $\VV$ and the cusp change. The proof of (i) and (ii) uses the individual level only
+through the five integer facts
+\[
+ \ell\ne2357,\qquad \ell\nmid944,\qquad \ell\nmid\Nm(1-a),\qquad \ell\nmid23040,\qquad \ord_{\mathfrak p}(1-a)\le88<\ell,
+\]
+and through one Frobenius witness from Table~\ref{tab:witness}; part (iii) also uses $\ell\le157$. The set $\Lambda$ is taken from \cite[\S13]{Second},
+where it is the set of primes in a window; the window plays no role in the proof (see \S\ref{s:window}).
+\end{remark}
+
+\section{The arithmetic of \texorpdfstring{$a$}{a} and \texorpdfstring{$1-a$}{1-a}}\label{s:arith}
+
+\tP{} The order condition at the bad places dividing $1-a$ rests on the following elementary bound.
+
+\begin{lemma}\label{l:cyclo}
+\tP{} Let $\mathfrak q$ be a prime of $\Z[i]$ with $\mathfrak q\ne(\pi)$, whose residue characteristic $p$ is neither
+$2$ nor $59$, and suppose that $\mathfrak q\mid\pi^{472}-1$. Let $d$ be the order of $\pi$ in $(\Z[i]/\mathfrak
+q)^\times$. Then $d\mid472$, $d\mid\Nm\mathfrak q-1$, and
+\[
+ \ord_{\mathfrak q}(\pi^{472}-1)=\ord_{\mathfrak q}\bigl(\Phi_d(\pi)\bigr).
+\]
+In particular $(\Nm\mathfrak q)^k\le\Nm(\Phi_d(\pi))$ for $k=\ord_{\mathfrak q}(\pi^{472}-1)$.
+\end{lemma}
+
+\begin{proof}
+The group $(\Z[i]/\mathfrak q)^\times$ has order $\Nm\mathfrak q-1$, and $\pi^{472}\equiv1$, so $d$ divides both. Put
+$x=\pi^d$ and $m=472/d$. Then $\pi^{472}-1=(x-1)(1+x+\dots+x^{m-1})$, and the second factor is congruent to $m$ modulo
+$\mathfrak q$, a unit because $m$ divides $2^3\cdot59$ and $p\nmid2\cdot59$. So $\ord_{\mathfrak
+q}(\pi^{472}-1)=\ord_{\mathfrak q}(\pi^d-1)$. Next, $\pi^d-1=\prod_{e\mid d}\Phi_e(\pi)$, and for $e\mid d$, $e<d$, the
+factor $\Phi_e(\pi)$ divides $\pi^e-1$, which is prime to $\mathfrak q$ by the minimality of $d$. So
+$\ord_{\mathfrak q}(\pi^d-1)=\ord_{\mathfrak q}(\Phi_d(\pi))$. Finally, if $\mathfrak q^k$ divides the nonzero element
+$\Phi_d(\pi)$, then $(\Nm\mathfrak q)^k$ divides $\Nm(\Phi_d(\pi))$.
+\end{proof}
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+$d$ & $\deg\Phi_d$ & digits of $\Nm(\Phi_d(\pi))$ & $R_d=\lfloor\Nm(\Phi_d(\pi))^{1/89}\rfloor$ & $\mathrm{lcm}(4,d)$\\
+\midrule
+$1,2,4,8$ & $1,1,2,4$ & $4,4,7,14$ & $1$ & ---\\
+$59$, $118$ & $58$ & $196$ & $157$ & $236$\\
+$236$ & $116$ & $392$ & $24856$ & $236$\\
+$472$ & $232$ & $783$ & $617831325$ & $472$\\
+\bottomrule
+\end{tabular}
+\caption{The cyclotomic factors $\Phi_d(\pi)$, $d\mid472$. Each is computed from $\pi$ by exact division,
+$\Phi_d(\pi)=\prod_{e\mid d}(\pi^e-1)^{\mu(d/e)}$, and their product is checked to equal $\pi^{472}-1$.}
+\label{tab:cyclo}
+\end{table}
+
+\begin{proposition}\label{p:arith}
+\tP{}
+\begin{enumerate}[label=(\alph*)]
+\item $j(E)=256(a^2-a+1)^3/\bigl(a^2(a-1)^2\bigr)$ is not real. Hence $j(E)\notin\Q$ and $\Fmod=\Q(j(E))=L$.
+\item $2357$ is prime, $2357=\pi\bar\pi$ splits in $L$, and
+ \[
+  \ord_\pi(a)=472,\qquad\ord_{\bar\pi}(a)=0,\qquad\ord_\pi(1-a)=\ord_{\bar\pi}(1-a)=0.
+ \]
+\item $\Nm(1-a)$ is an integer of $1592$ digits with $v_2=9$, $v_3=2$, $v_5=2$, and
+ $\gcd\bigl(\mathrm{Re}(1-a),\mathrm{Im}(1-a)\bigr)=240$.
+\item At every place $\mathfrak p$ of $L$ of odd residue characteristic, $\ord_{\mathfrak p}(1-a)\le88$.
+\item For every $\ell\in\Lambda$: $\ell\ne2357$, and $\ell$ divides none of $944=2^4\cdot59$,
+ $23040=2^9\cdot3^2\cdot5$ and $\Nm(1-a)$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(a) Write $j=A/B$ with $A=256(a^2-a+1)^3$ and $B=a^2(a-1)^2$ in $\Z[i]$. The imaginary part of $A\bar B$ is a nonzero
+integer (of $7953$ digits after removing the common factor with $\Nm(B)$), so $j\ne\bar j$. As a second check, at the
+two places of $L$ above $29$ ($i\equiv12$ and $i\equiv17$) the residue of $a$ is $20$ and $23$, and $j$ reduces to $16$
+and $18$ in $\F_{29}$; a rational $j$ would reduce to the same element at both. The field of moduli of an elliptic
+curve is generated by its $j$-invariant \cite[Prop.~1.8(ii)]{IUT4}, and $j\in L\setminus\Q$.
+
+(b) $\bar\pi$ is not an associate of $\pi$. Modulo $\pi$ one has $a\equiv0$, so $1-a\equiv1$. Modulo $\bar\pi$ one has
+$i\equiv41\cdot26^{-1}$ and $\pi\equiv82$; since $82^4\equiv202\not\equiv1\pmod{2357}$ and $\gcd(472,2356)=4$,
+$82^{472}\not\equiv1$, so $\bar\pi\nmid1-a$.
+
+(c), (e) Exact computation (\S\ref{s:repro}); $\Nm(1-a)\bmod\ell$ was also recomputed in $\F_\ell[i]$ from $\pi$.
+
+(d) If $\mathfrak p=(p)$ is inert, then $\ord_{\mathfrak p}(1-a)$ is the smaller of $v_p(\mathrm{Re}(1-a))$ and
+$v_p(\mathrm{Im}(1-a))$, so $\ord_{\mathfrak p}(1-a)\le v_p(240)\le1$; this covers $p=3$ and $p=59$. The places above $2357$ are covered by (b). The remaining places are
+the places $\mathfrak q$ of degree one above the primes $p\equiv1\pmod4$, $p\ne2357$, and for them we use
+Lemma~\ref{l:cyclo} and Table~\ref{tab:cyclo}. Suppose $\ord_{\mathfrak q}(1-a)\ge89$, and let $d$ be the order of
+$\pi$ modulo $\mathfrak q$. By the lemma, $p=\Nm\mathfrak q\le R_d=\lfloor\Nm(\Phi_d(\pi))^{1/89}\rfloor$, and
+$p\equiv1\pmod{\mathrm{lcm}(4,d)}$. For $d\mid8$ this is impossible, since $R_d=1$. For $d\in\{59,118\}$ it is
+impossible as well, since $R_d=157$ and no $p\equiv1\pmod{236}$ is at most $157$. So $p$ is a prime $p\equiv1\pmod{236}$
+with $p\le24856$ or a prime $p\equiv1\pmod{472}$ with $p\le617{,}831{,}325$. There are $138{,}731$ such primes, and at
+each of their $277{,}462$ places the valuation of $1-a$ was computed. Exactly four of these places divide $1-a$, one
+above each of $p=1181$, $21713$, $2876369$ and $6188393$, and each divides it exactly once. Hence no place has
+$\ord_{\mathfrak q}(1-a)\ge89$.
+\end{proof}
+
+\begin{remark}[a second computation]\label{r:second}
+\tS{} \cite[\S13]{Second} proves the stronger statement that $\Nm(1-a)$ is free of $89$th powers. It splits
+$\Phi_{472}$ over $\Z[i]$ into two factors of degree $116$, sieves each of the nine resulting block norms up to its own
+$89$th root (at most $24856$; $8318$ primes in all), and checks with the pairwise greatest common divisors that only
+$2$ and $5$ divide two blocks. Its program is in the deposit of \cite{Second}. \tP{} The computation above does not split
+$\Phi_{472}$ and shares no code with it; both run in seconds and agree. A direct search for $89$th powers in
+$\Nm(1-a)$ would need the primes up to $\Nm(1-a)^{1/89}\approx10^{17.9}$.
+\end{remark}
+
+\section{Proof of Theorem~\ref{t:main}}\label{s:proof}
+
+\subsection{Conditions (a) and (b)}\label{ss:ab}
+
+\tS{} Condition~(a) of \cite[Def.~3.1]{IUT1} asks that $F$ be a number field with $\sqrt{-1}\in F$. Condition~(b)
+asks that $X_F$ have stable reduction at every nonarchimedean place of $F$; that $\Vbadmod$ be a nonempty set of
+nonarchimedean places of $\Fmod$ of odd residue characteristic such that $X_F$ has bad multiplicative reduction at
+every place of $F$ above $\Vbadmod$; that $F/\Fmod$ be Galois of degree prime to $\ell$; and that the $2\cdot3$-torsion
+points of $E_F$ be rational over $F$.
+
+\tP{} $i\in L\subseteq F$. The field of moduli of $X_F$ is that of $E$, which is $L$ by
+Proposition~\ref{p:arith}(a). The extension $F=L(E[15])$ is Galois over $L$, and its group embeds in
+$\GL_2(\Z/15\Z)$, of order $48\cdot480=23040=2^9\cdot3^2\cdot5$, so $[F:L]$ is prime to $\ell$
+(Proposition~\ref{p:arith}(e)). The $2$-torsion of $E$ is rational over $L$ (Legendre form), and the $3$-torsion is
+rational over $F$ since $E[3]\subseteq E[15]$.
+
+\tS{} By \cite[Prop.~1.8(v)]{IUT4}, if $k$ is a perfect complete discretely valued field, $l\ge3$ is a prime invertible in its
+ring of integers and all $l$-torsion points of an elliptic curve $E_k$ are $k$-rational, then $E_k$ has semistable
+reduction. \tP{} At a completion $F_w$ apply this with $l=3$ if the residue characteristic is not $3$, and with $l=5$
+otherwise. So $E_F$ has semistable reduction at every nonarchimedean place: good where $\ord(j)\ge0$ and
+multiplicative where $\ord(j)<0$ \cite[Props.~VII.5.1, VII.5.5]{Sil}. At a place of good reduction the minimal model is
+smooth, and at a place of multiplicative reduction its special fibre is a nodal cubic on which the origin is a smooth
+point; in both cases $X_F$ has stable reduction.
+
+\tP{} The discriminant of the model \eqref{e:datum} is $16a^2(a-1)^2$, and $c_4=16(a^2-a+1)$. At an odd place where $a$
+and $1-a$ are units, the discriminant is a unit and $E$ has good reduction. At $v_\pi$, and at an odd place $\mathfrak p$
+dividing $1-a$, one has $a^2-a+1\equiv1$, so $c_4$ is a unit, the model is minimal \cite[\S VII.1]{Sil}, and the reduction is
+multiplicative,
+with
+\[
+ \ord_\pi(j)=-944,\qquad \ord_{\mathfrak p}(j)=-2\ord_{\mathfrak p}(1-a).
+\]
+So $\Vbadmod$ consists of $v_\pi$ and the places of odd residue characteristic dividing $1-a$; it is nonempty, and its
+elements have odd residue characteristic. Since $\ord(j)<0$ and the reduction over $F$ is semistable, the reduction is
+multiplicative at every place of $F$ above $\Vbadmod$.
+
+\subsection{Condition (c): residue characteristics and orders}\label{ss:orders}
+
+\tS{} Condition~(c) asks that $\ell\ge5$ be a prime; that the image of the outer homomorphism $G_F\to\GL_2(\F_\ell)$
+determined by the $\ell$-torsion points of $E_F$ contain $\SL_2(\F_\ell)$, $K$ being the field cut out by its kernel;
+and that $\ell$ be prime to the residue characteristics of the places in $\Vbadmod$ and to the orders of the
+$q$-parameters of $E_F$ at the places of $F$ above $\Vbadmod$ (the ``local heights'' of \cite[Def.~3.3]{GenEll}).
+
+\tP{} The residue characteristics of $\Vbadmod$ are $2357$ and the odd primes dividing $\Nm(1-a)$, and $\ell$ is none of
+them (Proposition~\ref{p:arith}(e)). The orders of the $q$-parameter are $\ord_\pi(q)=-\ord_\pi(j)=944$ at $v_\pi$ and
+$\ord_{\mathfrak p}(q)=2\ord_{\mathfrak p}(1-a)$ at an odd place $\mathfrak p\mid1-a$, where
+$1\le\ord_{\mathfrak p}(1-a)\le88$ by Proposition~\ref{p:arith}(d). At a place $w$ of $F$ above $v$ the order is
+multiplied by $e(w/v)$, which divides $[F:L]\mid23040$. As $\ell$ is a prime with $\ell\nmid944$, $\ell\nmid23040$ and
+$\ell\ge89$, it divides none of these orders.
+
+\subsection{Condition (c): the image}\label{ss:image}
+
+\begin{lemma}\label{l:transvection}
+\tP{} Let $\ell$ be a prime and let $H\subseteq G\subseteq\GL_2(\F_\ell)$ be subgroups with $H$ normal in $G$. Suppose
+that $H$ contains a transvection $T\ne1$ and that $G$ contains an element $g$ whose characteristic polynomial is
+irreducible over $\F_\ell$. Then $H\supseteq\SL_2(\F_\ell)$.
+\end{lemma}
+
+\begin{proof}
+Let $D=\ker(T-1)$, a line. Since the characteristic polynomial of $g$ has no root in $\F_\ell$, $g$ has no eigenvector,
+so $gD\ne D$. Then $T'=gTg^{-1}$, which lies in $H$, is a transvection $\ne1$ with fixed line $gD$. In a basis
+$e_1\in D$, $e_2\in gD$ the two read $\bigl(\begin{smallmatrix}1&x\\0&1\end{smallmatrix}\bigr)$ and
+$\bigl(\begin{smallmatrix}1&0\\y&1\end{smallmatrix}\bigr)$ with $x,y\ne0$. Since $\ell$ is prime, their powers are all
+the matrices $\bigl(\begin{smallmatrix}1&t\\0&1\end{smallmatrix}\bigr)$ and
+$\bigl(\begin{smallmatrix}1&0\\t&1\end{smallmatrix}\bigr)$, $t\in\F_\ell$, and these generate $\SL_2(\F_\ell)$.
+\end{proof}
+
+\tP{} We apply the lemma with $H$ and $G$ the images of $\Gal(\overline\Q/F)$ and $\Gal(\overline\Q/L)$ in
+$\GL(E[\ell])\simeq\GL_2(\F_\ell)$; $H$ is normal in $G$ because $F/L$ is Galois.
+
+\tP{} \emph{The transvection.} Let $w$ be a place of $F$ above $v_\pi$. Over $F_w$ the curve is a split Tate curve
+(\S\ref{ss:split}; \cite[App.~C, Thm.~14.1]{Sil}), with $\ord_w(q)=e(w/v_\pi)\cdot944$, and this is prime to $\ell$ by
+\S\ref{ss:orders}. As $\ell\ne2357$, the maximal unramified extension of $F_w$ contains $\mu_\ell$, and $q^{1/\ell}$
+generates a ramified extension of it of degree $\ell$. So an element of the inertia group at $w$ acts on
+$E[\ell]=\langle\zeta_\ell,q^{1/\ell}\rangle$ by a transvection $T\ne1$, and $T\in H$.
+
+\tP{} \emph{The Frobenius witnesses.} For a prime $q\equiv1\pmod4$ and a root $r$ of $r^2\equiv-1\pmod q$, the place
+$\mathfrak q=(q,i-r)$ of $L$ sends $a$ to $\mathrm{Re}(a)+r\,\mathrm{Im}(a)\bmod q$. At the four places of
+Table~\ref{tab:witness} this residue is neither $0$ nor $1$, so $E$ has good reduction there. The point count gives
+$a_{\mathfrak q}=q+1-\#E(\F_q)$. For $\ell\ne q$, a Frobenius element $g\in G$ at $\mathfrak q$ acts on
+$E[\ell]\simeq\tilde E[\ell]$ \cite[Prop.~VII.3.1]{Sil} with characteristic polynomial $X^2-a_{\mathfrak q}X+q$
+\cite[Thm.~V.2.3.1]{Sil}, which is irreducible over $\F_\ell$ exactly when $a_{\mathfrak q}^2-4q$ is a nonsquare
+modulo $\ell$.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{@{}rrrrrrl@{}}
+\toprule
+$q$ & $i\equiv$ & $a\equiv$ & $\#E(\F_q)$ & $a_{\mathfrak q}$ & $a_{\mathfrak q}^2-4q$ & levels covered\\
+\midrule
+13 & 5  & 3  & 16 & $-2$ & $-48=-3\cdot4^2$  & 89, 101, 107, 113, 131, 137, 149\\
+17 & 13 & 16 & 16 & $2$  & $-64=-8^2$        & 103, 107, 127, 131, 139, 151\\
+29 & 12 & 20 & 32 & $-2$ & $-112=-7\cdot4^2$ & 89, 97, 101, 103, 131, 139, 157\\
+97 & 75 & 75 & 96 & $2$  & $-384=-6\cdot8^2$ & 89, 109, 113, 137, 139, 157\\
+\bottomrule
+\end{tabular}
+\caption{Frobenius witnesses. The last column lists the $\ell\in\Lambda$, $\ell\ne q$, at which $a_{\mathfrak q}^2-4q$
+is a nonsquare modulo $\ell$. Every $\ell\in\Lambda$ occurs in at least one row.}
+\label{tab:witness}
+\end{table}
+
+\tP{} By quadratic reciprocity, the first three rows are the conditions $\ell\equiv2\pmod3$, $\ell\equiv3\pmod4$ and
+$(\ell/7)=-1$. The fourth, $(-6/\ell)=-1$, is needed only at $\ell=109$, which no other row covers. The choice of place
+matters: above $17$ the other place ($i\equiv4$) sends $a$ to $1$ and belongs to $\Vbadmod$, and above $97$ the other
+place ($i\equiv22$) has $\#E(\F_{97})=112$, $a_{\mathfrak q}=-14$ and discriminant $-192$.
+
+\tP{} So, for every $\ell\in\Lambda$, Lemma~\ref{l:transvection} applies with the transvection at $w$ and a witness
+from Table~\ref{tab:witness}, and the image of $\Gal(\overline\Q/F)$ contains $\SL_2(\F_\ell)$.
+
+\subsection{Split reduction, and the local invariants above 2357}\label{ss:split}
+
+\tP{} At an odd place where $a\equiv0$, the special fibre of \eqref{e:datum} is $y^2=x^2(x-1)$, with tangent cone
+$y^2=-x^2$ at the node; it splits because $i\in L$. At an odd place where $a\equiv1$, putting $t=x-1$ gives
+$y^2=(1+t)t^2$, with tangent cone $y^2=t^2$, already split. So the reduction is split multiplicative over $L$ at every
+place of $\Vbadmod$, and it stays split over $F$ and $K$.
+
+\tP{} At $v_{\bar\pi}$ the reduction is good and $15\ell$ is prime to $2357$, so $K$ is unramified there and
+$e_{\mathrm g}=1$. At $v_\pi$ the curve is a split Tate curve over $\Q_{2357}$ with $\ord_\pi(q)=944$. Adjoining
+$E[15\ell]$ adjoins $\mu_{15\ell}$, which is unramified, and a $15\ell$-th root of $q$; since $\gcd(15\ell,944)=1$, the
+ramification index is exactly $15\ell$. So $e_{\mathrm b}=15\ell$ and $\ord_{2357}(\qq_{\mathrm b})=944/(2\ell)=472/\ell$.
+Finally $15\ell\le15\cdot157=2355=2357-2$, with equality only at $\ell=157$.
+
+\subsection{Condition (d): the quotient and the core}\label{ss:core}
+
+\tP{} Write $V=E[\ell](K)$, fix a line $W\subset V$ and an element $0\ne\xi\in Q=V/W$, and let
+$\pi_W\colon E_K\to E'=E_K/W$, with $\psi\colon E'\to E_K$ such that $\psi\pi_W=[\ell]$. Restriction gives an
+isomorphism $\bar\pi_W\colon Q\simeq\ker\psi$, so this kernel is a constant group over $K$. Put $\underline
+X_K=E'\setminus\ker\psi$, $\underline C_K=[\underline X_K/\{\pm1\}]$ and $C_K=[X_K/\{\pm1\}]$. The covering $\underline
+X_K\to X_K$ is Galois with group $\ker\psi\simeq Q$. It extends to the isogeny $\psi$ of the compactifications, so it is
+unramified above the cusp, and its fibre there, $\ker\psi$, consists of $K$-rational points; so the decomposition group
+of the cusp maps trivially to $Q$. Passing to the quotients by $\pm1$, with the cusp $0$ of $\underline X_K$ as origin, gives an orbicurve of type
+$(1,\ell\text{-tors})_\pm$ in the sense of \cite[Def.~2.1]{EtTh}. Let $\underline\epsilon$ be the cusp corresponding to
+$\pm\bar\pi_W(\xi)$.
+
+\tS{} By \cite[Prop.~2.1]{MFHMP}, if the once-punctured curve of an elliptic curve over a field of characteristic zero is
+arithmetic, then its $j$-invariant is one of $2^{14}\cdot31^3\cdot5^{-3}$, $2^2\cdot73^3\cdot3^{-4}$, $1728$, $0$.
+\tP{} Here $j(E)$ is not real (Proposition~\ref{p:arith}(a)), so $X_{\overline K}$ is not arithmetic. The finite \'etale
+map $X_{\overline K}\to C_{\overline K}$ puts the two orbicurves in the same commensurability class, so $C_{\overline K}$ is
+not arithmetic either. \tS{} A punctured hemi-elliptic orbicurve over an algebraically closed field of characteristic
+zero that is not arithmetic is a core \cite[Prop.~2.7]{CanLift}; an orbicurve over $k$ is a $k$-core if and only if its
+base change to a separable closure is a core there \cite[Prop.~2.3(i)]{CanLift}; and the property is unchanged under
+extension of algebraically closed fields of characteristic zero \cite[Prop.~2.3(ii)]{CanLift}. \tP{} So $C_K$ is a
+$K$-core, and, since $\underline C_K\to C_K$ is finite \'etale, it is the $K$-core of $\underline C_K$ required by
+\cite[Def.~3.1(d)]{IUT1}. For a completion $K_v$, extend $K\hookrightarrow\overline K$ to an embedding of $\overline K$
+into an algebraic closure of $K_v$ and apply \cite[Prop.~2.3(ii)]{CanLift} and then \cite[Prop.~2.3(i)]{CanLift}; no
+real completion occurs, since $i\in K$. The open subgroups $\Delta_{\underline{\underline X}}\subseteq\Delta_{\underline{\underline
+C}}\subseteq\Delta_{\underline C}$ of \cite[Def.~3.1(d)]{IUT1} are supplied by \cite[Prop.~2.2, Def.~2.3]{EtTh}. Since
+$\ord_\pi(j)=-944<0$, $j$ is not an algebraic integer and $E$ has no complex multiplication; this is not used above.
+
+\subsection{Conditions (e) and (f): the places and the cusp}\label{ss:ef}
+
+\tS{} Condition~(e) asks for a subset $\VV\subseteq\mathbb V(K)$ mapping bijectively to $\mathbb V(\Fmod)$, such that
+at every $\underline v\in\VV$ above $\Vbadmod$ the orbicurve $\underline C_{\underline v}$ is of type
+$(1,\Z/\ell\Z)_\pm$ \cite[Def.~2.5(i)]{EtTh}. That definition makes two assumptions: that the quotient
+$\overline\Pi{}^{\mathrm{ell}}_X\twoheadrightarrow Q$ factor through the natural quotient $\Pi_X\twoheadrightarrow\widehat\Z$
+determined by the quotient $\Pi_X^{\mathrm{tp}}\twoheadrightarrow\Z$ of \cite[\S1]{EtTh}, and that the splitting of $\overline D_x\twoheadrightarrow G_K$ which determines the covering
+$\underline{\underline X}\to\underline X$ be compatible with the $\{\pm1\}$-structure of \cite[Thm.~1.10(iii)]{EtTh},
+which is defined when the residue characteristic is odd. Condition~(e) records that the $2$-torsion part of (b) gives the condition
+``$K=\ddot K$'' of \cite[Def.~2.5(i)]{EtTh}, and that the models of type $(1,(\Z/\ell\Z)^\Theta)$ and
+$(1,(\Z/\ell\Z)^\Theta)_\pm$ at such places are supplied by the theory of \cite[\S2]{EtTh}. Condition~(f) asks that
+$\underline\epsilon$ arise from a nonzero element of $Q$, and that at each $\underline v\in\VV$ above $\Vbadmod$ its
+localization arise, up to sign, from the canonical generator of the quotient $\widehat\Z$ of \cite[Def.~2.5(i)]{EtTh}.
+
+\tP{} At each $u\in\Vbadmod$ choose a place of $F$ above $u$ and a place $w$ of $K$ above it. The split Tate sequence
+$0\to\mu_\ell\to E(K_w)[\ell]\to\Z/\ell\to0$, in which the class of $q^{1/\ell}$ maps to $1$, determines a line
+$W_w=\mu_\ell\subset V$ and an element $\pm\xi_w$ of $V/W_w$, up to sign: changing the root $q^{1/\ell}$ changes it by an
+element of $\mu_\ell=W_w$, which does not change its class, and reversing the orientation of the dual graph changes the
+sign. The group $\SL(V)$ acts transitively on such pairs: for a pair $(W',\pm\xi')$ choose $s\in W'$ and a lift $t$ of
+$\xi'$ with $\det(s,t)=1$, and note that $\SL(V)$ acts transitively on the bases so obtained. So, by \S\ref{ss:image},
+there is
+$\sigma_u\in\Gal(K/F)$ with $\sigma_u(W_w,\pm\xi_w)=(W,\pm\xi)$. Put $v(u)=\sigma_uw$, the place with
+$|b|_{\sigma_uw}=|\sigma_u^{-1}b|_w$; the isomorphism $\sigma_u^{-1}\colon K_{v(u)}\simeq K_w$ commutes with
+localization, so the fixed global pair $(W,\pm\xi)$ acquires at $v(u)$ the local marking. The global $W$ and
+$\underline\epsilon$ are not changed from place to place. Since $\sigma_u$ fixes $F$, the place $v(u)$ lies above the
+same $u$, and the fibres above different $u$ are disjoint, so these choices can be made simultaneously. Choosing an
+arbitrary place of $K$ above each remaining place of $\Fmod$ gives $\VV\xrightarrow{\ \sim\ }\mathbb V(\Fmod)$.
+
+\tP{} Locally at $v(u)$ the quotient is $E(q)\to E(q^\ell)$, $z\mapsto z^\ell$, and its dual is $E(q^\ell)\to E(q)$,
+$z\mapsto z$, which multiplies the period of the dual graph by $\ell$. So the quotient $\Pi_X\to Q$ factors through
+$\widehat\Z\to\Z/\ell$, which is the first assumption of \cite[Def.~2.5(i)]{EtTh}. The second concerns only the
+splitting that determines $\underline{\underline X}_{v(u)}$; we take it to be the one of the models supplied by
+\cite[\S2]{EtTh} and recorded in condition~(e). So $\underline C_{v(u)}$ is of type $(1,\Z/\ell\Z)_\pm$. Since $\ker\psi=\{q^r\bmod
+q^{\ell\Z}:r\in\Z/\ell\}$ and $\pi_W(q^{1/\ell})=q$, the localization of $\underline\epsilon$ is the cusp of the
+generator $\pm1$: the label counts deck translations by the period $q$, and no Tate order or ramification index enters
+it. The rational $2$-torsion gives ``$K=\ddot K$'', and the Weil pairings give $\mu_{60}\subset F$ and $\mu_\ell\subset
+K$.
+
+\subsection{The hypotheses of \texorpdfstring{\cite[Thm.~1.10]{IUT4}}{IUT IV, Thm. 1.10}}\label{ss:thm110}
+
+\tS{} \cite[Thm.~1.10]{IUT4} is stated for initial $\Theta$-data in the situation of \cite[Cor.~3.12]{IUT3}. It
+assumes that $E_F$ has good reduction at every nonarchimedean place of $F$ over
+$\mathbb V_{\mathrm{mod}}\setminus\Vbadmod$ that does not divide $2\ell$, and that $F=\Fmod(\sqrt{-1},E_{\Fmod}[2\cdot3\cdot5])$;
+that is, $F$ is obtained from the field $F_{\mathrm{tpd}}=\Fmod(E_{\Fmod}[2])$ by adjoining $\sqrt{-1}$ and the
+$(3\cdot5)$-torsion of the model of $E$ over $F_{\mathrm{tpd}}$ given by a Legendre equation.
+
+\tP{} Every place of $L$ of odd residue characteristic at which $E$ has bad reduction is in $\Vbadmod$
+(\S\ref{ss:ab}), so the first assumption holds. For the second, $E[2]\subseteq E(L)$, so
+$F_{\mathrm{tpd}}=L$; $\sqrt{-1}\in L$; \eqref{e:datum} is a Legendre equation over $L$; and $F=L(E[15])$.
+
+\section{The levels and condition (C1) of \texorpdfstring{\cite[Cor.~2.2]{IUT4}}{IUT IV, Cor. 2.2}}\label{s:window}
+
+\tS{} \cite[Cor.~2.2(i)]{IUT4} defines $\log(\mathfrak q^\forall)$ as the normalized degree of the effective arithmetic
+divisor determined by the $q$-parameters of the curve at all nonarchimedean places. The initial $\Theta$-data
+constructed in \cite[Cor.~2.2(ii)]{IUT4} have a prime $\ell$ with
+\[
+ \textup{(C1)}\qquad (\log\mathfrak q^\forall)^{1/2}\le\ell\le10\delta\cdot(\log\mathfrak q^\forall)^{1/2}\cdot
+ \log(2\delta\cdot\log\mathfrak q^\forall),\qquad \delta=2^{12}\cdot3^3\cdot5\cdot d,
+\]
+where $d$ bounds the degree of the point $x_E\in U_X(\overline\Q)^{\le d}$ of the $\lambda$-line.
+
+\tP{} Over $F$ the curve is semistable, and at a place $w$ of multiplicative reduction $\ord_w(q)=-\ord_w(j)$. Since
+the normalized degree does not change under extension of the base field \cite[Def.~1.9(i)]{IUT4}, the sum can be taken
+over the nonarchimedean places $v$ of $L$:
+$\log\mathfrak q^\forall=\tfrac12\sum_v\max(0,-\ord_vj)\log\Nm v$. The contributions are $944$ at $v_\pi$,
+$2\ord_{\mathfrak p}(1-a)$ at an odd place $\mathfrak p\mid1-a$, and $2$ at the place above $2$, where
+$\ord_{1+i}(j)=3\cdot8-(8+2\cdot9)=-2$. So
+\begin{align*}
+ \log\mathfrak q^\forall&=472\log2357+\log\Nm(1-a)-8\log2=7324.751610927\ldots,\\
+ (\log\mathfrak q^\forall)^{1/2}&=85.584762726\ldots,
+\end{align*}
+and $\Lambda$ is exactly the set of primes in $[(\log\mathfrak q^\forall)^{1/2},\,472/3)$. With $d=2=[\Q(a):\Q]$ the
+upper bound of (C1) is about $2.2251\times10^{10}$, and it only grows with $d$. So every $\ell\in\Lambda$ satisfies
+(C1).
+
+\begin{remark}\label{r:window}
+\tP{} The upper end $472/3$ of the window is not part of (C1) or of \cite[Def.~3.1]{IUT1}. \tS{} It is the threshold
+$\ell<N/3$ of \cite[\S\S8,13]{Second}, where $N=472$, at which the margin $\ord_{2357}(\qq_{\mathrm b})-3=(472-3\ell)/\ell$
+of the first stage is still positive; it is $1/157$ at $\ell=157$. \cite[Cor.~2.2]{IUT4} also requires that $x_E$ lie in
+a compactly bounded subset satisfying the condition $(\ast_{j\text{-inv}})$ at $2$ and outside a finite exceptional set
+$\mathfrak{Exc}_d$, which is not given explicitly. \tP{} These requirements are not checked here; (C1) is the only condition
+of \cite[Cor.~2.2]{IUT4} compared with the data.
+\end{remark}
+
+\section{Reproduction}\label{s:repro}
+
+\begin{itemize}
+\item In the archive deposited with this note, \texttt{scripts/d2357\_check.py} (Python~3, standard library only,
+ about ten seconds) recomputes the numbers of Proposition~\ref{p:arith} --- for part~(d), the valuations at the
+ $277{,}462$ places of the $138{,}731$ primes; the reduction to these places is Lemma~\ref{l:cyclo} and the case
+ analysis in the proof --- as well as Table~\ref{tab:cyclo}, Table~\ref{tab:witness} and the remarks after it, the local
+ invariants of \S\ref{ss:split} and the values of \S\ref{s:window}, and compares them with the numbers printed here. It
+ also compares the reduction of $a$ modulo every odd prime below $3000$, $p\ne2357$, with direct modular
+ exponentiation. Its output is \texttt{outputs/d2357\_check.txt}; it exits with a nonzero status if a comparison
+ fails.
+\item The second computation of Remark~\ref{r:second} is \texttt{scripts/powerfree\_certificate.py} in the deposit of
+ \cite{Second}; run unchanged, it reproduces the counts stated there.
+\item The arguments that are not computations --- Lemma~\ref{l:cyclo} and the reduction in the proof of
+ Proposition~\ref{p:arith}(d), the image argument of \S\ref{ss:image} apart from the point counts and the residues, the
+ stable and the split reduction, the core, the choice of places and cusp, and \S\ref{ss:thm110} --- are not checked by
+ these programs.
+\end{itemize}
+
+\section*{Use of generative AI}
+Generative AI tools (large language models) were used extensively in this work, under the author's direction, in
+finding the example and its proofs, in the computations and in the writing. The author takes full responsibility for
+the contents of this report.
+
+\begin{thebibliography}{MFHMP}\raggedright
+\bibitem[CanLift]{CanLift}
+Shinichi Mochizuki, \emph{The absolute anabelian geometry of canonical curves}, Doc. Math., Extra Volume Kato (2003),
+609--640.
+
+\bibitem[Cat]{Cat}
+Toshihisa Urahigashi, \emph{Explicit initial $\Theta$-data and the two readings of Step~(v) of {IUT}~{IV},
+{T}heorem~1.10: a catalogue}, version 1.0.0, Zenodo, 2 November 2026,
+\href{https://doi.org/10.5281/zenodo.23870448}{doi:10.5281/zenodo.23870448}.
+
+\bibitem[DH1]{DH1}
+Taylor Dupuy and Anton Hilado, \emph{The statement of {M}ochizuki's {C}orollary 3.12: initial theta data}, Ramanujan J.
+\textbf{68} (2025), no.~1, Paper No.~18, \href{https://doi.org/10.1007/s11139-025-01100-y}{doi:10.1007/s11139-025-01100-y};
+arXiv:2004.13228v2 [math.NT]. The section number cited refers to the arXiv version.
+
+\bibitem[EtTh]{EtTh}
+Shinichi Mochizuki, \emph{The \'etale theta function and its {F}robenioid-theoretic manifestations}, Publ. Res. Inst.
+Math. Sci. \textbf{45} (2009), no.~1, 227--349, \href{https://doi.org/10.2977/prims/1234361159}{doi:10.2977/prims/1234361159}.
+
+\bibitem[First]{First}
+Toshihisa Urahigashi, \emph{An explicit initial $\Theta$-datum with mixed reduction at a split prime}, version 0.1.7,
+Zenodo, \href{https://doi.org/10.5281/zenodo.22537342}{doi:10.5281/zenodo.22537342}.
+
+\bibitem[GenEll]{GenEll}
+Shinichi Mochizuki, \emph{Arithmetic elliptic curves in general position}, Math. J. Okayama Univ. \textbf{52} (2010),
+1--28.
+
+\bibitem[IUT1]{IUT1}
+Shinichi Mochizuki, \emph{Inter-universal {T}eichm\"uller theory {I}: construction of {H}odge theaters}, Publ. Res.
+Inst. Math. Sci. \textbf{57} (2021), 3--207, \href{https://doi.org/10.4171/PRIMS/57-1-1}{doi:10.4171/PRIMS/57-1-1}.
+
+\bibitem[IUT3]{IUT3}
+Shinichi Mochizuki, \emph{Inter-universal {T}eichm\"uller theory {III}: canonical splittings of the log-theta-lattice},
+Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 403--626, \href{https://doi.org/10.4171/PRIMS/57-1-3}{doi:10.4171/PRIMS/57-1-3}.
+
+\bibitem[IUT4]{IUT4}
+Shinichi Mochizuki, \emph{Inter-universal {T}eichm\"uller theory {IV}: log-volume computations and set-theoretic
+foundations}, Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 627--723, \href{https://doi.org/10.4171/PRIMS/57-1-4}{doi:10.4171/PRIMS/57-1-4}.
+
+\bibitem[MFHMP]{MFHMP}
+Shinichi Mochizuki, Ivan Fesenko, Yuichiro Hoshi, Arata Minamide and Wojciech Porowski, \emph{Explicit estimates in
+inter-universal {T}eichm\"uller theory}, Kodai Math. J. \textbf{45} (2022), no.~2, 175--236, \href{https://doi.org/10.2996/kmj45201}{doi:10.2996/kmj45201}.
+
+\bibitem[Note]{Note}
+Toshihisa Urahigashi, \emph{A local non-containment in Step~(v) of {IUT}~{IV}, {T}heorem~1.10}, version 3.0.0, Zenodo,
+1 November 2026, \href{https://doi.org/10.5281/zenodo.23852752}{doi:10.5281/zenodo.23852752}.
+
+\bibitem[Second]{Second}
+Toshihisa Urahigashi, \emph{An initial $\Theta$-datum over an imaginary quadratic field, and numerical values of the
+local quantities of inter-universal {T}eichm\"uller theory~{IV}}, version 1.0.5, Zenodo,
+\href{https://doi.org/10.5281/zenodo.22601333}{doi:10.5281/zenodo.22601333}.
+
+\bibitem[Sil]{Sil}
+Joseph H. Silverman, \emph{The arithmetic of elliptic curves}, second edition, Graduate Texts in Mathematics
+\textbf{106}, Springer, Dordrecht, 2009, \href{https://doi.org/10.1007/978-0-387-09494-6}{doi:10.1007/978-0-387-09494-6}.
+
+\bibitem[Zhou1]{Zhou1}
+Zhong-Peng Zhou, \emph{The inter-universal {T}eichm\"uller theory and new {D}iophantine results over the rational
+numbers.~{I}}, arXiv:2503.14510 [math.NT], 2025.
+\end{thebibliography}
+
+\end{document}

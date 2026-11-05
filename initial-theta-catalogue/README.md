@@ -1,7 +1,8 @@
 # Explicit initial Θ-data and the two readings of Step (v) of IUT IV, Theorem 1.10: a catalogue
 
-Version 1.0.0, 2 November 2026 (7 pages).
-DOI [10.5281/zenodo.23870448](https://doi.org/10.5281/zenodo.23870448).
+Version 1.1.0, 6 November 2026 (7 pages).
+DOI [10.5281/zenodo.23990719](https://doi.org/10.5281/zenodo.23990719); version 1.0.0:
+[10.5281/zenodo.23870448](https://doi.org/10.5281/zenodo.23870448).
 
 We collect the explicit initial Θ-data, in the sense of Definition 3.1 of the first paper of Mochizuki's
 series on inter-universal Teichmüller theory, that the author has constructed over Q(√5) and Q(i): three
@@ -34,7 +35,12 @@ the earlier work and the dates.
 | D_3 | Q(√5) | 30965771 | bad, bad (new) |
 | D_18 | Q(√5) | 30965771 | good, bad (new) |
 | D_15 | Q(√5) | 30965819 | good, bad (new) |
-| D_2357^(ℓ) | Q(i) | 2357 | good, bad; 14 levels ℓ, conditional on a companion report in preparation |
+| D_2357^(ℓ) | Q(i) | 2357 | good, bad; 14 levels ℓ ([fourteen-levels](../fourteen-levels/)) |
+
+Version 1.1.0 removes the condition on D_2357^(ℓ): version 1.0.0 marked its values as conditional on a
+companion report, which is now [fourteen-levels](../fourteen-levels/) (doi:10.5281/zenodo.23990717). That report
+verifies Definition 3.1 of the first paper and the hypotheses of Theorem 1.10 of the fourth paper at all fourteen
+levels. Nothing else in the note is changed.
 
 ## Files
 

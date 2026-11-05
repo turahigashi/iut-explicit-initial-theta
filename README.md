@@ -194,7 +194,8 @@ The file names carry an older working numbering; the reports are numbered as fol
 | fourth | `fourth-report/paper/note3.tex` | [10.5281/zenodo.22648944](https://doi.org/10.5281/zenodo.22648944) |
 | fifth | `fifth-report/paper/constant_comparison.tex` | [10.5281/zenodo.22659796](https://doi.org/10.5281/zenodo.22659796) |
 | Step (v) short note | `stepv-local-noncontainment/paper/stepv_local_noncontainment.tex` | [10.5281/zenodo.23166432](https://doi.org/10.5281/zenodo.23166432) |
-| catalogue of the data | `initial-theta-catalogue/paper/initial_theta_catalogue.tex` | [10.5281/zenodo.23870448](https://doi.org/10.5281/zenodo.23870448) (version 1.0.0) |
+| catalogue of the data | `initial-theta-catalogue/paper/initial_theta_catalogue.tex` | [10.5281/zenodo.23990719](https://doi.org/10.5281/zenodo.23990719) (version 1.1.0) |
+| fourteen initial Θ-data (D_2357) | `fourteen-levels/paper/fourteen_levels.tex` | [10.5281/zenodo.23990717](https://doi.org/10.5281/zenodo.23990717) (version 1.0.0) |
 | programmer's walkthrough | `iut-walkthrough/paper/iut_walkthrough.tex` | [10.5281/zenodo.23880260](https://doi.org/10.5281/zenodo.23880260) (version 1.0.0) |
 | segment or loop (HoTT overview) | `segment-or-loop/paper/segment_or_loop.tex` | [10.5281/zenodo.23933109](https://doi.org/10.5281/zenodo.23933109) (version 1.1.0) |
 | indexed identifications (educational) | `indexed-identifications/paper/indexed_identifications.tex` | [10.5281/zenodo.23933108](https://doi.org/10.5281/zenodo.23933108) (version 2.0.0) |
@@ -299,8 +300,10 @@ pdflatex -interaction=nonstopmode -halt-on-error stepv_local_noncontainment.tex 
 ## Catalogue of the data (November 2026)
 
 **Explicit initial Θ-data and the two readings of Step (v) of IUT IV, Theorem 1.10: a catalogue.**
-`initial-theta-catalogue/paper/initial_theta_catalogue.pdf` (7 pages), version 1.0.0, DOI
-[10.5281/zenodo.23870448](https://doi.org/10.5281/zenodo.23870448).
+`initial-theta-catalogue/paper/initial_theta_catalogue.pdf` (7 pages), version 1.1.0, DOI
+[10.5281/zenodo.23990719](https://doi.org/10.5281/zenodo.23990719) (version 1.0.0:
+[10.5281/zenodo.23870448](https://doi.org/10.5281/zenodo.23870448)). Version 1.1.0 removes the condition on the
+datum D_2357^(ℓ), whose verification is now in `fourteen-levels/` (below); nothing else is changed.
 
 The note collects the explicit initial Θ-data constructed over Q(√5) and Q(i) — the three of the first
 report, the second report and the Step (v) short note, and four new ones, one of them for fourteen values
@@ -436,3 +439,19 @@ by Mochizuki himself. A bridge from an additive relation does not cross the Θ-l
 about whether IUT is correct.** See `bridge-and-size/README.md` for the files and how to rerun them.
 
 The files in `bridge-and-size/` are licensed under CC BY 4.0.
+
+## Fourteen initial Θ-data on one curve over Q(i) (November 2026)
+
+**Fourteen initial Θ-data on one curve over Q(i).**
+`fourteen-levels/paper/fourteen_levels.pdf` (9 pages), version 1.0.0, DOI
+[10.5281/zenodo.23990717](https://doi.org/10.5281/zenodo.23990717).
+
+The note proves that the curve y² = x(x − 1)(x − a), a = (41 + 26i)^472, of §13 of the second report extends, for
+each of the fourteen primes ℓ = 89, …, 157 found there, to an initial Θ-datum in the sense of IUT I, Definition 3.1,
+satisfying the hypotheses of IUT IV, Theorem 1.10; the levels satisfy condition (C1) of IUT IV, Corollary 2.2. The
+order condition is proved without factoring 1 − a, by bounding its valuations through cyclotomic factors, and the
+program `fourteen-levels/scripts/d2357_check.py` recomputes the numbers of the note. **Nothing is claimed about
+Corollary 3.12 or about abc.** With this note the catalogue above is released as version 1.1.0, without the
+condition on D_2357^(ℓ). See `fourteen-levels/README.md`.
+
+The files in `fourteen-levels/` are licensed under CC BY 4.0.

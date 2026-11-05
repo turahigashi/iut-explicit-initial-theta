@@ -1,0 +1,63 @@
+D2357: a = (41+26i)^472 over Q(i), levels [89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157]
+ok   N(pi) = 2357, prime, = 1 mod 4 (so 2357 splits in Q(i))
+ok   conj(pi) is not an associate of pi
+ok   the 14 levels are primes
+ok   both coordinates of a have 796 digits
+ok   N(a) = 2357^472
+ok   a mod p agrees with (41+26r)^472 mod p, resp. pi^472 in F_p[i], for the 428 odd primes p < 3000, p != 2357
+ok   Im j != 0 exactly (Im j = 7953-digit integer / 6359-digit integer in lowest terms)
+ok   at the places above 29 (i = 12, 17): a = 20, 23 and j = 16, 18 mod 29
+ok   j has different images at the two places above the split primes [29, 37, 53, 73, 89, 97], so j is not rational
+note  (not a computation) the field of moduli is Q(j), so F_mod = Q(i); j is not real, so it is none of the four rational invariants of [MFHMP, Prop. 2.1]
+ok   residue maps at pi and conj(pi)
+ok   pi -> 0 at the place pi and pi -> 82 at the place conj(pi)
+ok   1 - a = 1 at the place pi, so ord_pi(1-a) = 0
+ok   1 - a = 1 - 82^472 = 205 != 0 at conj(pi), so ord_conj(pi)(1-a) = 0
+ok   (82^4 = 202 != 1 mod 2357 and gcd(472, 2356) = 4, which is why 82^472 != 1)
+ok   Tate order at pi: ord_pi(Delta) = 2*472 = 944 = 2^4 * 59
+ok   Norm(1-a) has 1592 digits
+ok   v_2, v_3, v_5 of Norm(1-a) = 9, 2, 2
+ok   gcd(Re(1-a), Im(1-a)) = 240 = 2^4 * 3 * 5
+ok   for every level: l != 2357, l does not divide 944, 23040 or Norm(1-a) (Norm(1-a) mod l recomputed in F_l[i])
+ok   |GL_2(Z/15)| = |GL_2(F_3)| |GL_2(F_5)| = 48 * 480 = 23040 = 2^9 3^2 5
+ok   prod over d | 472 of Phi_d(pi) = pi^472 - 1 (each Phi_d(pi) by exact Moebius division)
+ok   inert primes: only 3 divides gcd(Re, Im) = 240, to the first power; in particular 59 does not divide 1-a
+      d   deg  digits of N(Phi_d(pi))   R_d = floor(N^(1/89))
+      1     1       4                 1
+      2     1       4                 1
+      4     2       7                 1
+      8     4      14                 1
+     59    58     196                 157
+    118    58     196                 157
+    236   116     392                 24856
+    472   232     783                 617831325
+ok   Table 1 (degrees, digits of the norms, R_d) as printed
+      tested 138742 primes (138731 distinct, 277462 places); places dividing 1-a among them:
+        p=1181  i=243  ord(1-a)=1
+        p=21713  i=1188  ord(1-a)=1
+        p=2876369  i=486618  ord(1-a)=1
+        p=6188393  i=6066270  ord(1-a)=1
+ok   138,731 primes and 277,462 places tested; exactly the four places printed divide 1-a, each once
+ok   every tested place has ord(1-a) <= 88 (largest found: 1)
+note  (not a computation) with Lemma 3.1 and the case analysis in the proof of Proposition 3.2(d), this gives ord_p(1-a) <= 88 at every place p of Q(i) of odd residue characteristic
+      q=13  i=5   a=3   #E=16   a_q=-2  a_q^2-4q=-48   covers [89, 101, 107, 113, 131, 137, 149]
+      q=17  i=13  a=16  #E=16   a_q=2   a_q^2-4q=-64   covers [103, 107, 127, 131, 139, 151]
+      q=29  i=12  a=20  #E=32   a_q=-2  a_q^2-4q=-112  covers [89, 97, 101, 103, 131, 139, 157]
+      q=97  i=75  a=75  #E=96   a_q=2   a_q^2-4q=-384  covers [89, 109, 113, 137, 139, 157]
+ok   Table 2 as printed
+ok   every level has a witness at which X^2 - a_q X + q is irreducible mod l
+ok   l = 109 is covered only by the place above 97
+ok   rows 13, 17, 29 are the congruence conditions l = 2 mod 3, l = 3 mod 4, (l/7) = -1
+ok   other places: above 17 (i = 4) a = 1 (a selected bad place); above 97 (i = 22) #E = 112, a_q = -14
+ok   ord_(1+i)(j) = 3*8 - 26 = -2
+      log q^forall = 7324.75161092722820912
+      sqrt          = 85.5847627263593470151
+ok   log q^forall = 7324.751610927..., its square root = 85.584762726...
+ok   the 14 levels are exactly the primes in [sqrt(log q^forall), 472/3)
+      (C1) upper bound at d = 2: 2.2251e+10
+ok   the upper bound of (C1) at d = 2 is about 2.2251e10
+ok   a direct search for 89th powers in Norm(1-a) would need primes up to about 10^17.9
+ok   every level satisfies both inequalities of (C1) with d = 2
+ok   e_b = 15 l <= 2355 = p - 2 at every level, with equality exactly at l = 157
+ok   ord_2357 of q^(1/2l) at the bad place = 472/l
+all checks passed (9.1 s)
