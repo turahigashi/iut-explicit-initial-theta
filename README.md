@@ -420,3 +420,19 @@ of the abc conjecture**; the output of the mockup proves nothing. See `two-compu
 to rerun them.
 
 The files in `two-computations/` are licensed under CC BY 4.0.
+
+## Bridge and size (November 2026)
+
+**Bridge and size: the Kodaira–Spencer morphism, arithmetic derivatives and Step (xi) of IUT as lax 2-cells.**
+`bridge-and-size/paper/bridge_and_size.pdf` (20 pages), version 1.0.0, DOI
+[10.5281/zenodo.23984201](https://doi.org/10.5281/zenodo.23984201).
+
+An essay with almost no new mathematical results. It places the Kodaira–Spencer argument of function fields, the
+bridges built from an additive relation a + b = c (the p-adic logarithms of Baker's method, Pasten's arithmetic
+derivatives) and Step (xi) of the proof of Corollary 3.12 side by side as the lax 2-cells of `segment-or-loop/`, and
+separates a *bridge* (that a 2-cell exists) from its *size* (the blurring) — a restatement of two requirements stated
+by Mochizuki himself. A bridge from an additive relation does not cross the Θ-link; on the seven data of
+`two-computations/data/`, absorbing the resulting discrepancy needs ℓ times the wall (k − 1)Q. **No claim is made
+about whether IUT is correct.** See `bridge-and-size/README.md` for the files and how to rerun them.
+
+The files in `bridge-and-size/` are licensed under CC BY 4.0.

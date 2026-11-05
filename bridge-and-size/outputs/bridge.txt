@@ -1,0 +1,52 @@
+2 + 6436341 = 6436343   rad = 15042   quality = 1.6299
+   p = 3: p^10 || b;  v_p(log_p(a/c)) = 10;  the ratio is a product of powers of [2, 23]
+   p = 23: p^5 || c;  v_p(log_p(−a/b)) = 5;  the ratio is a product of powers of [2, 3, 109]
+121 + 48234375 = 48234496   rad = 53130   quality = 1.6260
+   p = 11: p^2 || a;  v_p(log_p(b/c)) = 2;  the ratio is a product of powers of [2, 3, 5, 7, 23]
+   p = 3: p^2 || b;  v_p(log_p(a/c)) = 2;  the ratio is a product of powers of [2, 11, 23]
+   p = 5: p^6 || b;  v_p(log_p(a/c)) = 6;  the ratio is a product of powers of [2, 11, 23]
+   p = 7: p^3 || b;  v_p(log_p(a/c)) = 3;  the ratio is a product of powers of [2, 11, 23]
+1 + 4374 = 4375   rad = 210   quality = 1.5679
+   p = 3: p^7 || b;  v_p(log_p(a/c)) = 7;  the ratio is a product of powers of [5, 7]
+   p = 5: p^4 || c;  v_p(log_p(−a/b)) = 4;  the ratio is a product of powers of [2, 3]
+283 + 8251953125 = 8251953408   rad = 1876290   quality = 1.5808
+   p = 5: p^11 || b;  v_p(log_p(a/c)) = 11;  the ratio is a product of powers of [2, 3, 17, 283]
+   p = 13: p^2 || b;  v_p(log_p(a/c)) = 2;  the ratio is a product of powers of [2, 3, 17, 283]
+   p = 3: p^8 || c;  v_p(log_p(−a/b)) = 8;  the ratio is a product of powers of [5, 13, 283]
+   p = 17: p^3 || c;  v_p(log_p(−a/b)) = 3;  the ratio is a product of powers of [5, 13, 283]
+
+D211: F = Q(sqrt(5)), ell = 7, ell* = 3, k = 4.6667
+   places in V^bad: 5;  sum of ord_q f log p = 610.4296;  Q = |log qq| = 21.8011
+   largest bridge region: place 211+ (p has 3 digits, f = 1), ord_q = 58, depth d = 29
+   gaps (j^2-1) d: j=1: 0 levels, j=2: 87 levels, j=3: 232 levels
+   label-averaged gap summed over V^bad (weights f log p / [F:Q]) = 559.5605 = ell x wall;  wall (k-1)Q = 79.9372
+D109: F = Q(sqrt(-1)), ell = 7, ell* = 3, k = 4.6667
+   places in V^bad: 6;  sum of ord_q f log p = 535.1967;  Q = |log qq| = 19.1142
+   largest bridge region: place 109+ (p has 3 digits, f = 1), ord_q = 58, depth d = 29
+   gaps (j^2-1) d: j=1: 0 levels, j=2: 87 levels, j=3: 232 levels
+   label-averaged gap summed over V^bad (weights f log p / [F:Q]) = 490.5970 = ell x wall;  wall (k-1)Q = 70.0853
+D2: F = Q(sqrt(5)), ell = 7, ell* = 3, k = 4.6667
+   places in V^bad: 5;  sum of ord_q f log p = 480.1824;  Q = |log qq| = 17.1494
+   largest bridge region: place 56406340220143710508313748934073550973772664592051- (p has 50 digits, f = 1), ord_q = 2, depth d = 1
+   gaps (j^2-1) d: j=1: 0 levels, j=2: 3 levels, j=3: 8 levels
+   label-averaged gap summed over V^bad (weights f log p / [F:Q]) = 440.1672 = ell x wall;  wall (k-1)Q = 62.8810
+D3: F = Q(sqrt(5)), ell = 7, ell* = 3, k = 4.6667
+   places in V^bad: 19;  sum of ord_q f log p = 2256.4872;  Q = |log qq| = 80.5888
+   largest bridge region: place 30965771- (p has 8 digits, f = 1), ord_q = 60, depth d = 30
+   gaps (j^2-1) d: j=1: 0 levels, j=2: 90 levels, j=3: 240 levels
+   label-averaged gap summed over V^bad (weights f log p / [F:Q]) = 2068.4466 = ell x wall;  wall (k-1)Q = 295.4924
+D18: F = Q(sqrt(5)), ell = 7, ell* = 3, k = 4.6667
+   places in V^bad: 17;  sum of ord_q f log p = 1229.9014;  Q = |log qq| = 43.9250
+   largest bridge region: place 30965771+ (p has 8 digits, f = 1), ord_q = 36, depth d = 18
+   gaps (j^2-1) d: j=1: 0 levels, j=2: 54 levels, j=3: 144 levels
+   label-averaged gap summed over V^bad (weights f log p / [F:Q]) = 1127.4096 = ell x wall;  wall (k-1)Q = 161.0585
+D15: F = Q(sqrt(5)), ell = 7, ell* = 3, k = 4.6667
+   places in V^bad: 15;  sum of ord_q f log p = 1032.1311;  Q = |log qq| = 36.8618
+   largest bridge region: place 30965819+ (p has 8 digits, f = 1), ord_q = 30, depth d = 15
+   gaps (j^2-1) d: j=1: 0 levels, j=2: 45 levels, j=3: 120 levels
+   label-averaged gap summed over V^bad (weights f log p / [F:Q]) = 946.1202 = ell x wall;  wall (k-1)Q = 135.1600
+D2357: F = Q(sqrt(-1)), ell = 157, ell* = 78, k = 2067.1667  (unfactored cofactor: the places above it are not counted)
+   places in V^bad: 9;  sum of ord_q f log p = 7435.6771;  Q = |log qq| = 11.8403
+   largest bridge region: place 2357+ (p has 4 digits, f = 1), ord_q = 944, depth d = 472
+   gaps (j^2-1) d: j=1: 0 levels, j=2: 1416 levels, j=78: 2871176 levels
+   label-averaged gap summed over V^bad (weights f log p / [F:Q]) = 3840837.0282 = ell x wall;  wall (k-1)Q = 24463.9301

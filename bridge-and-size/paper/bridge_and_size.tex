@@ -1,0 +1,971 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{geometry}
+\geometry{margin=2.6cm}
+\usepackage{booktabs,array,tabularx}
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\hypersetup{pdftitle={Bridge and size: the Kodaira-Spencer morphism, arithmetic derivatives and Step (xi) of IUT as lax
+2-cells},pdfauthor={Toshihisa Urahigashi}}
+\setlist{itemsep=2pt,topsep=4pt}
+\raggedbottom
+\emergencystretch=3em
+\numberwithin{table}{section}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Vbad}{\mathbb{V}^{\mathrm{bad}}}
+\newcommand{\qq}{\underline{\underline{q}}}
+\newcommand{\Ocal}{\mathcal{O}}
+\newcommand{\Fcal}{\mathcal{F}}
+\newcommand{\Lcal}{\mathcal{L}}
+\newcommand{\Ecal}{\mathcal{E}}
+\newcommand{\Tcal}{\mathcal{T}}
+\newcommand{\FU}{\mathcal{F}^{\vdash\times\boldsymbol{\mu}}}
+\newcommand{\FV}{\mathcal{F}^{\Vdash\blacktriangleright\times\boldsymbol{\mu}}}
+\newcommand{\ThetaLGP}{\Theta^{\times\boldsymbol{\mu}}_{\mathrm{LGP}}}
+\newcommand{\KS}{\mathrm{KS}}
+\newcommand{\leanus}{\textunderscore\allowbreak}
+\newcommand{\lean}[1]{{\ttfamily\let\_\leanus #1}}
+
+% labels
+\newcommand{\lab}[2]{{\upshape\fcolorbox{#1}{#1!8}{\scriptsize\sffamily\bfseries\textcolor{#1}{#2}}}}
+\newcommand{\tagS}{\lab{blue}{S}}
+\newcommand{\tagX}{\lab{Purple}{X}}
+\newcommand{\tagP}{\lab{ForestGreen}{P}}
+\newcommand{\tagR}{\lab{TealBlue}{R}}
+\newcommand{\tagH}{\lab{BurntOrange}{H}}
+\newcommand{\q}[1]{``#1''}
+\newcommand{\srcquote}[2]{\begin{quote}\small #1\par\nopagebreak\hfill{\footnotesize #2}\end{quote}}
+\newcommand{\known}[1]{\par{\footnotesize\itshape #1}\par}
+
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}[section]
+\theoremstyle{definition}
+\newtheorem{definition}[proposition]{Definition}
+\newtheorem{observation}[proposition]{Observation}
+
+\input{generated.tex}
+
+\title{Bridge and size: the Kodaira--Spencer morphism,\\ arithmetic derivatives and Step (xi) of IUT\\ as lax 2-cells}
+\author{Toshihisa Urahigashi\\\small ORCID 0009-0004-0460-6242\\\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
+\date{Version 1.0.0, 6 November 2026\\\small\href{https://doi.org/\thedoi}{doi:\thedoi}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+In function fields, the height inequality (the analogue of Szpiro's inequality) follows from the Kodaira--Spencer
+morphism. This note places this classical argument, the ``bridges'' that are built in number fields from an additive
+relation $a+b=c$ (the $p$-adic logarithms of Baker's method and the arithmetic derivatives of Pasten), and Step~(xi)
+of the proof of Corollary~3.12 of inter-universal Teichm\"uller theory (IUT)~III side by side in the form of the lax
+2-cells of the earlier note \cite{SL}. Mochizuki himself describes the Kodaira--Spencer morphism as analogous to the
+``license to confuse'' of IUT \cite{Alien}. This note is an essay that proposes a viewpoint; it contains almost no new
+mathematical results.
+
+There are two points. (1) The difficulty splits into a \emph{bridge} (that a 2-cell exists) and a \emph{size} (the
+blurring that must be allowed). This restates, in the language of \cite{SL}, two requirements stated by Mochizuki
+himself: a common container that is large enough to house both sides, and small enough to yield a nontrivial estimate
+\cite{Roots}. In function fields both come automatically from the structure. A bridge from an additive relation exists
+unconditionally, but bounding its size is equivalent to the abc conjecture (Pasten \cite{Pa}). In IUT, conversely, the
+blurring is small by the upper bound of IUT~IV, while the bridge (the inclusion in Step~(xi)) is not derived in the
+written argument. (2) A bridge from an additive relation does not cross the $\Theta$-link. The $\Theta$-link carries the
+unit portions by full poly-isomorphisms, so that specific global elements (such as $1-\lambda$ of the Legendre form)
+are not carried. If one forces them across, a contradiction appears at the level of units already on actual initial
+$\Theta$-data (at the place of the datum D211 above $211$, discrepancies of $\dgaptwo$ and $\dgapthree$ levels for the
+labels $2$ and $3$). To absorb this discrepancy by blurring requires exactly half of the discrepancy at the level of
+value groups, which in the normalization of Corollary~3.12 (the $q$ side is measured by $\qq=q^{1/2\ell}$) is $\ell$
+times the wall $(k-1)Q$. This grows with $q$ and does not fit under the upper bound of IUT~IV. Moreover, the curves on
+which isogenies give a bridge (curves with a global multiplicative subspace) are excluded from the initial
+$\Theta$-data by the condition of Definition~3.1~(c) of IUT~I. In summary, the reading of this note is that the ring
+structure (in particular, the addition) that IUT gives up in order to circumvent the absence of a global multiplicative
+subspace is precisely the material of a Kodaira--Spencer-type bridge (\S8.1).
+
+Hence, to complete IUT as an argument of Kodaira--Spencer type, one would have to build, inside the multiradial
+representation, a bridge whose blurring does not grow with $q$. For a single datum this claim is equivalent to the
+height inequality \cite{SL}, and if it holds for all data the abc conjecture follows \cite{lana} (for arithmetic
+derivatives, the existence of small ones is equivalent to the abc conjecture \cite{Pa}). The language of homotopy type
+theory (HoTT) can state this precisely, but cannot construct it. What HoTT contributed here is that, by requiring one to
+say along which path one identifies, it made visible that an additive bridge is information on the side of structure
+(\S7.4). \textbf{No claim is made about whether IUT is correct.}
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+
+\subsection{The question}
+\tagP{} In earlier notes we saw that the dispute over Corollary~3.12 of IUT~III concentrates on the point, in
+Step~(xi) of its proof, that the value on the $q$ side is one of the possible values on the $\Theta$ side (below, ``the
+inclusion''), and that this point is of the same strength as the height inequality. In the language of \cite{SL},
+Corollary~3.12 is equivalent to a lax 2-cell between two paths, which is equivalent to $(k-1)Q\le E$
+\cite[Theorem~5.3]{SL}. Here $Q=|\log\qq|$, $k=\ell(\ell+1)/12$ is the mean of $j^2$ over the labels
+$j=1,\dots,\ell^*$ (where $\ell^*=(\ell-1)/2$), and $E$ is the blurring allowed in the comparison. In each of the
+readings listed in \cite{RF}, Corollary~3.12 and IUT~IV together give the same height inequality.
+
+\tagH{} The question of this note is the following. In function fields, an inequality of the same shape follows
+structurally from the Kodaira--Spencer morphism. Can its ``number-field version'' be realized, as a quantity, on the
+construction of IUT?
+
+\subsection{What this note is}
+\begin{itemize}
+\item \textbf{An essay that proposes a viewpoint.} Proposition~3.1 is classical, and Propositions~4.1, 4.2, 5.1, 7.1
+and 7.2 are elementary. What this note adds is a dictionary that places three situations in one form, the dichotomy
+seen from it, and a concrete check that an additive bridge does not cross the $\Theta$-link (end of \S1.3).
+\item \textbf{What is not claimed.} We do not say that IUT is wrong, nor that the abc conjecture is false, nor that the
+inequality of Corollary~3.12 fails for any single datum (on the six completely factored data of this note it holds in
+the reading of the container \cite{TC}). The undisputed parts of IUT (anabelian reconstruction, the \'etale theta
+function, Frobenioids) remain mathematics regardless of this note.
+\item \textbf{A ``bridge'' in this note is one brought in from outside.} What \S7 shows is that a global relation lying
+outside the $\Theta$-link, such as an additive relation, cannot be made to act on the comparison through the
+$\Theta$-link. We do not exclude that a bridge of another form is built inside the multiradial representation (\S8.2).
+\end{itemize}
+
+\subsection{Prior work}
+\begin{itemize}
+\item \tagS{} \textbf{The analogy between the Kodaira--Spencer morphism and IUT is Mochizuki's own.} \cite[\S2.9]{Alien}
+recalls the classical argument that derives the Szpiro inequality of function fields from the Kodaira--Spencer
+morphism, and \cite[\S3.1, (v)]{Alien} reformulates it in terms of multiradiality and calls it analogous to the
+``license to confuse''. \cite[\S2.3]{Alien} describes the isogeny argument in the presence of a global multiplicative
+subspace and calls the ``simulation'' of such a subspace one fundamental theme of IUT. Mochizuki introduced an
+arithmetic Kodaira--Spencer morphism in 1999 \cite[Chapter~IX]{HA}, and in 2000 wrote that its Galois-theoretic version
+can only be defined when the Tate module has a natural rank one multiplicative subspace \cite{GalKS}.
+\item \tagS{} \textbf{The two requirements on the container --- large enough to house both sides, small enough to give
+a nontrivial estimate --- are also stated by Mochizuki.} His slides on the classical roots of IUT give, as the key
+point of the Kodaira--Spencer argument, that $p_1^*\Ecal\cong p_2^*\Ecal$ serves as a common container, and say that
+one way to understand the multiradial representation of IUT~III is as the construction of a common container that is
+\q{sufficiently large to house the incompatible ring structures on either side of the gluing constituted by the theta
+link $q_E^N\mapsto q_E$}, but \q{sufficiently small to yield nontrivial estimate on the height of the elliptic curve
+over a number field under consideration} \cite[\S2]{Roots}. In \cite[\S3.10, (ii), (iii)]{EssLgc} he writes that
+\q{this approach consists of embedding $Y_1$ into larger and larger containers [i.e., the containers obtaining by
+adding the various indeterminacies] until the container becomes sufficiently large as to contain/engulf [not only
+$Y_1$, but also (!)] $Y_2$}, and compares this with the PD-envelopes of the theory of crystals \cite{EssLgc}. The
+``bridge'' and the ``size'' of this note (Definition~2.1) restate these two requirements in the language of the model
+of \cite{SL}.
+\item \tagX{} \textbf{That an arithmetic Kodaira--Spencer map is not yet available} is also stated in Fesenko's survey:
+\q{A (full) arithmetic version of the Kodaira--Spencer map could be quite useful for giving a proof of the arithmetic
+Szpiro conjecture. However, such an arithmetic version of the Kodaira--Spencer map is not yet known.}
+\cite[\S1.3]{Fe}. In \S1.4 he adds that \q{His earlier Hodge-Arakelov theory [23], where a certain weak arithmetic
+version of the Kodaira--Spencer map is studied, was already an innovative step forward} \cite{Fe}.
+\item \tagX{} \textbf{A Kodaira--Spencer class for number fields does not exist, depending on the definition.} Faltings
+showed that a Kodaira--Spencer class for curves over number fields satisfying certain compatibility axioms cannot exist
+\cite{Fal}; Dupuy--Zureick-Brown showed that, with slightly modified definitions, the Deligne--Illusie classes satisfy a
+compatibility condition of this kind \cite{DZB}.
+\item \tagX{} \textbf{The equivalence of arithmetic derivatives adapted to an additive relation with the abc
+conjecture} is due to Pasten \cite{Pa}. On $a+b=c$, arithmetic derivatives that are additive exist unconditionally, and
+the existence of sufficiently small ones is equivalent to the abc conjecture. Half of the view of this note, ``the
+bridge is unconditional, the size is abc'', is this result itself.
+\item \tagX{} \textbf{A weak abc from linear forms in logarithms} is due to Stewart--Yu \cite{StYu}; \cite[\S3.7,
+(iii)]{Alien} compares it with IUT.
+\item \tagX{} \textbf{The general theory of height inequalities and the Kodaira--Spencer map for function fields} is in
+M.~Kim \cite{Kim}.
+\item \tagX{} \textbf{Joshi} states that a paper treating Kodaira--Spencer theory in his theory of arithmetic
+Teichm\"uller spaces (Construction~V) is in preparation \cite{JoQA}. This note does not know its contents and does not
+use the outline in the questions and answers.
+\item \tagX{} \textbf{That Step~(xi) does not follow from the written properties} is shown in lana-agents/iut
+\cite{lana} (\lean{NonDerivable.lean}), by Higuchi \cite{Hi} and in \cite[Theorem~5.7]{SL}. Scholze--Stix write of
+Mochizuki's claim that \q{up to the `blurring' given by certain indeterminacies the diagram does commute; it seems to us
+that this statement means that the blurring must be by a factor of at least $O(\ell^2)$ rendering the inequality
+thus obtained useless} \cite[\S2.2]{SS}.
+\item \tagH{} \textbf{What this note adds} is limited to three things. (a) A dictionary that places the Kodaira--Spencer
+morphism of function fields, the bridges from an additive relation (Baker, Pasten) and Step~(xi) of IUT in the single
+form of a lax 2-cell of \cite{SL}. (b) The assignment of the three situations by ``bridge'' and ``size'' (function
+fields have both, Baker and Pasten only the bridge, IUT only the size). The two requirements themselves are Mochizuki's
+(the item above); what this note adds is to state them as the existence of a lax 2-cell and its minimal blurring, and
+to put the additive bridges (Baker, Pasten) into the same table. That IUT has ``only the size'' is a reading of this
+note and points to the same place as Scholze--Stix, lana-agents/iut and Higuchi. We have not found this assignment in
+the sources we checked (Pasten, Dupuy--Zureick-Brown, Fesenko, Joshi's questions and answers, Mochizuki's papers and
+slides, lana-agents/iut, and a web search on 6 November 2026). (c) A check, along the definitions, that an additive
+bridge does not cross the $\Theta$-link, with numbers on actual data (\S7). Item (c) is a concrete instance of the
+point of Scholze--Stix and of the incompatibility of the $\Theta$-link with the ring structure (arithmetic degrees)
+that Mochizuki himself describes (\cite[\S14, (LbEx1)]{R18}, \cite[\S3.3, (iv)]{Alien}); it is not new in principle.
+\end{itemize}
+
+\subsection{The shape of the argument}
+\begin{enumerate}
+\item \textbf{Separate the bridge from the size} (\S2). We recall the lax 2-cells of \cite{SL} and define ``bridge'' and
+``size''.
+\item \textbf{In function fields both are automatic} (\S3). The Kodaira--Spencer morphism is a lax 2-cell that exists
+automatically by the structure, with blurring $\deg\omega(\log)$.
+\item \textbf{A bridge from an additive relation is unconditional; its size is abc} (\S4). The $p$-adic logarithm
+bridge (Baker, Stewart--Yu) and the arithmetic derivatives of Pasten.
+\item \textbf{The isogeny bridge lies outside the domain of IUT} (\S5). Global multiplicative subspaces and
+Definition~3.1~(c).
+\item \textbf{IUT has only the size} (\S6). The statement of Theorem~3.11, where the source says the $\wedge$ is
+derived, and where elements specific to the curve enter.
+\item \textbf{An additive bridge does not cross the $\Theta$-link} (\S7). What a full poly-isomorphism carries, the
+dilemma at the level of units, the language of HoTT, and what HoTT contributed.
+\item \textbf{The dichotomy, and what a repair needs} (\S8).
+\end{enumerate}
+
+\subsection{Labels}
+\tagS{} a statement of the sources (IUT and Mochizuki's papers). \tagX{} a claim of others (Pasten, Faltings,
+Dupuy--Zureick-Brown, Fesenko, lana-agents/iut, Scholze--Stix and others). \tagP{} a statement proved in this note, or a
+fact shown in the earlier notes; a statement with only \tagP{} is elementary. \tagR{} the mathematics is known, and the
+way it is applied is this note's; the ``known mathematics'' is indicated. \tagH{} a reading, interpretation or proposal
+of this note (not a proof).
+
+\section{Bridge and size: lax 2-cells}
+\tagP{} We briefly recall the model of \cite[\S5]{SL}. The value of the same object $b$ is carried to the real numbers
+along two paths. One is the path $\gamma$ through the $\Theta$-link, which gives $\gamma_*b=-Q$ (the value on the $q$
+side). The other is the path $c$ through the shared data, which gives $c_*b=-kQ$ (the value on the $\Theta$ side). The
+monodromy of the loop formed by the two paths is $1/k\ne1$. (\cite{SL} writes $\ell$ for the path $\gamma$ and
+$m=1/k$ for the scale of the monodromy; we write $\gamma$ to avoid a clash with the prime $\ell$.)
+\begin{itemize}
+\item A strict 2-cell ($\gamma_*b=c_*b$) does not exist if $Q>0$ \cite[Theorem~5.2]{SL}.
+\item Corollary~3.12 (in the model) is equivalent to the lax 2-cell $\gamma_*b\le c_*b+E$, which is equivalent to
+$(k-1)Q\le E$ \cite[Theorem~5.3]{SL}.
+\item If IUT~IV bounds the blurring by $E\le C$ ($C$ independent of $Q$), then Corollary~3.12 gives $Q\le C/(k-1)$
+\cite[Corollary~5.4]{SL}.
+\item Qualitative properties such as IPL, SHE and APT (properties of 1-cells) do not decide whether a lax 2-cell exists
+\cite[Theorem~5.7]{SL}.
+\end{itemize}
+
+\begin{definition}[Bridge and size]\label{d:bridge}
+\tagH{} In a situation where values carried along two paths are compared, we call the assertion that a lax 2-cell
+exists for some blurring $E$ a \emph{bridge}. When a bridge exists, we call the smallest blurring that makes it possible
+its \emph{size}. A strict 2-cell is a bridge of size $0$.
+\end{definition}
+
+\tagH{} Definition~\ref{d:bridge} restates, in the language of the model of \cite{SL}, the two requirements that
+Mochizuki states for the Kodaira--Spencer morphism and for the multiradial representation (that the common container be
+large enough to house both sides, and small enough to give a nontrivial estimate; \S1.3). The bridge corresponds to the
+former and the size to the latter.
+
+\tagH{} To obtain the height inequality from Corollary~3.12, one needs both a bridge and an upper bound $E\le C$ on its
+size. As we shall see, the three situations differ in which of the two they have.
+
+\section{Function fields: the Kodaira--Spencer morphism is a canonical lax 2-cell}
+\tagS{} \cite[\S2.9]{Alien} constructs the Kodaira--Spencer morphism, for a family of elliptic curves over a log curve
+$S^{\log}$ over $\mathbb C$, from the de Rham bundle $\Ecal$, the Hodge subbundle $\omega_E\subseteq\Ecal$ and the
+Gauss--Manin connection $\nabla_{\Ecal}$, and reads it as follows.
+\srcquote{\tagS{} \q{this diagram may be understood as a computation of the degree $\deg(-)$ of the `positive mass'
+Frobenius-like object $\omega_E$ that yields an inequality} \dots{} \q{via a comparison of `alien copies' of the
+`positive mass' Frobenius-like object $\omega_E$ that lie on opposite sides of the `link' constituted by a
+deformation of the moduli/holomorphic structure of the family of elliptic curves under consideration}}{Mochizuki,
+\emph{The mathematics of mutually alien copies}, \S2.9 \cite{Alien}}
+Here the inequality is $2\cdot\deg(\omega_E)\le\deg(\omega_{S^{\log}/\mathbb C})$. \cite[\S3.1, (v)]{Alien} restates the
+same argument in five steps $(1^{\KS})$--$(5^{\KS})$. One takes a line bundle $\Lcal$ and a rank two bundle $\Fcal$
+with an exact sequence $0\to\Lcal\to\Fcal\to\Lcal^{-1}\to0$. On the first infinitesimal neighbourhood
+$S^{\log}_\delta$ of the log diagonal, the isomorphism $p_1^*\Fcal\simeq p_2^*\Fcal$ of the two pull-backs given by the
+connection lets one compare the two pull-backs $p_1^*\Lcal$ and $p_2^*\Lcal$, with $\Fcal$ as a ``container'' for
+$\Lcal$. If the two images coincide, then $\deg\Lcal=0$ ($(4^{\KS})$); if not, the discrepancy gives a nonzero morphism
+of line bundles $\Lcal\to\omega_{S^{\log}/\mathbb C}\otimes\Lcal^{-1}$ ($(5^{\KS})$). For $\Fcal=\Ecal$ and
+$\Lcal=\omega_E$ this is the Kodaira--Spencer morphism.
+\srcquote{\tagS{} \q{the Kodaira-Spencer morphism may be thought of as a measure of the discrepancy that arises when one
+fixes the `$\omega_E$' on one factor of $S$ and compares it with the `$\omega_E$' on a distinct, `alien'
+factor of $S$ by means of the common container `$\Ecal$', which is equipped with a connection
+`$\nabla_{\Ecal}$'} \dots{} \q{When formulated in this way, the Kodaira-Spencer morphism becomes manifestly analogous to
+the approach sketched in the Introduction to the present paper} \dots{} \q{i.e., [in the language of the
+Introduction] a `license to confuse'}}{ibid., \S3.1, (v) \cite{Alien}}
+\srcquote{\tagS{} \q{in the limit `$N\to\infty$' [in which case comparison between `$h$' and `$N\cdot h$',
+or equivalently, between `$h$' and `$\frac1N\cdot h$', becomes a comparison between `$h$' and `$0$']}}%
+{ibid., \S3.1, (v) (on the relation between the classical argument and the argument of IUT that multiplies the height
+$h$ by $N$) \cite{Alien}}
+
+\begin{proposition}[The Kodaira--Spencer morphism is a lax 2-cell]\label{p:ks}
+\tagR{}\known{Known mathematics: classical (\cite[\S2.9, \S3.1, (v)]{Alien}, \cite{Kim}). The way it is applied: the
+2-cells of \cite{SL}.}
+Let $S$ be a proper smooth curve over $\mathbb C$, $D\subseteq S$ a reduced divisor and $\omega=\Omega_S(\log D)$. Let
+$\Fcal$ be a vector bundle of rank $2$, $\nabla:\Fcal\to\Fcal\otimes\omega$ a logarithmic connection whose residues are
+nilpotent at every point, and $\Lcal\subseteq\Fcal$ a line subbundle with $\Fcal/\Lcal\simeq\Lcal^{-1}$. For the
+composite
+\[\kappa:\Lcal\hookrightarrow\Fcal\xrightarrow{\nabla}\Fcal\otimes\omega\to(\Fcal/\Lcal)\otimes\omega
+=\Lcal^{-1}\otimes\omega\]
+we have:
+\begin{enumerate}[label=(\roman*)]
+\item $\kappa$ is $\Ocal_S$-linear;
+\item if $\kappa=0$, then $\deg\Lcal=0$ (a strict 2-cell);
+\item if $\kappa\ne0$, then $2\deg\Lcal\le\deg\omega=2g-2+\#D$ (a lax 2-cell with blurring $\deg\omega$).
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+(i) For $f\in\Ocal_S$ and $s\in\Lcal$, $\nabla(fs)=f\nabla s+s\otimes df$, and $s\otimes df$ lies in
+$\Lcal\otimes\omega$, hence vanishes in $(\Fcal/\Lcal)\otimes\omega$. (ii) If $\kappa=0$, then $\nabla$ preserves $\Lcal$
+and gives a logarithmic connection on $\Lcal$. Its residues are restrictions of nilpotent residues to an invariant line,
+hence $0$, and the residue theorem gives $\deg\Lcal=-\sum\mathrm{res}=0$. (iii) There is a nonzero morphism of line
+bundles $\Lcal\to\Lcal^{-1}\otimes\omega$, so $\deg\Lcal\le\deg\omega-\deg\Lcal$.
+\end{proof}
+
+\tagH{} In the language of \cite{SL}, the two pull-backs are the two paths, the connection is the shared data (the
+common container), the coincidence of the images is a strict 2-cell, and $\kappa$ is a lax 2-cell. \textbf{Both the
+bridge and the size come automatically from the structure.} The bridge comes from the fact that $\kappa$ is a morphism
+that is linear over the base ((i)). The size $\deg\omega$ is determined by the curve alone and does not depend on the
+height $\deg\Lcal$ of the family. This linearity comes from the fact that the comparison takes place over a single base
+$S$ and its ring structure, and moreover in an infinitesimal neighbourhood. Number fields have neither derivations of
+this kind nor infinitesimal neighbourhoods (\S4.5).
+
+\section{Number fields (1): bridges from an additive relation}
+
+\subsection{The \texorpdfstring{$p$}{p}-adic logarithm bridge}
+\tagH{} In number fields, the closest thing to the discrepancy of Kodaira--Spencer is to linearize an additive relation
+by the $p$-adic logarithm. The exponent of a prime factor of one term (information in the value group) moves to the
+logarithm of the ratio of the other two terms (information in the unit group). In the words of Remark~3.12.2~(ii) of
+IUT~III, this amounts to computing the value group portion in terms of the unit group portion; here this is done by an
+addition rather than by theta functions.
+\srcquote{\tagS{} \q{this `reassembling procedure' allows one to compute/estimate the value group portions of various
+monoids of arithmetic interest in terms of the unit group portions of these monoids. It is precisely these estimates
+that give rise to the inequality obtained in Corollary 3.12.}}{IUT~III, Remark~3.12.2, (ii) \cite{IUT3}}
+
+\begin{proposition}[The additive bridge]\label{p:additive}
+\tagP{}\known{Elementary. Numerical check: \texttt{scripts/bridge\_lib.py}.}
+Let $a,b,c$ be coprime positive integers with $a+b=c$, $p$ an odd prime and $e=v_p(a)\ge1$. Then:
+\begin{enumerate}[label=(\roman*)]
+\item $b/c\in1+p^e\Z_p$ and $v_p(b/c-1)=e$;
+\item $v_p(\log_p(b/c))=e$;
+\item $\log_p(b/c)=\sum_{q\mid bc}\bigl(v_q(b)-v_q(c)\bigr)\log_pq$, that is, $\log_p(b/c)$ is a linear form in the
+$p$-adic logarithms of the primes dividing $bc$, with the exponents as coefficients.
+\end{enumerate}
+The same holds for $a/c$ if $p\mid b$, and for $-a/b$ if $p\mid c$.
+\end{proposition}
+\begin{proof}
+(i) $b=c-a\equiv c\pmod{p^e}$ and $p\nmid c$ (coprimality), so $b/c-1=-a/c$ has valuation exactly $e$. (ii) If $p$ is
+odd and $v_p(x)=e\ge1$, then for $n\ge2$ we have $v_p(x^n/n)\ge ne-v_p(n)>e$ (as $v_p(n)\le\log_3n<n-1$), so
+$\log(1+x)=x-x^2/2+\cdots$ has valuation $e$. (iii) $\log_p$ is a homomorphism on $\Z_p^\times$, and every prime
+dividing $bc$ is different from $p$.
+\end{proof}
+
+\tagP{} We checked this on well-known abc triples of high quality, computing $\log_p$ from the series
+(Table~\ref{t:triples}, which lists all odd primes with exponent at least $2$).
+
+\begin{table}[ht]\centering\small
+\caption{The additive bridge: the exponent $e$ in one term and the valuation of the $p$-adic logarithm of the ratio of
+the other two.}\label{t:triples}
+\begin{tabular}{@{}llllllll@{}}
+\toprule
+triple $a+b=c$ & quality & $p^e$ & term & ratio & $v_p(\log_p(\text{ratio}))$ & primes in the ratio\\
+\midrule
+\tabletriples
+\bottomrule
+\end{tabular}
+\end{table}
+
+\tagH{} For example, in $2+3^{10}\cdot109=23^5$ the high power $3^{10}$ moves to the fact that the linear form
+$\log_32-5\log_323$ in the $3$-adic logarithms of $2$ and $23$ is unusually small $3$-adically (valuation $10$). The
+coefficients of the linear form are the exponents themselves ($1$ and $5$), which are small.
+
+\subsection{Initial \texorpdfstring{$\Theta$}{Theta}-data in Legendre form}
+\tagS{} In the application to ABC, IUT~IV uses the line of parameters of elliptic curves in Legendre form.
+\srcquote{\tagS{} \q{We shall regard $X$ as the `$\lambda$-line'}}{IUT~IV, Corollary~2.2 \cite{IUT4}}
+
+\begin{proposition}[The depth of the bridge on initial $\Theta$-data]\label{p:legendre}
+\tagP{}\known{Elementary.}
+Let $F$ be a number field, $\lambda\in F\setminus\{0,1\}$ and $E_\lambda:y^2=x(x-1)(x-\lambda)$. Let $v$ be a place of
+odd residue characteristic at which $E_\lambda$ has (potentially) multiplicative reduction. In each of the cases
+$\mathrm{ord}_v(\lambda)=e>0$, $\mathrm{ord}_v(1-\lambda)=e>0$ and $\mathrm{ord}_v(\lambda)=-e<0$, the element
+$1-\lambda$, $\lambda$, $\lambda/(\lambda-1)$ respectively is congruent to $1$ modulo the $e$-th power of the prime
+ideal of $v$, and $\mathrm{ord}_v(q)=2e$. Since these three cases are the only ones with multiplicative reduction at an
+odd place, at every odd bad place the depth of the complementary unit is $d_v=\mathrm{ord}_v(q)/2$.
+\end{proposition}
+\begin{proof}
+$j(E_\lambda)=2^8(\lambda^2-\lambda+1)^3/(\lambda^2(\lambda-1)^2)$, and at a place of multiplicative reduction
+$\mathrm{ord}_v(q)=-\mathrm{ord}_v(j)$. In the three cases one counts $\mathrm{ord}_v(j)=-2e$ directly ($v$ is odd, so
+$2^8$ is a unit). The congruences follow from $1-\lambda=1-(\text{a small element})$ and so on.
+\end{proof}
+
+\tagP{} The seven initial $\Theta$-data of this note are all in Legendre form over quadratic fields (the \texttt{data/}
+of \cite{TC}). D211 has $F=\Q(\sqrt5)$ and $\lambda=\pi^{29}$ ($\pi=16+3\sqrt5$, of norm $211$); at the place $211+$
+above $211$, $\mathrm{ord}(q)=\dordq$, that is, $1-\lambda\equiv1\pmod{\pi^{29}}$, of depth $\ddepth$. The norm of
+$1-\lambda$ is $4\cdot3^2\cdot5\cdot59\cdot80621$ times two primes of $21$ and $39$ digits, and at the odd places
+dividing these the depth is $1$ (the places above $2$ are not bad places).
+
+\subsection{Baker's method and Stewart--Yu}
+\tagX{} The smallness in Proposition~\ref{p:additive} is the starting point of the method of linear forms in
+logarithms. Lower bounds for how $p$-adically small a linear form $\Lambda=\sum n_q\log_pq$ can be (the $p$-adic version
+of Baker's method) bound the exponent $e$ from above in terms of the primes dividing $bc$ and the size of the exponents.
+Stewart--Yu used estimates of this kind to prove a weak form of abc \cite{StYu}. We have not checked their text; the
+shape of the conclusion is taken from the summary in \cite{Alien}.
+\srcquote{\tagS{} \q{Recall that in [StYu], an inequality is obtained which may be thought of as a sort of `weak version
+of the ABC Conjecture', i.e., which is, roughly speaking, weaker than the inequality of the usual ABC Conjecture in that
+it contains an undesired exponential operation `$\exp(-)$' in its upper bound.}}{Mochizuki, \emph{The mathematics
+of mutually alien copies}, \S3.7, (iii) \cite{Alien}}
+\tagS{} Of this exponential discrepancy Mochizuki writes that \q{This sort of deviation from the inequality of the usual
+ABC Conjecture is of interest from the point of view of the `vertical shift' discussed in \S3.6, (iv)}, and he
+identifies the vertical shift with a single iterate of the log-link in the log-theta-lattice (ibid.) \cite{Alien}.
+
+\tagH{} Here \textbf{the bridge is automatic}: $b/c\equiv1\pmod{p^e}$ follows from $a+b=c$ itself. Moreover, this bridge
+holds only on actual triples and distinguishes the curves (triples). What is weak is the \textbf{size}, which is
+determined by an estimate of transcendence theory, the lower bound for linear forms.
+
+\subsection{Pasten's arithmetic derivatives}
+\tagX{} Pasten wrote this shape in the language of derivatives \cite{Pa}. One takes the free module $\Omega$ generated
+by variables $\xi_p$, one for each prime, and the map $d:\Z\to\Omega$, $dn=n\sum_{p\mid n}(v_p(n)/p)\,\xi_p$, which
+satisfies the Leibniz rule. A group homomorphism $\psi:\Omega\to\Z$ with finite norm $\|\psi\|=\sup_p|\psi(\xi_p)|$ is
+called a derivation, and $d^\psi=\psi\circ d$. Let $\Tcal(a,b)$ be the group of derivations with $\psi(\xi_p)=0$ for
+$p\nmid abc$ and $d^\psi a+d^\psi b=d^\psi c$. If the Wronskian $W^\psi(a,b)=a\,d^\psi b-b\,d^\psi a$ is nonzero, $a$
+and $b$ are called $\psi$-independent.
+\begin{itemize}
+\item \tagX{} $\Tcal(a,b)$ has rank $r=\omega(abc)-1$, and by Siegel's lemma there are independent
+$\psi_1,\dots,\psi_r$ with $\prod_{i=1}^r\|\psi_i\|\le\frac{\omega(abc)}{2\log2}\,c\log c$ (Theorem~2.6). For at least
+one of them $a,b$ are $\psi$-independent, and this $\psi$ satisfies $\|\psi\|\le\frac{\omega(abc)}{2\log2}\,c\log c$
+(Lemma~3.5).
+\item \tagX{} If $a,b$ are $\psi$-independent, then $\frac{c}{\log c}\le\mathrm{rad}(abc)\cdot\frac{\|\psi\|}{\log2}$
+(Theorem~3.3; the same shape as Snyder's proof of Mason's theorem).
+\item \tagX{} The small derivatives conjecture (Conjecture~3.9): for some $0<\eta<1$, for all triples except finitely
+many and those of the form $(1,N,q)$, there is $\psi\in\Tcal(a,b)$ with $\|\psi\|<c^\eta$ that makes $a,b$
+$\psi$-independent. It is equivalent to the abc conjecture, with a correspondence of exponents (Lemma~4.1,
+Theorem~4.5, Corollary~4.6; precisely, it follows from the abc conjecture of Masser--Oesterl\'e and implies the abc
+conjecture of Oesterl\'e with some exponent).
+\end{itemize}
+\srcquote{\tagX{} \q{the arithmetic analogue of the Mason-Stothers theorem is the abc Conjecture, but the proof for
+polynomials heavily uses derivatives and it is unclear how to adapt it to $\Z$.} \q{In fact, we show that the existence
+of sufficiently small arithmetic derivatives in our sense is equivalent to the abc Conjecture.}}{Pasten, \S1.1 and
+abstract \cite{Pa}}
+\tagH{} In the language of 2-cells, $W^\psi(a,b)\ne0$ is the bridge and $\|\psi\|$ is the size. \textbf{The bridge
+exists unconditionally (Lemma~3.5), and bounding its size is equivalent to the abc conjecture.} Putting the size
+$\frac{\omega}{2\log2}c\log c$ of Lemma~3.5 into Theorem~3.3 gives only a trivial inequality. The derivative $d/dt$ of a
+function field lowers degrees by exactly $1$, that is, it has ``size $1$'', which is why the Mason--Stothers inequality
+is sharp.
+
+\subsection{Faltings's non-existence result and Dupuy--Zureick-Brown}
+\srcquote{\tagX{} \q{We show that an analog of the Kodaira--Spencer class for curves over number-fields cannot exist.}
+\q{if $S$ is the spectrum of the ring of integers of a number field then there are no derivations and hence the
+Kodaira--Spencer map doesn't make sense.} \q{By modifying his definitions slightly, we show that the Deligne--Illusie
+classes satisfy what could be considered an `arithmetic Kodaira--Spencer' compatibility condition.}}%
+{Dupuy--Zureick-Brown, introduction (the first sentence is quoted there as the abstract of Faltings's paper)
+\cite{DZB}}
+\tagH{} The linearity of the function field argument (Proposition~\ref{p:ks}~(i)) came from derivations over the base.
+The ring of integers of a number field has none. Pasten avoids this by building additive ``derivations'' only on a
+single equation $a+b=c$, and in exchange loses control of the size. The Deligne--Illusie classes give another way
+around from the side of Frobenius lifts. In the language of this note, both are other devices for building a bridge.
+
+\section{Number fields (2): global multiplicative subspaces and isogenies}
+\tagH{} There is a special case in which both a bridge and a size are available in number fields. \tagS{} It is the
+case in which the $\ell$-torsion points of the elliptic curve have a Galois-stable subspace of rank one (a global
+multiplicative subspace).
+\srcquote{\tagS{} \q{The quotient of the original given elliptic curve by such a global multiplicative subspace is an
+elliptic curve that is isogenous to the original elliptic curve. Moreover, the $q$-parameters of this isogenous
+elliptic curve are the $l$-th powers of the $q$-parameters of the original elliptic curve} \dots{} \q{On the
+other hand, in general, such a global multiplicative subspace does not exist, and the issue of somehow `simulating' the
+existence of a global multiplicative subspace is one fundamental theme of inter-universal Teichm\"uller theory.}}%
+{Mochizuki, \emph{The mathematics of mutually alien copies}, \S2.3 \cite{Alien}}
+\tagS{} According to the same place, the effect of the isogeny on differentials ($d\log(q)\mapsto l\cdot d\log(q)$)
+adds, at the level of heights, terms of the order of $\log(l)$, \q{thus giving rise to inequalities that are roughly of
+the form `$l\cdot h\le h+\log(l)$'}, and \q{this is precisely the approach that is taken to bounding heights in the
+`tiny' special case of the theory of [Falt1] that is given in the proof of [GenEll], Lemma 3.5} \cite{Alien} (there, [Falt1] is
+Faltings's paper of 1983 on finiteness theorems; see also \cite{GenEll}). \tagH{} Here the bridge is an algebraic map (compatible with the ring
+structure), the isogeny, and the size is of the order of $\log l$. \cite[\S3.1, (v)]{Alien} also applies $(2^{\KS})$ and
+$(4^{\KS})$ of the Kodaira--Spencer argument to this situation.
+\srcquote{\tagS{} \q{relative to the analogy with inter-universal Teichm\"uller theory, the situation that arises in
+$(2^{\KS})$, $(4^{\KS})$ corresponds to the [unusual!] situation in which there actually exists a `global
+multiplicative subspace'}}{ibid., \S3.1, (v) \cite{Alien}}
+\tagS{} Mochizuki's Galois-theoretic arithmetic Kodaira--Spencer morphism of 2000 can also be defined only where a
+multiplicative subspace exists.
+\srcquote{\tagS{} \q{Unfortunately, however, this Lagrangian arithmetic Kodaira-Spencer morphism, which is based on a
+certain `Lagrangian Galois action,' can only be defined when there is a natural (rank one) multiplicative subspace
+(i.e., `weight 1' subspace) of the Tate module of the elliptic curve in question.} \dots{} \q{Ultimately, however, one
+would like to carry out this construction for elliptic curves over number fields.}}{Mochizuki, \emph{The
+Galois-theoretic Kodaira-Spencer morphism of an elliptic curve}, \S0 \cite{GalKS}}
+\tagS{} IUT~I regards the whole theory as a solution of the problem of constructing such a subspace, and states the
+price of ``simulating'' it.
+\srcquote{\tagS{} \q{a sort of solution to the problem of constructing `global multiplicative subspaces' and `global
+canonical generators'} \dots{} \q{the nonexistence of which in a `naive, scheme-theoretic sense' constitutes the main
+obstruction to applying the theory of [HASurI], [HASurII] to diophantine geometry} \dots{} \q{one can, in some sense,
+`simulate' the notions of a `global multiplicative subspace' or a `global canonical generator'. On the other hand, such
+`simulated global objects' may only be achieved at the cost of `dismantling', or performing `surgery' on, the global
+prime structure of the number fields involved}}{IUT~I, introduction \cite{IUT1}}
+\srcquote{\tagS{} \q{this sort of operation of discarding certain of the primes of an NF can only be performed if one
+forgets the additive structure of an NF [i.e., since a sum of elements of an NF that are invertible at a given nonempty
+set of primes is no longer necessarily invertible at those primes!} \dots{} \q{and works only with multiplicative
+structures, e.g., with Frobenioids.}}{Mochizuki, \emph{The mathematics of mutually alien copies}, \S3.3, (iv)
+\cite{Alien}}
+\srcquote{\tagS{} \q{$l$ is a prime number $\ge5$ such that the image of the outer homomorphism
+$G_F\to\mathrm{GL}_2(\mathbb F_l)$ determined by the $l$-torsion points of $E_F$ contains the subgroup
+$\mathrm{SL}_2(\mathbb F_l)\subseteq\mathrm{GL}_2(\mathbb F_l)$}}{IUT~I, Definition~3.1, (c) \cite{IUT1}}
+
+\begin{proposition}[The isogeny bridge is excluded from the initial $\Theta$-data]\label{p:sl2}
+\tagP{}\known{Elementary.}
+If the condition of Definition~3.1~(c) holds, then $E_F[\ell]$ has no $G_F$-stable line. In particular, there is no
+global multiplicative subspace for this $\ell$.
+\end{proposition}
+\begin{proof}
+$\mathrm{SL}_2(\mathbb F_\ell)$ acts transitively on the nonzero vectors of $\mathbb F_\ell^2$, so it fixes no line.
+\end{proof}
+
+\tagH{} The curves on which the isogeny bridge acts are excluded from the domain of IUT by definition. IUT deliberately
+treats the general case, in which no bridge of this kind is available. Moreover, in the application to ABC, $\ell$ is
+taken of the order of the square root of the height (IUT~IV, Remark~2.2.4); even if a curve has an isogeny for some
+small $\ell$, that $\ell$ cannot be used.
+\srcquote{\tagS{} \q{The prime number $l$ is, ultimately, in the computations of Corollary 2.2, (ii) [cf.,
+especially, condition `(C1)'], taken to be roughly of the order of the square root of the height of the elliptic curve
+under consideration.}}{IUT~IV, Remark~2.2.4 \cite{IUT4}}
+
+\section{IUT: the blurring is small, but the bridge is not derived}
+
+\subsection{The statement of Theorem 3.11}
+\tagS{} Theorem~3.11 only fixes initial $\Theta$-data as in Definition~3.1 of IUT~I and adds no condition.
+Compatibility with the $\Theta$-link is defined as stability, equivariance and functoriality with respect to
+automorphisms.
+\srcquote{\tagS{} \q{Fix a collection of initial $\Theta$-data} \dots{} \q{as in [IUTchI], Definition 3.1.}
+\dots{} \q{whose associated `global degrees' may be computed by means of the log-volumes of (a)} \dots{} \q{in the sense
+that these constructions are stabilized/equivariant/functorial with respect to arbitrary automomorphisms}
+[\emph{sic}] \q{of the domain and codomain of these horizontal arrows of the LGP-Gaussian log-theta-lattice.}}%
+{IUT~III, Theorem~3.11, opening, (i)(c), (iii)(c) \cite{IUT3}}
+\tagP{} The statement of Theorem~3.11 does not contain the $q$-pilot. The $q$-pilot appears in Remark~3.11.1~(iii),
+immediately after, as the property (IPL) that the output is constructed in such a way that it is \q{linked/related}
+via full poly-isomorphisms to the $q$-pilot \cite{IUT3}.
+\srcquote{\tagS{} \q{This output data is constructed in such a way that it is linked/related, via full
+poly-isomorphisms of $\FV$-prime-strips induced by operations in the algorithm, to the input data prime-strip, i.e.,
+the `coric'/`fixed' $q$-pilot $\FV$-prime-strip, equipped with its rigidifying arithmetic holomorphic
+structure}}{IUT~III, Remark~3.11.1, (iii) (IPL) \cite{IUT3}}
+\tagP{} In Step~(xi-f) the inclusion enters in the form that the construction of the subset of possible log-volumes of
+the output \q{is subject to the condition that this construction of output data possibilities constitutes, in
+particular, a construction [perhaps only up to some sort of `approximation', as a result of various indeterminacies] of
+the pilot-object log-volume of the input data} \cite{IUT3}, namely of $-|\log(\qq)|$; it does not follow from the
+written properties (IPL, SHE, APT) (\cite[Theorem~5.7]{SL}, \cite{lana}, \cite{Hi}). On the other hand, the upper bound
+$E\le C$ on the blurring is given by the computation of IUT~IV (the proof of Theorem~1.10), and the dispute lies on the
+side of Step~(xi) of Corollary~3.12. \textbf{IUT has the size, but does not derive the bridge.}
+
+\subsection{Where the source says the \texorpdfstring{$\wedge$}{AND} is derived}
+\tagS{} The source itself names where the $\wedge$ of the comparison is derived from: the essentially tautological
+$\wedge$ coming from the fact that the two arithmetic holomorphic structures are distinguished ($(\mathrm
+c^{\mathrm{itw}})$) is mapped, through the subtle compatibility of the quotient operations of Remark~3.9.5~(viii), to
+the $\wedge$ on weak data that does not distinguish the two ($(\mathrm f^{\mathrm{itw}})$).
+\srcquote{\tagS{} \q{data that is `sufficiently weak' that one can no longer distinguish between $\Theta$-pilot
+and $q$-pilot objects.} \dots{} \q{it is essentially a tautological consequence of the fact that these two
+arithmetic holomorphic structures in the domain and codomain of the $\ThetaLGP$-link are distinguished from one
+another} \dots{} \q{where the second `$\Longrightarrow$' of the above display is purely formal} \dots{} \q{the
+`$\wedge$' of the above display may be regarded as the `image' of, hence, in particular, as a consequence of, the
+`$\wedge$' in the display of $(\mathrm c^{\mathrm{itw}})$, via the various (sub)quotient operations discussed in
+Remark 3.9.5, (viii), i.e., whose subtle compatibility properties allow one to conclude the `$\wedge$' of the above
+display from the `$\wedge$' in the display of $(\mathrm c^{\mathrm{itw}})$}}{IUT~III, Remark~3.12.2, (ii),
+$(\mathrm b^{\mathrm{itw}})$, $(\mathrm c^{\mathrm{itw}})$, $(\mathrm f^{\mathrm{itw}})$ \cite{IUT3}}
+\srcquote{\tagS{} \q{the nontriviality of these various (sub)quotient operations lies in the very delicate balance
+between minimizing the indeterminacies that arise from passing to a quotient, while at the same time ensuring
+compatibility with the structures that exist prior to formation of the quotient.} \dots{} \q{forms a closed loop, i.e.,
+up to the introduction of the `formal quotient indeterminacies' discussed in (cQ3), (cQ4)} \dots{} \q{a non-closed loop
+would yield a situation from which no nontrivial conclusions may be drawn} \dots{} \q{passing to log-volumes [i.e.,
+(sQ5)] amounts precisely to forgetting the local Galois groups and Frobenius-like units}}{IUT~III, Remark~3.9.5,
+(viii), (ix) \cite{IUT3}}
+\tagH{} The closed loop closes at the level of structures that include the units and the local Galois groups of the
+prime-strips, before the passage (sQ5) to log-volumes. In the language of this note, the two sides of the ``delicate
+balance'' (keeping the indeterminacies small, and keeping compatibility with the original structures) correspond to the
+size ($E\le C$) and the bridge (the inclusion). The source says that this balance is maintained, and the written text
+states it at the level of structures.
+
+\subsection{Where elements specific to the curve enter}
+\tagH{} Information specific to the curve enters the construction as the ``critical points'' of $\kappa$-coric
+functions. \tagS{} A critical point is a point lying over a closed point of the compactification $|C_L|^{\mathrm{cpt}}$
+of the coarse space $|C_L|$ that arises from a $2$-torsion point of $E_F$; those not over the cusp are called strictly
+critical (for the Legendre form, those over $x=0,1,\lambda$ and the cusp $\infty$).
+\srcquote{\tagS{} \q{We shall refer to a closed point of the proper smooth curve determined by some finite subextension}
+\dots{} \q{as a critical point if it maps to a closed point of the [proper smooth] compactification} \dots{} \q{that
+arises from one of the 2-torsion points of $E_F$} \dots{} \q{$f$ restricts to a root of unity at every strictly critical
+point of $|C_L|^{\mathrm{cpt}}$} \dots{} \q{restriction to the strictly critical points determines a sort of canonical
+splitting up to roots of unity} \dots{} \q{of the set of nonzero constant [i.e., $L$-] multiples of $\kappa$-coric
+functions into a direct product, up to roots of unity, of the set of $\kappa$-coric functions and the set of nonzero
+elements of $L$} \dots{} \q{since $|C_L|^{\mathrm{cpt}}$ has precisely 4 critical points}}{IUT~I, Remark~3.1.7, (i),
+(ii) \cite{IUT1}}
+\tagS{} Restricting the Kummer classes of these functions to the decomposition groups of non-critical points, one
+recovers the number field $F_{\mathrm{mod}}$ as a field (IUT~I, Example~5.1~(v): \q{together with the field structure
+--- and hence, in particular, the topologies determined by the valuations ---} on the union of the monoids with $\{0\}$)
+\cite{IUT1}. IUT~II, Corollary~4.8 states the compatibility of the isomorphisms of this Kummer theory with the labels,
+the $\mathbb F_l^{\divideontimes}$-symmetry and localization, and its proof is \q{The various assertions of Corollary 4.8
+follow immediately from the definitions and the references quoted in the statements of these assertions.}
+\cite{IUT2}. In Theorem~3.11~(i)(c), the copies of the number field are placed in the product of log-shells, and their
+role is to compute global degrees by log-volumes (the quotation in \S6.1).
+
+\begin{observation}[Elements specific to the curve enter the construction, not the comparison]\label{o:curve}
+\tagH{}\known{A reading on the statements of Theorem~3.11, IUT~II Corollary~4.8, IUT~I Example~5.1 and Remark~3.1.7.}
+$\lambda$ enters the construction as a tool for recovering the number field $F_{\mathrm{mod}}$ rigidly (the critical
+points of $\kappa$-coric functions, the canonical splitting of the constants). The only global information that enters
+the comparison (the inequality between log-volumes) is the global degree of arithmetic line bundles of the number field,
+that is, the sum of local log-volumes (the product formula). The product formula holds for every element and so does
+not distinguish curves. No statement in these theorems makes the additive relation $\lambda+(1-\lambda)=1$ act on the
+comparison as a quantity.
+\end{observation}
+\tagH{} Applying the product formula to $j(E)$ gives only an identity (the contribution of $q$ at the bad places equals
+the contribution of the zeros of $j$ plus the archimedean contribution), not an upper bound. To make it an upper bound
+one needs to know how the additive connection acts as a quantity, and that is the abc conjecture itself (\S4).
+
+\section{An additive bridge does not cross the \texorpdfstring{$\Theta$}{Theta}-link}
+
+\subsection{What the \texorpdfstring{$\Theta$}{Theta}-link carries}
+\tagS{} The $\Theta$-link carries the unit portions by full poly-isomorphisms, and the categories glued together are
+multiplicative.
+\srcquote{\tagS{} \q{the full poly-isomorphism of $\FU$-prime-strips} \dots{} \q{it is of crucial importance that
+the categories that are glued together via the $\ThetaLGP$-link be purely multiplicative in nature}}{IUT~III,
+Theorem~3.11, (iii)(a), and Remark~3.9.5, (x) \cite{IUT3}}
+
+\begin{proposition}[What a full poly-isomorphism carries]\label{p:fullpoly}
+\tagP{}\known{Elementary.}
+Let $X,Y$ be objects of a category, $\Phi=\mathrm{Isom}(X,Y)$ the full poly-isomorphism and $T$ a functor that assigns
+a set to each object. For $x\in T(X)$, the set $\{T(\varphi)(x)\mid\varphi\in\Phi\}$ obtained by carrying $x$ along
+$\Phi$ is one $\mathrm{Aut}(Y)$-orbit. It is a single point if and only if $x$ is fixed by $\mathrm{Aut}(X)$. For a
+property $P$ invariant under isomorphisms, $P(X)\iff P(Y)$.
+\end{proposition}
+\begin{proof}
+For $\varphi,\varphi'\in\Phi$, $\varphi'=(\varphi'\varphi^{-1})\varphi$, and $\varphi'\varphi^{-1}$ runs over all of
+$\mathrm{Aut}(Y)$. The last assertion is the definition.
+\end{proof}
+
+\tagH{} The material of an additive bridge consists of the units $u_v=(1-\lambda)_v$ (or their logarithms) and of the
+consistency that ``they all come, at every bad place, from one and the same global element''. The former are specific
+elements of the unit portion, and, for instance, the automorphisms (Ism) of (Ind2) move $\log u_v$ to other elements. By
+Proposition~\ref{p:fullpoly}, therefore, what the $\Theta$-link can carry is a property of the type ``there is a unit of
+depth $d_v$'', not the element $1-\lambda$. The latter consistency is not contained in the data of the local
+$\FU$-prime-strips, and the global portion only has the realified degrees. The source itself writes that these data
+are \q{`sufficiently weak' that one can no longer distinguish between $\Theta$-pilot and $q$-pilot objects}
+(\S6.2) \cite{IUT3}.
+
+\subsection{The dilemma at the level of units}
+\begin{proposition}[Keeping an additive bridge on both sides of the $\Theta$-link]\label{p:gap}
+\tagP{}\known{Elementary. Numbers: \texttt{scripts/bridge\_lib.py}.}
+Let $\Vbad$ be the same set of bad places as in \cite{TC} (the places with $\mathrm{ord}_v(q)>0$ that are not above $2$,
+$3$, $5$ or $\ell$ and at which $\mathrm{ord}_v(q)$ is not divisible by $\ell$), and let $d_v=\mathrm{ord}_v(q)/2$ be
+the depth of the additive bridge at $v\in\Vbad$ (Proposition~\ref{p:legendre}). The $\Theta$-link identifies the
+$\Theta$-pilot $\qq^{j^2}$ of label $j$ with the $q$-pilot $\qq$ on the other side, so that, on taking $2\ell$-th
+powers, $q^{j^2}$ on this side corresponds to the $q$ of the curve on the other side. Suppose that (a) the units of a
+bridge of depth $d_v$ are carried across the $\Theta$-link, (b) the carried units are required to be an additive bridge
+on the other side as well, that is, units of depth $\frac12\mathrm{ord}_v(q^{j^2})=j^2d_v$ for the $q$ of the other side
+(which corresponds to $q^{j^2}$ on this side), and (c) the operation of carrying changes the depth by at most
+$\varepsilon_{v,j}$ levels. Then $(j^2-1)\,d_v\le\varepsilon_{v,j}$, and averaging over the labels and summing with the
+weights $f_v\log p_v/[F:\Q]$ gives
+\[\frac{k-1}{2}\cdot\frac{1}{[F:\Q]}\sum_{v\in\Vbad}\mathrm{ord}_v(q)\,f_v\log p_v
+\;\le\;\frac{1}{[F:\Q]}\sum_{v\in\Vbad}\bar\varepsilon_v\,f_v\log p_v,\]
+where $\bar\varepsilon_v$ is the average of $\varepsilon_{v,j}$ over the labels. The left-hand side is exactly half of
+the discrepancy at the level of value groups (the average difference between $q$ and $q^{j^2}$) measured with the same
+weights. In the normalization of Corollary~3.12,
+\[Q=|\log\qq|=\frac{1}{2\ell[F:\Q]}\sum_{v\in\Vbad}\mathrm{ord}_v(q)f_v\log p_v,\]
+the left-hand side is $\ell\,(k-1)Q$, that is, $\ell$ times the wall $(k-1)Q$.
+\end{proposition}
+\begin{proof}
+By (c) the depth of the carried units differs from $d_v$ by at most $\varepsilon_{v,j}$, and by (b) it must be
+$j^2d_v$, so $(j^2-1)d_v\le\varepsilon_{v,j}$. The average of $j^2$ over the labels $j=1,\dots,\ell^*$ is $k$, so the
+average of $j^2-1$ is $k-1$. Insert $d_v=\frac12\mathrm{ord}_v(q)$ and sum. The last equality follows from the formula
+for $Q$.
+\end{proof}
+
+\tagP{} A unit multiple coming from (Ind2) does not change the depth ($\varepsilon_{v,j}=0$). Hence keeping (a) and (b)
+leads to a contradiction on every datum with a bad place. This happens on actual initial $\Theta$-data
+(Table~\ref{t:data}).
+
+\begin{table}[ht]\centering\footnotesize\setlength{\tabcolsep}{4.5pt}
+\caption{The depth of the additive bridge, and the discrepancy when one tries to keep it on both sides.}\label{t:data}
+\begin{tabular}{@{}lrlrrrrrr@{}}
+\toprule
+datum & $\ell$ & \shortstack[l]{place of the\\largest bridge} & $\mathrm{ord}(q)$ & \shortstack[r]{depth\\$d$} &
+\shortstack[r]{gap at\\$j=2$} & \shortstack[r]{gap at\\$j=\ell^*$} & \shortstack[r]{sum of\\gaps (LHS)} &
+\shortstack[r]{wall\\$(k-1)Q$}\\
+\midrule
+\tabledata
+\bottomrule
+\end{tabular}
+\par\smallskip\parbox{0.95\textwidth}{\footnotesize ``Place of the largest bridge'': the place of $\Vbad$ at which
+$d_vf_v\log p_v$ is largest. The gaps are numbers of levels (differences of depth). The left-hand side and the wall are
+in the normalization of Proposition~\ref{p:gap}; their ratio is exactly $\ell$ on every datum. $^{\dagger}$D2357 does
+not count the places above an unfactored cofactor, so it is conditional (on this datum the wall exceeds $C$
+\cite{TC}).}
+\end{table}
+
+\tagH{} Hence there are only two ways to repair IUT by bringing in an additive bridge from outside. If the bridge is
+kept on both sides, the contradiction of Scholze--Stix appears at the level of units. If it is carried without being
+kept, the information of the bridge (which element, and its global consistency) is lost. If one takes the middle way and
+absorbs the discrepancy by blurring, the blurring needed is $\ell$ times the wall and grows with $Q$. The upper bound $C$
+of IUT~IV does not contain this blurring, so the comparison becomes trivial and says nothing about the height. This is
+the same shape as Scholze--Stix's blurring \q{rendering the inequality thus obtained useless} \cite[\S2.2]{SS}.
+
+\subsection{In the language of HoTT}
+\tagH{} In the language of \cite{SL}: what can be carried along a path of identification is a property (a
+proposition), and the simplification of Scholze--Stix is always correct for propositions, by path induction. If a
+structure (a chosen element) is carried along an identification consisting of ``all isomorphisms'', only an orbit of
+the automorphism group is determined (Proposition~\ref{p:fullpoly}). An additive bridge is information on the side of
+structure, so it cannot become a lax 2-cell that crosses the $\Theta$-link. In function fields the Kodaira--Spencer
+morphism could be a bridge because the comparison was made by a connection over a single base $S$, that is, by a
+specific isomorphism $p_1^*\Fcal\simeq p_2^*\Fcal$, compatible with the ring structure (Proposition~\ref{p:ks}~(i)).
+Mochizuki also describes the incompatibility of the $\Theta$-link with arithmetic degrees as the monodromy of a loop.
+\srcquote{\tagS{} \q{Alternatively, one may understand the incompatibility of the $\Theta$-link (i.e., a horizontal
+arrow in the log-theta-lattice) with arithmetic degrees (cf. (AD)) as a sort of nontrivial monodromy around the loop
+(i.e., a special case of `$\Gamma_{\mathrm{loop}}$'!) that arises as soon as one identifies the domain and codomain
+of the $\Theta$-link --- an incompatibility, i.e., `contradiction', that is in fact avoided in IUTch (cf. (IUAD))
+precisely by distinguishing the (ring structures in the) domain and codomain of the $\Theta$-link, i.e.,
+by working with `$\Gamma_{\mathrm{seg}}$', and then applying the multiradial algorithms of IUTch to obtain an
+alternative way to compute this nontrivial monodromy (cf. (GIUT)).}}{Mochizuki, \emph{Report on discussions \dots{}
+March 15--20, 2018}, \S14, (LbEx1) \cite{R18}}
+
+\subsection{What HoTT contributed}
+\tagH{} Every proposition of this note can be proved without HoTT, and we wrote them in ordinary mathematics.
+Proposition~\ref{p:fullpoly} is an elementary lemma of category theory, and Mochizuki's full poly-isomorphisms and
+indeterminacies are this idea from the start. The language of HoTT was nevertheless useful, because it puts the
+identification, down to ``along which path'', into the types. In HoTT an identification is itself a datum, a path, and
+a proposition cannot be written down without naming the path. From an identification that does not choose a path (all
+isomorphisms), only properties can be extracted. Applying this distinction, one sees at once that an additive bridge is
+information on the side of structure and does not cross the $\Theta$-link. Since the dispute over IUT is about how
+mutually alien copies are identified, a type discipline of exactly this kind applies. \cite[\S1.1]{SL} gave three
+reasons for choosing HoTT: Mochizuki himself explains the dispute by segment, loop, universal cover and monodromy; an
+identification is a path, a first-class object; and univalence decides, as a theorem, when identifying isomorphic
+objects is harmless. This note is one example in which those reasons applied.
+
+\tagH{} There are limits as well. We used only the low levels of HoTT (propositions, sets, groupoids), at which the
+statements of HoTT translate directly into the language of orbits, torsors and groupoids. The advantage of HoTT is that
+it makes the discipline of groupoids the default and enforces it, not that it can say what other languages cannot. The
+claims at the level of HoTT are stated on paper and have not been checked by machine (the verification in Lean in
+\cite{SL} covers only the quantitative core, and the equality of Lean is incompatible with univalence). This is one
+case, and a case favourable to HoTT, since identification itself is what is disputed. One can say that HoTT has
+produced new mathematics when a theorem comes out that would have been hard to find without it; for instance, Anel,
+Biedermann, Finster and Joyal generalized the Blakers--Massey theorem to an arbitrary higher topos and an arbitrary
+modality and write that \q{Our proof is inspired by the one given in Homotopy Type Theory} \cite{ABFJ}. This note
+contains no result of that kind.
+
+\section{The dichotomy, and what a repair needs}
+
+\subsection{Table}
+\begin{table}[ht]\centering\small
+\caption{Bridge and size (the reading of this note).}\label{t:dichotomy}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}X
+>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+situation & bridge (that a 2-cell exists) & size (blurring) & shape of the conclusion\\
+\midrule
+function fields (Kodaira--Spencer) & automatic from the structure ($\kappa$ is a linear morphism) &
+$\deg\omega(\log)$, determined by the curve alone & $2\deg\omega_E\le\deg\omega(\log)$\\
+curves over number fields with a global multiplicative subspace & the isogeny (an algebraic map) & of the order of
+$\log l$ & of the form $l\cdot h\le h+\log l$ (\cite[\S2.3]{Alien}); excluded in IUT by Definition~3.1~(c)
+(Proposition~\ref{p:sl2})\\
+Baker's method, Stewart--Yu & automatic from the addition (Proposition~\ref{p:additive}) & determined by the lower
+bound for linear forms in logarithms, large & a weak abc (a shift in the exponent)\\
+Pasten's arithmetic derivatives & exists unconditionally (Lemma~3.5) & $\|\psi\|$; small $\iff$ abc (Corollary~4.6) &
+$c/\log c\le\mathrm{rad}(abc)\|\psi\|/\log2$\\
+IUT (Step (xi) of Corollary~3.12) & not derived in the written argument (\S6) & small, $E\le C$ (IUT~IV) &
+$(k-1)Q\le E$\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\tagH{} In one sentence, the reading of this note is the following. \textbf{IUT gave up the ring structure (in
+particular, the addition) in order to circumvent the absence of a global multiplicative subspace, but that ring
+structure was precisely the material of a Kodaira--Spencer-type bridge.} The bridge of function fields came from a
+specific isomorphism over a single base, compatible with the ring structure (Proposition~\ref{p:ks}~(i), \S7.3). The
+introduction of IUT~I names, as the price of simulating a global multiplicative subspace, the \q{dismantling} of the
+global prime structure of the number fields involved \cite{IUT1}, and according to \cite[\S3.3, (iv)]{Alien} the operation
+of discarding primes can only be performed if one forgets the additive structure (the quotations in \S5). The curves on
+which the isogeny bridge acts are excluded by Definition~3.1~(c) (Proposition~\ref{p:sl2}), and an additive bridge does
+not cross the $\Theta$-link, which glues multiplicative data by full poly-isomorphisms (Propositions~\ref{p:fullpoly}
+and~\ref{p:gap}). What remains is the inner bridge of \S8.2. This is a reading, not a theorem.
+
+\subsection{What a repair needs}
+\tagH{} To complete IUT as an argument of Kodaira--Spencer type, one needs the following.
+\begin{itemize}
+\item \textbf{A bridge built inside the multiradial representation.} The way of bringing in an additive relation from
+outside is closed (Propositions~\ref{p:fullpoly} and~\ref{p:gap}). The isogeny bridge is excluded by Definition~3.1~(c)
+(Proposition~\ref{p:sl2}).
+\item \textbf{That its blurring does not grow with $q$} ($E\le C$), uniformly for all initial $\Theta$-data.
+\end{itemize}
+\tagH{} For a single datum this claim is equivalent to the height inequality (\cite[Theorem~5.3]{SL}), and if it holds
+for all genuine initial $\Theta$-data, the abc conjecture follows (\lean{classicalABC\_of\_forall\_xi} of \cite{lana};
+for arithmetic derivatives, the equivalence of the existence of small ones with the abc conjecture is
+\cite[Corollary~4.6]{Pa}). The language of HoTT can state the required 2-cell precisely, but cannot construct it
+(\cite[Theorem~5.7]{SL}). That is, the repair amounts not to an adjustment of IUT but to finding a new proof of the
+height inequality. One form of it would be to show the (FrgInv) of the source, \q{the operation of forgetting discussed
+in (MnAlyLb) can in fact, if one allows for suitable indeterminacies, be inverted} \cite[\S3.11]{EssLgc}, at the level
+of values rather than of structures, with an indeterminacy independent of $q$.
+
+\tagS{} Anabelian reconstruction itself constructs a number field group-theoretically from a fundamental group.
+Theorem~1.9 of \cite{AbsTopIII} reconstructs, for a curve over a sub-$p$-adic field $k$, the NF-portion of the function
+field from the extension $1\to\Delta_X\to\Pi_X\to G_k\to1$. Remark~1.9.4 says that, for a local field $k$ (an MLF), of
+the two dimensions of $G_k$ the one represented by the inertia group is not rigid, but that both dimensions are
+rigidified once coupled with $\Delta_X$.
+\srcquote{\tagS{} \q{there exists a functorial `group-theoretic' algorithm} \dots{} \q{for reconstructing the
+`NF-portion of the function field' of $X$ from the extension of profinite groups $1\to\Delta_X\to\Pi_X\to
+G_k\to1$} \dots{} \q{On the other hand, the dimension of $G_k$ represented by the inertia group in $I_k\subseteq G_k$
+[which, as is well-known, is of cohomological dimension 1] is `far from rigid'} \dots{} \q{The `group-theoretic'
+algorithm of Theorem 1.9 shows that the condition of being `coupled with $\Delta_X$' [i.e., via the extension
+determined by $\Pi_X$] has the effect of rigidifying both of the 2 dimensions of $G_k$}}{Mochizuki, \emph{Topics in
+absolute anabelian geometry III}, Theorem~1.9 and Remark~1.9.4 \cite{AbsTopIII}}
+\tagH{} This reconstruction works inside one theater (where $\Pi_X$ is available) and works in the same way for every
+curve. lana-agents/iut contains a formalization in Lean of the steps of this reconstruction that recover the additive
+structure (Uchida's lemma, Proposition~1.3, and Theorem~1.9~(e); \lean{Iut/Reconstruction/}) \cite{lana}. Across the
+$\Theta$-link, only the Galois group $G_v$ and the unit portions (not $\Pi_v$) are carried locally, and only the
+realified degrees globally; so the ``coupling'' of Remark~1.9.4 is not available, and the addition returns only up to
+the indeterminacy of (Ind2), as we read it. What a repair needs is a \textbf{quantitative version} of this reconstruction
+(a claim, measured by log-volumes, of how precisely the addition returns after crossing the $\Theta$-link). It is not
+written.
+
+\subsection{Rescue in a weak sense}
+\begin{itemize}
+\item \tagH{} \textbf{A weak Corollary~3.12 with a large blurring.} If one allows the blurring of the size of Pasten or
+Stewart--Yu, a weak form of the comparison holds. But that is only a restatement of existing theorems.
+\item \tagH{} \textbf{Curves with a global multiplicative subspace.} Isogenies give a bridge. But, as
+Proposition~\ref{p:sl2} shows, these curves lie outside the domain of IUT.
+\item \tagH{} \textbf{Function fields.} The Kodaira--Spencer morphism gives a bridge (Proposition~\ref{p:ks}). This is
+classical, and Mochizuki himself writes it as the limiting case $N\to\infty$ of the argument (of the type of IUT) that
+multiplies the height by $N$ (\cite[\S3.1, (v)]{Alien}).
+\end{itemize}
+\tagH{} None of these adds new arithmetic. As another kind of rescue, there is the view that Corollary~3.12 is not
+``nonsense'' but an exact proposition, a lax 2-cell, whose truth is merely unresolved (\cite{SL}).
+
+\section{Limitations}
+\begin{itemize}
+\item \textbf{An essay that proposes a viewpoint.} Proposition~\ref{p:ks} is classical, and
+Propositions~\ref{p:additive}, \ref{p:legendre}, \ref{p:sl2}, \ref{p:fullpoly} and~\ref{p:gap} are elementary; there is
+no new theorem. The dichotomy of Table~\ref{t:dichotomy} is an analogy, not a theorem. The correspondence between
+function fields and number fields follows Mochizuki's analogy \cite{Alien} and the analogy of Vojta and Pasten
+\cite{Pa}.
+\item \textbf{Section~7 is about bridges brought in from outside.} It is a check along the definition of the
+$\Theta$-link (full poly-isomorphisms, multiplicative gluing); it does not show that there is no construction that
+carries global consistency in another form inside the multiradial representation. If there were one, it would be the
+repair of \S8.2.
+\item \textbf{Condition (b) of Proposition~\ref{p:gap} is not something IUT requires.} IUT places no additive relation
+on the $\Theta$ side. What Proposition~\ref{p:gap} shows is only that a repair bringing in an additive relation from
+outside is either contradictory or needs a blurring that grows with $Q$.
+\item \textbf{Observation~\ref{o:curve} is a reading on the statements of theorems.} We read the statements of
+Theorem~3.11, IUT~II Corollary~4.8, IUT~I Example~5.1 and Remark~3.1.7, but not all of the proofs and the other remarks.
+\item \textbf{Literature.} We have not read the papers of Faltings, Stewart--Yu and Kim, \cite{GenEll}, or the text of
+Baker's method themselves (we rely on the introduction of Dupuy--Zureick-Brown and on the bibliographies and summaries
+of Pasten and \cite{Alien}). Joshi's Construction~V is stated to be in preparation, and we have not confirmed its
+existence or contents. The work of Anel--Biedermann--Finster--Joyal is cited from its abstract.
+\item \textbf{Data:} four abc triples and seven initial $\Theta$-data; D2357 is conditional. Proposition~\ref{p:legendre}
+is a statement about places of multiplicative reduction, and at all places counted $\mathrm{ord}(q)$ was even (checked by
+the script).
+\item \textbf{The part on HoTT} (\S7.3, \S7.4) depends on the framework and reading of \cite{SL}; the assessment of
+\S7.4 is about this one case.
+\item No claim is made about whether IUT is correct.
+\end{itemize}
+
+\section{Checks and reproduction}
+\begin{itemize}
+\item \texttt{scripts/bridge\_lib.py} computes Table~\ref{t:triples} (four triples: the valuation of the $p$-adic
+logarithm, computed from the series, agrees with the exponent) and Table~\ref{t:data} (seven data: $\mathrm{ord}(q)$ is
+even, the gaps, and the label-averaged sum is $\ell$ times the wall). The values of the wall and of $Q$ agree with the
+output of the programs of \cite{TC}. Its output is \texttt{outputs/bridge.txt}
+(\texttt{python3 scripts/bridge\_lib.py > outputs/bridge.txt}); \texttt{paper/make\_generated.py} writes the tables and
+the numbers of the text from the same functions.
+\item Data: \texttt{data/D*.txt}, the same files as in \texttt{data/} of \cite{TC} (version 1.0.0).
+\item Quotations are taken from the English originals (the text layers of the PDFs, with mathematical symbols and
+decorations checked on the page images).
+\end{itemize}
+
+\section*{Use of generative AI}
+The question of this note --- whether the number-field version of the Kodaira--Spencer argument, which gives the
+height inequality for function fields, can be realized as a quantity on the construction of IUT --- and the decision to
+write it up as a separate note arose in the author's discussions with generative AI tools; the author judged them
+important and decided to make them the subject of this note. Generative AI tools (large language models) were used,
+under the author's direction, in the computations, in checking the literature and in the writing. The author takes full
+responsibility for the contents of this note.
+
+\begin{thebibliography}{AbsTopIII}\raggedright
+\bibitem[ABFJ]{ABFJ}
+Mathieu Anel, Georg Biedermann, Eric Finster and Andr\'e Joyal, \emph{A generalized {B}lakers--{M}assey theorem},
+J. Topol. \textbf{13} (2020), no.~4, 1521--1553, \href{https://doi.org/10.1112/topo.12163}{doi:10.1112/topo.12163};
+arXiv:1703.09050.
+
+\bibitem[AbsTopIII]{AbsTopIII}
+Shinichi Mochizuki, \emph{Topics in absolute anabelian geometry {III}: global reconstruction algorithms}, J. Math. Sci.
+Univ. Tokyo \textbf{22} (2015), 939--1156.
+
+\bibitem[Alien]{Alien}
+Shinichi Mochizuki, \emph{The mathematics of mutually alien copies: from {G}aussian integrals to inter-universal
+{T}eichm\"uller theory}, in: Inter-universal Teichm\"uller Theory Summit 2016, RIMS K\^oky\^uroku Bessatsu \textbf{B84}
+(2021), 23--192.
+
+\bibitem[DZB]{DZB}
+Taylor Dupuy and David Zureick-Brown, \emph{Deligne--{I}llusie classes as arithmetic {K}odaira--{S}pencer classes},
+J. Th\'eor. Nombres Bordeaux \textbf{31} (2019), no.~2, 371--383,
+\href{https://doi.org/10.5802/jtnb.1086}{doi:10.5802/jtnb.1086}; arXiv:1804.00228.
+
+\bibitem[EssLgc]{EssLgc}
+Shinichi Mochizuki, \emph{On the essential logical structure of inter-universal {T}eichm\"uller theory in terms of
+logical {AND} ``$\wedge$''/logical {OR} ``$\vee$'' relations: report on the occasion of the publication of the four main
+papers on inter-universal {T}eichm\"uller theory}, RIMS Preprint 1968, November 2022; version of March 2024.
+
+\bibitem[Fal]{Fal}
+Gerd Faltings, \emph{Does there exist an arithmetic {K}odaira--{S}pencer class?}, in: Algebraic geometry: Hirzebruch 70
+(Warsaw, 1998), Contemp. Math. \textbf{241}, Amer. Math. Soc., 1999, 141--146,
+\href{https://doi.org/10.1090/conm/241/03633}{doi:10.1090/conm/241/03633}.
+
+\bibitem[Fe]{Fe}
+Ivan Fesenko, \emph{Arithmetic deformation theory via arithmetic fundamental groups and nonarchimedean
+theta-functions, notes on the work of {S}hinichi {M}ochizuki}, Eur. J. Math. \textbf{1} (2015), no.~3, 405--440,
+\href{https://doi.org/10.1007/s40879-015-0066-0}{doi:10.1007/s40879-015-0066-0}.
+
+\bibitem[GalKS]{GalKS}
+Shinichi Mochizuki, \emph{The {G}alois-theoretic {K}odaira--{S}pencer morphism of an elliptic curve}, preprint, July
+2000.
+
+\bibitem[GenEll]{GenEll}
+Shinichi Mochizuki, \emph{Arithmetic elliptic curves in general position}, Math. J. Okayama Univ. \textbf{52} (2010),
+1--28.
+
+\bibitem[HA]{HA}
+Shinichi Mochizuki, \emph{The {H}odge--{A}rakelov theory of elliptic curves: global discretization of local {H}odge
+theories}, preprint, September 1999.
+
+\bibitem[Hi]{Hi}
+Joaquim Reizi Higuchi, \emph{A formal negative result for the passage from {S}tep (xi-e) to {S}tep (xi-f) in {IUT}
+{III}}, preprint, 31 March 2026.
+
+\bibitem[IUT1]{IUT1}
+Shinichi Mochizuki, \emph{Inter-universal {T}eichm\"uller theory {I}: construction of {H}odge theaters}, Publ. Res.
+Inst. Math. Sci. \textbf{57} (2021), 3--207, \href{https://doi.org/10.4171/PRIMS/57-1-1}{doi:10.4171/PRIMS/57-1-1}.
+
+\bibitem[IUT2]{IUT2}
+Shinichi Mochizuki, \emph{Inter-universal {T}eichm\"uller theory {II}: {H}odge--{A}rakelov-theoretic evaluation}, Publ.
+Res. Inst. Math. Sci. \textbf{57} (2021), 209--401, \href{https://doi.org/10.4171/PRIMS/57-1-2}{doi:10.4171/PRIMS/57-1-2}.
+
+\bibitem[IUT3]{IUT3}
+Shinichi Mochizuki, \emph{Inter-universal {T}eichm\"uller theory {III}: canonical splittings of the log-theta-lattice},
+Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 403--626,
+\href{https://doi.org/10.4171/PRIMS/57-1-3}{doi:10.4171/PRIMS/57-1-3}.
+
+\bibitem[IUT4]{IUT4}
+Shinichi Mochizuki, \emph{Inter-universal {T}eichm\"uller theory {IV}: log-volume computations and set-theoretic
+foundations}, Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 627--723,
+\href{https://doi.org/10.4171/PRIMS/57-1-4}{doi:10.4171/PRIMS/57-1-4}.
+
+\bibitem[JoQA]{JoQA}
+Kirti Joshi, \emph{Questions and answers regarding my preprints on Arithmetic Teichmuller Spaces}, 1 April 2024
+(author's web page), Question~2.14.
+
+\bibitem[Kim]{Kim}
+Minhyong Kim, \emph{Geometric height inequalities and the {K}odaira--{S}pencer map}, Compositio Math. \textbf{105}
+(1997), 43--54, \href{https://doi.org/10.1023/A:1017995416618}{doi:10.1023/A:1017995416618}; Erratum, ibid. \textbf{121}
+(2000), 219.
+
+\bibitem[lana]{lana}
+lana-agents, \emph{iut}: a Lean~4 formalization of inter-universal {T}eichm\"uller theory, GitHub repository,
+\url{https://github.com/lana-agents/iut}, commit \texttt{553076a} (3 November 2026). Files cited:
+\lean{Iut/\allowbreak{}WallEquiv/\allowbreak{}NonDerivable.lean},
+\lean{Iut/\allowbreak{}Reconstruction/\allowbreak{}Uchida/\allowbreak{}FunctionField.lean},
+\lean{Iut/\allowbreak{}Reconstruction/\allowbreak{}Thm19/\allowbreak{}NFAdditive.lean}.
+
+\bibitem[Pa]{Pa}
+Hector Pasten, \emph{Arithmetic derivatives through geometry of numbers}, Canad. Math. Bull. \textbf{65} (2022), no.~4,
+906--923, \href{https://doi.org/10.4153/S0008439521000990}{doi:10.4153/S0008439521000990}; arXiv:2106.16165v3.
+
+\bibitem[R18]{R18}
+Shinichi Mochizuki, \emph{Report on discussions, held during the period March 15--20, 2018, concerning inter-universal
+{T}eichm\"uller theory ({IUTch})}, February 2019.
+
+\bibitem[RF]{RF}
+Toshihisa Urahigashi, \emph{No reading avoids the height inequality: 36 readings of Corollary 3.12 and the conservation
+of the height load}, version 1.0.0, Zenodo, 2026,
+\href{https://doi.org/10.5281/zenodo.23965952}{doi:10.5281/zenodo.23965952}.
+
+\bibitem[Roots]{Roots}
+Shinichi Mochizuki, \emph{Classical roots of inter-universal {T}eichm\"uller theory}, slides, November 2020, 27 pp.,
+\url{https://www.kurims.kyoto-u.ac.jp/~motizuki/2020-11\%20Classical\%20roots\%20of\%20IUT.pdf}.
+
+\bibitem[SL]{SL}
+Toshihisa Urahigashi, \emph{Segment or loop? A homotopy-type-theoretic overview of the dispute over Corollary 3.12 of
+inter-universal {T}eichm\"uller theory}, version 1.1.0, Zenodo, 2026,
+\href{https://doi.org/10.5281/zenodo.23933109}{doi:10.5281/zenodo.23933109}.
+
+\bibitem[SS]{SS}
+Peter Scholze and Jakob Stix, \emph{Why abc is still a conjecture}, manuscript, 2018.
+
+\bibitem[StYu]{StYu}
+C. L. Stewart and Kunrui Yu, \emph{On the abc conjecture, {II}}, Duke Math. J. \textbf{108} (2001), no.~1, 169--181,
+\href{https://doi.org/10.1215/S0012-7094-01-10815-6}{doi:10.1215/S0012-7094-01-10815-6}.
+
+\bibitem[TC]{TC}
+Toshihisa Urahigashi, \emph{Two computations of the height inequality and the multiradial algorithm: reading IUT from
+the viewpoint of computer science}, version 1.0.0, Zenodo, 2026,
+\href{https://doi.org/10.5281/zenodo.23968299}{doi:10.5281/zenodo.23968299}.
+\end{thebibliography}
+
+\end{document}
