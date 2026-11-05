@@ -197,8 +197,8 @@ The file names carry an older working numbering; the reports are numbered as fol
 | catalogue of the data | `initial-theta-catalogue/paper/initial_theta_catalogue.tex` | [10.5281/zenodo.23990719](https://doi.org/10.5281/zenodo.23990719) (version 1.1.0) |
 | fourteen initial Θ-data (D_2357) | `fourteen-levels/paper/fourteen_levels.tex` | [10.5281/zenodo.23990717](https://doi.org/10.5281/zenodo.23990717) (version 1.0.0) |
 | programmer's walkthrough | `iut-walkthrough/paper/iut_walkthrough.tex` | [10.5281/zenodo.23880260](https://doi.org/10.5281/zenodo.23880260) (version 1.0.0) |
-| segment or loop (HoTT overview) | `segment-or-loop/paper/segment_or_loop.tex` | [10.5281/zenodo.23933109](https://doi.org/10.5281/zenodo.23933109) (version 1.1.0) |
-| indexed identifications (educational) | `indexed-identifications/paper/indexed_identifications.tex` | [10.5281/zenodo.23933108](https://doi.org/10.5281/zenodo.23933108) (version 2.0.0) |
+| segment or loop (HoTT overview) | `segment-or-loop/paper/segment_or_loop.tex` | [10.5281/zenodo.23991368](https://doi.org/10.5281/zenodo.23991368) (version 1.2.0) |
+| indexed identifications (educational) | `indexed-identifications/paper/indexed_identifications.tex` | [10.5281/zenodo.23991371](https://doi.org/10.5281/zenodo.23991371) (version 2.1.0) |
 
 `paper/paper.tex` is the expanded version of the **first** report, cited as `[First-full]`;
 the first report is the version of record.
@@ -348,27 +348,33 @@ The files in `iut-walkthrough/` are licensed under CC BY 4.0.
 Two companion notes, published together and citing each other.
 
 **Segment or loop? A homotopy-type-theoretic overview of the dispute over Corollary 3.12 of inter-universal
-Teichmüller theory.** `segment-or-loop/paper/segment_or_loop.pdf` (24 pages), version 1.1.0, DOI
-[10.5281/zenodo.23933109](https://doi.org/10.5281/zenodo.23933109) (version 1.0.0:
+Teichmüller theory.** `segment-or-loop/paper/segment_or_loop.pdf` (25 pages), version 1.2.0, DOI
+[10.5281/zenodo.23991368](https://doi.org/10.5281/zenodo.23991368) (version 1.1.0:
+[10.5281/zenodo.23933109](https://doi.org/10.5281/zenodo.23933109); version 1.0.0:
 [10.5281/zenodo.23931344](https://doi.org/10.5281/zenodo.23931344)). The vocabularies of the dispute (identification
 and labels, monodromy, segment, loop and universal cover, IPL, SHE and APT, logical AND and OR, descent, commutativity
 up to indeterminacies, the size of the blurring) are stated as propositions of homotopy type theory about families of
 ordered real lines over graphs. Corollary 3.12 becomes equivalent to a lax 2-cell between two paths, an inequality of
 the shape of a height bound. The quantitative core is checked in Lean 4 (`segment-or-loop/lean/`). Version 1.1.0 adds
-pointers to Part II of the companion note.
+pointers to Part II of the companion note; version 1.2.0 cites the earlier work of Laniewski described below.
 
 **Reading the IUT dispute through indexed identifications: an educational model in undergraduate mathematics.**
-`indexed-identifications/paper/indexed_identifications.pdf` (26 pages), version 2.0.0, DOI
-[10.5281/zenodo.23933108](https://doi.org/10.5281/zenodo.23933108) (version 1.0.0:
+`indexed-identifications/paper/indexed_identifications.pdf` (26 pages), version 2.1.0, DOI
+[10.5281/zenodo.23991371](https://doi.org/10.5281/zenodo.23991371) (version 2.0.0:
+[10.5281/zenodo.23933108](https://doi.org/10.5281/zenodo.23933108); version 1.0.0:
 [10.5281/zenodo.23931346](https://doi.org/10.5281/zenodo.23931346)). The same model written with sets, maps,
 positive real numbers, graphs and inequalities, with a symbol for indexed identifications, exercises and answers.
 Part II, new in version 2.0.0, extends the notation to the components of tensor packets: in a model with one prime and
 the label permutations of (Ind1), the two readings of the union in Corollary 3.12 differ by an expected order
 statistic, and in either reading Corollary 3.12 together with the upper bound of IV implies the height bound. The
-quantitative core of Part II is checked in Lean 4 (`indexed-identifications/lean/`).
+quantitative core of Part II is checked in Lean 4 (`indexed-identifications/lean/`). Version 2.1.0 cites the same
+earlier work of Laniewski.
 
 None of the results of either note is new mathematically; the contribution is the formulation and the
-correspondences. **No claim is made about the truth of Corollary 3.12, Theorem 1.10 of IUT IV, or the abc
+correspondences. A general semantics for comparison problems in arithmetic geometry, in which the passage between
+labelled presentations is a transport carrying a cost, appears earlier, without reference to IUT, in R. Laniewski,
+*Intensional semantics for comparison problems in arithmetic geometry*, arXiv:2608.13609; no priority is claimed for
+that idea. **No claim is made about the truth of Corollary 3.12, Theorem 1.10 of IUT IV, or the abc
 conjecture.** The files in `segment-or-loop/` and `indexed-identifications/` are licensed under CC BY 4.0.
 
 ## The gap between the two walls (November 2026)

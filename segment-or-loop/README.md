@@ -1,8 +1,11 @@
 # Segment or loop? A homotopy-type-theoretic overview of the dispute over Corollary 3.12 of inter-universal Teichmüller theory
 
-Version 1.1.0, 4 November 2026 (24 pages). DOI [10.5281/zenodo.23933109](https://doi.org/10.5281/zenodo.23933109).
-Version 1.0.0: [10.5281/zenodo.23931344](https://doi.org/10.5281/zenodo.23931344). Version 1.1.0 adds pointers to Part II of
-the companion note (its version 2.0.0) and updates the two DOIs; the Lean files are unchanged.
+Version 1.2.0, 6 November 2026 (25 pages). DOI [10.5281/zenodo.23991368](https://doi.org/10.5281/zenodo.23991368).
+Version 1.1.0: [10.5281/zenodo.23933109](https://doi.org/10.5281/zenodo.23933109); version 1.0.0:
+[10.5281/zenodo.23931344](https://doi.org/10.5281/zenodo.23931344). Version 1.1.0 added pointers to Part II of the
+companion note (its version 2.0.0). Version 1.2.0 cites the earlier general framework of R. Laniewski
+(arXiv:2608.13609), which the author learned of after version 1.1.0 was posted, and claims no priority for it
+(abstract and §1.4); it also updates the companion's version and DOI. The results and the Lean files are unchanged.
 
 The dispute over Corollary 3.12 of IUT III has been conducted in many vocabularies: the identification and labelling
 of isomorphic copies, monodromy, segment, loop and universal cover, the properties IPL, SHE and APT, logical AND and
@@ -12,14 +15,17 @@ path loses nothing; two paths make a loop whose monodromy is a complete invarian
 lax 2-cell between the two paths, an inequality that has the shape of a height bound; a hull taken along the whole
 loop says nothing; and IPL, SHE and APT are compatible with any size of the blurring. Applied one level down, to
 presented reals and locators, the same tools show no monodromy. None of the results is new mathematically: the
-contribution is the formulation and the correspondences. Each statement carries a label (S, X, P, R, N, H), and each
+contribution is the formulation and the correspondences. A general semantics for comparison problems in arithmetic
+geometry, with labelled presentations and transports carrying costs, appears earlier, without reference to IUT, in
+R. Laniewski, *Intensional semantics for comparison problems in arithmetic geometry* (arXiv:2608.13609); no priority
+is claimed for that idea. Each statement carries a label (S, X, P, R, N, H), and each
 proposition gives the source of the underlying mathematics. The quantitative core is checked in Lean 4.
 
 **No claim is made about the truth of Corollary 3.12, Theorem 1.10 of IUT IV, or the abc conjecture.**
 
 A companion note in undergraduate mathematics, *Reading the IUT dispute through indexed identifications*, is in
-[`../indexed-identifications/`](../indexed-identifications/) (version 2.0.0, DOI
-[10.5281/zenodo.23933108](https://doi.org/10.5281/zenodo.23933108)). Its Part II extends the model to the components
+[`../indexed-identifications/`](../indexed-identifications/) (version 2.1.0, DOI
+[10.5281/zenodo.23991371](https://doi.org/10.5281/zenodo.23991371)). Its Part II extends the model to the components
 of tensor packets and the label permutations of (Ind1).
 
 ## Files

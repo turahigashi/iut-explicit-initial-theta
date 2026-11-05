@@ -1,7 +1,11 @@
 # Reading the IUT dispute through indexed identifications: an educational model in undergraduate mathematics
 
-Version 2.0.0, 4 November 2026 (26 pages). DOI [10.5281/zenodo.23933108](https://doi.org/10.5281/zenodo.23933108).
-Version 1.0.0: [10.5281/zenodo.23931346](https://doi.org/10.5281/zenodo.23931346).
+Version 2.1.0, 6 November 2026 (26 pages). DOI [10.5281/zenodo.23991371](https://doi.org/10.5281/zenodo.23991371).
+Version 2.0.0: [10.5281/zenodo.23933108](https://doi.org/10.5281/zenodo.23933108); version 1.0.0:
+[10.5281/zenodo.23931346](https://doi.org/10.5281/zenodo.23931346). Version 2.1.0 cites the earlier general notation of
+R. Laniewski (arXiv:2608.13609), which the author learned of after version 2.0.0 was posted, and claims no priority
+for it (abstract and §1.4); it also updates the companion's version and DOI. The results and the Lean files are
+unchanged.
 
 An educational model that states the shape of the dispute over Corollary 3.12 of IUT III using only undergraduate
 mathematics: sets and maps, multiplication of positive real numbers, graphs and inequalities. Instead of the equality
@@ -21,8 +25,8 @@ carries a label (S, P, R, N, H).
 **No claim is made about the truth of Corollary 3.12, Theorem 1.10 of IUT IV, or the abc conjecture.**
 
 The companion paper, which states the model of Part I in homotopy type theory and checks its quantitative core in
-Lean, is in [`../segment-or-loop/`](../segment-or-loop/) (version 1.1.0, DOI
-[10.5281/zenodo.23933109](https://doi.org/10.5281/zenodo.23933109)).
+Lean, is in [`../segment-or-loop/`](../segment-or-loop/) (version 1.2.0, DOI
+[10.5281/zenodo.23991368](https://doi.org/10.5281/zenodo.23991368)).
 
 ## Files
 

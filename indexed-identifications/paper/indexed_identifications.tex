@@ -58,7 +58,7 @@
 
 \title{Reading the IUT dispute through indexed identifications:\\ an educational model in undergraduate mathematics}
 \author{Toshihisa Urahigashi\\\small ORCID 0009-0004-0460-6242\\\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 2.0.0, 4 November 2026\\\small\href{https://doi.org/10.5281/zenodo.23933108}{doi:10.5281/zenodo.23933108}}
+\date{Version 2.1.0, 6 November 2026\\\small\href{https://doi.org/10.5281/zenodo.23991371}{doi:10.5281/zenodo.23991371}}
 
 \begin{document}
 \maketitle
@@ -77,7 +77,7 @@ identification which does not return to $1$ around a loop leads to a contradicti
 disputed is whether the \q{license}, in Mochizuki's word, to identify up to \q{relatively small error terms} can be
 obtained independently of the conclusion. The model does not decide this question.
 
-Part~II, new in this version, opens the single number $E$. Read backwards from the public Lean formalization
+Part~II, added in version 2.0.0, opens the single number $E$. Read backwards from the public Lean formalization
 lana-agents/iut, the notation needs four more things: values on the components of tensor packets; indices that pair a
 permutation of the factors with identifications on the components; a rule for the order in which the hull of a union
 and an average are taken; and a record of the construction that a compared number comes from. In a model with one prime,
@@ -87,7 +87,10 @@ averaging over the components the difference is an expected order statistic, and
 above the prime have the same $q$-order. For every reading of the union, Corollary~3.12 together with the upper bound of
 IV implies the height bound: in one reading the content is carried by the upper bound of IV, in the other by
 Corollary~3.12 itself. Which reading the source intends is not decided. A companion paper states the model of Part~I in
-homotopy type theory; the quantitative core of Part~II is checked in Lean.
+homotopy type theory; the quantitative core of Part~II is checked in Lean. A general notation of a related kind for
+comparison problems in arithmetic geometry, in which a transport between labelled presentations carries a cost that
+bounds the change of a height, was given earlier by Laniewski~\cite{La}, without reference to IUT; no priority is
+claimed for it.
 \end{abstract}
 
 \section{Introduction}
@@ -183,6 +186,15 @@ mathematics~\cite[\S3.11~(ii)]{Alien}, and an elementary numerical model with re
 spaces and a diagram of their identifications~\cite[\S2.2]{SS}. Nothing in the mathematics of this note is new; every
 proposition is at the level of an undergraduate exercise. What the note adds is to declare the rules of identification
 first and to put the explanations of both sides into the same notation.
+
+A general notation of a related kind exists for comparison problems in arithmetic geometry. In Laniewski~\cite{La} the
+passage between labelled presentations of an arithmetic object is a transport carrying a cost, and a height changes
+along a transport by at most its cost, an inequality of the same shape as $a\le_E b$ in
+Section~\ref{s:indexed}; a comparison read through identifications that are transparent to the labels collapses there
+to the harmless form $H\le H+\Delta$. That paper does not discuss IUT; the author learned of it after version 2.0.0 of
+this note was posted. No priority is claimed for indexing identifications or for weakening comparisons by a cost; what
+this note adds is the use of such a notation for the explanations of the two sides of the dispute over
+Corollary~3.12.
 
 The companion paper~\cite{Ur} states the same model in homotopy type theory, checks its quantitative core in Lean, and
 discusses the relation with presented reals and Booij's locators. This note is its educational entry point; many of its
@@ -1347,6 +1359,10 @@ Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 403--626.
 Shinichi Mochizuki, \emph{Inter-universal {T}eichm\"uller theory {IV}: log-volume computations and set-theoretic
 foundations}, Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 627--723.
 
+\bibitem[La]{La}
+R. Laniewski, \emph{Intensional semantics for comparison problems in arithmetic geometry}, arXiv:2608.13609v2
+[math.CT], 20 September 2026 (version~1: 12 August 2026).
+
 \bibitem[LANA]{LANA}
 Project LANA, \emph{Project LANA interim report on IUT theory}, last updated 20 July 2026.
 
@@ -1385,6 +1401,6 @@ reals}, manuscript, version 0.7.8, 5 September 2026, file \texttt{paper/paper.pd
 
 \bibitem[Ur]{Ur}
 Toshihisa Urahigashi, \emph{Segment or loop? A homotopy-type-theoretic overview of the dispute over {C}orollary 3.12 of
-inter-universal {T}eichm\"uller theory}, version 1.1.0, Zenodo, 4 November 2026, \href{https://doi.org/10.5281/zenodo.23933109}{doi:10.5281/zenodo.23933109}.
+inter-universal {T}eichm\"uller theory}, version 1.2.0, Zenodo, 6 November 2026, \href{https://doi.org/10.5281/zenodo.23991368}{doi:10.5281/zenodo.23991368}.
 \end{thebibliography}
 \end{document}

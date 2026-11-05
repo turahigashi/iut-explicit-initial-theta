@@ -68,7 +68,7 @@
 \title{Segment or loop? A homotopy-type-theoretic overview of the dispute over Corollary~3.12 of
 inter-universal Teichm\"uller theory}
 \author{Toshihisa Urahigashi\\\small ORCID 0009-0004-0460-6242\\\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.1.0, 4 November 2026\\\small\href{https://doi.org/10.5281/zenodo.23933109}{doi:10.5281/zenodo.23933109}}
+\date{Version 1.2.0, 6 November 2026\\\small\href{https://doi.org/10.5281/zenodo.23991368}{doi:10.5281/zenodo.23991368}}
 
 \begin{document}
 \maketitle
@@ -98,7 +98,11 @@ bounded; the difference is a difference of h-level (Section~\ref{s:down}).
 statements (AD) and (IUAD), about which Mochizuki wrote that there is no dispute, and of Mochizuki's own explanation by
 segment, loop and universal cover. (C) and (E) show that what remains in dispute is not a question of logic but the
 truth of one inequality. None of the results is new mathematically; the contribution of this paper lies in the
-formulation that places known mathematics in one framework, and in the correspondences (\S\ref{ss:labels}). The
+formulation that places known mathematics in one framework, and in the correspondences (\S\ref{ss:labels}). A general
+semantics for comparison problems in arithmetic geometry was given earlier by Laniewski~\cite{La}, without reference to
+IUT: the passage between labelled presentations is a transport carrying a cost, comparisons between transports are kept
+as invertible 2-morphisms, and the setting is motivated by the identity types of Voevodsky's C-systems. No priority is
+claimed here for the idea of tracking identifications in this way (\S\ref{ss:earlier}). The
 quantitative core has been checked by machine in Lean~4. Nothing is claimed about the truth of Corollary~3.12 or of the
 abc conjecture.
 \end{abstract}
@@ -168,8 +172,9 @@ reals and locators (Propositions~\ref{p:set}, \ref{p:locator} and~\ref{p:restore
 blurring of possible images is uniformly bounded, and the inverse of forgetting returns to a single point. The
 difference from IUT is a difference of h-level.
 
-None of the above results is new mathematically. What is new is the formulation that places known mathematics in one
-framework, and the correspondence with the vocabulary of each party. In terms of the labels of \S\ref{ss:labels}, the
+None of the above results is new mathematically. What the paper offers is the formulation that places known
+mathematics in one framework, and the correspondence with the vocabulary of each party; for a general framework of a
+related kind see~\cite{La} and \S\ref{ss:earlier}. In terms of the labels of \S\ref{ss:labels}, the
 propositions and theorems are labelled \tagP\ or \tagP\,\tagR, and there is no proposition labelled \tagN.
 
 \subsection{What this paper does not claim}
@@ -183,9 +188,21 @@ components of tensor packets, the part of $E$ produced by the label permutations
 ``\dots'', and double quotation marks inside a quotation are rendered as single ones.
 \end{itemize}
 
-\subsection{Relation to earlier work}
-As far as the author has checked, there is no literature that reads the dispute through homotopy type theory. The
-geometric picture of this paper is not new, however. Segment, loop, universal cover and monodromy are in
+\subsection{Relation to earlier work}\label{ss:earlier}
+As far as the author has checked, no earlier work reads the dispute over Corollary~3.12 itself through homotopy type
+theory. A general framework of a related kind exists, however. Laniewski~\cite{La} proposes, for comparison problems
+in arithmetic geometry, a semantics in which the passage between labelled presentations of an arithmetic object
+carries an explicit cost: costs induce a Lawvere generalized distance, heights change along a transport by at most its
+cost, and comparisons between transports are kept as invertible 2-morphisms of a labeled quantitative
+$(2,1)$-category, whose vertical groupoids are given a transport interpretation inspired by the identity types of
+Voevodsky's C-systems. It is shown there that a comparison read through identifications that are functorial and
+transparent to the labels collapses to the harmless form $H\le H+\Delta$, so that a comparison keeps arithmetic content
+only when it relates two different invariants; an intensional Szpiro inequality related to the abc conjecture is also
+formulated there. That paper does not discuss IUT, and its 2-morphisms are invertible and leave costs unchanged,
+whereas the point at issue here is a non-invertible (lax) 2-cell between two paths (Theorem~\ref{t:lax}). The author
+learned of~\cite{La} after versions 1.0.0 and 1.1.0 of this paper were posted. No priority is claimed for the general
+idea of tracking identifications of labelled copies, and the cost of transporting heights along them, in
+type-theoretic or 2-categorical terms. The geometric picture of this paper is not new either. Segment, loop, universal cover and monodromy are in
 Mochizuki~\cite[(LbEx1)]{R18}; monodromy and consistent identification are in Scholze--Stix~\cite[\S2.2]{SS}; the
 commutativity of diagrams and (9-1) are in LANA~\cite[\S0.2, \S\S9--10]{LANA}. The content of
 Theorem~\ref{t:package} (a numerical comparison does not follow from qualitative properties) has been proved by
@@ -1268,6 +1285,10 @@ holomorphic structures}, arXiv:2210.11635v3, 2022.
 \bibitem[Jo2]{Jo2}
 Kirti Joshi, \emph{Construction of arithmetic {T}eichm\"uller spaces {I}}, arXiv:2106.11452v4, 2025.
 
+\bibitem[La]{La}
+R. Laniewski, \emph{Intensional semantics for comparison problems in arithmetic geometry}, arXiv:2608.13609v2
+[math.CT], 20 September 2026 (version~1: 12 August 2026).
+
 \bibitem[LANA]{LANA}
 Project LANA, \emph{Project LANA interim report on IUT theory}, last updated 20 July 2026.
 
@@ -1299,6 +1320,6 @@ reals}, manuscript, version 0.7.8, 5 September 2026, file \texttt{paper/paper.pd
 
 \bibitem[UE]{UE}
 Toshihisa Urahigashi, \emph{Reading the {IUT} dispute through indexed identifications: an educational model in
-undergraduate mathematics}, version 2.0.0, Zenodo, 4 November 2026, \href{https://doi.org/10.5281/zenodo.23933108}{doi:10.5281/zenodo.23933108}.
+undergraduate mathematics}, version 2.1.0, Zenodo, 6 November 2026, \href{https://doi.org/10.5281/zenodo.23991371}{doi:10.5281/zenodo.23991371}.
 \end{thebibliography}
 \end{document}
