@@ -45,8 +45,10 @@ SHA256SUMS                    checksums of the files above
 
 ```
 python3 scripts/bridge_lib.py > outputs/bridge.txt
-cd paper && python3 make_generated.py && pdflatex bridge_and_size.tex && pdflatex bridge_and_size.tex
+cd paper && python3 make_generated.py && pdflatex bridge_and_size.tex && pdflatex bridge_and_size.tex && pdflatex bridge_and_size.tex
 ```
+
+From a clean folder, LaTeX needs three runs before the table of contents settles.
 
 The scripts use the Python 3 standard library only. The values of the wall (k − 1)Q and of Q agree with the output of
 the programs of [`../two-computations/`](../two-computations/). The quotations in the note are taken from the English
