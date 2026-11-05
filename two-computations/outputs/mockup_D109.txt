@@ -1,0 +1,63 @@
+MOCKUP of the multiradial algorithm of IUT III, Theorem 3.11.
+  [implemented]  computed here from the etale-like data, with no access to the rings of the theaters
+  [ORACLE name]  not implemented: the value is REVERSE-COMPUTED, from the ring structure of a theater or
+                 from the conclusion (ledger at the end). Nothing printed here proves anything.
+
+datum D109  l = 7  k = 4.6666666667
+Theta-link dagger -> ddagger: the coric data agree at all 16 places; Theta-pilot(dagger) |-> q-pilot(ddagger); no map of rings
+
+[implemented] (A)-(B) local invariants from G_{K_v}^ab, and (C) cyclotomic rigidity at level N = 2^61 - 1:
+   place          p                d   f     e          rho          dif  
+   2              2               (above 2, 3, 5 or l: not computed)
+   3              3               (above 2, 3, 5 or l: not computed)
+   5+             5               (above 2, 3, 5 or l: not computed)
+   5-             5               (above 2, 3, 5 or l: not computed)
+   109+           109            105   1   105 0.9904761905 0.9904761905  bad: coordinates of Delta_Theta recovered from the commutator
+   109-           109              1   1     1 0.0000000000 0.0000000000  
+   21577+         21577          105   1   105 0.9904761905 0.9904761905  bad: coordinates of Delta_Theta recovered from the commutator
+   21577-         21577            1   1     1 0.0000000000 0.0000000000  
+   6065177+       6065177          1   1     1 0.0000000000 0.0000000000  
+   6065177-       6065177        105   1   105 0.9904761905 0.9904761905  bad: coordinates of Delta_Theta recovered from the commutator
+   534775081+     534775081        1   1     1 0.0000000000 0.0000000000  
+   534775081-     534775081      105   1   105 0.9904761905 0.9904761905  bad: coordinates of Delta_Theta recovered from the commutator
+   11747..(19)+   11747..(19)      1   1     1 0.0000000000 0.0000000000  
+   11747..(19)-   11747..(19)    105   1   105 0.9904761905 0.9904761905  bad: coordinates of Delta_Theta recovered from the commutator
+   16450..(20)+   16450..(20)      1   1     1 0.0000000000 0.0000000000  
+   16450..(20)-   16450..(20)    105   1   105 0.9904761905 0.9904761905  bad: coordinates of Delta_Theta recovered from the commutator
+[implemented] (D) theta values from their Kummer classes at the 6 bad places; j^2-structure: ok
+[implemented] (E)-(G) the possible images of the Theta-pilot and the hull, procession-normalized (IUT IV's reading):
+   prime 109           places 2  hull -38.3796936270  closed form -38.3796936270
+   prime 21577         places 2  hull 11.5000511295  closed form 11.5000511295
+   prime 6065177       places 2  hull 17.9979713175  closed form 17.9979713175
+   prime 534775081     places 2  hull 23.1598111777  closed form 23.1598111777
+   prime 11747..(19)   places 2  hull 47.9478103975  closed form 47.9478103975
+   prime 16450..(20)   places 2  hull 50.9892392981  closed form 50.9892392981
+   archimedean container (l+5)/4 log pi = 3.4341896575
+[ORACLE ind3]  (Ind3): assumed (the possible images are the containers)
+
+q-pilot      -|log qq|   = -19.1141691071        (log q = 2 l |log qq| = 267.5983674990)
+Theta-pilot  -|log Theta| = 116.6493793509       (reading of IUT IV; places above 2, 3, 5, l set to 0)
+[ORACLE step-xi]  Step (xi): the q-pilot of ddagger lies in the hull of the possible images: YES  (REVERSE-COMPUTED: margin 135.7635484579 on this datum)
+Corollary 3.12 (from the oracle step-xi): -19.1141691071 <= 116.6493793509
+IUT IV       U(D)         = 1098.3190279718       (primes with theta values 249.4558164899, closed form 249.4558164899; 2, 3, 5, l 845.4290218244; archimedean 3.4341896575)
+IV: 116.6493793509 <= 1098.3190279718
+height inequality (k-1)|log qq| = 70.0852867259 <= 1187.5184838047 = C
+Step (viii): 2123.2679368365      Theorem 1.10: (1/6) log q = 44.5997279165 <= 1.548293020332e+08
+
+classical    log q = 267.5983674990  log f = 68.1203133983  log d = 0.6931471806   (all places of bad reduction: log q = 271.4050299887  log f = 70.0236446432)
+classical    Theorem 1.10: (1/6) log q = 44.5997279165 <= 1.548293020332e+08 = right-hand side
+the two computations: log q 267.5983674990 vs 2 l |log qq| 267.5983674990; right-hand sides 1.548293020332e+08 vs 1.548293020332e+08
+
+ledger of the oracles (every value REVERSE-COMPUTED):
+  gab  G_{K_v}^ab as an abstract group
+      reverse-computed from the local fields K_v by local class field theory: (p, [K_v:Q_p], p^f - 1)
+  global  global data: weights, prime labels, log d^F, log f^F
+      reverse-computed from the number field F and V^bad
+  kummer  Kummer classes at level N of the theta values qq^(j^2) (dagger) and of qq (ddagger)
+      reverse-computed from the valuations of q in the fields (in IUT: the etale theta function and its evaluation)
+  theta-group  the theta groups at level N (the finite-level mono-theta environments)
+      built from the theater's own coordinates on Delta_Theta
+  ind3  (Ind3), upper semi-compatibility
+      assumed, not computed: the images of the Theta-pilot under the log-Kummer correspondence lie in the containers (IUT III, Proposition 3.5; Theorem 3.11 (ii) (a))
+  step-xi  Step (xi): the q-pilot of ddagger lies in the hull of the possible images
+      reverse-computed from the conclusion: the two log-volumes of this datum were compared. A Step (xi) derived from Theorem 3.11 would give the containment for every initial Theta-datum without comparing numbers

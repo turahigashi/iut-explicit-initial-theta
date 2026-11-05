@@ -1,0 +1,5 @@
+datum D211  l = 7
+all places of bad reduction: log q = 309.0214773805  log f = 79.5847248216
+counted places:              log q = 305.2148148907  log f = 77.6813935767  log d = 0.8047189562
+Theorem 1.10: (1/6) log q = 50.8691358151 <= 1.548293669782e+08 = right-hand side
+Szpiro ratio log q / (log d + log f) = 3.8887747786

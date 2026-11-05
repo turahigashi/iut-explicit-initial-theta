@@ -1,0 +1,128 @@
+D211
+  OK  classical: log q (all)             C 309.021477   Python 309.021477
+  OK  classical: log f (all)             C 79.5847248   Python 79.5847248
+  OK  classical: log q (counted)         C 305.214815   Python 305.214815
+  OK  classical: log f (counted)         C 77.6813936   Python 77.6813936
+  OK  classical: log d                   C 0.804718956   Python 0.804718956
+  OK  classical: Theorem 1.10, right side C 154829367   Python 154829367
+  OK  iut: -|log qq|                     C -21.8010582   Python -21.8010582
+  OK  iut: -|log Theta| (reading V)      C 135.258406   Python 135.258406
+  OK  iut: U(D)                          C 1145.40127   Python 1145.40127
+  OK  iut: U at primes with theta values C 295.930168   Python 295.930168
+  OK  iut: the same in closed form       C 295.930168   Python 295.930168
+  OK  iut: U at 2, 3, 5, l               C 846.036911   Python 846.036911
+  OK  iut: archimedean part              C 3.43418966   Python 3.43418966
+  OK  iut: Step (viii)                   C 2196.78502   Python 2196.78502
+  OK  iut: Theorem 1.10, right side      C 154829367   Python 154829367
+  OK  ends: log q, classical vs iut      C 305.214815   Python 305.214815
+  OK  ends: right side, classical vs iut C 154829367   Python 154829367
+D109
+  OK  classical: log q (all)             C 271.40503   Python 271.40503
+  OK  classical: log f (all)             C 70.0236446   Python 70.0236446
+  OK  classical: log q (counted)         C 267.598367   Python 267.598367
+  OK  classical: log f (counted)         C 68.1203134   Python 68.1203134
+  OK  classical: log d                   C 0.693147181   Python 0.693147181
+  OK  classical: Theorem 1.10, right side C 154829302   Python 154829302
+  OK  iut: -|log qq|                     C -19.1141691   Python -19.1141691
+  OK  iut: -|log Theta| (reading V)      C 116.649379   Python 116.649379
+  OK  iut: U(D)                          C 1098.31903   Python 1098.31903
+  OK  iut: U at primes with theta values C 249.455816   Python 249.455816
+  OK  iut: the same in closed form       C 249.455816   Python 249.455816
+  OK  iut: U at 2, 3, 5, l               C 845.429022   Python 845.429022
+  OK  iut: archimedean part              C 3.43418966   Python 3.43418966
+  OK  iut: Step (viii)                   C 2123.26794   Python 2123.26794
+  OK  iut: Theorem 1.10, right side      C 154829302   Python 154829302
+  OK  ends: log q, classical vs iut      C 267.598367   Python 267.598367
+  OK  ends: right side, classical vs iut C 154829302   Python 154829302
+D2
+  OK  classical: log q (all)             C 240.091208   Python 240.091208
+  OK  classical: log f (all)             C 76.9246213   Python 76.9246213
+  OK  classical: log q (counted)         C 240.091208   Python 240.091208
+  OK  classical: log f (counted)         C 76.9246213   Python 76.9246213
+  OK  classical: log d                   C 0.804718956   Python 0.804718956
+  OK  classical: Theorem 1.10, right side C 154829362   Python 154829362
+  OK  iut: -|log qq|                     C -17.149372   Python -17.149372
+  OK  iut: -|log Theta| (reading V)      C 157.995566   Python 157.995566
+  OK  iut: U(D)                          C 1155.15993   Python 1155.15993
+  OK  iut: U at primes with theta values C 305.217639   Python 305.217639
+  OK  iut: the same in closed form       C 305.217639   Python 305.217639
+  OK  iut: U at 2, 3, 5, l               C 846.5081   Python 846.5081
+  OK  iut: archimedean part              C 3.43418966   Python 3.43418966
+  OK  iut: Step (viii)                   C 1788.13624   Python 1788.13624
+  OK  iut: Theorem 1.10, right side      C 154829362   Python 154829362
+  OK  ends: log q, classical vs iut      C 240.091208   Python 240.091208
+  OK  ends: right side, classical vs iut C 154829362   Python 154829362
+D3
+  OK  classical: log q (all)             C 1132.84876   Python 1132.84876
+  OK  classical: log f (all)             C 272.39698   Python 272.39698
+  OK  classical: log q (counted)         C 1128.24359   Python 1128.24359
+  OK  classical: log f (counted)         C 270.899114   Python 270.899114
+  OK  classical: log d                   C 0.804718956   Python 0.804718956
+  OK  classical: Theorem 1.10, right side C 154830664   Python 154830664
+  OK  iut: -|log qq|                     C -80.5888278   Python -80.5888278
+  OK  iut: -|log Theta| (reading V)      C 449.238092   Python 449.238092
+  OK  iut: U(D)                          C 1871.5256   Python 1871.5256
+  OK  iut: U at primes with theta values C 1012.59151   Python 1012.59151
+  OK  iut: the same in closed form       C 1012.59151   Python 1012.59151
+  OK  iut: U at 2, 3, 5, l               C 855.499907   Python 855.499907
+  OK  iut: archimedean part              C 3.43418966   Python 3.43418966
+  OK  iut: Step (viii)                   C 4911.16517   Python 4911.16517
+  OK  iut: Theorem 1.10, right side      C 154830664   Python 154830664
+  OK  ends: log q, classical vs iut      C 1128.24359   Python 1128.24359
+  OK  ends: right side, classical vs iut C 154830664   Python 154830664
+D18
+  OK  classical: log q (all)             C 618.169559   Python 618.169559
+  OK  classical: log f (all)             C 161.66872   Python 161.66872
+  OK  classical: log q (counted)         C 614.950683   Python 614.950683
+  OK  classical: log f (counted)         C 160.864001   Python 160.864001
+  OK  classical: log d                   C 0.804718956   Python 0.804718956
+  OK  classical: Theorem 1.10, right side C 154829925   Python 154829925
+  OK  iut: -|log qq|                     C -43.9250488   Python -43.9250488
+  OK  iut: -|log Theta| (reading V)      C 285.915445   Python 285.915445
+  OK  iut: U(D)                          C 1478.08646   Python 1478.08646
+  OK  iut: U at primes with theta values C 625.745902   Python 625.745902
+  OK  iut: the same in closed form       C 625.745902   Python 625.745902
+  OK  iut: U at 2, 3, 5, l               C 848.906368   Python 848.906368
+  OK  iut: archimedean part              C 3.43418966   Python 3.43418966
+  OK  iut: Step (viii)                   C 4102.4284   Python 4102.4284
+  OK  iut: Theorem 1.10, right side      C 154829925   Python 154829925
+  OK  ends: log q, classical vs iut      C 614.950683   Python 614.950683
+  OK  ends: right side, classical vs iut C 154829925   Python 154829925
+D15
+  OK  classical: log q (all)             C 516.065542   Python 516.065542
+  OK  classical: log f (all)             C 137.294009   Python 137.294009
+  OK  classical: log q (counted)         C 516.065542   Python 516.065542
+  OK  classical: log f (counted)         C 137.294009   Python 137.294009
+  OK  classical: log d                   C 0.804718956   Python 0.804718956
+  OK  classical: Theorem 1.10, right side C 154829767   Python 154829767
+  OK  iut: -|log qq|                     C -36.8618244   Python -36.8618244
+  OK  iut: -|log Theta| (reading V)      C 243.305302   Python 243.305302
+  OK  iut: U(D)                          C 1384.66171   Python 1384.66171
+  OK  iut: U at primes with theta values C 530.037715   Python 530.037715
+  OK  iut: the same in closed form       C 530.037715   Python 530.037715
+  OK  iut: U at 2, 3, 5, l               C 851.189807   Python 851.189807
+  OK  iut: archimedean part              C 3.43418966   Python 3.43418966
+  OK  iut: Step (viii)                   C 3925.6183   Python 3925.6183
+  OK  iut: Theorem 1.10, right side      C 154829767   Python 154829767
+  OK  ends: log q, classical vs iut      C 516.065542   Python 516.065542
+  OK  ends: right side, classical vs iut C 154829767   Python 154829767
+D2357
+  OK  classical: log q (all)             C 3723.94778   Python 3723.94778
+  OK  classical: log f (all)             C 33.2822675   Python 33.2822675
+  OK  classical: log q (counted)         C 3717.83854   Python 3717.83854
+  OK  classical: log f (counted)         C 30.2276437   Python 30.2276437
+  OK  classical: log d                   C 0.693147181   Python 0.693147181
+  OK  classical: Theorem 1.10, right side C 3.47258888e+09   Python 3.47258888e+09
+  OK  iut: -|log qq|                     C -11.8402501   Python -11.8402501
+  OK  iut: -|log Theta| (reading V)      C -22675.2264   Python -22675.2264
+  note: iut_readings36.py adds 261.7507 for the places above the unfactored cofactor; iut.c does not count them
+  OK  iut: U(D)                          C -8246.14898   Python -8246.14898
+  OK  iut: U at primes with theta values C -21883.7534   Python -21883.7534
+  OK  iut: the same in closed form       C -21883.7534   Python -21883.7534
+  OK  iut: U at 2, 3, 5, l               C 13591.2428   Python 13591.2428
+  OK  iut: archimedean part              C 46.3615604   Python 46.3615604
+  OK  iut: Step (viii)                   C 44492.7916   Python 44492.7916
+  OK  iut: Theorem 1.10, right side      C 3.47258888e+09   Python 3.47258888e+09
+  OK  ends: log q, classical vs iut      C 3717.83854   Python 3717.83854
+  OK  ends: right side, classical vs iut C 3.47258888e+09   Python 3.47258888e+09
+bad = 0

@@ -1,0 +1,51 @@
+MOCKUP of the multiradial algorithm of IUT III, Theorem 3.11.
+  [implemented]  computed here from the etale-like data, with no access to the rings of the theaters
+  [ORACLE name]  not implemented: the value is REVERSE-COMPUTED, from the ring structure of a theater or
+                 from the conclusion (ledger at the end). Nothing printed here proves anything.
+
+datum D2  l = 7  k = 4.6666666667
+Theta-link dagger -> ddagger: the coric data agree at all 7 places; Theta-pilot(dagger) |-> q-pilot(ddagger); no map of rings
+
+[implemented] (A)-(B) local invariants from G_{K_v}^ab, and (C) cyclotomic rigidity at level N = 2^61 - 1:
+   place          p                d   f     e          rho          dif  
+   2              2               (above 2, 3, 5 or l: not computed)
+   11+            11             105   1   105 1.8952380952 0.9904761905  bad: coordinates of Delta_Theta recovered from the commutator
+   11-            11             105   1   105 1.8952380952 0.9904761905  bad: coordinates of Delta_Theta recovered from the commutator
+   30965771+      30965771       105   1   105 0.9904761905 0.9904761905  bad: coordinates of Delta_Theta recovered from the commutator
+   30965771-      30965771        35   1    35 0.9714285714 0.9714285714  bad: coordinates of Delta_Theta recovered from the commutator
+   56406..(50)+   56406..(50)      1   1     1 0.0000000000 0.0000000000  
+   56406..(50)-   56406..(50)    105   1   105 0.9904761905 0.9904761905  bad: coordinates of Delta_Theta recovered from the commutator
+[implemented] (D) theta values from their Kummer classes at the 5 bad places; j^2-structure: ok
+[implemented] (E)-(G) the possible images of the Theta-pilot and the hull, procession-normalized (IUT IV's reading):
+   prime 11            places 2  hull 12.0351505597  closed form 12.0351505597
+   prime 30965771      places 2  hull 10.5133062041  closed form 10.5133062041
+   prime 56406..(50)   places 2  hull 132.0129199026  closed form 132.0129199026
+   archimedean container (l+5)/4 log pi = 3.4341896575
+[ORACLE ind3]  (Ind3): assumed (the possible images are the containers)
+
+q-pilot      -|log qq|   = -17.1493719653        (log q = 2 l |log qq| = 240.0912075146)
+Theta-pilot  -|log Theta| = 157.9955663239       (reading of IUT IV; places above 2, 3, 5, l set to 0)
+[ORACLE step-xi]  Step (xi): the q-pilot of ddagger lies in the hull of the possible images: YES  (REVERSE-COMPUTED: margin 175.1449382892 on this datum)
+Corollary 3.12 (from the oracle step-xi): -17.1493719653 <= 157.9955663239
+IUT IV       U(D)         = 1155.1599288195       (primes with theta values 305.2176391286, closed form 305.2176391286; 2, 3, 5, l 846.5081000334; archimedean 3.4341896575)
+IV: 157.9955663239 <= 1155.1599288195
+height inequality (k-1)|log qq| = 62.8810305395 <= 1235.1903313244 = C
+Step (viii): 1788.1362373495      Theorem 1.10: (1/6) log q = 40.0152012524 <= 1.548293618970e+08
+
+classical    log q = 240.0912075146  log f = 76.9246212795  log d = 0.8047189562   (all places of bad reduction: log q = 240.0912075146  log f = 76.9246212795)
+classical    Theorem 1.10: (1/6) log q = 40.0152012524 <= 1.548293618970e+08 = right-hand side
+the two computations: log q 240.0912075146 vs 2 l |log qq| 240.0912075146; right-hand sides 1.548293618970e+08 vs 1.548293618970e+08
+
+ledger of the oracles (every value REVERSE-COMPUTED):
+  gab  G_{K_v}^ab as an abstract group
+      reverse-computed from the local fields K_v by local class field theory: (p, [K_v:Q_p], p^f - 1)
+  global  global data: weights, prime labels, log d^F, log f^F
+      reverse-computed from the number field F and V^bad
+  kummer  Kummer classes at level N of the theta values qq^(j^2) (dagger) and of qq (ddagger)
+      reverse-computed from the valuations of q in the fields (in IUT: the etale theta function and its evaluation)
+  theta-group  the theta groups at level N (the finite-level mono-theta environments)
+      built from the theater's own coordinates on Delta_Theta
+  ind3  (Ind3), upper semi-compatibility
+      assumed, not computed: the images of the Theta-pilot under the log-Kummer correspondence lie in the containers (IUT III, Proposition 3.5; Theorem 3.11 (ii) (a))
+  step-xi  Step (xi): the q-pilot of ddagger lies in the hull of the possible images
+      reverse-computed from the conclusion: the two log-volumes of this datum were compared. A Step (xi) derived from Theorem 3.11 would give the containment for every initial Theta-datum without comparing numbers

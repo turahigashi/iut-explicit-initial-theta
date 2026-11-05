@@ -1,0 +1,7 @@
+datum D2357  l = 157  k = 2067.1666666667  (a cofactor is not factored)
+q-pilot      -|log qq|   = -11.8402501168        (log q = 2 l |log qq| = 3717.8385366608)
+Theta-pilot  -|log Theta| = -22675.2264079836       (reading of IUT IV; places above 2, 3, 5, l set to 0)
+IUT IV       U(D)         = -8246.1489828474       (primes with theta values -21883.7533832463, closed form -21883.7533832454; 2, 3, 5, l 13591.2428400220; archimedean 46.3615603769)  [long tuples by linearity]
+Corollary 3.12: -11.8402501168 > -22675.2264079836      IV: -22675.2264079836 <= -8246.1489828474
+height inequality (k-1)|log qq| = 24463.9301162333 > 16229.6213835027 = C
+Step (viii): 44492.7916293977      Theorem 1.10: (1/6) log q = 619.6397561101 <= 3.472588878799e+09

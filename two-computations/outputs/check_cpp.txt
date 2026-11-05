@@ -1,0 +1,233 @@
+1. The C++ mockup against the C programs (the same seven data)
+D211
+  OK  -|log qq|                            C++ -21.80105821   C -21.80105821
+  OK  log q = 2 l |log qq|                 C++ 305.2148149   C 305.2148149
+  OK  -|log Theta|                         C++ 135.2584055   C 135.2584055
+  OK  U(D)                                 C++ 1145.401269   C 1145.401269
+  OK  U: primes with theta values          C++ 295.9301684   C 295.9301684
+  OK  U: closed form                       C++ 295.9301684   C 295.9301684
+  OK  U: 2, 3, 5, l                        C++ 846.0369109   C 846.0369109
+  OK  U: archimedean                       C++ 3.434189658   C 3.434189658
+  OK  wall (k-1)|log qq|                   C++ 79.93721342   C 79.93721342
+  OK  C                                    C++ 1247.139541   C 1247.139541
+  OK  Step (viii)                          C++ 2196.785023   C 2196.785023
+  OK  Theorem 1.10: (1/6) log q            C++ 50.86913582   C 50.86913582
+  OK  Theorem 1.10: right-hand side        C++ 154829367   C 154829367
+  OK  classical: log q (counted)           C++ 305.2148149   C 305.2148149
+  OK  classical: log f (counted)           C++ 77.68139358   C 77.68139358
+  OK  classical: log d                     C++ 0.8047189562   C 0.8047189562
+  OK  classical: log q (all)               C++ 309.0214774   C 309.0214774
+  OK  classical: log f (all)               C++ 79.58472482   C 79.58472482
+  OK  classical: right-hand side           C++ 154829367   C 154829367
+  OK  hull of one prime: enumerated = closed C++ 7.436651624   C 7.436651624
+  OK  hull of one prime: enumerated = closed C++ -43.78329654   C -43.78329654
+  OK  hull of one prime: enumerated = closed C++ 13.01904045   C 13.01904045
+  OK  hull of one prime: enumerated = closed C++ 53.8759031   C 53.8759031
+  OK  hull of one prime: enumerated = closed C++ 101.2759172   C 101.2759172
+D109
+  OK  -|log qq|                            C++ -19.11416911   C -19.11416911
+  OK  log q = 2 l |log qq|                 C++ 267.5983675   C 267.5983675
+  OK  -|log Theta|                         C++ 116.6493794   C 116.6493794
+  OK  U(D)                                 C++ 1098.319028   C 1098.319028
+  OK  U: primes with theta values          C++ 249.4558165   C 249.4558165
+  OK  U: closed form                       C++ 249.4558165   C 249.4558165
+  OK  U: 2, 3, 5, l                        C++ 845.4290218   C 845.4290218
+  OK  U: archimedean                       C++ 3.434189658   C 3.434189658
+  OK  wall (k-1)|log qq|                   C++ 70.08528673   C 70.08528673
+  OK  C                                    C++ 1187.518484   C 1187.518484
+  OK  Step (viii)                          C++ 2123.267937   C 2123.267937
+  OK  Theorem 1.10: (1/6) log q            C++ 44.59972792   C 44.59972792
+  OK  Theorem 1.10: right-hand side        C++ 154829302   C 154829302
+  OK  classical: log q (counted)           C++ 267.5983675   C 267.5983675
+  OK  classical: log f (counted)           C++ 68.1203134   C 68.1203134
+  OK  classical: log d                     C++ 0.6931471806   C 0.6931471806
+  OK  classical: log q (all)               C++ 271.40503   C 271.40503
+  OK  classical: log f (all)               C++ 70.02364464   C 70.02364464
+  OK  classical: right-hand side           C++ 154829302   C 154829302
+  OK  hull of one prime: enumerated = closed C++ -38.37969363   C -38.37969363
+  OK  hull of one prime: enumerated = closed C++ 11.50005113   C 11.50005113
+  OK  hull of one prime: enumerated = closed C++ 17.99797132   C 17.99797132
+  OK  hull of one prime: enumerated = closed C++ 23.15981118   C 23.15981118
+  OK  hull of one prime: enumerated = closed C++ 47.9478104   C 47.9478104
+  OK  hull of one prime: enumerated = closed C++ 50.9892393   C 50.9892393
+D2
+  OK  -|log qq|                            C++ -17.14937197   C -17.14937197
+  OK  log q = 2 l |log qq|                 C++ 240.0912075   C 240.0912075
+  OK  -|log Theta|                         C++ 157.9955663   C 157.9955663
+  OK  U(D)                                 C++ 1155.159929   C 1155.159929
+  OK  U: primes with theta values          C++ 305.2176391   C 305.2176391
+  OK  U: closed form                       C++ 305.2176391   C 305.2176391
+  OK  U: 2, 3, 5, l                        C++ 846.5081   C 846.5081
+  OK  U: archimedean                       C++ 3.434189658   C 3.434189658
+  OK  wall (k-1)|log qq|                   C++ 62.88103054   C 62.88103054
+  OK  C                                    C++ 1235.190331   C 1235.190331
+  OK  Step (viii)                          C++ 1788.136237   C 1788.136237
+  OK  Theorem 1.10: (1/6) log q            C++ 40.01520125   C 40.01520125
+  OK  Theorem 1.10: right-hand side        C++ 154829361.9   C 154829361.9
+  OK  classical: log q (counted)           C++ 240.0912075   C 240.0912075
+  OK  classical: log f (counted)           C++ 76.92462128   C 76.92462128
+  OK  classical: log d                     C++ 0.8047189562   C 0.8047189562
+  OK  classical: log q (all)               C++ 240.0912075   C 240.0912075
+  OK  classical: log f (all)               C++ 76.92462128   C 76.92462128
+  OK  classical: right-hand side           C++ 154829361.9   C 154829361.9
+  OK  hull of one prime: enumerated = closed C++ 12.03515056   C 12.03515056
+  OK  hull of one prime: enumerated = closed C++ 10.5133062   C 10.5133062
+  OK  hull of one prime: enumerated = closed C++ 132.0129199   C 132.0129199
+D3
+  OK  -|log qq|                            C++ -80.58882784   C -80.58882784
+  OK  log q = 2 l |log qq|                 C++ 1128.24359   C 1128.24359
+  OK  -|log Theta|                         C++ 449.2380915   C 449.2380915
+  OK  U(D)                                 C++ 1871.525604   C 1871.525604
+  OK  U: primes with theta values          C++ 1012.591507   C 1012.591507
+  OK  U: closed form                       C++ 1012.591507   C 1012.591507
+  OK  U: 2, 3, 5, l                        C++ 855.499907   C 855.499907
+  OK  U: archimedean                       C++ 3.434189658   C 3.434189658
+  OK  wall (k-1)|log qq|                   C++ 295.4923688   C 295.4923688
+  OK  C                                    C++ 2247.6068   C 2247.6068
+  OK  Step (viii)                          C++ 4911.165165   C 4911.165165
+  OK  Theorem 1.10: (1/6) log q            C++ 188.0405983   C 188.0405983
+  OK  Theorem 1.10: right-hand side        C++ 154830664.3   C 154830664.3
+  OK  classical: log q (counted)           C++ 1128.24359   C 1128.24359
+  OK  classical: log f (counted)           C++ 270.899114   C 270.899114
+  OK  classical: log d                     C++ 0.8047189562   C 0.8047189562
+  OK  classical: log q (all)               C++ 1132.84876   C 1132.84876
+  OK  classical: log f (all)               C++ 272.3969802   C 272.3969802
+  OK  classical: right-hand side           C++ 154830664.3   C 154830664.3
+  OK  hull of one prime: enumerated = closed C++ 13.73433897   C 13.73433897
+  OK  hull of one prime: enumerated = closed C++ 14.10526482   C 14.10526482
+  OK  hull of one prime: enumerated = closed C++ 7.584432988   C 7.584432988
+  OK  hull of one prime: enumerated = closed C++ 7.379997366   C 7.379997366
+  OK  hull of one prime: enumerated = closed C++ 5.76645241   C 5.76645241
+  OK  hull of one prime: enumerated = closed C++ 8.254703422   C 8.254703422
+  OK  hull of one prime: enumerated = closed C++ 8.263595294   C 8.263595294
+  OK  hull of one prime: enumerated = closed C++ 11.4010668   C 11.4010668
+  OK  hull of one prime: enumerated = closed C++ 13.46406044   C 13.46406044
+  OK  hull of one prime: enumerated = closed C++ -159.670838   C -159.670838
+  OK  hull of one prime: enumerated = closed C++ 21.81799666   C 21.81799666
+  OK  hull of one prime: enumerated = closed C++ 43.58900171   C 43.58900171
+  OK  hull of one prime: enumerated = closed C++ 69.48795613   C 69.48795613
+  OK  hull of one prime: enumerated = closed C++ 72.43280624   C 72.43280624
+  OK  hull of one prime: enumerated = closed C++ 81.93268444   C 81.93268444
+  OK  hull of one prime: enumerated = closed C++ 107.6847707   C 107.6847707
+  OK  hull of one prime: enumerated = closed C++ 118.5756114   C 118.5756114
+D18
+  OK  -|log qq|                            C++ -43.9250488   C -43.9250488
+  OK  log q = 2 l |log qq|                 C++ 614.9506831   C 614.9506831
+  OK  -|log Theta|                         C++ 285.9154452   C 285.9154452
+  OK  U(D)                                 C++ 1478.086459   C 1478.086459
+  OK  U: primes with theta values          C++ 625.7459017   C 625.7459017
+  OK  U: closed form                       C++ 625.7459017   C 625.7459017
+  OK  U: 2, 3, 5, l                        C++ 848.906368   C 848.906368
+  OK  U: archimedean                       C++ 3.434189658   C 3.434189658
+  OK  wall (k-1)|log qq|                   C++ 161.0585122   C 161.0585122
+  OK  C                                    C++ 1683.07002   C 1683.07002
+  OK  Step (viii)                          C++ 4102.428404   C 4102.428404
+  OK  Theorem 1.10: (1/6) log q            C++ 102.4917805   C 102.4917805
+  OK  Theorem 1.10: right-hand side        C++ 154829925.5   C 154829925.5
+  OK  classical: log q (counted)           C++ 614.9506831   C 614.9506831
+  OK  classical: log f (counted)           C++ 160.8640011   C 160.8640011
+  OK  classical: log d                     C++ 0.8047189562   C 0.8047189562
+  OK  classical: log q (all)               C++ 618.169559   C 618.169559
+  OK  classical: log f (all)               C++ 161.6687201   C 161.6687201
+  OK  classical: right-hand side           C++ 154829925.5   C 154829925.5
+  OK  hull of one prime: enumerated = closed C++ 14.10526482   C 14.10526482
+  OK  hull of one prime: enumerated = closed C++ 7.379997366   C 7.379997366
+  OK  hull of one prime: enumerated = closed C++ 6.842303627   C 6.842303627
+  OK  hull of one prime: enumerated = closed C++ 7.483278235   C 7.483278235
+  OK  hull of one prime: enumerated = closed C++ 9.413534749   C 9.413534749
+  OK  hull of one prime: enumerated = closed C++ 9.833570171   C 9.833570171
+  OK  hull of one prime: enumerated = closed C++ 10.79484743   C 10.79484743
+  OK  hull of one prime: enumerated = closed C++ 12.10486059   C 12.10486059
+  OK  hull of one prime: enumerated = closed C++ 18.23609841   C 18.23609841
+  OK  hull of one prime: enumerated = closed C++ 18.36775999   C 18.36775999
+  OK  hull of one prime: enumerated = closed C++ -78.3569853   C -78.3569853
+  OK  hull of one prime: enumerated = closed C++ 21.38462533   C 21.38462533
+  OK  hull of one prime: enumerated = closed C++ 30.23089639   C 30.23089639
+  OK  hull of one prime: enumerated = closed C++ 34.69231933   C 34.69231933
+  OK  hull of one prime: enumerated = closed C++ 50.94398614   C 50.94398614
+  OK  hull of one prime: enumerated = closed C++ 109.0248982   C 109.0248982
+D15
+  OK  -|log qq|                            C++ -36.86182442   C -36.86182442
+  OK  log q = 2 l |log qq|                 C++ 516.0655419   C 516.0655419
+  OK  -|log Theta|                         C++ 243.3053023   C 243.3053023
+  OK  U(D)                                 C++ 1384.661712   C 1384.661712
+  OK  U: primes with theta values          C++ 530.0377146   C 530.0377146
+  OK  U: closed form                       C++ 530.0377146   C 530.0377146
+  OK  U: 2, 3, 5, l                        C++ 851.1898074   C 851.1898074
+  OK  U: archimedean                       C++ 3.434189658   C 3.434189658
+  OK  wall (k-1)|log qq|                   C++ 135.1600229   C 135.1600229
+  OK  C                                    C++ 1556.683559   C 1556.683559
+  OK  Step (viii)                          C++ 3925.618299   C 3925.618299
+  OK  Theorem 1.10: (1/6) log q            C++ 86.01092365   C 86.01092365
+  OK  Theorem 1.10: right-hand side        C++ 154829767.2   C 154829767.2
+  OK  classical: log q (counted)           C++ 516.0655419   C 516.0655419
+  OK  classical: log f (counted)           C++ 137.2940091   C 137.2940091
+  OK  classical: log d                     C++ 0.8047189562   C 0.8047189562
+  OK  classical: log q (all)               C++ 516.0655419   C 516.0655419
+  OK  classical: log f (all)               C++ 137.2940091   C 137.2940091
+  OK  classical: right-hand side           C++ 154829767.2   C 154829767.2
+  OK  hull of one prime: enumerated = closed C++ 7.584432988   C 7.584432988
+  OK  hull of one prime: enumerated = closed C++ 7.63653345   C 7.63653345
+  OK  hull of one prime: enumerated = closed C++ 5.99064896   C 5.99064896
+  OK  hull of one prime: enumerated = closed C++ 7.252416502   C 7.252416502
+  OK  hull of one prime: enumerated = closed C++ 7.534427797   C 7.534427797
+  OK  hull of one prime: enumerated = closed C++ 8.315552146   C 8.315552146
+  OK  hull of one prime: enumerated = closed C++ 8.585999584   C 8.585999584
+  OK  hull of one prime: enumerated = closed C++ 10.62654177   C 10.62654177
+  OK  hull of one prime: enumerated = closed C++ 14.399216   C 14.399216
+  OK  hull of one prime: enumerated = closed C++ -64.06546544   C -64.06546544
+  OK  hull of one prime: enumerated = closed C++ 20.22816286   C 20.22816286
+  OK  hull of one prime: enumerated = closed C++ 31.16705131   C 31.16705131
+  OK  hull of one prime: enumerated = closed C++ 39.75300119   C 39.75300119
+  OK  hull of one prime: enumerated = closed C++ 65.98185826   C 65.98185826
+  OK  hull of one prime: enumerated = closed C++ 68.88073531   C 68.88073531
+D2357
+  OK  -|log qq|                            C++ -11.84025012   C -11.84025012
+  OK  log q = 2 l |log qq|                 C++ 3717.838537   C 3717.838537
+  OK  -|log Theta|                         C++ -22675.22641   C -22675.22641
+  OK  U(D)                                 C++ -8246.148983   C -8246.148983
+  OK  U: primes with theta values          C++ -21883.75338   C -21883.75338
+  OK  U: closed form                       C++ -21883.75338   C -21883.75338
+  OK  U: 2, 3, 5, l                        C++ 13591.24284   C 13591.24284
+  OK  U: archimedean                       C++ 46.36156038   C 46.36156038
+  OK  wall (k-1)|log qq|                   C++ 24463.93012   C 24463.93012
+  OK  C                                    C++ 16229.62138   C 16229.62138
+  OK  Step (viii)                          C++ 44492.79163   C 44492.79163
+  OK  Theorem 1.10: (1/6) log q            C++ 619.6397561   C 619.6397561
+  OK  Theorem 1.10: right-hand side        C++ 3472588879   C 3472588879
+  OK  classical: log q (counted)           C++ 3717.838537   C 3717.838537
+  OK  classical: log f (counted)           C++ 30.22764369   C 30.22764369
+  OK  classical: log d                     C++ 0.6931471806   C 0.6931471806
+  OK  classical: log q (all)               C++ 3723.947784   C 3723.947784
+  OK  classical: log f (all)               C++ 33.28226748   C 33.28226748
+  OK  classical: right-hand side           C++ 3472588879   C 3472588879
+  OK  hull of one prime: enumerated = closed C++ 146.4250974   C 146.4250974
+  OK  hull of one prime: enumerated = closed C++ 137.2708936   C 137.2708936
+  OK  hull of one prime: enumerated = closed C++ 174.6599231   C 174.6599231
+  OK  hull of one prime: enumerated = closed C++ 184.1247318   C 184.1247318
+  OK  hull of one prime: enumerated = closed C++ 169.2194057   C 169.2194057
+  OK  hull of one prime: enumerated = closed C++ 168.0921299   C 168.0921299
+  OK  hull of one prime: enumerated = closed C++ -23971.71618   C -23971.71618
+  OK  hull of one prime: enumerated = closed C++ 133.9511206   C 133.9511206
+  OK  hull of one prime: enumerated = closed C++ 136.3849106   C 136.3849106
+items compared: 204
+
+2. Information flow and non-interference (make check)
+  information flow: multiradial.cpp and iv.cpp do not include theater.hpp, oracle.hpp or link.hpp, even indirectly
+  selftest PASSED
+  selftest PASSED
+  selftest PASSED
+  selftest PASSED
+  selftest PASSED
+  selftest PASSED
+  selftest PASSED
+
+3. The family q -> q^N (N <= 40, N prime to l)
+  D211: the oracle step-xi (reverse-computed Step (xi)) says yes up to N = 2, no from N = 3; the height inequality holds up to N = 15, fails from N = 16
+  D109: the oracle step-xi (reverse-computed Step (xi)) says yes up to N = 2, no from N = 3; the height inequality holds up to N = 16, fails from N = 17
+  D2: the oracle step-xi (reverse-computed Step (xi)) says yes up to N = 3, no from N = 4; the height inequality holds up to N = 19, fails from N = 20
+  D3: the oracle step-xi (reverse-computed Step (xi)) says yes up to N = 2, no from N = 3; the height inequality holds up to N = 6, fails from N = 8
+  D18: the oracle step-xi (reverse-computed Step (xi)) says yes up to N = 2, no from N = 3; the height inequality holds up to N = 10, fails from N = 11
+  D15: the oracle step-xi (reverse-computed Step (xi)) says yes up to N = 2, no from N = 3; the height inequality holds up to N = 11, fails from N = 12
+
+all checks passed

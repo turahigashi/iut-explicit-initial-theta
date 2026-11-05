@@ -402,3 +402,21 @@ made about the truth of Corollary 3.12, Theorem 1.10 of IUT IV, or the abc conje
 for the files and how to rerun them.
 
 The files in `reading-family/` are licensed under CC BY 4.0.
+
+## Two computations of the height inequality (November 2026)
+
+**Two computations of the height inequality and the multiradial algorithm: reading IUT from the viewpoint of computer
+science.** `two-computations/paper/two_computations.pdf` (27 pages), version 1.0.0, DOI
+[10.5281/zenodo.23968299](https://doi.org/10.5281/zenodo.23968299).
+
+An essay with almost no new mathematical results, which proposes to read IUT from the side of computer science. In
+every reading listed in `reading-family/`, IUT passes through the height inequality, which is written in classical
+quantities and can be computed for a given curve without IUT; what IUT has to add is the "for every initial Θ-datum" of
+Corollary 3.12, which is supposed to come from the multiradial algorithm of Theorem 3.11. Two C programs place the
+classical computation and the computation of IUT (in the reading of IUT IV) side by side on the same input, and a C++
+mockup of the multiradial algorithm implements what can be implemented at present and leaves the rest as named oracles
+whose values are reverse-computed and marked as such. **No claim is made about the truth of IUT, of Corollary 3.12, or
+of the abc conjecture**; the output of the mockup proves nothing. See `two-computations/README.md` for the files and how
+to rerun them.
+
+The files in `two-computations/` are licensed under CC BY 4.0.

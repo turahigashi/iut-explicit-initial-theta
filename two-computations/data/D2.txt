@@ -1,0 +1,14 @@
+# local data of the initial Theta-datum D2: E: y^2 = x(x-1)(x-a) over F = Q(sqrt(5))
+# written by export_local_data.py from elementary_height.py; the same as the places of iut_compute.py
+name D2
+ell 7
+D 5
+unfactored 0
+# place  prime  f  e_F  ord_q   (one line per place of F above a prime dividing N(a)N(1-a))
+place 2 2 2 1 0
+place 11+ 11 1 1 2
+place 11- 11 1 1 2
+place 30965771+ 30965771 1 1 2
+place 30965771- 30965771 1 1 12
+place 56406340220143710508313748934073550973772664592051+ 56406340220143710508313748934073550973772664592051 1 1 0
+place 56406340220143710508313748934073550973772664592051- 56406340220143710508313748934073550973772664592051 1 1 2

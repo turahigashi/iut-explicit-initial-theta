@@ -1,0 +1,6 @@
+datum D3: the theaters' coordinates on Delta_Theta (a unit of Z/N per place) are drawn from 8 seeds
+  with step (C):    -|log Theta| = 449.238092 449.238092 449.238092 449.238092 449.238092 449.238092 449.238092 449.238092
+  identical for all 8: yes
+  without step (C): -|log Theta| = -2.647876e+19 -2.320305e+19 -2.182020e+19
+  depends on the choice: yes; the j^2-structure of the classes is still seen: yes
+selftest PASSED

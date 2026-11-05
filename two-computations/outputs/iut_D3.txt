@@ -1,0 +1,7 @@
+datum D3  l = 7  k = 4.6666666667
+q-pilot      -|log qq|   = -80.5888278417        (log q = 2 l |log qq| = 1128.2435897837)
+Theta-pilot  -|log Theta| = 449.2380915408       (reading of IUT IV; places above 2, 3, 5, l set to 0)
+IUT IV       U(D)         = 1871.5256035966       (primes with theta values 1012.5915069428, closed form 1012.5915069428; 2, 3, 5, l 855.4999069963; archimedean 3.4341896575)
+Corollary 3.12: -80.5888278417 <= 449.2380915408      IV: 449.2380915408 <= 1871.5256035966
+height inequality (k-1)|log qq| = 295.4923687529 <= 2247.6068001912 = C
+Step (viii): 4911.1651650258      Theorem 1.10: (1/6) log q = 188.0405982973 <= 1.548306642972e+08

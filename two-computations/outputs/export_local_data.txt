@@ -1,0 +1,8 @@
+D211: 13 places, 8 primes, unfactored 0; agrees with iut_compute.py
+D109: 16 places, 9 primes, unfactored 0; agrees with iut_compute.py
+D2: 7 places, 4 primes, unfactored 0; agrees with iut_compute.py
+D3: 35 places, 19 primes, unfactored 0; agrees with iut_compute.py
+D18: 34 places, 18 primes, unfactored 0; agrees with iut_compute.py
+D15: 31 places, 16 primes, unfactored 0; agrees with iut_compute.py
+D2357: 22 places, 12 primes, unfactored 1; agrees with iut_compute.py
+data/ is reproduced exactly by export_local_data.py
