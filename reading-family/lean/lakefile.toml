@@ -1,0 +1,11 @@
+name = "readingfamily"
+version = "1.0.0"
+defaultTargets = ["ReadingFamily"]
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.30.0"
+
+[[lean_lib]]
+name = "ReadingFamily"

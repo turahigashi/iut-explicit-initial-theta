@@ -1,0 +1,26 @@
+Thresholds in N (remainders replaced by their interval at N = 1)
+datum          a      wall         C   H fails   per (Ind1)-axis
+D211      21.801    79.937   1247.14  N > 15.60
+    V   x = 4.6667 (12 readings): Cor fails for every N > 3.31 (in some reading already for N > -0.07); IV holds for every N
+    L   x = 1.7500 (12 readings): Cor fails for every N > 15.38 (in some reading already for N > -0.32); IV fails for N > 15.66 to 19.70 (least to largest over the readings)
+    L0  x = 0.8750 (12 readings): Cor holds for every N >= 2 in all readings (least B_R of the hull readings 4.211); IV fails for N > 12.12 to 15.15 (least to largest over the readings)
+D109      19.114    70.085   1187.52  N > 16.94
+    V   x = 4.6667 (12 readings): Cor fails for every N > 3.27 (in some reading already for N > 0.05); IV holds for every N
+    L   x = 1.7500 (12 readings): Cor fails for every N > 15.20 (in some reading already for N > 0.24); IV fails for N > 17.39 to 21.24 (least to largest over the readings)
+    L0  x = 0.8750 (12 readings): Cor holds for every N >= 1 in all readings (least B_R of the hull readings 3.434); IV fails for N > 13.46 to 16.34 (least to largest over the readings)
+D2        17.149    62.881   1235.19  N > 19.64
+    V   x = 4.6667 (12 readings): Cor fails for every N > 4.29 (in some reading already for N > -0.21); IV holds for every N
+    L   x = 2.2273 (12 readings): Cor fails for every N > 12.32 (in some reading already for N > -0.62); IV fails for N > 23.33 to 29.84 (least to largest over the readings)
+    L0  x = 1.4955 (12 readings): Cor fails for every N > 29.83 (in some reading already for N > -1.53); IV fails for N > 18.05 to 22.95 (least to largest over the readings)
+D3        80.589   295.492   2247.61  N > 7.61
+    V   x = 4.6667 (12 readings): Cor fails for every N > 3.14 (in some reading already for N > -0.15); IV holds for every N
+    L   x = 2.3149 (12 readings): Cor fails for every N > 8.37 (in some reading already for N > -0.42); IV fails for N > 7.18 to 12.09 (least to largest over the readings)
+    L0  x = 1.6094 (12 readings): Cor fails for every N > 17.67 (in some reading already for N > -0.91); IV fails for N > 5.60 to 9.30 (least to largest over the readings)
+D18       43.925   161.059   1683.07  N > 10.45
+    V   x = 4.6667 (12 readings): Cor fails for every N > 3.41 (in some reading already for N > -0.13); IV holds for every N
+    L   x = 1.7779 (12 readings): Cor fails for every N > 15.32 (in some reading already for N > -0.62); IV fails for N > 9.14 to 13.43 (least to largest over the readings)
+    L0  x = 0.9113 (12 readings): Cor holds for every N >= 6 in all readings (least B_R of the hull readings 11.403); IV fails for N > 7.11 to 10.33 (least to largest over the readings)
+D15       36.862   135.160   1556.68  N > 11.52
+    V   x = 4.6667 (12 readings): Cor fails for every N > 3.44 (in some reading already for N > -0.09); IV holds for every N
+    L   x = 1.7500 (12 readings): Cor fails for every N > 15.99 (in some reading already for N > -0.44); IV fails for N > 10.37 to 14.59 (least to largest over the readings)
+    L0  x = 0.8750 (12 readings): Cor holds for every N >= 3 in all readings (least B_R of the hull readings 6.268); IV fails for N > 8.05 to 11.22 (least to largest over the readings)

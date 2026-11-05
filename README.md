@@ -384,3 +384,21 @@ The proofs are on paper and have not been checked in Lean. **No claim is made ab
 Corollary 3.12, or the abc conjecture.** See `ind2-gap/README.md` for the files and how to rerun the scripts.
 
 The files in `ind2-gap/` are licensed under CC BY 4.0.
+
+## No reading avoids the height inequality (November 2026)
+
+**No reading avoids the height inequality: 36 readings of Corollary 3.12 and the conservation of the height load.**
+`reading-family/paper/reading_family.pdf` (15 pages), version 1.0.0, DOI
+[10.5281/zenodo.23965952](https://doi.org/10.5281/zenodo.23965952).
+
+The value of −|log Θ| in Corollary 3.12 depends on how the statement is read, along five axes ((Ind1), (Ind3), (Ind2),
+the hull, the archimedean container), which give 36 readings. In each of them, Corollary 3.12 and the upper bound of
+IUT IV together give the same height inequality (k − 1)|log q| ≤ C, because the two ends are computed by one procedure
+that takes no reading. A reading only splits the wall (k − 1)|log q| between the two statements, at a point decided by
+(Ind1) alone; no reading makes both loads nonpositive, and in the family q → q^N the statement that holds for every N
+carries no positive load. The statements are proved in Lean 4 for a component model (`reading-family/lean/`), and the
+36 readings are computed for the seven data of the catalogue with the program of the walkthrough above. **No claim is
+made about the truth of Corollary 3.12, Theorem 1.10 of IUT IV, or the abc conjecture.** See `reading-family/README.md`
+for the files and how to rerun them.
+
+The files in `reading-family/` are licensed under CC BY 4.0.

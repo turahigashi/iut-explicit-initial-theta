@@ -1,0 +1,762 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{geometry}
+\geometry{margin=2.6cm}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\hypersetup{pdftitle={No reading avoids the height inequality},pdfauthor={Toshihisa Urahigashi}}
+\setlist{itemsep=2pt,topsep=4pt}
+\raggedbottom
+\emergencystretch=3em
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Zp}{\mathbb{Z}_p}
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\Ocal}{\mathcal{O}}
+\newcommand{\Vbad}{\mathbb{V}_{\mathrm{mod}}^{\mathrm{bad}}}
+\newcommand{\qq}{\underline{\underline{q}}}
+\newcommand{\TT}{\underline{\underline{\Theta}}}
+\newcommand{\Cor}{\mathrm{Cor}}
+\newcommand{\IVb}{\mathrm{IV}}
+\newcommand{\Ht}{\mathrm{H}}
+\newcommand{\rV}{\mathrm{V}}
+\newcommand{\rL}{\mathrm{L}}
+\newcommand{\rLz}{\mathrm{L0}}
+\newcommand{\lo}{\mathrm{lo}}
+\newcommand{\hi}{\mathrm{hi}}
+\newcommand{\leanus}{\textunderscore\allowbreak}
+\newcommand{\lean}[1]{{\ttfamily\let\_\leanus #1}}
+
+% labels
+\newcommand{\lab}[2]{{\upshape\fcolorbox{#1}{#1!8}{\scriptsize\sffamily\bfseries\textcolor{#1}{#2}}}}
+\newcommand{\tagS}{\lab{blue}{S}}
+\newcommand{\tagX}{\lab{Purple}{X}}
+\newcommand{\tagP}{\lab{ForestGreen}{P}}
+\newcommand{\tagR}{\lab{teal}{R}}
+\newcommand{\tagN}{\lab{BrickRed}{N}}
+\newcommand{\tagH}{\lab{BurntOrange}{H}}
+\newcommand{\known}[1]{\par\noindent{\footnotesize\upshape #1}\par\smallskip}
+\newcommand{\q}[1]{``#1''}
+\newcommand{\srcquote}[2]{\begin{quote}\small #1\par\nopagebreak\hfill{\footnotesize #2}\end{quote}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{No reading avoids the height inequality:\\ 36 readings of Corollary~3.12\\ and the conservation of the
+height load}
+\author{Toshihisa Urahigashi\\\small ORCID 0009-0004-0460-6242\\\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
+\date{Version 1.0.0, 5 November 2026\\\small\href{https://doi.org/10.5281/zenodo.23965952}{doi:10.5281/zenodo.23965952}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Corollary~3.12 of inter-universal Teichm\"uller theory (IUT)~III compares the log-volume $-|\log\qq|$ of the
+$q$-pilot object with the log-volume $-|\log\TT|$ of the holomorphic hull of the union of the possible images of the
+$\Theta$-pilot object. Theorem~1.10 of IUT~IV bounds $-|\log\TT|$ from above, and the two together give the height
+inequality. The value of $-|\log\TT|$ depends on how the statement is read, along five axes: the range of the label
+permutations of (Ind1), container or iteration for (Ind3), the group of (Ind2), whether the hull is taken, and the
+archimedean container. Combining the axes found so far gives 36 readings that change the value.
+
+We show that in each of the 36 readings, also with a bounded Kummer distortion added, Corollary~3.12 and the upper
+bound of IV together give the same height inequality $(k-1)|\log\qq|\le C$. The reason is that $|\log\qq|$, $k$ and
+$C$ are computed by one procedure that takes no reading; only the middle term $-|\log\TT|$ depends on the reading.
+
+Moreover, a reading decides only how much of the wall $(k-1)|\log\qq|$ is carried by Corollary~3.12 and how much by
+IV. This split is decided by the (Ind1)-axis alone; the other axes change only a bounded quantity that does not involve
+the $q$-orders. No reading makes both loads nonpositive. In the family obtained by replacing $q$ with $q^N$, the
+statement that holds for every $N$ carries no positive load, and the other carries at least the whole wall.
+
+We prove these statements in Lean~4 for a component model (96 declarations, standard axioms only), and compute the 36
+values for seven explicit initial $\Theta$-data. No claim is made about the truth of Corollary~3.12, Theorem~1.10 of
+IUT~IV, or the abc conjecture.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+
+\subsection{Motivation}
+The ultimate aim of this work is to understand exactly the algorithm by which IUT computes the height inequality.
+Earlier notes determined the value of one step of the computation of IUT~IV that had been left open, the
+(Ind2)-term~\cite{Gap}, and put the computation from an initial $\Theta$-datum to the two sides of the height inequality
+into one program~\cite{WT}.
+
+That computation contains several choices that the text of the original papers does not fix uniquely; we call them
+\emph{readings}. This raises a question: by choosing the readings differently, is there a route that avoids the height
+inequality, or one that makes the proof cheaper? The answer of this note is that no reading provides either.
+
+\subsection{The two statements and the readings}\label{ss:two}
+Corollary~3.12 compares two log-volumes. One of them is subject to the indeterminacies; the other is not.
+
+\srcquote{\tagS\ \q{Write $-|\log(\TT)|\in\mathbb{R}\bigcup\{+\infty\}$ for the procession-normalized mono-analytic
+log-volume [i.e., where the average is taken over $j\in\mathbb{F}_l^{\divideontimes}$ --- cf.\ Remark 3.1.1, (ii),
+(iii), (iv); Proposition 3.9, (i), (ii); Theorem 3.11, (i), (a)] of the holomorphic hull [cf.\ Remark 3.9.5, (i)] of
+the union of the possible images of a $\Theta$-pilot object [cf.\ Definition 3.8, (i)], relative to the relevant
+Kummer isomorphisms [cf.\ Theorem 3.11, (ii)], in the multiradial representation of Theorem 3.11, (i), which we regard
+as subject to the indeterminacies (Ind1), (Ind2), (Ind3) described in Theorem 3.11, (i), (ii).}\par
+\q{Write $-|\log(\qq)|\in\mathbb{R}$ for the procession-normalized mono-analytic log-volume of the image of a
+$q$-pilot object [cf.\ Definition 3.8, (i)], relative to the relevant Kummer isomorphisms [cf.\ Theorem 3.11, (ii)],
+in the multiradial representation of Theorem 3.11, (i), which we do not regard as subject to the indeterminacies
+(Ind1), (Ind2), (Ind3) described in Theorem 3.11, (i), (ii).}}{\cite{IUT3}, Corollary~3.12}
+
+The proof of Theorem~1.10 of IV bounds $-|\log\TT|$ from above. In doing so it applies Proposition~1.4\,(iii) of IV
+with the position of the theta value fixed at the label $j$:
+
+\srcquote{\tagS\ \q{We would like to apply Proposition 1.4, (iii), to the present situation, by taking}\ \dots\
+\q{`$i^\dagger$' to be $j\in\mathbb{S}^{\pm}_{j+1}$;}\ \dots\ \q{`$\lambda$' to be `$\mathrm{ord}(-)$' of the
+element $\qq^{\,j^2}_{\underline{v}_j}$}\ \dots\ \q{if $\underline{v}_j\in\underline{\mathbb{V}}^{\mathrm{bad}}$}}{\cite{IUT4},
+proof of Theorem~1.10, Step~(v)}
+
+This gives the chain
+\[-|\log\qq|\ \le\ -|\log\TT|\ \le\ U(D),\]
+whose two ends together give the height inequality. How the middle term $-|\log\TT|$ is formed depends on the range of
+the possible images, the container, the group, the hull and the archimedean part; such a choice is what we call a
+\emph{reading}. For each reading there are two statements, Corollary~3.12 and the upper bound of IV. We show that no
+such pair avoids the height inequality, and that a reading only moves the content of the wall between the two
+statements.
+
+\subsection{Results}
+\begin{itemize}
+\item Theorem~\ref{t:cons} (conservation): in every reading, Corollary~3.12 and the upper bound of IV together give the
+same height inequality $(k-1)a\le C$, where $a=|\log\qq|$. The sum of the slacks of the two statements equals the slack
+of the height inequality.
+\item Theorem~\ref{t:split} (the split of the load): with the split point $x$, Corollary~3.12 carries the load
+$(x-1)a$ and IV carries the load $(k-x)a$. Their sum is always the wall $(k-1)a$. The two loads are never both
+nonpositive, and one of them carries at least half of the wall.
+\item Theorem~\ref{t:ind1} (the split point is decided by (Ind1) alone): in the component model the theta part is
+$-ka$ for V, increases in the order V, L, L0, and is homogeneous of degree one in the $q$-orders. The theta
+part of V equals those of L and L0 exactly when the $q$-orders agree at the places of positive weight above each
+prime.
+\item Proposition~\ref{p:rest} (the other axes change only the remainder): (Ind2), (Ind3), the hull, the archimedean
+part and a bounded Kummer distortion change the value only by a bounded quantity that does not involve the $q$-orders.
+\item Theorem~\ref{t:cheap} (the proof cannot be made cheaper): in the family obtained by replacing $q$ with $q^N$, no
+reading keeps the two statements together for all large $N$. In a reading in which IV holds for every $N$, the load of
+IV is $0$ and Corollary~3.12 carries the whole wall. In a reading in which Corollary~3.12 holds for every $N$, one has
+$x\le1$, and IV carries at least the whole wall. The theta part is the slope, in $N$, of the values of the family.
+\item Example~\ref{e:two} (two places): above one prime there are a bad place of weight $w\le\frac12$ and a good place
+(the situation of Belyi points). In reading L0 one has $x\le1$. In V, IV always holds and Corollary~3.12 fails; in L0
+it is the other way round.
+\item Section~\ref{s:data} (explicit data): the 36 readings are computed for seven initial $\Theta$-data. All seven
+have a prime above which the $q$-orders differ, and $x_\rL$ and $x_\rLz$ are strictly less than $k$. For $D_{211}$,
+$D_{109}$ and $D_{15}$ one has $x_\rLz=\frac78<1$.
+\end{itemize}
+In one sentence: a reading decides only which of the two statements carries the content of the wall; the total does
+not depend on the reading.
+
+\subsection{Relation to earlier work}\label{ss:prior}
+\begin{itemize}
+\item \tagP\ Theorem~14.3\,(ii) of the companion note~\cite{II} shows, in a model that treats the (Ind1)-axis alone, that in
+every reading Corollary~3.12 and IV together imply the height bound (an implication). There, what (Ind2) and (Ind3) add
+to the hull is represented by one number $E$. This note extends that statement to five axes and the Kummer distortion,
+turns the implication into an identity (the sum of the loads), and adds the theorems that the split point is decided
+by (Ind1) alone, with the condition for equality, and the uniformity theorem for the family $q^N$.
+\item \tagX\ The repository lana-agents/iut~\cite{lana} (``lana'' below), a public Lean formalization, distinguishes
+two readings of (Ind1), the literal reading and the reading of IV, and states that the literal reading does not suffice
+for the ABC argument. It also proves that taking the hull for each (Ind1)-image separately gives the value of the
+reading of IV (\lean{rhsDataOn\_singleton} in \lean{Iut/Concrete/Ind1Invariance.lean}).
+\end{itemize}
+\srcquote{\tagX\ \q{Under the literal union over the labels, the holomorphic hull at a tuple \lean{c} is governed by
+\lean{min\_l ord\_p(q\_\{c(l)\})} rather than by the average of \lean{ord\_p(q\_v)} over the places that IUT IV,
+Step (v), obtains via Proposition 1.7. So the literal reading does not suffice for the Theorem 1.10 / ABC argument: the
+points produced by the Belyi reduction have good and bad places above the same prime, where
+\lean{min\_l ord\_p(q\_\{c(l)\}) = 0}.}}{\cite{lana}, \lean{Iut/Concrete/Literal.lean}, module docstring}
+\begin{itemize}
+\item \tagX\ In the same repository, \lean{Iut/WallEquiv/} collects formulations of the wall---the word of the interim
+report of Project LANA~\cite[\S0.2]{LANA}---and proves equivalences between them in its models, and
+\lean{NonDerivable.lean} shows, for one reading, that Step~(xi) does not follow from the formalized content of
+Theorem~3.11 alone. lana itself states that these equivalences hold only in the models.
+\end{itemize}
+\srcquote{\tagX\ \q{\textbf{Only in the models} (identified-copies output law, zero distortion --- e.g.\ unit-induced
+Kummer identifications, \lean{Iut/LogLink}): 1~$\Leftrightarrow$~2~$\Leftrightarrow$~3~$\Leftrightarrow$~5~$\Leftrightarrow$~6~$\Leftrightarrow$~10.
+A formulation different from (SS) needs an $\eta$-algorithm whose output law is not \lean{LGP} acting on an
+(Ind3)-choice, or a transport with nonzero distortion (a Kummer identification that is not unit-induced).}\par
+\q{\textbf{The missing input is ABC-strength}: \lean{classicalABC\_of\_forall\_xi} (Step (xi) for all genuine data gives
+\lean{ClassicalABC}, via \lean{classicalABC\_of\_thm311}).}}{\cite{lana}, \lean{Iut/WallEquiv/README.md}}
+\begin{itemize}
+\item \tagX\ lana's file \lean{Iut/Abc/P24Table.lean} (added on 14 October 2026) checks by \lean{decide} a table of the
+ingredients that a proof of the Szpiro inequality must use (from a research note \lean{P2P9.md}, \S2.4, which is not
+in the repository). A ``reading'' there is a way of deciding the open entries of the table, not a reading of
+Corollary~3.12. For proofs through the IUT package (structure C6), the ingredient VA is added to every minimal hitting
+set, in the baseline reading of the table.
+\end{itemize}
+\srcquote{\tagX\ \q{\lean{VA}: the IUT coupling \lean{V $\ge$ (s - 1) a}.}\par
+\q{With \lean{C6} (proofs through the IUT package), \lean{VA} is added to each minimal hitting set.}}{\cite{lana},
+\lean{Iut/Abc/P24Table.lean}}
+\begin{itemize}
+\item \tagH\ Thus the fact that proofs through the IUT package use the wall itself is already in lana, for one reading
+(\lean{NonDerivable.lean} and VA above). What this note adds is the form over the whole family of readings. lana does
+not state that in every reading the load only moves between the two statements while its total stays the same. For
+the literal reading lana states that it does not suffice, but not that the load moves to IV (checked at commit
+\texttt{553076a}, the head of the repository on 5 November 2026).
+\item \tagX\ The correspondence with the dilemma of Scholze and Stix~\cite{SS} (blurring too much gives an empty
+statement, blurring too little a false one) is discussed in Section~\ref{ss:types}.
+\item \tagX\ Joshi holds that the Tate parameter changes with (Ind1), (Ind2) and (Ind3)~\cite{Joshi}. This denies the
+premise of this note that the left end takes no reading (Section~\ref{ss:change}).
+\item \tagN\ What we consider new, to the author's knowledge: the identity of the loads over the 36 readings and the
+Kummer distortion; the fact that the split point is decided by (Ind1) alone, with the condition for equality; the
+uniformity theorem for the family $q^N$ (a statement that holds for every $N$ carries no positive load); and the computation of
+the 36 readings on explicit data. That the wall is needed is not new (lana, above).
+\end{itemize}
+
+\subsection{What is not claimed}
+\begin{itemize}
+\item It is not claimed that the 36 readings are all the readings of the original papers. They are the combinations of
+the axes found so far.
+\item That each axis changes only a bounded quantity (Proposition~\ref{p:rest}) rests on a paper argument from the
+formula for each axis and on checks by the programs. Lean uses it as a hypothesis.
+\item The family obtained by replacing $q$ with $q^N$ is a model, not a family of actual curves.
+\item We do not decide which reading the original papers intend. Nothing is claimed about the truth of
+Corollary~3.12, Theorem~1.10 of IUT~IV, or the abc conjecture.
+\end{itemize}
+
+\subsection{Labels}
+\tagS\ a statement of the original papers of IUT or of Mochizuki's documents. \tagX\ a statement of others (lana,
+Scholze--Stix and others). \tagP\ a statement proved here; \tagP\ alone marks an elementary fact. \tagR\ known
+mathematics, applied here in a new way; the known mathematics is named. \tagN\ a result new in this note, to the
+author's knowledge. \tagH\ a reading or interpretation, not a proof.
+
+\section{Setting}\label{s:setting}
+
+\subsection{The two statements and the height inequality}
+For an initial $\Theta$-datum $D$ (with a prime $\ell\ge5$ and $\ell^*=(\ell-1)/2$) put:
+\begin{itemize}
+\item $a(D)=|\log\qq|>0$: the negative of the log-volume of the $q$-pilot object;
+\item $k=\dfrac1{\ell^*}\displaystyle\sum_{j=1}^{\ell^*}j^2=\dfrac{\ell(\ell+1)}{12}$: the average of $j^2$ over the
+labels; $k>1$ for $\ell\ge5$;
+\item $U(D)$: the upper bound of $-|\log\TT|$ given by Steps (v)--(vii) of the proof of Theorem~1.10 of IV. As in the
+original, the contributions of the primes $2$, $3$, $5$ and $\ell$ are bounded by Step~(ii) and (R4). It is computed by the program
+\texttt{iut\_height.py} of this note, which implements Steps (iv)--(viii) as written;
+\item $C(D)=U(D)+k\,a(D)$: the upper bound of IV without the term $-k\,a$ of the theta values.
+\end{itemize}
+
+\begin{definition}[The two statements and the height inequality]\label{d:two}
+Write $M_R(D)$ for the value of $-|\log\TT|$ in a reading $R$, and put
+\[\begin{aligned}\Cor_R(D)&:\ -a(D)\le M_R(D),\\ \IVb_R(D)&:\ M_R(D)\le U(D)=-k\,a(D)+C(D),\\
+\Ht(D)&:\ (k-1)\,a(D)\le C(D).\end{aligned}\]
+$\Ht(D)$ contains no reading.
+\end{definition}
+
+\tagH\ We treat the upper bound $U(D)$ of IV as one number that does not depend on the reading. What the text of IV
+computes is this one number, and when the reading is changed, the question is whether that number bounds the hull in
+the reading $R$ (the statement $\IVb_R$ of Definition~\ref{d:two}). Recomputing an upper bound for each reading is
+treated in Theorem~\ref{t:split}\,(v).
+
+\tagP\ The quantities $a$, $k$, $U$ and $C$ are computed by one procedure that takes no reading ($a$ and the side of
+Corollary~3.12 by the program of~\cite{WT}, $U$ by \texttt{iut\_height.py}). That the left end is not subject to the
+reading is the wording of Corollary~3.12 itself (Section~\ref{ss:two}), and the procedure for the right end fixes the
+position $i^\dagger=j$ in Step~(v). Moreover, we compared the procedure with an elementary computation written from the
+statement of Theorem~1.10 alone, without the machinery of IUT (\texttt{elementary\_height.py}, which does not use the
+program of~\cite{WT}; both programs are the author's). For all seven data the places counted and the four numbers at
+the ends ($\log\mathfrak q$, $\log\mathfrak f$, $\log\mathfrak d$ and the right-hand side of the theorem) agree
+(\texttt{compare\_elementary\_iut.py}).
+
+\subsection{Five axes and 36 readings}\label{ss:axes}
+\begin{center}\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.9cm}>{\raggedright\arraybackslash}p{6.1cm}>{\raggedright\arraybackslash}p{5.9cm}@{}}
+\toprule
+Axis & Choices & Source\\
+\midrule
+(Ind1): the factors on which the theta value of label $j$ may sit &
+V: the factor $j$ only; L: $1,\dots,j$ (permutations fixing $0$); L0: $0,\dots,j$ (all permutations) &
+\tagS\ V is Step~(v) of IV. \tagX\ V and L0 are lana's reading of IV and its literal reading. L is (L) of the
+catalogue~\cite{Cat}\\
+\addlinespace
+(Ind3) &
+container: the whole tensor product $\bigotimes\I$ of log-shells as support; iteration: only units and the pure
+tensors of the actual images of the same number of iterated log-links &
+\tagS\ The container is IV, Proposition~1.4\,(iii) and Step~(v). \tagH\ The iteration is our reading\\
+\addlinespace
+(Ind2) &
+units: $\Zp^\times$ and the field automorphisms; lattice: all $\Zp$-linear automorphisms preserving the log-shell of
+each factor &
+\tagX\ The lattice group is lana's \lean{tensorAut}. \tagP\ The group of IV, Proposition~1.2 gives the same
+value~\cite[\S6.2]{Gap}\\
+\addlinespace
+Hull &
+yes: the union is replaced by its holomorphic hull; no: the union itself &
+\tagS\ Corollary~3.12 takes the hull. \tagX\ No hull is lana's \lean{SSIneqNoHull} (``not IUT's container'', in its
+docstring)\\
+\addlinespace
+Archimedean part &
+small: $\pi^{j+1}\cdot B_I$; large: the unit ball of the tensor-product metric &
+\tagS\ Small is Step~(vii) of IV. \tagX\ Large is what lana keeps, following IUT~III, Proposition~3.2\,(ii)
+(\lean{VcI.md}, \S2(e))\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+In the iteration reading without the hull, the possible images form a union of pure tensors, of volume $0$
+(log-volume $-\infty$). Leaving out these combinations, there are $3\times(2\times2+2)\times2=36$ readings (Lean:
+\lean{card\_admissible}).
+
+\srcquote{\tagS\ \q{Then it follows from Proposition 1.5, (iii), (iv), that $\pi^{j+1}\cdot B_I$ serves as a container
+for the `union of possible images of a $\Theta$-pilot object' discussed in Step (iv).}}{\cite{IUT4}, proof of
+Theorem~1.10, Step~(vii)}
+
+\tagH\ In addition, the Kummer distortion $\delta$ (the difference of log-volumes carried by a Kummer identification
+that is not induced by units; the distortion in lana's \lean{WallOn}) is treated separately, as a continuous
+parameter; $\delta$ is added to $M_R$. Readings that do not change the value but decide whether the comparison applies
+at all, such as (M) of the catalogue~\cite{Cat}, are not counted as axes.
+
+\subsection{The component model}\label{ss:model}
+We set up the model in which the Lean proofs are carried out. Take a finite set $V$ of places above one prime $p$,
+weights $w_v\ge0$ with $\sum_vw_v=1$, and $q$-orders $Q_v\ge0$ (in units of $\log p$; zero except at bad places). For
+$j=1,\dots,\ell^*$, a component for the label $j$ is a tuple $t=(t_0,\dots,t_j)\in V^{j+1}$ of weight
+$w(t)=\prod_iw_{t_i}$. Write $s_i(t)=j^2Q_{t_i}$ for the order of the theta value in the factor $i$.
+
+Let the sets of factors allowed by the (Ind1)-axis be $P_\rV(j)=\{j\}$, $P_\rL(j)=\{1,\dots,j\}$ and
+$P_\rLz(j)=\{0,\dots,j\}$ (Lean: \lean{pos}). The hull of the images that put the theta value on these factors is
+decided by the largest image. The theta part on a component is
+\[h_r(t)=\max_{i\in P_r(j)}\bigl(-s_i(t)\bigr)=-\min_{i\in P_r(j)}s_i(t)\qquad(r\in\{\rV,\rL,\rLz\})\]
+(\lean{thetaHull}), and its procession-normalized value is
+\[\Theta_r=\frac1{\ell^*}\sum_{j=1}^{\ell^*}\sum_{t\in V^{j+1}}w(t)\,h_r(t)\]
+(\lean{thetaPart}). The degree of the $q$-pilot is $a=\sum_vw_vQ_v$ (\lean{qdeg}). With several primes, the values for
+each prime are multiplied by $\log p$ and added (\lean{thetaSum}, \lean{qdegSum}).
+
+\tagR\ Known mathematics: \cite[Setup~12.1 and Propositions 13.1--13.3]{II}, where the readings are given by sets of
+permutations. The hulls of V and L0 are those of $S_{\mathrm b}$ (the permutations fixing $j$) and $S_{\mathrm a}$ (all
+permutations).
+
+\section{Main results}\label{s:main}
+
+\begin{definition}[Theta part, remainder, split point, loads]\label{d:split}
+Write the value of a reading $R$ as its theta part plus a remainder, $M_R=\Theta_{r(R)}+B_R$, where $r(R)$ is the
+(Ind1)-axis of $R$. The theta part is the part proportional to the $q$-orders; the remainder $B_R$ collects the
+container, the unit parts, the rounding of the lattice, the defect of the hull, the archimedean part and a bounded
+Kummer distortion. With the split point $x_r=-\Theta_r/a$ put
+\[\begin{aligned}\text{load of Corollary 3.12}&=(x_r-1)\,a, & \text{load of IV}&=(k-x_r)\,a,\\
+\text{room of Corollary 3.12}&=B_R, & \text{room of IV}&=C-B_R.\end{aligned}\]
+\end{definition}
+
+\tagH\ For one datum alone this split is only bookkeeping, since every $M_R$ can be written as a theta part plus a
+remainder. What decides the split uniquely is the slope in the family obtained by replacing $q$ with $q^N$
+(Theorem~\ref{t:cheap}\,(iv)).
+
+\begin{theorem}[Conservation]\label{t:cons}\tagP
+\known{Elementary. Lean: \lean{Datum.conservation}, \lean{Datum.slack\_sum}}
+In every reading $R$, $\Cor_R$ and $\IVb_R$ together imply $\Ht$. Moreover
+\[\bigl(M_R+a\bigr)+\bigl(U-M_R\bigr)=C-(k-1)\,a,\]
+so the sum of the slacks of the two statements equals the slack of the height inequality.
+\end{theorem}
+
+\begin{theorem}[The split of the load]\label{t:split}\tagP
+\known{Elementary. Lean: \lean{Datum.cor\_iff}, \lean{Datum.iv\_iff}, \lean{Datum.load\_sum}, \lean{Datum.x\_le\_k},
+\lean{Datum.loadIV\_nonneg}, \lean{Datum.loadIV\_eq\_zero\_iff}, \lean{Datum.half\_load\_le\_max},
+\lean{Datum.not\_both\_loads\_nonpos}, \lean{Datum.adapted\_bound}}
+Assume that the theta part satisfies $\Theta_r\ge-k\,a$ (in the model this holds by Theorem~\ref{t:ind1}\,(ii)). Then:
+\begin{enumerate}[label=(\roman*)]
+\item $\Cor_R\iff(x_r-1)a\le B_R$, and $\IVb_R\iff(k-x_r)a\le C-B_R$.
+\item The two loads add up to $(k-1)a$, and the two rooms add up to $C$. $\Ht$ is the sum of the two inequalities.
+\item $x_r\le k$, and the load of IV is nonnegative. It vanishes only when $\Theta_r=-k\,a$.
+\item The larger of the two loads is at least $(k-1)a/2$. In particular the two loads are never both nonpositive.
+\item If the upper bound of IV is replaced by the bound $M_R\le\Theta_r+\hi$ that holds automatically in the reading
+$R$ (where $B_R\le\hi$), the two statements together give only $(x_r-1)a\le\hi$. Its coefficient $x_r-1$ of $a$ is
+smaller than the coefficient $k-1$ of the wall by exactly the load of IV, $k-x_r$.
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[The split point is decided by (Ind1) alone]\label{t:ind1}\tagR
+\known{Known mathematics: \cite[Propositions 13.1--13.3]{II} (V and L0); for one label position per capsule, lana's
+\lean{rhsDataOn\_singleton}. Lean: \lean{thetaPart\_V},
+\lean{thetaPart\_mono}, \lean{thetaPart\_ge}, \lean{thetaPart\_nonpos}, \lean{thetaPart\_smul},
+\lean{thetaPart\_eq\_V\_of\_const}, \lean{thetaPart\_V\_lt\_L0}, \lean{thetaPart\_V\_lt\_L}, \lean{thetaSum\_V},
+\lean{thetaSum\_ge}, \lean{thetaSum\_smul}}
+In the model of Section~\ref{ss:model}:
+\begin{enumerate}[label=(\roman*)]
+\item $\Theta_\rV=-k\,a$. That is, $x_\rV=k$, and in reading V the load of IV is $0$.
+\item $\Theta_\rV\le\Theta_\rL\le\Theta_\rLz\le0$. That is, $k=x_\rV\ge x_\rL\ge x_\rLz\ge0$.
+\item If the $q$-orders are multiplied by $N\ge0$, then $\Theta_r$ and $a$ are multiplied by $N$, and $x_r$ does not
+change.
+\item If the $q$-orders are equal at all places of positive weight, then $\Theta_\rL=\Theta_\rLz=\Theta_\rV$.
+\item If two places of positive weight have different $q$-orders, then $\Theta_\rV<\Theta_\rLz$. If $\ell^*\ge2$, then
+also $\Theta_\rV<\Theta_\rL$ (for $j=1$, L is the same as V).
+\end{enumerate}
+For sums over several primes (with coefficients $\log p\ge0$), (i)--(iii) hold as well.
+\end{theorem}
+
+\begin{proposition}[The other axes change only the remainder]\label{p:rest}\tagP
+\known{Elementary, given the formula for each axis; the sources of the formulas are given below. In Lean a
+hypothesis (\lean{Family.rest\_lo}, \lean{Family.rest\_hi}).}
+In units of $\log p$, let $\rho_u$ be the outer radius of the log-shell, $\rho'_u$ a lower bound for its inner radius,
+$\mu_u=1+\delta_p-\rho_u$ with
+$\delta_p=[p=2]$, $n=j+1$, and $\kappa(X)=\max\{k:X\subseteq p^k\I\}$. The values on a component are as follows.
+\begin{itemize}
+\item Container, units, hull: $\sum_u\rho_u-\min_{i\in P}s_i$.
+\item Container, lattice, hull: $\sum_u\rho_u-\min_{i\in P}\kappa(\theta_i\I)$, where
+$s_i-g\le\kappa(\theta_i\I)\le s_i$ with a local constant $g$ ($g<1$ at small places).
+\item Iteration, units: $-\bigl(\min_{i\in P}s_i+\min(0,\sum_u\mu_u)\bigr)$.
+\item Iteration, lattice: $\sum_u\rho_u-\min_{i\in P}\min(A_i,B_i)$, where
+$A_i=\kappa(\theta_i\Ocal)+\sum_{u\ne i}\kappa(\Ocal_u)$ and $B_i=n(1+\delta_p)+\kappa(\theta_i\I)$.
+\item No hull (container): at least the value with the hull minus the shell defect, and at most the value with the
+hull; the shell defect is nonnegative and at most $d_I+\sum_{I^*}(3+\log e)/\log p$.
+\item Archimedean part: the hull of the large ball exceeds the small container by $\frac j2\log2$ for the label $j$
+(by $\frac{\ell^*+1}4\log2$ on average over the labels). Without the hull, the large ball is smaller by a further
+$\log(N!)/(2N)$, with $N=2^j$.
+\end{itemize}
+Each formula is $-\min_{i\in P}s_i$ plus a quantity bounded above and below by local constants that do not involve the
+$q$-orders ($\rho$, $\rho'$, the constant $a+b$ of IV, Proposition~1.2, $\mu$, $n(1+\delta_p)$ and $3+\log e$). Hence
+the theta part is decided by the (Ind1)-axis alone, the other axes change only the remainder $B_R$, and that change
+does not involve the $q$-orders. A bounded Kummer distortion also goes into the remainder. A distortion $d\cdot a$
+proportional to $a$ lowers the split point by $d$ (and moves load to IV if $d>0$).
+\end{proposition}
+
+Sources of the formulas. \tagX\ The value $\sum\rho_u\log p$ of the hull of the container is lana's
+\lean{componentVol\_leastHull\_tensorLogShell\_eq}. \tagR\ The bracketing of $\kappa$ for the lattice group is
+Lemma~4.1 and Theorem~3.3 of~\cite{Gap}. \tagH\ The two formulas for the iteration reading are our computation in our
+reading. \tagX\ The bound for the shell defect and the values of the archimedean part are lana's (\lean{VcI.lean},
+\lean{VcI.md}, \S2(e)). \tagX\ Zeng~\cite{Zeng} gives in closed form the index of the integral structure
+$\bigotimes^n\Ocal_K$ in the product of the rings of integers of the components of $\bigotimes^nK$, for a Galois
+extension $K/\mathbb{Q}_p$, the index that the hull introduces; it depends on the discriminant of $K/\mathbb{Q}_p$ and
+on $n$, not on the $q$-orders. Bounded here means: not involving the $q$-orders; the remainder does depend on $\ell$
+and on the local fields.
+
+\begin{theorem}[The proof cannot be made cheaper]\label{t:cheap}\tagN
+\known{Lean: \lean{Family.no\_uniform\_reading}, \lean{Family.iv\_uniform}, \lean{Family.cor\_uniform},
+\lean{Family.tendsto\_slope}, \lean{modelFamily\_scaled}}
+Let $D^N$ be the datum with $q$ replaced by $q^N$. Assume that $a$ and the theta parts are multiplied by $N$, that $k$
+and $C$ do not change, and that the remainders lie in intervals $[\lo_R,\hi_R]$ that do not depend on $N$
+(Theorem~\ref{t:ind1}\,(iii) and Proposition~\ref{p:rest}). Then in every reading $R$:
+\begin{enumerate}[label=(\roman*)]
+\item There is $N_0$ such that $\Cor_R(D^N)$ and $\IVb_R(D^N)$ do not hold together for $N\ge N_0$.
+\item If $\IVb_R(D^N)$ holds for every $N\ge1$, then $\Theta_r=-k\,a$ (the load of IV is $0$), and
+\[\Cor_R(D^N)\iff(k-1)\,Na\le B_R(D^N):\]
+Corollary~3.12 carries the whole wall.
+\item If $\Cor_R(D^N)$ holds for every $N\ge1$, then $\Theta_r\ge-a$ (that is, $x_r\le1$), and $\IVb_R(D^N)$ implies
+$(k-1)\,Na\le C-B_R(D^N)$: IV carries at least the whole wall.
+\item $M_R(D^N)/N\to\Theta_r$ as $N\to\infty$. The family decides how the value splits into theta part and remainder.
+\end{enumerate}
+\end{theorem}
+
+\begin{example}[Two places: the situation of Belyi points]\label{e:two}\tagP
+\known{Known mathematics: \cite[Proposition 13.3 and Theorem 14.3\,(iv), (v)]{II}. Lean: \lean{thetaPart\_L0\_two},
+\lean{twoPlace\_x\_L0\_le\_one}, \lean{belyi\_cor\_L0}, \lean{belyi\_iv\_L0\_fails}, \lean{belyi\_iv\_V},
+\lean{belyi\_cor\_V\_fails}}
+Above one prime there are a bad place of weight $w$ and $q$-order $Q_{\mathrm b}>0$ and a good place of weight $1-w$.
+Then $x_\rLz=A(w)=\frac1{\ell^*}\sum_{j=1}^{\ell^*}j^2w^j$, and $x_\rLz\le1$ if $w\le\frac12$.
+
+Take the family with $w=\frac12$, $Q_{\mathrm b}=1$ and remainder $0$. In reading V, if $C\ge0$, IV holds for every
+$N$ and Corollary~3.12 fails for every $N$. In reading L0, Corollary~3.12 holds for every $N$ and IV fails for large
+$N$. The two readings put the load on opposite sides.
+\end{example}
+
+\section{Proofs}\label{s:proofs}
+
+\begin{proof}[Proof of Theorem~\ref{t:cons}]
+Adding $-a\le M_R$ and $M_R\le-k\,a+C$ gives $-a\le-k\,a+C$, that is, $(k-1)a\le C$. The identity is obtained by
+expanding.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{t:split}]
+Substituting $\Theta_r=-x_ra$ gives (i). (ii) is the sum of the two inequalities of (i). (iii) follows from
+$-k\,a\le\Theta_r=-x_ra$ and $a>0$. (iv) follows from the fact that the sum is $(k-1)a>0$. For (v), $\Cor_R$ and
+$B_R\le\hi$ give $(x_r-1)a\le B_R\le\hi$; the relation between the coefficients follows from (ii).
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{t:ind1}]
+(i) In V, $h_\rV(t)=-j^2Q_{t_j}$ depends on one factor only, so its weighted average is $-j^2\sum_vw_vQ_v=-j^2a$
+(because $\sum w=1$). Averaging over $j$ gives $-k\,a$. (ii) Since $P_\rV\subseteq P_\rL\subseteq P_\rLz$, the maximum
+on each component increases; since the weights are nonnegative, so does the average. $Q\ge0$ gives $h\le0$.
+(iii) Multiplication by a nonnegative number commutes with the maximum. (iv) On a component of positive weight all
+factors have the same order, so the maximum equals $h_\rV$; components of weight $0$ do not enter the sum. (v) Take
+places $u,v$ with $Q_u<Q_v$. The component $(u,v)$ for $j=1$ has weight $w_uw_v>0$, and there
+$h_\rLz\ge-Q_u>-Q_v=h_\rV$; on the other components and labels one has $\ge$. For L use the component $(u,u,v)$ for
+$j=2$.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{p:rest}]
+Each formula consists of a term of the form $\min_{i\in P}(s_i-c_i)$, with $0\le c_i\le c_{\max}$ and $c_{\max}$ a
+local constant, and terms that do not involve the $q$-orders. Since
+\[\min_is_i-c_{\max}\le\min_i(s_i-c_i)\le\min_is_i,\]
+the remainder lies in an interval that does not depend on the $q$-orders. The readings without the hull and with the
+large ball add to or subtract from the value with the hull quantities that do not involve the $q$-orders.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{t:cheap}]
+(i) If $N>C/((k-1)a)$, then $\Ht(D^N)$ fails, so by Theorem~\ref{t:cons} the two statements do not hold together.
+(ii) If $\Theta_r>-k\,a$, then $g=\Theta_r+k\,a>0$, and $\IVb_R(D^N)$ gives $Ng\le C-B_R(D^N)\le C-\lo_R$, which fails
+for large $N$. Hence $\Theta_r=-k\,a$, and substituting gives the equivalence. (iii) If $\Theta_r<-a$, then
+$g=-a-\Theta_r>0$, and $\Cor_R(D^N)$ gives $Ng\le B_R(D^N)\le\hi_R$, which fails for large $N$. For the second half
+insert $\Theta_r\ge-a$ into $\IVb_R(D^N)$. (iv) $M_R(D^N)/N=\Theta_r+B_R(D^N)/N$, and both ends of
+$\lo_R/N\le B_R(D^N)/N\le\hi_R/N$ tend to $0$.
+\end{proof}
+
+\begin{proof}[Proof of Example~\ref{e:two}]
+In L0 the maximum on a component is $-j^2Q_{\mathrm b}$ if all factors are at the bad place and $0$ otherwise. That
+event has weight $w^{j+1}$, so $\Theta_\rLz=-wQ_{\mathrm b}A(w)$ and $a=wQ_{\mathrm b}$. $A$ is increasing in $w$, and
+\[\sum_{j=1}^nj^2/2^j=6-(n^2+4n+6)/2^n\le n\]
+gives $A(\frac12)\le1$. For V, Theorem~\ref{t:ind1}\,(i) and the remainder $0$ give $\IVb\iff0\le C$ and
+$\Cor\iff(k-1)Na\le0$, which is false. IV in L0 follows from Theorem~\ref{t:cheap}\,(i) and $\Cor$.
+\end{proof}
+
+\section{Computations on explicit data}\label{s:data}
+
+\subsection{Procedure}\label{ss:proc}
+\tagP\ We use the seven initial $\Theta$-data of the catalogue~\cite{Cat}. The computation uses the program of the
+walkthrough~\cite{WT}, version~1.1.0, extended by the hulls of twelve readings (\texttt{iut\_patterns.py}), their
+assembly into the 36 readings (\texttt{iut\_readings36.py}) and the upper bound of IV (\texttt{iut\_height.py}). As
+in~\cite{Gap} and~\cite{WT}, the set $\Vbad$ is that of the catalogue minus the places above $3$ and $5$, where the
+ramification of $K$ depends on the construction of $F$ (Definition~3.1\,(b) of IUT~I allows such a subset; see~\cite[\S5]{Gap}). The places above
+$2$, $3$, $5$ and $\ell$ therefore have theta value $1$, and so have those above the unfactored cofactor of $D_{2357}$.
+In the readings with the hull these places only add nonnegative amounts to $M_R$; in the readings without the hull they
+may also lower $M_R$, by at most their shell defect, which is not computed here. In the upper bound of IV they are
+bounded by Step~(ii) and (R4), as in the computation of $U(D)$. In every reading the contribution of a prime at which the theta value is $1$ is at most the bound of IV there (with theta
+value $1$ the lattice group gives the same as the units, and the iteration and the readings without the hull are at
+most the hull of the container).
+
+\subsection{The split point}\label{ss:x}
+\begin{table}[ht]\centering\small
+\caption{The ends and the split points ($\ell=7$ and $k=14/3$ except for $D_{2357}$). The last column is the number of
+primes above which the $q$-orders differ at places of positive weight.}\label{tab:x}
+\begin{tabular}{@{}lrrrrrrrr@{}}
+\toprule
+Datum & $\ell$ & $a$ & wall $(k-1)a$ & $C$ & $x_\rV$ & $x_\rL$ & $x_\rLz$ & primes\\
+\midrule
+$D_{211}$ & 7 & 21.801 & 79.937 & 1247.14 & 4.6667 & 1.7500 & 0.8750 & 5\\
+$D_{109}$ & 7 & 19.114 & 70.085 & 1187.52 & 4.6667 & 1.7500 & 0.8750 & 6\\
+$D_{2}$ & 7 & 17.149 & 62.881 & 1235.19 & 4.6667 & 2.2273 & 1.4955 & 2\\
+$D_{3}$ & 7 & 80.589 & 295.49 & 2247.61 & 4.6667 & 2.3149 & 1.6094 & 15\\
+$D_{18}$ & 7 & 43.925 & 161.06 & 1683.07 & 4.6667 & 1.7779 & 0.9113 & 15\\
+$D_{15}$ & 7 & 36.862 & 135.16 & 1556.68 & 4.6667 & 1.7500 & 0.8750 & 15\\
+$D_{2357}$ & 157 & 11.840 & 24463.9 & 16229.6 & 2067.17 & 0.1538 & 0.0769 & 9\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\tagP\ For all seven data, $x_\rV=k$ holds exactly as rational numbers ($\Theta_\rV+k\,a=0$ was checked with rational
+coefficients of the $\log p$). For $D_{211}$, $D_{109}$ and $D_{15}$, above every bad prime there are exactly one bad and
+one good place, each of weight $\frac12$. Hence $x_\rLz=A(\frac12)=\frac78$ and $x_\rL=2A(\frac12)=\frac74$: this is
+exactly the situation of Example~\ref{e:two}.
+
+\subsection{The verdicts in the 36 readings}\label{ss:verdicts}
+\tagP\ For the six data that are completely factored (all except $D_{2357}$):
+\begin{itemize}
+\item The upper bound of IV holds in all 36 readings.
+\item Corollary~3.12 holds for all six data in the container readings with the hull and in the readings of iteration
+with the lattice group (18 readings).
+\item In the readings of iteration with units (6 readings), Corollary~3.12 is short for all six data in V and L: the
+counted places fall short, and it fails unless the places that are not counted (those above $2$, $3$, $5$ and $\ell$)
+add at least the shortfall. In L0 only $D_3$ is short.
+\item In the container readings without the hull (12 readings) the verdict is undecided, because the shell defect is
+only bracketed. Only in L0 for $D_{109}$ does it hold, for the counted places.
+\end{itemize}
+
+\tagH\ That Corollary~3.12 and IV hold together on the actual data is because these data satisfy the height inequality
+with a large margin (for the six data the wall $(k-1)a$ is 5--13\% of $C$). These verdicts test nothing. The effect of
+the reading becomes visible in the family $q^N$.
+
+\subsection{Replacing \texorpdfstring{$q$}{q} by \texorpdfstring{$q^N$}{q\^N}}\label{ss:qN}
+\tagP\ The program multiplies only the $q$-orders by $N$ (the ramification indices and $\Vbad$ are kept, and
+$\ell\nmid N$). For the six data and $N=2,3,25$ we checked that $a$ and the theta parts are multiplied by $N$ exactly,
+and that $x$ and $C$ do not change. For $D_2$, $D_{211}$ and $D_{109}$ we checked $N=1,\dots,40$ (35 values, leaving out
+the multiples of $\ell$). In every reading the range of the remainder $B_R$ is at most $19.9$, $25.9$ and $22.7$
+respectively, about $3\%$ of the growth of $Na$ ($669$ to $850$). The largest range is already reached at $N=3$ and
+does not grow beyond it. For $D_{109}$ the range $22.707$ equals $\Delta(D_{109})$, the value of~\cite{Gap}: the rounding
+term of the lattice group vanishes at $N=3$.
+
+\begin{table}[ht]\centering\small
+\caption{For which $N$ each statement fails in the family $q^N$. The remainder $B_R$ is that of the places counted in
+Section~\ref{ss:proc}, replaced by its interval at $N=1$.}\label{tab:qN}
+\begin{tabular}{@{}lll>{\raggedright\arraybackslash}p{4.3cm}l@{}}
+\toprule
+Datum & $\Ht$ fails & V: Corollary~3.12 & L0: Corollary~3.12 & L0: IV fails\\
+\midrule
+$D_{211}$ & $N>15.60$ & fails for $N>3.31$ & holds for every $N$ with the hull, and for $N\ge2$ in all twelve & $N>12.12$ to $15.15$\\
+$D_{109}$ & $N>16.94$ & fails for $N>3.27$ & holds for every $N$ & $N>13.46$ to $16.34$\\
+$D_{2}$ & $N>19.64$ & fails for $N>4.29$ & fails for $N>29.83$ & $N>18.05$ to $22.95$\\
+$D_{3}$ & $N>7.61$ & fails for $N>3.14$ & fails for $N>17.67$ & $N>5.60$ to $9.30$\\
+$D_{18}$ & $N>10.45$ & fails for $N>3.41$ & holds for every $N$ with the hull, and for $N\ge6$ in all twelve & $N>7.11$ to $10.33$\\
+$D_{15}$ & $N>11.52$ & fails for $N>3.44$ & holds for every $N$ with the hull, and for $N\ge3$ in all twelve & $N>8.05$ to $11.22$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A single number is the latest threshold over the twelve readings with the same (Ind1)-axis; a range runs from the least
+to the largest threshold over these readings (\texttt{thresholds.py}). In the readings of L0 without the hull the
+remainder has a negative lower end, so for $D_{211}$, $D_{18}$ and $D_{15}$ Corollary~3.12 is guaranteed only from the
+stated $N$ on. In V, IV carries no load and holds for every $N$. For each reading the smaller of its two thresholds is at
+most that of $\Ht$ (Theorem~\ref{t:cons}). Corollary~3.12 fails in V much earlier than $\Ht$ because its room $B_R$ is
+much smaller than the whole room $C$ of IV: 38--71\% of $C$ is the bound at the primes $2$, $3$, $5$ and $\ell$
+(Step~(ii) for the different and (R4) for the terms of $I^*$), which is not in $B_R$. The places above these primes change
+$M_R$ by an amount that does not depend on $N$: in the readings with the hull it is nonnegative and at most that bound,
+and without the hull it may also be negative, by at most their shell defect. Such an amount moves the thresholds of
+Corollary~3.12 and of IV in opposite directions and leaves that of $\Ht$ unchanged.
+
+\subsection{\texorpdfstring{$D_{2357}$}{D2357}}\label{ss:d2357}
+\tagP\ For $D_{2357}$ ($\ell=157$) the counted places alone leave the height inequality short by $8234$
+($(k-1)a=24464>C=16230$). In reading V this deficit appears on the side of Corollary~3.12 (IV holds); in L and L0 it
+appears on the side of IV (Corollary~3.12 holds or is undecided, and the deficit of IV is $8362$ to $10308$). In every
+reading one of the two statements has a deficit.
+
+This is conditional. The places above the unfactored cofactor of 1564 digits are not counted. In the readings with the
+hull they add nonnegative amounts to $M_R$, and they add to $U(D)$, where the estimate of Step~(ii) at $2$, $3$, $5$ and
+$\ell$ also grows with the conductor; so either deficit may be filled. Moreover, $U(D)$ is the upper bound of Steps (v)--(vii); compared with the final uniform
+form of IV (right-hand side $3.47\times10^9$), IV holds in every reading.
+
+\section{Discussion}\label{s:disc}
+
+\subsection{Cannot be avoided, cannot be made cheaper}
+\tagH\ The question had two parts: whether choosing the readings differently avoids the height inequality
+(avoidance), and whether it makes the proof cheaper (cost).
+\begin{itemize}
+\item \emph{It cannot be avoided.} In every reading, the two statements together are the same height inequality
+(Theorem~\ref{t:cons}). This is because the ends take no reading, which rests on the wording of Corollary~3.12 and on
+Step~(v) of IV (Section~\ref{s:setting}).
+\item \emph{It cannot be made cheaper.} A reading only moves the content of the wall between the two statements; the
+total $(k-1)a$ does not change (Theorem~\ref{t:split}\,(ii)). No reading makes both loads nonpositive
+(Theorem~\ref{t:split}\,(iv)). Making one statement hold for every $N$ makes the other heavier by the same amount, so
+that it carries at least the whole wall (Theorem~\ref{t:cheap}\,(ii), (iii)). Rebuilding IV for each reading into a form
+that holds automatically weakens the resulting inequality by exactly that amount (Theorem~\ref{t:split}\,(v)).
+\end{itemize}
+
+\tagH\ If IUT makes a contribution of its own to the height inequality, it should lie in computing the two sides by a
+method different from the elementary one. But in each of the 36 readings the two sides are computed by the same single
+procedure (Section~\ref{s:setting}), and the numbers at the ends agree with the elementary computation. What depends on
+the reading is only the middle term $-|\log\TT|$, and it cancels when the two statements are combined.
+
+\subsection{Two typical readings}\label{ss:types}
+\tagH\ In reading V the load of IV is $0$, and Corollary~3.12 carries the whole wall: Corollary~3.12 is itself the
+height inequality $(k-1)a\le B_R$. This corresponds to the side of the dilemma of Scholze and Stix~\cite[\S2.2]{SS} on
+which the factor $j^2$ is not absorbed by any blurring: Corollary~3.12 is then a height inequality that has to be
+proved as it stands, and in the family $q^N$ it fails for large $N$. The inequality $(k-1)Q\le E$ of Part~I of~\cite{II} has this form.
+
+\tagH\ In reading L0, for data whose good and bad places lie above the same prime (Belyi points), one has $x\le1$ and
+Corollary~3.12 carries no positive load: it holds whatever $q$ is, and IV carries at least the whole wall. This is the
+situation of the option of Scholze and Stix labelled (c) in~\cite[Proposition~5.3 and \S15.1]{II}, in which
+\q{the blurring must be by a factor of at least $\mathrm{O}(\ell^2)$ rendering the inequality thus obtained useless}
+\cite[\S2.2]{SS}; this sentence has been formalized in Lean~4, with the constant $\ell(\ell+1)/12$, our $k$, in place
+of $\mathrm{O}(\ell^2)$~\cite{sfingali}. The statement of lana that the literal reading does not suffice for ABC
+(Section~\ref{ss:prior}) can be read as a description of this side from the standpoint of IV.
+
+\tagH\ The other readings put the split point $x$ between these two. The point $x$ is decided by (Ind1) alone, and for
+data whose $q$-orders agree, every reading has $x=k$, as V does.
+
+\subsection{What could change the conclusion}\label{ss:change}
+\tagH\ The conclusion of this note changes only if one of the following happens.
+\begin{itemize}
+\item The ends depend on the reading. For the left end this would contradict the wording of Corollary~3.12 (the
+log-volume $-|\log\qq|$ is not subject to the indeterminacies). \tagX\ It is the position of Joshi, for whom
+\q{the Tate parameter changes in non-trivial ways with changes of Arithmetic Holomorphic Structures and in particular
+with $\mathrm{Ind}_1$, $\mathrm{Ind}_2$ and $\mathrm{Ind}_3$ (to be clear Mochizuki does not prove this--that is why the
+theory is incomplete)}~\cite[(8)\,(iv)]{Joshi}; on that view the conservation of this note does not apply.
+\item The theta part is smaller than $-k\,a$. The possible images include the $\Theta$-pilot object itself (the identity
+permutation and the identity automorphism), so the value of the hull is at least that of the $\Theta$-pilot. A Kummer
+distortion proportional to $a$ that acts in the negative direction, however, could give $x>k$. Even then the sum of the
+loads does not change (the proof of Theorem~\ref{t:split}\,(ii) does not use $\Theta\ge-k\,a$), and the load moves to
+the side of Corollary~3.12.
+\item A reading outside the 36 has a theta part that is not proportional to the $q$-orders. Then there is no slope
+(Theorem~\ref{t:cheap}\,(iv)), and the split of this note cannot be used.
+\end{itemize}
+
+\section{What is not shown}\label{s:notshown}
+\begin{itemize}
+\item That the 36 readings are all the readings of the original papers.
+\item A Lean proof that each axis changes only the remainder (Proposition~\ref{p:rest}). Lean uses as a hypothesis that
+the remainders lie in intervals that do not depend on $N$, and defines the theta part as the maximum over the set of
+positions. That the axes other than (Ind1) do not change the theta part was checked by a paper argument from the
+formula for each axis and by the programs.
+\item That the family $q^N$ is a family of actual curves.
+\item Which reading the original papers intend, and whether Corollary~3.12 holds.
+\item The verdict for $D_{2357}$, which depends on the unfactored cofactor.
+\end{itemize}
+
+\section{Checks and reproducibility}\label{s:checks}
+The folder \texttt{reading-family/} of the repository
+\url{https://github.com/turahigashi/iut-explicit-initial-theta} (tag \texttt{v0.17.0}), also deposited with this note,
+contains the Lean files, the programs and their outputs.
+\begin{itemize}
+\item \emph{Lean.} \texttt{lean/ReadingFamily.lean} (1024 lines) was checked with Lean~4.30.0 and Mathlib at tag
+\texttt{v4.30.0}. The file \texttt{lean/ReadingFamilyAxiomCheck.lean} is the same file followed by \lean{\#print axioms}
+for all 96 named declarations. Every declaration depends at most on \lean{propext}, \lean{Classical.choice} and
+\lean{Quot.sound}; the definition of the readings, \lean{Reading.Admissible}, depends on none. There is no
+\lean{sorry}, no \lean{axiom}, no \lean{opaque} and no \lean{native\_decide}; there are no errors and no warnings. As a
+witness that the hypotheses are not empty, the two-place family \lean{belyiFamily} is constructed.
+\item \emph{Programs} (Python~3.10 or later with sympy; their comments and output are in Japanese, as for the program
+of~\cite{WT}). \texttt{scripts/iut\_compute.py} is the program of~\cite{WT}, version~1.1.0, unchanged.
+\texttt{iut\_patterns.py} computes the twelve readings with the hull; with \texttt{-{}-check} it confirms that its
+container--units readings agree with the original program, that its difference of the two (Ind2) models in reading V
+is $\Delta(D)$ of~\cite{Gap}, that its closed formulas agree with the enumeration of the tuples, and that the intervals
+for $\kappa$ contain the exact values in model fields. Its output is identical, character for character, whether it
+uses version 1.0.0 or version 1.1.0 of the program of~\cite{WT}. \texttt{iut\_readings36.py} assembles the 36 readings, checks
+$\Theta_\rV=-k\,a$ exactly, and checks numerically the order $\rV\le\rL\le\rLz\le0$ of the theta parts and the sums of
+the loads and of the rooms, for all data; with \texttt{-{}-scale} it checks the family $q^N$. \texttt{scan\_scale.py}
+scans $N=1,\dots,40$, \texttt{thresholds.py} computes Table~\ref{tab:qN}, \texttt{iut\_height.py} computes $U(D)$, and
+\texttt{elementary\_height.py} and \texttt{compare\_elementary\_iut.py} give the comparison with the elementary
+computation of Section~\ref{s:setting}.
+\end{itemize}
+
+\section*{Acknowledgements and use of AI}
+The question studied in this note---whether choosing the readings differently avoids the height inequality or makes the
+proof cheaper---arose in the author's discussions with generative AI tools; the author judged it important and decided
+to make it the subject of this note. Its ultimate aim, to understand exactly the algorithm by which IUT computes the
+height inequality, is the author's research direction. Generative AI tools (large language models) were used
+extensively, under the author's direction, in finding the proofs, in the computations, in the verification in Lean and
+in the writing. The author takes full responsibility for the contents of this note.
+
+\begin{thebibliography}{sfingali}\raggedright
+\bibitem[Cat]{Cat}
+Toshihisa Urahigashi, \emph{Explicit initial $\Theta$-data and the two readings of Step (v) of IUT IV, Theorem 1.10:
+a catalogue}, version 1.0.0, Zenodo, 2026, \href{https://doi.org/10.5281/zenodo.23870448}{doi:10.5281/zenodo.23870448}.
+
+\bibitem[Gap]{Gap}
+Toshihisa Urahigashi, \emph{The gap between the two walls is positive: a closed form for the (Ind2)-terms of
+lana-agents/iut}, version 1.0.0, Zenodo, 2026, \href{https://doi.org/10.5281/zenodo.23954194}{doi:10.5281/zenodo.23954194}.
+
+\bibitem[II]{II}
+Toshihisa Urahigashi, \emph{Reading the IUT dispute through indexed identifications: an educational model in
+undergraduate mathematics}, version 2.0.0, Zenodo, 2026,
+\href{https://doi.org/10.5281/zenodo.23933108}{doi:10.5281/zenodo.23933108}.
+
+\bibitem[IUT3]{IUT3}
+Shinichi Mochizuki, \emph{Inter-universal {T}eichm\"uller theory {III}: canonical splittings of the log-theta-lattice},
+Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 403--626.
+
+\bibitem[IUT4]{IUT4}
+Shinichi Mochizuki, \emph{Inter-universal {T}eichm\"uller theory {IV}: log-volume computations and set-theoretic
+foundations}, Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 627--723.
+
+\bibitem[Joshi]{Joshi}
+Kirti Joshi, \emph{Comments on the LANA Project Report of Kato et al.}, 30 July 2026,
+\url{https://sites.arizona.edu/kirti-joshi/files/2026/07/Comments-on-the-LANA-Project-Report-of-Kato-et-al.pdf}.
+
+\bibitem[lana]{lana}
+lana-agents, \emph{iut}: a Lean~4 formalization of inter-universal {T}eichm\"uller theory, GitHub repository,
+\url{https://github.com/lana-agents/iut}, commit \texttt{553076a} (3 November 2026).
+
+\bibitem[LANA]{LANA}
+Project LANA, \emph{Project LANA interim report on IUT theory}, 20 July 2026,
+\url{https://ncatlab.org/nlab/files/LANAProject-Report-July2026.pdf}.
+
+\bibitem[sfingali]{sfingali}
+sfingali, \emph{The {S}cholze--{S}tix objection, formally: the arithmetic is agreed, the $q$-side is absent}, Zenodo,
+2026, \href{https://doi.org/10.5281/zenodo.21757640}{doi:10.5281/zenodo.21757640}.
+
+\bibitem[SS]{SS}
+Peter Scholze and Jakob Stix, \emph{Why abc is still a conjecture}, 2018.
+
+\bibitem[WT]{WT}
+Toshihisa Urahigashi, \emph{A programmer's walkthrough of inter-universal {T}eichm\"uller theory: running the
+multiradial algorithm on explicit initial $\Theta$-data}, version 1.1.0, Zenodo, 2026,
+\href{https://doi.org/10.5281/zenodo.23955994}{doi:10.5281/zenodo.23955994}.
+
+\bibitem[Zeng]{Zeng}
+Chunping Zeng, \emph{An integral-structure inflation in the hull operation of {IUT} {C}orollary 3.12}, Zenodo, 2026,
+\href{https://doi.org/10.5281/zenodo.23811410}{doi:10.5281/zenodo.23811410}.
+\end{thebibliography}
+
+\end{document}
