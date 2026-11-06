@@ -58,7 +58,7 @@
 
 \title{Reading the IUT dispute through indexed identifications:\\ an educational model in undergraduate mathematics}
 \author{Toshihisa Urahigashi\\\small ORCID 0009-0004-0460-6242\\\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 2.1.0, 6 November 2026\\\small\href{https://doi.org/10.5281/zenodo.23991371}{doi:10.5281/zenodo.23991371}}
+\date{Version 2.2.0, 6 November 2026\\\small\href{https://doi.org/10.5281/zenodo.23991546}{doi:10.5281/zenodo.23991546}}
 
 \begin{document}
 \maketitle
@@ -90,7 +90,8 @@ Corollary~3.12 itself. Which reading the source intends is not decided. A compan
 homotopy type theory; the quantitative core of Part~II is checked in Lean. A general notation of a related kind for
 comparison problems in arithmetic geometry, in which a transport between labelled presentations carries a cost that
 bounds the change of a height, was given earlier by Laniewski~\cite{La}, without reference to IUT; no priority is
-claimed for it.
+claimed for it. That the inequality $(k-1)Q\le E$ of Part~I is equivalent, in models, to Step~(xi) was proved earlier
+in the Lean formalization lana-agents/iut~\cite{LANAiut}.
 \end{abstract}
 
 \section{Introduction}
@@ -210,7 +211,12 @@ includes permutations between tensor factors, which a simplified computation may
 Dupuy--Hilado~\cite[\S6.2, footnote~7]{DH}. An explicit initial $\Theta$-datum for which, under the readings
 stated there, the union in the literal reading is not contained in the module used in Step~(v) is given
 in~\cite{Note}. In the setting of Part~I, the inequality of Proposition~\ref{p:cor} is
-stated in~\cite{TK} as the condition for the containment used in Step~(v) of IUT~IV. What Part~II adds is the
+stated in~\cite{TK} as the condition for the containment used in Step~(v) of IUT~IV. In the same setting,
+\cite{LANAiut} proves in Lean, in models, that Step~(xi) is equivalent to an inequality of this shape, $(s-1)\,a\le V$
+with $s=\frac{1}{l^\ast}\sum_{j=1}^{l^\ast}j^2=k$ (file \texttt{Iut/WallEquiv/NonDerivable.lean}, theorem
+\texttt{xi\_iff}, and file \texttt{Iut/WallEquiv/Basic.lean}, theorem \texttt{xi\_iff\_ss\_model}, both added on
+13 October 2026), and that Step~(xi) is neither proved nor refuted by the fields of a package recording what is proved
+at the level of Theorem~3.11 (theorem \texttt{nonDerivability}). What Part~II adds is the
 undergraduate formulation, the size of the difference between the two readings, and Theorem~\ref{t:two}.
 
 \subsection{Labels}
@@ -703,7 +709,7 @@ $-|\log(\underline{\underline{\Theta}})|\in\mathbb{R}$, and
 $-|\log(\underline{\underline{\Theta}})|\geq-|\log(\underline{\underline{q}})|$}.}{\cite[Cor.~3.12]{IUT3}}
 
 \begin{proposition}\label{p:cor}\tagP\tagR
-\known{\cite[\S2.2]{SS}}
+\known{\cite[\S2.2]{SS}; in Lean, in models, \cite{LANAiut} (\texttt{xi\_iff})}
 In Setup~\ref{setup}, let $-|\log\Theta|:=c(b)+E$ be the value of the hull of the possible images of the $\Theta$-pilot,
 computed through $c$. Then the inequality $-|\log\Theta|\ge-|\log q|$ of Corollary~3.12 is equivalent to
 $\ell(b)\le_E c(b)$, and hence to $(k-1)Q\le E$.
@@ -1368,10 +1374,12 @@ Project LANA, \emph{Project LANA interim report on IUT theory}, last updated 20 
 
 \bibitem[LANA-iut]{LANAiut}
 lana-agents, \emph{iut: inter-universal {T}eichm\"uller theory, the ABC/IUT trunk}, Lean repository,
-\url{https://github.com/lana-agents/iut}, files \texttt{Iut/Concrete/Literal.lean} and
-\texttt{Iut4Sec1/Combinatorics/WeightedAverage.lean}, consulted at commit \texttt{553076a} (3 November 2026); the passages
-quoted from the first file were added on 11 October 2026 (commits \texttt{2b2190d} and \texttt{08c7e5d}), and the second
-file on 19 July 2026 (commit \texttt{696cc65}).
+\url{https://github.com/lana-agents/iut}, files \texttt{Iut/Concrete/Literal.lean},
+\texttt{Iut4Sec1/Combinatorics/WeightedAverage.lean}, \texttt{Iut/WallEquiv/Basic.lean} and
+\texttt{Iut/WallEquiv/NonDerivable.lean}, consulted at commit \texttt{553076a} (3 November 2026); the passages
+quoted from the first file were added on 11 October 2026 (commits \texttt{2b2190d} and \texttt{08c7e5d}), the second
+file on 19 July 2026 (commit \texttt{696cc65}), and the last two on 13 October 2026 (commits \texttt{da52dfb} and
+\texttt{180c049}; last changed on 14 October 2026, commit \texttt{cdc9602}).
 
 \bibitem[MO]{MO}
 Samuel Mimram and \'Emile Oleon, \emph{Classifying covering types in homotopy type theory}, in: 34th EACSL Annual Conference
@@ -1401,6 +1409,6 @@ reals}, manuscript, version 0.7.8, 5 September 2026, file \texttt{paper/paper.pd
 
 \bibitem[Ur]{Ur}
 Toshihisa Urahigashi, \emph{Segment or loop? A homotopy-type-theoretic overview of the dispute over {C}orollary 3.12 of
-inter-universal {T}eichm\"uller theory}, version 1.2.0, Zenodo, 6 November 2026, \href{https://doi.org/10.5281/zenodo.23991368}{doi:10.5281/zenodo.23991368}.
+inter-universal {T}eichm\"uller theory}, version 1.3.0, Zenodo, 6 November 2026, \href{https://doi.org/10.5281/zenodo.23991545}{doi:10.5281/zenodo.23991545}.
 \end{thebibliography}
 \end{document}

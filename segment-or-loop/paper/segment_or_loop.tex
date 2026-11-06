@@ -68,7 +68,7 @@
 \title{Segment or loop? A homotopy-type-theoretic overview of the dispute over Corollary~3.12 of
 inter-universal Teichm\"uller theory}
 \author{Toshihisa Urahigashi\\\small ORCID 0009-0004-0460-6242\\\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.2.0, 6 November 2026\\\small\href{https://doi.org/10.5281/zenodo.23991368}{doi:10.5281/zenodo.23991368}}
+\date{Version 1.3.0, 6 November 2026\\\small\href{https://doi.org/10.5281/zenodo.23991545}{doi:10.5281/zenodo.23991545}}
 
 \begin{document}
 \maketitle
@@ -103,8 +103,10 @@ semantics for comparison problems in arithmetic geometry was given earlier by La
 IUT: the passage between labelled presentations is a transport carrying a cost, comparisons between transports are kept
 as invertible 2-morphisms, and the setting is motivated by the identity types of Voevodsky's C-systems. No priority is
 claimed here for the idea of tracking identifications in this way (\S\ref{ss:earlier}). The
-quantitative core has been checked by machine in Lean~4. Nothing is claimed about the truth of Corollary~3.12 or of the
-abc conjecture.
+quantitative core has been checked by machine in Lean~4; statements of the same shape (Step~(xi) is equivalent to one
+inequality, which the properties established at the level of Theorem~3.11 do not decide) were proved earlier, in
+models, in the public Lean formalization lana-agents/iut~\cite{LANAiut} (\S\ref{ss:earlier}). Nothing is claimed about
+the truth of Corollary~3.12 or of the abc conjecture.
 \end{abstract}
 
 \tableofcontents
@@ -206,7 +208,14 @@ type-theoretic or 2-categorical terms. The geometric picture of this paper is no
 Mochizuki~\cite[(LbEx1)]{R18}; monodromy and consistent identification are in Scholze--Stix~\cite[\S2.2]{SS}; the
 commutativity of diagrams and (9-1) are in LANA~\cite[\S0.2, \S\S9--10]{LANA}. The content of
 Theorem~\ref{t:package} (a numerical comparison does not follow from qualitative properties) has been proved by
-Higuchi~\cite{Hi} in a different form. The contribution of this paper is threefold: (1) placing these in one framework
+Higuchi~\cite{Hi} in a different form. The public Lean formalization lana-agents/iut~\cite{LANAiut} proves, in
+models, statements of the same shape as Theorems~\ref{t:lax} and~\ref{t:package}: that Step~(xi) holds if and only if
+$(s-1)\,a\le V$, where $s=\frac{1}{l^\ast}\sum_{j=1}^{l^\ast}j^2$, $a=|\log(\qq)|$ and $V$ is the log-volume of the
+hull of the container (theorems \texttt{xi\_iff} and \texttt{xi\_iff\_ss\_model}), and that the fields of a package
+recording what is proved at the level of Theorem~3.11 neither prove nor refute Step~(xi) (theorem
+\texttt{nonDerivability}). With $m=1/s$, $Q=a$ and $E=V$ this is the inequality of Theorem~\ref{t:lax}. These files
+were added on 13 October 2026, before the first version of this paper; neither the equivalence nor its check in Lean
+is claimed as new here. The contribution of this paper is threefold: (1) placing these in one framework
 of homotopy type theory, stating them as propositions and proving them; (2) distinguishing ``identification of
 fibres'' from ``a loop made by a second path'', and separating the agreed part (Proposition~\ref{p:fixed},
 Theorems~\ref{t:strict} and~\ref{t:loop}) from the disputed part (Theorem~\ref{t:lax}); (3) matching the vocabulary of
@@ -687,7 +696,8 @@ computation meaningless). As Mochizuki says, there is no dispute here.
 
 \subsection{Corollary 3.12 is a lax 2-cell}
 \begin{theorem}\label{t:lax}\tagP\tagR
-\known{\cite[\S2.2]{SS} (the blurring must be by a factor of at least $O(l^2)$), \cite[\S0.2]{LANA} (the \q{wall})}
+\known{\cite[\S2.2]{SS} (the blurring must be by a factor of at least $O(l^2)$), \cite[\S0.2]{LANA} (the \q{wall}),
+\cite{LANAiut} (\texttt{xi\_iff}, in Lean)}
 In Setup~\ref{setup} the following are equivalent.
 \begin{enumerate}[label=(\roman*)]
 \item Corollary~3.12 (model): $a\le c_*b+E$.
@@ -780,7 +790,7 @@ consists of a \textbf{construction algorithm} \dots} In Step~(xi), \q{we shall \
 and Step~(xi-b) of the proof of Cor.~3.12]{IUT3}}
 
 \begin{theorem}\label{t:package}\tagP\tagR
-\known{\cite{Hi}}
+\known{\cite{Hi}, \cite{LANAiut} (\texttt{nonDerivability}, in Lean)}
 For any $0<m<1$ and $Q>0$ there are two data $K_1,K_2$ as in Setup~\ref{setup} (with this $m$ and $Q$), both satisfying
 IPL, SHE and APT, such that Corollary~3.12 (model) fails in $K_1$ and holds in~$K_2$.
 \end{theorem}
@@ -1232,7 +1242,7 @@ The idea of this paper (to survey the dispute in the language of homotopy type t
 tools (large language models) were used extensively, under the author's direction, in writing the text and the proofs
 and in the verification in Lean. The author takes full responsibility for the contents of this paper.
 
-\begin{thebibliography}{CCHM}
+\begin{thebibliography}{LANA-iut}
 \bibitem[ACMZ]{ACMZ}
 Carlo Angiuli, Evan Cavallo, Anders M\"ortberg and Max Zeuner, \emph{Internalizing representation independence with
 univalence}, Proc. ACM Program. Lang. \textbf{5} (POPL) (2021), Article~12,
@@ -1292,6 +1302,13 @@ R. Laniewski, \emph{Intensional semantics for comparison problems in arithmetic 
 \bibitem[LANA]{LANA}
 Project LANA, \emph{Project LANA interim report on IUT theory}, last updated 20 July 2026.
 
+\bibitem[LANA-iut]{LANAiut}
+lana-agents, \emph{iut: inter-universal {T}eichm\"uller theory, the ABC/IUT trunk}, Lean repository,
+\url{https://github.com/lana-agents/iut}, files \texttt{Iut/WallEquiv/Basic.lean} and
+\texttt{Iut/WallEquiv/NonDerivable.lean}, consulted at commit \texttt{553076a} (3 November 2026); both files were added
+on 13 October 2026 (commits \texttt{da52dfb} and \texttt{180c049}) and last changed on 14 October 2026 (commit
+\texttt{cdc9602}).
+
 \bibitem[MO]{MO}
 Samuel Mimram and \'Emile Oleon, \emph{Classifying covering types in homotopy type theory}, in: 34th EACSL Annual Conference
 on Computer Science Logic (CSL 2026), LIPIcs \textbf{363} (2026), 21:1--21:20,
@@ -1320,6 +1337,6 @@ reals}, manuscript, version 0.7.8, 5 September 2026, file \texttt{paper/paper.pd
 
 \bibitem[UE]{UE}
 Toshihisa Urahigashi, \emph{Reading the {IUT} dispute through indexed identifications: an educational model in
-undergraduate mathematics}, version 2.1.0, Zenodo, 6 November 2026, \href{https://doi.org/10.5281/zenodo.23991371}{doi:10.5281/zenodo.23991371}.
+undergraduate mathematics}, version 2.2.0, Zenodo, 6 November 2026, \href{https://doi.org/10.5281/zenodo.23991546}{doi:10.5281/zenodo.23991546}.
 \end{thebibliography}
 \end{document}
