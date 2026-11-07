@@ -1,0 +1,667 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{geometry}
+\geometry{margin=2.6cm}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\hypersetup{pdftitle={Three tiers of indeterminacy},pdfauthor={Toshihisa Urahigashi}}
+\setlist{itemsep=2pt,topsep=4pt}
+\raggedbottom
+\emergencystretch=3em
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Zp}{\mathbb{Z}_p}
+\newcommand{\Qp}{\mathbb{Q}_p}
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\fd}{\mathfrak{d}}
+\newcommand{\tI}{(R_I)^{\sim}}
+\newcommand{\hull}{\operatorname{hull}}
+\newcommand{\mulog}{\mu^{\log}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Ism}{\operatorname{Ism}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\qbb}{\underline{\underline{q}}}
+\newcommand{\ceil}[1]{\lceil #1\rceil}
+\newcommand{\floor}[1]{\lfloor #1\rfloor}
+\newcommand{\cN}{\mathfrak{N}}
+\newcommand{\cA}{\mathfrak{A}}
+\newcommand{\cLf}{\mathfrak{L}_{\mathrm f}}
+\newcommand{\cL}{\mathfrak{L}}
+\newcommand{\leanus}{\textunderscore\allowbreak}
+\newcommand{\lean}[1]{{\ttfamily\let\_\leanus #1}}
+
+% labels
+\newcommand{\lab}[2]{{\upshape\fcolorbox{#1}{#1!8}{\scriptsize\sffamily\bfseries\textcolor{#1}{#2}}}}
+\newcommand{\tagS}{\lab{blue}{S}}
+\newcommand{\tagX}{\lab{Purple}{X}}
+\newcommand{\tagP}{\lab{ForestGreen}{P}}
+\newcommand{\tagN}{\lab{BrickRed}{N}}
+\newcommand{\tagH}{\lab{BurntOrange}{H}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Three tiers of indeterminacy:\\ the exact hull at small places and the container of Step~(v) of IUT~IV}
+\author{Toshihisa Urahigashi\\\small ORCID 0009-0004-0460-6242\\\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
+\date{Version 1.0.0, 8 November 2026\\\small\href{https://doi.org/10.5281/zenodo.24043000}{doi:10.5281/zenodo.24043000}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+In Step~(v) of the proof of inter-universal Teichm\"uller theory (IUT)~IV, Theorem~1.10, the holomorphic hull of
+the union of the possible images of the $\Theta$-pilot object is bounded by a container that contains the region
+$p^{\lambda}\cdot\tI$; the indeterminacies (Ind1) and (Ind2) are accounted for by the arbitrary automorphisms $\phi$ of
+IUT~IV, Proposition~1.2, and (Ind3) by taking upper bounds. At places that are small in the sense of
+Proposition~1.2(iii)---$p$ odd and every ramification index at most $p-2$---we compare this container with the hulls
+reached by four classes of maps: unit scalars and field automorphisms; the maps induced factor by factor by the
+actual (Ind1) and (Ind2); all factorwise automorphisms of the log-shells; and all automorphisms $\phi$ of
+Proposition~1.2.
+
+For the last two classes the hull is exactly $p^{\ceil{\lambda}-\fd_I}\cdot\tI$, where $\fd_I$ is the sum of the
+orders of the differents, whereas the container of Step~(v) has hull $p^{\floor{\lambda}-\fd_I}\cdot\tI$. So when
+$\lambda$ is not an integer---which is always the case at bad places---the container is larger than anything these
+automorphisms reach by exactly a factor $p$, that is, by $\log p$ in log-volume. The difference comes from the proof
+of Proposition~1.2(ii), which uses Proposition~1.1 with the different of every factor; Proposition~1.1 applied to the
+factor that carries $p^{\lambda}$ removes it. Unit scalars and field automorphisms do not enlarge the hull. The actual
+(Ind1), (Ind2) reach the exact value when $\lambda$ is an integer, provided that automorphisms of the local Galois
+groups exist that carry a unit to the boundary of the log-shell; at small places we reduce this to one condition on
+the transvections found by Hoshi--Nishio and Kondo. The difference is a term of conductor type and does not change the
+shape of the inequality of IUT~IV.
+
+No claim is made about the truth of Corollary~3.12 of IUT~III or of the $abc$ conjecture.
+\end{abstract}
+
+\noindent\textbf{MSC 2020:} 14H25 (primary); 11S15, 11S20.\quad
+\textbf{Keywords:} inter-universal Teichm\"uller theory, indeterminacies, log-shell, holomorphic hull, different,
+automorphisms of absolute Galois groups.
+
+\section{Introduction}
+
+\subsection{The question}
+\tagS\ In Step~(v) of the proof of \cite[Thm.~1.10]{IUT4} (p.~27), Mochizuki writes:
+\begin{quote}\small
+``Thus, the \emph{inclusion} `$\phi(p^{\lambda}\cdot\tI)\subseteq p^{\floor{\lambda-\fd_I-a_I}}\cdot\log_p(R_I^{\times})$'
+of Proposition 1.4, (iii), implies that the result of multiplying `$p^{\floor{\lambda}-|I|}\cdot2^{-|I|}\cdot
+\log_p(R_I^{\times})$' by a suitable \emph{nonpositive} [\dots] integer power of $p_{v_{\Q}}$ \emph{contains} the
+`union of possible images of a $\Theta$-pilot object' discussed in Step (iv). That is to say, the
+\emph{indeterminacies} (Ind1) and (Ind2) are taken into account by the \emph{arbitrary} nature of the automorphism
+`$\phi$' [cf. Proposition 1.2], while the \emph{indeterminacy} (Ind3) is taken into account by the fact that we are
+considering \emph{upper bounds} [\dots]''
+\end{quote}
+So IUT~IV bounds the effect of (Ind1) and (Ind2) by all automorphisms that preserve the lattice of logarithms of
+units. This note asks two questions at small places. How far do these automorphisms actually reach, and how does the
+container compare with that? And how much of it can the maps induced by the actual (Ind1) and (Ind2) use?
+
+\subsection{Results}
+\begin{enumerate}[label=(\arabic*)]
+\item \tagP\ For the class $\cL$ of all automorphisms $\phi$ of Proposition~1.2, and for the class $\cLf$ of
+factorwise automorphisms of the log-shells, the hull of the union of the images of $p^{\lambda}\cdot\tI$ is exactly
+$p^{\ceil{\lambda}-\fd_I}\cdot\tI$ (Theorem~\ref{t:exact}).
+\item \tagP\ The container of Step~(v) has hull $p^{\floor{\lambda}-\fd_I}\cdot\tI$. When $\lambda\notin\Z$---always
+the case at bad places---it is larger by exactly a factor $p$; when $\lambda\in\Z$ the two agree
+(Corollary~\ref{c:compare}). The factor comes from the different of the factor that carries $p^{\lambda}$
+(Remark~\ref{r:source}).
+\item \tagP\ Unit scalars and field automorphisms do not enlarge the hull (Theorem~\ref{t:N}). The hull for the
+actual (Ind1), (Ind2) is contained in the exact value of (1) (Theorem~\ref{t:Aupper}); when $\lambda\in\Z$ it is equal
+to it, provided that at each place an automorphism of the local Galois group carries some integral element to the
+boundary of the log-shell (Theorem~\ref{t:Areach}). At small places this condition follows from one condition on the
+transvections of Hoshi--Nishio and Kondo (Proposition~\ref{p:transvection}); that condition is not proved here.
+\item \tagP\ A positive room can occur only at $p=2$ or at primes with a ramified place above them, and only through
+automorphisms of the local Galois groups that are not unit scalars times field automorphisms
+(Proposition~\ref{p:where}).
+\item \tagN\ For the explicit initial $\Theta$-datum D109 of \cite{Cat}, at its bad place above $109$, the container
+exceeds the exact value by $\log 109$ for every label (Section~\ref{s:example}).
+\end{enumerate}
+
+\subsection{Relation to the author's earlier notes}
+\tagP\ The author's note \cite{W311} treats a global, logical question: even granting the log-volume content of all
+the results cited in the proof of Corollary~3.12, the conclusion does not follow. Its Theorem~22 builds a model on an
+actual local field, replaces the groups of (Ind1), (Ind2) by all automorphisms of the log-shells (a choice it marks as
+unproved), reads the possible images maximally, takes a container larger than that of IUT~IV, and uses only that the
+enlargement of the hull is bounded by a constant $E_L$ depending on the local field. The present note is local and
+numerical, and does not touch Step~(xi). It determines the exact value of that enlargement at small places, compares
+it with the container of IUT~IV, and asks how much of the replaced group the actual (Ind1), (Ind2) reach. Its values
+are smaller than the bound of \cite{W311}, so the conclusion of \cite{W311} is unaffected.
+
+The author's note \cite{Gap} measures the (Ind2)-terms of lana-agents/iut from the region $\theta\cdot\bigotimes\I$
+built on the log-shells; there the group of all factorwise automorphisms and the class of Proposition~1.2 give the
+same value, and the span is the container of Step~(v) (Remark~\ref{r:frames}). The third report \cite{Third}
+computes the floor slack $1+\floor{\lambda}-\lambda$ of Proposition~1.4(iii), and the fourth report \cite{Fourth}
+records that $\Ism(G_K)=\Zp^{\times}$ for a finite extension $K$ of $\Qp$, after Minamide--Tsujimura \cite{MT}.
+
+\subsection{Relation to earlier work}
+Section~\ref{s:prior} gives details and quotations. In short: Proposition~1.1 of IUT~IV is stated with a free choice
+of the factor that does not pay its different, but the proof of Proposition~1.2(ii) uses all factors; Dupuy--Hilado
+note that one may choose the factor that makes the inclusion tightest, and exempt the factor with the largest different
+\cite[Rem.~2.8.2, (6.4)]{DHPS}; lana-agents/iut states that for $\lambda=0$ the hull is exactly the container of
+IUT~IV, and that the bound of IUT~IV adds $1$ for the rounding \cite{lana}. Mochizuki states that automorphisms of the
+log-shells give only bounded discrepancies \cite[Ex.~3.5.1]{EssLgc}, and that the valuation is the data
+``deformed'' by automorphisms that do not arise from field automorphisms \cite[\S I3]{AbsTopIII}. The exact value with
+the ceiling for the region $p^{\lambda}\cdot\tI$, and the difference of exactly $\log p$ from the container when
+$\lambda\notin\Z$, were not found in the literature we searched. The transvection formula of
+Section~\ref{s:unitshear} follows in substance from Hoshi--Nishio \cite{HN} and Kondo \cite{Kondo}; it is not new.
+
+\subsection{What is not claimed}
+Nothing about the truth of Corollary~3.12 or of the $abc$ conjecture. That the family of possible images considered
+here is the family of IUT: it does not include (Ind3), it takes the Kummer isomorphisms to be the identity, and it
+treats label permutations as IUT~IV does (Section~\ref{s:classes}). How much room (Ind3) provides. Anything at places
+that are not small. The effect on the final constants of Theorem~1.10; we do not compute it.
+
+\subsection{Labels}
+\tagS\ a statement about a cited text; \tagX\ a statement of another author; \tagP\ proved here; \tagN\ checked by an
+exact computation (scripts in the deposit); \tagH\ not proved.
+
+\section{Setting}\label{s:setting}
+
+\subsection{Step (v)}
+\tagS\ We use the notation of \cite[Prop.~1.1, 1.2, 1.4, Thm.~1.10, Steps (iv), (v)]{IUT4}. Let $p$ be an odd prime,
+$j\in\{1,\dots,\ell^{*}\}$ a label and $I=\mathbb S^{\pm}_{j+1}=\{0,1,\dots,j\}$. For each $i\in I$ let $v_i$ be a
+place of $K$ above $p$ (not necessarily distinct), $k_i=K_{v_i}$, $R_i=\cO_{k_i}$, $e_i$ its ramification index,
+$\pi_i$ a uniformizer, and $\fd_i$ the order of a generator of the different of $R_i/\Zp$, with $\ord(p)=1$. Put
+$R_I=\bigotimes_{\Zp}R_i$, let $\tI$ be its normalization, $T=R_I\otimes\Qp$, and $\fd_I=\sum_i\fd_i$. Following
+Step~(v), put $i^{\dagger}=j$, let $\lambda=\ord(\qbb_{v_j}^{\,j^2})$ if $v_j$ is bad and $\lambda=0$ if it is good,
+so that $\lambda\in\frac1{e_j}\Z$, and let $p^{\lambda}\in k_j$ have order $\lambda$. The region is
+\[
+\Theta=p^{\lambda}\cdot\tI\qquad(p^{\lambda}\text{ in the factor }j).
+\]
+For $x\in T$ written as $p^{k}\prod_i\pi_i^{a_i}$ ($k,a_i\in\Z$) the order $\ord(x)=k+\sum_ia_i/e_i$ is the same in
+every component of $T$, and $\mulog(x\cdot\tI)-\mulog(\tI)=-\ord(x)\log p$ for the normalized log-volume of
+\cite[Prop.~1.4]{IUT4}.
+
+\subsection{Small places}
+\begin{definition}\label{d:small}
+A place $v\mid p$ is \emph{small} if $p$ is odd and $e_v\le p-2$ (as in \cite{Gap}); $p$ is small if every place
+above it is small.
+\end{definition}
+
+\begin{lemma}\label{l:small}
+\tagP\ If all factors are small, then:
+\begin{enumerate}[label=(\alph*)]
+\item each $k_i/\Qp$ is tamely ramified, $\fd_i=(e_i-1)/e_i$, $a_i=1/e_i$, hence $\fd_i+a_i=1$;
+\item the log-shell is $\I_i=(2p)^{-1}\log_p(R_i^{\times})=\pi_i^{1-e_i}R_i$;
+\item the module of the inclusion used in Step~(v) is
+$p^{\floor{\lambda-\fd_I-a_I}}\cdot\log_p(R_I^{\times})=p^{\floor{\lambda}-|I|}\cdot2^{-|I|}\cdot
+\log_p(R_I^{\times})=p^{\floor{\lambda}}\cdot\bigotimes_i\I_i$, so the ``suitable nonpositive integer power'' can be
+taken to be $p^0$. We call it the \emph{container} and write $C$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+(a) $e_i\le p-2<p$, so $p\nmid e_i$ and the different is $\pi_i^{e_i-1}R_i$; $\ceil{e_i/(p-2)}=1$. (b) \tagS\
+\cite[Prop.~1.2(i)]{IUT4}: for $p>2$ and $e_i\le p-2$, $\log_p(R_i^{\times})=p^{a_i}\cdot R_i=\pi_iR_i$; since $p$
+is odd, $2$ is a unit and $(2p)^{-1}\pi_iR_i=\pi_i^{1-e_i}R_i$. (c) By (a), $\fd_I+a_I=|I|$ is an integer.
+\end{proof}
+
+\subsection{Hull and room}
+\tagS\ The holomorphic hull $\hull(X)$ of $X\subseteq T$ is the intersection of the sets $c\cdot\tI$, $c\in T^{\times}$,
+that contain $X$ \cite[Rem.~3.9.5(i)]{IUT3}. For a set $\mathfrak X$ of $\Qp$-linear automorphisms of $T$ let
+$U_{\mathfrak X}=\bigcup_{g\in\mathfrak X}g(\Theta)$ and define the \emph{room}
+\[
+\rho(\mathfrak X)=\mulog\bigl(\hull(U_{\mathfrak X})\bigr)-\mulog(\Theta);
+\]
+for a module $M\supseteq\Theta$ write $\rho(M)=\mulog(\hull(M))-\mulog(\Theta)$.
+
+\subsection{Four classes}\label{s:classes}
+\tagS\ In \cite[Thm.~3.11(i)]{IUT3} (p.~154), (Ind1) consists of ``the indeterminacies induced by the automorphisms
+of the procession of $\mathcal D^{\vdash}$-prime-strips'', and (Ind2), at a nonarchimedean $v_{\Q}$, of ``the
+indeterminacies induced by the action of independent copies of $\Ism$ [\dots] on each of the direct summands of the
+$j+1$ factors appearing in the tensor product''. An automorphism of a $\mathcal D^{\vdash}$-prime-strip is, at each
+place, an automorphism of the topological group $G_v$, which need not arise from a field automorphism.
+
+\begin{definition}\label{d:classes}
+Consider the following sets of $\Qp$-linear automorphisms of $T$:
+\begin{itemize}
+\item $\cN$: the maps $\bigotimes_ic_i\sigma_i$ with $c_i\in\Zp^{\times}$ and $\sigma_i\in\Aut(k_i/\Qp)$;
+\item $\cA$: the maps $\bigotimes_ic_i\gamma_i$ with $c_i\in\Zp^{\times}$ and $\gamma_i$ the map induced on $k_i$, through
+the mono-analytic reconstruction of the log-shell, by an automorphism $\beta_i$ of the topological group $G_{k_i}$;
+\item $\cLf$: the maps $\bigotimes_ig_i$ with $g_i$ a $\Qp$-linear automorphism of $k_i$ such that $g_i(\I_i)=\I_i$;
+\item $\cL$: the $\Qp$-linear automorphisms $\phi$ of $T$ with $\phi(\bigotimes_i\I_i)=\bigotimes_i\I_i$, that is,
+the automorphisms of Proposition~1.2 of \cite{IUT4}.
+\end{itemize}
+\end{definition}
+
+\begin{proposition}\label{p:incl}
+\tagP\ $\cN\subseteq\cA\subseteq\cLf\subseteq\cL$.
+\end{proposition}
+\begin{proof}
+A field automorphism of $k_i$ over $\Qp$ is induced by conjugation by an extension to an algebraic closure, and
+\cite[Prop.~9]{Fourth} applies \cite[Thm.~F, Thm.~7.4]{MT}: $\Ism(G_{k_i})=\Zp^{\times}$, acting by unit scalars.
+The mono-analytic log-shell is constructed from the $\mathcal D^{\vdash}$-prime-strip by a functorial algorithm
+\cite[Prop.~1.2(vi)]{IUT3}, so the induced maps preserve the log-shells. Tensor products of lattice automorphisms
+preserve the tensor product of the lattices.
+\end{proof}
+
+\begin{remark}[label permutations and (Ind3)]
+(Ind1) also permutes the labels. As in Step~(v), we fix the factor $i^{\dagger}=j$ carrying the theta value; IUT~IV
+symmetrizes over the choice of $i^{\dagger}$ when it averages \cite[p.~28]{IUT4}, and lana-agents/iut likewise takes
+the hull for each (Ind1)-image separately \cite{lana}. We do not include (Ind3).
+\end{remark}
+
+\section{The exact hull for the classes of Proposition 1.2}\label{s:exact}
+
+\begin{proposition}\label{p:inside}
+\tagP\ If all factors are small, then $\Theta\subseteq p^{\ceil{\lambda}}\cdot\bigotimes_i\I_i$.
+\end{proposition}
+\begin{proof}
+\tagS\ \cite[Prop.~1.1]{IUT4}: ``Fix an element $*\in I$; write $I^{*}=I\setminus\{*\}$. Then
+$p^{\fd_{I^*}}\cdot\tI\subseteq R_I\subseteq\tI$,'' where $p^{\fd_{I^*}}$ is a product of generators $\delta_i\in R_i$
+of the differents for $i\in I^{*}$. Take $*=j$. Then
+$\Theta\subseteq p^{\lambda}R_j\otimes\bigotimes_{i\ne j}\delta_i^{-1}R_i$. By Lemma~\ref{l:small},
+$\delta_i^{-1}R_i=\pi_i^{1-e_i}R_i=\I_i$. Finally $p^{\lambda}R_j\subseteq p^{k}\I_j=\pi_j^{e_jk+1-e_j}R_j$ if and only
+if $k\le\lambda+(e_j-1)/e_j$; as $\lambda\in\frac1{e_j}\Z$, the largest such $k$ is $\ceil{\lambda}$.
+\end{proof}
+
+\begin{theorem}[exact hull]\label{t:exact}
+\tagP\ Suppose all factors are small, and put $\mu=p^{\ceil{\lambda}}\prod_i\pi_i^{1-e_i}\in T^{\times}$. For
+$\mathfrak X=\cLf$ and for $\mathfrak X=\cL$,
+\[
+\hull(U_{\mathfrak X})=\mu\cdot\tI=p^{\ceil{\lambda}-\fd_I}\cdot\tI,\qquad
+\rho(\mathfrak X)=\bigl(\fd_I-(\ceil{\lambda}-\lambda)\bigr)\log p .
+\]
+\end{theorem}
+\begin{proof}
+Upper bound: every $\phi\in\cL$ preserves $p^{\ceil{\lambda}}\bigotimes_i\I_i=\mu R_I$, so
+$U_{\cL}\subseteq\mu R_I$ by Proposition~\ref{p:inside}. Since $1\in R_I\subseteq\tI$, a set $c\cdot\tI$ containing
+$\mu R_I$ contains $\mu$, hence $\mu\cdot\tI$; so $\hull(\mu R_I)=\mu\cdot\tI$ and $\hull(U_{\cL})\subseteq\mu\cdot\tI$.
+
+Lower bound: the automorphism group of a free $\Zp$-module acts transitively on its primitive vectors. For $i\ne j$,
+both $1$ and $\pi_i^{1-e_i}$ are primitive in $\I_i$ (they lie in $\I_i$ and not in $p\I_i=\pi_iR_i$), so some
+$g_i\in\GL(\I_i)$ has $g_i(1)=\pi_i^{1-e_i}$. For $i=j$, both $p^{\lambda}$ and $p^{\ceil{\lambda}}\pi_j^{1-e_j}$ are
+primitive in $p^{\ceil{\lambda}}\I_j$ (because $e_j\lambda\le e_j\ceil{\lambda}$), so some $g_j\in\GL(\I_j)$ has
+$g_j(p^{\lambda})=p^{\ceil{\lambda}}\pi_j^{1-e_j}$. The image of $1\otimes\cdots\otimes1\otimes p^{\lambda}\in\Theta$
+under $\bigotimes_ig_i\in\cLf$ is $\mu\in T^{\times}$, so $\hull(U_{\cLf})\supseteq\mu\cdot\tI$. With
+$U_{\cLf}\subseteq U_{\cL}$ both hulls equal $\mu\cdot\tI$.
+
+Room: $\ord(\mu)=\ceil{\lambda}-\fd_I$ by Lemma~\ref{l:small}(a), and $\ord(p^{\lambda})=\lambda$.
+\end{proof}
+
+\begin{corollary}[container and bound]\label{c:compare}
+\tagP\ Under the hypotheses of Theorem~\ref{t:exact},
+\begin{align*}
+\hull(C)&=p^{\floor{\lambda}-\ceil{\lambda}}\cdot\hull(U_{\cL}),\\
+\rho(C)-\rho(\cL)&=(\ceil{\lambda}-\floor{\lambda})\log p,\\
+(\fd_I+1)\log p-\rho(\cL)&=(1+\ceil{\lambda}-\lambda)\log p .
+\end{align*}
+In particular, if $\lambda\notin\Z$ the hull of the container is $p^{-1}$ times the hull reached by all of $\cL$ (its
+log-volume is larger by exactly $\log p$), and if $\lambda\in\Z$ they coincide. Here $(\fd_I+1)\log p$ is the room
+allowed by \cite[Prop.~1.2(iii)]{IUT4}, $\phi(p^{\lambda}\cdot\tI)\subseteq p^{\lambda-\fd_I-1}\cdot\tI$.
+\end{corollary}
+\begin{proof}
+By Lemma~\ref{l:small}(c), $C=p^{\floor{\lambda}}\bigotimes_i\I_i$, whose hull is
+$p^{\floor{\lambda}}\prod_i\pi_i^{1-e_i}\cdot\tI$ as in the proof of Theorem~\ref{t:exact}. Compare orders.
+\end{proof}
+
+\begin{remark}[where the factor $p$ comes from]\label{r:source}
+\tagS\ The proof of \cite[Prop.~1.2(ii)]{IUT4} (p.~11) reads: ``Observe that it follows from the first displayed
+inclusion [\emph{of $R_I$-modules}!] of Proposition 1.1 that
+$p^{\fd_I+a_I}\cdot\tI\subseteq\bigotimes_{i\in I}p^{a_i}\cdot R_i$''. \tagP\ Here the different of every factor is
+paid. Using Proposition~1.1 with $*=i^{\dagger}$ instead gives, by the same argument,
+\[
+\phi(p^{\lambda}\cdot\tI)\subseteq p^{\floor{\lambda-\fd_{I\setminus\{i^{\dagger}\}}-a_I}}\cdot\log_p(R_I^{\times}).
+\]
+If all factors are small, $\fd_{I\setminus\{i^\dagger\}}+a_I=|I|-1+1/e_j$, and for $\lambda\in\frac1{e_j}\Z$ one has
+$\floor{\lambda-1/e_j}=\ceil{\lambda}-1$, so the right-hand side is exactly $p^{\ceil{\lambda}}\bigotimes_i\I_i$, the
+module of Proposition~\ref{p:inside}. So the factor $p$ of Corollary~\ref{c:compare} is the price of paying the
+different of the factor that carries $p^{\lambda}$. The remaining $(1+\floor{\lambda}-\lambda)\log p$ between the
+container and the bound of Proposition~1.2(iii) is the floor slack of Proposition~1.4(iii), computed on explicit data
+in \cite[\S\,The floor]{Third}. None of this is a defect of IUT~IV: the estimate is an upper bound, and an upper bound
+may be generous.
+\end{remark}
+
+\begin{remark}[the frame of \cite{Gap}]\label{r:frames}
+\tagP\ \cite{Gap} measures from the region $\theta\cdot\bigotimes\I$ built on the log-shells. There the factorwise
+group (\texttt{tensorAut} of lana-agents/iut) and the class of Proposition~1.2 give the same value, and the span of the
+union is $p^{\kappa}\bigotimes\I$ with $\kappa=\floor{\ord_p\theta}$ at small places, which is the container $C$
+\cite[Thm.~3.2, \S6.2]{Gap}. Here we measure from the region $\Theta=\theta\cdot\tI$ of Step~(v) itself. Again the
+two classes agree (Theorem~\ref{t:exact}), but their common value is smaller than $C$ by a factor $p$ when
+$\lambda\notin\Z$. The two statements are compatible because the starting regions differ:
+$\rho(\theta\cdot\bigotimes\I)=\fd_I\log p$ exceeds $\rho(\cL)=(\fd_I-(\ceil{\lambda}-\lambda))\log p$.
+\end{remark}
+
+\begin{remark}[checks]\label{r:checks}
+\tagN\ For $p=5$ and all factors equal to $k=\Q_5(\sqrt5)$ ($e=2\le p-2$), with two factors ($j=1$) and three
+factors ($j=2$), we computed by exact linear algebra the largest $k$ with $\Theta\subseteq5^{k}\bigotimes\I$, for
+$\theta=\sqrt5^{\,m}$ in the last factor: it is $\ceil{m/2}$ for $0\le m\le12$ (two factors) and $0\le m\le7$ (three
+factors). For random elements of $\GL(\I)$ in each factor (400 and 150 samples per $m$ for two factors, 150 for three)
+the componentwise minimal valuation of the images is $2\ceil{m/2}-(j+1)$ in $\sqrt5$-units, the value of
+Theorem~\ref{t:exact}; the container gives $2\floor{m/2}-(j+1)$, which differs by $2$ exactly when $m$ is odd. For
+three factors and $m=0$ the hull has radius $5^{3/2}$, in agreement with the statement of lana-agents/iut quoted in
+Section~\ref{s:prior}.
+\end{remark}
+
+\section{The actual indeterminacies}\label{s:actual}
+
+\begin{theorem}\label{t:N}
+\tagP\ $\rho(\cN)=0$.
+\end{theorem}
+\begin{proof}
+$\sigma_j(p^{\lambda})$ is a unit multiple of $p^{\lambda}$, and $c_i\sigma_i$ preserves $R_i$, hence the normalization;
+so every element of $\cN$ maps $\Theta$ onto itself.
+\end{proof}
+
+\begin{theorem}\label{t:Aupper}
+\tagP\ If all factors are small, then $\hull(U_{\cA})\subseteq p^{\ceil{\lambda}-\fd_I}\cdot\tI$, and
+$\rho(\cA)\le(\fd_I-(\ceil{\lambda}-\lambda))\log p$.
+\end{theorem}
+\begin{proof}
+Proposition~\ref{p:incl} and Theorem~\ref{t:exact}.
+\end{proof}
+
+\begin{definition}\label{d:U}
+Say that a place $v$ satisfies \emph{(U)} if there are an automorphism $\beta$ of $G_{K_v}$ and $x\in\cO_{K_v}$ such
+that the induced map $\gamma$ satisfies $|\gamma(x)|=|\pi_v|^{1-e_v}$, that is, $\gamma$ carries an integral element
+to the boundary of the log-shell. (For $e_v=1$ the identity does.)
+\end{definition}
+
+\begin{theorem}\label{t:Areach}
+\tagP\ Suppose all factors are small, $\lambda\in\Z$, and every $v_i$ satisfies (U). Then
+$\hull(U_{\cA})=p^{\lambda-\fd_I}\cdot\tI$, the value of Theorem~\ref{t:exact}.
+\end{theorem}
+\begin{proof}
+Take $x_i$, $\gamma_i$ as in (U) for $v_i$. Since $x_i$ is integral and $p^{\lambda}\in\Qp$,
+$y=x_0\otimes\cdots\otimes x_{j-1}\otimes p^{\lambda}x_j\in\Theta$. Its image under $\bigotimes_i\gamma_i\in\cA$ is
+$p^{\lambda}\,\gamma_0(x_0)\otimes\cdots\otimes\gamma_j(x_j)$, a pure tensor of nonzero elements, hence a unit of $T$
+of order $\lambda+\sum_i(1-e_i)/e_i=\lambda-\fd_I$ in every component. So the hull contains
+$p^{\lambda-\fd_I}\cdot\tI$; Theorem~\ref{t:Aupper} gives the other inclusion.
+\end{proof}
+
+\subsection{When does (U) hold?}\label{s:unitshear}
+\tagX\ Automorphisms of $G_L$ that do not preserve the ring of integers of $\overline L$ exist
+\cite[Rem.~4.3.1(ii)]{Hoshi}, and the group-theoretic log-shell equals the ring of integers exactly when $p$ is odd and
+$k$ is unramified, or $k\cong\Q_2$ or $\Q_3(\zeta_3)$ \cite[Thm.~A(ii)]{HoshiTop}. Every such automorphism $\alpha$
+induces a map $\alpha_+$ that is compatible with $\Tr_{k/\Qp}$ and restricts to an automorphism of its kernel
+\cite[Lemma~2.3(ii)]{HN}. For $p$ odd and $[k:\Qp]$ even, the Jannsen--Wingberg presentation \cite{JW} as made
+explicit by Kondo gives an automorphism $\phi$ (with $\phi(x_2)=x_2x_1$) whose induced map moves one generator of the
+logarithms of units by a multiple of another, while the kernel of the trace is spanned by the others
+\cite[Thm.~1.3, Lemma~1.5]{Kondo}; Hoshi--Nishio give unipotent induced maps $\alpha_+$ with
+$(\alpha_+^n-\mathrm{id})^2=0$ \cite[Thm.~1.5]{HN}. Together these give induced maps of the form
+\[
+x\longmapsto x+\Tr_{k/\Qp}(x)\,\eta,\qquad\Tr_{k/\Qp}(\eta)=0 .
+\]
+This formula follows in substance from \cite{HN,Kondo}; we do not claim it.
+
+\begin{proposition}\label{p:transvection}
+\tagP\ Let $v$ be small with $e_v\ge2$. If some automorphism of $G_{K_v}$ induces $x\mapsto x+\Tr(x)\eta$ with
+$|\eta|=|\pi_v|^{1-e_v}$, then $v$ satisfies (U).
+\end{proposition}
+\begin{proof}
+$K_v/\Qp$ is tame, so $\Tr(\cO_{K_v})=\Zp$; take $x\in\cO_{K_v}$ with $\Tr(x)=1$. Then $\gamma(x)=x+\eta$ with
+$|\eta|>1\ge|x|$, so $|\gamma(x)|=|\eta|$.
+\end{proof}
+
+\tagH\ Since the induced maps preserve the log-shell, $|\eta|\le|\pi_v|^{1-e_v}$ always; whether equality holds for
+a suitable presentation is not decided here. It concerns the position of the units attached to the generators, and
+does not follow from the statements we cite. For $[K_v:\Qp]$ odd, and for $\lambda\notin\Z$ (which needs a move by
+$e_j\lambda\bmod e_j-1$ steps in the last factor rather than $e_j-1$), we have nothing.
+
+\subsection{Where the room can come from}
+\begin{proposition}\label{p:where}
+\tagP\ (a) If $p$ is odd and every place above $p$ is unramified, then $\rho(\cL)=0$; so positive room needs $p=2$ or
+a ramified place above $p$. (b) If $\rho(\cA)>0$, then some element of $\cA$ has a factor $c_i\gamma_i$ with
+$\gamma_i$ not of the form $c\,\sigma$ ($c\in\Zp^{\times}$, $\sigma$ a field automorphism).
+\end{proposition}
+\begin{proof}
+(a) \tagS\ \cite[Prop.~1.2(iv)]{IUT4}: if $p>2$ and $e_i=1$ for all $i$, then $\phi(\tI)\subseteq\tI$. Here
+$\lambda\in\Z$, so $p^{\lambda}$ commutes with $\phi$. (b) Theorem~\ref{t:N}.
+\end{proof}
+
+\begin{remark}[the inequality of Step (xi)]
+\tagP\ Write the inequality of the form of Step~(xi-f) for the family generated by $\cA$ (without (Ind3)) with the
+normalizations of IUT~IV: the $q$-pilot has log-volume $-|\log q|$ and the native $\Theta$-pilot, averaged over the
+labels, $-c\,|\log q|$ with $c=\ell(\ell+1)/12$. The inequality then reads $(c-1)|\log q|\le A+\sum_p\bar\rho_p$, where
+$A$ is the archimedean part and $\bar\rho_p$ the room at $p$ averaged over the labels. When the height is so large that
+$A<(c-1)|\log q|$, some $\bar\rho_p$ must be positive, so by Proposition~\ref{p:where} some actual automorphism of a
+local Galois group that is not a unit scalar times a field automorphism must move the region, at $p=2$ or at a ramified
+prime. This is a necessary condition only; it says nothing about whether the inequality holds. At small primes
+$\bar\rho_p$ is at most the label average of the exact value of Theorem~\ref{t:exact}. Consistently with
+\cite[p.~101]{EssLgc}, none of these terms involves the size of the $q$-orders.
+\end{remark}
+
+\section{An example}\label{s:example}
+\tagN\ The explicit initial $\Theta$-datum D109 of \cite{Cat} ($\ell=7$, $\ell^{*}=3$) has a bad place above $p=109$
+with $e=105\le107$ and $\ord_p(\qbb)=29/7$; the other place above $109$ is good, with $e=1$, so $109$ is small.
+Take the component with every factor at this bad place. Then $\lambda=29j^2/7\notin\Z$ for $j=1,2,3$ (as $7\nmid29$)
+and $\fd_I=104(j+1)/105$. In units of $\log109$:
+
+\begin{center}
+\begin{tabular}{rrrrrrr}
+\toprule
+$j$ & $\lambda$ & $\fd_I$ & exact (Thm.~\ref{t:exact}) & container & IV bound & container $-$ exact\\
+\midrule
+1 & 29/7 & 208/105 & 118/105 & 223/105 & 313/105 & 1\\
+2 & 116/7 & 104/35 & 89/35 & 124/35 & 139/35 & 1\\
+3 & 261/7 & 416/105 & 341/105 & 446/105 & 521/105 & 1\\
+\bottomrule
+\end{tabular}
+\end{center}
+Here ``IV bound'' is the room $(\fd_I+1)\log p$ allowed by Proposition~1.2(iii). With $\log109\approx4.691$ the three exact rooms are about $5.272$, $11.929$ and $15.236$. Which bad places are
+selected for $\mathbb V^{\mathrm{bad}}_{\mathrm{mod}}$ does not affect this local computation.
+
+\section{Discussion}
+\begin{itemize}
+\item \tagP\ The estimate of IUT~IV is an upper bound, and nothing in its logic is affected by the container being
+larger than what is reached. Corollary~\ref{c:compare} states precisely how generous it is at small places. The
+difference $(\ceil{\lambda}-\floor{\lambda})\log p$ does not involve the size of the $q$-orders: it is a term of
+conductor type and does not change the shape of the height inequality.
+\item \tagP\ At small places, enlarging the factorwise automorphisms $\cLf$---the group \texttt{tensorAut} of
+lana-agents/iut---to all of $\cL$ does not change the hull. Any effect of the enlargement must come from places that
+are not small.
+\item \tagP\ The difference between the actual $\cA$ and $\cLf$ is a question about automorphisms of absolute Galois
+groups that do not come from field automorphisms: how far they move integral structures. Unit scalars and field
+automorphisms give no room (Theorem~\ref{t:N}).
+\item \tagH\ We do not include (Ind3). IUT~IV accounts for it by considering upper bounds, and Mochizuki states that
+(Ind3) by itself accounts for the possibility of confusing $q$ with $q^{j^2}$ \cite[p.~101]{EssLgc}. Where the family of
+possible images with (Ind3) lies between the exact value and the container is not decided here.
+\item \tagP\ The bound $E_L$ of \cite[Thm.~22(a)]{W311} reads, at small places where $b_I+a_I=0$,
+$\frac13\sum_j(\fd_{I_j}+1+c_j)\log p$; that note reads the possible images maximally and takes a larger container, so
+its bound exceeds the label average of the exact value of Theorem~\ref{t:exact} by
+$\frac13\sum_j(1+c_j+\ceil{\lambda_j}-\lambda_j)\log p$. Its argument uses only the upper bound, so this does not affect
+its conclusion.
+\end{itemize}
+
+\section{Relation to earlier work}\label{s:prior}
+\begin{itemize}
+\item \tagS\ The use of Proposition~1.1. \cite[Prop.~1.1]{IUT4} is stated with a free choice of $*$, while the proof of
+Proposition~1.2(ii) uses $p^{\fd_I+a_I}$ (Remark~\ref{r:source}). Yamashita restates the $*$-form in his Lemma~1.4 and
+uses $\ceil{\fd_I}$ in Lemma~1.6, obtaining $(-\lambda+\fd_I+4)\log p$ \cite[pp.~13--19]{Yam}. \tagX\ Dupuy and Hilado
+write ``We can chose some $K_i$ which makes the inclusion tightest'' \cite[Rem.~2.8.2, p.~10]{DHPS}, and in step (6.4)
+exempt the factor with the largest different \cite[p.~20]{DHPS}. Mochizuki--Fesenko--Hoshi--Minamide--Porowski change the
+numerical constants of Theorem~1.10 but not Propositions~1.1--1.4 \cite[proof of Thm.~5.1]{MFHMP}.
+\item \tagX\ The case $\lambda=0$. lana-agents/iut states (file \lean{Iut/WallEquiv/VcI.md}, first committed
+13 October 2026): ``There the hull is IUT IV's container $p^{-d_I}\cdot(R_I)^{\sim}$ exactly (IUT IV, Prop. 1.4(iii)
+with $\lambda = 0$, $I^* = \emptyset$; IUT's bound $(d_I + 1)\cdot\log p$ adds 1 for the rounding
+$\lfloor\lambda - d_I - a_I\rfloor$).'' \cite{lana}. The author's \cite{Gap} computes the span of the orbit for the
+log-shell-based region (Remark~\ref{r:frames}), using the same lattice lemma as the lower bound of
+Theorem~\ref{t:exact}; that lemma is elementary and not new.
+\item \tagX\ Bounded room. Mochizuki writes that ``automorphisms of the $\Zp$-module $I_k$ only give rise to bounded
+discrepancies in the orders of nonzero elements of $\cO_k$'' \cite[Ex.~3.5.1]{EssLgc}, and that the confusion between
+$q$-parameters and their large powers ``can never occur as a consequence of (Ind1), (Ind2), i.e., both of which amount
+to automorphisms of the [underlying topological module of the] log-shells involved'' \cite[p.~101]{EssLgc}. In the proof
+of Corollary~3.12, Step~(x), the resulting log-volumes ``are invariant with respect to the indeterminacies (Ind1),
+(Ind2)'' \cite[p.~181]{IUT3}; this concerns each image, not the hull of their union. Takkun-kohinata/IUT\_LEAN
+(15 July 2026) states, in a comment of \lean{Thm311.lean}, that (Ind1), (Ind2) preserve volume and so do not contribute
+to the volume estimate of the hull (our paraphrase) \cite{Takkun}; again this concerns each image. Zeng computes the
+index by which the hull enlarges the integral structure of a tensor product of rings of integers \cite{Zeng}.
+\item \tagX\ Non-geometric automorphisms. Mochizuki writes that the valuation data ``is precisely the data that is
+`deformed' by automorphisms of $k$ that do not arise from field automorphisms'' \cite[\S I3]{AbsTopIII}, describes (Ind1)
+as arising from automorphisms of $G_k$ that do not in general preserve the ring structure \cite[\S3.7(i)]{Alien}, and in
+an e-mail quoted by Joshi writes that such automorphisms ``can act in a fashion that fails to preserve differents,
+discriminants'' and other quantities \cite[Appendix 16]{JoshiAnab}. Scholze and Stix note: ``Such isomorphisms exist for
+Galois groups of $p$-adic fields, but this did not seem to enter the discussion in a critical way'' \cite[fn.~4]{SS}.
+Mochizuki's formalization report mentions ``a small discrepancy (arising from (Ind1,2,3) + hull)'' \cite[p.~11]{Fm26}.
+\item \tagX\ The classes. Dupuy and Hilado treat (Ind1), (Ind2) as acting through the automorphisms of the
+$\Zp$-lattices of the log-shells \cite[p.~17, \S4.8]{DH1}. lana-agents/iut uses \texttt{tensorAut}, which contains the
+image of $\Ism$ and is described as a deliberate enlargement \cite{lana}. Minamide and Tsujimura write ``Theorem F
+implies that (Ind2) is relatively small'' \cite{MT}. Joshi reads (Ind1) as anabelomorphy and (Ind2) as a choice of
+arithmetic holomorphic structure \cite[\S8.11.2]{JoshiIII}, a reading different from the one used here.
+\item \tagP\ What is added here: the exact value with the ceiling for the region $p^{\lambda}\cdot\tI$ of Step~(v); the
+difference of exactly $\log p$ from the container when $\lambda\notin\Z$, traced to the use of Proposition~1.1; the
+arrangement of the four classes, with the non-geometric automorphisms of $G_v$ in the class $\cA$; and the reduction of
+condition (U) to one condition on the transvections.
+\end{itemize}
+
+\section{Limitations}
+\begin{itemize}
+\item Only small places. $p=2$ and primes with $e_v>p-2$ (for instance the bad place above $59$ of the datum D211 of
+\cite{Cat}, with $e=105$) are not treated.
+\item The family of possible images omits (Ind3), takes the Kummer isomorphisms to be the identity, and treats label
+permutations as Step~(v) does.
+\item Condition (U) is not proved for $e_v\ge2$, and nothing is said for $\lambda\notin\Z$ about the actual class.
+\item The effect on the final constants of \cite[Thm.~1.10]{IUT4} is not computed.
+\end{itemize}
+
+\section{Reproducibility and formalization}
+The folder \texttt{three-tiers/} of the repository \url{https://github.com/turahigashi/iut-explicit-initial-theta}
+(tag \texttt{v0.25.0}), also deposited with this note, contains the scripts and their outputs:
+\texttt{check\_example.py} and \texttt{check\_nfactor.py} (the largest $k$ and the random factorwise images of
+Remark~\ref{r:checks}), \texttt{check\_perfactor.py} (the same for two factors with 400 samples), and
+\texttt{example\_d109.py} (the table of Section~\ref{s:example}, reading the place data of D109 from the program of
+\cite{Walk}). They use exact rational arithmetic in Python.
+
+Versions of Theorems~\ref{t:N}, \ref{t:Aupper} and \ref{t:Areach} and of Proposition~\ref{p:transvection} (with a
+common ramification index above $p$ where the statements here allow different ones), and of the necessary condition in
+the last remark of Section~\ref{s:actual}, were also checked in Lean~4 with Mathlib, for a model of the possible images
+without (Ind3), in a development of the author that is not part of this deposit. The proofs given here do not rely on
+it. Theorem~\ref{t:exact}, Corollary~\ref{c:compare} and Proposition~\ref{p:inside} are proved on paper only.
+
+\section*{Disclosure}
+The comparison studied here arose in the author's discussions with generative AI tools, and the author decided to make
+it the subject of this note. The proofs were found with generative AI tools (large language models) under the author's
+direction, and these tools were also used for the computations, the formalization, the literature search and the
+writing. The author's own reading of the proofs is still in progress. The author takes full responsibility for the
+note.
+
+\begin{thebibliography}{AbsTopIII}\raggedright
+\bibitem[AbsTopIII]{AbsTopIII}
+Shinichi Mochizuki, \emph{Topics in absolute anabelian geometry III: global reconstruction algorithms}, version of
+November 2015.
+
+\bibitem[Alien]{Alien}
+Shinichi Mochizuki, \emph{The mathematics of mutually alien copies: from Gaussian integrals to inter-universal
+Teichm\"uller theory}, RIMS K\^oky\^uroku Bessatsu, preprint version.
+
+\bibitem[Cat]{Cat}
+Toshihisa Urahigashi, \emph{Explicit initial $\Theta$-data and the two readings of Step (v) of IUT IV, Theorem 1.10:
+a catalogue}, version 1.2.0, Zenodo, 2026, \href{https://doi.org/10.5281/zenodo.24039374}{doi:10.5281/zenodo.24039374}.
+
+\bibitem[DH1]{DH1}
+Taylor Dupuy and Anton Hilado, \emph{The statement of Mochizuki's Corollary 3.12, initial theta data, and the first two
+indeterminacies}, arXiv:2004.13228v1, 28 April 2020.
+
+\bibitem[DHPS]{DHPS}
+Taylor Dupuy and Anton Hilado, \emph{Probabilistic Szpiro, baby Szpiro, and explicit Szpiro from Mochizuki's
+Corollary 3.12}, arXiv:2004.13108v2, 29 April 2020.
+
+\bibitem[EssLgc]{EssLgc}
+Shinichi Mochizuki, \emph{On the essential logical structure of inter-universal Teichm\"uller theory in terms of
+logical AND ``$\wedge$''/logical OR ``$\vee$'' relations: report on the occasion of the publication of the four main
+papers on inter-universal Teichm\"uller theory}, March 2024.
+
+\bibitem[Fm26]{Fm26}
+Shinichi Mochizuki, \emph{On the formalization of IUT: a preliminary progress report} [joint work in progress with
+Y.~Hoshi, G.~Yamashita, Y.~Yang, \dots], April 2026.
+
+\bibitem[Fourth]{Fourth}
+Toshihisa Urahigashi, \emph{Split bad primes and the tuple structure of inter-universal Teichm\"uller theory: what the
+source states, and what follows (a fourth report)}, version 1.0.5, Zenodo, 2026,
+\href{https://doi.org/10.5281/zenodo.24039383}{doi:10.5281/zenodo.24039383}.
+
+\bibitem[Gap]{Gap}
+Toshihisa Urahigashi, \emph{The gap between the two walls is positive: a closed form for the (Ind2)-terms of
+lana-agents/iut}, version 1.1.0, Zenodo, 2026,
+\href{https://doi.org/10.5281/zenodo.24039377}{doi:10.5281/zenodo.24039377}.
+
+\bibitem[HN]{HN}
+Yuichiro Hoshi and Yu Nishio, \emph{On the outer automorphism groups of the absolute Galois groups of
+mixed-characteristic local fields}, RIMS Preprint 1931, November 2020.
+
+\bibitem[Hoshi]{Hoshi}
+Yuichiro Hoshi, \emph{Introduction to mono-anabelian geometry}, RIMS Preprint 1868, January 2017.
+
+\bibitem[HoshiTop]{HoshiTop}
+Yuichiro Hoshi, \emph{Topics in the anabelian geometry of mixed-characteristic local fields}, Hiroshima Math. J.
+\textbf{49} (2019), 323--398.
+
+\bibitem[IUT3]{IUT3}
+Shinichi Mochizuki, \emph{Inter-universal Teichm\"uller theory III: canonical splittings of the log-theta-lattice},
+Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 403--626.
+
+\bibitem[IUT4]{IUT4}
+Shinichi Mochizuki, \emph{Inter-universal Teichm\"uller theory IV: log-volume computations and set-theoretic
+foundations}, Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 627--723.
+
+\bibitem[JoshiAnab]{JoshiAnab}
+Kirti Joshi, \emph{On Mochizuki's idea of anabelomorphy and its applications}, arXiv:2003.01890v7, 21 June 2026.
+
+\bibitem[JoshiIII]{JoshiIII}
+Kirti Joshi, \emph{Construction of arithmetic Teichm\"uller spaces III: a `Rosetta Stone' and a proof of Mochizuki's
+Corollary 3.12}, arXiv:2401.13508v4, February 2025.
+
+\bibitem[JW]{JW}
+Uwe Jannsen and Kay Wingberg, \emph{Die Struktur der absoluten Galoisgruppe $\mathfrak p$-adischer Zahlk\"orper},
+Invent. Math. \textbf{70} (1982), 71--98.
+
+\bibitem[Kondo]{Kondo}
+Kaiji Kondo, \emph{Anabelian aspects of the outer automorphism groups of the absolute Galois groups of
+mixed-characteristic local fields}, arXiv:2512.09231v2, 12 December 2025.
+
+\bibitem[lana]{lana}
+Project LANA, \emph{lana-agents/iut}, Lean repository, \url{https://github.com/lana-agents/iut}, commit
+\texttt{553076a} (3 November 2026). Files cited: \lean{Iut/WallEquiv/VcI.md} (first committed 13 October 2026),
+\lean{Iut/Concrete/LocalConstruct/IndAut.lean} (11 October 2026), \lean{Iut/Concrete/Ind1Invariance.lean}.
+
+\bibitem[MFHMP]{MFHMP}
+Shinichi Mochizuki, Ivan Fesenko, Yuichiro Hoshi, Arata Minamide and Wojciech Porowski, \emph{Explicit estimates in
+inter-universal Teichm\"uller theory}, Kodai Math. J. \textbf{45} (2022).
+
+\bibitem[MT]{MT}
+Arata Minamide and Shota Tsujimura, \emph{Anabelian geometry for Henselian discrete valuation fields with quasi-finite
+residues}, RIMS Preprint 1973, June 2023.
+
+\bibitem[SS]{SS}
+Peter Scholze and Jakob Stix, \emph{Why abc is still a conjecture}, 2018.
+
+\bibitem[Takkun]{Takkun}
+Takkun-kohinata, \emph{IUT\_LEAN}, Lean repository, \url{https://github.com/Takkun-kohinata/IUT_LEAN}, 15 July 2026.
+
+\bibitem[Third]{Third}
+Toshihisa Urahigashi, \emph{The cost of each distinction in the local computations of inter-universal Teichm\"uller
+theory IV (a third report)}, version 1.0.3, Zenodo, 2026,
+\href{https://doi.org/10.5281/zenodo.24039382}{doi:10.5281/zenodo.24039382}.
+
+\bibitem[Walk]{Walk}
+Toshihisa Urahigashi, \emph{A programmer's walkthrough of inter-universal Teichm\"uller theory}, version 1.2.0,
+Zenodo, 2026, \href{https://doi.org/10.5281/zenodo.24039375}{doi:10.5281/zenodo.24039375}.
+
+\bibitem[W311]{W311}
+Toshihisa Urahigashi, \emph{Where Theorem 3.11 sits: the log-volume content of the results cited in the proof of
+IUT III, Corollary 3.12, does not imply its conclusion}, version 1.1.0, Zenodo, 2026,
+\href{https://doi.org/10.5281/zenodo.24039357}{doi:10.5281/zenodo.24039357}.
+
+\bibitem[Yam]{Yam}
+Go Yamashita, \emph{A proof of abc conjecture after Mochizuki}, survey, 31 August 2017.
+
+\bibitem[Zeng]{Zeng}
+Chunping Zeng, \emph{An integral-structure inflation in the hull operation of IUT Corollary 3.12}, Zenodo, 2026,
+first version 29 October 2026, \href{https://doi.org/10.5281/zenodo.23754276}{doi:10.5281/zenodo.23754276}.
+\end{thebibliography}
+
+\end{document}

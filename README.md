@@ -54,7 +54,9 @@ Theorem 1.10, on explicit data, in models, and in Lean.
   Theorem 1.10 under two readings of the label permutations of (Ind1) on seven data; fourteen-levels proves that one
   curve over Q(i) gives an initial Θ-datum at fourteen levels; the walkthrough runs the computable parts of the theory
   on these data; ind2-gap gives the (Ind2)-terms of lana-agents/iut in closed form; reading-family shows that in each of
-  36 readings Corollary 3.12 and the upper bound of IV give the same height inequality (k − 1)|log q| ≤ C.
+  36 readings Corollary 3.12 and the upper bound of IV give the same height inequality (k − 1)|log q| ≤ C. three-tiers
+  computes, at small places, the exact hull reached by the automorphisms φ of IUT IV, Proposition 1.2, and finds the
+  container of Step (v) larger by exactly a factor p when λ is not an integer.
 - **Step (xi).** Segment or loop? and its elementary companion, Indexed identifications, state the comparison of
   Step (xi) as a lax 2-cell, which is equivalent to that inequality. Two computations and Bridge and size are essays
   that read it as a comparison of programs and as a bridge versus its size. Where Theorem 3.11 sits takes the content
@@ -532,3 +534,23 @@ Pajo, and in Lean by Takkun-kohinata/IUT_LEAN (July 2026) and [lana-agents/iut](
 
 The paper and README in `where-311-sits/` are licensed under CC BY 4.0, and the Lean sources in
 `where-311-sits/lean/` under the Apache License 2.0.
+
+## Three tiers of indeterminacy (November 2026)
+
+**Three tiers of indeterminacy: the exact hull at small places and the container of Step (v) of IUT IV.**
+`three-tiers/paper/three_tiers.pdf` (11 pages), version 1.0.0, DOI
+[10.5281/zenodo.24043000](https://doi.org/10.5281/zenodo.24043000).
+
+At small places (p odd, every ramification index at most p − 2) the note computes the holomorphic hull reached by the
+automorphisms φ of IUT IV, Proposition 1.2, and by the factorwise automorphisms of the log-shells: it is exactly
+p^(⌈λ⌉ − 𝔡_I)·(R_I)^∼. The container of Step (v) of the proof of Theorem 1.10 has hull p^(⌊λ⌋ − 𝔡_I)·(R_I)^∼, larger by
+exactly a factor p when λ is not an integer (always at bad places), because the proof of Proposition 1.2(ii) pays the
+different of the factor that carries p^λ. Unit scalars and field automorphisms give no room; the actual (Ind1), (Ind2)
+reach the exact value for integer λ under a condition on automorphisms of the local Galois groups, which at small
+places reduces to one condition on the transvections of Hoshi–Nishio and Kondo. The note credits the earlier
+statements it builds on: the free choice of the exempt factor in IUT IV, Proposition 1.1, the choice of the tightest
+factor by Dupuy–Hilado, the case λ = 0 in [lana-agents/iut](https://github.com/lana-agents/iut), and the bounded
+discrepancies stated by Mochizuki. **Nothing is claimed about Corollary 3.12 or about abc.** The proofs are on paper;
+the folder contains no Lean code. See `three-tiers/README.md`.
+
+The files in `three-tiers/` are licensed under CC BY 4.0.

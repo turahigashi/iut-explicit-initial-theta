@@ -1,0 +1,8 @@
+D109: l = 7, l* = 3; places of F_mod above 109:
+  109₁: good=False  e=105  in V_bad=True  ord_p(qbb)=29/7
+  109₂: good=True  e=1  in V_bad=False  ord_p(qbb)=0
+bad place 109₁: e = 105 <= p - 2 = 107: small; ord_p(qbb) = 29/7
+j | lambda | d_I | exact | container | IV bound | container-exact | bound-exact
+1 | 29/7 | 208/105 | 118/105 (5.272) | 223/105 (9.964) | 313/105 (13.985) | 1 | 13/7
+2 | 116/7 | 104/35 | 89/35 (11.929) | 124/35 (16.621) | 139/35 (18.631) | 1 | 10/7
+3 | 261/7 | 416/105 | 341/105 (15.236) | 446/105 (19.927) | 521/105 (23.278) | 1 | 12/7

@@ -1,0 +1,14 @@
+m= 0 lambda=   0  kappa=0  ceil=0  floor=0  container exponent floor -> gap kappa-floor = 0
+m= 1 lambda= 1/2  kappa=1  ceil=1  floor=0  container exponent floor -> gap kappa-floor = 1
+m= 2 lambda=   1  kappa=1  ceil=1  floor=1  container exponent floor -> gap kappa-floor = 0
+m= 3 lambda= 3/2  kappa=2  ceil=2  floor=1  container exponent floor -> gap kappa-floor = 1
+m= 4 lambda=   2  kappa=2  ceil=2  floor=2  container exponent floor -> gap kappa-floor = 0
+m= 5 lambda= 5/2  kappa=3  ceil=3  floor=2  container exponent floor -> gap kappa-floor = 1
+m= 6 lambda=   3  kappa=3  ceil=3  floor=3  container exponent floor -> gap kappa-floor = 0
+m= 7 lambda= 7/2  kappa=4  ceil=4  floor=3  container exponent floor -> gap kappa-floor = 1
+m= 8 lambda=   4  kappa=4  ceil=4  floor=4  container exponent floor -> gap kappa-floor = 0
+m= 9 lambda= 9/2  kappa=5  ceil=5  floor=4  container exponent floor -> gap kappa-floor = 1
+m=10 lambda=   5  kappa=5  ceil=5  floor=5  container exponent floor -> gap kappa-floor = 0
+m=11 lambda=11/2  kappa=6  ceil=6  floor=5  container exponent floor -> gap kappa-floor = 1
+m=12 lambda=   6  kappa=6  ceil=6  floor=6  container exponent floor -> gap kappa-floor = 0
+kappa == ceil(lambda) for all m: True

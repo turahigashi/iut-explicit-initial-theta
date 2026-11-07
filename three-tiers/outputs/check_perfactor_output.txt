@@ -1,0 +1,9 @@
+m=0 lambda=  0  region v=[0, 0]  per-factor sampled hull v=[-2, -2]  exact(all phi) v=-2  IV container v=-2
+m=1 lambda=1/2  region v=[1, 1]  per-factor sampled hull v=[0, 0]  exact(all phi) v=0  IV container v=-2
+m=2 lambda=  1  region v=[2, 2]  per-factor sampled hull v=[0, 0]  exact(all phi) v=0  IV container v=0
+m=3 lambda=3/2  region v=[3, 3]  per-factor sampled hull v=[2, 2]  exact(all phi) v=2  IV container v=0
+m=4 lambda=  2  region v=[4, 4]  per-factor sampled hull v=[2, 2]  exact(all phi) v=2  IV container v=2
+m=5 lambda=5/2  region v=[5, 5]  per-factor sampled hull v=[4, 4]  exact(all phi) v=4  IV container v=2
+m=6 lambda=  3  region v=[6, 6]  per-factor sampled hull v=[4, 4]  exact(all phi) v=4  IV container v=4
+m=7 lambda=7/2  region v=[7, 7]  per-factor sampled hull v=[6, 6]  exact(all phi) v=6  IV container v=4
+m=8 lambda=  4  region v=[8, 8]  per-factor sampled hull v=[6, 6]  exact(all phi) v=6  IV container v=6

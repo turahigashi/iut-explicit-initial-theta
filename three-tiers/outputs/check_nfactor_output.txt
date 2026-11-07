@@ -1,0 +1,17 @@
+n=2 m=0: kappa=0 (ceil 0)  sampled hull v=[-2]  exact=-2  IV container=-2  OK
+n=2 m=1: kappa=1 (ceil 1)  sampled hull v=[0]  exact=0  IV container=-2  OK
+n=2 m=2: kappa=1 (ceil 1)  sampled hull v=[0]  exact=0  IV container=0  OK
+n=2 m=3: kappa=2 (ceil 2)  sampled hull v=[2]  exact=2  IV container=0  OK
+n=2 m=4: kappa=2 (ceil 2)  sampled hull v=[2]  exact=2  IV container=2  OK
+n=2 m=5: kappa=3 (ceil 3)  sampled hull v=[4]  exact=4  IV container=2  OK
+n=2 m=6: kappa=3 (ceil 3)  sampled hull v=[4]  exact=4  IV container=4  OK
+n=2 m=7: kappa=4 (ceil 4)  sampled hull v=[6]  exact=6  IV container=4  OK
+n=3 m=0: kappa=0 (ceil 0)  sampled hull v=[-3]  exact=-3  IV container=-3  OK
+n=3 m=1: kappa=1 (ceil 1)  sampled hull v=[-1]  exact=-1  IV container=-3  OK
+n=3 m=2: kappa=1 (ceil 1)  sampled hull v=[-1]  exact=-1  IV container=-1  OK
+n=3 m=3: kappa=2 (ceil 2)  sampled hull v=[1]  exact=1  IV container=-1  OK
+n=3 m=4: kappa=2 (ceil 2)  sampled hull v=[1]  exact=1  IV container=1  OK
+n=3 m=5: kappa=3 (ceil 3)  sampled hull v=[3]  exact=3  IV container=1  OK
+n=3 m=6: kappa=3 (ceil 3)  sampled hull v=[3]  exact=3  IV container=3  OK
+n=3 m=7: kappa=4 (ceil 4)  sampled hull v=[5]  exact=5  IV container=3  OK
+all OK: True
