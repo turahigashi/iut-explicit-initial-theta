@@ -529,7 +529,10 @@ as definitions or premises as axioms about log-volumes, at the strength of the s
 reading of (SHE) follows from the axioms; within the models, the conclusion holds exactly where a strong reading
 holds. A Venn diagram displays this position. Results of the same shape were proved earlier, for abstractions of the passage by Higuchi and
 Pajo, and in Lean by Takkun-kohinata/IUT_LEAN (July 2026) and [lana-agents/iut](https://github.com/lana-agents/iut)
-(October 2026); the note was obtained independently of these Lean works, which were made public first, and cites them. Every statement marked [P] is proved in Lean 4 with Mathlib (`where-311-sits/lean/`).
+(October 2026); the note was obtained independently of these Lean works, which were made public first, and cites them. Every statement marked [P] is proved in Lean 4 with Mathlib (`where-311-sits/lean/`). The modules
+`where-311-sits/lean/Cor312LogVolume/relative/LanaStep6*.lean` were written by the author; their names refer to
+Section 6 (§6.1, §6.2) of the Project LANA interim report (July 2026), whose description of the generic Kummer
+construction they formalize, and they contain no code from the LANA repositories.
 **Nothing is claimed about whether Corollary 3.12 is true, nor about abc.** See `where-311-sits/README.md`.
 
 The paper and README in `where-311-sits/` are licensed under CC BY 4.0, and the Lean sources in
