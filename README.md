@@ -30,6 +30,16 @@ lean/              the finite model of Appendix B (Lean 4, Init only)
 logs/              recorded arithmetic, sieve and Lean output
 ```
 
+## About these notes
+
+These notes record what the author could establish about inter-universal Teichmüller theory, working from the
+original papers with Lean 4 and with the assistance of generative AI tools under the author's direction. They are
+preprints and have not been checked by experts in the field. Statements said to be proved in Lean are
+machine-checked; whether the formal statements and axioms match the source is checked by reading the source, and
+each note says how. None of the notes claims that Corollary 3.12 of IUT III is false, and none takes a position on
+whether the abc conjecture holds. Corrections are welcome: please open an issue, or write to the address in
+`CITATION.cff`.
+
 ## Reproducing
 
 ```
