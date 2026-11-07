@@ -40,19 +40,21 @@
 \title[Explicit initial $\Theta$-data and Step~(v): a catalogue]{Explicit initial $\Theta$-data and the two readings of Step~(v) of IUT~IV, Theorem~1.10: a catalogue}
 \author{Toshihisa Urahigashi}
 \email{123026.urahigashi.toshihisa@gmail.com}
-\date{Version 1.1.0, 6 November 2026}
+\date{Version 1.2.0, 8 November 2026}
 
 \begin{abstract}
 We collect the explicit initial $\Theta$-data, in the sense of Definition~3.1 of the first paper of Mochizuki's
 series on inter-universal Teichm\"uller theory, that the author has constructed over $\Q(\sqrt5)$ and $\Q(i)$:
-three published earlier and four given here, one of them for fourteen values of $\ell$. Each has a split rational
+three published earlier, three given here, and one, for fourteen values of $\ell$, that is verified in a separate
+note. Each has a split rational
 prime above which the two places of the field of moduli are either one of good and one of multiplicative reduction,
 or both of multiplicative reduction with different orders of the $q$-parameter. For each datum we tabulate the local
 invariants and compare, in Step~(v) of the proof of Theorem~1.10 in the fourth paper, the displayed comparison module
 with the hull component of the union of possible images. Under the reading in which the theta value stays at the
 label $j$, as in Step~(v) and in what the public Lean formalization lana-agents/iut calls the reading of IUT~IV,
-every comparison is a containment. Under the reading in which label permutations act before the hull is taken,
-which the same formalization calls the literal reading, and under stated membership hypotheses, every datum gives a
+every comparison is a containment. Under the reading in which label permutations fixing the label $0$ act before
+the hull is taken, which is contained in what the same formalization calls the literal reading (that reading also
+admits permutations moving $0$), and under stated membership hypotheses, every datum gives a
 non-containment for a single component; at primes with a good and a bad place the excess grows like $j^2$, and for
 three data the weighted average over the components also exceeds the bound displayed at the prime. No conclusion is
 drawn about Corollary~3.12, the final inequality of Theorem~1.10, or the abc conjecture.
@@ -66,8 +68,9 @@ Explicit initial $\Theta$-data in the sense of \cite[Def.~3.1]{IUT1} are needed 
 \cite{IUT4} are to be evaluated on actual numbers. Dupuy and Hilado computed one for the curve 11a1 over $\Q$
 \cite[\S2.10]{DH1}, and Zhou constructed families from Frey--Hellegouarch curves \cite{Zhou1,Zhou2}; in these
 constructions the field of moduli is $\Q$, so a rational prime carries a single place of it. The author has published
-three data over quadratic fields \cite{First,Second,Note}. This note collects them with four further data, all over
-$\Q(\sqrt5)$ or $\Q(i)$, and records for each the local invariants above one split prime and the comparisons in
+three data over quadratic fields \cite{First,Second,Note}. This note collects them with three further data and with
+the datum of \cite{Fourteen}, given for fourteen values of $\ell$, all over $\Q(\sqrt5)$ or $\Q(i)$, and records for
+each the local invariants above one split prime and the comparisons in
 Step~(v) of \cite[Thm.~1.10, proof]{IUT4}.
 
 The comparisons depend on how the label permutations contained in the indeterminacy (Ind1) enter the union of
@@ -109,9 +112,12 @@ We consider the following readings of \cite[Cor.~3.12]{IUT3}; none is proved her
 (The file \nolinkurl{Iut/Concrete/Ind1Invariance.lean} of \cite{LANAiut} also records that taking the hull for each
 image under (Ind1) separately gives the value of IUT~IV.)
 \item[(L)] Label permutations fixing $0$ act on possible-image regions before the hull is taken; this is (R) of
-\cite[\S3]{Note}. (L$^0$) also admits permutations moving $0$, as in \cite[(SA2)]{FirstFull}.
+\cite[\S4]{Note}. (L$^0$) also admits permutations moving $0$, as in \cite[(SA2)]{FirstFull}. That each stage of a
+procession of copies of one prime-strip carries the full symmetric group, so that the fixing of $\mathcal D_0$ does not
+by itself fix the label $0$ inside the larger capsules, is shown in \cite[\S6]{Fourth} from \cite[\S0, Def.~4.10,
+Prop.~6.9(i)]{IUT1}.
 \item[(M$_{\mathrm b}$)] At a bad place the region of the $\Theta$-pilot object is the theta value times a lattice
-containing $1$, and its Kummer image is a possible image; this is (M) of \cite[\S3]{Note}, which gives
+containing $1$, and its Kummer image is a possible image; this is (M) of \cite[\S4]{Note}, which gives
 \cite[Lemma~3]{Note}.
 \item[(M$_{\mathrm g}$)] At a good place the region of the $\Theta$-pilot object at a tuple whose factor of label $j$
 lies over it contains $1\otimes\cdots\otimes1$, the theta value being $1$ there, and its Kummer image is a possible
@@ -133,7 +139,9 @@ $v_j=b_l$; the hull component is $\ge-\lceil j^2\rho(b_s)\rceil$.
 if $j=1$: the element $\chi(1)$ at a tuple with label $j$ over $g$ is moved to a tuple with label $j$ over $b$; the
 hull component is $\ge0$.
 \item[(GB$_L$)] The variant of \cite[Thm.~8.1]{FirstFull}, under its hypothesis (SA): the moved region contains the
-log-unit lattice, and the hull component is $\ge-\sum_i e_{v_i}^{-1}$.
+log-unit lattice, and the hull component is $\ge-\sum_i e_{v_i}^{-1}$. The same comparison is stated in
+\cite[Thm.~5]{First} for $j=1$ and, for every $j$, under the hypothesis that the hull contains the log-unit lattice,
+in \cite[Prop.~5]{Fourth}.
 \end{itemize}
 
 \begin{proposition}\label{p:closed}
@@ -286,24 +294,35 @@ $|\log q|=\log q/2\ell$ (file \nolinkurl{Iut/WallEquiv/README.md}), also holds f
 while by the formula $\sum_c w_c\sum_j\rho_{c_j}\log p$ for the prime components recorded there, with
 $\rho=1-1/e$ at the tame places above $p$ and $R$ and the other components nonnegative, the right side is at least
 $3\bigl(\tfrac12(\tfrac{104}{105}+\tfrac{34}{35})\log p+\tfrac12\cdot\tfrac{104}{105}\log R\bigr)=221.0\ldots$.
-The place above $R$, where $q$ has order only $2$, supplies most of this.
+The place above $R$, where $q$ has order only $2$, supplies most of this. Earlier, \cite{Takkun} (15~July 2026)
+proved in Lean that, in its model, the hull of the possible images can be bounded by the theta volume plus a ledger
+$L$ of the local terms of \cite[Props.~1.1--1.4]{IUT4}, compatibly with the containment of Step~(xi), if and only if
+$(s-1)|\log q|\le L$ and the underlying model of Theorem~3.11 exists (\nolinkurl{thetaHullTranscription_iff}, file
+\nolinkurl{IutLean/Multiradial/ThetaHullDichotomy.lean}; see also (F3) in
+\nolinkurl{REQUEST_theta_hull_derivation.md}). This is the same inequality, with $L$ in place of
+$\mulog(\mathrm{hull}(\mathrm{VC}(I)))$.
 
 \section{Earlier work and dates}\label{s:prior}
 
 \begin{itemize}
 \item Explicit initial $\Theta$-data: \cite[\S2.10]{DH1} (11a1 over $\Q$, $\ell=13$); \cite{Zhou1,Zhou2} (families,
-$\Fmod=\Q$); \cite[Def.~4.1]{MFHMP} ($\mu_6$-initial $\Theta$-data, no numerical example); an explicit example over an
+$\Fmod=\Q$); \cite[Def.~4.1]{MFHMP} ($\mu_6$-initial $\Theta$-data, no numerical example); initial $\Theta$-data
+constructed in Lean from an elliptic curve and stated inputs, no numerical example: \cite{LANAiut}, file
+\nolinkurl{Iut/Concrete/Existence.lean}, first committed on 2~September 2026 (UTC); an explicit example over an
 extension of $\Q(i)$ was asked for in \cite{MO}.
 \item The permutations of tensor factors in (Ind1): \cite[\S4]{DH1} (2020); \cite[\S6.2, footnote~7]{DH} (2020).
 \item The two readings, the agreement when the orders of $q$ agree above each prime, the failure at two bad places with
 different orders, the minimum versus the average, and primes with a good and a bad place from the Belyi reduction:
 \cite{LANAiut}, file \nolinkurl{Iut/Concrete/Literal.lean}, first committed on 11~October 2026 (UTC); the per-image hull,
 file \nolinkurl{Iut/Concrete/Ind1Invariance.lean}, the same day.
-\item The question of the source of $\lambda=\operatorname{ord}(q^{j^2})$ in Step~(v): \cite{Takkun} (July 2026). The last
+\item The question of the source of $\lambda=\operatorname{ord}(q^{j^2})$ in Step~(v), and the equivalence in Lean of the
+hull bound with $(s-1)|\log q|\le L$ for a ledger $L$ (\S\ref{s:global}): \cite{Takkun} (15~July 2026). The last
 estimate of Step~(v) restated without an independent proof: \cite[Prop.~6.10.9]{JoshiIV}.
-\item A different loss in the hull of a tensor packet, from boxing the integral structure: \cite{Zeng} (30 October 2026).
+\item A different loss in the hull of a tensor packet, from boxing the integral structure: \cite{Zeng} (first version 29~October 2026).
 \item The data of this note: $D_{211}$ on 6 September 2026 \cite{First}, $D_{109}$ on 7 September 2026 \cite{Second},
-$D_2$ on 6 October 2026 \cite{NoteV1}; $D_3$, $D_{18}$, $D_{15}$ and the values of \S\ref{s:comparisons} are new here.
+$D_2$ on 6 October 2026 \cite{NoteV1}; $D_{2357}^{(\ell)}$ is the curve of \cite[\S13]{Second} (September 2026),
+verified as an initial $\Theta$-datum for the fourteen values of $\ell$ in \cite{Fourteen} (6 November 2026); $D_3$,
+$D_{18}$, $D_{15}$ and the values of \S\ref{s:comparisons} are new here.
 \end{itemize}
 
 \section{Reproducibility}\label{s:repro}
@@ -415,6 +434,11 @@ Toshihisa Urahigashi, \emph{An explicit initial $\Theta$-datum with mixed reduct
 Toshihisa Urahigashi, \emph{Fourteen initial $\Theta$-data on one curve over $\mathbb{Q}(i)$}, version 1.0.0, Zenodo,
   6 November 2026, \href{https://doi.org/10.5281/zenodo.23990717}{doi:10.5281/zenodo.23990717}.
 
+\bibitem[Fourth]{Fourth}
+Toshihisa Urahigashi, \emph{Split bad primes and the tuple structure of inter-universal {T}eichm\"uller theory:
+  what the source states, and what follows (a fourth report)}, version 1.0.4, Zenodo,
+  \href{https://doi.org/10.5281/zenodo.22648944}{doi:10.5281/zenodo.22648944}.
+
 \bibitem[IUT1]{IUT1}
 Shinichi Mochizuki, \emph{Inter-universal {T}eichm\"uller theory {I}: construction of {H}odge theaters}, Publ. Res.
   Inst. Math. Sci. \textbf{57} (2021), 3--207.
@@ -456,11 +480,14 @@ Toshihisa Urahigashi, \emph{An initial $\Theta$-datum over an imaginary quadrati
   \href{https://doi.org/10.5281/zenodo.22601333}{doi:10.5281/zenodo.22601333}.
 
 \bibitem[Takkun]{Takkun}
-Takkun-kohinata, \emph{IUT\_LEAN}, GitHub repository, \url{https://github.com/Takkun-kohinata/IUT_LEAN} (July 2026).
+Takkun-kohinata, \emph{IUT\_LEAN}, GitHub repository, \url{https://github.com/Takkun-kohinata/IUT_LEAN}, files
+  \nolinkurl{REQUEST_theta_hull_derivation.md} and \nolinkurl{IutLean/Multiradial/ThetaHullDichotomy.lean}; commit
+  \texttt{9d56c46} (15 July 2026, UTC).
 
 \bibitem[Zeng]{Zeng}
-Chunping Zeng, \emph{An integral-structure inflation in the hull operation of {IUT} {C}orollary 3.12}, Zenodo, 30
-  October 2026, \href{https://doi.org/10.5281/zenodo.23811410}{doi:10.5281/zenodo.23811410}.
+Chunping Zeng, \emph{An integral-structure inflation in the hull operation of {IUT} {C}orollary 3.12}, Zenodo,
+  version of 30 October 2026, \href{https://doi.org/10.5281/zenodo.23811410}{doi:10.5281/zenodo.23811410}; first
+  version 29 October 2026; all versions \href{https://doi.org/10.5281/zenodo.23754276}{doi:10.5281/zenodo.23754276}.
 
 \bibitem[Zhou1]{Zhou1}
 Zhong-Peng Zhou, \emph{The inter-universal {T}eichm\"uller theory and new {D}iophantine results over the rational

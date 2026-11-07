@@ -68,7 +68,7 @@
 \title{Segment or loop? A homotopy-type-theoretic overview of the dispute over Corollary~3.12 of
 inter-universal Teichm\"uller theory}
 \author{Toshihisa Urahigashi\\\small ORCID 0009-0004-0460-6242\\\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.3.0, 6 November 2026\\\small\href{https://doi.org/10.5281/zenodo.23991545}{doi:10.5281/zenodo.23991545}}
+\date{Version 1.4.0, 8 November 2026\\\small\href{https://doi.org/10.5281/zenodo.24039360}{doi:10.5281/zenodo.24039360}}
 
 \begin{document}
 \maketitle
@@ -98,14 +98,16 @@ bounded; the difference is a difference of h-level (Section~\ref{s:down}).
 statements (AD) and (IUAD), about which Mochizuki wrote that there is no dispute, and of Mochizuki's own explanation by
 segment, loop and universal cover. (C) and (E) show that what remains in dispute is not a question of logic but the
 truth of one inequality. None of the results is new mathematically; the contribution of this paper lies in the
-formulation that places known mathematics in one framework, and in the correspondences (\S\ref{ss:labels}). A general
+formulation that places known mathematics in one framework, and in the correspondences (\S\ref{ss:labels}). An earlier
+reading of the dispute in homotopy type theory is due to Whaley~\cite{Wh}. A general
 semantics for comparison problems in arithmetic geometry was given earlier by Laniewski~\cite{La}, without reference to
 IUT: the passage between labelled presentations is a transport carrying a cost, comparisons between transports are kept
 as invertible 2-morphisms, and the setting is motivated by the identity types of Voevodsky's C-systems. No priority is
 claimed here for the idea of tracking identifications in this way (\S\ref{ss:earlier}). The
-quantitative core has been checked by machine in Lean~4; statements of the same shape (Step~(xi) is equivalent to one
-inequality, which the properties established at the level of Theorem~3.11 do not decide) were proved earlier, in
-models, in the public Lean formalization lana-agents/iut~\cite{LANAiut} (\S\ref{ss:earlier}). Nothing is claimed about
+quantitative core has been checked by machine in Lean~4; statements of the same shape were formalized earlier in Lean
+by Takkun-kohinata/IUT\_LEAN~\cite{TK}, by sfingali~\cite{Sf} and, in models (Step~(xi) is equivalent to one
+inequality, which the properties established at the level of Theorem~3.11 do not decide), by
+lana-agents/iut~\cite{LANAiut} (\S\ref{ss:earlier}). Nothing is claimed about
 the truth of Corollary~3.12 or of the abc conjecture.
 \end{abstract}
 
@@ -128,7 +130,7 @@ IPL, SHE and APT; two naive approaches and the \q{trivial multiradial representa
 certain isomorphism is the identity; the agreement (9-1) of two isomorphisms; a re-examination of the hexagon of
 Scholze--Stix.
 \item Higuchi~\cite{Hi}: a numerical bridge does not follow from a package of qualitative properties. Dupuy--Hilado
-\cite{DH}: the indeterminacies made explicit. Joshi~\cite{Jo1,Jo2}: labelled isomorphic copies; arithmetic
+\cite{DH1}: the indeterminacies made explicit. Joshi~\cite{Jo1,Jo2}: labelled isomorphic copies; arithmetic
 Teichm\"uller spaces.
 \end{itemize}
 These vocabularies stand side by side without being translated into one another. The aim of this paper is to place
@@ -191,8 +193,12 @@ components of tensor packets, the part of $E$ produced by the label permutations
 \end{itemize}
 
 \subsection{Relation to earlier work}\label{ss:earlier}
-As far as the author has checked, no earlier work reads the dispute over Corollary~3.12 itself through homotopy type
-theory. A general framework of a related kind exists, however. Laniewski~\cite{La} proposes, for comparison problems
+An earlier reading of the dispute over Corollary~3.12 in homotopy type theory is due to Whaley~\cite{Wh} (Zenodo,
+15 October 2026): a Hodge theater is modelled as a dependent sum of ring structures over \'etale prime-strips, and the
+$\Theta$-link as a path in the type of prime-strips that does not lift to a path in the type of full ring structures.
+What this paper adds is a model by families of ordered real lines over graphs, in which the comparison of Step~(xi) is
+a lax 2-cell between two paths (Theorem~\ref{t:lax}) and the vocabulary of each party is matched with a proposition
+(Section~\ref{s:overview}). A general framework of a related kind also exists. Laniewski~\cite{La} proposes, for comparison problems
 in arithmetic geometry, a semantics in which the passage between labelled presentations of an arithmetic object
 carries an explicit cost: costs induce a Lawvere generalized distance, heights change along a transport by at most its
 cost, and comparisons between transports are kept as invertible 2-morphisms of a labeled quantitative
@@ -206,16 +212,45 @@ learned of~\cite{La} after versions 1.0.0 and 1.1.0 of this paper were posted. N
 idea of tracking identifications of labelled copies, and the cost of transporting heights along them, in
 type-theoretic or 2-categorical terms. The geometric picture of this paper is not new either. Segment, loop, universal cover and monodromy are in
 Mochizuki~\cite[(LbEx1)]{R18}; monodromy and consistent identification are in Scholze--Stix~\cite[\S2.2]{SS}; the
-commutativity of diagrams and (9-1) are in LANA~\cite[\S0.2, \S\S9--10]{LANA}. The content of
+commutativity of diagrams and (9-1) are in LANA~\cite[\S0.2, \S\S9--10]{LANA}. Mills~\cite[\S18]{Mi} (Zenodo,
+21 September 2026) recalls Mochizuki's segment and loop, and reads the identification of Scholze--Stix as a
+\q{tensor-blind} comparison, one that suppresses the index carrying the weights $j^2$. The content of
 Theorem~\ref{t:package} (a numerical comparison does not follow from qualitative properties) has been proved by
-Higuchi~\cite{Hi} in a different form. The public Lean formalization lana-agents/iut~\cite{LANAiut} proves, in
+Higuchi~\cite{Hi} in a different form.
+
+Earlier Lean formalizations of statements of the same shape exist. Labelled copies of the real line, with
+positive-scale transports between them and loops whose monodromy is trivial exactly when their scale is~$1$, are in
+Gogopex/iut-lean~\cite{Go} (GitHub, repository created on 29 May 2026). Takkun-kohinata/IUT\_LEAN~\cite{TK} (GitHub,
+15 July 2026) proves that if the $q$-pilot lies in a possible image of the $\Theta$-pilot, and the log-volume of the $\Theta$-pilot
+is a factor, of the type $l(l+1)/12$, times that of the $q$-pilot, then the hull of the possible images exceeds the
+$\Theta$-pilot in log-volume by at least $(\text{factor}-1)\,|\log q|$ (theorem \texttt{slack\_lower\_bound}), and
+that a hull no larger than the $\Theta$-pilot then leads to a contradiction (theorem \texttt{strict\_collapse}); these
+have the shape of Theorem~\ref{t:lax} and of the case $E=0$ of Corollary~\ref{c:height}. sfingali~\cite{Sf} (Zenodo,
+2 August 2026) formalizes in Lean the monodromy $j^2$ of the identifications of Scholze--Stix, the empty inequality
+when $j^2$ is omitted, the lower bound $s=\ell(\ell+1)/12$ for the factor of a blurring window that absorbs the
+monodromy, which it calls \q{the exact form of the S--S blurring sentence}, and (9-1) as a comparison of two
+identifications of pointed real lines (namespaces \texttt{Hexagon} and \texttt{NineOne} of its file
+\texttt{OrderedLines.lean}). The public Lean formalization lana-agents/iut~\cite{LANAiut} proves that the hexagon of
+Scholze--Stix commutes if and only if $s=1$ (theorem \texttt{hexagon\_commutes\_iff}, file
+\texttt{Iut/Wall/Pilots.lean}, added on 11 October 2026); with $m=1/s$ this has the shape of Theorem~\ref{t:strict}.
+In the file \texttt{Iut/Wall/Constraints.lean} (added on 12 October 2026) it proves that (SHE) in the form of
+Step~(xi-e), namely that some output possibility has the class of the $q$-pilot region, is equivalent to the wall
+(theorem \texttt{EtaAlg.sheq\_iff\_wall}), and shows that a two-sided reading of (SHE), as expressibility through the
+Hodge theaters on both sides, amounts, with opaque Hodge theaters, to the output not depending on the side
+(\texttt{EtaAlg.SHESides}, \texttt{EtaAlg.sheSides\_iff}); these relate to the strong and the weak reading of SHE in
+Remark~\ref{r:comparable}. It also proves, in
 models, statements of the same shape as Theorems~\ref{t:lax} and~\ref{t:package}: that Step~(xi) holds if and only if
 $(s-1)\,a\le V$, where $s=\frac{1}{l^\ast}\sum_{j=1}^{l^\ast}j^2$, $a=|\log(\qq)|$ and $V$ is the log-volume of the
 hull of the container (theorems \texttt{xi\_iff} and \texttt{xi\_iff\_ss\_model}), and that the fields of a package
 recording what is proved at the level of Theorem~3.11 neither prove nor refute Step~(xi) (theorem
-\texttt{nonDerivability}). With $m=1/s$, $Q=a$ and $E=V$ this is the inequality of Theorem~\ref{t:lax}. These files
-were added on 13 October 2026, before the first version of this paper; neither the equivalence nor its check in Lean
-is claimed as new here. The contribution of this paper is threefold: (1) placing these in one framework
+\texttt{nonDerivability}), in the files \texttt{Iut/WallEquiv/Basic.lean} and \texttt{Iut/WallEquiv/NonDerivable.lean},
+added on 13 October 2026. With $m=1/s$, $Q=a$ and $E=V$ this is the inequality of Theorem~\ref{t:lax}. All these
+results are earlier than the first version of this paper; none of them, and none of their checks in Lean, is claimed
+as new here. Versions 1.0.0--1.2.0 of this paper cited no file of lana-agents/iut; the two files of
+\texttt{Iut/WallEquiv/} are cited from version 1.3.0, and \texttt{Pilots.lean} and \texttt{Constraints.lean} from
+version 1.4.0. Versions up to 1.3.0 did not cite~\cite{Wh}, \cite{Mi}, \cite{Go}, \cite{TK}, \cite{Sf}, \cite{Form}
+or~\cite{Ri}. The
+contribution of this paper is threefold: (1) placing these in one framework
 of homotopy type theory, stating them as propositions and proving them; (2) distinguishing ``identification of
 fibres'' from ``a loop made by a second path'', and separating the agreed part (Proposition~\ref{p:fixed},
 Theorems~\ref{t:strict} and~\ref{t:loop}) from the disputed part (Theorem~\ref{t:lax}); (3) matching the vocabulary of
@@ -227,6 +262,14 @@ numbers, graphs, inequalities). In~\cite{UE}, Mochizuki's elementary numerical m
 Scholze--Stix are put on the same one-line inequality, using a symbol for indexed identifications. Its Part~II, added
 in its version 2.0.0, extends that symbol to the components of tensor packets and computes the part of the blurring
 produced by the label permutations of (Ind1).
+
+A later note of the author~\cite{W311} takes the log-volume content of the results cited in the proof of
+Corollary~3.12 as axioms, and gives models of them, one built from the actual local objects at a finite extension of
+$\mathbb{Q}_p$, in which the conclusion fails. Its weak and strong readings of (SHE)~\cite[Definition~4,
+Corollary~11]{W311} correspond to the two readings of Remark~\ref{r:comparable}; its Theorem~10 is the analogue of
+Theorem~\ref{t:package}, and its Proposition~26\,(b),\,(c), where the degree scale is $s=1$, that of
+Theorem~\ref{t:strict} at $m=1$. The number $m$ of this paper is the $s$ of~\cite{W311}, the $1/k$
+of~\cite{UE,RF,TC,BS}, and the $1/s$ of~\cite{LANAiut}.
 
 \subsection{Labels}\label{ss:labels}
 The labels in the text mean the following.
@@ -671,7 +714,8 @@ How the theory constructs $E$ (the multiradial algorithm of Theorem~3.11) and ho
 
 \subsection{There is no strict 2-cell}
 \begin{theorem}\label{t:strict}\tagP\tagR
-\known{\cite[(AD), (IUAD)]{R18}, \cite[\S2.2]{SS}}
+\known{\cite[(AD), (IUAD)]{R18}, \cite[\S2.2]{SS}; in Lean, \cite{Sf} (\texttt{hexagon\_monodromy\_ne\_one}) and
+\cite{LANAiut} (\texttt{hexagon\_commutes\_iff})}
 In Setup~\ref{setup}, $\ell_*b=c_*b$ holds only if $m=1$ or $b=0$. Hence, under $0<m<1$, $\ell_*b\ne c_*b$: the two paths
 do not agree on the $\Theta$-pilot, and there is no strict 2-cell joining the two paths.
 \end{theorem}
@@ -696,8 +740,9 @@ computation meaningless). As Mochizuki says, there is no dispute here.
 
 \subsection{Corollary 3.12 is a lax 2-cell}
 \begin{theorem}\label{t:lax}\tagP\tagR
-\known{\cite[\S2.2]{SS} (the blurring must be by a factor of at least $O(l^2)$), \cite[\S0.2]{LANA} (the \q{wall}),
-\cite{LANAiut} (\texttt{xi\_iff}, in Lean)}
+\known{\cite[\S2.2]{SS} (the blurring must be by a factor of at least $O(l^2)$), \cite[\S0.2]{LANA} (the \q{wall});
+in Lean, \cite{TK} (\texttt{slack\_lower\_bound}), \cite{Sf} (\texttt{absorptionWindow\_factor\_ge\_monodromy}) and
+\cite{LANAiut} (\texttt{xi\_iff})}
 In Setup~\ref{setup} the following are equivalent.
 \begin{enumerate}[label=(\roman*)]
 \item Corollary~3.12 (model): $a\le c_*b+E$.
@@ -713,7 +758,9 @@ $-Q\le-Q/m+E\iff Q/m-Q\le E\iff(1/m-1)Q\le E$.
 \leanref{\lean{Step.cor312\_iff\_lax}, \lean{Step.cor312\_iff\_blur}}
 
 \begin{corollary}\label{c:height}\tagP\tagR
-\known{\cite[Thm.~1.10]{IUT4}, \cite[Introduction]{Alien}}
+\known{\cite[Thm.~1.10]{IUT4}, \cite[Introduction]{Alien}, \cite[\S3]{Form} (the $N$-th power map); in Lean,
+\cite{TK} (\texttt{strict\_collapse}, the case $E=0$) and \cite{Ri} (\texttt{height\_bounded\_of\_dilation}, the toy
+form $Nh\le h+C\Rightarrow h\le C/(N-1)$, with $N=1/m$)}
 In Setup~\ref{setup}, if $E\le C$, then Corollary~3.12 (model) implies $Q\le C/(1/m-1)$. If $E=0$ (no blurring), then
 Corollary~3.12 (model) does not hold.
 \end{corollary}
@@ -721,16 +768,20 @@ Corollary~3.12 (model) does not hold.
 From Theorem~\ref{t:lax}\,(iii) and $1/m-1>0$. If $E=0$, the left-hand side of (iii) is positive, so (iii) fails.
 \end{proof}
 \leanref{\lean{Step.height\_bound}, \lean{Step.cor312\_needs\_blur}}
-Theorem~\ref{t:lax} is the precise form of Scholze--Stix's statement that \q{the blurring must be by a factor of at least $\mathrm{O}(\ell^2)$}~\cite[\S2.2]{SS}. In
+Theorem~\ref{t:lax} gives a precise form of Scholze--Stix's statement that \q{the blurring must be by a factor of at least $\mathrm{O}(\ell^2)$}~\cite[\S2.2]{SS}.
+A precise form of this sentence, with the constant $\ell(\ell+1)/12$ in place of $\mathrm{O}(\ell^2)$, was formalized
+earlier in Lean by sfingali~\cite{Sf}, as a lower bound for the factor of a blurring window that absorbs the
+monodromy. In
 multiplicative terms, the absolute value of the hull must be at most $m$ times that of the image, that is, it must have
 shrunk by the factor $1/m=\frac1{l^\ast}\sum j^2=O(l^2)$. Corollary~\ref{c:height} shows that whether this is
 ``useless'' or ``the content of the theory'' hinges exactly on $E\le C$, that is, on the height bound itself.
 Neither evaluation follows from logic alone.
 
-\begin{primedremark}{5.4$'$ (A consistent identification is not a necessary condition)}
+\begin{primedremark}{5.4$'$ (A consistent identification is not needed in the model)}
 \tagH\ The comparison of Theorem~\ref{t:lax} requires no value on the loop (Proposition~\ref{p:fixed}); it requires
-only one inequality. Hence the general principle ``a meaningful comparison requires a consistent identification of the
-copies of the real numbers'' does not hold. What remains is only the size of the blurring.
+only one inequality. Hence, in this model, the comparison can be stated without a consistent identification of the
+copies of the real numbers; Scholze--Stix write: ``In order for a meaningful inequality to be concluded, one must
+consistently identify all of these'' \cite[\S2.2]{SS}. What remains is only the size of the blurring.
 \end{primedremark}
 
 \subsection{A hull along the loop says nothing}
@@ -764,8 +815,10 @@ data under consideration \dots{} are held \textbf{rigid} [i.e., are not subject 
 \textperiodcentered\ while the \textbf{unit group} portions of the data under consideration \dots{} are subject to the
 \textbf{indeterminacies} (Ind1), (Ind2), (Ind3); \dots}}{\cite[Remark~3.11.1\,(vii),\,(viii)]{IUT3}}
 
-\tagH\ Theorem~\ref{t:loop} is the type-theoretic form, at the level of log-volumes, of this \q{trivial multiradial representation}, and also
-that of the \q{empty inequality} of Scholze--Stix~\cite[\S2.2]{SS}. Here, too, the two sides agree.
+\tagH\ Theorem~\ref{t:loop} is the type-theoretic form, at the level of log-volumes, of this \q{trivial multiradial
+representation}. The \q{empty inequality} of Scholze--Stix~\cite[\S2.2]{SS}, which they obtain by omitting $j^2$,
+corresponds to the case $m=1$ of Theorem~\ref{t:strict}: the two paths then agree, and (iii) of Theorem~\ref{t:lax}
+reads $0\le E$. Neither says anything about $Q$; here, too, the two sides agree.
 
 \subsection{Qualitative properties do not decide the 2-cell}
 \begin{definition}[IPL, SHE and APT in the model]\label{d:package}\tagR
@@ -823,10 +876,12 @@ The procedure of Remark~3.9.5\,(vii) carries the hull of the possible images to 
 $q$-pilot, and so makes the comparison ``well-typed''. In the language of this paper, it corresponds to the guarantee
 that the value in (e) of Setup~\ref{setup} lives in $L^\ddagger$ and that the inequality of (f) can be written down.
 That the inequality holds, that is, the 2-cell, is a separate assertion. Moreover, SHE in Definition~\ref{d:package} is
-the weak reading (being a function of the shared data). If SHE is read in the strong sense that ``the output is directly
-comparable with the structure of the codomain and contains the $q$-pilot'', then SHE itself asserts the 2-cell and, by
-Theorem~\ref{t:lax}, contains content equivalent to the height bound. In either reading, the 2-cell does not come from
-logic alone.
+the weak reading (being a function of the shared data). If SHE is read in a strong sense, namely that the output can
+be compared directly with the structure of the codomain and contains the $q$-pilot, then SHE itself asserts the 2-cell
+and, by Theorem~\ref{t:lax}, contains content equivalent to the height bound. In either reading, the 2-cell does not
+come from logic alone. The two readings relate to the two-sided reading of (SHE) and to (SHE) in the form of
+Step~(xi-e) in~\cite{LANAiut} (\S\ref{ss:earlier}), and to the weak and the strong readings of (SHE)
+in~\cite[Definition~4, Corollary~11]{W311}.
 \end{remark}
 
 \subsection{The two readings in the same form}\label{ss:readings}
@@ -874,8 +929,9 @@ dispute) & \tagS\ \cite{R18} & Values on the loop are fixed points; the hull is 
 Thms.~\ref{t:strict}, \ref{t:loop}\\
 (LbLV): the labels mark whether the pilot is identified with the log-volume of $q$ or with that of $\{q^{j^2}\}$ &
 \tagS\ \cite{R18} & Along which path ($\ell$ or $c$) the containers are identified & Setup~\ref{setup}\,(b)\\
-Consistent identification, omission of $j^2$, empty inequality & \tagX\ \cite[\S2.2]{SS} & The hull over the whole
-orbit of the loop & Thm.~\ref{t:loop}\\
+Consistent identification, omission of $j^2$, empty inequality & \tagX\ \cite[\S2.2]{SS} & Scale of the monodromy
+$m=1$: the two paths agree, and the inequality of Thm.~\ref{t:lax}\,(iii) reads $0\le E$ & Thm.~\ref{t:strict}
+($m=1$)\\
 The blurring must be by a factor of at least $O(l^2)$ & \tagX\ \cite[\S2.2]{SS} & The blurring needed for a lax 2-cell &
 Thm.~\ref{t:lax}, Cor.~\ref{c:height}\\
 Commutativity of diagrams, identity of isomorphisms, (9-1) & \tagX\ \cite[\S0.2, \S9.2]{LANA} & A 2-cell (modulo
@@ -897,7 +953,7 @@ set & Prop.~\ref{p:andor}\\
 orbit, not to a point & Prop.~\ref{p:univ} (\tagH)\\
 A numerical bridge does not follow from a qualitative package & \tagX\ \cite{Hi} & 1-cells do not decide 2-cells &
 Thm.~\ref{t:package}\\
-(Ind1), (Ind2) are group actions; (Ind3) is a map on power sets & \tagX\ \cite[\S1, \S4.6]{DH} & Automorphisms of the
+(Ind1), (Ind2) are group actions; (Ind3) is a map on power sets & \tagX\ \cite[\S1, \S4.6]{DH1} & Automorphisms of the
 shared data (a loop), and laxness by inclusion & Setup~\ref{setup}\,(e)\\
 Labelled isomorphic copies; arithmetic Teichm\"uller spaces & \tagX\ \cite[\S1]{Jo1}, \cite[\S1]{Jo2} &
 Distinguished points over the same shared data & Section~\ref{s:fam} (\tagH)\\
@@ -986,7 +1042,8 @@ $\ell_*b\le c_*b+E$ (Thm.~\ref{t:lax}) & Inequality of values\\
 }
 
 \begin{proposition}[A strict 2-cell modulo indeterminacies, and a lax 2-cell]\label{p:lana}\tagP\tagR
-\known{\cite[\S9.2, \S9.3]{LANA} ((9-1)), \cite[\S2.2]{SS}, Theorem~\ref{t:lax}}
+\known{\cite[\S9.2, \S9.3]{LANA} ((9-1)), \cite[\S2.2]{SS}, Theorem~\ref{t:lax}; in Lean, (9-1) as a comparison of
+two identifications of pointed real lines, \cite{Sf} (namespace \texttt{NineOne})}
 Let $L,L':\LL$, let $\varphi,\psi:L=L'$ be paths, let $G\subseteq\Aut(L)$ be a subset containing $\id$, and let $b$ be a
 negative element of $L$. Put the possible images $\Psi_G(b):=\{\,\psi_*(g\,b)\mid g\in G\,\}$
 (Definition~\ref{d:poss}), the scale $m:=\sigma(\psi_*^{-1}\circ\varphi_*)$, and
@@ -1018,8 +1075,8 @@ $\inf\Sigma=r\le m$, so (c) holds, but $m\notin\{1,r\}$, so (a) does not hold.
 \end{proof}
 
 \tagH\ LANA's (9-1) has the shape of (a). Take $(\varphi,\psi)=(\eta^q,\eta^{\anab}_{S_0})$ and let $G$ be the
-automorphisms generated by changing $S$; then ``$\eta^q$ lies in the orbit of the indeterminacies'' is (a), and what LANA
-writes next, that \q{the rigidified $q$-pilot is represented in the output regions}, corresponds to (b). Inside the model, (a) and (b) are equivalent. Theorem~\ref{t:lax} of
+automorphisms generated by changing $S$; then LANA's reading of (9-1), that $\eta^q$ belongs to an orbit generated by
+the indeterminacies, is (a), and what LANA writes next, that \q{the rigidified $q$-pilot is represented in the output regions}, corresponds to (b). Inside the model, (a) and (b) are equivalent. Theorem~\ref{t:lax} of
 this paper (Corollary~3.12 in the model) has the shape of (c), with $(\varphi,\psi)=(\ell,c)$ and $G$ the
 indeterminacies that produce the blurring. That the hexagon of Scholze--Stix does not commute corresponds to (a)
 failing for $G=\{\id\}$ ($m\ne1$; Proposition~\ref{p:complete}, Theorem~\ref{t:strict}). Repairing the commutativity by a
@@ -1258,6 +1315,11 @@ Auke B. Booij, \emph{Extensional constructive real analysis via locators}, Math.
 (2021), 64--88, \href{https://doi.org/10.1017/S0960129520000171}{doi:10.1017/S0960129520000171}; quoted from
 arXiv:1805.06781v5.
 
+\bibitem[BS]{BS}
+Toshihisa Urahigashi, \emph{Bridge and size: the {K}odaira--{S}pencer morphism, arithmetic derivatives and {S}tep~(xi)
+of {IUT} as lax 2-cells}, Zenodo, 6 November 2026,
+\href{https://doi.org/10.5281/zenodo.23984200}{doi:10.5281/zenodo.23984200} (all versions).
+
 \bibitem[Ca]{Ca}
 Mario Carneiro, \emph{The type theory of {L}ean}, Master's thesis, Carnegie Mellon University, 2019.
 
@@ -1267,14 +1329,23 @@ of the univalence axiom}, in: 21st International Conference on Types for Proofs 
 LIPIcs \textbf{69} (2018), 5:1--5:34, \href{https://doi.org/10.4230/LIPIcs.TYPES.2015.5}{doi:10.4230/LIPIcs.TYPES.2015.5};
 arXiv:1611.02108.
 
-\bibitem[DH]{DH}
+\bibitem[DH1]{DH1}
 Taylor Dupuy and Anton Hilado, \emph{The statement of {M}ochizuki's {C}orollary 3.12, initial theta data, and the first
-two indeterminacies}, arXiv:2004.13228v1, 2020.
+two indeterminacies}, arXiv:2004.13228v1 [math.NT], 2020; the sections cited are those of version~1.
 
 \bibitem[Ess]{Ess}
 Shinichi Mochizuki, \emph{On the essential logical structure of inter-universal {T}eichm\"uller theory in terms of
 logical {AND} ``$\wedge$''/logical {OR} ``$\vee$'' relations: report on the occasion of the publication of the four main
 papers on inter-universal {T}eichm\"uller theory}, RIMS Preprint 1968, November 2022; version of March 2024.
+
+\bibitem[Form]{Form}
+Shinichi Mochizuki, \emph{On the formalization of {IUT}: a preliminary progress report [joint work in progress with
+{Y.~Hoshi}, {G.~Yamashita}, {Y.~Yang}, \dots]}, April 2026.
+
+\bibitem[Go]{Go}
+Gogopex, \emph{iut-lean}, Lean repository, \url{https://github.com/Gogopex/iut-lean}, file
+\texttt{Iut/Foundations/RealLineCopy.lean} (in the first commit, \texttt{dc2cfd6}, dated 27 May 2026); repository
+created on 29 May 2026, consulted at commit \texttt{7dc5aeb} (2 June 2026).
 
 \bibitem[Hi]{Hi}
 Joaquim Reizi Higuchi, \emph{A formal negative result for the passage from {S}tep (xi-e) to {S}tep (xi-f) in {IUT}
@@ -1304,10 +1375,15 @@ Project LANA, \emph{Project LANA interim report on IUT theory}, last updated 20 
 
 \bibitem[LANA-iut]{LANAiut}
 lana-agents, \emph{iut: inter-universal {T}eichm\"uller theory, the ABC/IUT trunk}, Lean repository,
-\url{https://github.com/lana-agents/iut}, files \texttt{Iut/WallEquiv/Basic.lean} and
-\texttt{Iut/WallEquiv/NonDerivable.lean}, consulted at commit \texttt{553076a} (3 November 2026); both files were added
-on 13 October 2026 (commits \texttt{da52dfb} and \texttt{180c049}) and last changed on 14 October 2026 (commit
-\texttt{cdc9602}).
+\url{https://github.com/lana-agents/iut}, files \texttt{Iut/Wall/Pilots.lean}, \texttt{Iut/Wall/Constraints.lean},
+\texttt{Iut/WallEquiv/Basic.lean} and \texttt{Iut/WallEquiv/NonDerivable.lean}, consulted at commit \texttt{553076a}
+(3 November 2026); the first was added on 11 October 2026 (commit \texttt{d8b76b2}) and has not changed since, the
+second was added on 12 October 2026 (commit \texttt{56002d5}), and the last two on 13 October 2026 (commits
+\texttt{da52dfb} and \texttt{180c049}); the last three were last changed on 14 October 2026 (commit \texttt{cdc9602}).
+
+\bibitem[Mi]{Mi}
+C. Lando Mills, \emph{Inter-universal {T}eichm\"uller theory comes home}, Zenodo, 21 September 2026,
+\href{https://doi.org/10.5281/zenodo.22876499}{doi:10.5281/zenodo.22876499} (all versions).
 
 \bibitem[MO]{MO}
 Samuel Mimram and \'Emile Oleon, \emph{Classifying covering types in homotopy type theory}, in: 34th EACSL Annual Conference
@@ -1322,12 +1398,36 @@ Logica Universalis \textbf{7} (2013), 371--402, \href{https://doi.org/10.1007/s1
 Shinichi Mochizuki, \emph{Report on discussions, held during the period March 15--20, 2018, concerning inter-universal
 {T}eichm\"uller theory ({IUTch})}, February 2019.
 
+\bibitem[RF]{RF}
+Toshihisa Urahigashi, \emph{No reading avoids the height inequality: 36 readings of {C}orollary 3.12 and the
+conservation of the height load}, Zenodo, 5 November 2026,
+\href{https://doi.org/10.5281/zenodo.23965951}{doi:10.5281/zenodo.23965951} (all versions).
+
+\bibitem[Ri]{Ri}
+David Richards, \emph{motizukipdf---{M}ochizuki's papers, plus a toolkit for the data types of {IUT}}, GitHub
+repository \url{https://github.com/oneman/motizukipdf}, file \texttt{lean/IUT/LeanForm.lean}, consulted at commit
+\texttt{2665db1} (30 October 2026); the theorem \texttt{height\_bounded\_of\_dilation} was added on 28 October 2026
+(commit \texttt{243e1d8}).
+
 \bibitem[RS]{RS}
 Egbert Rijke and Bas Spitters, \emph{Sets in homotopy type theory}, Math. Struct. Comput. Sci. \textbf{25} (2015),
 1172--1202, \href{https://doi.org/10.1017/S0960129514000553}{doi:10.1017/S0960129514000553}.
 
+\bibitem[Sf]{Sf}
+sfingali, \emph{The {S}cholze--{S}tix objection, formally: the arithmetic is agreed, the $q$-side is absent}, Zenodo,
+2 August 2026, \href{https://doi.org/10.5281/zenodo.21757640}{doi:10.5281/zenodo.21757640}.
+
 \bibitem[SS]{SS}
 Peter Scholze and Jakob Stix, \emph{Why abc is still a conjecture}, manuscript, 2018.
+
+\bibitem[TC]{TC}
+Toshihisa Urahigashi, \emph{Two computations of the height inequality and the multiradial algorithm: reading {IUT}
+from the viewpoint of computer science}, Zenodo, 5 November 2026,
+\href{https://doi.org/10.5281/zenodo.23968298}{doi:10.5281/zenodo.23968298} (all versions).
+
+\bibitem[TK]{TK}
+Takkun-kohinata, \emph{IUT\_LEAN}, Lean repository, \url{https://github.com/Takkun-kohinata/IUT_LEAN}, file
+\texttt{IutLean/Multiradial/DisputedCore.lean}, commit \texttt{9d56c46} (15 July 2026).
 
 \bibitem[U]{U}
 Toshihisa Urahigashi, \emph{A choice-free {L}ean formalization of {B}ishop--{C}heng dominated convergence over presented
@@ -1337,6 +1437,17 @@ reals}, manuscript, version 0.7.8, 5 September 2026, file \texttt{paper/paper.pd
 
 \bibitem[UE]{UE}
 Toshihisa Urahigashi, \emph{Reading the {IUT} dispute through indexed identifications: an educational model in
-undergraduate mathematics}, version 2.2.0, Zenodo, 6 November 2026, \href{https://doi.org/10.5281/zenodo.23991546}{doi:10.5281/zenodo.23991546}.
+undergraduate mathematics}, version 2.3.0, Zenodo, 8 November 2026,
+\href{https://doi.org/10.5281/zenodo.23931345}{doi:10.5281/zenodo.23931345} (all versions).
+
+\bibitem[W311]{W311}
+Toshihisa Urahigashi, \emph{Where {T}heorem 3.11 sits: the log-volume content of the results cited in the proof of
+{IUT}~{III}, {C}orollary 3.12, does not imply its conclusion}, Zenodo, 7 November 2026,
+\href{https://doi.org/10.5281/zenodo.24028832}{doi:10.5281/zenodo.24028832} (all versions).
+
+\bibitem[Wh]{Wh}
+Joseph Whaley Jr, \emph{The {T}heta-link as a path in homotopy type theory: a type-theoretic analysis of
+inter-universal {T}eichm\"uller theory}, Zenodo, 15 October 2026,
+\href{https://doi.org/10.5281/zenodo.23403323}{doi:10.5281/zenodo.23403323}.
 \end{thebibliography}
 \end{document}

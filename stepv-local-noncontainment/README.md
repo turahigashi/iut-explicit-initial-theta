@@ -1,7 +1,8 @@
 # A local non-containment in Step (v) of IUT IV, Theorem 1.10
 
-Version 3.0.0, 1 November 2026 (9 pages).
-This version: DOI [10.5281/zenodo.23852752](https://doi.org/10.5281/zenodo.23852752).
+Version 3.1.0, 8 November 2026 (9 pages).
+This version: DOI [10.5281/zenodo.24039373](https://doi.org/10.5281/zenodo.24039373). Version 3.0.0:
+[10.5281/zenodo.23852752](https://doi.org/10.5281/zenodo.23852752).
 Archived at DOI [10.5281/zenodo.23166432](https://doi.org/10.5281/zenodo.23166432) (all versions).
 
 This note presents an explicit local non-containment calculation for a datum with two places of
@@ -25,6 +26,23 @@ The first report in this repository compared a different datum, at the prime 211
 estimates of IUT IV; the source application of that comparison was withdrawn in its version 0.1.7. This
 note is a separate paper, not a revision of the first report: its datum has two places above the prime,
 both of multiplicative reduction, and it neither cites nor relies on the first report.
+
+## Changes in version 3.1.0
+
+Cites earlier work. The public Lean repository
+[Takkun-kohinata/IUT_LEAN](https://github.com/Takkun-kohinata/IUT_LEAN) (15 July 2026) singled out the
+containment tested here, with λ = ord(q^{j²}), as the one input of the chain from Theorem 3.11 to the height
+inequality that its formalization could not confirm; its route is different (volume preservation, without label
+permutations or explicit data). Version 1.0.0 of this note was audited publicly in
+[Luminescence10086/Inter-universal-Teichmuller-Theory](https://github.com/Luminescence10086/Inter-universal-Teichmuller-Theory)
+(first commits 20 October 2026), which computed the exponent 107/35, listed the membership and closure conditions,
+and pointed to IUT III, Remark 3.11.4(i), before version 2.0.0 added these points; earlier versions did not cite
+either. A sentence cites Zeng (Zenodo, first version 29 October 2026) on the hull of IUT III, Remark 3.9.5.
+Section 6 gains a pointer to the treatment of primes with a good and a bad place in the catalogue
+([`../initial-theta-catalogue/`](../initial-theta-catalogue/), Proposition 1 (GB), Theorem 3) and, in models, in
+Indexed identifications (Proposition 13.3, Theorem 14.3(iv)) and Reading family (Example 3.7). The title page now
+prints the version and the DOI, and its dates agree with the Dates paragraph (version 2.0.0: 29 October 2026).
+The mathematical statements, proofs and numbers are unchanged.
 
 ## Changes in version 3.0.0
 

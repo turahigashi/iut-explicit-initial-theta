@@ -35,8 +35,8 @@
 \newcommand{\tI}{(R_I)^{\sim}}
 \newcommand{\tO}{\widetilde{\mathcal O}}
 \newcommand{\fq}{\mathfrak q}
-\newcommand{\ArtifactURL}{\url{https://github.com/turahigashi/iut-explicit-initial-theta/tree/v0.23.1/where-311-sits/lean}}
-\newcommand{\ArtifactDOI}{\href{https://doi.org/10.5281/zenodo.24030772}{10.5281/zenodo.24030772}}
+\newcommand{\ArtifactURL}{\url{https://github.com/turahigashi/iut-explicit-initial-theta/tree/v0.24.0/where-311-sits/lean}}
+\newcommand{\ArtifactDOI}{\href{https://doi.org/10.5281/zenodo.24039357}{10.5281/zenodo.24039357}}
 \setlength{\lineskiplimit}{2pt}
 \setlength{\lineskip}{2pt}
 
@@ -44,9 +44,9 @@
 cited in the proof of IUT~III, Corollary~3.12, does not imply its conclusion}
 \author{Toshihisa Urahigashi\\
 \small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.0.1 --- 7 November 2026\\[3pt]
+\date{Version 1.1.0 --- 8 November 2026\\[3pt]
 \small ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}\\
-\small \href{https://doi.org/10.5281/zenodo.24030772}{doi:10.5281/zenodo.24030772}}
+\small \href{https://doi.org/10.5281/zenodo.24039357}{doi:10.5281/zenodo.24039357}}
 
 \begin{document}
 \maketitle
@@ -84,11 +84,13 @@ conclusion, and among them the conclusion holds exactly where strong (SHE) holds
 statement ``3.11.5'' that Mochizuki isolates in his report on formalization
 \cite[\S4]{Form} corresponds to that intersection. The conclusion does follow if the images of the $\Theta$-pilot and the
 $q$-pilot are identified, but then the degree scale of the $\Theta$-link is $1$. Negative
-results of this kind were proved before for abstractions that omit the numerical structure
-of the source \cite{Higuchi,Pajo}; here that structure is kept. For the same passage, the public repository lana-agents/iut
-of Project LANA proves in Lean non-derivability from a package collecting what it proves
-at the level of \cite[Thm.~3.11]{IUT3} \cite{lana}; the results here were obtained
-independently of it, and it was made public first. All statements proved here
+results of this kind were proved before, for abstractions of the passage \cite{Higuchi,Pajo}
+and in Lean \cite{Takkun,lana}; the public repository lana-agents/iut of Project LANA proves
+non-derivability from a package collecting what it proves at the level of
+\cite[Thm.~3.11]{IUT3} and separates two readings of (SHE) \cite{lana}. The results here
+were obtained independently of these Lean works, which were made public first. What this
+note adds is that the axioms are the results that the proof actually cites, at the strength
+of the source, and that the models are built on actual local objects. All statements proved here
 are checked in Lean~4 with Mathlib, with no axioms beyond the standard three.
 \emph{We do not claim that \cite[Cor.~3.12]{IUT3} is false, nor anything about $abc$.
 The result concerns what follows from the statements that the proof cites, including
@@ -159,7 +161,10 @@ Throughout, \Smark{} marks a fact about a cited text, \Pmark{} a statement prove
 \smallskip\noindent\textbf{Not claimed.} That \cite[Cor.~3.12]{IUT3} is false. That the
 missing statement cannot be supplied by the construction underlying
 \cite[Thm.~3.11]{IUT3}, as opposed to its statement and the qualitative properties that
-Step (xi) uses. That the axioms capture every consequence of the cited results: they
+Step (xi) uses. (In the terms of \cite[\S6.3]{TC}, the result concerns the content of the
+cited statements taken as a specification; in the mockup of \cite[\S9]{TC}, the place where
+the claim for every initial $\Theta$-datum would enter is the oracle for Step~(xi), whose
+value is reverse-computed from the conclusion.) That the axioms capture every consequence of the cited results: they
 capture their content at the level of log-volumes, which is the level at which Step (xi)
 draws its inequality. That the models come from an elliptic curve, or from an initial
 $\Theta$-datum, at every place: they are built from local data, and the family in $N$
@@ -172,9 +177,9 @@ models are the output of the algorithm of \cite[Thm.~3.11]{IUT3}. Anything about
 
 \smallskip\noindent\textbf{What is new.} The assertion that
 \cite[Cor.~3.12]{IUT3} does not follow from the statement of \cite[Thm.~3.11]{IUT3}
-has been made before, in several forms (\S\ref{s:rel}). Two preprints prove formal
-versions of it, for the same bridge, in formalizations that keep less of the structure of
-the source. Higuchi \cite{Higuchi} proves non-derivability for a deliberately qualitative
+has been made before, in several forms (\S\ref{s:rel}), and several works prove formal
+versions of it. Two preprints do so for the same passage in formalizations that keep less
+of the structure of the source. Higuchi \cite{Higuchi} proves non-derivability for a deliberately qualitative
 package extracted from Steps (xi-e) and (xi-f): abstract labels, a common container,
 abstract linkage and common-container cohabitation, an arbitrary hull operator, an
 arbitrary log-volume map, and a closed half-line of output values. Pajo \cite{Pajo} proves
@@ -182,6 +187,24 @@ a no-go theorem for a typed but scale-free monoid/hull/log-volume abstraction, b
 relative rescaling of the $\Theta$-side embedding into the container. Pajo states that his
 abstraction is not a faithful model of IUT \cite[\S\S2, 14]{Pajo}, and Higuchi that his
 purpose is not to formalize all of IUT \cite[\S3]{Higuchi}.
+
+\Smark{} In Lean, Takkun-kohinata/IUT\_LEAN \cite{Takkun} (July 2026) proves, for its
+transcription of the passage, that the volume bound of the multiradial representation
+together with the containment is equivalent to the height inequality
+(\texttt{thetaHullTranscription\_iff}); that strict identification of the copies, with
+volume-preserving indeterminacies and a hull no larger than the $\Theta$-pilot, is
+contradictory (\texttt{strict\_collapse}); and that the slack between the hull and the
+$\Theta$-pilot cannot come from the orbits of (Ind1) and (Ind2), only from the hull
+(\texttt{hull\_exceeds\_orbit}), and is at least $(\mathrm{factor}-1)|\log q|$
+(\texttt{slack\_lower\_bound}). Saito \cite{Saito} (July 2026) audits the passage from
+(xi-a)--(xi-e) to the membership of (xi-f) against a registered inventory of the source,
+separates several membership statements, and proves in Lean that every registered
+derivation of the membership uses a node of a target seed; its source-level conclusion is
+conditional on a faithfulness hypothesis that it leaves open. sfingali \cite{sfingali}
+(August 2026) formalizes in Lean the core of the objection of \cite{SS}: the monodromy of
+the identification, the empty inequality under a consistent identification, and (9-1) as
+two identifications of pointed real lines. Proposition~\ref{p:horns}, Corollary~\ref{c:gap}
+and the remark after it state results of the same shape for the cited theory.
 
 For the same passage, the public repository lana-agents/iut of Project LANA \cite{lana}
 collects what the repository proves at the level of \cite[Thm.~3.11]{IUT3} into one
@@ -191,13 +214,22 @@ fields of the package. The same file shows that Step (xi) adds to the package ex
 Scholze--Stix inequality (\texttt{xi\_iff}; in our notation $(s^{-1}-1)\,a\le V$, where
 $a=|\log q|$, $V$ is the volume of the container, and $s^{-1}=\ell(\ell+1)/12$ is the
 inverse of our degree scale $s$), and that Step (xi) for all initial $\Theta$-data gives
-$abc$. The results of the present note were obtained independently of it, and it was made
-public first (we learned of it on 4 November 2026). The differences are recorded in
-Table~\ref{tab:cmp}: our axioms are taken from the inventory of what the proof cites
-rather than from what a formalization proves, and our models are built on actual local
-objects rather than as a numerical family.
+$abc$. The same repository separates two readings of (SHE) in
+\texttt{Iut/Wall/Constraints.lean} (12 October 2026): (C2), that the output is a function of
+the Hodge theater on each side, and (C3), that some output possibility has the volume class
+of the $q$-pilot region, which it proves equivalent to the wall (\texttt{sheq\_iff\_wall});
+and it reads (9-1) for one choice as an equation of log-volumes
+(\texttt{etaAnab\_eq\_etaQ\_iff}, \texttt{Iut/Wall/EtaAlg.lean}, 11 October 2026). (C2)
+corresponds to our weak reading of (SHE); (C3), and (9-1) read as an equation of
+log-volumes, correspond to our (9-1); and the wall corresponds to the value reading
+(Definition~\ref{d:she}). In addition, Definition~\ref{d:she} separates the membership of
+the $q$-pilot region itself (the carrier reading) from that of its volume class. The
+results of the present note were obtained independently of these files (its text and Lean
+sources were completed in September 2026), and the repository was made public first.
+Table~\ref{tab:cmp} records how the formalizations are set up: our axioms are taken from
+an inventory of what the proof cites, and our models are built on actual local objects.
 
-The point of the present note is not to repeat these abstract results, but to test whether
+The point of the present note is not to repeat these results, but to test whether
 the obstruction disappears once the numerical structure that the cited results do state is
 restored. It does not. The axioms are taken from an inventory of what the proof actually
 cites, at the strength of the source; the log-volume is the Haar log-volume of
@@ -265,9 +297,9 @@ checked by & written proof (\S5) & written proof (\S8) & Lean & written proof, a
 claims that Cor.~3.12 is false & no & no & no & no\\
 \bottomrule
 \end{tabular}
-\caption{Four non-derivability results for the passage from \cite[Thm.~3.11]{IUT3} to
-\cite[Cor.~3.12]{IUT3}. The column lana-agents is a result obtained independently of this
-note and made public before it. The rows record what each formalization keeps and how its results
+\caption{Four formalizations of the passage from \cite[Thm.~3.11]{IUT3} to
+\cite[Cor.~3.12]{IUT3}, compared; other earlier formal work is described in \S1. The column
+lana-agents is a result obtained independently of this note and made public before it. The rows record what each formalization keeps and how its results
 are checked; they do not assert that one theory contains another.}\label{tab:cmp}
 \end{table}
 
@@ -617,7 +649,11 @@ $\mathrm{ord}_{211}(\qbb_{\mathrm b})=29/7$. The model of this section keeps $\e
 the valuation, and replaces the completion at the bad place by $\Qp{211}$; \S\ref{s:robust}
 enlarges the container at that place by a fixed factor, and \S\ref{s:actual} builds the
 model from the actual local objects at a finite extension of $\Qp p$ that carries a theta
-datum.
+datum. \Smark{} For the datum itself, with all its bad places, the weights of the procession
+normalization and its container, the two sides of Step (xi) in the reading of \cite{IUT4}
+are computed in \cite[\S8.4]{TC}: $-21.80$ against $135.26$, so the computed comparison
+holds there. The failures below concern models in which the container at the bad place is
+the image itself or a bounded enlargement of it, and the family in $N$.
 
 \begin{definition}\label{d:model}
 Let $P_j=\Qp{211}^{\,j+1}$ with the product Haar measure normalized by
@@ -700,13 +736,23 @@ value reading is the conclusion rewritten; the content is that the weak reading 
 from the axioms and the strong readings do not. In the source, the passage between the two
 readings is the passage from (xi-e), which invokes (SHE), to (xi-f), which draws the
 membership. \Smark{} Higuchi locates the same passage for his qualitative package
-\cite{Higuchi}. \Hmark{} The corollary shows that the log-volume content of the cited
+\cite{Higuchi}. In the one-number model of \cite[\S5]{SL}, (SHE) read as a property of the
+shared data holds both where the inequality holds and where it fails
+\cite[Theorem~5.7]{SL}, while (SHE) read as containing the $q$-pilot asserts the 2-cell and
+is equivalent to the height bound \cite[Remark~5.8, Theorem~5.3]{SL}; there membership
+implies the lax 2-cell and not conversely \cite[Proposition~6.1]{SL}. \Hmark{} The corollary shows that the log-volume content of the cited
 results does not close it.
 
 \begin{remark}
 The scale $s=3/14=12/(\ell(\ell+1))$ is not chosen: \ref{c:link} forces it from the two
 volumes, which are determined by the valuation of the datum and the Haar measure. The gap
-$\vol(q)-\vol(H)=\frac{11}3|u|$ is what (Ind3) would have to cover.
+$\vol(q)-\vol(H)=\frac{11}3|u|$ is what (Ind3) would have to cover. In the notation of
+\cite{RF,SL}, with $k=1/s=14/3$ and $a=Q=|u|$, it is the wall $(k-1)a$ (the term is that
+of \cite{LANA}), and Theorem~\ref{t:main} is the case $E=0$ of \cite[Corollary~5.4]{SL}.
+Our $s$ is the $m$ of \cite{SL}, the $1/k$ of \cite{II,RF,TC,BS} and the $\chi$ of
+\cite{Fifth}; \cite{lana} writes $s$ for $\ell(\ell+1)/12$. That the slack must come from
+the hull and not from the orbits of (Ind1) and (Ind2) is also proved in \cite{Takkun}
+(\texttt{hull\_exceeds\_orbit}, \texttt{slack\_lower\_bound}).
 \end{remark}
 
 \begin{remark}\label{r:weakaxioms}
@@ -733,7 +779,9 @@ smallest member of any class that contains $\cO$. This is the largest enlargemen
 At the place over $211$ we multiply the valuations of both pilots by $N$:
 $\theta^{(N)}_j=B(j,29Nj^2)$ and $q^{(N)}_j=B(j,29N)$. This is what replacing the Tate
 parameter by its $N$-th power would do; it is a family of data, not a remark of the
-source.
+source. \Smark{} The same family is used in \cite[Theorem~3.6]{RF}, and on six explicit
+data the comparison computed in \cite[\S10]{TC} fails from $N=3$ (from $N=4$ for one
+datum).
 (\cite[Rem.~3.11.1(ii)]{IUT3} replaces only the $q$-pilot by the $q^\lambda$-pilot, which
 makes the conclusion weaker, not stronger.) The data of this family are not claimed to come
 from elliptic curves: for actual curves the contributions of the other places need not stay
@@ -849,7 +897,10 @@ and the $\Ism$-orbit of isomorphisms constructed there is compatible with the lo
 their log-volumes; so the indeterminacies of (Ind1) and (Ind2) act on each factor through
 automorphisms of the log-shell. \Hmark{} We do not construct the maps from the groups of the
 source to $\Aut_{\mathbb Z_p}(I_L)$; closure of the possible images under the full group
-implies closure under their images.
+implies closure under their images. \Smark{} For (Ind2) the image is known: by
+\cite[Proposition~9]{Fourth}, $\Ism$ is $\mathbb Z_p^\times$ at a finite extension of
+$\Qp p$ and acts by unit scalars, so the full group is an enlargement; it is the group
+\texttt{tensorAut} of \cite{lana}, described there as a deliberate enlargement.
 
 \begin{lemma}\label{l:actions}
 \Pmark{} These actions satisfy the group laws, preserve $\log_p(R_I^\times)$, and hence
@@ -1005,7 +1056,11 @@ link to the $q$-pilot prime-strip through the $\Theta$-link, as the loop of
 \cite[Rem.~3.9.5(ix)]{IUT3} does. The loop closes with trivial holonomy by construction:
 the arrow (sQ4) is taken to be the inverse of the composite of the other arrows
 (\S\ref{s:lean}). The theorem shows that the structure the source names can be placed on
-every model, not that it constrains the models. Its point is the following. In all the models of \S\S\ref{s:model}--\ref{s:actual} the loop closes, the
+every model, not that it constrains the models. \Smark{} \cite[\S6.2]{BS} reads the same
+passage of the source as closing the loop at the level of structures. \Hmark{} The holonomy
+here is that of this chain of prime-strips; it is not the monodromy of
+\cite[Definition~3.6]{SL}, which at the level of degrees is the scale $s\ne1$ of
+Proposition~\ref{p:horns}(c). Its point is the following. In all the models of \S\S\ref{s:model}--\ref{s:actual} the loop closes, the
 (IPL) composite exists, and weak (SHE) holds; but the conclusion fails, so by
 Proposition~\ref{p:strong} no possible image of nonzero measure has the volume of the
 $q$-pilot. The closed loop
@@ -1197,7 +1252,11 @@ Definition~\ref{d:she}: the $q$-pilot is fed to the algorithm that produces the 
 images. Our result shows that this input is not a consequence of the cited results at that
 level, whereas the weak reading is (Corollary~\ref{c:gap}). \Smark{} The Lean port of
 D.~Richards \cite{Ri} states this ``3.11.5'' as the proposition that $-|\log q|$ is at most
-the log-volume of (HDD)$\circ$(SHE), and leaves its proof as ``the content of Stage 2''.
+the log-volume of (HDD)$\circ$(SHE), and leaves its proof as ``the content of Stage 2''
+(\texttt{lean/IUT/LeanForm.lean}); in \texttt{lean/IUT/StageTwo.lean} it derives 3.11.5 from
+a structure for \cite[Thm.~3.11]{IUT3} with a field \texttt{theta\_link} identifying the
+region of the $\Theta$-pilot with that of the $q$-pilot. \Hmark{} In
+Figure~\ref{fig:venn} that field is the identification of Proposition~\ref{p:horns}(b).
 \Hmark{} In Figure~\ref{fig:venn}, 3.11.5 corresponds to the intersection of the class of
 models of the cited results with that of strong (SHE).
 
@@ -1259,22 +1318,33 @@ numbers compatible with the fields, for instance $\ell=7$, $a=1$, $V=1$, the fie
 not give Step (xi); it states that the fields exhaust what the repository proves as an
 audited claim, not a theorem. \Hmark{} The gap of Corollary~\ref{c:gap} sits where its sharp
 form \texttt{xi\_iff} sits; the differences lie in how the axioms are chosen and how the
-models are built (Table~\ref{tab:cmp}). The results of this note were obtained independently
-of it, and it was made public first.
+models are built (Table~\ref{tab:cmp}). The two readings of (SHE) are separated earlier in
+\texttt{Iut/Wall/Constraints.lean} of the same repository (\S1). The results of this note were
+obtained independently of these files, and they were made public first.
+
+\Smark{} Zeng \cite{Zeng} (October 2026) reads the holomorphic hull of
+\cite[Rem.~3.9.5]{IUT3} summand by summand and studies the index that this introduces; the
+hull of our models is the smallest multiple of the integral structure that contains the
+container (\ref{c:hull}). Geiger \cite{Geiger} (August 2026) records that the decisive membership
+of (xi-f) is stated to follow formally from a pair of declared properties rather than derived; Corollary~\ref{c:gap} locates the
+same membership at the level of log-volumes.
 
 \Smark{} Among our published notes, \cite{RF} treats 36 readings of Corollary~3.12 and the
 conservation of the height load, \cite{SL} views Step (xi) as a lax 2-cell in homotopy type
-theory, and \cite{BS} separates a bridge from its size. The present note starts instead from
-the results that the proof cites.
+theory, \cite{II} gives the same comparison in elementary notation, \cite{BS} separates a
+bridge from its size, and \cite{TC} reads the non-derivability of lana-agents/iut as a
+statement about the specification of Theorem~3.11 and places the key in an implementation
+of the multiradial algorithm. The present note starts instead from the results that the
+proof cites.
 
-\Hmark{} The two results are complementary to ours. Theirs show that an abstraction
-without numerical structure cannot yield the inequality; ours shows that adding the
+\Hmark{} The results of Higuchi and Pajo are complementary to ours. Theirs show that an
+abstraction without numerical structure cannot yield the inequality; ours shows that adding the
 numerical structure stated in the cited results does not help, and locates what is
 missing at the membership of the $q$-pilot among the possible images, that is, at (xi-f).
 
 \section{Machine verification}\label{s:lean}
 
-The Lean sources are in the folder \texttt{where-311-sits/lean} at tag v0.23.1 of
+The Lean sources are in the folder \texttt{where-311-sits/lean} at tag v0.24.0 of
 \url{https://github.com/turahigashi/iut-explicit-initial-theta} and are archived at
 \ArtifactDOI{}, together
 with \texttt{Verify.lean}, which checks the axioms of every declaration in the modules that
@@ -1410,6 +1480,27 @@ paper.
 \bibitem[SL]{SL} T.~Urahigashi, \emph{Segment or loop? A homotopy-type-theoretic overview
  of the dispute over Corollary 3.12 of inter-universal Teichm\"uller theory}, version 1.3.0,
  Zenodo, 2026. DOI \href{https://doi.org/10.5281/zenodo.23991545}{10.5281/zenodo.23991545}.
+\bibitem[TC]{TC} T.~Urahigashi, \emph{Two computations of the height inequality and the
+ multiradial algorithm: reading IUT from the viewpoint of computer science}, version 1.0.0,
+ Zenodo, 2026. DOI \href{https://doi.org/10.5281/zenodo.23968299}{10.5281/zenodo.23968299}.
+\bibitem[II]{II} T.~Urahigashi, \emph{Reading the IUT dispute through indexed
+ identifications: an educational model in undergraduate mathematics}, Zenodo, 2026.
+ DOI \href{https://doi.org/10.5281/zenodo.23931345}{10.5281/zenodo.23931345} (all versions).
+\bibitem[Takkun]{Takkun} Takkun-kohinata, \emph{IUT\_LEAN}, Lean repository,
+ \url{https://github.com/Takkun-kohinata/IUT_LEAN}, commit 9d56c46 (15 July 2026); files
+ \texttt{IutLean/Multiradial/ThetaHullDichotomy.lean} and \texttt{DisputedCore.lean}.
+\bibitem[Saito]{Saito} Y.~Saito, \emph{A registered-provenance audit of IUT III, Corollary 3.12,
+ Step (xi)}, version 2.0.0, Zenodo, 26 July 2026.
+ DOI \href{https://doi.org/10.5281/zenodo.21596198}{10.5281/zenodo.21596198}.
+\bibitem[sfingali]{sfingali} sfingali, \emph{The Scholze--Stix objection, formally: the
+ arithmetic is agreed, the $q$-side is absent}, Zenodo, 2 August 2026.
+ DOI \href{https://doi.org/10.5281/zenodo.21757640}{10.5281/zenodo.21757640}.
+\bibitem[Zeng]{Zeng} C.~Zeng, \emph{An integral-structure inflation in the hull operation of
+ IUT Corollary 3.12}, Zenodo, first version 29 October 2026.
+ DOI \href{https://doi.org/10.5281/zenodo.23754276}{10.5281/zenodo.23754276} (all versions).
+\bibitem[Geiger]{Geiger} L.~Geiger, \emph{The bridge certificate: a line-level audit instrument for
+ inter-theoretic transfer arguments}, Zenodo, first version 14 August 2026.
+ DOI \href{https://doi.org/10.5281/zenodo.21925803}{10.5281/zenodo.21925803} (all versions).
 \bibitem[BS]{BS} T.~Urahigashi, \emph{Bridge and size: the Kodaira--Spencer morphism,
  arithmetic derivatives and Step (xi) of IUT as lax 2-cells}, version 1.0.0, Zenodo, 2026.
  DOI \href{https://doi.org/10.5281/zenodo.23984201}{10.5281/zenodo.23984201}.

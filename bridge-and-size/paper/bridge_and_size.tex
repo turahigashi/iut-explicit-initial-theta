@@ -54,7 +54,7 @@
 
 \title{Bridge and size: the Kodaira--Spencer morphism,\\ arithmetic derivatives and Step (xi) of IUT\\ as lax 2-cells}
 \author{Toshihisa Urahigashi\\\small ORCID 0009-0004-0460-6242\\\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.0.0, 6 November 2026\\\small\href{https://doi.org/\thedoi}{doi:\thedoi}}
+\date{Version 1.1.0, 8 November 2026\\\small\href{https://doi.org/\thedoi}{doi:\thedoi}}
 
 \begin{document}
 \maketitle
@@ -73,14 +73,16 @@ blurring that must be allowed). This restates, in the language of \cite{SL}, two
 himself: a common container that is large enough to house both sides, and small enough to yield a nontrivial estimate
 \cite{Roots}. In function fields both come automatically from the structure. A bridge from an additive relation exists
 unconditionally, but bounding its size is equivalent to the abc conjecture (Pasten \cite{Pa}). In IUT, conversely, the
-blurring is small by the upper bound of IUT~IV, while the bridge (the inclusion in Step~(xi)) is not derived in the
-written argument. (2) A bridge from an additive relation does not cross the $\Theta$-link. The $\Theta$-link carries the
+blurring is small by the upper bound of IUT~IV, while the bridge (the inclusion in Step~(xi), called a bridge earlier
+by Higuchi, Pajo and Geiger \cite{Hi,Pj,Ge3}) is not derived in the written argument. (2) A bridge from an additive relation does not cross the $\Theta$-link. The $\Theta$-link carries the
 unit portions by full poly-isomorphisms, so that specific global elements (such as $1-\lambda$ of the Legendre form)
 are not carried. If one forces them across, a contradiction appears at the level of units already on actual initial
 $\Theta$-data (at the place of the datum D211 above $211$, discrepancies of $\dgaptwo$ and $\dgapthree$ levels for the
 labels $2$ and $3$). To absorb this discrepancy by blurring requires exactly half of the discrepancy at the level of
 value groups, which in the normalization of Corollary~3.12 (the $q$ side is measured by $\qq=q^{1/2\ell}$) is $\ell$
-times the wall $(k-1)Q$. This grows with $q$ and does not fit under the upper bound of IUT~IV. Moreover, the curves on
+times the wall $(k-1)Q$. This grows with $q$, while the upper bound $C$ of IUT~IV does not: on the six completely
+factored data it is still below $C$ (between $0.36$ and $0.92$ of $C$), and after replacing $q$ by $q^N$ it exceeds $C$
+for $N\ge3$ (checked for $N\le40$ \cite{TC}). Moreover, the curves on
 which isogenies give a bridge (curves with a global multiplicative subspace) are excluded from the initial
 $\Theta$-data by the condition of Definition~3.1~(c) of IUT~I. In summary, the reading of this note is that the ring
 structure (in particular, the addition) that IUT gives up in order to circumvent the absence of a global multiplicative
@@ -103,9 +105,11 @@ say along which path one identifies, it made visible that an additive bridge is 
 \tagP{} In earlier notes we saw that the dispute over Corollary~3.12 of IUT~III concentrates on the point, in
 Step~(xi) of its proof, that the value on the $q$ side is one of the possible values on the $\Theta$ side (below, ``the
 inclusion''), and that this point is of the same strength as the height inequality. In the language of \cite{SL},
-Corollary~3.12 is equivalent to a lax 2-cell between two paths, which is equivalent to $(k-1)Q\le E$
+Corollary~3.12 (in the model) is equivalent to a lax 2-cell between two paths, which is equivalent to $(k-1)Q\le E$
 \cite[Theorem~5.3]{SL}. Here $Q=|\log\qq|$, $k=\ell(\ell+1)/12$ is the mean of $j^2$ over the labels
-$j=1,\dots,\ell^*$ (where $\ell^*=(\ell-1)/2$), and $E$ is the blurring allowed in the comparison. In each of the
+$j=1,\dots,\ell^*$ (where $\ell^*=(\ell-1)/2$), and $E$ is the blurring allowed in the comparison. We call $(k-1)Q$
+the \emph{wall}, after the word that the interim report of Project LANA uses for the obstacle at this step
+\cite[\S0.2]{LANA}. In each of the
 readings listed in \cite{RF}, Corollary~3.12 and IUT~IV together give the same height inequality.
 
 \tagH{} The question of this note is the following. In function fields, an inequality of the same shape follows
@@ -159,14 +163,31 @@ compatibility condition of this kind \cite{DZB}.
 \item \tagX{} \textbf{The equivalence of arithmetic derivatives adapted to an additive relation with the abc
 conjecture} is due to Pasten \cite{Pa}. On $a+b=c$, arithmetic derivatives that are additive exist unconditionally, and
 the existence of sufficiently small ones is equivalent to the abc conjecture. Half of the view of this note, ``the
-bridge is unconditional, the size is abc'', is this result itself.
+bridge is unconditional, the size is abc'', is this result itself. Laniewski and M\"uller (arXiv:2610.26490, 19 October
+2026) place Pasten's inequality in the quality plane of abc triples and show that \q{the largest absolute value of the
+derivation on $a$, $b$ and $c$ exceeds $c/\mathrm{rad}(abc)$ whenever the derivation is additive on the triple with
+non-zero Wronskian, so that it gives no bound on the quality by itself} \cite{LM}.
 \item \tagX{} \textbf{A weak abc from linear forms in logarithms} is due to Stewart--Yu \cite{StYu}; \cite[\S3.7,
 (iii)]{Alien} compares it with IUT.
 \item \tagX{} \textbf{The general theory of height inequalities and the Kodaira--Spencer map for function fields} is in
 M.~Kim \cite{Kim}.
+\item \tagX{} \textbf{In Lean}, lana-agents/iut proves the Szpiro inequality with exponent $6$ over $k[X]$ from the
+Mason--Stothers theorem, and that the derivative hypothesis cannot be dropped in characteristic $p$, where Frobenius
+twists violate every Szpiro-type bound (\lean{Iut/\allowbreak{}Abc/\allowbreak{}FunctionFieldSzpiro.lean}, 14 October
+2026); and it checks by \lean{decide} a table of the ingredients that a proof of the Szpiro inequality over $\Q$ must
+use, one of which is the IUT coupling of the wall (\lean{Iut/\allowbreak{}Abc/\allowbreak{}P24Table.lean}, 14 October
+2026) \cite{lana}. Both are related in topic to \S\S3--4.
 \item \tagX{} \textbf{Joshi} states that a paper treating Kodaira--Spencer theory in his theory of arithmetic
 Teichm\"uller spaces (Construction~V) is in preparation \cite{JoQA}. This note does not know its contents and does not
 use the outline in the questions and answers.
+\item \tagX{} \textbf{The word ``bridge'' was used earlier for the same inclusion.} Higuchi calls it the
+\q{numerical bridge statement} and proves that \q{the bridge statement is not a logical consequence} of a qualitative
+package extracted from the passage (31 March 2026) \cite{Hi}. Pajo proves a no-go theorem for \q{a deliberately modest
+typed abstraction of a common-container-to-numerical bridge} that excludes any \q{bridge certificate} (26 April 2026)
+\cite{Pj}. Geiger's \emph{bridge certificate} \q{fixes seven obligations that any admissible passage from a qualitative
+linkage to a numerical membership statement must discharge} and is applied to the proof of Corollary~3.12 (13--14 August
+2026) \cite{Ge3}; his \emph{bridge contract} follows (16 August 2026) \cite{Ge2}. Definition~\ref{d:bridge} uses the word
+for the existence of a lax 2-cell in the model of \cite{SL}, which for IUT is this inclusion.
 \item \tagX{} \textbf{That Step~(xi) does not follow from the written properties} is shown in lana-agents/iut
 \cite{lana} (\lean{NonDerivable.lean}), by Higuchi \cite{Hi} and in \cite[Theorem~5.7]{SL}. Scholze--Stix write of
 Mochizuki's claim that \q{up to the `blurring' given by certain indeterminacies the diagram does commute; it seems to us
@@ -175,12 +196,20 @@ thus obtained useless} \cite[\S2.2]{SS}.
 \item \tagH{} \textbf{What this note adds} is limited to three things. (a) A dictionary that places the Kodaira--Spencer
 morphism of function fields, the bridges from an additive relation (Baker, Pasten) and Step~(xi) of IUT in the single
 form of a lax 2-cell of \cite{SL}. (b) The assignment of the three situations by ``bridge'' and ``size'' (function
-fields have both, Baker and Pasten only the bridge, IUT only the size). The two requirements themselves are Mochizuki's
-(the item above); what this note adds is to state them as the existence of a lax 2-cell and its minimal blurring, and
-to put the additive bridges (Baker, Pasten) into the same table. That IUT has ``only the size'' is a reading of this
-note and points to the same place as Scholze--Stix, lana-agents/iut and Higuchi. We have not found this assignment in
-the sources we checked (Pasten, Dupuy--Zureick-Brown, Fesenko, Joshi's questions and answers, Mochizuki's papers and
-slides, lana-agents/iut, and a web search on 6 November 2026). (c) A check, along the definitions, that an additive
+fields have both, Baker and Pasten only the bridge, IUT only a bound on the blurring). The two requirements themselves
+are Mochizuki's (the item above); what this note adds is to state them as the existence of a lax 2-cell and its minimal
+blurring, and to put the additive bridges (Baker, Pasten) into the same table. For IUT the assignment is earlier.
+Geiger's audit of the passage (16 August 2026) finds the load of the theta values quantified in IV, \q{carried through
+that computation to the closed form $(\ell+1)/24$}, and records \q{F-R4a therefore delivers for the composite of the two
+volumes; F-R4b does not, that section taking the corollary's conclusion as an input and quantifying downstream of the
+bridge} and \q{F-R6b does not deliver, and it is the principal chain-closing obligation} \cite[\S6.2]{Ge2}. The request
+in Takkun-kohinata/IUT\_LEAN (15 July 2026) states, in its observation (F4), that the computation of IV is correct and
+verified, while the derivation that justifies reading it as the containment of Step~(v) is not (paraphrased from the
+Japanese) \cite{TK}. Version
+1.0.0 of this note said that it had not found this assignment in the sources it had checked (Pasten,
+Dupuy--Zureick-Brown, Fesenko, Joshi's questions and answers, Mochizuki's papers and slides, lana-agents/iut, and a web
+search on 6 November 2026); Geiger's papers and Takkun-kohinata/IUT\_LEAN were not among them. The reading points to the
+same place as Scholze--Stix, lana-agents/iut and Higuchi. (c) A check, along the definitions, that an additive
 bridge does not cross the $\Theta$-link, with numbers on actual data (\S7). Item (c) is a concrete instance of the
 point of Scholze--Stix and of the incompatibility of the $\Theta$-link with the ring structure (arithmetic degrees)
 that Mochizuki himself describes (\cite[\S14, (LbEx1)]{R18}, \cite[\S3.3, (iv)]{Alien}); it is not new in principle.
@@ -196,7 +225,8 @@ automatically by the structure, with blurring $\deg\omega(\log)$.
 bridge (Baker, Stewart--Yu) and the arithmetic derivatives of Pasten.
 \item \textbf{The isogeny bridge lies outside the domain of IUT} (\S5). Global multiplicative subspaces and
 Definition~3.1~(c).
-\item \textbf{IUT has only the size} (\S6). The statement of Theorem~3.11, where the source says the $\wedge$ is
+\item \textbf{In IUT the blurring is small, but the bridge is not derived} (\S6). The statement of Theorem~3.11, where
+the source says the $\wedge$ is
 derived, and where elements specific to the curve enter.
 \item \textbf{An additive bridge does not cross the $\Theta$-link} (\S7). What a full poly-isomorphism carries, the
 dilemma at the level of units, the language of HoTT, and what HoTT contributed.
@@ -231,6 +261,9 @@ $(k-1)Q\le E$ \cite[Theorem~5.3]{SL}.
 exists for some blurring $E$ a \emph{bridge}. When a bridge exists, we call the smallest blurring that makes it possible
 its \emph{size}. A strict 2-cell is a bridge of size $0$.
 \end{definition}
+
+\tagX{} The word ``bridge'' was used earlier for the same inclusion of Step~(xi), by Higuchi (31 March 2026)
+\cite{Hi}, Pajo (26 April 2026) \cite{Pj} and Geiger (August 2026) \cite{Ge3,Ge2}; see \S1.3.
 
 \tagH{} Definition~\ref{d:bridge} restates, in the language of the model of \cite{SL}, the two requirements that
 Mochizuki states for the Kodaira--Spencer morphism and for the multiradial representation (that the common container be
@@ -407,7 +440,7 @@ one of them $a,b$ are $\psi$-independent, and this $\psi$ satisfies $\|\psi\|\le
 \item \tagX{} If $a,b$ are $\psi$-independent, then $\frac{c}{\log c}\le\mathrm{rad}(abc)\cdot\frac{\|\psi\|}{\log2}$
 (Theorem~3.3; the same shape as Snyder's proof of Mason's theorem).
 \item \tagX{} The small derivatives conjecture (Conjecture~3.9): for some $0<\eta<1$, for all triples except finitely
-many and those of the form $(1,N,q)$, there is $\psi\in\Tcal(a,b)$ with $\|\psi\|<c^\eta$ that makes $a,b$
+many and those of the form $(1,N,q)$ with $q$ prime (up to order), there is $\psi\in\Tcal(a,b)$ with $\|\psi\|<c^\eta$ that makes $a,b$
 $\psi$-independent. It is equivalent to the abc conjecture, with a correspondence of exponents (Lemma~4.1,
 Theorem~4.5, Corollary~4.6; precisely, it follows from the abc conjecture of Masser--Oesterl\'e and implies the abc
 conjecture of Oesterl\'e with some exponent).
@@ -418,7 +451,10 @@ of sufficiently small arithmetic derivatives in our sense is equivalent to the a
 abstract \cite{Pa}}
 \tagH{} In the language of 2-cells, $W^\psi(a,b)\ne0$ is the bridge and $\|\psi\|$ is the size. \textbf{The bridge
 exists unconditionally (Lemma~3.5), and bounding its size is equivalent to the abc conjecture.} Putting the size
-$\frac{\omega}{2\log2}c\log c$ of Lemma~3.5 into Theorem~3.3 gives only a trivial inequality. The derivative $d/dt$ of a
+$\frac{\omega}{2\log2}c\log c$ of Lemma~3.5 into Theorem~3.3 gives only a trivial inequality; Pasten writes that
+\q{Lemma 3.5 combined with Theorem 3.3 falls short of proving the abc Conjecture} \cite{Pa}, and Laniewski and
+M\"uller show that the largest value of such a derivation on $a$, $b$ and $c$ exceeds $c/\mathrm{rad}(abc)$, so that it
+gives no bound on the quality by itself \cite{LM} (\S1.3). The derivative $d/dt$ of a
 function field lowers degrees by exactly $1$, that is, it has ``size $1$'', which is why the Mason--Stothers inequality
 is sharp.
 
@@ -517,9 +553,12 @@ structure}}{IUT~III, Remark~3.11.1, (iii) (IPL) \cite{IUT3}}
 the output \q{is subject to the condition that this construction of output data possibilities constitutes, in
 particular, a construction [perhaps only up to some sort of `approximation', as a result of various indeterminacies] of
 the pilot-object log-volume of the input data} \cite{IUT3}, namely of $-|\log(\qq)|$; it does not follow from the
-written properties (IPL, SHE, APT) (\cite[Theorem~5.7]{SL}, \cite{lana}, \cite{Hi}). On the other hand, the upper bound
+written properties (IPL, SHE, APT) (\cite[Theorem~5.7]{SL}, \cite{lana}, \cite{Hi}); for the log-volume content of the
+22 results cited in the proof, on actual local objects, see \cite[Theorem~10, Corollary~11, Theorem~22]{W311}. On the
+other hand, the upper bound
 $E\le C$ on the blurring is given by the computation of IUT~IV (the proof of Theorem~1.10), and the dispute lies on the
-side of Step~(xi) of Corollary~3.12. \textbf{IUT has the size, but does not derive the bridge.}
+side of Step~(xi) of Corollary~3.12. \textbf{The written argument gives a small blurring but does not derive the
+bridge.}
 
 \subsection{Where the source says the \texorpdfstring{$\wedge$}{AND} is derived}
 \tagS{} The source itself names where the $\wedge$ of the comparison is derived from: the essentially tautological
@@ -544,8 +583,8 @@ would yield a situation from which no nontrivial conclusions may be drawn} \dots
 (viii), (ix) \cite{IUT3}}
 \tagH{} The closed loop closes at the level of structures that include the units and the local Galois groups of the
 prime-strips, before the passage (sQ5) to log-volumes. In the language of this note, the two sides of the ``delicate
-balance'' (keeping the indeterminacies small, and keeping compatibility with the original structures) correspond to the
-size ($E\le C$) and the bridge (the inclusion). The source says that this balance is maintained, and the written text
+balance'' (keeping the indeterminacies small, and keeping compatibility with the original structures) correspond to a
+small blurring ($E\le C$) and the bridge (the inclusion). The source says that this balance is maintained, and the written text
 states it at the level of structures.
 
 \subsection{Where elements specific to the curve enter}
@@ -663,12 +702,14 @@ not count the places above an unfactored cofactor, so it is conditional (on this
 \cite{TC}).}
 \end{table}
 
-\tagH{} Hence there are only two ways to repair IUT by bringing in an additive bridge from outside. If the bridge is
+\tagH{} Hence there are three ways to repair IUT by bringing in an additive bridge from outside. If the bridge is
 kept on both sides, the contradiction of Scholze--Stix appears at the level of units. If it is carried without being
 kept, the information of the bridge (which element, and its global consistency) is lost. If one takes the middle way and
-absorbs the discrepancy by blurring, the blurring needed is $\ell$ times the wall and grows with $Q$. The upper bound $C$
-of IUT~IV does not contain this blurring, so the comparison becomes trivial and says nothing about the height. This is
-the same shape as Scholze--Stix's blurring \q{rendering the inequality thus obtained useless} \cite[\S2.2]{SS}.
+absorbs the discrepancy by blurring, the blurring needed is $\ell$ times the wall and grows with $Q$, while the upper
+bound $C$ of IUT~IV does not. On the six completely factored data it is still below $C$ (between $0.36$ and $0.92$ of
+$C$); after replacing $q$ by $q^N$ it exceeds $C$ for $N\ge3$ (checked for $N\le40$ prime to $\ell$ with the values of
+$C$ in \cite{TC}), and then IUT~IV does not bound it and the comparison says nothing about the height. This is the same
+shape as Scholze--Stix's blurring \q{rendering the inequality thus obtained useless} \cite[\S2.2]{SS}.
 
 \subsection{In the language of HoTT}
 \tagH{} In the language of \cite{SL}: what can be carried along a path of identification is a property (a
@@ -729,10 +770,10 @@ $\log l$ & of the form $l\cdot h\le h+\log l$ (\cite[\S2.3]{Alien}); excluded in
 (Proposition~\ref{p:sl2})\\
 Baker's method, Stewart--Yu & automatic from the addition (Proposition~\ref{p:additive}) & determined by the lower
 bound for linear forms in logarithms, large & a weak abc (a shift in the exponent)\\
-Pasten's arithmetic derivatives & exists unconditionally (Lemma~3.5) & $\|\psi\|$; small $\iff$ abc (Corollary~4.6) &
+Pasten's arithmetic derivatives & exists unconditionally (Lemma~3.5) & $\|\psi\|$; abc $\Rightarrow$ small $\Rightarrow$ abc with some exponent (Corollary~4.6) &
 $c/\log c\le\mathrm{rad}(abc)\|\psi\|/\log2$\\
-IUT (Step (xi) of Corollary~3.12) & not derived in the written argument (\S6) & small, $E\le C$ (IUT~IV) &
-$(k-1)Q\le E$\\
+IUT (Step (xi) of Corollary~3.12) & not derived in the written argument (\S6) & no size, since no bridge is derived;
+the blurring is bounded, $E\le C$ (IUT~IV) & $(k-1)Q\le E$\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -758,8 +799,8 @@ outside is closed (Propositions~\ref{p:fullpoly} and~\ref{p:gap}). The isogeny b
 \end{itemize}
 \tagH{} For a single datum this claim is equivalent to the height inequality (\cite[Theorem~5.3]{SL}), and if it holds
 for all genuine initial $\Theta$-data, the abc conjecture follows (\lean{classicalABC\_of\_forall\_xi} of \cite{lana};
-for arithmetic derivatives, the equivalence of the existence of small ones with the abc conjecture is
-\cite[Corollary~4.6]{Pa}). The language of HoTT can state the required 2-cell precisely, but cannot construct it
+for arithmetic derivatives, the abc conjecture implies the existence of small ones, and their existence implies the
+abc conjecture with some exponent \cite[Corollary~4.6]{Pa}). The language of HoTT can state the required 2-cell precisely, but cannot construct it
 (\cite[Theorem~5.7]{SL}). That is, the repair amounts not to an adjustment of IUT but to finding a new proof of the
 height inequality. One form of it would be to show the (FrgInv) of the source, \q{the operation of forgetting discussed
 in (MnAlyLb) can in fact, if one allows for suitable indeterminacies, be inverted} \cite[\S3.11]{EssLgc}, at the level
@@ -887,6 +928,18 @@ theta-functions, notes on the work of {S}hinichi {M}ochizuki}, Eur. J. Math. \te
 Shinichi Mochizuki, \emph{The {G}alois-theoretic {K}odaira--{S}pencer morphism of an elliptic curve}, preprint, July
 2000.
 
+\bibitem[Ge2]{Ge2}
+Lukas Geiger, \emph{The {B}ridge-{C}ontract {C}riterion: a form audit for transport arguments, with an instantiation in
+the abc literature} (The abc Gap Series, Part~2), version 0.2, Zenodo, 16 August 2026,
+\href{https://doi.org/10.5281/zenodo.21960477}{doi:10.5281/zenodo.21960477}; all versions
+\href{https://doi.org/10.5281/zenodo.21960476}{doi:10.5281/zenodo.21960476}.
+
+\bibitem[Ge3]{Ge3}
+Lukas Geiger, \emph{The {B}ridge {C}ertificate: a line-level audit instrument for inter-theoretic transfer arguments,
+with four applications to the abc literature} (The abc Gap Series, Part~3), version 0.1, Zenodo, 13 August 2026,
+\href{https://doi.org/10.5281/zenodo.21925804}{doi:10.5281/zenodo.21925804}; all versions
+\href{https://doi.org/10.5281/zenodo.21925803}{doi:10.5281/zenodo.21925803}.
+
 \bibitem[GenEll]{GenEll}
 Shinichi Mochizuki, \emph{Arithmetic elliptic curves in general position}, Math. J. Okayama Univ. \textbf{52} (2010),
 1--28.
@@ -897,7 +950,9 @@ theories}, preprint, September 1999.
 
 \bibitem[Hi]{Hi}
 Joaquim Reizi Higuchi, \emph{A formal negative result for the passage from {S}tep (xi-e) to {S}tep (xi-f) in {IUT}
-{III}}, preprint, 31 March 2026.
+{III}}, preprint, 31 March 2026, \href{https://doi.org/10.13140/RG.2.2.10989.76006}{doi:10.13140/RG.2.2.10989.76006}
+(a record of the same day titled `iut bridge preprint' has
+\href{https://doi.org/10.13140/RG.2.2.24411.53286}{doi:10.13140/RG.2.2.24411.53286}).
 
 \bibitem[IUT1]{IUT1}
 Shinichi Mochizuki, \emph{Inter-universal {T}eichm\"uller theory {I}: construction of {H}odge theaters}, Publ. Res.
@@ -926,16 +981,30 @@ Minhyong Kim, \emph{Geometric height inequalities and the {K}odaira--{S}pencer m
 (1997), 43--54, \href{https://doi.org/10.1023/A:1017995416618}{doi:10.1023/A:1017995416618}; Erratum, ibid. \textbf{121}
 (2000), 219.
 
+\bibitem[LANA]{LANA}
+Project LANA, \emph{Project LANA interim report on IUT theory}, 20 July 2026,
+\url{https://ncatlab.org/nlab/files/LANAProject-Report-July2026.pdf}.
+
 \bibitem[lana]{lana}
 lana-agents, \emph{iut}: a Lean~4 formalization of inter-universal {T}eichm\"uller theory, GitHub repository,
 \url{https://github.com/lana-agents/iut}, commit \texttt{553076a} (3 November 2026). Files cited:
 \lean{Iut/\allowbreak{}WallEquiv/\allowbreak{}NonDerivable.lean},
 \lean{Iut/\allowbreak{}Reconstruction/\allowbreak{}Uchida/\allowbreak{}FunctionField.lean},
-\lean{Iut/\allowbreak{}Reconstruction/\allowbreak{}Thm19/\allowbreak{}NFAdditive.lean}.
+\lean{Iut/\allowbreak{}Reconstruction/\allowbreak{}Thm19/\allowbreak{}NFAdditive.lean},
+\lean{Iut/\allowbreak{}Abc/\allowbreak{}FunctionFieldSzpiro.lean}, \lean{Iut/\allowbreak{}Abc/\allowbreak{}P24Table.lean}.
+
+\bibitem[LM]{LM}
+R.~Laniewski and K.~M\"uller, \emph{Pasten's arithmetic derivatives and the decomposition into gains},
+arXiv:2610.26490v1 [math.NT], 19 October 2026.
 
 \bibitem[Pa]{Pa}
 Hector Pasten, \emph{Arithmetic derivatives through geometry of numbers}, Canad. Math. Bull. \textbf{65} (2022), no.~4,
 906--923, \href{https://doi.org/10.4153/S0008439521000990}{doi:10.4153/S0008439521000990}; arXiv:2106.16165v3.
+
+\bibitem[Pj]{Pj}
+Paul Pajo, \emph{Scale-free common-container comparisons do not entail numerical inequalities: a minimum-viable no-go
+theorem motivated by the {IUT} {III} {T}heorem 3.11-to-{C}orollary 3.12 bridge}, preliminary research note,
+26 April 2026, \href{https://doi.org/10.13140/RG.2.2.33620.16005}{doi:10.13140/RG.2.2.33620.16005}.
 
 \bibitem[R18]{R18}
 Shinichi Mochizuki, \emph{Report on discussions, held during the period March 15--20, 2018, concerning inter-universal
@@ -952,8 +1021,8 @@ Shinichi Mochizuki, \emph{Classical roots of inter-universal {T}eichm\"uller the
 
 \bibitem[SL]{SL}
 Toshihisa Urahigashi, \emph{Segment or loop? A homotopy-type-theoretic overview of the dispute over Corollary 3.12 of
-inter-universal {T}eichm\"uller theory}, version 1.1.0, Zenodo, 2026,
-\href{https://doi.org/10.5281/zenodo.23933109}{doi:10.5281/zenodo.23933109}.
+inter-universal {T}eichm\"uller theory}, version 1.3.0, Zenodo, 2026,
+\href{https://doi.org/10.5281/zenodo.23991545}{doi:10.5281/zenodo.23991545}.
 
 \bibitem[SS]{SS}
 Peter Scholze and Jakob Stix, \emph{Why abc is still a conjecture}, manuscript, 2018.
@@ -966,6 +1035,15 @@ C. L. Stewart and Kunrui Yu, \emph{On the abc conjecture, {II}}, Duke Math. J. \
 Toshihisa Urahigashi, \emph{Two computations of the height inequality and the multiradial algorithm: reading IUT from
 the viewpoint of computer science}, version 1.0.0, Zenodo, 2026,
 \href{https://doi.org/10.5281/zenodo.23968299}{doi:10.5281/zenodo.23968299}.
+
+\bibitem[TK]{TK}
+Takkun-kohinata, \emph{IUT\_LEAN}, Lean repository, \url{https://github.com/Takkun-kohinata/IUT_LEAN}, commit
+\texttt{9d56c46} (15 July 2026); file \lean{REQUEST\_theta\_hull\_derivation.md}.
+
+\bibitem[W311]{W311}
+Toshihisa Urahigashi, \emph{Where Theorem 3.11 sits: the log-volume content of the results cited in the proof of IUT
+III, Corollary 3.12, does not imply its conclusion}, Zenodo, 2026,
+\href{https://doi.org/10.5281/zenodo.24028832}{doi:10.5281/zenodo.24028832} (all versions).
 \end{thebibliography}
 
 \end{document}

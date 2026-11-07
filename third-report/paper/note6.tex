@@ -25,7 +25,7 @@
 of inter-universal Teichm\"uller theory IV}
 \author{Toshihisa Urahigashi\\
 \small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.0.2 --- 7 September 2026\\[3pt]
+\date{Version 1.0.3 --- 8 November 2026\\[3pt]
 \small ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}\\[3pt]
 \small DOI \href{https://doi.org/10.5281/zenodo.22646136}{10.5281/zenodo.22646136} (all versions)}
 
@@ -69,6 +69,10 @@ $\Theta$-datum} --- and \emph{some of the curves used below are not known to car
 one}, the $N=472$ curve of \cite[\S13]{Second} being a curve with fourteen
 \emph{candidate} levels.  What the verified data of \cite{First,Second} add is
 \S\ref{s:bdry} and \S\ref{s:recovered}, where the parameters of an actual datum enter.
+\textup{[S]} Modified versions of these local statements are derived in
+\cite[\S1.1]{Zhou}, and parts of them --- the different in the unramified and tame
+cases, and the constants $a_i$, $b_i$ of \cite[Prop.~1.2]{IUT4} --- are formalized in
+Lean in Takkun-kohinata/IUT\_LEAN \cite{TK} (July 2026).
 
 \textup{[P]} The pattern is the same in every section.  We take the source's own
 statement, instantiate it in a local field or at a curve that is named, compute the
@@ -170,6 +174,10 @@ the torsion term at $p=5$ in \S\ref{s:tors}, namely $1/(p-1)=1/4$, and it has a
 different origin;} the coincidence is a reason to keep the two apart rather than to
 merge them.  \emph{It is not the same as anything in \S\ref{s:norm}}: there the $f=4$
 discrepancy between the raw and the normalized volume would be $3\log5$.
+\textup{[S]} \cite[Rem.~6.2.1(2)]{DHPS} lists the index of
+$\bigotimes_i\mathcal{O}_{K_i}$ in the product $\mathcal{O}_L$ of the rings of integers
+of the field components as a quantity one could compute, and says that this ``seems
+practical to do in specific toy cases''; the index $5$ above is such a case.
 
 \section{The floor}\label{s:floor}
 
@@ -216,7 +224,9 @@ misdescribed Step (viii) (found in a later review, 2026-09-07).  \textup{[P]} Ta
 \[
  \Delta = 2^{6}\cdot3^{44}\cdot5\cdot173 ,
 \]
-and the torsion field $K_0=\mathbb{Q}(i,E[210])$.  Its ramification support is
+and the torsion field $K_0=\mathbb{Q}(i,E[210])$, that is, $F(E[7])$ for the field
+$F=\mathbb{Q}(i,E[30])$ that \cite[\S\S2.10--2.11]{DH25} uses for elliptic curves over
+$\mathbb{Q}$.  Its ramification support is
 $\{2,3,5,7,173\}$ --- five primes.  \emph{That this list is exactly the support is an
 ordinary number-theoretic statement about the curve and the torsion field, not a
 consequence of the factorization}.  It is proved as follows.  Away from those five
@@ -534,11 +544,18 @@ Remark~\ref{r:exact-criterion}, which are proved for all $m$ in the text and are
 \path{ModSevenImage.lean} re-prove the integer identities and finite predicates of the
 datum $a=(10+3i)^{29}$ --- norm factorisations, valuations, point counts and traces at
 the witness places, and the finite group computations --- and
-\path{FamilyArithmetic.lean} the finite algebra behind that report's existence family;
-in \cite{First} the corresponding statements for $a=(16+3\sqrt5)^{29}$.  \emph{No
-statement of the present note is among them}, and nothing here is discharged by them.
-In particular the curve of \cite[\S13]{Second} with $N=472$ carries \emph{fourteen
-candidate levels}, not fourteen verified initial $\Theta$-data.
+\path{FamilyArithmetic.lean} the finite algebra behind that report's existence family.
+\emph{No statement of the present note is among them}, and nothing here is discharged
+by them.  In particular the curve of \cite[\S13]{Second} with $N=472$ carries
+\emph{fourteen candidate levels}, not fourteen verified initial $\Theta$-data.
+\cite{First} has no kernel check of its datum: its statements for
+$a=(16+3\sqrt5)^{29}$ are checked by the programs \path{scripts/checks.py},
+\path{scripts/check_round3.py} and \path{scripts/check_normalization.py} and by the
+exhaustive sieve \path{scripts/check_norm_seventh_power_free.cpp}
+(\path{scripts/check_crt_family.py} checks the separate existence family of its
+companion draft), and its only Lean file, \path{lean/RegardedUpToIsOrbit.lean}, is a
+finite model that concerns no datum.  Earlier versions of this note listed those
+statements under (4) as kernel-verified; they are not.
 
 \textup{[P]} Within (1), one more line is worth drawing: $D$, $U$, $G_{\mathrm{ideal}}$
 and $\gcd(U,D)$ are exact integers and the displayed formulas for
@@ -552,6 +569,11 @@ computations, drafting and adversarial review; the author is responsible for the
 Every number above was recomputed by the author independently of the process that first
 produced it, and the two items where an earlier recomputation had failed were
 recorded rather than dropped silently; both are settled in \S\ref{s:recovered}.
+
+Version~1.0.3 corrects the description of \cite{First} under (4) of the Reproduction
+section, cites \cite{DH25} in \S\ref{s:supp} (earlier versions listed it without citing
+it), and cites earlier work: \cite{Zhou} and \cite{TK} in \S\ref{s:what}, and
+\cite{DHPS} in \S\ref{s:tens}.  No value is changed.
 
 \begin{thebibliography}{Second}
 \bibitem[First]{First} T.~Urahigashi, \emph{An explicit initial $\Theta$-datum with
@@ -574,6 +596,16 @@ recorded rather than dropped silently; both are settled in \S\ref{s:recovered}.
  Consulted author version: April 2020.
 \bibitem[SS]{SS} P.~Scholze, J.~Stix, \emph{Why $abc$ is still a conjecture},
  manuscript, July 16, 2018.
+\bibitem[DHPS]{DHPS} T.~Dupuy, A.~Hilado, \emph{Probabilistic Szpiro, baby Szpiro,
+ and explicit Szpiro from Mochizuki's Corollary 3.12}, arXiv:2004.13108v2 [math.NT],
+ 29 April 2020.
+\bibitem[Zhou]{Zhou} Z.-P.~Zhou, \emph{The inter-universal Teichm\"uller theory and new
+ Diophantine results over the rational numbers.~I}, arXiv:2503.14510v1 [math.NT],
+ 8 March 2025.
+\bibitem[TK]{TK} Takkun-kohinata, \emph{IUT\_LEAN}, Lean repository,
+ \url{https://github.com/Takkun-kohinata/IUT_LEAN}, files
+ \texttt{IutLean/NumberTheory/DifferentBound.lean} and
+ \texttt{IutLean/Padic/LogShellRadius.lean}, commit \texttt{9d56c46} (15 July 2026).
 \end{thebibliography}
 
 \end{document}

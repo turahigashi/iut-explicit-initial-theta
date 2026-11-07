@@ -11,7 +11,7 @@ import re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-DOI = "10.5281/zenodo.23968299"
+DOI = "10.5281/zenodo.24039369"
 DATA = ["D211", "D109", "D2", "D3", "D18", "D15", "D2357"]
 CPP_FILES = ["common.hpp", "theater.hpp", "theater.cpp", "oracle.hpp", "oracle.cpp", "multiradial.hpp",
              "multiradial.cpp", "iv.hpp", "iv.cpp", "link.hpp", "link.cpp", "classical.hpp", "datum.hpp",

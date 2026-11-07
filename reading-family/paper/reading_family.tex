@@ -60,7 +60,7 @@
 \title{No reading avoids the height inequality:\\ 36 readings of Corollary~3.12\\ and the conservation of the
 height load}
 \author{Toshihisa Urahigashi\\\small ORCID 0009-0004-0460-6242\\\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.0.0, 5 November 2026\\\small\href{https://doi.org/10.5281/zenodo.23965952}{doi:10.5281/zenodo.23965952}}
+\date{Version 1.1.0, 8 November 2026\\\small\href{https://doi.org/10.5281/zenodo.24039368}{doi:10.5281/zenodo.24039368}}
 
 \begin{document}
 \maketitle
@@ -161,11 +161,19 @@ not depend on the reading.
 
 \subsection{Relation to earlier work}\label{ss:prior}
 \begin{itemize}
-\item \tagP\ Theorem~14.3\,(ii) of the companion note~\cite{II} shows, in a model that treats the (Ind1)-axis alone, that in
-every reading Corollary~3.12 and IV together imply the height bound (an implication). There, what (Ind2) and (Ind3) add
-to the hull is represented by one number $E$. This note extends that statement to five axes and the Kummer distortion,
-turns the implication into an identity (the sum of the loads), and adds the theorems that the split point is decided
-by (Ind1) alone, with the condition for equality, and the uniformity theorem for the family $q^N$.
+\item \tagP\ Theorem~14.3\,(ii) of the author's educational note~\cite{II} shows, in a model that treats the (Ind1)-axis
+alone, that in every reading Corollary~3.12 and IV together imply the height bound (an implication). There, what (Ind2)
+and (Ind3) add to the hull is represented by one number $E$. This note extends that statement to five axes and the
+Kummer distortion, turns the implication into an identity (the sum of the loads), and adds the theorems that the split
+point is decided by (Ind1) alone, with the condition for equality, and the uniformity theorem for the family $q^N$.
+\item \tagX\ Earlier, the public repository Takkun-kohinata/IUT\_LEAN~\cite{TK} (GitHub, 15 July 2026) proved in Lean,
+for one reading, that the containment of Step~(v) of IV, with $\lambda=\mathrm{ord}(q^{j^2})$, together with
+Corollary~3.12 gives the height inequality $(\ell(\ell+1)/12-1)\,a\le L$, with $a=|\log\qq|$ as here and $L\ge0$ its
+ledger of IV, Propositions~1.1--1.4 (\lean{thetaHull\_forces\_height}); that conversely this inequality, together with
+the condition $C_\Theta\ge-1$ of IV, Theorem~1.10, gives a model with that containment
+(\lean{thetaHullTranscription\_iff}); and that with $L=0$ the containment cannot hold (\lean{no\_lossless\_theta\_hull}),
+all in \lean{IutLean/Multiradial/ThetaHullDichotomy.lean}. In the terms of this note this is the case $x=1$, in which
+Corollary~3.12 carries no load and IV carries the whole wall.
 \item \tagX\ The repository lana-agents/iut~\cite{lana} (``lana'' below), a public Lean formalization, distinguishes
 two readings of (Ind1), the literal reading and the reading of IV, and states that the literal reading does not suffice
 for the ABC argument. It also proves that taking the hull for each (Ind1)-image separately gives the value of the
@@ -199,8 +207,15 @@ set, in the baseline reading of the table.
 \q{With \lean{C6} (proofs through the IUT package), \lean{VA} is added to each minimal hitting set.}}{\cite{lana},
 \lean{Iut/Abc/P24Table.lean}}
 \begin{itemize}
-\item \tagH\ Thus the fact that proofs through the IUT package use the wall itself is already in lana, for one reading
-(\lean{NonDerivable.lean} and VA above). What this note adds is the form over the whole family of readings. lana does
+\item \tagX\ The shape of $\Ht$ below, $k\,a\le a+C$, is that of the statement in Mochizuki's report on formalization
+that the multiradial algorithm leaves the height unaffected, up to a mild error, by multiplication by
+$N$~\cite[\S3]{Form}. The Lean port of the toolkit motizukipdf of D.~Richards~\cite{Richards} (October 2026) writes this
+as $N\cdot h\le h+C\Rightarrow h\le C/(N-1)$ (\lean{height\_bounded\_of\_dilation}) and proves, from the comparison in
+the common container taken as a hypothesis, the bound $|\log\qq|\le H/(N-1)$ with $N=\ell(\ell+1)/12$ and $H$ its
+estimate of the hull term (\lean{corThreeTwelve\_of\_thmThreeElevenFive}).
+\item \tagH\ Thus the fact that proofs through the IUT package use the wall itself is already in Takkun-kohinata/IUT\_LEAN
+and in lana, for one reading (\lean{ThetaHullDichotomy.lean}, \lean{NonDerivable.lean} and VA above). What this note adds
+is the form over the whole family of readings. lana does
 not state that in every reading the load only moves between the two statements while its total stays the same. For
 the literal reading lana states that it does not suffice, but not that the load moves to IV (checked at commit
 \texttt{553076a}, the head of the repository on 5 November 2026).
@@ -208,10 +223,17 @@ the literal reading lana states that it does not suffice, but not that the load 
 statement, blurring too little a false one) is discussed in Section~\ref{ss:types}.
 \item \tagX\ Joshi holds that the Tate parameter changes with (Ind1), (Ind2) and (Ind3)~\cite{Joshi}. This denies the
 premise of this note that the left end takes no reading (Section~\ref{ss:change}).
+\item \tagP\ The author's note~\cite{W311} uses the same family $q\to q^N$ in its models of the log-volume content of the
+results cited in the proof of Corollary~3.12 (its Theorems~14, 15 and~22).
 \item \tagN\ What we consider new, to the author's knowledge: the identity of the loads over the 36 readings and the
-Kummer distortion; the fact that the split point is decided by (Ind1) alone, with the condition for equality; the
-uniformity theorem for the family $q^N$ (a statement that holds for every $N$ carries no positive load); and the computation of
-the 36 readings on explicit data. That the wall is needed is not new (lana, above).
+Kummer distortion; the fact that the split point is decided by (Ind1) alone, the other four axes changing only the
+remainder; the uniformity theorem for the family $q^N$ (a statement that holds for every $N$ carries no positive load);
+and the computation of the 36 readings on explicit data. The condition for equality is not new in itself: lana's
+\lean{Literal.lean} states, from revision \texttt{2b2190d} (11 October 2026), that the regions of its two readings
+coincide when the $q$-orders agree at the places above each prime, and that two bad places above $p$ with different
+$q$-orders already break this; and \cite[Proposition~13.2]{II} gives the same condition for V and L0 in a model of the
+(Ind1)-axis alone. What is added here is the same condition for L, and its validity in all 36 readings. That the wall is
+needed is not new (Takkun-kohinata/IUT\_LEAN and lana, above).
 \end{itemize}
 
 \subsection{What is not claimed}
@@ -252,6 +274,11 @@ Write $M_R(D)$ for the value of $-|\log\TT|$ in a reading $R$, and put
 $\Ht(D)$ contains no reading.
 \end{definition}
 
+\tagP\ The height inequality $\Ht$ is the inequality $H/6\le F_\chi U$ of Proposition~3 of the author's fifth
+report~\cite{Fifth}, written in other variables: there $H$ is the degree of the divisor of the $q$-parameters, so that
+$a=H/(2\ell)$, and $\chi=12/(\ell(\ell+1))=1/k$, $F_\chi=1/(1-\chi)=k/(k-1)$ and $C=\frac{\ell+1}4U$ (the $U$ of that
+report is not the $U(D)$ of this note).
+
 \tagH\ We treat the upper bound $U(D)$ of IV as one number that does not depend on the reading. What the text of IV
 computes is this one number, and when the reading is changed, the question is whether that number bounds the hull in
 the reading $R$ (the statement $\IVb_R$ of Definition~\ref{d:two}). Recomputing an upper bound for each reading is
@@ -275,7 +302,8 @@ Axis & Choices & Source\\
 (Ind1): the factors on which the theta value of label $j$ may sit &
 V: the factor $j$ only; L: $1,\dots,j$ (permutations fixing $0$); L0: $0,\dots,j$ (all permutations) &
 \tagS\ V is Step~(v) of IV. \tagX\ V and L0 are lana's reading of IV and its literal reading. L is (L) of the
-catalogue~\cite{Cat}\\
+catalogue~\cite{Cat}. \tagP\ L0 also moves the label $0$: fixing $\mathcal D_0$ does not fix the label $0$ inside the
+larger capsules~\cite[\S6]{Fourth}\\
 \addlinespace
 (Ind3) &
 container: the whole tensor product $\bigotimes\I$ of log-shells as support; iteration: only units and the pure
@@ -286,7 +314,8 @@ tensors of the actual images of the same number of iterated log-links &
 units: $\Zp^\times$ and the field automorphisms; lattice: all $\Zp$-linear automorphisms preserving the log-shell of
 each factor &
 \tagX\ The lattice group is lana's \lean{tensorAut}. \tagP\ The group of IV, Proposition~1.2 gives the same
-value~\cite[\S6.2]{Gap}\\
+value~\cite[\S6.2]{Gap}. \tagP\ At a finite extension of $\Q_p$ the group Ism of IUT~III, Theorem~3.11\,(i) is
+$\Zp^\times$ (by \cite[Thm.~F, Thm.~7.4]{MT}), so (Ind2) acts by unit scalars~\cite[\S6, Proposition~9]{Fourth}\\
 \addlinespace
 Hull &
 yes: the union is replaced by its holomorphic hull; no: the union itself &
@@ -312,7 +341,7 @@ Theorem~1.10, Step~(vii)}
 \tagH\ In addition, the Kummer distortion $\delta$ (the difference of log-volumes carried by a Kummer identification
 that is not induced by units; the distortion in lana's \lean{WallOn}) is treated separately, as a continuous
 parameter; $\delta$ is added to $M_R$. Readings that do not change the value but decide whether the comparison applies
-at all, such as (M) of the catalogue~\cite{Cat}, are not counted as axes.
+at all, such as (M$_{\mathrm b}$) and (M$_{\mathrm g}$) of the catalogue~\cite{Cat}, are not counted as axes.
 
 \subsection{The component model}\label{ss:model}
 We set up the model in which the Lean proofs are carried out. Take a finite set $V$ of places above one prime $p$,
@@ -373,7 +402,8 @@ smaller than the coefficient $k-1$ of the wall by exactly the load of IV, $k-x_r
 
 \begin{theorem}[The split point is decided by (Ind1) alone]\label{t:ind1}\tagR
 \known{Known mathematics: \cite[Propositions 13.1--13.3]{II} (V and L0); for one label position per capsule, lana's
-\lean{rhsDataOn\_singleton}. Lean: \lean{thetaPart\_V},
+\lean{rhsDataOn\_singleton}; the condition for equality of lana's two readings is stated in lana's \lean{Literal.lean}
+(Section~\ref{ss:prior}). Lean: \lean{thetaPart\_V},
 \lean{thetaPart\_mono}, \lean{thetaPart\_ge}, \lean{thetaPart\_nonpos}, \lean{thetaPart\_smul},
 \lean{thetaPart\_eq\_V\_of\_const}, \lean{thetaPart\_V\_lt\_L0}, \lean{thetaPart\_V\_lt\_L}, \lean{thetaSum\_V},
 \lean{thetaSum\_ge}, \lean{thetaSum\_smul}}
@@ -429,9 +459,10 @@ and on the local fields.
 \begin{theorem}[The proof cannot be made cheaper]\label{t:cheap}\tagN
 \known{Lean: \lean{Family.no\_uniform\_reading}, \lean{Family.iv\_uniform}, \lean{Family.cor\_uniform},
 \lean{Family.tendsto\_slope}, \lean{modelFamily\_scaled}}
-Let $D^N$ be the datum with $q$ replaced by $q^N$. Assume that $a$ and the theta parts are multiplied by $N$, that $k$
-and $C$ do not change, and that the remainders lie in intervals $[\lo_R,\hi_R]$ that do not depend on $N$
-(Theorem~\ref{t:ind1}\,(iii) and Proposition~\ref{p:rest}). Then in every reading $R$:
+Let $D^N$ be the datum with $q$ replaced by $q^N$. Assume that $a$ and the theta parts are multiplied by $N$, that
+$\Theta_r\ge-k\,a$ for every $r$ (in the model this holds by Theorem~\ref{t:ind1}\,(ii)), that $k$ and $C$ do not
+change, and that the remainders lie in intervals $[\lo_R,\hi_R]$ that do not depend on $N$ (Theorem~\ref{t:ind1}\,(iii)
+and Proposition~\ref{p:rest}). Then in every reading $R$:
 \begin{enumerate}[label=(\roman*)]
 \item There is $N_0$ such that $\Cor_R(D^N)$ and $\IVb_R(D^N)$ do not hold together for $N\ge N_0$.
 \item If $\IVb_R(D^N)$ holds for every $N\ge1$, then $\Theta_r=-k\,a$ (the load of IV is $0$), and
@@ -566,8 +597,11 @@ $\ell\nmid N$). For the six data and $N=2,3,25$ we checked that $a$ and the thet
 and that $x$ and $C$ do not change. For $D_2$, $D_{211}$ and $D_{109}$ we checked $N=1,\dots,40$ (35 values, leaving out
 the multiples of $\ell$). In every reading the range of the remainder $B_R$ is at most $19.9$, $25.9$ and $22.7$
 respectively, about $3\%$ of the growth of $Na$ ($669$ to $850$). The largest range is already reached at $N=3$ and
-does not grow beyond it. For $D_{109}$ the range $22.707$ equals $\Delta(D_{109})$, the value of~\cite{Gap}: the rounding
-term of the lattice group vanishes at $N=3$.
+does not grow beyond it. For $D_{109}$ the range $22.707$ equals $\Delta(D_{109})$, the value of~\cite{Gap}: at $N=3$
+the numerators $n_u\in\{29,1\}$ of the $q$-orders, quadratic residues modulo $7$, become non-residues, so by
+\cite[Proposition~3.6]{Gap} the label average of the rounding term of the lattice group goes from $\frac13$ to
+$\frac23$ and the term doubles, from $\Delta(D_{109})$ to $2\Delta(D_{109})$ (in reading V with the container and the
+hull the remainder goes from $228.556$ to $251.262$).
 
 \begin{table}[ht]\centering\small
 \caption{For which $N$ each statement fails in the family $q^N$. The remainder $B_R$ is that of the places counted in
@@ -600,8 +634,9 @@ Corollary~3.12 and of IV in opposite directions and leaves that of $\Ht$ unchang
 \subsection{\texorpdfstring{$D_{2357}$}{D2357}}\label{ss:d2357}
 \tagP\ For $D_{2357}$ ($\ell=157$) the counted places alone leave the height inequality short by $8234$
 ($(k-1)a=24464>C=16230$). In reading V this deficit appears on the side of Corollary~3.12 (IV holds); in L and L0 it
-appears on the side of IV (Corollary~3.12 holds or is undecided, and the deficit of IV is $8362$ to $10308$). In every
-reading one of the two statements has a deficit.
+appears on the side of IV (Corollary~3.12 holds or is undecided, and the deficit of IV is $8362$ to $10308$ in the
+readings with the hull and the small archimedean container, $8376$ to $10321$ with the large ball, and at least $7775$
+without the hull, where the shell defect is only bracketed). In every reading one of the two statements has a deficit.
 
 This is conditional. The places above the unfactored cofactor of 1564 digits are not counted. In the readings with the
 hull they add nonnegative amounts to $M_R$, and they add to $U(D)$, where the estimate of Step~(ii) at $2$, $3$, $5$ and
@@ -677,7 +712,7 @@ formula for each axis and by the programs.
 
 \section{Checks and reproducibility}\label{s:checks}
 The folder \texttt{reading-family/} of the repository
-\url{https://github.com/turahigashi/iut-explicit-initial-theta} (tag \texttt{v0.17.0}), also deposited with this note,
+\url{https://github.com/turahigashi/iut-explicit-initial-theta} (tag \texttt{v0.24.0}), also deposited with this note,
 contains the Lean files, the programs and their outputs.
 \begin{itemize}
 \item \emph{Lean.} \texttt{lean/ReadingFamily.lean} (1024 lines) was checked with Lean~4.30.0 and Mathlib at tag
@@ -713,6 +748,20 @@ in the writing. The author takes full responsibility for the contents of this no
 Toshihisa Urahigashi, \emph{Explicit initial $\Theta$-data and the two readings of Step (v) of IUT IV, Theorem 1.10:
 a catalogue}, version 1.0.0, Zenodo, 2026, \href{https://doi.org/10.5281/zenodo.23870448}{doi:10.5281/zenodo.23870448}.
 
+\bibitem[Fifth]{Fifth}
+Toshihisa Urahigashi, \emph{Two constants in the numerical estimates of inter-universal {T}eichm\"uller theory {IV}:
+$12/(\ell(\ell+1))$ and $12/\ell^2$}, fifth report, version 1.0.0, Zenodo, 2026,
+\href{https://doi.org/10.5281/zenodo.22659796}{doi:10.5281/zenodo.22659796} (all versions).
+
+\bibitem[Form]{Form}
+Shinichi Mochizuki, \emph{On the formalization of IUT: a preliminary progress report} (joint work in progress with
+Y.~Hoshi, G.~Yamashita, Y.~Yang), slides, April 2026, 14 pp.
+
+\bibitem[Fourth]{Fourth}
+Toshihisa Urahigashi, \emph{Split bad primes and the tuple structure of inter-universal {T}eichm\"uller theory}, fourth
+report, version 1.0.4, Zenodo, 2026, \href{https://doi.org/10.5281/zenodo.22648944}{doi:10.5281/zenodo.22648944} (all
+versions).
+
 \bibitem[Gap]{Gap}
 Toshihisa Urahigashi, \emph{The gap between the two walls is positive: a closed form for the (Ind2)-terms of
 lana-agents/iut}, version 1.0.0, Zenodo, 2026, \href{https://doi.org/10.5281/zenodo.23954194}{doi:10.5281/zenodo.23954194}.
@@ -742,12 +791,30 @@ lana-agents, \emph{iut}: a Lean~4 formalization of inter-universal {T}eichm\"ull
 Project LANA, \emph{Project LANA interim report on IUT theory}, 20 July 2026,
 \url{https://ncatlab.org/nlab/files/LANAProject-Report-July2026.pdf}.
 
+\bibitem[MT]{MT}
+A.~Minamide and S.~Tsujimura, \emph{Anabelian geometry for {H}enselian discrete valuation fields with quasi-finite
+residues}, RIMS-1973, Research Institute for Mathematical Sciences, Kyoto University, June 2023.
+
+\bibitem[Richards]{Richards}
+David Richards, \emph{motizukipdf---{M}ochizuki's papers, plus a toolkit for the data types of {IUT}}, GitHub
+repository \url{https://github.com/oneman/motizukipdf}, consulted at commit \texttt{2665db1} (30 October 2026); Lean port
+\lean{lean/IUT/LeanForm.lean}.
+
 \bibitem[sfingali]{sfingali}
 sfingali, \emph{The {S}cholze--{S}tix objection, formally: the arithmetic is agreed, the $q$-side is absent}, Zenodo,
 2026, \href{https://doi.org/10.5281/zenodo.21757640}{doi:10.5281/zenodo.21757640}.
 
 \bibitem[SS]{SS}
 Peter Scholze and Jakob Stix, \emph{Why abc is still a conjecture}, 2018.
+
+\bibitem[TK]{TK}
+Takkun-kohinata, \emph{IUT\_LEAN}, Lean repository, \url{https://github.com/Takkun-kohinata/IUT_LEAN}, commit
+\texttt{9d56c46} (15 July 2026); file \lean{IutLean/Multiradial/ThetaHullDichotomy.lean}.
+
+\bibitem[W311]{W311}
+Toshihisa Urahigashi, \emph{Where Theorem 3.11 sits: the log-volume content of the results cited in the proof of IUT
+III, Corollary 3.12, does not imply its conclusion}, Zenodo, 2026,
+\href{https://doi.org/10.5281/zenodo.24028832}{doi:10.5281/zenodo.24028832} (all versions).
 
 \bibitem[WT]{WT}
 Toshihisa Urahigashi, \emph{A programmer's walkthrough of inter-universal {T}eichm\"uller theory: running the

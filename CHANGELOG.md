@@ -1,5 +1,33 @@
 # Draft changes
 
+## 0.1.8 — 2026-11-08
+
+Changes in 0.1.8.  Citations of earlier work are added; no statement, number or
+table is changed.
+
+- `paper/note.tex` §5 now cites the source of `Peel_{α,v}`: the peel
+  decomposition of Dupuy and Hilado, arXiv:2004.13228v1, §3.8 (28 April 2020;
+  their `Peel^i_v`), cf. arXiv:2004.13108v2, §6.3.  Earlier versions used the
+  name and the construction without citing them.  The typed component
+  transport of §5 is also compared with §4.6 of the same paper, which describes
+  a procession automorphism as a permutation of tensor factors followed by a
+  tensor product of automorphisms.  A bibliography entry [DH20] for version 1
+  of arXiv:2004.13228 is added; its §3.8 is not in version 2.
+- §3, conditions (e) and (f): the transitivity argument that builds the set of
+  places is compared with Dupuy–Hilado, arXiv:2004.13228v2, Lemma 2.9.2
+  (19 June 2025), which uses it for the multiplicative subspace.
+- §6: the Step (v) input `λ` with the container `φ(p^λ·(R_I)~)` is credited to
+  its earlier uses: Zhou, arXiv:2503.14510v1 (8 March 2025), proof of
+  Prop. 1.10 (constant tuples, `F_mod = Q`), and Takkun-kohinata/IUT_LEAN
+  (GitHub, commit 9d56c46, 15 July 2026), `REQUEST_theta_hull_derivation.md`,
+  which names that containment as the input whose derivation it asks for.  A
+  bibliography entry [TK] is added.
+- `paper/paper.tex` (companion draft, now also version 0.1.8): "as its
+  Theorem 1.1" is corrected to "as its Theorem 1"; the first report prints
+  Theorem 1.  Nothing else in it is changed.
+- Typography: one space in the display of Theorem 5 is narrowed, which removes an
+  overfull line.
+
 ## 0.1.7 — 2026-09-12
 
 **The source application of Theorems `t:cmp` and `t:fix0` is withdrawn.**

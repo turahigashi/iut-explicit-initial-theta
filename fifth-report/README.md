@@ -1,10 +1,19 @@
 # Two constants in the numerical estimates of IUT IV
 
-Version 1.0.0-draft.2, 8 September 2026. Prepared for author verification; publication has not been approved.
+Version 1.0.1, 8 November 2026. DOI of this version: [10.5281/zenodo.24039384](https://doi.org/10.5281/zenodo.24039384); all versions: [10.5281/zenodo.22659796](https://doi.org/10.5281/zenodo.22659796). Version 1.0.0 was published on Zenodo on 8 September 2026 as [10.5281/zenodo.22659797](https://doi.org/10.5281/zenodo.22659797).
 
 This fifth report compares `12/(ell*(ell+1))` and `12/ell**2`, keeping the other inputs fixed. It gives exact rational tables at levels 7 and 157. The latter is retained as a candidate level in the cited second report. The comparison does not establish applicability of either source's full inequalities, a possible-image hull, or a conclusion about IUT or the Scholze–Stix objection.
 
 The manuscript and PDF are in `paper/constant_comparison.tex` and `paper/constant_comparison.pdf`. Large language models assisted drafting, source comparison, and computations. The checks described here are internal checks.
+
+## Changes in 1.0.1
+
+- Cites earlier work and narrows the sentence on what the report adds (§3). The normalized difference 1/ℓ appears earlier in Takkun-kohinata/IUT_LEAN (GitHub, commit 9d56c46, 15 July 2026, `IutLean/Multiradial/IdentificationAudit.lean`), as the identity `C_Θ = P·X − ℓ(ℓ+1)/12 + 1/ℓ`. sfingali (Zenodo 10.5281/zenodo.21727741, 31 July 2026) computes the coefficient `s(1−12/ℓ²)`. The χ form is used in Dupuy–Hilado, arXiv:2004.13108v2, §§7.12, 8.6, and in Zhou, arXiv:2503.14510v1, Prop. 1.10. What the report adds is now stated as the comparison of the reciprocal factors `F_χ`, `F_τ` and the tables.
+- Notes in §2 that sfingali (Zenodo 10.5281/zenodo.21757640, 2 August 2026) also observes that the j²-average giving ℓ(ℓ+1)/12 appears in the computation of Scholze–Stix.
+- Notes in §4 that sfingali (31 July 2026) also records that the two terminal estimates of IUT IV hold for ℓ ≥ 7 and that the second needs d_mod ≥ 1.
+- The title page now prints the version and the DOIs. This README no longer describes the report as unpublished.
+
+The table values and the program's output are unchanged.
 
 ## Reproduce the arithmetic
 
@@ -40,7 +49,7 @@ pdflatex -interaction=nonstopmode -halt-on-error constant_comparison.tex
 pdflatex -interaction=nonstopmode -halt-on-error constant_comparison.tex
 ```
 
-The supplied PDF has seven pages. Rebuilding may change PDF metadata and byte checksums even when the visible text is unchanged. Source PDFs are not included in this bundle.
+The supplied PDF has eight pages. Rebuilding may change PDF metadata and byte checksums even when the visible text is unchanged. Source PDFs are not included in this bundle.
 
 ## Contents
 

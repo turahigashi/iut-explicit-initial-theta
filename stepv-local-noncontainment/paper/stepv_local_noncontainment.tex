@@ -46,7 +46,8 @@
 \title{A local non-containment in Step~(v) of IUT~IV, Theorem~1.10}
 \author{Toshihisa Urahigashi}
 \email{123026.urahigashi.toshihisa@gmail.com}
-\date{Draft, 5 October 2026; revised 28 October 2026 and 1 November 2026}
+\date{Version 3.1.0, 8 November 2026; \href{https://doi.org/10.5281/zenodo.24039373}{doi:10.5281/zenodo.24039373}. Earlier versions:
+  1.0.0, 6~October 2026; 2.0.0, 29~October 2026; 3.0.0, 1~November 2026}
 
 \begin{abstract}
 Step~(v) of the proof of Theorem~1.10 in the fourth paper of Mochizuki's series on inter-universal
@@ -138,6 +139,14 @@ latter is
 \mulog(M_{\bv})\le(-\lambda+\dd_I+1)\cdot\log p
 \end{equation}
 \cite[Prop.~1.4(iii)]{IUT4}. This is the bound that we test.
+
+That the union of possible images lies in this container, with $\lambda=\operatorname{ord}(\qq_{v_j}^{\,j^2})$,
+was singled out earlier in the public Lean repository Takkun-kohinata/IUT\_LEAN \cite{Takkun} (15~July 2026), as
+the one input of the chain from Theorem~3.11 to the height inequality that its formalization could not confirm; it
+asks where the source derives this input. Its route is different: it argues from Lean theorems that the
+mechanisms cited at that point preserve log-volume, and it uses neither label permutations nor explicit data.
+Earlier versions of this note did not cite it. The present note tests the same containment on an explicit datum,
+through the label permutations of (Ind1).
 
 \begin{lemma}\label{l:object}
 The union of possible images whose holomorphic hull Step~(v) estimates is $U_j$, and its component at the
@@ -468,6 +477,9 @@ Thus, under \textup{(M)} and \textup{(R)}, the projected possible-image union an
 Dupuy--Hilado \cite[\S6.2, footnote~7]{DH} note that their simplified example for
 estimating the hull in \S6.2 of their paper does not include the permutations between tensor factors
 present in the actual (Ind1), so the computation in that subsection cannot be applied directly.
+The proof of Theorem~\ref{t:main} uses that the holomorphic hull of \cite[Rem.~3.9.5(i)]{IUT3} scales each direct
+summand of the packet independently; Zeng \cite{Zeng} (first version 29~October 2026) computes the index by which
+this enlarges the image of the integral structure of the tensor product.
 
 The example above concerns the local containment and the local upper bound used in Step~(v) for a single
 component. It does not by itself decide the global
@@ -550,7 +562,9 @@ Under \textup{(M)} and \textup{(R)}, Theorem~\ref{t:main} shows that for $D_2$ a
 absorbed by the allowance $\dd_I+1$ in the bound~\eqref{eq:bound}: the hull component exceeds that bound by at
 least $\tfrac{27}{35}\log p$. The second column also contains primes with both
 good and bad places above them, which \cite{LANAiut} notes arise from the Belyi reduction in the argument from
-Theorem~1.10 to the abc conjecture; Lemma~\ref{l:member} concerns bad places only, and this note does not treat that case. We do
+Theorem~1.10 to the abc conjecture; Lemma~\ref{l:member} concerns bad places only, and this note does not treat that case.
+That case is treated, under a membership reading (M$_{\mathrm g}$) at good places, in \cite[Prop.~1 (GB),
+Thm.~3]{Cat}, and in models in \cite[Prop.~13.3, Thm.~14.3(iv)]{II} and \cite[Ex.~3.7]{RF}. We do
 not decide which reading the source intends. Under the reading with the theta value at the label $j$, the
 example has no bearing on Step~(v).
 
@@ -560,8 +574,17 @@ Version~1.0.0 of this note, with the datum $D_2$ and Theorem~\ref{t:main}, was p
 \cite{NoteV1}. The file \texttt{Iut/Concrete/Literal.lean} was added to \cite{LANAiut} on 11~October 2026
 (UTC; commit \texttt{e22fdf9}); the statements summarized above are in its revision of the same day (commit
 \texttt{2b2190d}), and \texttt{Ind1Invariance.lean} was added in commit \texttt{08c7e5d}, also on 11~October
-2026 (UTC). Version~2.0.0 of this note (29~October 2026) stated the readings \textup{(M)} and \textup{(R)}
-but did not cite \cite{LANAiut}; the present version adds the comparison.
+2026 (UTC). Version~1.0.0 was audited publicly in the repository \cite{Lumi}, whose first commits are dated
+20~October 2026 (UTC). The audit computed the exponent $107/35$ of the module $M_{\bv}$ of
+Theorem~\ref{t:main}; it listed, as conditions still to be proved, the membership used in
+Lemma~\ref{l:member} and the closure of $U_j$ under (Ind1) followed by (Ind2) used in
+Lemma~\ref{l:transport}; and it pointed to \cite[Rem.~3.11.4(i)]{IUT3}, where the log-Kummer correspondence
+uses orbits under roots of unity rather than chosen elements. Version~2.0.0 of this note (29~October 2026) added
+the exact module $M_{\bv}=p^{107/35}\RIt$, the readings \textup{(M)} and \textup{(R)}, and the paragraph on the
+choice of theta representative, which cites that remark; the audit had raised these points before. Version~2.0.0
+cited neither the audit nor \cite{LANAiut}. Version~3.0.0 (1~November 2026) added the comparison with
+\cite{LANAiut} in this section. Version~3.1.0 cites \cite{Takkun} in \S\ref{s:source}, \cite{Lumi} and
+\cite{Zeng}, and adds the pointer to the case of good and bad places above one prime.
 
 \subsection*{Use of AI tools}
 Generative AI tools (large language models: \mbox{Claude} by \mbox{Anthropic}, and \mbox{ChatGPT} and \mbox{Codex} by \mbox{OpenAI}) were used
@@ -582,6 +605,12 @@ the contents of this note.
 Shinichi Mochizuki, \emph{The absolute anabelian geometry of canonical curves},
   Doc. Math. \textbf{Extra Vol.} (2003), 609--640.
 
+\bibitem[Cat]{Cat}
+Toshihisa Urahigashi, \emph{Explicit initial $\Theta$-data and the two readings of Step~(v) of {IUT}~{IV},
+  Theorem~1.10: a catalogue}, Zenodo, 2026,
+  \href{https://doi.org/10.5281/zenodo.23870447}{doi:10.5281/zenodo.23870447} (all versions); numbering as in
+  version~1.1.0.
+
 \bibitem[DH]{DH}
 Taylor Dupuy and Anton Hilado, \emph{Probabilistic {S}zpiro, baby {S}zpiro, and
   explicit {S}zpiro from {M}ochizuki's {C}orollary 3.12}, 2020,
@@ -599,6 +628,12 @@ Yuichiro Hoshi, \emph{Introduction to inter-universal {T}eichm\"uller theory, co
   The cited author's version is available at
   \href{https://www.kurims.kyoto-u.ac.jp/~yuichiro/introduction_to_inter-universal_teichmuller_theory_continued.pdf}{the author's RIMS webpage};
   its p.~93 contains the concluding paragraph of \S25.
+
+\bibitem[II]{II}
+Toshihisa Urahigashi, \emph{Reading the {IUT} dispute through indexed identifications: an educational model in
+  undergraduate mathematics}, Zenodo, 2026,
+  \href{https://doi.org/10.5281/zenodo.23931345}{doi:10.5281/zenodo.23931345} (all versions); numbering as in
+  version~2.2.0.
 
 \bibitem[EtTh]{EtTh}
 Shinichi Mochizuki, \emph{The \'etale theta function and its
@@ -627,6 +662,12 @@ lana-agents, \emph{iut: inter-universal {T}eichm\"uller theory, the ABC/IUT trun
   \texttt{Iut/Concrete/Literal.lean} and \texttt{Iut/Concrete/Ind1Invariance.lean};
   consulted at commit \texttt{c800fb8} (1 November 2026).
 
+\bibitem[Lumi]{Lumi}
+Luminescence10086, \emph{Inter-universal-Teichmuller-Theory}, GitHub repository (in Chinese),
+  \url{https://github.com/Luminescence10086/Inter-universal-Teichmuller-Theory}, files
+  \texttt{research/round2-source-audit.md} and \texttt{research/round5-joint-realization.md};
+  consulted at commit \texttt{23c9ecf} (20 October 2026).
+
 \bibitem[MFHMP]{MFHMP}
 Shinichi Mochizuki, Ivan Fesenko, Yuichiro Hoshi, Arata Minamide, and Wojciech
   Porowski, \emph{Explicit estimates in inter-universal {T}eichm\"uller
@@ -638,9 +679,24 @@ Toshihisa Urahigashi, \emph{A local non-containment in Step~(v) of {IUT}~{IV}, T
   version 1.0.0, Zenodo, 6 October 2026,
   \href{https://doi.org/10.5281/zenodo.23166433}{doi:10.5281/zenodo.23166433}.
 
+\bibitem[RF]{RF}
+Toshihisa Urahigashi, \emph{No reading avoids the height inequality: 36 readings of {C}orollary~3.12 and the
+  conservation of the height load}, Zenodo, 2026,
+  \href{https://doi.org/10.5281/zenodo.23965951}{doi:10.5281/zenodo.23965951} (all versions); numbering as in
+  version~1.0.0.
+
 \bibitem[Sil]{Sil}
 Joseph~H. Silverman, \emph{The arithmetic of elliptic curves}, second ed.,
   Graduate Texts in Mathematics, vol. 106, Springer, Dordrecht, 2009.
+
+\bibitem[Takkun]{Takkun}
+Takkun-kohinata, \emph{IUT\_LEAN}, Lean repository, \url{https://github.com/Takkun-kohinata/IUT_LEAN}, file
+  \texttt{REQUEST\_theta\_hull\_derivation.md}; commit \texttt{9d56c46} (15 July 2026, UTC).
+
+\bibitem[Zeng]{Zeng}
+Chunping Zeng, \emph{An integral-structure inflation in the hull operation of {IUT} {C}orollary 3.12}, Zenodo,
+  first version 29 October 2026,
+  \href{https://doi.org/10.5281/zenodo.23754276}{doi:10.5281/zenodo.23754276} (all versions).
 
 \end{thebibliography}
 

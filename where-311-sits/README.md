@@ -1,6 +1,6 @@
 # Where Theorem 3.11 sits: the log-volume content of the results cited in the proof of IUT III, Corollary 3.12, does not imply its conclusion
 
-Version 1.0.1, 7 November 2026 (23 pages). DOI [10.5281/zenodo.24030772](https://doi.org/10.5281/zenodo.24030772);
+Version 1.1.0, 8 November 2026 (24 pages). DOI [10.5281/zenodo.24039357](https://doi.org/10.5281/zenodo.24039357);
 all versions: [10.5281/zenodo.24028832](https://doi.org/10.5281/zenodo.24028832).
 
 The inequality of Corollary 3.12 of IUT III is obtained in Step (xi) of its proof, where the author states that he
@@ -15,14 +15,31 @@ axioms.
 
 A Venn diagram (Figure 1) displays the position: the models of the cited theory lie inside the class of weak (SHE)
 and not inside that of the conclusion, and among them the conclusion holds exactly where strong (SHE) holds. The
-statement "3.11.5" that Mochizuki isolates in his report on formalization corresponds to that intersection. For the
-same passage, the public repository [lana-agents/iut](https://github.com/lana-agents/iut) of Project LANA proves in
-Lean non-derivability from a package collecting what it proves at the level of Theorem 3.11; the results here were
-obtained independently of it, and it was made public first.
+statement "3.11.5" that Mochizuki isolates in his report on formalization corresponds to that intersection. Results of
+the same shape were proved earlier: for abstractions of the passage by Higuchi and Pajo, and in Lean by
+Takkun-kohinata/IUT_LEAN (July 2026) and by [lana-agents/iut](https://github.com/lana-agents/iut) of Project LANA
+(October 2026), which proves non-derivability from a package of what it proves at the level of Theorem 3.11 and
+separates two readings of (SHE); Saito (July 2026) audits the passage against a registered inventory of the source,
+and sfingali (August 2026) formalizes the core of the Scholze–Stix objection. The results here were obtained
+independently of these Lean works, which were made public first. What this note adds is that the axioms are the
+results that the proof actually cites, at the strength of the source, and that the models are built on actual local
+objects.
 
 **We do not claim that Corollary 3.12 is false, nor anything about abc.** The result concerns what follows from the
 statements that the proof cites, including what Theorem 3.11 states about the output of its algorithm; whether the
 construction of the algorithm itself supplies the missing membership is not decided here.
+
+## Changes in 1.1.0
+
+Cites earlier work that versions 1.0.0 and 1.0.1 did not: Takkun-kohinata/IUT_LEAN (July 2026), Saito (July 2026),
+sfingali (August 2026), Geiger (August 2026), Zeng (October 2026), and the files `Iut/Wall/Constraints.lean` and
+`Iut/Wall/EtaAlg.lean` of lana-agents/iut (October 2026), whose readings (C2) and (C3) of (SHE) correspond to the weak
+reading and to (9-1) here. Corrects a date: versions 1.0.x said that the author learned of the non-derivability file
+of lana-agents/iut on 4 November 2026; the author's records show that it was known by 1 November 2026. The text and
+the Lean sources of the results were completed in September 2026. Describes the Lean port of D. Richards more fully,
+and adds cross-references to the author's other notes (Two computations, Segment or loop?, Indexed identifications,
+No reading avoids the height inequality, Bridge and size, the fourth and fifth reports) and a key to the notation
+used for the degree scale across them. The Lean sources are unchanged.
 
 ## Changes in 1.0.1
 

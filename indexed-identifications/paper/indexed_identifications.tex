@@ -58,7 +58,7 @@
 
 \title{Reading the IUT dispute through indexed identifications:\\ an educational model in undergraduate mathematics}
 \author{Toshihisa Urahigashi\\\small ORCID 0009-0004-0460-6242\\\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 2.2.0, 6 November 2026\\\small\href{https://doi.org/10.5281/zenodo.23991546}{doi:10.5281/zenodo.23991546}}
+\date{Version 2.3.0, 8 November 2026\\\small\href{https://doi.org/10.5281/zenodo.24039367}{doi:10.5281/zenodo.24039367}}
 
 \begin{document}
 \maketitle
@@ -90,7 +90,9 @@ Corollary~3.12 itself. Which reading the source intends is not decided. A compan
 homotopy type theory; the quantitative core of Part~II is checked in Lean. A general notation of a related kind for
 comparison problems in arithmetic geometry, in which a transport between labelled presentations carries a cost that
 bounds the change of a height, was given earlier by Laniewski~\cite{La}, without reference to IUT; no priority is
-claimed for it. That the inequality $(k-1)Q\le E$ of Part~I is equivalent, in models, to Step~(xi) was proved earlier
+claimed for it. Labelled copies of the real line with named transports~\cite{Go}, and the options of
+Scholze--Stix~\cite{TK,Sf}, were formalized earlier in Lean by others (\S\ref{ss:earlier}). That the inequality
+$(k-1)Q\le E$ of Part~I is equivalent, in models, to Step~(xi) was proved earlier
 in the Lean formalization lana-agents/iut~\cite{LANAiut}.
 \end{abstract}
 
@@ -179,30 +181,45 @@ their log-volumes. The regions themselves, the differents, the archimedean place
 modelled.
 \end{itemize}
 
-\subsection{Relation to earlier explanations}
-Elementary explanations of the dispute have been given by the parties themselves. Mochizuki gave the analogy of the
+\subsection{Relation to earlier explanations}\label{ss:earlier}
+The parties themselves have given elementary explanations of the dispute. Mochizuki gave the analogy of the
 coordinate charts of a manifold~\cite[(LbEx5)]{R18}, the example of the logarithm in high-school
 mathematics~\cite[\S3.11~(ii)]{Alien}, and an elementary numerical model with real numbers $A,B,\epsilon$
 \cite[Example~3.11.4]{Alien}. Scholze and Stix stated their objection with copies of ordered one-dimensional real vector
-spaces and a diagram of their identifications~\cite[\S2.2]{SS}. Nothing in the mathematics of this note is new; every
-proposition is at the level of an undergraduate exercise. What the note adds is to declare the rules of identification
-first and to put the explanations of both sides into the same notation.
+spaces and a diagram of their identifications~\cite[\S2.2]{SS}.
+
+Elementary formal models of the same identification problem were also given earlier by others, in Lean.
+Gogopex/iut-lean~\cite{Go} (GitHub, repository created on 29 May 2026) defines, for the identification problem around
+Corollary~3.12, labelled copies of the real line with positive-scale transports between them, so as \q{to make it
+impossible to silently identify two copies of \texttt{Real} without naming the transport that performs the
+identification}. Takkun-kohinata/IUT\_LEAN~\cite{TK} (GitHub, 15 July 2026) proves that a hull no larger than the
+$\Theta$-pilot leads to a contradiction (theorem \texttt{strict\_collapse}), which it describes as a formalization of
+the collapse argument of Scholze--Stix and, at the same time, as a formal ground for Mochizuki's objection to
+identifying the copies; keeping the two sides of the $\Theta$-link as two types with their own normalizations of
+log-volume, it also proves that identifying them makes the inequality of Corollary~3.12 hold without arithmetic input
+(theorem \texttt{relabeling\_vacuous}). sfingali~\cite{Sf} (Zenodo, 2 August 2026) puts the three statements of
+Scholze--Stix on diagrams of ordered real lines in Lean: the monodromy $j^2$, the empty inequality when $j^2$ is
+omitted, and a blurring factor of at least $\ell(\ell+1)/12$. Nothing in the mathematics of this note is new; every
+proposition is at the level of an undergraduate exercise. What the note adds is a set of four rules for indexed
+identifications, declared at the outset, and the explanations of both sides written in that notation on the one
+inequality $(k-1)Q\le E$.
 
 A general notation of a related kind exists for comparison problems in arithmetic geometry. In Laniewski~\cite{La} the
 passage between labelled presentations of an arithmetic object is a transport carrying a cost, and a height changes
 along a transport by at most its cost, an inequality of the same shape as $a\le_E b$ in
 Section~\ref{s:indexed}; a comparison read through identifications that are transparent to the labels collapses there
 to the harmless form $H\le H+\Delta$. That paper does not discuss IUT; the author learned of it after version 2.0.0 of
-this note was posted. No priority is claimed for indexing identifications or for weakening comparisons by a cost; what
-this note adds is the use of such a notation for the explanations of the two sides of the dispute over
-Corollary~3.12.
+this note was posted. No priority is claimed for indexing identifications, for weakening comparisons by a cost, or for
+labelled copies of the real line with named transports~\cite{Go}.
 
 The companion paper~\cite{Ur} states the same model in homotopy type theory, checks its quantitative core in Lean, and
 discusses the relation with presented reals and Booij's locators. This note is its educational entry point; many of its
 propositions are translations of propositions of~\cite{Ur} into undergraduate language, and the correspondence is
 recorded at each place. The correspondence between the diagrammatic language of Project LANA (the commutativity of
 diagrams and the compatibility (9-1)), the notation of this note and the identity types of homotopy type theory is given
-in~\cite[\S6.4]{Ur}.
+in~\cite[\S6.4]{Ur}. An earlier reading of the dispute in homotopy type theory, in which the $\Theta$-link is a path in
+the type of prime-strips that does not lift to the full ring structures, is due to Whaley~\cite{Wh} (Zenodo,
+15 October 2026).
 
 Part~II follows the public Lean formalization~\cite{LANAiut}, which states two readings of the union in
 Corollary~3.12---the theta value at any label of $\mathbb{S}^\pm_{j+1}$, or at the label $j$ as in IUT~IV---and
@@ -213,11 +230,25 @@ stated there, the union in the literal reading is not contained in the module us
 in~\cite{Note}. In the setting of Part~I, the inequality of Proposition~\ref{p:cor} is
 stated in~\cite{TK} as the condition for the containment used in Step~(v) of IUT~IV. In the same setting,
 \cite{LANAiut} proves in Lean, in models, that Step~(xi) is equivalent to an inequality of this shape, $(s-1)\,a\le V$
-with $s=\frac{1}{l^\ast}\sum_{j=1}^{l^\ast}j^2=k$ (file \texttt{Iut/WallEquiv/NonDerivable.lean}, theorem
-\texttt{xi\_iff}, and file \texttt{Iut/WallEquiv/Basic.lean}, theorem \texttt{xi\_iff\_ss\_model}, both added on
-13 October 2026), and that Step~(xi) is neither proved nor refuted by the fields of a package recording what is proved
-at the level of Theorem~3.11 (theorem \texttt{nonDerivability}). What Part~II adds is the
+(file \texttt{Iut/WallEquiv/NonDerivable.lean}, theorem \texttt{xi\_iff}, and file \texttt{Iut/WallEquiv/Basic.lean},
+theorem \texttt{xi\_iff\_ss\_model}, both added on 13 October 2026). There
+$s=\frac{1}{l^\ast}\sum_{j=1}^{l^\ast}j^2=l(l+1)/12$ is our $k$, $a=|\log(\qq)|$ is our $Q$ (not our $a=-Q$), and $V$
+is the log-volume of the holomorphic hull of the container $\mathit{VC}(I)$, which corresponds to our $E$ (it is not the set of
+places of Setup~\ref{setup2}). It also proves that Step~(xi) is neither proved nor refuted by the fields of a package
+recording what is proved at the level of Theorem~3.11 (theorem \texttt{nonDerivability}). Version 1.0.0 of this note
+cited no file of~\cite{LANAiut}, and versions 1.0.0--2.1.0 did not cite the two files of \texttt{Iut/WallEquiv/},
+which are cited from version 2.2.0. Versions up to 2.2.0 did not cite~\cite{Go}, \cite{Sf}, \cite{Wh}, \cite{Hi},
+\cite{Pajo}, \cite{Form} or~\cite{Ri}, nor the Lean files of~\cite{TK}. What Part~II adds is the
 undergraduate formulation, the size of the difference between the two readings, and Theorem~\ref{t:two}.
+
+Later notes of the author take up the same inequality. \cite{RF} compares 36 readings of Corollary~3.12; its
+Theorem~3.2 extends Theorem~\ref{t:two}\,(ii) here to five axes of readings. \cite{Gap} determines in closed form the
+(Ind2)-terms of~\cite{LANAiut}, which relate to the part of $E$ that Setup~\ref{setup2}\,(f) leaves as one number.
+\cite{W311} takes the log-volume content of the results cited in the proof of Corollary~3.12 as axioms, and gives
+models of them, one built from the actual local objects at a finite extension of $\mathbb{Q}_p$, in which the
+conclusion fails; its Proposition~26\,(b),\,(c), where the degree scale is $s=1$, corresponds to
+Proposition~\ref{p:three}\,(b) here. The number $k$ of this note is the $1/m$ of~\cite{Ur}, the $1/s$
+of~\cite{W311}, the $k$ of~\cite{RF,TC,BS}, and the $s$ of~\cite{LANAiut}.
 
 \subsection{Labels}
 The labels in the text mean the following.
@@ -320,7 +351,8 @@ chosen; changing the unit multiplies values by a positive real number. In this n
 with a chosen unit, that is, labelled copies of $\R$.
 
 \begin{definition}[Identifications]\label{d:ident}\tagR
-\known{\cite[Prop.~2.4\,(ii)]{Ur}, \cite[\S2.1.4]{SS}}
+\known{\cite[Prop.~2.4\,(ii)]{Ur}, \cite[\S2.1.4]{SS}; in Lean, labelled copies of the real line with positive-scale
+transports, \cite{Go}}
 An \emph{identification} from the container $\R_\alpha$ to $\R_\beta$ is a map $f(x)=\lambda x$ given by multiplication
 by a positive number $\lambda$; we call $\lambda=\lambda_f$ the \emph{scale} of $f$. For $x\in\R_\alpha$ and
 $y\in\R_\beta$ with $y=f(x)$ we write
@@ -696,6 +728,9 @@ What is disputed is whether Theorem~3.11 of IUT~III (the multiradial algorithm) 
 independently of the conclusion. Mochizuki says that it does; Scholze--Stix say that the blurring must be by a factor of at
 least $O(l^2)$, which renders the inequality thus obtained useless. The model is consistent with both: one can build
 models with $E\ge(k-1)Q$ and models with $E<(k-1)Q$. Which holds for the actual construction is outside the model.
+Formal countermodels of a related kind, in which the qualitative data hold and the numerical inequality fails, were
+given earlier by Higuchi~\cite{Hi} (31 March 2026), for a package of qualitative properties, and by
+Pajo~\cite{Pajo} (26 April 2026), for a comparison in a common container.
 \end{remark}
 \companion{\cite[Thms.~5.3 and 5.7]{Ur}}
 
@@ -719,7 +754,8 @@ Since $-|\log q|=a=\ell(b)$, the inequality reads $\ell(b)\le c(b)+E$; now apply
 \end{proof}
 
 \begin{corollary}\label{c:height}\tagP\tagR
-\known{\cite[Introduction]{Alien}, \cite[Thm.~1.10]{IUT4}}
+\known{\cite[Introduction]{Alien}, \cite[Thm.~1.10]{IUT4}, \cite[\S3]{Form} (the $N$-th power map); in Lean,
+\cite{Ri} (\texttt{height\_bounded\_of\_dilation}, the toy form $Nh\le h+C\Rightarrow h\le C/(N-1)$, with $N=k$)}
 If IV bounds the error from above by $E\le C$, with $C$ independent of $Q$, then Corollary~3.12 implies $Q\le C/(k-1)$.
 \end{corollary}
 \begin{proof}
@@ -1348,14 +1384,38 @@ Shinichi Mochizuki, \emph{The mathematics of mutually alien copies: from {G}auss
 {T}eichm\"uller theory}, in: Inter-universal Teichm\"uller Theory Summit 2016, RIMS K\^oky\^uroku Bessatsu \textbf{B84}
 (2021), 23--192.
 
+\bibitem[BS]{BS}
+Toshihisa Urahigashi, \emph{Bridge and size: the {K}odaira--{S}pencer morphism, arithmetic derivatives and {S}tep~(xi)
+of {IUT} as lax 2-cells}, Zenodo, 6 November 2026,
+\href{https://doi.org/10.5281/zenodo.23984200}{doi:10.5281/zenodo.23984200} (all versions).
+
 \bibitem[DH]{DH}
 Taylor Dupuy and Anton Hilado, \emph{Probabilistic {S}zpiro, baby {S}zpiro, and explicit {S}zpiro from {M}ochizuki's
-{C}orollary 3.12}, arXiv:2004.13108v2 [math.NT], 2020.
+{C}orollary 3.12}, arXiv:2004.13108v2 [math.NT], 2020; the section cited is that of version~2.
 
 \bibitem[Ess]{Ess}
 Shinichi Mochizuki, \emph{On the essential logical structure of inter-universal {T}eichm\"uller theory in terms of
 logical {AND} ``$\wedge$''/logical {OR} ``$\vee$'' relations: report on the occasion of the publication of the four main
 papers on inter-universal {T}eichm\"uller theory}, RIMS Preprint 1968, November 2022; version of March 2024.
+
+\bibitem[Form]{Form}
+Shinichi Mochizuki, \emph{On the formalization of {IUT}: a preliminary progress report [joint work in progress with
+{Y.~Hoshi}, {G.~Yamashita}, {Y.~Yang}, \dots]}, April 2026.
+
+\bibitem[Gap]{Gap}
+Toshihisa Urahigashi, \emph{The gap between the two walls is positive: a closed form for the (Ind2)-terms of
+lana-agents/iut}, Zenodo, 5 November 2026,
+\href{https://doi.org/10.5281/zenodo.23954193}{doi:10.5281/zenodo.23954193} (all versions).
+
+\bibitem[Go]{Go}
+Gogopex, \emph{iut-lean}, Lean repository, \url{https://github.com/Gogopex/iut-lean}, file
+\texttt{Iut/Foundations/RealLineCopy.lean} (in the first commit, \texttt{dc2cfd6}, dated 27 May 2026); repository
+created on 29 May 2026, consulted at commit \texttt{7dc5aeb} (2 June 2026).
+
+\bibitem[Hi]{Hi}
+Joaquim Reizi Higuchi, \emph{A formal negative result for the passage from {S}tep (xi-e) to {S}tep (xi-f) in {IUT}
+{III}}, preprint, 31 March 2026,
+\href{https://doi.org/10.13140/RG.2.2.10989.76006}{doi:10.13140/RG.2.2.10989.76006}.
 
 \bibitem[IUT3]{IUT3}
 Shinichi Mochizuki, \emph{Inter-universal {T}eichm\"uller theory {III}: canonical splittings of the log-theta-lattice},
@@ -1390,16 +1450,42 @@ on Computer Science Logic (CSL 2026), LIPIcs \textbf{363} (2026), 21:1--21:20,
 Toshihisa Urahigashi, \emph{A local non-containment in Step~(v) of {IUT}~{IV}, Theorem~1.10}, version 3.0.0, Zenodo,
 1 November 2026, \href{https://doi.org/10.5281/zenodo.23852752}{doi:10.5281/zenodo.23852752}.
 
+\bibitem[Pajo]{Pajo}
+Paul Pajo, \emph{Scale-free common-container comparisons do not entail numerical inequalities: a minimum-viable no-go
+theorem motivated by the {IUT}~{III} {T}heorem 3.11-to-{C}orollary 3.12 bridge}, preliminary research note,
+26 April 2026, \href{https://doi.org/10.13140/RG.2.2.33620.16005}{doi:10.13140/RG.2.2.33620.16005}.
+
 \bibitem[R18]{R18}
 Shinichi Mochizuki, \emph{Report on discussions, held during the period March 15--20, 2018, concerning inter-universal
 {T}eichm\"uller theory ({IUTch})}, February 2019.
 
+\bibitem[RF]{RF}
+Toshihisa Urahigashi, \emph{No reading avoids the height inequality: 36 readings of {C}orollary 3.12 and the
+conservation of the height load}, Zenodo, 5 November 2026,
+\href{https://doi.org/10.5281/zenodo.23965951}{doi:10.5281/zenodo.23965951} (all versions).
+
+\bibitem[Ri]{Ri}
+David Richards, \emph{motizukipdf---{M}ochizuki's papers, plus a toolkit for the data types of {IUT}}, GitHub
+repository \url{https://github.com/oneman/motizukipdf}, file \texttt{lean/IUT/LeanForm.lean}, consulted at commit
+\texttt{2665db1} (30 October 2026); the theorem \texttt{height\_bounded\_of\_dilation} was added on 28 October 2026
+(commit \texttt{243e1d8}).
+
+\bibitem[Sf]{Sf}
+sfingali, \emph{The {S}cholze--{S}tix objection, formally: the arithmetic is agreed, the $q$-side is absent}, Zenodo,
+2 August 2026, \href{https://doi.org/10.5281/zenodo.21757640}{doi:10.5281/zenodo.21757640}.
+
 \bibitem[SS]{SS}
 Peter Scholze and Jakob Stix, \emph{Why abc is still a conjecture}, manuscript, 2018.
 
+\bibitem[TC]{TC}
+Toshihisa Urahigashi, \emph{Two computations of the height inequality and the multiradial algorithm: reading {IUT}
+from the viewpoint of computer science}, Zenodo, 5 November 2026,
+\href{https://doi.org/10.5281/zenodo.23968298}{doi:10.5281/zenodo.23968298} (all versions).
+
 \bibitem[TK]{TK}
-Takkun-kohinata, \emph{IUT\_LEAN}, Lean repository, \url{https://github.com/Takkun-kohinata/IUT_LEAN}, file
-\texttt{REQUEST\_theta\_hull\_derivation.md}, commit \texttt{9d56c46} (15 July 2026).
+Takkun-kohinata, \emph{IUT\_LEAN}, Lean repository, \url{https://github.com/Takkun-kohinata/IUT_LEAN}, files
+\texttt{REQUEST\_theta\_hull\_derivation.md}, \texttt{IutLean/Multiradial/DisputedCore.lean} and
+\texttt{IutLean/Multiradial/TwoSidedLink.lean}, commit \texttt{9d56c46} (15 July 2026).
 
 \bibitem[U]{U}
 Toshihisa Urahigashi, \emph{A choice-free {L}ean formalization of {B}ishop--{C}heng dominated convergence over presented
@@ -1409,6 +1495,17 @@ reals}, manuscript, version 0.7.8, 5 September 2026, file \texttt{paper/paper.pd
 
 \bibitem[Ur]{Ur}
 Toshihisa Urahigashi, \emph{Segment or loop? A homotopy-type-theoretic overview of the dispute over {C}orollary 3.12 of
-inter-universal {T}eichm\"uller theory}, version 1.3.0, Zenodo, 6 November 2026, \href{https://doi.org/10.5281/zenodo.23991545}{doi:10.5281/zenodo.23991545}.
+inter-universal {T}eichm\"uller theory}, version 1.4.0, Zenodo, 8 November 2026,
+\href{https://doi.org/10.5281/zenodo.23931343}{doi:10.5281/zenodo.23931343} (all versions).
+
+\bibitem[W311]{W311}
+Toshihisa Urahigashi, \emph{Where {T}heorem 3.11 sits: the log-volume content of the results cited in the proof of
+{IUT}~{III}, {C}orollary 3.12, does not imply its conclusion}, Zenodo, 7 November 2026,
+\href{https://doi.org/10.5281/zenodo.24028832}{doi:10.5281/zenodo.24028832} (all versions).
+
+\bibitem[Wh]{Wh}
+Joseph Whaley Jr, \emph{The {T}heta-link as a path in homotopy type theory: a type-theoretic analysis of
+inter-universal {T}eichm\"uller theory}, Zenodo, 15 October 2026,
+\href{https://doi.org/10.5281/zenodo.23403323}{doi:10.5281/zenodo.23403323}.
 \end{thebibliography}
 \end{document}

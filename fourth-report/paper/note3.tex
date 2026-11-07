@@ -32,7 +32,7 @@ inter-universal Teichm\"uller theory\\
 \large A fourth report: what the source states, and what follows}
 \author{Toshihisa Urahigashi\\
 \small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.0.4 --- 12 September 2026\\[3pt]
+\date{Version 1.0.5 --- 8 November 2026\\[3pt]
 \small ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}\\[3pt]
 \small DOI \href{https://doi.org/10.5281/zenodo.22648944}{10.5281/zenodo.22648944} (all versions)}
 
@@ -132,6 +132,7 @@ Each assertion now follows by choosing the values of a function $t:A\to\VV_p$.
 No reduction hypothesis is needed for nonconstancy.
 \end{proof}
 
+The same dichotomy is stated in \cite[Prop.~2, Cor.~3]{First}.
 Thus the mechanism involving mixed place tuples is absent when
 $\Fmod=\mathbb Q$.  Over a quadratic field a nonsplit rational prime has a
 single place, while a split prime has two; the split case can still have two
@@ -159,6 +160,8 @@ It therefore prohibits leaving an actual-bad place outside $2\ell$ unselected.
 These two inclusions give the equality.  The distinction between the freedom
 in the definition and the hypotheses for applying the theorem is essential.
 \end{proof}
+
+\cite[Question~1, Remark~3]{First} make the same point.
 
 \begin{proposition}[a family with no odd nonsplit bad place; \textup{[P]}]
 \label{p:allsplit}
@@ -324,7 +327,8 @@ fixing label $0$.  The corresponding values are
 \end{aligned}
 \]
 This checks a conditional use of an upper expression; it does not refute
-Proposition 1.4 for the inputs covered by its hypotheses.
+Proposition 1.4 for the inputs covered by its hypotheses.  The same margin, with the
+values $8/7$ and $88/7$ for this datum, is computed in \cite[\S6, Theorems~5 and~6]{First}.
 
 \subsection*{Which permutations matter}
 
@@ -650,7 +654,11 @@ needed: the argument above uses only that $g_t$ is an isometry.
 $\lambda\mathcal O$ containers; in the other branch, it follows from the definition
 of the hull.}  It concerns $\Ind2$ alone: it does not extend to
 $\Ind1$, $\Ind3$, the input fibre or the $q$-comparison, and it does not say that an
-arbitrary automorphism of $G_K$ acts as a ring isomorphism.
+arbitrary automorphism of $G_K$ acts as a ring isomorphism.  \textup{[S]} That $\Ind1$
+and $\Ind2$ preserve log-volumes was stated earlier by Takkun-kohinata/IUT\_LEAN
+\cite{TK} (15 July 2026, item (F2)) and by Morane \cite[\S8.2]{Mor} (6 August 2026).
+Proposition~\ref{p:ind2hull} concerns the hull, and takes the unit-scalar form of
+$\Ind2$ from \cite{MT}.
 
 \textup{[P]} \emph{Labels are not recoverable from a raw procession.}  In a
 procession whose entries are copies of one prime-strip, the internal symmetric group
@@ -709,7 +717,10 @@ $(\ell+1)/24=\bigl(\ell(\ell+1)/12\bigr)\cdot\bigl(1/(2\ell)\bigr)$.
 \end{proof}
 
 This is an identity between two quantities printed in the source; it is not a
-statement about which region either coefficient is evaluated on.
+statement about which region either coefficient is evaluated on.  \textup{[S]} The same
+ratio, between the averaged degree of the $\Theta$-pilot divisor and the degree of the
+$q$-pilot divisor, is in \cite[\S3.8, (3.3)]{DHPS} (2020), and
+\cite[Rem.~3.8.3(1)]{DHPS} relates it to the argument of Scholze and Stix.
 
 \textup{[S]} In \cite[\S1.3, p.~4]{SS}, formula (1.5) is introduced as holding
 ``in essential approximation''.  Its coefficient on $\deg(q_E)$ is
@@ -733,7 +744,9 @@ p.~30]{IUT4} uses
 $\frac{\ell+1}{4}\cdot\frac16\cdot\frac{12}{\ell^{2}}\ge\frac1{2\ell}$, that is
 $12/\ell^{2}$, not $12/(\ell(\ell+1))$.  \textup{[P]} The two are not equal, and
 $12/\ell^{2}>12/(\ell(\ell+1))$; the inequality just quoted has slack
-$\frac{\ell+1}{2\ell^{2}}-\frac1{2\ell}=\frac1{2\ell^{2}}$.  This is an exact
+$\frac{\ell+1}{2\ell^{2}}-\frac1{2\ell}=\frac1{2\ell^{2}}$.  \textup{[S]} The same
+rearrangement, with the same slack $\frac1{2\ell^{2}}$, is written out in
+\cite[p.~70]{JoshiIV}.  This is an exact
 comparison of these two scalar constants; the display in \cite{SS} still has the
 approximation and error just stated.  \emph{What this records is that the averaging
 coefficient is common to both and the final constant is not.  It decides nothing about
@@ -775,6 +788,13 @@ expression of \cite[Prop.~1.4(iii)]{IUT4} governs the actual comparison region i
 a separate question, not decided here, and that the computation does not refute
 that proposition for the inputs covered by its hypotheses.  The numerical values
 are unchanged, and nothing in this report is withdrawn.
+
+\textup{[P], added in version~1.0.5.}  This version cites earlier work: the ratio of
+Proposition~\ref{p:chi} in \cite{DHPS}, the slack of the rearrangement in
+\cite{JoshiIV}, and the volume preservation by $\Ind1$, $\Ind2$ in \cite{TK} and
+\cite{Mor}.  It also points to the corresponding statements of \cite{First} at
+Propositions~\ref{p:dichotomy}, \ref{p:selection} and~\ref{p:margin}, and updates the
+version cited for \cite{Firstfull}.  No statement or number is changed.
 
 
 Earlier drafts omitted $j^2$ at stage $2$, producing the incorrect claimed
@@ -827,7 +847,7 @@ No independent human verification or absence of further errors is asserted.
 \bibitem[First-full]{Firstfull} T.~Urahigashi,
 \emph{An explicit initial $\Theta$-datum with mixed reduction over a split prime,
 and the local estimates of inter-universal Teichm\"uller theory IV},
-version 0.1.3-draft (2026), accompanying manuscript
+version 0.1.8 (2026), accompanying manuscript
 \texttt{paper.tex} in the accompanying release.
 \bibitem[IUT1]{IUT1} S.~Mochizuki,
 \emph{Inter-universal Teichm\"uller theory I}, RIMS Preprint 1756 (2012),
@@ -860,5 +880,18 @@ W.~Porowski, \emph{Explicit estimates in inter-universal Teichm\"uller theory},
 Kodai Math. J. \textbf{45} (2022), 175--236;
 \href{https://doi.org/10.2996/kmj45201}{doi:10.2996/kmj45201}.
 Consulted author versions: December 2021 and May 2022.
+\bibitem[DHPS]{DHPS} T.~Dupuy, A.~Hilado, \emph{Probabilistic Szpiro, Baby Szpiro, and
+ Explicit Szpiro from Mochizuki's Corollary 3.12}, arXiv:2004.13108v2 [math.NT],
+ 29 April 2020, 36 pp.
+\bibitem[JoshiIV]{JoshiIV} K.~Joshi, \emph{Construction of Arithmetic Teichm\"uller
+ Spaces IV: Proof of the $abc$-conjecture}, arXiv:2403.10430v2 [math.AG],
+ 24 February 2025; preliminary version for comments.
+\bibitem[TK]{TK} Takkun-kohinata, \emph{IUT\_LEAN}, Lean repository,
+ \url{https://github.com/Takkun-kohinata/IUT_LEAN}, file
+ \texttt{REQUEST\_theta\_hull\_derivation.md}, commit \texttt{9d56c46} (15 July 2026).
+\bibitem[Mor]{Mor} E.~Morane, \emph{A validation of inter-universal Teichm\"uller
+ theory: the contested bound, instantiated from source}, Zenodo, version~1,
+ 6 August 2026, \href{https://doi.org/10.5281/zenodo.21829674}{doi:10.5281/zenodo.21829674};
+ all versions \href{https://doi.org/10.5281/zenodo.21829673}{doi:10.5281/zenodo.21829673}.
 \end{thebibliography}
 \end{document}

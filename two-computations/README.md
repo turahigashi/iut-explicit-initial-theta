@@ -1,6 +1,23 @@
 # Two computations of the height inequality and the multiradial algorithm: reading IUT from the viewpoint of computer science
 
-Version 1.0.0, 5 November 2026 (27 pages). DOI [10.5281/zenodo.23968299](https://doi.org/10.5281/zenodo.23968299).
+Version 1.1.0, 8 November 2026 (30 pages). DOI [10.5281/zenodo.24039369](https://doi.org/10.5281/zenodo.24039369).
+Version 1.0.0: [10.5281/zenodo.23968299](https://doi.org/10.5281/zenodo.23968299).
+
+**Changes in 1.1.0.** Cites earlier work that version 1.0.0 did not cite: the toolkit motizukipdf of D. Richards
+(GitHub, October 2026), which already turns the objects and processes of IUT into C data types, a WebAssembly
+application and a Lean port, with the constants of Theorem 1.10 of IUT IV, a numerical form of Step (xi) (`Fuzzify`),
+`dsc_APT`, and the constant c_ℓ of observation (iv) (`corThreeTwelve_unfolded`); and Takkun-kohinata/IUT_LEAN (GitHub,
+15 July 2026), which proves in Lean, for one reading, points (1) and (4) of the argument. Narrows "what this note adds"
+accordingly. Attributes the folding of observation (ii), with the coefficients (ℓ+5)/4 and (ℓ+1)/24, to the proof of
+Theorem 1.10 of IUT IV itself (Step (v); Remark 1.10.1), with Dupuy–Hilado as a later rederivation. Adds the author's
+first to fifth reports to Table 1, and cross-references to the fourth and fifth reports (observation (iv)), to *Where
+Theorem 3.11 sits* (§6.3), to *Fourteen initial Θ-data on one curve over Q(i)* (that D2357 is an initial Θ-datum; its
+values remain conditional because the places above the unfactored cofactor are not counted), to Higuchi and Pajo, and to
+Geiger's Bridge-Contract Criterion (IV takes the conclusion of Corollary 3.12 as an input). Corrects the description of
+the 36 readings (lana-agents/iut supplied some of the axes; it did not list readings), the wording of the abstract on
+what lana-agents/iut states (it has not shown that Step (xi) fails for a genuine datum), the words for the ratio in
+observation (iv), the description of Zhou's code (the C++ is that of Part II), and adds the missing entry for IUT I and
+the definitions of M, ρ̄_p and ℓ*. The programs, their outputs and all numbers are unchanged.
 
 This note contains almost no new mathematical results. It is an essay that proposes a viewpoint: to read
 inter-universal Teichmüller theory (IUT) from the side of computer science, by placing the classical computation of the

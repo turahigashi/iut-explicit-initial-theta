@@ -3,8 +3,8 @@
 This folder contains the Lean 4 formalization that accompanies
 
 > T. Urahigashi, *Where Theorem 3.11 sits: the log-volume content of the results cited in the
-> proof of IUT III, Corollary 3.12, does not imply its conclusion*, version 1.0.1, Zenodo, 2026.
-> DOI [10.5281/zenodo.24030772](https://doi.org/10.5281/zenodo.24030772) (all versions:
+> proof of IUT III, Corollary 3.12, does not imply its conclusion*, version 1.1.0, Zenodo, 2026.
+> DOI [10.5281/zenodo.24039357](https://doi.org/10.5281/zenodo.24039357) (all versions:
 > [10.5281/zenodo.24028832](https://doi.org/10.5281/zenodo.24028832)).
 
 Every statement that the paper marks [P] is proved here. The paper states the axioms, the

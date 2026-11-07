@@ -61,7 +61,7 @@
 
 \title{The gap between the two walls is positive:\\ a closed form for the (Ind2)-terms of lana-agents/iut}
 \author{Toshihisa Urahigashi\\\small ORCID 0009-0004-0460-6242\\\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.0.0, 5 November 2026\\\small\href{https://doi.org/10.5281/zenodo.23954194}{doi:10.5281/zenodo.23954194}}
+\date{Version 1.1.0, 8 November 2026\\\small\href{https://doi.org/10.5281/zenodo.24039377}{doi:10.5281/zenodo.24039377}}
 
 \begin{document}
 \maketitle
@@ -145,6 +145,14 @@ the term in units of $\log p$.
 Our answer to lana's question is therefore: in lana's formalization the LANA wall is strictly weaker than the
 Scholze--Stix wall, but only by a quantity of conductor type, which does not grow with the size of $q$.
 
+\tagX\ The title of this note is close to the message of lana's commit \lean{6ef57cb} (13 October 2026),
+\q{WallEquiv/Gap: the gap between (Var) and (SS) is positive for every D}. That commit proved the positivity of the
+gap to the form of (SS) without the hull, from the archimedean defect (\lean{gap\_pos}); since the switch to the
+hull in commit \lean{cdc9602} (14 October 2026) this theorem is \lean{gapNoHull\_pos}. With the hull on both sides
+these defects cancel (\q{The shell and archimedean defects are exactly what the hull removes}, \lean{Gap.lean}), and
+for $\Delta(D)$ the file proves the sign $\Delta(D)\ge0$ and leaves positivity open, as quoted above. The positivity in
+the title of this note concerns $\Delta(D)$.
+
 \subsection{Relation to earlier work}
 \begin{itemize}
 \item \tagX\ Positivity itself is expected, under a condition, in lana's documentation quoted above. We give a proof
@@ -152,7 +160,10 @@ and the exact value.
 \item \tagX\ Dupuy and Hilado describe (Ind2) as acting through the $\Qp$-linear automorphisms arising from
 $\Zp$-lattice automorphisms of $\I_v$~\cite[\S4.8]{DH1}, and bound the hull under such automorphisms \emph{from
 above}~\cite[\S6.2]{DH2}; the floor $\lfloor\ordp(a)-\ordp(\beta)\rfloor$ appears in their estimate (6.6)--(6.7).
-Theorem~\ref{t:closed} shows that the hull actually reaches the position of this rounding.
+Theorem~\ref{t:closed} shows that the hull actually reaches the position of this rounding. As an alternative that
+they do not pursue, they suggest writing out an explicit $\Zp$-basis and computing the action of these automorphisms
+explicitly~\cite[Rem.~6.2.1(1)]{DH2}; Lemmas~\ref{l:orbit}--\ref{l:tensor} compute, for the lattices
+$\theta\cdot\bigotimes\I$ of lana's definitions, the span of their images under these automorphisms.
 \item \tagS\ Proposition~1.2(ii) of IUT~IV~\cite{IUT4} likewise bounds $\phi(p^\lambda(R_I)^{\sim})$ from above by
 inclusions involving a floor, and (iii) replaces the floor by an allowance of $1$. Neither states an equality.
 \item \tagP\ The lattice lemma (Lemma~\ref{l:orbit}) is elementary and not new. What is new, to the author's
@@ -164,14 +175,15 @@ label average that follow.
 \begin{itemize}
 \item The object of this note is the definitions of lana's formalization. lana states that its (Ind2) group is a
 \q{deliberate enlargement} that contains the image of $\mathrm{Ism}$ (Section~\ref{s:setting}). For the group of the
-original papers the value lies between $0$ and the value found here (Section~\ref{s:groups}).
+original papers the value lies between $0$ and the value found here; under the identification of
+\cite[Prop.~9]{Fourth} it is $0$ (Section~\ref{s:groups}).
 \item Nothing is claimed about the truth of (Var), (SS), Corollary~3.12 or the abc conjecture.
 \item The proofs are on paper. They have not been checked in Lean on top of lana's definitions.
 \end{itemize}
 
 \subsection{Labels}
 \tagS\ a statement of the original papers of IUT or of Mochizuki's documents. \tagX\ a statement of others (lana,
-Project LANA, Dupuy--Hilado). \tagP\ a statement proved here; \tagP\ alone marks an elementary fact. \tagR\ known
+Project LANA, Dupuy--Hilado, Zeng). \tagP\ a statement proved here; \tagP\ alone marks an elementary fact. \tagR\ known
 mathematics, applied here in a new way; the known mathematics is named. \tagN\ a result new in this note, to the
 author's knowledge. \tagH\ a reading or interpretation, not a proof.
 
@@ -359,8 +371,9 @@ class number formula $h(-\ell)=\frac1\ell\bigl(\sum_Nx-\sum_Qx\bigr)$ and $\sum_
 $\sum_Qx=\ell(\ell-1)/4-\ell h(-\ell)/2$. Divide by $\ell^*$.\qed
 
 \section{Examples}\label{s:examples}
-\tagP\ We computed the six explicit initial $\Theta$-data of the author's catalogue~\cite{Cat} ($\ell=7$, $\ell^*=3$,
-$s=\ell(\ell+1)/12=14/3$). The catalogue takes as $\Vbad$ the places of multiplicative reduction outside $2\ell$. We take this set minus
+\tagP\ We computed the six explicit initial $\Theta$-data with $\ell=7$ of the author's catalogue~\cite{Cat}
+($\ell^*=3$, $s=\ell(\ell+1)/12=14/3$); its seventh datum, $D_{2357}^{(\ell)}$, has $\ell\ge89$ and is not treated
+here. The catalogue takes as $\Vbad$ the places of multiplicative reduction outside $2\ell$. We take this set minus
 the places above $3$ and $5$, since above $3$ and $5$ the ramification of $K$ depends on the construction of $F$; in
 these data no other place is left out, and $\ell\nmid\operatorname{ord}q$ at every place we keep. IUT~I,
 Definition~3.1(b), requires $\Vbad$ only to be a nonempty set of nonarchimedean places of odd residue characteristic
@@ -438,6 +451,12 @@ term is $0$, because $\sigma(\theta)\I_v=\theta\I_v$. If moreover every bad plac
 \item \tagH\ Where the value for the group of the original papers lies in this range depends on how far that group
 moves $\theta\I_v$. The proof of Lemma~\ref{l:orbit} uses elements that send a primitive element of $\theta\I_v$ to a
 basis vector. Whether the image of $\mathrm{Ism}$ contains such elements is not decided here.
+\item \tagP\ The author's fourth report~\cite[\S6, Proposition~9]{Fourth} applies \cite[Thm.~F, Thm.~7.4]{MT} to a
+finite extension $K_v$ of $\Qp$: there $\mathrm{Ism}(G_{K_v})=\Zp^{\times}$, so (Ind2) acts on each factor by a unit
+scalar. If the group of the original papers is identified with $\mathrm{Ism}$ in this way, it fixes every
+$\theta\I_v$, since $\I_v$ is a $\Zp$-module; the union $\Theta_{i,p,c}$ is then $\theta\cdot\bigotimes\I$, and its
+(Ind2)-term is $0$, because $\hull(\theta X)=\theta\,\hull(X)$ (proof of Theorem~\ref{t:closed}). For that group
+$\Delta(D)=0$, and (SS) and (Var) coincide.
 \end{itemize}
 
 \subsection{Comparison with the estimate of IUT~IV}
@@ -454,9 +473,17 @@ its size is exactly $\fr(\ordp\theta)\in(0,1)$ in units of $\log p$. Averaged ov
 Proposition~\ref{p:classno} ($1/3$ or $2/3$ for $\ell=7$). Compared with the $1$ that the estimate of IV allows for
 rounding, the actual loss is about half of it on average over the labels.
 
+\tagP\ The unused part of this allowance, $1-\fr(\ordp\theta)=1+\lfloor\ordp\theta\rfloor-\ordp\theta$ at small
+places, is the floor slack that the author's third report computes on explicit data~\cite[\S6]{Third}.
+
+\tagX\ Zeng~\cite{Zeng} (first version 29 October 2026) computes the index by which the hull enlarges the integral
+structure of a tensor product of rings of integers. \tagP\ In $\Delta(D)$ both terms are log-volumes of unit multiples
+of the same hull $X=\hull(\bigotimes\I)$ (proof of Theorem~\ref{t:closed}), so the enlargement of $\bigotimes\I$ to its
+hull, of the kind Zeng measures, cancels in $\Delta(D)$.
+
 \section{Reproducibility}
 The folder \texttt{ind2-gap/} of the repository
-\url{https://github.com/turahigashi/iut-explicit-initial-theta} (tag \texttt{v0.15.0}), also deposited with this note,
+\url{https://github.com/turahigashi/iut-explicit-initial-theta} (tag \texttt{v0.24.0}), also deposited with this note,
 contains the following scripts and their outputs. They use the program \texttt{iut\_compute.py} of the author's
 walkthrough~\cite{Walk}, which is in the same repository.
 \begin{itemize}
@@ -485,11 +512,17 @@ a catalogue}, version 1.0.0, Zenodo, 2026, \href{https://doi.org/10.5281/zenodo.
 
 \bibitem[DH1]{DH1}
 Taylor Dupuy and Anton Hilado, \emph{The statement of {M}ochizuki's {C}orollary 3.12, initial theta data, and the
-first two indeterminacies}, arXiv:2004.13228 [math.NT], 2020.
+first two indeterminacies}, arXiv:2004.13228v1 [math.NT], 28 April 2020; the section cited (\S4.8) is in version~1
+(version~2 of 2025 is retitled and has no \S4).
 
 \bibitem[DH2]{DH2}
 Taylor Dupuy and Anton Hilado, \emph{Probabilistic {S}zpiro, baby {S}zpiro, and explicit {S}zpiro from {M}ochizuki's
 {C}orollary 3.12}, arXiv:2004.13108 [math.NT], 2020.
+
+\bibitem[Fourth]{Fourth}
+Toshihisa Urahigashi, \emph{Split bad primes and the tuple structure of inter-universal {T}eichm\"uller theory: what
+the source states, and what follows (a fourth report)}, version 1.0.4, Zenodo, 2026,
+\href{https://doi.org/10.5281/zenodo.22648944}{doi:10.5281/zenodo.22648944}.
 
 \bibitem[IUT1]{IUT1}
 Shinichi Mochizuki, \emph{Inter-universal {T}eichm\"uller theory {I}: construction of {H}odge theaters}, Publ. Res.
@@ -511,12 +544,25 @@ lana-agents, \emph{iut}: a Lean~4 formalization of inter-universal {T}eichm\"ull
 Project LANA, \emph{Project LANA interim report on IUT theory}, 20 July 2026,
 \url{https://ncatlab.org/nlab/files/LANAProject-Report-July2026.pdf}.
 
+\bibitem[MT]{MT}
+Arata Minamide and Shota Tsujimura, \emph{Anabelian geometry for {H}enselian discrete valuation fields with
+quasi-finite residues}, RIMS Preprint 1973, June 2023.
+
 \bibitem[SS]{SS}
 Peter Scholze and Jakob Stix, \emph{Why abc is still a conjecture}, 2018.
+
+\bibitem[Third]{Third}
+Toshihisa Urahigashi, \emph{The cost of each distinction in the local computations of inter-universal
+{T}eichm\"uller theory~{IV} (a third report)}, version 1.0.2, Zenodo, 2026,
+\href{https://doi.org/10.5281/zenodo.22646136}{doi:10.5281/zenodo.22646136}.
 
 \bibitem[Walk]{Walk}
 Toshihisa Urahigashi, \emph{A programmer's walkthrough of inter-universal {T}eichm\"uller theory}, version 1.0.0,
 Zenodo, 2026, \href{https://doi.org/10.5281/zenodo.23880260}{doi:10.5281/zenodo.23880260}.
+
+\bibitem[Zeng]{Zeng}
+Chunping Zeng, \emph{An integral-structure inflation in the hull operation of {IUT} {C}orollary 3.12}, Zenodo, 2026,
+first version 29 October 2026, \href{https://doi.org/10.5281/zenodo.23754276}{doi:10.5281/zenodo.23754276}.
 \end{thebibliography}
 
 \end{document}

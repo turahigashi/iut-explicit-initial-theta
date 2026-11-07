@@ -11,7 +11,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(HERE), "scripts"))
 import bridge_lib  # noqa: E402
 
-DOI = "10.5281/zenodo.23984201"
+DOI = "10.5281/zenodo.24039372"
 
 
 def tex_factored(n):

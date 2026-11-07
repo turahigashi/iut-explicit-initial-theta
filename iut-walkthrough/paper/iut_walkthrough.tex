@@ -32,7 +32,7 @@
 \title{A programmer's walkthrough of\\ inter-universal Teichm\"uller theory:\\
 running the multiradial algorithm\\ on explicit initial $\Theta$-data}
 \author{Toshihisa Urahigashi\\\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.1.0, 5 November 2026\\\small\href{https://doi.org/10.5281/zenodo.23955994}{doi:10.5281/zenodo.23955994}}
+\date{Version 1.2.0, 8 November 2026\\\small\href{https://doi.org/10.5281/zenodo.24039375}{doi:10.5281/zenodo.24039375}}
 
 \begin{document}
 \maketitle
@@ -97,8 +97,9 @@ inequality. In the reading in which the theta value stays at its label, as in St
 Theorem~1.10 of~\cite{IUT4}, the comparison has the form $(s-1)\,|\log(\qq)|\le V$ of the inequality that the
 Lean formalization~\cite{LANAiut} calls the Scholze--Stix inequality~\cite{SS}, where $V$ is the log-volume of
 the container (Section~\ref{sec:xi}); the same reduction is the toy form in~\cite[\S3]{Formal}, by which a height that
-is multiplied by $N$ but unchanged up to a mild error is bounded. If (Ind2) acts through all $\Z_p$-linear
-automorphisms of the log-shells of the factors, as in~\cite{LANAiut}, the comparison becomes
+is multiplied by $N$ but unchanged up to a mild error is bounded. Earlier, \cite{Takkun} (15~July 2026) proved in Lean
+a reduction of the same form, with a ledger of local terms in place of $V$ (Section~\ref{sec:xi}). If (Ind2) acts
+through all $\Z_p$-linear automorphisms of the log-shells of the factors, as in~\cite{LANAiut}, the comparison becomes
 $(s-1)\,|\log(\qq)|\le V+\Delta(D)$, the form of the variant of Corollary~3.12 there, with a gap $\Delta(D)>0$ that
 the program computes by the closed form of~\cite{Gap}. That the inequality holds on data of small height is
 expected whatever the status of Corollary~3.12 (for $D_2$ it was checked in~\cite[\S5]{Cat}), and we draw no
@@ -115,7 +116,11 @@ is given by a leading-term estimate of the hull, and the program reports whether
 $-|\log(\qq)|$. The formula we use for the log-volume of the hull of a tensor
 packet of log-shells, the two readings of the label indeterminacy, and the observation that under the literal
 reading the hull is governed by a minimum rather than an average are in the Lean repository \cite{LANAiut}, which
-also proves, in its models, that Step~(xi) is equivalent to the Scholze--Stix inequality. That (Ind1) permutes
+also proves, in its models, that Step~(xi) is equivalent to the Scholze--Stix inequality. The same repository models
+Hodge theaters, the $\Theta$-link and the log-link in Lean (directories \nolinkurl{Iut/HodgeTheater},
+\nolinkurl{Iut/ThetaLink} and \nolinkurl{Iut/LogLink}, added on 12~October 2026), and proves that Theorem~3.11
+of~\cite{IUT3}, as it formalizes it, holds in its model (\nolinkurl{thm311_full_model}, file
+\nolinkurl{Iut/LogLink/Thm311Rest.lean}, added on 13~October 2026). That (Ind1) permutes
 tensor factors is also noted in \cite[\S4]{DH1} and \cite[\S6.2, footnote~7]{DH}. The data and their local
 invariants are those of~\cite{Cat}. Section~\ref{sec:related} gives details.
 
@@ -175,8 +180,11 @@ These are the readings (V), (L) and (L$^0$) of~\cite{Cat}. Reading (V) keeps the
 Step~(v) of the proof of Theorem~1.10 of~\cite{IUT4}; it is the reading of IUT~IV in~\cite{LANAiut}, which also
 records that taking the hull for each image under (Ind1) separately gives this value. Reading (L$^0$) admits
 every position of the capsule; it is the literal reading of~\cite{LANAiut} (file
-\nolinkurl{Iut/Concrete/Literal.lean}). Reading (L) admits the positions $\{1,\dots,j\}$, that is, the label
-permutations fixing $0$; this set is the $\F_\ell^{\divideontimes}$-capsule $\mathbb{S}^{\divideontimes}_j$, which
+\nolinkurl{Iut/Concrete/Literal.lean}). That each stage of a procession of copies of one prime-strip carries the full
+symmetric group, so that the fixing of $\mathcal{D}_0$ does not by itself fix the label $0$ inside the larger capsules,
+is shown in~\cite[\S6]{Fourth} from~\cite[\S0, Def.~4.10, Prop.~6.9(i)]{IUT1}. Reading (L) admits the positions
+$\{1,\dots,j\}$, that is, the label permutations fixing $0$; this set is the $\F_\ell^{\divideontimes}$-capsule
+$\mathbb{S}^{\divideontimes}_j$, which
 \cite[Prop.~6.9(iii)]{IUT1} includes in $\mathbb{S}^\pm_{j+1}$. We do not claim that any of these is the
 reading the source intends.
 
@@ -310,7 +318,10 @@ $\qq_{v_t}^{\,j^2}\cdot(\text{tensor product of the log-shells})$ for $t\in P_R(
 one for the identity alone. In the second, (Ind2) acts through all $\Z_p$-linear automorphisms of the log-shells of
 the factors, the group of~\cite{LANAiut} (file \nolinkurl{Iut/Concrete/ThetaRegion.lean}), which is stated there to
 contain the image of the group $\mathrm{Ism}$ of the source and to be in general larger, a deliberate enlargement.
-The hull for the group of the source therefore lies between the two. The indeterminacy (Ind3) admits sublattices,
+The hull for the group of the source therefore lies between the two. By the author's fourth
+report~\cite[\S6, Proposition~9]{Fourth}, which applies~\cite[Thm.~F, Thm.~7.4]{MT}, the group $\mathrm{Ism}$ through
+which~\cite[Thm.~3.11(i)]{IUT3} describes (Ind2) is $\Z_p^\times$ at a finite extension of $\Q_p$ and acts by unit
+scalars, as in the first model. The indeterminacy (Ind3) admits sublattices,
 which do not change the hull in either model.
 
 In the first model, multiplication by an element of $K_{v_t}$ of $p$-adic valuation $c$ moves the hull of the
@@ -391,7 +402,12 @@ $\Theta$-datum and that $\Delta(D)$ is bounded by a quantity that does not invol
 Theorem~1.10 of~\cite{IUT4} bounds the container further, in terms of the log-different and the log-conductor, to
 arrive at its final inequality, a height inequality; the program does not carry out that step. The same reduction,
 with an estimate of the hull in place of $V$, is the theorem \nolinkurl{corThreeTwelve_of_thmThreeElevenFive} in the
-Lean port of~\cite{Richards}. The program decides the outcomes by evaluating the two exact combinations in double
+Lean port of~\cite{Richards}. Earlier, \cite{Takkun} (15~July 2026) proved in Lean that, in its model, the hull of the
+possible images can be bounded by the theta volume plus a ledger $L$ of the local terms of
+\cite[Props.~1.1--1.4]{IUT4}, compatibly with the containment of Step~(xi), if and only if
+$(s-1)\,|\log(\qq)|\le L$ and the underlying model of Theorem~3.11 exists (\nolinkurl{thetaHullTranscription_iff},
+file \nolinkurl{IutLean/Multiradial/ThetaHullDichotomy.lean}); this is the same reduction, with $L$ in place of $V$.
+The program decides the outcomes by evaluating the two exact combinations in double
 precision; every comparison it reports differs from equality by at least $0.87$.
 
 \section{Windows}\label{sec:windows}
@@ -462,8 +478,10 @@ first model of (Ind2) of Section~\ref{sec:algo}, with the
 complete factorizations of the norms where they were found (for $D_{3}$ from~\cite{Cat}; for
 $D_{211},D_{109},D_{18},D_{15}$ by elliptic-curve factorization, the factors being probable primes by the BPSW test).
 For $D_{2357}^{(157)}$ a cofactor of $1564$ digits remains, and $V$ and the lower bounds include the lower bound
-$261.75$ for its contribution (Section~\ref{sec:windows}). The datum $D_{2357}^{(157)}$ is conditional on a report
-in preparation, as in~\cite{Cat}.}\label{tab:results}
+$261.75$ for its contribution (Section~\ref{sec:windows}). That $D_{2357}^{(157)}$ is an initial $\Theta$-datum
+satisfying the hypotheses of Theorem~1.10 of~\cite{IUT4} is proved in~\cite[Theorem~2.1]{Fourteen}; its entries for
+$V$ and $-|\log(\Th)|$ remain lower bounds, since the places above the cofactor enter only through that lower
+bound.}\label{tab:results}
 \end{table}
 
 In readings (L) and (L$^0$) the computed inequality holds for all seven
@@ -591,7 +609,10 @@ and $5$ (Section~\ref{sec:data}); the places above $2,3,5,\ell$, whose contribut
 
 \paragraph{Limitations.} The anabelian reconstructions are not implemented: the theaters are given as typed copies of
 fields, not reconstructed from groups, and the Kummer read-out is a round trip. The records of APT and SHE hold by
-construction. The group of (Ind2) of the source is not modelled; by~\cite{LANAiut}, the two models bracket it. In
+construction. The group of (Ind2) of the source is not modelled; by~\cite{LANAiut}, the two models bracket it. By
+\cite[\S6, Proposition~9]{Fourth}, which uses~\cite[Thm.~F]{MT}, the group $\mathrm{Ism}$ through which
+\cite[Thm.~3.11(i)]{IUT3} describes (Ind2) is $\Z_p^\times$ at a finite extension of $\Q_p$ and acts by unit scalars,
+as in the first model. In
 the second model, $\kappa_v(\theta)$ at the places that are not small is only bracketed, since the program does not
 compute the log-shells as lattices in $K_v$, nor the unit parts of the theta values at places other than those
 above $p$.
@@ -716,6 +737,15 @@ version 0.1.7, Zenodo, \href{https://doi.org/10.5281/zenodo.22537342}{doi:10.528
 Shinichi Mochizuki, \emph{On the formalization of {IUT}: a preliminary progress report [joint work in progress
 with {Y.~Hoshi}, {G.~Yamashita}, {Y.~Yang}, \dots]}, April 2026.
 
+\bibitem[Fourteen]{Fourteen}
+Toshihisa Urahigashi, \emph{Fourteen initial $\Theta$-data on one curve over $\Q(i)$}, version 1.0.0, Zenodo,
+6 November 2026, \href{https://doi.org/10.5281/zenodo.23990716}{doi:10.5281/zenodo.23990716}.
+
+\bibitem[Fourth]{Fourth}
+Toshihisa Urahigashi, \emph{Split bad primes and the tuple structure of inter-universal {T}eichm\"uller theory: what
+the source states, and what follows (a fourth report)}, version 1.0.4, Zenodo,
+\href{https://doi.org/10.5281/zenodo.22648944}{doi:10.5281/zenodo.22648944}.
+
 \bibitem[Gap]{Gap}
 Toshihisa Urahigashi, \emph{The gap between the two walls is positive: a closed form for the (Ind2)-terms of
 lana-agents/iut}, version 1.0.0, Zenodo, 5 November 2026,
@@ -750,11 +780,17 @@ Project LANA, \emph{Project LANA interim report on IUT theory}, last updated 20 
 
 \bibitem[LANA-iut]{LANAiut}
 lana-agents, \emph{iut}, Lean repository, \url{https://github.com/lana-agents/iut}, consulted at commit
-\texttt{553076a} (3 November 2026); the files cited are unchanged since commit \texttt{ecb3c86} (1 November 2026).
+\texttt{553076a} (3 November 2026); the files cited are unchanged since commit \texttt{ecb3c86} (1 November 2026),
+except for changes to the directories \nolinkurl{Iut/HodgeTheater}, \nolinkurl{Iut/ThetaLink} and \nolinkurl{Iut/LogLink}
+on 3 November 2026 (commit \texttt{a58c38e}) that leave the statement of \nolinkurl{thm311_full_model} unchanged.
 
 \bibitem[MFHMP]{MFHMP}
 Shinichi Mochizuki, Ivan Fesenko, Yuichiro Hoshi, Arata Minamide, and Wojciech Porowski, \emph{Explicit
 estimates in inter-universal {T}eichm\"uller theory}, Kodai Math. J. \textbf{45} (2022), no.~2, 175--236.
+
+\bibitem[MT]{MT}
+Arata Minamide and Shota Tsujimura, \emph{Anabelian geometry for {H}enselian discrete valuation fields with
+quasi-finite residues}, RIMS Preprint 1973, June 2023.
 
 \bibitem[Note]{Note}
 Toshihisa Urahigashi, \emph{A local non-containment in Step~(v) of {IUT}~{IV}, Theorem~1.10}, version 3.0.0,
@@ -773,7 +809,8 @@ of the local quantities of inter-universal {T}eichm\"uller theory~{IV}}, version
 Peter Scholze and Jakob Stix, \emph{Why abc is still a conjecture}, manuscript, 2018.
 
 \bibitem[Takkun]{Takkun}
-Takkun-kohinata, \emph{IUT\_LEAN}, GitHub repository, \url{https://github.com/Takkun-kohinata/IUT_LEAN} (July 2026).
+Takkun-kohinata, \emph{IUT\_LEAN}, GitHub repository, \url{https://github.com/Takkun-kohinata/IUT_LEAN}, commit
+\texttt{9d56c46} (15 July 2026, UTC).
 
 \bibitem[Yamashita]{Yamashita}
 Go Yamashita, \emph{A proof of the abc conjecture after {M}ochizuki}, preprint, RIMS, Kyoto University.

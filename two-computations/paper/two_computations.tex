@@ -41,7 +41,7 @@
 \title{Two computations of the height inequality\\ and the multiradial algorithm:\\ reading IUT from the viewpoint
 of computer science}
 \author{Toshihisa Urahigashi\\\small ORCID 0009-0004-0460-6242\\\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.0.0, 5 November 2026\\\small\href{https://doi.org/\thedoi}{doi:\thedoi}}
+\date{Version 1.1.0, 8 November 2026\\\small\href{https://doi.org/\thedoi}{doi:\thedoi}}
 
 \begin{document}
 \maketitle
@@ -51,14 +51,18 @@ This note contains almost no new mathematical results. It is an essay that propo
 inter-universal Teichm\"uller theory (IUT) from the side of computer science. It presents the tools for doing so ---
 two programs that read the same input, and a mockup of the multiradial algorithm in which some parts are left as
 oracles --- and a little analysis made with them. It proves no conclusion. The view that IUT computes the same
-quantity in two ways is Mochizuki's own and is also recorded in the interim report of Project LANA, and the explicit
-computation of the IUT side is in Dupuy--Hilado and in Zhou. What this note adds is to place the two computations side
-by side as programs that read the same input, the mockup with oracles, and a computer-science reading together with a
-position (\S1.3).
+quantity in two ways is Mochizuki's own and is also recorded in the interim report of Project LANA. The explicit
+computation of the IUT side is printed in the proof of Theorem~1.10 of IUT~IV and redone by Dupuy--Hilado and by Zhou.
+Earlier, the toolkit motizukipdf of D.~Richards (October 2026) turned the objects and processes of IUT into C data
+types, a web application and a Lean port, with a numerical form of Step~(xi), and the Lean repository
+Takkun-kohinata/IUT\_LEAN (July 2026) proved, for one reading, that the containment of Step~(v) together with
+Corollary~3.12 gives the height inequality, and conversely. What this note adds is to place the classical computation
+and the computation of IUT side by side as programs that read the same input, the mockup with oracles separated by
+types, and a computer-science reading together with a position (\S1.3).
 
-The argument has five points. (1) In each of the 36 readings listed by the author and by lana-agents/iut,
-Corollary~3.12 of IUT~III and Theorem~1.10 of IUT~IV together give the same height inequality
-$(k-1)|\log\qq|\le C$ \cite{RF}. (2) This height inequality is written in classical quantities only; for a given curve,
+The argument has five points. (1) In each of the 36 readings of \cite{RF}, whose axes come from the author's notes and
+in part from lana-agents/iut, Corollary~3.12 of IUT~III and Theorem~1.10 of IUT~IV together give the same height
+inequality $(k-1)|\log\qq|\le C$ \cite{RF}. (2) This height inequality is written in classical quantities only; for a given curve,
 both sides can be computed without IUT. (3) What IUT supplies is a different method of computing the two sides;
 Mochizuki himself describes the development of a mechanism for computing the effect on heights as the fundamental
 theme of IUT \cite{Alien}. (4) The key is universality. Corollary~3.12 claims to hold for every initial $\Theta$-datum.
@@ -82,8 +86,8 @@ completely factored data.
 
 lana-agents/iut has shown that Step~(xi) does not follow from the formalized content of Theorem~3.11: over that
 content Step~(xi) is equivalent to the Scholze--Stix inequality, and the missing input is of ABC strength \cite{lana}.
-This is the result of taking the content of Theorem~3.11, as currently written, as a specification; it does not show
-that IUT cannot be repaired, as lana-agents/iut itself states. In the view of this note, the key lies in the
+This is the result of taking the content of Theorem~3.11, as currently written, as a specification; as lana-agents/iut
+itself states, it does not show that Step~(xi) fails for some genuine datum. In the view of this note, the key lies in the
 implementation of the multiradial algorithm. The future task is to implement the oracles as actual algorithms, or as
 approximations to them. \textbf{No claim is made about the truth of IUT, of Corollary~3.12, or of the abc
 conjecture.}
@@ -113,6 +117,16 @@ one of them has been to grasp the exact algorithm by which IUT computes the heig
 \toprule
 Key & Title (version) & Content\\
 \midrule
+\cite{First} & An explicit initial $\Theta$-datum with mixed reduction at a split prime (0.1.7) & the initial
+$\Theta$-datum $D_{211}$ over $\Q(\sqrt5)$, with one bad and one good place above $211$\\
+\cite{Second} & An initial $\Theta$-datum over an imaginary quadratic field, and numerical values of the local quantities
+of IUT~IV (1.0.5) & the datum $D_{109}$ over $\Q(i)$ and the local quantities of IV on explicit data\\
+\cite{Third} & The cost of each distinction in the local computations of IUT~IV (1.0.2) & what each separation in the
+estimates of IV is worth on explicit data\\
+\cite{Fourth} & Split bad primes and the tuple structure of IUT (1.0.4) & split bad primes and tuples; (Ind2) acts by
+unit scalars; the procession-normalized coefficient\\
+\cite{Fifth} & Two constants in the numerical estimates of IUT~IV (1.0.0) & $12/(\ell(\ell+1))$ compared with
+$12/\ell^2$\\
 \cite{Cat} & Explicit initial $\Theta$-data and the two readings of Step~(v) of IUT~IV, Theorem~1.10: a catalogue (1.0.0) &
 seven explicit initial $\Theta$-data and two readings of Step~(v)\\
 \cite{Stepv} & A local non-containment in Step~(v) of IUT~IV, Theorem~1.10 (3.0.0) & a local non-containment in
@@ -129,7 +143,7 @@ conservation of the load\\
 \bottomrule
 \end{tabularx}
 
-\smallskip Table 1: the earlier notes (all on Zenodo, CC~BY~4.0).
+\smallskip Table 1: the earlier notes (all on Zenodo; the last seven under CC~BY~4.0).
 \end{center}
 
 \subsection{Prior work}
@@ -153,12 +167,16 @@ which theta values occur in the construction algorithm of Theorem 3.11.}}{IUT~II
 $q$-pilot object: the usual computation and the computation via the multiradial algorithm.}}{LANA interim report,
 \S10.3 \cite{LANA}}
 
-\tagX{} \emph{The explicit computation of the IUT side} is in Dupuy--Hilado \cite{DH}. They take the average over the
+\tagS{} \emph{The explicit computation of the IUT side} is printed in the proof of Theorem~1.10 of IUT~IV itself: in
+Step~(v) the average over the tuples of the tensor packets is taken by Proposition~1.7 of IV, and the average over the
+labels by the identities (E1), (E2), with the coefficients $\frac{\ell+5}4$ and $\frac{\ell+1}{24}$ (\S10\,(ii))
+\cite{IUT4}. \tagX{} Dupuy--Hilado redo it \cite{DH}. They take the average over the
 tuples of the tensor packets and over the labels as an ``iterated expectation'', and obtain the average
 $\ell(\ell+1)/12$ of $j^2$ over the labels, the average $\frac{\ell+5}4$ of the number of factors, and the Szpiro
 constant $6+\varepsilon_\ell$ with $\varepsilon_\ell=(24\ell+72)/(\ell^2+\ell-12)=O(1/\ell)$. Observations (ii)--(iv)
 of \S10 are a re-check of this computation in the form of programs. Zhou gives an algorithm computing an estimate of
-the same form and has turned it into Python and C++ code \cite{Zhou}.
+the same form and has turned it into Python code \cite{Zhou}; the code of Part~II of his series is in C++ and C, with
+Jupyter notebooks \cite{ZhouII}.
 \srcquote{\q{we can view the expectation of $X$ as an `iterated expectation'\,}}{Dupuy--Hilado, \S7.1 \cite{DH}}
 \srcquote{\q{Then there exists an algorithm [whose construction is presented in the proof] to compute a real number
 $\mathrm{Vol}(\mathfrak R)\ge0$ that depends only on~$\mathfrak R$}}{Zhou, Corollary~1.13 \cite{Zhou}}
@@ -183,14 +201,43 @@ mathematicians.} \dots{} \q{Furthermore, these procedures are highly ineffective
 outputs, and do not certifiably produce outputs which can be distinguished from each other (this is necessary in the
 proof).}}{Joshi, comment~(5) \cite{Joshi}}
 
-\tagH{} \emph{What this note adds} is limited to three things. (a) Placing the classical computation and the
-computation of IUT side by side, as two programs that read the same input; Dupuy--Hilado and Zhou derive and compute
-the IUT side, but do not place the two on the same input. (b) A mockup in which a part of the multiradial algorithm is
-left as oracles whose values are reverse-computed, with a separation of information flow by types, a check of
-non-interference, and a scan of the family $q\to q^N$. (c) A computer-science reading (non-interference, relations
-over all inputs) and the position that ``one has not understood IUT essentially unless the multiradial algorithm has
-been elucidated and implemented''. Mochizuki himself uses a word close to ``non-interference'' in a mathematical sense
-(\S6.1); we do not claim that the reading of (c) is the same as his.
+\tagX{} \emph{Turning the objects and processes of IUT into programs} was done earlier in the toolkit motizukipdf of
+D.~Richards (GitHub, created on 27 October 2026; consulted at commit \texttt{2665db1} of 30 October 2026)
+\cite{Richards}. It turns the objects of IUT~I--IV into C data types with a registry of processes, runs the C code in
+the browser through WebAssembly, and has a Lean port (\lean{lean/IUT/LeanForm.lean}). Its data model lets a
+$\Theta$-link share the unit groups but never the ring structures. Its process \texttt{ComputeThmOneTen} evaluates the
+constants and the final inequality of Theorem~1.10 of IUT~IV; its process \texttt{Fuzzify} widens the $\Theta$-pilot to
+an interval and reports whether the interval contains $-|\log\qq|$, a numerical form of the comparison of Step~(xi); its
+Lean port proves APT for its model (\lean{dsc\_APT}) and, from the comparison in the common container taken as a
+hypothesis, the bound $\log\mathfrak q\le\frac{12\ell(\ell^*+3)}{\ell(\ell+1)-12}\log\mathfrak d^K$, with
+$\ell^*=(\ell-1)/2$ (\lean{corThreeTwelve\_unfolded}), whose coefficient is the constant $c_\ell$ of observation~(iv) of
+\S10. Version 1.0.0
+of this note did not cite it, although the author's walkthrough~\cite{WT} does.
+
+\tagX{} \emph{Points (1) and (4) of the argument (\S1.4) were made earlier, for one reading,} in the Lean
+repository Takkun-kohinata/IUT\_LEAN (GitHub, 15 July 2026) \cite{TK}. There the containment of Step~(v) of IV, with
+$\lambda=\mathrm{ord}(q^{j^2})$ read in the normalization in which Corollary~3.12 measures the $q$-pilot, together with
+Corollary~3.12 gives $(\ell(\ell+1)/12-1)\,|\log\qq|\le L$ for its ledger $L\ge0$ of IV, Propositions~1.1--1.4
+(\lean{thetaHull\_forces\_height}); conversely, this inequality together with the condition $C_\Theta\ge-1$ of IV,
+Theorem~1.10 gives a model with that containment (\lean{thetaHullTranscription\_iff}); and with $L=0$ the containment
+cannot hold (\lean{no\_lossless\_theta\_hull}). The accompanying request in the same repository states the consequence
+for curves:
+\srcquote{\q{the satisfiability of (P) for actual curves is logically equivalent to the ledger absorbing the Gauss
+gain, i.e.\ to $L\ge(l(l+1)/12-1)\cdot|\log(q)|$ --- the height inequality itself.}}{Takkun-kohinata/IUT\_LEAN,
+\lean{REQUEST\_theta\_hull\_derivation.md}, English abstract \cite{TK}; symbols typeset as mathematics}
+Its observation (F3), in the Japanese part, adds that the ledger does not depend on $|\log(q)|$, so that supplying the
+containment uniformly for a family of curves of unbounded height is equivalent to supplying the height inequality
+(paraphrased).
+
+\tagH{} \emph{What this note adds}, in addition to the work above, is limited to three things. (a) The classical
+computation, written from the statement of Theorem~1.10 alone, and the computation of IUT in the reading of IV, as two
+programs that read the same local data of seven explicit initial $\Theta$-data and agree at the two ends (\S8). (b) A
+mockup in which a part of the multiradial algorithm is left as oracles whose values are reverse-computed, with a
+separation of information flow by types, a check of non-interference, and a scan of the family $q\to q^N$ (\S9). (c) A
+computer-science reading (non-interference, relations over all inputs) and the position that ``one has not understood
+IUT essentially unless the multiradial algorithm has been elucidated and implemented''. Mochizuki himself uses a word
+close to ``non-interference'' in a mathematical sense (\S6.1); we do not claim that the reading of (c) is the same as
+his.
 
 \subsection{The shape of the argument}
 \begin{enumerate}
@@ -224,7 +271,7 @@ images of the $\Theta$-pilot, which is subject to the indeterminacies (Ind1), (I
 Theorem~1.10 of IUT~IV bounds $-|\log\TT|$ from above \cite{IUT4}. This gives the chain
 \[-|\log\qq|\ \le\ -|\log\TT|\ \le\ U(D).\]
 Putting the two ends together, with $a=|\log\qq|$, $k=\ell(\ell+1)/12$ (the average of $j^2$ over the labels
-$j=1,\dots,\ell^*$) and $C=U(D)+k\,a$, gives the height inequality
+$j=1,\dots,\ell^*$, where $\ell^*=(\ell-1)/2$) and $C=U(D)+k\,a$, gives the height inequality
 \[(k-1)\,a\ \le\ C.\]
 
 \tagP{} The value of the middle term $-|\log\TT|$ depends on the ``reading''. The readings have five axes: the range
@@ -245,15 +292,20 @@ load, and the other carries at least the whole wall. Choosing the reading differ
 models (\lean{Iut/\allowbreak{}WallEquiv/\allowbreak{}}). For one reading it also shows that Step~(xi) does not follow from the formalized
 content of Theorem~3.11 alone (\lean{NonDerivable.lean}; \S6.3). It proves, with no other hypothesis left, that the
 variant of Corollary~3.12 for all initial $\Theta$-data gives the abc conjecture (\lean{Iut/\allowbreak{}MainTheorem.lean}).
+Earlier, for one reading, Takkun-kohinata/IUT\_LEAN \cite{TK} (15 July 2026) proved in Lean that the containment of
+Step~(v) together with Corollary~3.12 gives the height inequality, and conversely (\S1.3).
 
 \tagS{} The route of the sources is Theorem~3.11 $\to$ Corollary~3.12 $\to$ Theorem~1.10 of IV $\to$ ABC. Theorem~1.10
 of IV draws its conclusion, in its own statement, by applying the inequality of Corollary~3.12. The sources contain no
 route that avoids Corollary~3.12.
 \srcquote{\q{and hence, by applying the inequality `$C_\Theta\ge-1$' of [IUTchIII], Corollary 3.12, conclude
 that}}{IUT~IV, Theorem~1.10 \cite{IUT4}}
+\tagX{} Geiger's audit of this passage describes IV in the same way: there the load of the theta values is carried to the
+closed form $(\ell+1)/24$, with that section \q{taking the corollary's conclusion as an input} \cite[\S6.2]{Ge2}
+(16 August 2026).
 
-\tagH{} Within the readings listed by the author and by lana-agents/iut, therefore, whoever derives ABC through IUT has to let
-someone carry the height inequality (its load), in every reading. This is what ``IUT passes through the height
+\tagH{} Within the 36 readings of \cite{RF}, whose axes come from the author's notes and in part from lana-agents/iut,
+therefore, whoever derives ABC through IUT has to let someone carry the height inequality (its load), in every reading. This is what ``IUT passes through the height
 inequality'' means.
 
 \tagX{} There is a position that denies this premise. Joshi holds that the Tate parameter changes together with
@@ -344,6 +396,11 @@ Step~(xi) for all genuine data (\lean{classicalABC\_of\_forall\_xi}).
 \srcquote{\q{\textbf{The missing input is ABC-strength}: \lean{classicalABC\_of\_forall\_xi} (Step (xi) for all
 genuine data gives \lean{ClassicalABC}, via \lean{classicalABC\_of\_thm311}).}}{lana-agents/iut,
 \lean{Iut/\allowbreak{}WallEquiv/\allowbreak{}README.md} \cite{lana}}
+
+\tagX{} Earlier, for one reading, Takkun-kohinata/IUT\_LEAN \cite{TK} (15 July 2026) made the same point: with a ledger
+$L=0$ the containment of Step~(v) cannot hold (\lean{no\_lossless\_theta\_hull}), and, since its ledger of IV,
+Propositions~1.1--1.4, does not depend on $|\log q|$, supplying that containment uniformly for curves of unbounded height
+is equivalent to supplying the height inequality (\S1.3).
 
 \tagP{} The family $q\to q^N$ of \cite{RF} shows the same thing. The statement that holds for every $N$ (the upper bound of
 IV) carries no positive load, and the whole wall falls on Corollary~3.12. The same happens in the mockup of \S9 on this
@@ -481,6 +538,16 @@ are taken consistently, the inequality of Corollary~3.12 becomes empty \cite[\S2
 implementation will not produce the required property.
 \end{itemize}
 
+\tagX{} Earlier, Higuchi \cite{Hi} (31 March 2026) and Pajo \cite{Pj} (26 April 2026) proved that the inclusion of
+Step~(xi-f), or the numerical inequality drawn from it, does not follow from qualitative or scale-free abstractions of
+this passage. \tagP{} The author's note \cite{W311} proves a
+statement of the same kind from the results that the proof of Corollary~3.12 cites: their log-volume content, stated as
+axioms at the strength of the source, has models in which the conclusion fails, one of them on actual local objects
+\cite[Theorems~10 and~22]{W311}. By \cite[Proposition~6]{W311}, the carrier reading of (SHE) (the $q$-pilot is one of
+the possible images) implies the conclusion, and the value reading (its log-volume is one of the possible values) is
+equivalent to it. \tagH{} In the mockup of \S9 these are what the oracle \orc{step-xi} returns; an implementation would
+have to supply one of them.
+
 \section{Method: comparing the two computations as programs}
 \tagH{} To study the difference between the two methods of computation, we propose to place them side by side as two
 programs that read the same input, instead of comparing them in the language of difficult mathematics. There are three
@@ -542,7 +609,7 @@ No labels, tensor packets or log-shells occur. The constants are copied from the
 is not used.
 \VerbatimInput{../c/classical.c}
 To compare with the IUT side, the places counted are those of $\Vbad$ of the catalogue \cite{Cat} minus those above 3 and 5
-(as in \cite[\S5]{Gap}, and \cite{WT}; Definition~3.1, (b), of IUT~I allows a subset). The values over all places of bad
+(as in \cite[\S5]{Gap}, and \cite{WT}; Definition~3.1, (b), of IUT~I allows a subset \cite{IUT1}). The values over all places of bad
 reduction are printed too.
 
 \subsection{The computation of IUT}
@@ -584,8 +651,9 @@ datum & $\log\mathfrak q$ & $\log\mathfrak f$ & $-|\log\qq|$ & $-|\log\TT|$ (IV)
 \bottomrule
 \end{tabular}
 
-\smallskip Table 2: output of the two programs (counted places). D2357$^\ast$ is conditional, since the places above
-its unfactored cofactor are not counted; for its counted places the wall exceeds $C$.
+\smallskip Table 2: output of the two programs (counted places). The values for D2357$^\ast$ are conditional, since
+the places above its unfactored cofactor are not counted; for its counted places the wall exceeds $C$. That D2357 is an
+initial $\Theta$-datum satisfying the hypotheses of Theorem~1.10 of IUT~IV is proved in \cite[Theorem~2.1]{Fourteen}.
 \end{center}
 \tagP{} For every datum, $2\ell\cdot|\log\qq|$ on the IUT side agrees with $\log\mathfrak q$ on the classical side, and
 the two sides of the inequality of Theorem~1.10 that the two programs finally print agree (the right-hand side is
@@ -676,8 +744,10 @@ obtained essentially as the result of a certain computation involving commutator
 way, one may think of this cyclotomic rigidity as a sort of consequence of the nonabelian structure of [what
 essentially amounts, from a more classical point of view, to] the `theta-group'.}}{Mochizuki, The \'etale theta
 function and its Frobenioid-theoretic manifestations, Introduction \cite{EtTh}}
-\tagP{} The theta group of the mockup is the product $(c,a,b)(c',a',b')=(c+c'+b\,a',\,a+a',\,b+b')$ of the Heisenberg
-group of lana-agents/iut, written in the coordinates that the theater chose on $\Delta_\Theta$. The algorithm may use
+\tagP{} The theta group of the mockup is the product $(c,a,b)(c',a',b')=(c+c'+b\,a',\,a+a',\,b+b')$, written in the
+coordinates that the theater chose on $\Delta_\Theta$. \tagX{} This is the Heisenberg group of lana-agents/iut
+(\lean{ThetaGroup} in \lean{Iut/\allowbreak{}EtaleTheta/\allowbreak{}Heisenberg.lean}, added on 12 October 2026), whose
+multiplication is $(c+c'+(l\cdot b)\,a',\,a+a',\,b+b')$, in the case $l=1$ \cite{lana}. The algorithm may use
 only multiplication, inversion and the two generators. The $c$-coordinate of the commutator $[t,a_1]$ gives the unit
 $\gamma$ of the theater's coordinates directly.
 \cpprigidity
@@ -761,9 +831,21 @@ input is read. The numbers at the two ends ($\log\mathfrak q$ and the right-hand
 classical side reads only $f$ and $\mathrm{ord}\,q$ at the places of bad reduction and the discriminant of $F$; the
 places of good reduction and $e_F$ are read only by the IUT side (to build the weights and the ramification of $K$).
 
-\paragraph{(ii) Folding the right-hand side.} \tagP{} In the reading of IV, every term of the enumeration of tuples is a
-sum of terms that depend on one factor only. The weighted average therefore folds into a closed expression: for each
-prime $p$,
+\paragraph{(ii) Folding the right-hand side.} \tagS{} In the reading of IV, every term of the enumeration of tuples is a
+sum of terms that depend on one factor only, and the weighted average folds into a closed expression. This folding is
+printed in the proof of Theorem~1.10 of IUT~IV itself, Step~(v): Proposition~1.7 of IV gives the weighted average over
+the tuples, and the identities (E1), (E2) give the average over the labels, with the coefficients $\frac{\ell+5}4$ on
+$\log\mathfrak d^K$ and $\frac{\ell+1}{24}$ on $\log\mathfrak q$.
+\srcquote{\q{Thus, by applying Proposition 1.7, we obtain that the resulting `weighted average upper bound' is given
+by} \dots{} \q{By averaging over $j\in\{1,\dots,l^{\divideontimes}=\frac{l-1}2\}$ and applying (E1), (E2), we obtain
+the `procession-normalized upper bound'\,}}{IUT~IV, proof of Theorem~1.10, Step~(v), pp.~28--29 \cite{IUT4}}
+Remark~1.10.1 of IV observes that this computation of the leading term via (E1), (E2) is essentially identical to the
+computation of the leading term in the proof of Theorem~A of Mochizuki's earlier Hodge--Arakelov theory, and that
+\q{the computations performed in the proof of Theorem 1.10 were already essentially known to the author around the year
+2000; the problem then was to construct an appropriate framework, or geometry, in which these computations could be
+performed!} \cite[Remark~1.10.1]{IUT4}.
+
+\tagP{} In the notation of the programs, for each prime $p$,
 \begin{align*}
 U_p&=\tfrac{\ell+5}4\Bigl(\log\mathfrak d^K_p+\sum_{e_v>p-2}w_v(3+\log e_v)\Bigr)-\tfrac{\ell+1}{24}\log\mathfrak
 q_p+\log p,\\
@@ -771,9 +853,9 @@ M_p&=\tfrac{\ell+5}4\sum_vw_v\rho_v\log p-\tfrac{\ell+1}{24}\log\mathfrak q_p,
 \end{align*}
 where $\tfrac{\ell+5}4$ is the average over the labels of the number $j+1$ of factors and $\tfrac{\ell+1}{24}\log\mathfrak
 q_p=k\,a_p$. The C program prints $U_p$, and the mockup prints both $U_p$ and $M_p$, as enumerated and in closed form;
-the two agree on the six data with $\ell=7$ (for D2357 the long tuples are counted by linearity). \tagX{} This folding is
-done by hand by Dupuy--Hilado (the iterated expectation over tuples and labels, and the average $\frac{\ell+5}4$ of the
-number of factors) \cite{DH}.
+the two agree on the six data with $\ell=7$ (for D2357 the long tuples are counted by linearity). \tagX{} Dupuy--Hilado
+carry out the same averaging as an iterated expectation over tuples and labels, with the average $\frac{\ell+5}4$ of the
+number of factors \cite{DH}.
 
 \tagH{} That is, as a function of the input, the right-hand side of the computation of IUT is a closed expression in
 local classical quantities ($\log p$, ramification indices, $\mathrm{ord}\,q$, weights). The enumeration of labels and
@@ -795,14 +877,20 @@ classical side has nothing corresponding to this $k$. The ``Gaussian Frobenius m
 of Mochizuki (an assignment not compatible with the ring structure) appears in the program as this one coefficient $k$.
 
 \paragraph{(iv) Where the constant 6 comes from.} \tagP{} The constant $\frac16$ on the classical side is copied from
-the statement of Theorem~1.10. On the IUT side, the ratio of the coefficient $(k-1)/(2\ell)$ of the wall (on
-$\log\mathfrak q$) to the coefficient $\frac{\ell+5}4$ of the leading term of the margin (on $\log\mathfrak d^K$) gives
+the statement of Theorem~1.10. On the IUT side, the ratio of the coefficient $\frac{\ell+5}4$ of the leading term of
+the margin (on $\log\mathfrak d^K$) to the coefficient $(k-1)/(2\ell)$ of the wall (on $\log\mathfrak q$) gives
 \[c_\ell=\frac{\ell+5}4\cdot\frac{2\ell}{k-1}=\frac{6\ell(\ell+5)}{(\ell+4)(\ell-3)},\]
 in the form $\log\mathfrak q\le c_\ell\log\mathfrak d^K+\cdots$, with $c_7=11.45$, $c_{157}=6.15$, and $6$ in the limit
 $\ell\to\infty$. \tagX{} This constant is in Dupuy--Hilado, as $\frac1{6+\varepsilon_\ell}$ with
 $\varepsilon_\ell=(24\ell+72)/(\ell^2+\ell-12)$, where they also note $\varepsilon_\ell=O(1/\ell)$ \cite{DH};
 $6+\varepsilon_\ell=c_\ell$. The estimate of Zhou has the same factor $(\ell^2+5\ell)/(\ell^2+\ell-12)=c_\ell/6$
-\cite{Zhou}. Observation (iv) is not a new result; it rereads this in the language of programs.
+\cite{Zhou}, and the Lean port of motizukipdf proves the bound $\log\mathfrak q\le c_\ell\log\mathfrak d^K$ from the
+comparison in the common container (\lean{corThreeTwelve\_unfolded}, with $c_\ell$ written as
+$\frac{12\ell(\ell^*+3)}{\ell(\ell+1)-12}$) \cite{Richards}. Observation (iv) is not a new result; it rereads this in the
+language of programs. \tagP{} The two ingredients are computed in the author's earlier reports: the average of the
+stage coefficients is $\ell(\ell+1)/12$ times the stage-one coefficient \cite[Proposition~10]{Fourth}, and
+$12/(\ell(\ell+1))$ is compared with the $12/\ell^2$ used in the rearrangement in Step~(viii) of the proof of
+Theorem~1.10 \cite[Propositions~1--2]{Fifth}.
 
 \tagH{} In terms of programs, the constant 6 is the ratio of the averages of two loops: the average over the labels $j$
 of the number $j+1$ of factors (how many times the term of the different is added), and the average of the weights
@@ -810,15 +898,18 @@ $j^2$ of the theta values minus 1 (with what multiple $q$ enters).
 
 \paragraph{(v) The comparison that remains uncomputed.} \tagP{} The two programs only compute the two sides for a given
 datum; they do not prove the inequality. In the programs, Corollary~3.12, the core of the proof of IUT, is just the
-one-line comparison $-|\log\qq|\le-|\log\TT|$. In the reading of IV, the value on the $\Theta$-side is $-k\,a+B$ with
-$B=M+k\,a=\frac{\ell+5}4(\sum_p\bar\rho_p\log p+\log\pi)+$ [a nonnegative quantity above $2,3,5,\ell$]. So
+one-line comparison $-|\log\qq|\le-|\log\TT|$. In the reading of IV, the value $M=-|\log\TT|$ on the $\Theta$-side
+(the sum over the primes of the $M_p$ of (ii), plus the archimedean part $\frac{\ell+5}4\log\pi$ and the contribution
+above $2,3,5,\ell$) is $-k\,a+B$ with $B=M+k\,a=\frac{\ell+5}4(\sum_p\bar\rho_p\log p+\log\pi)+$ [a nonnegative quantity
+above $2,3,5,\ell$], where $\bar\rho_p=\sum_{v\mid p}w_v\rho_v$ is the weighted average of the outer radii of the
+log-shells above $p$. So
 Corollary~3.12 becomes $(k-1)a\le B$, the height inequality itself with the radii of the log-shells as margin (``in the
 reading of IV, Corollary~3.12 carries the whole wall'' of \cite{RF}).
 
 \tagH{} In terms of computer science, Corollary~3.12 is a relation (a relational property) between the outputs of two
 programs (the $q$-side and the $\Theta$-side) \emph{over all inputs}. On the six completely factored data the comparison
 holds because the wall is small, 5--13\% of $C$, and the margin is large (Table~2; D2357 falls short for its counted
-places and is conditional). As a test, nothing has been tried. Turning this into a
+places, and its values are conditional since the places above its unfactored cofactor are not counted). As a test, nothing has been tried. Turning this into a
 proof is supposed to be the task of the multiradial algorithm of Theorem~3.11 (\S\S5, 6).
 
 \paragraph{(vi) What the oracle \orc{step-xi} hides.} \tagP{} In the mockup, the only place where ``for every initial
@@ -876,13 +967,19 @@ Python programs the two were extracted independently and agreed).
 places above 3 and 5. The places above $2,3,5,\ell$ are set to 0 in the hull and bounded by Step~(ii) and (R4) in the
 upper bound. The ramification index of $K$ at bad places is assumed by the formula of the catalogue except above $p$.
 D2357 has an unfactored cofactor of 1564 digits whose places are not counted.
-\item \textbf{There are seven data; the six completely factored ones have a large margin, and D2357 is conditional.} The family $q\to q^N$ is an adversarial input, but in
+\item \textbf{There are seven data; the six completely factored ones have a large margin, and the values for D2357 are
+conditional} (the places above its unfactored cofactor are not counted; that it is an initial $\Theta$-datum is proved
+in \cite[Theorem~2.1]{Fourteen}). The family $q\to q^N$ is an adversarial input, but in
 general it does not consist of initial $\Theta$-data of actual curves. None of the tests tries the claims of IUT.
-\item \textbf{The scope of novelty is narrow.} The view of two computations is in Mochizuki and in the report of LANA,
-the explicit computation of the IUT side and its constant are in Dupuy--Hilado and Zhou, and the division into a finite
-layer and a structural layer is in Maeki (\S1.3). What is new here is limited to placing the two as programs, the mockup
-with oracles, and the computer-science reading and position. The search for prior work is as of 5 November 2026 and may
-have missed things.
+\item \textbf{The scope of novelty is narrow.} The view of two computations is in Mochizuki and in the report of LANA;
+the explicit computation of the IUT side is printed in IUT~IV and redone, with its constant, by Dupuy--Hilado and Zhou;
+the objects and processes of IUT are C data types and a Lean port, with a numerical form of Step~(xi) and the same
+constant, in motizukipdf; for one reading the equivalence with the height inequality is proved in Lean in
+Takkun-kohinata/IUT\_LEAN; and the division into a finite layer and a structural layer is in Maeki (\S1.3). What is new
+here is limited to placing the classical computation and the computation of IUT as programs on the same input, the
+mockup with oracles separated by types, and the computer-science reading and position. The search for prior work was
+made on 5 November 2026; version 1.0.0 did not cite motizukipdf or Takkun-kohinata/IUT\_LEAN, and the search may have
+missed other things.
 \item \textbf{``The essence'' and ``not understood essentially'' are the position of this note} (\tagH). Mochizuki also
 speaks of the content of IUT in terms of multiradiality, anabelian geometry, Kummer theory and so on, and our reading of
 his words is our own. There are opposite positions. Joshi holds that the left end also changes with the reading.
@@ -946,7 +1043,9 @@ unfactored cofactor, which the C program does not count, so the comparison is ma
 \lean{check\_cpp.py} compares the mockup with the C programs (\cppitems{} items) and runs the checks of
 non-interference and the scan of $q\to q^N$. The quotations of Mochizuki's documents, of the report of LANA, of
 Dupuy--Hilado, Zhou, Maeki and Joshi, and of lana-agents/iut were taken verbatim from the sources and checked by
-machine, and the mathematical symbols in them on the page images.
+machine, and the mathematical symbols in them on the page images. The quotations added in version 1.1.0 (of IUT~IV, of
+Geiger and of Takkun-kohinata/IUT\_LEAN) were checked against the source texts, and those of IUT~IV and Geiger also on
+the page images.
 
 \section*{Use of generative AI}
 The question studied in this note --- whether placing the computation of IUT and the classical computation side by side
@@ -991,19 +1090,52 @@ papers on inter-universal {T}eichm\"uller theory}, RIMS Preprint 1968, November 
 Shinichi Mochizuki, \emph{The \'etale theta function and its {F}robenioid-theoretic manifestations}, Publ. Res. Inst.
 Math. Sci. \textbf{45} (2009), no.~1, 227--349.
 
+\bibitem[Fifth]{Fifth}
+Toshihisa Urahigashi, \emph{Two constants in the numerical estimates of inter-universal {T}eichm\"uller theory {IV}:
+$12/(\ell(\ell+1))$ and $12/\ell^2$}, fifth report, version 1.0.0, Zenodo, 2026,
+\href{https://doi.org/10.5281/zenodo.22659796}{doi:10.5281/zenodo.22659796} (all versions).
+
+\bibitem[First]{First}
+Toshihisa Urahigashi, \emph{An explicit initial $\Theta$-datum with mixed reduction at a split prime}, first report,
+version 0.1.7, Zenodo, 2026, \href{https://doi.org/10.5281/zenodo.22537342}{doi:10.5281/zenodo.22537342} (all
+versions).
+
 \bibitem[Form]{Form}
 Shinichi Mochizuki, \emph{On the formalization of IUT: a preliminary progress report} (joint work in progress with
 Y.~Hoshi, G.~Yamashita, Y.~Yang), slides, April 2026, 14 pp.,
 \url{https://www.kurims.kyoto-u.ac.jp/~motizuki/Formalization\%20of\%20IUT\%20(2026-04\%20version).pdf}.
 
+\bibitem[Fourteen]{Fourteen}
+Toshihisa Urahigashi, \emph{Fourteen initial $\Theta$-data on one curve over $\Q(i)$}, Zenodo, 2026,
+\href{https://doi.org/10.5281/zenodo.23990716}{doi:10.5281/zenodo.23990716} (all versions).
+
+\bibitem[Fourth]{Fourth}
+Toshihisa Urahigashi, \emph{Split bad primes and the tuple structure of inter-universal {T}eichm\"uller theory}, fourth
+report, version 1.0.4, Zenodo, 2026, \href{https://doi.org/10.5281/zenodo.22648944}{doi:10.5281/zenodo.22648944} (all
+versions).
+
 \bibitem[Gap]{Gap}
 Toshihisa Urahigashi, \emph{The gap between the two walls is positive: a closed form for the (Ind2)-terms of
 lana-agents/iut}, version 1.0.0, Zenodo, 2026, \href{https://doi.org/10.5281/zenodo.23954194}{doi:10.5281/zenodo.23954194}.
+
+\bibitem[Ge2]{Ge2}
+Lukas Geiger, \emph{The {B}ridge-{C}ontract {C}riterion: a form audit for transport arguments, with an instantiation in
+the abc literature} (The abc Gap Series, Part~2), version 0.2, Zenodo, 16 August 2026,
+\href{https://doi.org/10.5281/zenodo.21960477}{doi:10.5281/zenodo.21960477}; all versions
+\href{https://doi.org/10.5281/zenodo.21960476}{doi:10.5281/zenodo.21960476}.
+
+\bibitem[Hi]{Hi}
+Joaquim Reizi Higuchi, \emph{A formal negative result for the passage from {S}tep (xi-e) to {S}tep (xi-f) in {IUT}
+{III}}, preprint, 31 March 2026, \href{https://doi.org/10.13140/RG.2.2.10989.76006}{doi:10.13140/RG.2.2.10989.76006}.
 
 \bibitem[II]{II}
 Toshihisa Urahigashi, \emph{Reading the IUT dispute through indexed identifications: an educational model in
 undergraduate mathematics}, version 2.0.0, Zenodo, 2026,
 \href{https://doi.org/10.5281/zenodo.23933108}{doi:10.5281/zenodo.23933108}.
+
+\bibitem[IUT1]{IUT1}
+Shinichi Mochizuki, \emph{Inter-universal {T}eichm\"uller theory {I}: construction of {H}odge theaters}, Publ. Res.
+Inst. Math. Sci. \textbf{57} (2021), 3--207.
 
 \bibitem[IUT3]{IUT3}
 Shinichi Mochizuki, \emph{Inter-universal {T}eichm\"uller theory {III}: canonical splittings of the log-theta-lattice},
@@ -1031,10 +1163,25 @@ Project LANA, \emph{Project LANA interim report on IUT theory}, 20 July 2026,
 Hidemitsu Maeki, \emph{IUT-Explicit-ADIC}, Zenodo, 22 November 2025,
 \href{https://doi.org/10.5281/zenodo.17677052}{doi:10.5281/zenodo.17677052}.
 
+\bibitem[Pj]{Pj}
+Paul Pajo, \emph{Scale-free common-container comparisons do not entail numerical inequalities: a minimum-viable no-go
+theorem motivated by the {IUT} {III} {T}heorem 3.11-to-{C}orollary 3.12 bridge}, preliminary research note,
+26 April 2026, \href{https://doi.org/10.13140/RG.2.2.33620.16005}{doi:10.13140/RG.2.2.33620.16005}.
+
+\bibitem[Richards]{Richards}
+David Richards, \emph{motizukipdf---{M}ochizuki's papers, plus a toolkit for the data types of {IUT}}, GitHub
+repository \url{https://github.com/oneman/motizukipdf}, created on 27 October 2026, consulted at commit \texttt{2665db1}
+(30 October 2026); Lean port \lean{lean/IUT/LeanForm.lean}.
+
 \bibitem[RF]{RF}
 Toshihisa Urahigashi, \emph{No reading avoids the height inequality: 36 readings of Corollary 3.12 and the conservation
 of the height load}, version 1.0.0, Zenodo, 2026,
 \href{https://doi.org/10.5281/zenodo.23965952}{doi:10.5281/zenodo.23965952}.
+
+\bibitem[Second]{Second}
+Toshihisa Urahigashi, \emph{An initial $\Theta$-datum over an imaginary quadratic field, and numerical values of the
+local quantities of inter-universal {T}eichm\"uller theory {IV}}, second report, version 1.0.5, Zenodo, 2026,
+\href{https://doi.org/10.5281/zenodo.22601333}{doi:10.5281/zenodo.22601333} (all versions).
 
 \bibitem[SL]{SL}
 Toshihisa Urahigashi, \emph{Segment or loop? A homotopy-type-theoretic overview of the dispute over Corollary 3.12 of
@@ -1048,6 +1195,21 @@ Peter Scholze and Jakob Stix, \emph{Why abc is still a conjecture}, 2018.
 Toshihisa Urahigashi, \emph{A local non-containment in Step (v) of IUT IV, Theorem 1.10}, version 3.0.0, Zenodo, 2026,
 \href{https://doi.org/10.5281/zenodo.23852752}{doi:10.5281/zenodo.23852752}.
 
+\bibitem[Third]{Third}
+Toshihisa Urahigashi, \emph{The cost of each distinction in the local computations of inter-universal {T}eichm\"uller
+theory {IV}}, third report, version 1.0.2, Zenodo, 2026,
+\href{https://doi.org/10.5281/zenodo.22646136}{doi:10.5281/zenodo.22646136} (all versions).
+
+\bibitem[TK]{TK}
+Takkun-kohinata, \emph{IUT\_LEAN}, Lean repository, \url{https://github.com/Takkun-kohinata/IUT_LEAN}, commit
+\texttt{9d56c46} (15 July 2026); files \lean{IutLean/Multiradial/ThetaHullDichotomy.lean} and
+\lean{REQUEST\_theta\_hull\_derivation.md}.
+
+\bibitem[W311]{W311}
+Toshihisa Urahigashi, \emph{Where Theorem 3.11 sits: the log-volume content of the results cited in the proof of IUT
+III, Corollary 3.12, does not imply its conclusion}, Zenodo, 2026,
+\href{https://doi.org/10.5281/zenodo.24028832}{doi:10.5281/zenodo.24028832} (all versions).
+
 \bibitem[WT]{WT}
 Toshihisa Urahigashi, \emph{A programmer's walkthrough of inter-universal {T}eichm\"uller theory: running the
 multiradial algorithm on explicit initial $\Theta$-data}, version 1.1.0, Zenodo, 2026,
@@ -1056,6 +1218,11 @@ multiradial algorithm on explicit initial $\Theta$-data}, version 1.1.0, Zenodo,
 \bibitem[Zhou]{Zhou}
 Zhong-Peng Zhou, \emph{The inter-universal {T}eichm\"uller theory and new {D}iophantine results over the rational
 numbers.~I}, arXiv:2503.14510v1 [math.NT], 8 March 2025; code at \url{https://github.com/zhongpengzhou/IUT-Q-I-code}.
+
+\bibitem[ZhouII]{ZhouII}
+Zhong-Peng Zhou, \emph{The inter-universal {T}eichm\"uller theory and new {D}iophantine results over rational
+numbers.~{II}}, arXiv:2510.05448v1 [math.NT], 6 October 2025; code at
+\url{https://github.com/zhongpengzhou/IUT-Q-II-code}.
 \end{thebibliography}
 
 \end{document}

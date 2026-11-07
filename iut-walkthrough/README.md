@@ -1,7 +1,8 @@
 # A programmer's walkthrough of inter-universal Teichmüller theory
 
-Version 1.1.0, 5 November 2026 (17 pages). DOI [10.5281/zenodo.23955994](https://doi.org/10.5281/zenodo.23955994).
-Version 1.0.0: [10.5281/zenodo.23880260](https://doi.org/10.5281/zenodo.23880260).
+Version 1.2.0, 8 November 2026 (18 pages). DOI [10.5281/zenodo.24039375](https://doi.org/10.5281/zenodo.24039375).
+Version 1.1.0: [10.5281/zenodo.23955994](https://doi.org/10.5281/zenodo.23955994); version 1.0.0:
+[10.5281/zenodo.23880260](https://doi.org/10.5281/zenodo.23880260).
 
 A program, with an interactive web page, that runs on explicit numbers those operations of
 inter-universal Teichmüller theory (IUT) that can be written as procedures. Its input is one of the
@@ -29,6 +30,21 @@ Lean model, has been done earlier and on a broader scale in [motizukipdf](https:
 the container formulas and the distinction between the readings are taken from
 [lana-agents/iut](https://github.com/lana-agents/iut).
 Section 8 of the note gives the related work.
+
+## Changes in version 1.2.0
+
+Cites earlier work: [Takkun-kohinata/IUT_LEAN](https://github.com/Takkun-kohinata/IUT_LEAN) (15 July 2026), which
+proved in Lean, in its model, the reduction of Step (xi) to (s − 1)|log q| ≤ L with a ledger L of local terms in
+place of the container volume V (Introduction and Section 3.7); and the Lean models of Hodge theaters, the Θ-link
+and the log-link in lana-agents/iut (12 October 2026), in which Theorem 3.11, as formalized there, holds
+(`thm311_full_model`, 13 October 2026; "What is not new"). Adds pointers to the author's fourth report: by its
+Proposition 9, which uses Minamide–Tsujimura (RIMS-1973, Theorem F), the group Ism through which IUT III,
+Theorem 3.11(i), describes (Ind2) is ℤ_p^× at a finite extension of Q_p and acts by unit scalars, as in the first
+model (Sections 3.6 and 7); by its Section 6, fixing D_0 does not by itself fix the label 0 inside the larger
+capsules (Section 2.3). Replaces the outdated sentence in the caption of Table 3: that D_2357^(157) is an initial
+Θ-datum satisfying the hypotheses of IUT IV, Theorem 1.10, is proved in
+[fourteen-levels](../fourteen-levels/) (Theorem 2.1); its values remain lower bounds. The program, its outputs, the
+page and the tables are unchanged.
 
 ## Files
 

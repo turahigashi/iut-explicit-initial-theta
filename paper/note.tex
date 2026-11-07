@@ -32,7 +32,7 @@
 at a split prime}
 \author{Toshihisa Urahigashi\\
 \small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 0.1.7 --- 12 September 2026\\[3pt]
+\date{Version 0.1.8 --- 8 November 2026\\[3pt]
 \small DOI \href{https://doi.org/10.5281/zenodo.22537342}{\texttt{10.5281/zenodo.22537342}} (all versions)\qquad ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}}
 
 \begin{document}
@@ -305,7 +305,11 @@ $(W,\pm\xi)$, and replace the chosen place by its image under $\sigma$.
 The group acts on the places; the global quotient and cusp stay fixed.
 Do this separately over every selected moduli place, then choose lifts
 over the remaining places.  This gives a section $\VV\to\Vmod$;
-equivariance of the section is not required.
+equivariance of the section is not required.  The same transitivity
+argument is used in \cite[Lemma~2.9.2]{DH25}, where each chosen place is
+moved by a Galois element carrying its local multiplicative subspace to the
+fixed global one; here it is applied to marked flags, so that the cusp is
+matched as well.
 
 Locally the quotient is $E(q)\to E(q^7)$, $z\mapsto z^7$, and its dual
 is $E(q^7)\to E(q)$, $z\mapsto z$.  Thus the local cover has type
@@ -536,6 +540,9 @@ summands are indexed by tuples $t\in\{\mathrm{g},\mathrm{b}\}^{\,j+1}$; $\Ind1$
 permutes the outer label factors, while $\Ind2$ acts within the
 place-indexed factors and does not freely permute the places.
 Write $E_t$ for the $t$-summand of the chosen tensor model.
+We use the peel decomposition of Dupuy and Hilado \cite[\S3.8]{DH20} (their
+$\mathrm{Peel}^i_v$; cf.\ \cite[\S6.3]{DH}); earlier versions of this note
+used it without citing it.
 Writing $\mathrm{Peel}_{\alpha,v}=\bigoplus_{t\,:\,t_\alpha=v}E_t$, a whole-factor
 permutation satisfies $T_\sigma(\mathrm{Peel}_{\alpha,v})
 =\mathrm{Peel}_{\sigma(\alpha),v}$: \emph{the place is unchanged and only the
@@ -620,6 +627,9 @@ In particular the transport has the typed component equation
 \]
 The whole tuple is transported; no isomorphism $K_{\mathrm b}\simeq
 K_{\mathrm g}$, or independent recombination of tuple components, is used.
+\cite[\S4.6]{DH20} describes the effect of a procession automorphism in the same
+form, as a permutation of tensor factors followed by a tensor product of
+automorphisms.
 The fuller source-to-hull argument is recorded in \cite[\S\S7--8]{Firstfull}.
 
 \section{The comparison}\label{s:cmp}
@@ -640,6 +650,13 @@ whence $\lambda=\ord_{211}(\underline{\underline q}_{\mathrm{b}}^{\,1})=29/7$; f
 $j=2$ it is $4\cdot29/7=116/7$.  Note the exponent $j^2$: taking $\lambda$ to be
 $\ord(\underline{\underline q})$ alone would omit it.
 
+\textup{[S]} The same input, in the container $\phi(p^{\lambda}\cdot(R_I)^{\sim})$
+of \cite[Prop.~1.2]{IUT4}, is used earlier in the proof of \cite[Prop.~1.10]{Zhou},
+at the constant tuples of $\Fmod=\mathbb{Q}$ \cite[Def.~1.8(i), Lemma~1.4]{Zhou}.
+Takkun-kohinata/IUT\_LEAN \cite{TK} (15 July 2026) names the containment of the
+possible images in that container, with $\lambda=\ord(q^{j^2})$ in its notation, as
+the one input of Step~(v) whose derivation it asks the source to locate.
+
 \begin{theorem}[exact comparison; its source application withdrawn in
 version~0.1.7]\label{t:cmp}
 \textup{[P]} For \eqref{e:datum} at $j=1$ and $t=(\mathrm{g},\mathrm{b})$, in
@@ -649,7 +666,7 @@ the normalization by $\log211$:
    _{\text{normalized log-volume of the right-hand side of \cite[Prop.~1.2(iii)]{IUT4}}}
  \qquad\text{versus}\qquad
  \underbrace{-\tfrac{106}{105}}_{\text{hull of }L_t},
- \qquad\text{margin }\ \tfrac{8}{7}>0 .
+ \quad\text{margin }\ \tfrac{8}{7}>0 .
 \]
 \textup{[H], withdrawn.}  Version~0.1.6 read this, under \SA{}, as an
 incompatibility with the bound of \cite[Thm.~1.10, proof, Step~(v)]{IUT4}.
@@ -1012,11 +1029,18 @@ would require banning every nontrivial permutation.  We do not claim
 that no further errors remain.  The withdrawal undertaking of \S\ref{s:fals} has
 been discharged in the present version: see \S\ref{s:withdrawn}.
 
+Version~0.1.8 adds citations of earlier work: the peel decomposition of
+\cite[\S3.8]{DH20} and its description of procession automorphisms
+\cite[\S4.6]{DH20} in \S\ref{s:sa}, the section argument of
+\cite[Lemma~2.9.2]{DH25} in \S\ref{s:datum}, and \cite{Zhou} and \cite{TK} for
+the input $\lambda$ of Step~(v) in \S\ref{s:cmp}.  No statement or number is
+changed.
+
 \begin{thebibliography}{MFHMP}
 \bibitem[First-full]{Firstfull} T.~Urahigashi, \emph{An explicit initial $\Theta$-datum
  with mixed reduction over a split prime, and the local estimates of
  inter-universal Teichm\"uller theory IV}, companion draft, version
- 0.1.7 (2026); its \S\S7--9 predate and are superseded by \S\ref{s:withdrawn}
+ 0.1.8 (2026); its \S\S7--9 predate and are superseded by \S\ref{s:withdrawn}
  here, as its supersession notice records.  Included as \href{paper.pdf}{\texttt{paper.pdf}},
  with the source and reproducibility scripts in the same package.
 \bibitem[CanLift]{CanLift} S.~Mochizuki, \emph{The absolute anabelian geometry of
@@ -1058,10 +1082,18 @@ been discharged in the present version: see \S\ref{s:withdrawn}.
 \bibitem[DH25]{DH25} T.~Dupuy, A.~Hilado,
 \emph{The statement of Mochizuki's Corollary 3.12: initial theta data},
 arXiv:2004.13228v2 [math.NT], 19 June 2025, 20~pp.
+\bibitem[DH20]{DH20} T.~Dupuy, A.~Hilado,
+\emph{The statement of Mochizuki's Corollary 3.12, initial theta data, and the
+first two indeterminacies}, arXiv:2004.13228v1 [math.NT], 28 April 2020, 35~pp.
+(Version~1 of \cite{DH25}; its \S3.8 is not in version~2.)
 \bibitem[Zhou]{Zhou} Z.-P.~Zhou,
 \emph{The inter-universal Teichm\"uller theory and new Diophantine
 results over the rational numbers.~I},
 arXiv:2503.14510v1 [math.NT], submitted 8 March 2025, 41~pp.
+\bibitem[TK]{TK} Takkun-kohinata, \emph{IUT\_LEAN}, Lean repository,
+\url{https://github.com/Takkun-kohinata/IUT_LEAN}, file
+\texttt{REQUEST\_theta\_hull\_derivation.md}, commit \texttt{9d56c46}
+(15 July 2026).
 \end{thebibliography}
 
 \end{document}

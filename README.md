@@ -2,13 +2,13 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22537342.svg)](https://doi.org/10.5281/zenodo.22537342)
 
-Draft paper, **version 0.1.7**.
+Draft paper, **version 0.1.8**.
 Archived at DOI [10.5281/zenodo.22537342](https://doi.org/10.5281/zenodo.22537342) (all versions).
 
-Published versions of this revision: first report **0.1.7**, second report **1.0.5**,
-fourth report **1.0.4** (2026-09-12). The bundle shipped with all three is
-`iut-explicit-initial-theta-v0.7.0.zip`. Cite the concept DOIs above, which always
-resolve to the latest version.
+Published versions of this revision (2026-11-08): first report **0.1.8**, second report **1.0.6**,
+third report **1.0.3**, fourth report **1.0.5**, fifth report **1.0.1**. The bundle shipped with all five is
+`iut-explicit-initial-theta-v0.24.0.zip`. Cite the concept DOIs, which always resolve to the latest version;
+the table in "The reports, and which file is which" lists every note with its current version.
 
 > **v0.1.7 — Theorem 1 stands; the source application of Theorems 5 and 6 is withdrawn.**
 > A direct re-reading of IUT IV showed that v0.1.6 did not establish an
@@ -39,6 +39,34 @@ machine-checked; whether the formal statements and axioms match the source is ch
 each note says how. None of the notes claims that Corollary 3.12 of IUT III is false, and none takes a position on
 whether the abc conjecture holds. Corrections are welcome: please open an issue, or write to the address in
 `CITATION.cff`.
+
+## How the notes fit together
+
+These notes record what the author could establish about Corollary 3.12 of IUT III and the estimates of IUT IV,
+Theorem 1.10, on explicit data, in models, and in Lean.
+
+- **The five reports (September 2026)** construct explicit initial Θ-data whose field of moduli is not Q (over
+  Q(√5) in the first report, over Q(i) in the second), evaluate the local quantities of IUT IV on them, measure what
+  each separation in those estimates is worth (third), collect statements on split bad primes and the tuple
+  structure, including that (Ind2) acts at a nonarchimedean tuple by unit scalars (fourth), and compare the constants
+  12/(ℓ(ℓ+1)) and 12/ℓ² (fifth).
+- **Step (v) and the explicit data.** The Step (v) note and the catalogue compare Step (v) of the proof of
+  Theorem 1.10 under two readings of the label permutations of (Ind1) on seven data; fourteen-levels proves that one
+  curve over Q(i) gives an initial Θ-datum at fourteen levels; the walkthrough runs the computable parts of the theory
+  on these data; ind2-gap gives the (Ind2)-terms of lana-agents/iut in closed form; reading-family shows that in each of
+  36 readings Corollary 3.12 and the upper bound of IV give the same height inequality (k − 1)|log q| ≤ C.
+- **Step (xi).** Segment or loop? and its elementary companion, Indexed identifications, state the comparison of
+  Step (xi) as a lax 2-cell, which is equivalent to that inequality. Two computations and Bridge and size are essays
+  that read it as a comparison of programs and as a bridge versus its size. Where Theorem 3.11 sits takes the content
+  of the results cited in the proof as axioms about log-volumes and gives models, one on actual local objects, in which
+  the conclusion fails, so that what is missing lies between a weak and a strong reading of (SHE).
+
+Each note credits the earlier work it builds on or agrees with, including the Lean repositories lana-agents/iut and
+Takkun-kohinata/IUT_LEAN and the preprints of Higuchi, Pajo, Saito, sfingali, Geiger and others. The ratio
+12/(ℓ(ℓ+1)) between the two pilots is written s in Where Theorem 3.11 sits, m in Segment or loop?, 1/k in Indexed
+identifications, reading-family, Two computations and Bridge and size, and 1/s in lana-agents/iut, the walkthrough,
+ind2-gap and the catalogue; in the first four reports, s is the q-order at a bad place. None of the notes claims that
+Corollary 3.12 or the abc conjecture is true or false.
 
 ## Reproducing
 
@@ -121,7 +149,7 @@ records of the preceding draft.
 
 **An initial Θ-datum over an imaginary quadratic field, and numerical values of the
 local quantities of inter-universal Teichmüller theory IV.**
-version 1.0.5, DOI [10.5281/zenodo.22601333](https://doi.org/10.5281/zenodo.22601333) (all versions).
+version 1.0.6, DOI [10.5281/zenodo.24039381](https://doi.org/10.5281/zenodo.24039381); all versions: [10.5281/zenodo.22601333](https://doi.org/10.5281/zenodo.22601333).
 
 The datum is `E_0: y^2 = x(x-1)(x-a)` with `a = (10+3i)^29` and `ℓ = 7` over
 `Q(i)`, for which 109 splits into one multiplicative and one good place.  All of
@@ -150,8 +178,8 @@ objections of Scholze–Stix, or about the abc inequality.
 
 ## The third report — the cost of each distinction (September 2026)
 
-`third-report/paper/note6.pdf` (9 pages), DOI
-[10.5281/zenodo.22646136](https://doi.org/10.5281/zenodo.22646136).
+`third-report/paper/note6.pdf` (9 pages), version 1.0.3, DOI
+[10.5281/zenodo.24039382](https://doi.org/10.5281/zenodo.24039382); all versions: [10.5281/zenodo.22646136](https://doi.org/10.5281/zenodo.22646136).
 
 The local estimates of [IUT IV, §1] are assembled from several steps that the source
 keeps apart: a *p*-primary torsion term, a normalization dividing by the local degree,
@@ -196,27 +224,32 @@ about the abc inequality.
 
 The file names carry an older working numbering; the reports are numbered as follows.
 
-| report | paper | Zenodo (all versions) |
-|---|---|---|
-| first | `paper/note.tex` | [10.5281/zenodo.22537342](https://doi.org/10.5281/zenodo.22537342) |
-| second | `second-report/paper/note5.tex` | [10.5281/zenodo.22601333](https://doi.org/10.5281/zenodo.22601333) |
-| third | `third-report/paper/note6.tex` | [10.5281/zenodo.22646136](https://doi.org/10.5281/zenodo.22646136) |
-| fourth | `fourth-report/paper/note3.tex` | [10.5281/zenodo.22648944](https://doi.org/10.5281/zenodo.22648944) |
-| fifth | `fifth-report/paper/constant_comparison.tex` | [10.5281/zenodo.22659796](https://doi.org/10.5281/zenodo.22659796) |
-| Step (v) short note | `stepv-local-noncontainment/paper/stepv_local_noncontainment.tex` | [10.5281/zenodo.23166432](https://doi.org/10.5281/zenodo.23166432) |
-| catalogue of the data | `initial-theta-catalogue/paper/initial_theta_catalogue.tex` | [10.5281/zenodo.23990719](https://doi.org/10.5281/zenodo.23990719) (version 1.1.0) |
-| fourteen initial Θ-data (D_2357) | `fourteen-levels/paper/fourteen_levels.tex` | [10.5281/zenodo.23990717](https://doi.org/10.5281/zenodo.23990717) (version 1.0.0) |
-| programmer's walkthrough | `iut-walkthrough/paper/iut_walkthrough.tex` | [10.5281/zenodo.23880260](https://doi.org/10.5281/zenodo.23880260) (version 1.0.0) |
-| segment or loop (HoTT overview) | `segment-or-loop/paper/segment_or_loop.tex` | [10.5281/zenodo.23991545](https://doi.org/10.5281/zenodo.23991545) (version 1.3.0) |
-| indexed identifications (educational) | `indexed-identifications/paper/indexed_identifications.tex` | [10.5281/zenodo.23991546](https://doi.org/10.5281/zenodo.23991546) (version 2.2.0) |
+| note | paper | Zenodo, all versions | current version |
+|---|---|---|---|
+| first | `paper/note.tex` | [10.5281/zenodo.22537342](https://doi.org/10.5281/zenodo.22537342) | 0.1.8, [10.5281/zenodo.24039378](https://doi.org/10.5281/zenodo.24039378) |
+| second | `second-report/paper/note5.tex` | [10.5281/zenodo.22601333](https://doi.org/10.5281/zenodo.22601333) | 1.0.6, [10.5281/zenodo.24039381](https://doi.org/10.5281/zenodo.24039381) |
+| third | `third-report/paper/note6.tex` | [10.5281/zenodo.22646136](https://doi.org/10.5281/zenodo.22646136) | 1.0.3, [10.5281/zenodo.24039382](https://doi.org/10.5281/zenodo.24039382) |
+| fourth | `fourth-report/paper/note3.tex` | [10.5281/zenodo.22648944](https://doi.org/10.5281/zenodo.22648944) | 1.0.5, [10.5281/zenodo.24039383](https://doi.org/10.5281/zenodo.24039383) |
+| fifth | `fifth-report/paper/constant_comparison.tex` | [10.5281/zenodo.22659796](https://doi.org/10.5281/zenodo.22659796) | 1.0.1, [10.5281/zenodo.24039384](https://doi.org/10.5281/zenodo.24039384) |
+| Step (v) short note | `stepv-local-noncontainment/paper/stepv_local_noncontainment.tex` | [10.5281/zenodo.23166432](https://doi.org/10.5281/zenodo.23166432) | 3.1.0, [10.5281/zenodo.24039373](https://doi.org/10.5281/zenodo.24039373) |
+| catalogue of the data | `initial-theta-catalogue/paper/initial_theta_catalogue.tex` | [10.5281/zenodo.23870447](https://doi.org/10.5281/zenodo.23870447) | 1.2.0, [10.5281/zenodo.24039374](https://doi.org/10.5281/zenodo.24039374) |
+| fourteen initial Θ-data (D_2357) | `fourteen-levels/paper/fourteen_levels.tex` | [10.5281/zenodo.23990716](https://doi.org/10.5281/zenodo.23990716) | 1.0.0, [10.5281/zenodo.23990717](https://doi.org/10.5281/zenodo.23990717) |
+| programmer's walkthrough | `iut-walkthrough/paper/iut_walkthrough.tex` | [10.5281/zenodo.23880259](https://doi.org/10.5281/zenodo.23880259) | 1.2.0, [10.5281/zenodo.24039375](https://doi.org/10.5281/zenodo.24039375) |
+| segment or loop (HoTT overview) | `segment-or-loop/paper/segment_or_loop.tex` | [10.5281/zenodo.23931343](https://doi.org/10.5281/zenodo.23931343) | 1.4.0, [10.5281/zenodo.24039360](https://doi.org/10.5281/zenodo.24039360) |
+| indexed identifications (educational) | `indexed-identifications/paper/indexed_identifications.tex` | [10.5281/zenodo.23931345](https://doi.org/10.5281/zenodo.23931345) | 2.3.0, [10.5281/zenodo.24039367](https://doi.org/10.5281/zenodo.24039367) |
+| the gap between the two walls | `ind2-gap/paper/ind2_gap.tex` | [10.5281/zenodo.23954193](https://doi.org/10.5281/zenodo.23954193) | 1.1.0, [10.5281/zenodo.24039377](https://doi.org/10.5281/zenodo.24039377) |
+| no reading avoids the height inequality | `reading-family/paper/reading_family.tex` | [10.5281/zenodo.23965951](https://doi.org/10.5281/zenodo.23965951) | 1.1.0, [10.5281/zenodo.24039368](https://doi.org/10.5281/zenodo.24039368) |
+| two computations | `two-computations/paper/two_computations.tex` | [10.5281/zenodo.23968298](https://doi.org/10.5281/zenodo.23968298) | 1.1.0, [10.5281/zenodo.24039369](https://doi.org/10.5281/zenodo.24039369) |
+| bridge and size | `bridge-and-size/paper/bridge_and_size.tex` | [10.5281/zenodo.23984200](https://doi.org/10.5281/zenodo.23984200) | 1.1.0, [10.5281/zenodo.24039372](https://doi.org/10.5281/zenodo.24039372) |
+| where Theorem 3.11 sits | `where-311-sits/paper/where-311-sits.tex` | [10.5281/zenodo.24028832](https://doi.org/10.5281/zenodo.24028832) | 1.1.0, [10.5281/zenodo.24039357](https://doi.org/10.5281/zenodo.24039357) |
 
 `paper/paper.tex` is the expanded version of the **first** report, cited as `[First-full]`;
 the first report is the version of record.
 
 ## The fourth report — split bad primes and the tuple structure (September 2026)
 
-`fourth-report/paper/note3.pdf` (12 pages), DOI
-[10.5281/zenodo.22648944](https://doi.org/10.5281/zenodo.22648944) (all versions).
+`fourth-report/paper/note3.pdf` (13 pages), version 1.0.5, DOI
+[10.5281/zenodo.24039383](https://doi.org/10.5281/zenodo.24039383); all versions: [10.5281/zenodo.22648944](https://doi.org/10.5281/zenodo.22648944).
 
 It collects statements that are **either quoted from a source or proved outright**: that a
 tensor packet admits place tuples of mixed reduction type and that selecting only nonsplit
@@ -243,8 +276,8 @@ identity** — every candidate still needs an eye on the source.
 
 ## The fifth report — two constants (September 2026)
 
-`fifth-report/paper/constant_comparison.pdf` (7 pages), DOI
-[10.5281/zenodo.22659796](https://doi.org/10.5281/zenodo.22659796) (all versions).
+`fifth-report/paper/constant_comparison.pdf` (8 pages), version 1.0.1, DOI
+[10.5281/zenodo.24039384](https://doi.org/10.5281/zenodo.24039384); all versions: [10.5281/zenodo.22659796](https://doi.org/10.5281/zenodo.22659796).
 
 The constants `χ = 12/(ℓ(ℓ+1))` and `τ = 12/ℓ²` occur at **different steps** of the
 numerical estimates surrounding [IUT IV].  The first is the exact ratio of the stage-one
@@ -274,8 +307,8 @@ adjudicate neither the theory nor the objection.**
 ## Step (v) short note (October 2026)
 
 **A local non-containment in Step (v) of IUT IV, Theorem 1.10.**
-`stepv-local-noncontainment/paper/stepv_local_noncontainment.pdf` (9 pages), version 3.0.0, DOI
-[10.5281/zenodo.23852752](https://doi.org/10.5281/zenodo.23852752).
+`stepv-local-noncontainment/paper/stepv_local_noncontainment.pdf` (9 pages), version 3.1.0, DOI
+[10.5281/zenodo.24039373](https://doi.org/10.5281/zenodo.24039373).
 All versions: [10.5281/zenodo.23166432](https://doi.org/10.5281/zenodo.23166432).
 
 This note presents an explicit local non-containment calculation for a datum with two places of
@@ -310,10 +343,10 @@ pdflatex -interaction=nonstopmode -halt-on-error stepv_local_noncontainment.tex 
 ## Catalogue of the data (November 2026)
 
 **Explicit initial Θ-data and the two readings of Step (v) of IUT IV, Theorem 1.10: a catalogue.**
-`initial-theta-catalogue/paper/initial_theta_catalogue.pdf` (7 pages), version 1.1.0, DOI
-[10.5281/zenodo.23990719](https://doi.org/10.5281/zenodo.23990719) (version 1.0.0:
-[10.5281/zenodo.23870448](https://doi.org/10.5281/zenodo.23870448)). Version 1.1.0 removes the condition on the
-datum D_2357^(ℓ), whose verification is now in `fourteen-levels/` (below); nothing else is changed.
+`initial-theta-catalogue/paper/initial_theta_catalogue.pdf` (7 pages), version 1.2.0, DOI
+[10.5281/zenodo.24039374](https://doi.org/10.5281/zenodo.24039374) (all versions: [10.5281/zenodo.23870447](https://doi.org/10.5281/zenodo.23870447)). Version 1.1.0 removed the condition on
+the datum D_2357^(ℓ), whose verification is in `fourteen-levels/` (below); version 1.2.0 credits earlier work
+(Takkun-kohinata/IUT_LEAN) and corrects two locators and a count.
 
 The note collects the explicit initial Θ-data constructed over Q(√5) and Q(i) — the three of the first
 report, the second report and the Step (v) short note, and four new ones, one of them for fourteen values
@@ -331,9 +364,9 @@ under Apache-2.0.
 ## A programmer's walkthrough (November 2026)
 
 **A programmer's walkthrough of inter-universal Teichmüller theory: running the multiradial algorithm on
-explicit initial Θ-data.** `iut-walkthrough/paper/iut_walkthrough.pdf` (17 pages), version 1.1.0, DOI
-[10.5281/zenodo.23955994](https://doi.org/10.5281/zenodo.23955994) (version 1.0.0:
-[10.5281/zenodo.23880260](https://doi.org/10.5281/zenodo.23880260)).
+explicit initial Θ-data.** `iut-walkthrough/paper/iut_walkthrough.pdf` (18 pages), version 1.2.0, DOI
+[10.5281/zenodo.24039375](https://doi.org/10.5281/zenodo.24039375) (all versions:
+[10.5281/zenodo.23880259](https://doi.org/10.5281/zenodo.23880259)).
 
 A program, with an interactive web page, that runs on explicit numbers those operations of IUT that can be
 written as procedures, on the seven initial Θ-data of the catalogue above. It computes the Tate parameters
@@ -358,29 +391,26 @@ The files in `iut-walkthrough/` are licensed under CC BY 4.0.
 Two companion notes, published together and citing each other.
 
 **Segment or loop? A homotopy-type-theoretic overview of the dispute over Corollary 3.12 of inter-universal
-Teichmüller theory.** `segment-or-loop/paper/segment_or_loop.pdf` (26 pages), version 1.3.0, DOI
-[10.5281/zenodo.23991545](https://doi.org/10.5281/zenodo.23991545) (version 1.2.0:
-[10.5281/zenodo.23991368](https://doi.org/10.5281/zenodo.23991368); version 1.1.0:
-[10.5281/zenodo.23933109](https://doi.org/10.5281/zenodo.23933109); version 1.0.0:
-[10.5281/zenodo.23931344](https://doi.org/10.5281/zenodo.23931344)). The vocabularies of the dispute (identification
+Teichmüller theory.** `segment-or-loop/paper/segment_or_loop.pdf` (28 pages), version 1.4.0, DOI
+[10.5281/zenodo.24039360](https://doi.org/10.5281/zenodo.24039360) (all versions:
+[10.5281/zenodo.23931343](https://doi.org/10.5281/zenodo.23931343)). The vocabularies of the dispute (identification
 and labels, monodromy, segment, loop and universal cover, IPL, SHE and APT, logical AND and OR, descent, commutativity
 up to indeterminacies, the size of the blurring) are stated as propositions of homotopy type theory about families of
 ordered real lines over graphs. Corollary 3.12 becomes equivalent to a lax 2-cell between two paths, an inequality of
-the shape of a height bound. The quantitative core is checked in Lean 4 (`segment-or-loop/lean/`). Version 1.1.0 adds
-pointers to Part II of the companion note; versions 1.2.0 and 1.3.0 cite the earlier work described below.
+the shape of a height bound. The quantitative core is checked in Lean 4 (`segment-or-loop/lean/`). Version 1.1.0 added
+pointers to Part II of the companion note; version 1.2.0 cited Laniewski, version 1.3.0 the `Iut/WallEquiv/` files of
+lana-agents/iut, and version 1.4.0 the further earlier work described below.
 
 **Reading the IUT dispute through indexed identifications: an educational model in undergraduate mathematics.**
-`indexed-identifications/paper/indexed_identifications.pdf` (26 pages), version 2.2.0, DOI
-[10.5281/zenodo.23991546](https://doi.org/10.5281/zenodo.23991546) (version 2.1.0:
-[10.5281/zenodo.23991371](https://doi.org/10.5281/zenodo.23991371); version 2.0.0:
-[10.5281/zenodo.23933108](https://doi.org/10.5281/zenodo.23933108); version 1.0.0:
-[10.5281/zenodo.23931346](https://doi.org/10.5281/zenodo.23931346)). The same model written with sets, maps,
+`indexed-identifications/paper/indexed_identifications.pdf` (28 pages), version 2.3.0, DOI
+[10.5281/zenodo.24039367](https://doi.org/10.5281/zenodo.24039367) (all versions:
+[10.5281/zenodo.23931345](https://doi.org/10.5281/zenodo.23931345)). The same model written with sets, maps,
 positive real numbers, graphs and inequalities, with a symbol for indexed identifications, exercises and answers.
 Part II, new in version 2.0.0, extends the notation to the components of tensor packets: in a model with one prime and
 the label permutations of (Ind1), the two readings of the union in Corollary 3.12 differ by an expected order
 statistic, and in either reading Corollary 3.12 together with the upper bound of IV implies the height bound. The
-quantitative core of Part II is checked in Lean 4 (`indexed-identifications/lean/`). Versions 2.1.0 and 2.2.0 cite the same
-earlier work.
+quantitative core of Part II is checked in Lean 4 (`indexed-identifications/lean/`). Version 2.1.0 cited Laniewski, version 2.2.0
+the `Iut/WallEquiv/` files, and version 2.3.0 the further earlier work described below.
 
 None of the results of either note is new mathematically; the contribution is the formulation and the
 correspondences. A general semantics for comparison problems in arithmetic geometry, in which the passage between
@@ -388,14 +418,18 @@ labelled presentations is a transport carrying a cost, appears earlier, without 
 *Intensional semantics for comparison problems in arithmetic geometry*, arXiv:2608.13609; no priority is claimed for
 that idea. Statements of the same shape as the central equivalence of both notes (Step (xi) is equivalent to one
 inequality, which the properties at the level of Theorem 3.11 do not decide) were proved earlier, in models, in the
-Lean repository lana-agents/iut (`Iut/WallEquiv/`, added 13 October 2026); they are not claimed as new. **No claim is made about the truth of Corollary 3.12, Theorem 1.10 of IUT IV, or the abc
+Lean repository lana-agents/iut (`Iut/WallEquiv/`, added 13 October 2026); they are not claimed as new. Both notes also credit earlier readings and formalizations of the same dispute: J. Whaley Jr
+(a reading in homotopy type theory, Zenodo, 15 October 2026), sfingali (a Lean formalization of the Scholze–Stix
+objection, Zenodo, 2 August 2026), Takkun-kohinata/IUT_LEAN (July 2026), Gogopex/iut-lean (labelled copies of the real
+line, May 2026), and the files `Iut/Wall/Pilots.lean` and `Iut/Wall/Constraints.lean` of lana-agents/iut (October 2026).
+**No claim is made about the truth of Corollary 3.12, Theorem 1.10 of IUT IV, or the abc
 conjecture.** The files in `segment-or-loop/` and `indexed-identifications/` are licensed under CC BY 4.0.
 
 ## The gap between the two walls (November 2026)
 
 **The gap between the two walls is positive: a closed form for the (Ind2)-terms of lana-agents/iut.**
-`ind2-gap/paper/ind2_gap.pdf` (10 pages), version 1.0.0, DOI
-[10.5281/zenodo.23954194](https://doi.org/10.5281/zenodo.23954194).
+`ind2-gap/paper/ind2_gap.pdf` (11 pages), version 1.1.0, DOI
+[10.5281/zenodo.24039377](https://doi.org/10.5281/zenodo.24039377).
 
 [lana-agents/iut](https://github.com/lana-agents/iut) proves that the difference Δ(D) between its variant of
 Corollary 3.12 and the Scholze–Stix inequality is a weighted average of (Ind2)-terms at the bad residue
@@ -403,7 +437,8 @@ characteristics, and leaves their value open. The note determines the (Ind2)-ter
 definitions as they stand. It follows that Δ(D) > 0 for every initial Θ-datum, that Δ(D) is bounded above by a
 quantity that does not involve the size of the q-orders, and that its average over the labels is given by the class
 number of Q(√−ℓ). The values for the data of the catalogue are computed with the program of the walkthrough above.
-The proofs are on paper and have not been checked in Lean. **No claim is made about the truth of (Var), (SS),
+lana-agents/iut had earlier proved positivity for the form of the gap without the hull; the note concerns Δ(D) with the
+hull, and explains the relation. The proofs are on paper and have not been checked in Lean. **No claim is made about the truth of (Var), (SS),
 Corollary 3.12, or the abc conjecture.** See `ind2-gap/README.md` for the files and how to rerun the scripts.
 
 The files in `ind2-gap/` are licensed under CC BY 4.0.
@@ -411,8 +446,8 @@ The files in `ind2-gap/` are licensed under CC BY 4.0.
 ## No reading avoids the height inequality (November 2026)
 
 **No reading avoids the height inequality: 36 readings of Corollary 3.12 and the conservation of the height load.**
-`reading-family/paper/reading_family.pdf` (15 pages), version 1.0.0, DOI
-[10.5281/zenodo.23965952](https://doi.org/10.5281/zenodo.23965952).
+`reading-family/paper/reading_family.pdf` (17 pages), version 1.1.0, DOI
+[10.5281/zenodo.24039368](https://doi.org/10.5281/zenodo.24039368).
 
 The value of −|log Θ| in Corollary 3.12 depends on how the statement is read, along five axes ((Ind1), (Ind3), (Ind2),
 the hull, the archimedean container), which give 36 readings. In each of them, Corollary 3.12 and the upper bound of
@@ -420,7 +455,8 @@ IUT IV together give the same height inequality (k − 1)|log q| ≤ C, because 
 that takes no reading. A reading only splits the wall (k − 1)|log q| between the two statements, at a point decided by
 (Ind1) alone; no reading makes both loads nonpositive, and in the family q → q^N the statement that holds for every N
 carries no positive load. The statements are proved in Lean 4 for a component model (`reading-family/lean/`), and the
-36 readings are computed for the seven data of the catalogue with the program of the walkthrough above. **No claim is
+36 readings are computed for the seven data of the catalogue with the program of the walkthrough above. That the wall
+is needed was shown earlier in Lean by Takkun-kohinata/IUT_LEAN and lana-agents/iut, whom the note credits. **No claim is
 made about the truth of Corollary 3.12, Theorem 1.10 of IUT IV, or the abc conjecture.** See `reading-family/README.md`
 for the files and how to rerun them.
 
@@ -429,8 +465,8 @@ The files in `reading-family/` are licensed under CC BY 4.0.
 ## Two computations of the height inequality (November 2026)
 
 **Two computations of the height inequality and the multiradial algorithm: reading IUT from the viewpoint of computer
-science.** `two-computations/paper/two_computations.pdf` (27 pages), version 1.0.0, DOI
-[10.5281/zenodo.23968299](https://doi.org/10.5281/zenodo.23968299).
+science.** `two-computations/paper/two_computations.pdf` (30 pages), version 1.1.0, DOI
+[10.5281/zenodo.24039369](https://doi.org/10.5281/zenodo.24039369).
 
 An essay with almost no new mathematical results, which proposes to read IUT from the side of computer science. In
 every reading listed in `reading-family/`, IUT passes through the height inequality, which is written in classical
@@ -438,7 +474,8 @@ quantities and can be computed for a given curve without IUT; what IUT has to ad
 Corollary 3.12, which is supposed to come from the multiradial algorithm of Theorem 3.11. Two C programs place the
 classical computation and the computation of IUT (in the reading of IUT IV) side by side on the same input, and a C++
 mockup of the multiradial algorithm implements what can be implemented at present and leaves the rest as named oracles
-whose values are reverse-computed and marked as such. **No claim is made about the truth of IUT, of Corollary 3.12, or
+whose values are reverse-computed and marked as such. D. Richards' motizukipdf (data types, a web tool and a Lean form of
+the same comparison) and Takkun-kohinata/IUT_LEAN are credited as earlier work. **No claim is made about the truth of IUT, of Corollary 3.12, or
 of the abc conjecture**; the output of the mockup proves nothing. See `two-computations/README.md` for the files and how
 to rerun them.
 
@@ -447,14 +484,15 @@ The files in `two-computations/` are licensed under CC BY 4.0.
 ## Bridge and size (November 2026)
 
 **Bridge and size: the Kodaira–Spencer morphism, arithmetic derivatives and Step (xi) of IUT as lax 2-cells.**
-`bridge-and-size/paper/bridge_and_size.pdf` (20 pages), version 1.0.0, DOI
-[10.5281/zenodo.23984201](https://doi.org/10.5281/zenodo.23984201).
+`bridge-and-size/paper/bridge_and_size.pdf` (22 pages), version 1.1.0, DOI
+[10.5281/zenodo.24039372](https://doi.org/10.5281/zenodo.24039372).
 
 An essay with almost no new mathematical results. It places the Kodaira–Spencer argument of function fields, the
 bridges built from an additive relation a + b = c (the p-adic logarithms of Baker's method, Pasten's arithmetic
 derivatives) and Step (xi) of the proof of Corollary 3.12 side by side as the lax 2-cells of `segment-or-loop/`, and
 separates a *bridge* (that a 2-cell exists) from its *size* (the blurring) — a restatement of two requirements stated
-by Mochizuki himself. A bridge from an additive relation does not cross the Θ-link; on the seven data of
+by Mochizuki himself. The term bridge for this inclusion, and the observation that the written argument bounds the
+blurring but does not derive the bridge, appear earlier in Higuchi, Pajo and Geiger, whom the note credits. A bridge from an additive relation does not cross the Θ-link; on the seven data of
 `two-computations/data/`, absorbing the resulting discrepancy needs ℓ times the wall (k − 1)Q. **No claim is made
 about whether IUT is correct.** See `bridge-and-size/README.md` for the files and how to rerun them.
 
@@ -479,17 +517,17 @@ The files in `fourteen-levels/` are licensed under CC BY 4.0.
 ## Where Theorem 3.11 sits (November 2026)
 
 **Where Theorem 3.11 sits: the log-volume content of the results cited in the proof of IUT III, Corollary 3.12, does
-not imply its conclusion.** `where-311-sits/paper/where-311-sits.pdf` (23 pages), version 1.0.1, DOI
-[10.5281/zenodo.24030772](https://doi.org/10.5281/zenodo.24030772) (all versions:
+not imply its conclusion.** `where-311-sits/paper/where-311-sits.pdf` (24 pages), version 1.1.0, DOI
+[10.5281/zenodo.24039357](https://doi.org/10.5281/zenodo.24039357) (all versions:
 [10.5281/zenodo.24028832](https://doi.org/10.5281/zenodo.24028832)).
 
 The note lists the results that Corollary 3.12 and its proof cite, states the content of the 22 that the proof uses
 as definitions or premises as axioms about log-volumes, at the strength of the source, and gives models of the axioms
 — one of them built from actual local objects at a finite extension of Q_p — in which the conclusion fails. A weak
 reading of (SHE) follows from the axioms; within the models, the conclusion holds exactly where a strong reading
-holds. A Venn diagram displays this position. Non-derivability from a package of what is proved at the level of
-Theorem 3.11 was made public first by [lana-agents/iut](https://github.com/lana-agents/iut); the note was obtained
-independently and cites it. Every statement marked [P] is proved in Lean 4 with Mathlib (`where-311-sits/lean/`).
+holds. A Venn diagram displays this position. Results of the same shape were proved earlier, for abstractions of the passage by Higuchi and
+Pajo, and in Lean by Takkun-kohinata/IUT_LEAN (July 2026) and [lana-agents/iut](https://github.com/lana-agents/iut)
+(October 2026); the note was obtained independently of these Lean works, which were made public first, and cites them. Every statement marked [P] is proved in Lean 4 with Mathlib (`where-311-sits/lean/`).
 **Nothing is claimed about whether Corollary 3.12 is true, nor about abc.** See `where-311-sits/README.md`.
 
 The paper and README in `where-311-sits/` are licensed under CC BY 4.0, and the Lean sources in

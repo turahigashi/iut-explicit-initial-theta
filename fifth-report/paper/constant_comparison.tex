@@ -20,7 +20,9 @@
  \large $12/(\ell(\ell+1))$ and $12/\ell^2$: a fifth report}
 \author{Toshihisa Urahigashi\\
  \small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.0.0 --- 8 September 2026\\[3pt]
+\date{Version 1.0.1 --- 8 November 2026\\[3pt]
+ \small DOI \href{https://doi.org/10.5281/zenodo.24039384}{10.5281/zenodo.24039384} (this version);
+ \href{https://doi.org/10.5281/zenodo.22659796}{10.5281/zenodo.22659796} (all versions)\\[3pt]
  \small ORCID \href{https://orcid.org/0009-0004-0460-6242}{0009-0004-0460-6242}}
 
 \begin{document}
@@ -171,7 +173,8 @@ SS also discuss the geometric origin of $1/6$ in their height comparison
 That discussion is subject to their bounded local data; it does not assert
 an exact equality between every height and $\deg(q_E)/6$.
 Their displayed sums and rearrangement account for the denominator
-$\ell(\ell+1)$.  Our comparison with the $\ell^2$ denominator uses the
+$\ell(\ell+1)$; sfingali \cite{Sf2} (2 August 2026) also observes that the
+$j^2$-average giving $\ell(\ell+1)/12$ appears in this computation of Scholze--Stix.  Our comparison with the $\ell^2$ denominator uses the
 specific IUT IV estimate below, without attributing an unstated motive
 or claiming a first occurrence of this comparison.
 
@@ -192,10 +195,17 @@ This is the average of $j+1$, whereas \eqref{e:ss15} averages $j$.
 elsewhere.}  \cite[p.~70]{JoshiIV} writes: ``Hence one may replace the term
 $-\frac16\cdot\log(q)$ in (6.11.3) by $-\frac16\cdot\bigl(1-\frac{12}{\ell^2}\bigr)\cdot
 \log(q)$ and still have an excess contribution greater than
-$\frac1{2\ell}\log(q)$.''  No priority is claimed here for the rearrangement or
-for its slack; what this report adds is the exact comparison with $\chi$ of
-\S\ref{s:ss}.  \emph{This report takes no position on the further claims of}
-\cite{JoshiIV}.
+$\frac1{2\ell}\log(q)$.''  No priority is claimed for the rearrangement, its slack,
+or the normalized difference $1/\ell$ of Proposition~\ref{p:slack} below.  The last
+appears earlier in Takkun-kohinata/IUT\_LEAN \cite{TK} (July 2026) as the identity
+$C_\Theta=P\cdot X-\ell(\ell+1)/12+1/\ell$ for the constant $C_\Theta$ of
+\cite[Thm.~1.10]{IUT4}; with $H=\log(\mathfrak q)$, $P=c/Q$ and $X=D$ it reads
+$K_\tau/Q=K_\chi/Q+1/\ell$.  sfingali \cite{Sf1} (31 July 2026) computes the
+coefficient $s(1-12/\ell^2)$ with $s=\ell(\ell+1)/12$, and the $\chi$ form is used in
+\cite[\S\S7.12, 8.6]{DHPS} and \cite[Prop.~1.10]{Zhou}.  What is added here is the
+comparison of the reciprocal factors $F_\chi$ and $F_\tau$ of \S\ref{s:order} and the
+tables of \S\ref{s:tables}.  \emph{This report takes no
+position on the further claims of} \cite{JoshiIV}.
 
 The next upper bound factors out $(\ell+1)/4$ and replaces the remaining
 positive coefficients by larger ones.  For example,
@@ -331,7 +341,8 @@ $d_{\rm mod}=[\Fmod:\mathbb Q]\ge1$
  \le1+20d_{\rm mod}/\ell.
 \]
 These are the source's two estimates with its stated restrictions
-$\ell\ge7$ and $d_{\rm mod}\ge1$.
+$\ell\ge7$ and $d_{\rm mod}\ge1$; \cite[\S3.2]{Sf1} also notes that both hold for
+$\ell\ge7$ and that the second needs $d_{\rm mod}\ge1$.
 At $\ell=5,d_{\rm mod}=1$ the second estimate fails, since its left side
 is $85/13>5$.  Level~5 can illustrate the elementary formulas but not
 this theorem's terminal estimate.  The range $\ell\ge7$ by itself
@@ -502,5 +513,23 @@ second report, consulted version 1.0.3 (2026),
 \emph{Split bad primes and the tuple structure of inter-universal
 Teichm\"uller theory}, fourth report, consulted version 1.0.2 (2026),
 \href{https://doi.org/10.5281/zenodo.22648944}{doi:10.5281/zenodo.22648944} (all versions).
+\bibitem[DHPS]{DHPS} T.~Dupuy and A.~Hilado,
+\emph{Probabilistic Szpiro, baby Szpiro, and explicit Szpiro from Mochizuki's
+Corollary 3.12}, arXiv:2004.13108v2 [math.NT], 29 April 2020.
+\bibitem[Zhou]{Zhou} Z.-P.~Zhou,
+\emph{The inter-universal Teichm\"uller theory and new Diophantine results over the
+rational numbers.~I}, arXiv:2503.14510v1 [math.NT], 8 March 2025.
+\bibitem[TK]{TK} Takkun-kohinata, \emph{IUT\_LEAN}, Lean repository,
+\url{https://github.com/Takkun-kohinata/IUT_LEAN}, file
+\texttt{IutLean/Multiradial/IdentificationAudit.lean}, commit \texttt{9d56c46}
+(15 July 2026).
+\bibitem[Sf1]{Sf1} sfingali,
+\emph{Machine-checked analysis of the arithmetic spine of the ATS proof of the abc
+conjecture}, Zenodo, 31 July 2026,
+\href{https://doi.org/10.5281/zenodo.21727741}{doi:10.5281/zenodo.21727741}.
+\bibitem[Sf2]{Sf2} sfingali,
+\emph{The Scholze--Stix objection, formally: the arithmetic is agreed, the $q$-side is
+absent}, Zenodo, 2 August 2026,
+\href{https://doi.org/10.5281/zenodo.21757640}{doi:10.5281/zenodo.21757640}.
 \end{thebibliography}
 \end{document}

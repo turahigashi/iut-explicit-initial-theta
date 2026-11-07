@@ -1,6 +1,23 @@
 # Bridge and size: the Kodaira–Spencer morphism, arithmetic derivatives and Step (xi) of IUT as lax 2-cells
 
-Version 1.0.0, 6 November 2026 (20 pages). DOI [10.5281/zenodo.23984201](https://doi.org/10.5281/zenodo.23984201).
+Version 1.1.0, 8 November 2026 (22 pages). DOI [10.5281/zenodo.24039372](https://doi.org/10.5281/zenodo.24039372).
+Version 1.0.0: [10.5281/zenodo.23984201](https://doi.org/10.5281/zenodo.23984201).
+
+**Changes in 1.1.0.** Cites the earlier use of the word "bridge" for the same inclusion of Step (xi): Higuchi
+("numerical bridge statement", ResearchGate, 31 March 2026), Pajo ("bridge certificate", ResearchGate, 26 April 2026)
+and Geiger (*The Bridge Certificate*, Zenodo, 13–14 August 2026; *The Bridge-Contract Criterion*, Zenodo, 16 August
+2026). Cites the earlier assignment for IUT (the load of the theta values is quantified in IUT IV, while the inclusion
+is not derived) in Geiger's Bridge-Contract Criterion (§6.2, rows F-R4a, F-R4b, F-R6b) and in Takkun-kohinata/IUT_LEAN
+(15 July 2026, observation (F4)), and replaces the sentence that this assignment had not been found. Cites Laniewski and
+Müller (arXiv:2610.26490, 19 October 2026: the derivation gives no bound on the quality by itself), the word "wall" of
+the interim report of Project LANA, and two related Lean files of lana-agents/iut (`Iut/Abc/FunctionFieldSzpiro.lean`,
+`Iut/Abc/P24Table.lean`, 14 October 2026). Corrects the abstract and §7.2: ℓ times the wall is below the constant C of
+IUT IV on the six completely factored data (0.36 to 0.92 of C) and exceeds it after replacing q by q^N for N ≥ 3.
+Uses "size" in the sense of Definition 2.1 only (IUT has a bound on the blurring, not a size); corrects "only two ways"
+(three are listed), restores "(in the model)" in §1.1, states Pasten's Corollary 4.6 as its two implications, and adds
+"with q prime" to the exceptional triples of Pasten's conjecture. Updates the citation of *Segment or loop?* to version
+1.3.0 and adds a cross-reference to *Where Theorem 3.11 sits* (Theorem 10, Corollary 11, Theorem 22). The script, its
+output and the tables are unchanged.
 
 This note is an essay that proposes a viewpoint; it contains almost no new mathematical results. In function fields,
 the height inequality follows from the Kodaira–Spencer morphism. The note places this classical argument, the
