@@ -1,0 +1,5 @@
+lean/.lake/
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.toc

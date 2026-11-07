@@ -465,3 +465,21 @@ Corollary 3.12 or about abc.** With this note the catalogue above is released as
 condition on D_2357^(ℓ). See `fourteen-levels/README.md`.
 
 The files in `fourteen-levels/` are licensed under CC BY 4.0.
+
+## Where Theorem 3.11 sits (November 2026)
+
+**Where Theorem 3.11 sits: the log-volume content of the results cited in the proof of IUT III, Corollary 3.12, does
+not imply its conclusion.** `where-311-sits/paper/where-311-sits.pdf` (23 pages), version 1.0.0, DOI
+[10.5281/zenodo.24028833](https://doi.org/10.5281/zenodo.24028833).
+
+The note lists the results that Corollary 3.12 and its proof cite, states the content of the 22 that the proof uses
+as definitions or premises as axioms about log-volumes, at the strength of the source, and gives models of the axioms
+— one of them built from actual local objects at a finite extension of Q_p — in which the conclusion fails. A weak
+reading of (SHE) follows from the axioms; within the models, the conclusion holds exactly where a strong reading
+holds. A Venn diagram displays this position. Non-derivability from a package of what is proved at the level of
+Theorem 3.11 was made public first by [lana-agents/iut](https://github.com/lana-agents/iut); the note was obtained
+independently and cites it. Every statement marked [P] is proved in Lean 4 with Mathlib (`where-311-sits/lean/`).
+**Nothing is claimed about whether Corollary 3.12 is true, nor about abc.** See `where-311-sits/README.md`.
+
+The paper and README in `where-311-sits/` are licensed under CC BY 4.0, and the Lean sources in
+`where-311-sits/lean/` under the Apache License 2.0.

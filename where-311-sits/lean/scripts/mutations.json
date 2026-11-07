@@ -1,0 +1,380 @@
+[
+ {
+  "id": "m01",
+  "paper": "widening the hull to the whole integral box breaks exactly the minimality in (C4)",
+  "file": "Cor312LogVolume/independence/Cor312CitedTheory.lean",
+  "edits": [
+   {
+    "old": "  hull := thetaPilotRegion\n",
+    "new": "  hull := fun _ j => qBallN (j.val + 1) 0\n"
+   },
+   {
+    "old": "  hull_isLambdaO := fun _ j => ⟨29 * j.val ^ 2, rfl⟩\n",
+    "new": "  hull_isLambdaO := fun _ j => ⟨0, rfl⟩\n"
+   },
+   {
+    "old": "  hull_contains := by\n    rintro x rfl\n    exact fun _ _ => subset_rfl\n",
+    "new": "  hull_contains := by\n    rintro x rfl\n    intro _ j\n    show qBallN (j.val + 1) (29 * j.val ^ 2) ⊆ qBallN (j.val + 1) 0\n    rw [qBallN_zero_eq_ball]\n    exact qBallN_subset_unit _ _\n"
+   },
+   {
+    "old": "  hull_le_integral := fun _ j => qBallN_subset_unit (j.val + 1) (29 * j.val ^ 2)\n",
+    "new": "  hull_le_integral := fun _ j => qBallN_subset_unit (j.val + 1) 0\n"
+   }
+  ],
+  "expect": {
+   "mode": "exact_within",
+   "scope": [
+    "modelTheory"
+   ],
+   "labels": [
+    "modelTheory.hull_minimal"
+   ]
+  }
+ },
+ {
+  "id": "m02",
+  "paper": "adding q to the possible images breaks exactly the bound x <= C in (C3) and the containment x <= H in (C4)",
+  "file": "Cor312LogVolume/independence/Cor312CitedTheory.lean",
+  "edits": [
+   {
+    "old": "  Possible := {thetaPilotRegion}\n",
+    "new": "  Possible := {thetaPilotRegion, qRegionN}\n"
+   },
+   {
+    "old": "  theta_possible := rfl\n",
+    "new": "  theta_possible := Set.mem_insert _ _\n"
+   },
+   {
+    "old": "  ind1_closed := by\n    rintro x rfl y ⟨h, rfl⟩\n    exact ind1Act_thetaPilotRegion h\n",
+    "new": "  ind1_closed := by\n    rintro x (rfl | rfl) y ⟨h, rfl⟩\n    · exact Or.inl (ind1Act_thetaPilotRegion h)\n    · refine Or.inr ?_\n      funext vQ j\n      show (h.packetAut vQ j) '' qBallN (j.val + 1) 29 = qBallN (j.val + 1) 29\n      have hpa : (h.packetAut vQ j : (Fin (j.val + 1) → ℚ_[211]) → _)\n          = permAutQp (j.val + 1) (h.labelPerm j) := rfl\n      rw [hpa]\n      exact permAutQp_image_qBallN _ _ _\n"
+   },
+   {
+    "old": "  ind2_closed := by\n    rintro x rfl y ⟨g, rfl⟩\n    exact ind2Act_thetaPilotRegion g\n",
+    "new": "  ind2_closed := by\n    rintro x (rfl | rfl) y ⟨g, rfl⟩\n    · exact Or.inl (ind2Act_thetaPilotRegion g)\n    · refine Or.inr ?_\n      funext vQ j\n      exact unitAutQp_image_qBallN (j.val + 1) 29 (g vQ j)\n"
+   },
+   {
+    "old": "  ind3_bound := by\n    rintro x rfl\n    exact fun _ _ => subset_rfl\n",
+    "new": "  ind3_bound := by\n    rintro x (rfl | rfl)\n    · exact fun _ _ => subset_rfl\n    · exact fun _ _ => subset_rfl\n"
+   },
+   {
+    "old": "  ind3_saturated := by\n    rintro x rfl y hxy hyc\n    exact funext fun vQ => funext fun j => Set.Subset.antisymm (hyc vQ j) (hxy vQ j)\n",
+    "new": "  ind3_saturated := by\n    rintro x (rfl | rfl) y hxy hyc\n    · exact Or.inl (funext fun vQ => funext fun j => Set.Subset.antisymm (hyc vQ j) (hxy vQ j))\n    · exfalso\n      have hv := p211PacketSystemN.procVol_ind3\n        (fun vQ j => ⟨(hxy vQ j).trans (hyc vQ j), qBallN_subset_unit (j.val + 1) (29 * j.val ^ 2)⟩)\n        qRegionN_hasVolume\n      linarith [thetaPilot_below_q]\n"
+   },
+   {
+    "old": "  hull_contains := by\n    rintro x rfl\n    exact fun _ _ => subset_rfl\n",
+    "new": "  hull_contains := by\n    rintro x (rfl | rfl)\n    · exact fun _ _ => subset_rfl\n    · exact fun _ _ => subset_rfl\n"
+   },
+   {
+    "old": "  hull_minimal := fun _ _ hT => hT _ rfl\n",
+    "new": "  hull_minimal := fun _ _ hT => hT _ (Set.mem_insert _ _)\n"
+   },
+   {
+    "old": "  ipl := by\n    rintro x rfl\n    refine ⟨3 / 14, by norm_num, ?_⟩\n    rw [p211N_procVol, procVol_thetaPilotRegion]\n    unfold unitVolP\n    ring\n",
+    "new": "  ipl := by\n    rintro x (rfl | rfl)\n    · refine ⟨3 / 14, by norm_num, ?_⟩\n      rw [p211N_procVol, procVol_thetaPilotRegion]\n      unfold unitVolP\n      ring\n    · exact ⟨1, one_pos, (one_mul _).symm⟩\n"
+   }
+  ],
+  "expect": {
+   "mode": "exact_within",
+   "scope": [
+    "modelTheory"
+   ],
+   "labels": [
+    "modelTheory.hull_contains",
+    "modelTheory.ind3_bound"
+   ]
+  }
+ },
+ {
+  "id": "m03",
+  "paper": "removing j^2 from the Theta-side image (and correcting its volume) breaks exactly the numerical inequality in the proof of Theorem 14",
+  "file": "Cor312LogVolume/independence/Cor312CitedTheoryFamily.lean",
+  "edits": [
+   {
+    "old": "abbrev thetaN (N : ℕ) : p211PacketSystemN.Regions := ballRegion fun k => 29 * (N * k ^ 2)\n",
+    "new": "abbrev thetaN (N : ℕ) : p211PacketSystemN.Regions := ballRegion fun _ => 29 * N\n"
+   },
+   {
+    "old": "theorem procVol_thetaN (N : ℕ) :\n    p211PacketSystemN.procVol (thetaN N) = (N : ℝ) * (14 / 3) * unitVolP := by\n  have hstage : ∀ (vQ : p211PacketSystemN.PlaceQ) (k : Fin p211PacketSystemN.lstar),\n      p211PacketSystemN.packetLogVolume vQ k.succ (thetaN N vQ k.succ)\n        = ((N * (k.val + 1) ^ 2 : ℕ) : ℝ) * (-(29 / 7) * Real.log 211) := by\n    intro vQ k\n    have e : thetaN N vQ k.succ = thetaRegion (N * (k.val + 1) ^ 2) vQ k.succ := by\n      simp only [thetaN, ballRegion, thetaRegion, Fin.val_succ]\n    rw [e, packetLogVolume_thetaRegion]\n    push_cast\n    ring\n  have hl : (p211PacketSystemN.lstar : ℝ) = 3 := by norm_num [p211PacketSystemN]\n  rw [PacketSystem.procVol]\n  simp only [hstage]\n  rw [hl]\n  show (∑ _x : Unit, (∑ k : Fin 3,\n      ((N * (k.val + 1) ^ 2 : ℕ) : ℝ) * (-(29 / 7) * Real.log 211)) / (3 : ℝ)) = _\n  simp only [Fin.sum_univ_three, Finset.univ_unique, Finset.sum_singleton]\n  unfold unitVolP\n  norm_num\n  ring\n\n",
+    "new": "theorem procVol_thetaN (N : ℕ) :\n    p211PacketSystemN.procVol (thetaN N) = (N : ℝ) * 1 * unitVolP := by\n  rw [mul_one]\n  exact procVol_thetaRegion N\n\n"
+   },
+   {
+    "old": "(14 / 3)",
+    "new": "1",
+    "count": 11
+   },
+   {
+    "old": "(fun k => 29 * (N * k ^ 2))",
+    "new": "(fun _ => 29 * N)",
+    "count": 2
+   },
+   {
+    "old": "⟨29 * (N * j.val ^ 2), rfl⟩",
+    "new": "⟨29 * N, rfl⟩"
+   }
+  ],
+  "expect": {
+   "mode": "exact",
+   "labels": [
+    "robust"
+   ]
+  }
+ },
+ {
+  "id": "m04",
+  "paper": "dropping the nonzero-measure hypothesis breaks exactly the step of Proposition 6 that uses monotonicity",
+  "file": "Cor312LogVolume/independence/Cor312LanaTarget.lean",
+  "edits": [
+   {
+    "old": "def PilotVolumeMatch : Prop :=\n  ∃ x ∈ T.Possible, T.S.HasVolume x ∧ T.S.procVol x = T.negLogQ\n\ntheorem pilotVolumeMatch_implies_conclusion (h : T.PilotVolumeMatch) : T.Conclusion := by\n  obtain ⟨x, hx, hv, he⟩ := h\n",
+    "new": "def PilotVolumeMatch : Prop :=\n  ∃ x ∈ T.Possible, T.S.procVol x = T.negLogQ\n\ntheorem pilotVolumeMatch_implies_conclusion (h : T.PilotVolumeMatch) : T.Conclusion := by\n  obtain ⟨x, hx, he⟩ := h\n"
+   },
+   {
+    "old": "  ⟨T.qPilot, h, T.q_hasVolume, rfl⟩\n\nend CitedTheory\n\ntheorem model_not_pilotVolumeMatch",
+    "new": "  ⟨T.qPilot, h, rfl⟩\n\nend CitedTheory\n\ntheorem model_not_pilotVolumeMatch"
+   }
+  ],
+  "expect": {
+   "mode": "exact",
+   "labels": [
+    "pilotVolumeMatch_implies_conclusion"
+   ]
+  }
+ },
+ {
+  "id": "m05",
+  "paper": "for Theorem 15, dropping the lower end of the interval of possible images breaks exactly the nonzero measure of the possible images",
+  "file": "Cor312LogVolume/independence/Cor312CitedBadPlaceEnlarged.lean",
+  "edits": [
+   {
+    "old": "  {x | ∀ i, RegionLE (famS E i) (famTheta E N i) (x i) ∧ RegionLE (famS E i) (x i) (famCont E N c i)}\n",
+    "new": "  {x | ∀ i, RegionLE (famS E i) (x i) (famCont E N c i)}\n"
+   },
+   {
+    "old": "    (famS E i).procVol_ind3 (fun vQ j => ⟨(hx i).2 vQ j, famCont_le_integral E N c i vQ j⟩)\n",
+    "new": "    (famS E i).procVol_ind3 (fun vQ j => ⟨(hx i) vQ j, famCont_le_integral E N c i vQ j⟩)\n"
+   },
+   {
+    "old": "  theta_possible := fun i => ⟨fun _ _ => subset_rfl, famTheta_le_famCont E N c i⟩\n",
+    "new": "  theta_possible := fun i => famTheta_le_famCont E N c i\n"
+   },
+   {
+    "old": "    refine ⟨?_, ?_⟩\n    · rw [← famTheta_act E N i h]\n      exact act_regionLE h (hx i).1\n    · rw [← famCont_act E N c i h]\n      exact act_regionLE h (hx i).2\n",
+    "new": "    rw [← famCont_act E N c i h]\n    exact act_regionLE h (hx i)\n"
+   },
+   {
+    "old": "    refine ⟨?_, ?_⟩\n    · rw [← famTheta_ind2 E N i g]\n      exact ind2Act_regionLE g (hx i).1\n    · rw [← famCont_ind2 E N c i g]\n      exact ind2Act_regionLE g (hx i).2\n",
+    "new": "    rw [← famCont_ind2 E N c i g]\n    exact ind2Act_regionLE g (hx i)\n"
+   },
+   {
+    "old": "  ind3_bound := fun _ hx i => (hx i).2\n",
+    "new": "  ind3_bound := fun _ hx i => hx i\n"
+   },
+   {
+    "old": "  ind3_saturated := fun _ hx _ hxy hyc i =>\n    ⟨fun vQ j => ((hx i).1 vQ j).trans (hxy i vQ j), hyc i⟩\n",
+    "new": "  ind3_saturated := fun _ _ _ _ hyc i => hyc i\n"
+   },
+   {
+    "old": "  hull_contains := fun _ hx i => (hx i).2\n",
+    "new": "  hull_contains := fun _ hx i => hx i\n"
+   },
+   {
+    "old": "    hT _ (fun i => ⟨famTheta_le_famCont E N c i, fun _ _ => subset_rfl⟩)\n",
+    "new": "    hT _ (fun i => fun _ _ => subset_rfl)\n"
+   },
+   {
+    "old": "  ⟨fun c' => {x | ∀ i, RegionLE (famS E i) (famTheta E N i) (x i) ∧ RegionLE (famS E i) (x i) (c' i)},\n    rfl, fun _ _ hx i => (hx i).2⟩\n",
+    "new": "  ⟨fun c' => {x | ∀ i, RegionLE (famS E i) (x i) (c' i)},\n    rfl, fun _ _ hx i => hx i⟩\n"
+   }
+  ],
+  "expect": {
+   "mode": "exact",
+   "labels": [
+    "famPoss_hasVolume"
+   ]
+  }
+ },
+ {
+  "id": "m06",
+  "paper": "tightening the exponent of the container by one breaks the inclusion of the outer bound in the container",
+  "file": "Cor312LogVolume/independence/Cor312RamifiedLogShell.lean",
+  "edits": [
+   {
+    "old": "      shellMul p Lf (boundExponent p Lf i₀ k - c0 p Lf) := by\n",
+    "new": "      shellMul p Lf (boundExponent p Lf i₀ k - c0 p Lf + 1) := by\n"
+   }
+  ],
+  "expect": {
+   "mode": "first",
+   "label": "boundRegion_subset_shellMul"
+  }
+ },
+ {
+  "id": "m07",
+  "paper": "doubling the adjustment breaks Lemma 17",
+  "file": "Cor312LogVolume/independence/Cor312RamifiedLogShell.lean",
+  "edits": [
+   {
+    "old": "  adjustment := fun _ j => 1 / (Module.finrank ℚ_[p] (PP p L j.val) : ℝ) *\n",
+    "new": "  adjustment := fun _ j => 2 / (Module.finrank ℚ_[p] (PP p L j.val) : ℝ) *\n"
+   }
+  ],
+  "expect": {
+   "mode": "first",
+   "label": "packetLogVolume_eq"
+  }
+ },
+ {
+  "id": "m08",
+  "paper": "dropping c_j from the bound of Lemma 21(d) breaks that bound",
+  "file": "Cor312LogVolume/independence/Cor312RamifiedLogShell.lean",
+  "edits": [
+   {
+    "old": "      (errCoeff p (LL L j.val) + c0 p (LL L j.val)) * Real.log p +\n        (N : ℝ) * Real.log ‖(D.ξ (labOf j.val) : L)‖ := by\n  have h1 := packetLogVolume_region p L () j (hullReg p D N j.val)\n",
+    "new": "      (errCoeff p (LL L j.val)) * Real.log p +\n        (N : ℝ) * Real.log ‖(D.ξ (labOf j.val) : L)‖ := by\n  have h1 := packetLogVolume_region p L () j (hullReg p D N j.val)\n"
+   }
+  ],
+  "expect": {
+   "mode": "first",
+   "label": "stage_hull_le"
+  }
+ },
+ {
+  "id": "m09",
+  "paper": "replacing 3/14 by 3/13 breaks (C6)",
+  "file": "Cor312LogVolume/independence/Cor312RamifiedLogShell.lean",
+  "edits": [
+   {
+    "old": "  linkScale := 3 / 14\n  linkScale_pos := by norm_num\n  link_degree := by\n    rw [procVol_qL, procVol_thetaL]\n    ring\n",
+    "new": "  linkScale := 3 / 13\n  linkScale_pos := by norm_num\n  link_degree := by\n    rw [procVol_qL, procVol_thetaL]\n    ring\n"
+   }
+  ],
+  "expect": {
+   "mode": "first",
+   "label": "logShellTheory.link_degree"
+  }
+ },
+ {
+  "id": "m10",
+  "paper": "replacing -1 by the identity breaks the nontriviality in Lemma 18",
+  "file": "Cor312LogVolume/independence/Cor312RamifiedLogShell.lean",
+  "edits": [
+   {
+    "old": "  refine ⟨fun _ _ _ _ => negAut p L, ?_⟩\n",
+    "new": "  refine ⟨fun _ _ _ _ => LinearEquiv.refl ℤ_[p] _, ?_⟩\n"
+   }
+  ],
+  "expect": {
+   "mode": "first",
+   "label": "ind2_nontrivial"
+  }
+ },
+ {
+  "id": "m11",
+  "paper": "replacing 1 (x) alpha by alpha (x) alpha breaks the nontriviality of the label permutations",
+  "file": "Cor312LogVolume/independence/Cor312RamifiedLabelAction.lean",
+  "edits": [
+   {
+    "old": "    permLin p L 1 (Equiv.swap 0 1) (PiTensorProduct.tprod ℚ_[p] (s := LL L 1) ![1, α]) ≠\n      PiTensorProduct.tprod ℚ_[p] (s := LL L 1) ![1, α] := by\n",
+    "new": "    permLin p L 1 (Equiv.swap 0 1) (PiTensorProduct.tprod ℚ_[p] (s := LL L 1) ![α, α]) ≠\n      PiTensorProduct.tprod ℚ_[p] (s := LL L 1) ![α, α] := by\n"
+   }
+  ],
+  "expect": {
+   "mode": "first",
+   "label": "label_swap_ne"
+  }
+ },
+ {
+  "id": "m12",
+  "paper": "dropping the hypothesis L != Q_p breaks the nontriviality of the label permutations",
+  "file": "Cor312LogVolume/independence/Cor312RamifiedLabelAction.lean",
+  "edits": [
+   {
+    "old": "theorem ind1_nontrivial (h : Module.finrank ℚ_[p] L ≠ 1) :\n",
+    "new": "theorem ind1_nontrivial :\n"
+   }
+  ],
+  "expect": {
+   "mode": "first",
+   "label": "ind1_nontrivial"
+  }
+ },
+ {
+  "id": "m13",
+  "paper": "stating the monotonicity of p^m log_p(R_I^x) in m in the opposite direction makes that statement fail",
+  "file": "Cor312LogVolume/independence/Cor312RamifiedLogShell.lean",
+  "edits": [
+   {
+    "old": "theorem shellMul_mono {m m' : ℤ} (h : m' ≤ m) : shellMul p Lf m ⊆ shellMul p Lf m' := by\n",
+    "new": "theorem shellMul_mono {m m' : ℤ} (h : m ≤ m') : shellMul p Lf m ⊆ shellMul p Lf m' := by\n"
+   }
+  ],
+  "expect": {
+   "mode": "first",
+   "label": "shellMul_mono"
+  }
+ },
+ {
+  "id": "m14",
+  "paper": "computing the possible images from the image of the Theta-pilot instead of the container breaks Proposition 5",
+  "file": "Cor312LogVolume/independence/Cor312CitedWeakSHEScale.lean",
+  "edits": [
+   {
+    "old": "theorem weakSHE_holds : T.WeakSHE :=\n  ⟨fun c => {y | y ∈ T.Possible ∧ RegionLE T.S y c},\n",
+    "new": "theorem weakSHE_holds : ∃ alg : T.S.Regions → Set T.S.Regions,\n    T.Possible = alg T.thetaPilot ∧ ∀ c x, x ∈ alg c → RegionLE T.S x c :=\n  ⟨fun c => {y | y ∈ T.Possible ∧ RegionLE T.S y c},\n"
+   }
+  ],
+  "expect": {
+   "mode": "first",
+   "label": "weakSHE_holds"
+  }
+ },
+ {
+  "id": "m15",
+  "paper": "dropping the nonzero-measure hypothesis breaks Proposition 26(c)",
+  "file": "Cor312LogVolume/independence/Cor312CitedWeakSHEScale.lean",
+  "edits": [
+   {
+    "old": "theorem conclusion_of_linkScale_one (h1 : T.linkScale = 1) (hθ : T.S.HasVolume T.thetaPilot) :\n    T.Conclusion := by\n",
+    "new": "theorem conclusion_of_linkScale_one (h1 : T.linkScale = 1) :\n    T.Conclusion := by\n"
+   }
+  ],
+  "expect": {
+   "mode": "first",
+   "label": "conclusion_of_linkScale_one"
+  }
+ },
+ {
+  "id": "m16",
+  "paper": "choosing the arrow (sQ4) that does not move components breaks the triviality of the holonomy",
+  "file": "Cor312LogVolume/independence/Cor312CitedPrimeStripLayer.lean",
+  "edits": [
+   {
+    "old": "def layerLoop : LoopData T.primeStripLayer where\n  hullTarget := obj 9\n  sq3 := idHom 8 9\n  sq4 := inv (inv T.primeStripLayer.thetaLink ≫ T.primeStripLayer.diagram.iplComposite ≫ idHom 8 9)\n  sq3Twist := ∅\n  sq4Twist := ∅\n\ntheorem layer_holonomy_trivial : T.layerLoop.loopArrow (𝟙 _) (𝟙 _) = 𝟙 _ := by\n  simp [LoopData.loopArrow, layerLoop]\n\ntheorem layer_id_mem_loopPoly",
+    "new": "def layerLoop : LoopData T.primeStripLayer where\n  hullTarget := obj 9\n  sq3 := idHom 8 9\n  sq4 := idHom 9 0\n  sq3Twist := ∅\n  sq4Twist := ∅\n\ntheorem layer_holonomy_trivial : T.layerLoop.loopArrow (𝟙 _) (𝟙 _) = 𝟙 _ := by\n  simp [LoopData.loopArrow, layerLoop]\n\ntheorem layer_id_mem_loopPoly"
+   }
+  ],
+  "expect": {
+   "mode": "first",
+   "label": "layer_holonomy_trivial"
+  }
+ },
+ {
+  "id": "m17",
+  "paper": "removing the container bound from the (Ind3) step breaks the inclusion of the generated possible images in Poss",
+  "file": "Cor312LogVolume/independence/Cor312CitedPrimeStripLayer.lean",
+  "edits": [
+   {
+    "old": "def IndStep (x y : T.S.Regions) : Prop :=\n  T.S.Ind1 x y ∨ T.S.Ind2 x y ∨ (RegionLE T.S x y ∧ RegionLE T.S y T.container)\n",
+    "new": "def IndStep (x y : T.S.Regions) : Prop :=\n  T.S.Ind1 x y ∨ T.S.Ind2 x y ∨ RegionLE T.S x y\n"
+   },
+   {
+    "old": "    rcases hstep with h1 | h2 | ⟨hle, hc⟩\n    · exact T.ind1_closed _ ih _ h1\n    · exact T.ind2_closed _ ih _ h2\n    · exact T.ind3_saturated _ ih _ hle hc\n  | hull _ _ _ _ => exact T.container_possible\n\ntheorem layer_possible_subset {x : T.S.Regions}",
+    "new": "    rcases hstep with h1 | h2 | hle\n    · exact T.ind1_closed _ ih _ h1\n    · exact T.ind2_closed _ ih _ h2\n    · exact T.ind3_saturated _ ih _ hle (by assumption)\n  | hull _ _ _ _ => exact T.container_possible\n\ntheorem layer_possible_subset {x : T.S.Regions}"
+   }
+  ],
+  "expect": {
+   "mode": "first",
+   "label": "layer_possible_subset_aux"
+  }
+ }
+]
