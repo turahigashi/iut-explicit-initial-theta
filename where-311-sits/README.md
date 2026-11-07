@@ -1,6 +1,7 @@
 # Where Theorem 3.11 sits: the log-volume content of the results cited in the proof of IUT III, Corollary 3.12, does not imply its conclusion
 
-Version 1.0.0, 7 November 2026 (23 pages). DOI [10.5281/zenodo.24028833](https://doi.org/10.5281/zenodo.24028833).
+Version 1.0.1, 7 November 2026 (23 pages). DOI [10.5281/zenodo.24030772](https://doi.org/10.5281/zenodo.24030772);
+all versions: [10.5281/zenodo.24028832](https://doi.org/10.5281/zenodo.24028832).
 
 The inequality of Corollary 3.12 of IUT III is obtained in Step (xi) of its proof, where the author states that he
 will be concerned only with certain qualitative properties of the multiradial algorithm of Theorem 3.11. The note
@@ -22,6 +23,18 @@ obtained independently of it, and it was made public first.
 **We do not claim that Corollary 3.12 is false, nor anything about abc.** The result concerns what follows from the
 statements that the proof cites, including what Theorem 3.11 states about the output of its algorithm; whether the
 construction of the algorithm itself supplies the missing membership is not decided here.
+
+## Changes in 1.0.1
+
+The disclosure now says what was done: the proofs were found with generative AI tools under the author's direction;
+every statement marked [P] is checked in Lean; the correspondence between the axioms and the cited results is
+checked against the source texts and not by Lean; the author's own reading of the proofs is still in progress; the
+author takes full responsibility for the paper. Version 1.0.0 said instead that the author had checked every proof,
+computation and reference, and that the author had checked each inclusion of Figure 1; those sentences are removed.
+Section 10 now states that only Theorem 1 of the first report (the initial Θ-datum) is used, and not the source
+application of its Theorems 5 and 6, which version 0.1.7 of that report withdrew. Nothing else changed; the Lean
+sources are identical. Version 1.0.0: DOI [10.5281/zenodo.24028833](https://doi.org/10.5281/zenodo.24028833), tag
+v0.23.0.
 
 ## Files
 

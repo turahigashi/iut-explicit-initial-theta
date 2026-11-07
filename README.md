@@ -479,8 +479,9 @@ The files in `fourteen-levels/` are licensed under CC BY 4.0.
 ## Where Theorem 3.11 sits (November 2026)
 
 **Where Theorem 3.11 sits: the log-volume content of the results cited in the proof of IUT III, Corollary 3.12, does
-not imply its conclusion.** `where-311-sits/paper/where-311-sits.pdf` (23 pages), version 1.0.0, DOI
-[10.5281/zenodo.24028833](https://doi.org/10.5281/zenodo.24028833).
+not imply its conclusion.** `where-311-sits/paper/where-311-sits.pdf` (23 pages), version 1.0.1, DOI
+[10.5281/zenodo.24030772](https://doi.org/10.5281/zenodo.24030772) (all versions:
+[10.5281/zenodo.24028832](https://doi.org/10.5281/zenodo.24028832)).
 
 The note lists the results that Corollary 3.12 and its proof cite, states the content of the 22 that the proof uses
 as definitions or premises as axioms about log-volumes, at the strength of the source, and gives models of the axioms

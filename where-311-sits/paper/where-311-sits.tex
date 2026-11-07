@@ -35,8 +35,8 @@
 \newcommand{\tI}{(R_I)^{\sim}}
 \newcommand{\tO}{\widetilde{\mathcal O}}
 \newcommand{\fq}{\mathfrak q}
-\newcommand{\ArtifactURL}{\url{https://github.com/turahigashi/iut-explicit-initial-theta/tree/v0.23.0/where-311-sits/lean}}
-\newcommand{\ArtifactDOI}{\href{https://doi.org/10.5281/zenodo.24028833}{10.5281/zenodo.24028833}}
+\newcommand{\ArtifactURL}{\url{https://github.com/turahigashi/iut-explicit-initial-theta/tree/v0.23.1/where-311-sits/lean}}
+\newcommand{\ArtifactDOI}{\href{https://doi.org/10.5281/zenodo.24030772}{10.5281/zenodo.24030772}}
 \setlength{\lineskiplimit}{2pt}
 \setlength{\lineskip}{2pt}
 
@@ -44,9 +44,9 @@
 cited in the proof of IUT~III, Corollary~3.12, does not imply its conclusion}
 \author{Toshihisa Urahigashi\\
 \small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.0.0 --- 7 November 2026\\[3pt]
+\date{Version 1.0.1 --- 7 November 2026\\[3pt]
 \small ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}\\
-\small \href{https://doi.org/10.5281/zenodo.24028833}{doi:10.5281/zenodo.24028833}}
+\small \href{https://doi.org/10.5281/zenodo.24030772}{doi:10.5281/zenodo.24030772}}
 
 \begin{document}
 \maketitle
@@ -1211,7 +1211,9 @@ the missing ingredient is supplied by his arithmetic Teichm\"uller theory
 \cite{JoshiIII,JoshiIV}. \Hmark{} Our result is consistent with the first statement; we
 say nothing about the second.
 
-\Smark{} The present note uses the explicit initial $\Theta$-datum of \cite{First}. The
+\Smark{} The present note uses only the explicit initial $\Theta$-datum of
+\cite[Thm.~1]{First}; it does not use the source application of Theorems~5 and~6 of
+\cite{First}, which version~0.1.7 of that report withdrew. The
 local quantities of \cite{IUT4} at such data were computed in \cite{Second,Third}, the
 tuple structure of the tensor packets is described in \cite{Fourth}, and the constant
 $12/(\ell(\ell+1))$, which is the degree scale of our one-place models, is compared with
@@ -1272,7 +1274,7 @@ missing at the membership of the $q$-pilot among the possible images, that is, a
 
 \section{Machine verification}\label{s:lean}
 
-The Lean sources are in the folder \texttt{where-311-sits/lean} at tag v0.23.0 of
+The Lean sources are in the folder \texttt{where-311-sits/lean} at tag v0.23.1 of
 \url{https://github.com/turahigashi/iut-explicit-initial-theta} and are archived at
 \ArtifactDOI{}, together
 with \texttt{Verify.lean}, which checks the axioms of every declaration in the modules that
@@ -1323,10 +1325,12 @@ generated possible images in $\Poss$.
 
 The proofs in this paper were found with generative AI tools (large language models)
 under the author's direction, and these tools were also used for the computations, the
-formalisation and the writing. The author has checked every proof, computation and
-reference, and takes full responsibility for the paper. Figure~\ref{fig:venn} was drawn from
-code written with the assistance of generative AI under the author's direction; the author
-checked that each inclusion shown corresponds to a result stated in the text.
+formalisation, the writing and the code that draws Figure~\ref{fig:venn}. Every statement
+marked \Pmark{} is checked in Lean~4 with Mathlib (\S\ref{s:lean}). The correspondence
+between the axioms and the cited results is checked against the source texts as described
+in \S\ref{s:step} and Remark~\ref{r:strength}; it is not checked by Lean. The author's own
+reading of the proofs is still in progress. The author takes full responsibility for the
+paper.
 
 \begin{thebibliography}{JoshiLANA}
 \bibitem[First]{First} T.~Urahigashi, \emph{An explicit initial $\Theta$-datum with
