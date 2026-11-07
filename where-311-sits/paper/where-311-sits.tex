@@ -35,8 +35,8 @@
 \newcommand{\tI}{(R_I)^{\sim}}
 \newcommand{\tO}{\widetilde{\mathcal O}}
 \newcommand{\fq}{\mathfrak q}
-\newcommand{\ArtifactURL}{\url{https://github.com/turahigashi/iut-explicit-initial-theta/tree/v0.24.0/where-311-sits/lean}}
-\newcommand{\ArtifactDOI}{\href{https://doi.org/10.5281/zenodo.24039357}{10.5281/zenodo.24039357}}
+\newcommand{\ArtifactURL}{\url{https://github.com/turahigashi/iut-explicit-initial-theta/tree/v0.25.1/where-311-sits/lean}}
+\newcommand{\ArtifactDOI}{\href{https://doi.org/10.5281/zenodo.24044582}{10.5281/zenodo.24044582}}
 \setlength{\lineskiplimit}{2pt}
 \setlength{\lineskip}{2pt}
 
@@ -44,9 +44,9 @@
 cited in the proof of IUT~III, Corollary~3.12, does not imply its conclusion}
 \author{Toshihisa Urahigashi\\
 \small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.1.0 --- 8 November 2026\\[3pt]
+\date{Version 1.1.1 --- 8 November 2026\\[3pt]
 \small ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}\\
-\small \href{https://doi.org/10.5281/zenodo.24039357}{doi:10.5281/zenodo.24039357}}
+\small \href{https://doi.org/10.5281/zenodo.24044582}{doi:10.5281/zenodo.24044582}}
 
 \begin{document}
 \maketitle
@@ -1344,7 +1344,7 @@ missing at the membership of the $q$-pilot among the possible images, that is, a
 
 \section{Machine verification}\label{s:lean}
 
-The Lean sources are in the folder \texttt{where-311-sits/lean} at tag v0.24.0 of
+The Lean sources are in the folder \texttt{where-311-sits/lean} at tag v0.25.1 of
 \url{https://github.com/turahigashi/iut-explicit-initial-theta} and are archived at
 \ArtifactDOI{}, together
 with \texttt{Verify.lean}, which checks the axioms of every declaration in the modules that
@@ -1355,7 +1355,14 @@ and $5$-adic Haar measures are Mathlib's on $\mathbb Q_p$, and in \S\ref{s:actua
 Haar measure is the one normalized on the integral closure of the tensor packet. The
 tensor packets, the constants of \cite[Prop.~1.1, 1.2]{IUT4}, the extension of log-shell
 automorphisms to the field, the theta series of \cite[Prop.~1.4]{EtTh} and its analytic
-properties over complete nonarchimedean fields are constructed, not assumed. Every
+properties over complete nonarchimedean fields are constructed, not assumed. Two groups of modules are named after the interim report of
+Project LANA \cite{LANA}: \texttt{independence/Cor312LanaTarget.lean} states its equality (9-1) in
+the cited theory (Proposition~\ref{p:strong}), and the twelve modules \texttt{relative/LanaStep6*.lean}
+are named after Step~6 of \cite[\S6.2(g)]{LANA}. The latter formalize the generic Kummer construction
+of \cite[\S6.1]{LANA} and the Kummer-log realization of that step; they are used by some of the modules in
+\texttt{theorem311/} and by the further models in \texttt{independence/Cor312SourceBound*.lean}, and
+not by the statements of this paper. All of these modules were written by the author and contain no
+code from the repositories of Project LANA. Every
 declaration depends only on \texttt{propext}, \texttt{Classical.choice} and
 \texttt{Quot.sound}; no \texttt{sorry}, no \texttt{native\_decide}, and no new axiom is used.
 The equivalence of Remark~\ref{r:approx} and the non-derivability of the approximate form

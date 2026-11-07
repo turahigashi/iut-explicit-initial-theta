@@ -3,8 +3,8 @@
 This folder contains the Lean 4 formalization that accompanies
 
 > T. Urahigashi, *Where Theorem 3.11 sits: the log-volume content of the results cited in the
-> proof of IUT III, Corollary 3.12, does not imply its conclusion*, version 1.1.0, Zenodo, 2026.
-> DOI [10.5281/zenodo.24039357](https://doi.org/10.5281/zenodo.24039357) (all versions:
+> proof of IUT III, Corollary 3.12, does not imply its conclusion*, version 1.1.1, Zenodo, 2026.
+> DOI [10.5281/zenodo.24044582](https://doi.org/10.5281/zenodo.24044582) (all versions:
 > [10.5281/zenodo.24028832](https://doi.org/10.5281/zenodo.24028832)).
 
 Every statement that the paper marks [P] is proved here. The paper states the axioms, the
@@ -93,6 +93,13 @@ Namespaces below are abbreviated: `Cited` is `CitedLV.Independence.Cor312Cited`,
 
 The files `Cor312SourceBound*.lean` in the same directory contain further models built from
 source-derived data; they are checked by `Verify.lean` as well.
+
+Two groups of modules are named after the interim report of Project LANA (July 2026).
+`Cor312LanaTarget.lean` in this directory states its equality (9-1) (Proposition 6 of the paper). The
+twelve modules `Cor312LogVolume/relative/LanaStep6*.lean` are named after Step 6 of its §6.2: they
+formalize the generic Kummer construction of its §6.1 and the Kummer-log realization of that step, and
+are used by some modules in `Cor312LogVolume/theorem311/` and by the files `Cor312SourceBound*.lean`, not by
+the results listed above. These modules were written by the author and contain no code from the LANA repositories.
 
 The source files carry no comments; the paper documents them.
 

@@ -243,7 +243,7 @@ The file names carry an older working numbering; the reports are numbered as fol
 | no reading avoids the height inequality | `reading-family/paper/reading_family.tex` | [10.5281/zenodo.23965951](https://doi.org/10.5281/zenodo.23965951) | 1.1.0, [10.5281/zenodo.24039368](https://doi.org/10.5281/zenodo.24039368) |
 | two computations | `two-computations/paper/two_computations.tex` | [10.5281/zenodo.23968298](https://doi.org/10.5281/zenodo.23968298) | 1.1.0, [10.5281/zenodo.24039369](https://doi.org/10.5281/zenodo.24039369) |
 | bridge and size | `bridge-and-size/paper/bridge_and_size.tex` | [10.5281/zenodo.23984200](https://doi.org/10.5281/zenodo.23984200) | 1.1.0, [10.5281/zenodo.24039372](https://doi.org/10.5281/zenodo.24039372) |
-| where Theorem 3.11 sits | `where-311-sits/paper/where-311-sits.tex` | [10.5281/zenodo.24028832](https://doi.org/10.5281/zenodo.24028832) | 1.1.0, [10.5281/zenodo.24039357](https://doi.org/10.5281/zenodo.24039357) |
+| where Theorem 3.11 sits | `where-311-sits/paper/where-311-sits.tex` | [10.5281/zenodo.24028832](https://doi.org/10.5281/zenodo.24028832) | 1.1.1, [10.5281/zenodo.24044582](https://doi.org/10.5281/zenodo.24044582) |
 
 `paper/paper.tex` is the expanded version of the **first** report, cited as `[First-full]`;
 the first report is the version of record.
@@ -519,8 +519,8 @@ The files in `fourteen-levels/` are licensed under CC BY 4.0.
 ## Where Theorem 3.11 sits (November 2026)
 
 **Where Theorem 3.11 sits: the log-volume content of the results cited in the proof of IUT III, Corollary 3.12, does
-not imply its conclusion.** `where-311-sits/paper/where-311-sits.pdf` (24 pages), version 1.1.0, DOI
-[10.5281/zenodo.24039357](https://doi.org/10.5281/zenodo.24039357) (all versions:
+not imply its conclusion.** `where-311-sits/paper/where-311-sits.pdf` (24 pages), version 1.1.1, DOI
+[10.5281/zenodo.24044582](https://doi.org/10.5281/zenodo.24044582) (all versions:
 [10.5281/zenodo.24028832](https://doi.org/10.5281/zenodo.24028832)).
 
 The note lists the results that Corollary 3.12 and its proof cite, states the content of the 22 that the proof uses
@@ -531,8 +531,9 @@ holds. A Venn diagram displays this position. Results of the same shape were pro
 Pajo, and in Lean by Takkun-kohinata/IUT_LEAN (July 2026) and [lana-agents/iut](https://github.com/lana-agents/iut)
 (October 2026); the note was obtained independently of these Lean works, which were made public first, and cites them. Every statement marked [P] is proved in Lean 4 with Mathlib (`where-311-sits/lean/`). The modules
 `where-311-sits/lean/Cor312LogVolume/relative/LanaStep6*.lean` were written by the author; their names refer to
-Section 6 (§6.1, §6.2) of the Project LANA interim report (July 2026), whose description of the generic Kummer
-construction they formalize, and they contain no code from the LANA repositories.
+Step 6 of §6.2 of the Project LANA interim report (July 2026), and they formalize the generic Kummer construction of
+its §6.1 and the Kummer-log realization of that step. They contain no code from the LANA repositories and are not
+used by the statements of the note.
 **Nothing is claimed about whether Corollary 3.12 is true, nor about abc.** See `where-311-sits/README.md`.
 
 The paper and README in `where-311-sits/` are licensed under CC BY 4.0, and the Lean sources in

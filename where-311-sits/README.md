@@ -1,6 +1,6 @@
 # Where Theorem 3.11 sits: the log-volume content of the results cited in the proof of IUT III, Corollary 3.12, does not imply its conclusion
 
-Version 1.1.0, 8 November 2026 (24 pages). DOI [10.5281/zenodo.24039357](https://doi.org/10.5281/zenodo.24039357);
+Version 1.1.1, 8 November 2026 (24 pages). DOI [10.5281/zenodo.24044582](https://doi.org/10.5281/zenodo.24044582);
 all versions: [10.5281/zenodo.24028832](https://doi.org/10.5281/zenodo.24028832).
 
 The inequality of Corollary 3.12 of IUT III is obtained in Step (xi) of its proof, where the author states that he
@@ -28,6 +28,16 @@ objects.
 **We do not claim that Corollary 3.12 is false, nor anything about abc.** The result concerns what follows from the
 statements that the proof cites, including what Theorem 3.11 states about the output of its algorithm; whether the
 construction of the algorithm itself supplies the missing membership is not decided here.
+
+## Changes in 1.1.1
+
+Section 11 now says which modules are named after the interim report of Project LANA (July 2026):
+`independence/Cor312LanaTarget.lean` states its equality (9-1), and the twelve modules
+`relative/LanaStep6*.lean` are named after Step 6 of its §6.2; they formalize the generic Kummer
+construction of its §6.1 and the Kummer-log realization of that step, and are used by further models,
+not by the statements of the paper. These modules were written by the author and contain no code from
+the LANA repositories. Earlier versions did not say this, and the comments that gave the origin had been
+removed from the published sources. `lean/README.md` says the same. The Lean sources are unchanged.
 
 ## Changes in 1.1.0
 
