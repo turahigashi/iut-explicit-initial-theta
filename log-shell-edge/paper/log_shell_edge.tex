@@ -18,7 +18,7 @@
 \raggedbottom
 \emergencystretch=3em
 
-\newcommand{\thisdoi}{10.5281/zenodo.24050445}
+\newcommand{\thisdoi}{10.5281/zenodo.24057859}
 
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -72,7 +72,7 @@
 \title{How far automorphisms of a $p$-adic absolute Galois group\\ move the ring of integers: to the edge of the
 log-shell,\\ with an application to Step~(v) of IUT~IV}
 \author{Toshihisa Urahigashi\\\small ORCID 0009-0004-0460-6242\\\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.0.0, 8 November 2026\\\small\href{https://doi.org/\thisdoi}{doi:\thisdoi}}
+\date{Version 1.1.0, 9 November 2026\\\small\href{https://doi.org/\thisdoi}{doi:\thisdoi}}
 
 \begin{document}
 \maketitle
@@ -94,16 +94,20 @@ ramification, everything is decided by whether one line in $\Lambda/p\Lambda$, t
 move it we construct, on the quotient of $G_K$ by the third term of the descending $p$-central series of the wild
 inertia group, an automorphism that shifts the generator $x_1$ of the Jannsen--Wingberg presentation in the
 direction of $x_2$, and we lift it to $G_K$ by Wingberg's lifting theorem (NSW (7.5.15)). As a by-product, for every
-finite extension $k/\Qp$ of odd degree $d\ge3$ there is an automorphism with $\alpha_+(y_1)\ne y_1$, where $y_1$
-corresponds to the first generator. This answers the point left open in Remark~1.10 of Kondo's paper, whether
-such an element exists in odd degree. It also gives automorphisms that move $(\Qp)_+\subset k$.
+finite extension $k/\Qp$ of odd degree $d\ge3$ with $p\nmid e$ (more generally, whose maximal tamely ramified extension
+does not contain the $p^2$-th roots of unity) there is an automorphism with $\alpha_+(y_1)\ne y_1$, where $y_1$
+corresponds to the first generator. In this range this answers the point left open in Remark~1.10 of Kondo's paper,
+whether such an element exists in odd degree. It also gives automorphisms that move $(\Qp)_+\subset k$.
 
 As an application to the holomorphic hull in Step~(v) of the proof of IUT~IV, Theorem~1.10, we show that at small
 places the actual indeterminacies (Ind1), (Ind2) always reach the exact value found in the author's earlier note;
-its hypotheses $\lambda\in\Z$ and (U) are not needed. Among the bad places of the explicit initial $\Theta$-datum
-D109, the one above $534775081$ is of the odd-degree, totally ramified kind. We list remaining questions, among them
-the determination of the group of induced maps itself. No claim is made about Corollary~3.12 of IUT~III or the $abc$
-conjecture.
+its hypotheses $\lambda\in\Z$ and (U) are not needed. We also determine the modules spanned by the images for two
+types that are not small, the cyclotomic boundary ($e=p-1$, $\mu_p\subset K$) and fields unramified over $\mathbb Q_2$:
+in the first the images of $\cO_K$ span the whole log-shell, in the second every automorphism preserves $\cO_K$. Among
+the bad places of the explicit initial $\Theta$-datum D109, the one above $534775081$ is of the odd-degree, totally
+ramified kind. We list remaining questions, among them the determination of the group of induced maps itself. Many of
+the proofs are checked in Lean~4, with the cited results taken as hypotheses. No claim is made about Corollary~3.12 of
+IUT~III or the $abc$ conjecture.
 \end{abstract}
 
 \noindent\textbf{MSC 2020:} 11S20 (primary); 11S15, 11S31, 14H25.\quad
@@ -114,7 +118,9 @@ geometry, Jannsen--Wingberg presentation, Demu\v{s}kin groups, log-shell, inter-
 
 \subsection{Labels}
 \tagS\ a statement about a cited text; \tagP\ proved here; \tagN\ checked by an exact computation (scripts in the
-deposit); \tagH\ not proved. All \tagP\ statements are proved on paper; nothing here is formally verified.
+deposit); \tagH\ not proved. Many of the \tagP\ statements are checked in Lean~4, with the cited results and some
+classical facts taken as hypotheses; Table~\ref{tab:lean} in Section~\ref{s:lean} shows which statements are checked
+under which hypotheses.
 
 \subsection{The question}
 \tagS\ Let $p$ be an odd prime and $K/\Qp$ a finite extension. Continuous automorphisms of $G_K$ need not arise from
@@ -148,9 +154,10 @@ S_K(m)=\fm_K^{\lo(m)},\qquad a_K(m)=(m-1)\bmod e .
 In particular the images of $\cO_K$ span the log-shell $\fm_K^{1-e}$, and if $e\ge2$ the image of some integral
 element reaches its boundary.
 \item \tagP\ An automorphism moving $y_1$ in odd degree (Theorem~\ref{t:lift}, Corollary~\ref{c:Qp}). If $k/\Qp$ has
-odd degree $d\ge3$ ($p$ odd, ramification arbitrary), there is $\varphi\in\Aut(G_k)$ with
-$\varphi_+(y_1)\equiv y_1+y_2$ and $\varphi_+(y_i)\equiv y_i$ ($i\ge2$) modulo $p\Lambda$. In particular the element
-asked for in Kondo's Remark~1.10 exists, and so do automorphisms that move $(\Qp)_+$.
+odd degree $d\ge3$ and the integer $s(k)$ of \S6.2 is $1$ ($p$ odd; this holds whenever $p\nmid e$), there is
+$\varphi\in\Aut(G_k)$ with $\varphi_+(y_1)\equiv y_1+y_2$ and $\varphi_+(y_i)\equiv y_i$ ($i\ge2$) modulo $p\Lambda$.
+In particular, in this range the element asked for in Kondo's Remark~1.10 exists, and so do automorphisms that move
+$(\Qp)_+$.
 \item \tagP\ The steps leading there: the case of even degree and of odd degree with $f\ge2$
 (Theorem~\ref{t:exact}); in odd degree with total ramification, the reduction of the remaining case to a question
 about one line $\ell_0$, and further about the line of the generator $x_1$ of the presentation
@@ -158,17 +165,27 @@ about one line $\ell_0$, and further about the line of the generator $x_1$ of th
 \item \tagP\ Application to Step~(v) of IUT~IV (Theorem~\ref{t:iut}, Corollary~\ref{c:U}). At small places the actual
 (Ind1), (Ind2) always reach the exact value $p^{\ceil{\lambda}-\fd_I}\cdot\tI$ of the author's earlier note
 \cite{Tiers}.
+\item \tagP\ Two types that are not small (Section~\ref{s:other}). On the cyclotomic boundary ($p$ odd, $e=p-1$,
+$\mu_p\subset K$) we determine $S_K(m)$ and $a_K(m)$ for every $m$ (Theorem~\ref{t:cyclo}). For $K$ unramified over
+$\mathbb Q_2$, every induced map preserves every $\fm_K^m$, and hence $\cO_K$ (Theorem~\ref{t:Q2}). The tool is that
+the group of principal units that have $p$-th roots in the unramified extension of degree $p$ is determined by the
+group (Lemma~\ref{l:CK}). For small $K$ of odd degree and on the cyclotomic boundary we also determine the union of the
+images itself (Proposition~\ref{p:unions}).
 \end{enumerate}
 
 \subsection{What is not claimed}
 \begin{itemize}
 \item The group $\Gamma_K$ of induced maps itself is not determined; only the modules spanned by the images of the
-lattices $\fm_K^m$ are. Section~\ref{s:questions} lists this as a remaining question.
-\item (1) and (4) concern only small $K$ ($p$ odd, $e\le p-2$). For $p=2$ and for $e\ge p-1$ no statement about the
-lattices is made, except for even degree with $e=p-1$ and $\mu_p\not\subset K$ (Remark~\ref{r:pminus1}).
+lattices $\fm_K^m$ (and, in some cases, the unions of the images) are. Section~\ref{s:questions} lists this as a
+remaining question.
+\item (1) and (4) concern only small $K$ ($p$ odd, $e\le p-2$). (5) and Remark~\ref{r:pminus1} also treat $e=p-1$ and
+fields unramified over $\mathbb Q_2$, but no statement about the lattices is made when $p=2$ and $K$ is ramified, or
+when $p$ is odd and $e\ge p$.
 \item The $\varphi$ of (2) is explicit only modulo the second term of the descending $p$-central series of the wild
 inertia group; its existence as an automorphism of $G_k$ rests on Wingberg's lifting theorem
-(Remark~\ref{r:explicit}).
+(Remark~\ref{r:explicit}). (2) is proved only for $s(k)=1$; the case $s(k)\ge2$, which occurs only when $p\mid e$, is
+not proved (Remark~\ref{r:sge2}). Version~1.0.0 stated it including this case (see the section on changes at the
+end).
 \item The upper bound $S_K(m)\subseteq\fm_K^{\lo(m)}$ follows at once from the invariance of $\Lambda$ and is not new
 (Proposition~\ref{p:upper}). The automorphisms of free groups that move the pairs (Section~\ref{s:pairs}) are
 elementary and are the classical constructions for mapping class groups \cite[Rem.~2.16, Thm.~2.17]{Kondo},
@@ -638,16 +655,34 @@ $V^{(i+1)}=(V^{(i)})^p[V^{(i)},V]$ its descending $p$-central series (the number
 \cite{JW} correspond to $V^{(i+1)}$). As $d$ is odd, $\mu_p\not\subset k$, so the character $\alpha$ by which $\cG$
 acts on $\mu_{p^s}$ is nontrivial modulo $p$.
 
-\begin{theorem}[Wingberg]\label{t:wingberg}
-\tagS\ Let $p\ne2$, and let $\psi_3$ be an automorphism of $G_k/V^{(3)}$ that induces the identity on $G_k/V$. Then
-there is an automorphism $\varphi$ of $G_k$ that coincides with $\psi_3$ modulo $V^{(2)}$ \cite[Thm.~7.5.15]{NSW}
-(the correct form of \cite[Satz~2]{Wi}).
+Here $s=s(k)$ is the integer such that the maximal tamely ramified extension $k_{\mathrm{tr}}$ of $k$ contains exactly
+$p^s$ roots of unity of $p$-power order (the $s$ of the Jannsen--Wingberg presentation \cite[p.~419]{NSW}; $s\ge1$
+since $\mu_p\subset k_{\mathrm{tr}}$). If $p\nmid e(k)$, then $s(k)=1$. Indeed, if $s\ge2$, then
+$k(\mu_{p^2})\subseteq k_{\mathrm{tr}}$ is tamely ramified over $k$, so its ramification index over $\Qp$ is $e(k)$
+times a number prime to $p$; on the other hand it is divisible by the ramification index $p(p-1)$ of $\Qp(\mu_{p^2})$,
+so $p\mid e(k)$. In particular $s(K)=1$ for small $K$.
+
+\begin{theorem}[Wingberg's lifting theorem]\label{t:wingberg}
+\tagS\ Let $p\ne2$ and $s(k)=1$, and let $\psi_3$ be an automorphism of $G_k/V^{(3)}$ that induces the identity on
+$G_k/V$. Then there is an automorphism $\varphi$ of $G_k$ that coincides with $\psi_3$ modulo $V^{(2)}$
+\cite[Satz~2]{Wi}, \cite[Thm.~7.5.15]{NSW}, \cite[Prop.~2.6]{Nishio26}.
 \end{theorem}
 
 \tagS\ NSW use this theorem to construct nontrivial outer automorphisms of $G_{\Qp}$ \cite[pp.~421--423]{NSW}.
 Nishio uses it to construct finite subgroups of $\Aut(G_k)$ acting on the pairs $(x_2,x_3),\dots$
 \cite[Prop.~2.6]{Nishio26}. Here we construct an automorphism that preserves the relation itself at the third level
 and lift it by this theorem.
+
+\medskip\noindent\tagS\,\tagP\ \textbf{A remark on $s$.} NSW state (7.5.15) with the descending $p$-central series,
+after noting that Wingberg's statement was not correct as stated. Nishio states the same theorem, for $s=s(k)$, with the
+descending $p^s$-central series $H^{p,i+1,s}=(H^{p,i,s})^{p^s}[H,H^{p,i,s}]$ \cite[Prop.~2.6]{Nishio26}. For $s=1$ the
+two agree, and this note uses only this case. For $s\ge2$ the form with the descending $p$-central series cannot be
+used. For example (in even degree), for $k=\Qp(\zeta_{p^2})$, where $s=2$, the map $x_1\mapsto x_1x_2$ (the other
+generators fixed) gives an automorphism of $G_k/V^{(3)}$ that is the identity on $G_k/V$ (as $x^{p^2}\in V^{(3)}$ and
+$[x_1x_2,x_2]\equiv[x_1,x_2]\pmod{V^{(3)}}$). An automorphism of $G_k$ that coincides with it modulo $V^{(2)}$ would
+induce the same map on $G_k^{\mathrm{ab}}/p$ (as $V^{(2)}\subseteq G_k^p[G_k,G_k]$), and so would move the line in
+$G_k^{\mathrm{ab}}/p$ spanned by the image of the torsion subgroup; but automorphisms of $G_k$ preserve this line, so
+no such automorphism exists.
 
 \medskip\noindent\textbf{Notation.} Write $F=F(d+1,\cG)=P\rtimes\cG$, where $P$ is the free pro-$p$ operator group
 with operator domain $\cG$ on the free generators $x_0,\dots,x_d$ \cite[p.~74]{JW}. Then $G_k=F/\langle\!\langle
@@ -672,8 +707,8 @@ $\theta\,\xb_0$ with $\theta:=-\sigma+\beta(\sigma)^{-1}e'$ (modulo $p$).
 
 \subsection{The construction}
 \begin{theorem}\label{t:lift}
-\tagP\ Let $p$ be an odd prime and $k/\Qp$ a finite extension of odd degree $d\ge3$. Fix Jannsen--Wingberg generators
-and put $y_i=\log\rec_k^{-1}(x_i)$. Then there is an automorphism $\varphi$ of $G_k$ with
+\tagP\ Let $p$ be an odd prime and $k/\Qp$ a finite extension of odd degree $d\ge3$ with $s(k)=1$ (which always holds
+if $p\nmid e$). Fix Jannsen--Wingberg generators and put $y_i=\log\rec_k^{-1}(x_i)$. Then there is an automorphism $\varphi$ of $G_k$ with
 \[
 \varphi_+(y_1)\equiv y_1+y_2,\qquad\varphi_+(y_i)\equiv y_i\quad(2\le i\le d)\pmod{p\Lambda},
 \]
@@ -686,7 +721,7 @@ We use the notation of \S6.2.
 \emph{(1) The effect of adjusting $x_0$.} For $z\in P^{(2)}$, replacing $x_0$ by $x_0z$ changes $r$ modulo $P^{(3)}$
 into $r\cdot\theta\bar z$. Indeed, $z$ is central modulo $P^{(3)}$, so the $x_0$-part
 $x_0^{-\sigma}(x_0,\tau)^{\beta(\sigma)^{-1}}$ of $r$ changes linearly in $z$, with the coefficient $\theta$ of
-Proposition~\ref{p:linear}(iii); the remaining part $x_1^{p^s}[x_1,x_1'][x_2,x_3]\cdots$ does not involve $x_0$.
+Proposition~\ref{p:linear}(iii); the remaining part $x_1^{p}[x_1,x_1'][x_2,x_3]\cdots$ does not involve $x_0$.
 
 \emph{(2) The character and the ideal.} $\theta R$ is a two-sided ideal of $R$ of codimension $1$. Indeed, $e'$ is a
 central idempotent and $\theta R=(1-e')\sigma R+(b-\sigma)e'R=(1-e')R+(b-\sigma)e'R$ with $b=\beta(\sigma)^{-1}\bmod
@@ -713,14 +748,13 @@ $\psi$ is unipotent on $M_1$, it is an automorphism of $F$.
 
 \emph{(4) The change of the relation.} Modulo $P^{(3)}$ we have $\psi(r)\,r^{-1}\equiv E$ with $E\in M_2$ equal to
 \[
-E=p^{s}c\,\xb_2+B(\xb_1,\delta c\,\xb_2)+B(c\,\xb_2,\delta\xb_1)+B(c\,\xb_2,\delta c\,\xb_2)
+E=p\,c\,\xb_2+B(\xb_1,\delta c\,\xb_2)+B(c\,\xb_2,\delta\xb_1)+B(c\,\xb_2,\delta c\,\xb_2)
 +B(\xb_2,\mu\,\xb_1)+B(\xb_2,\nu\,\xb_2)
 \]
-(the first term is $0$ if $s\ge2$; as $p$ is odd, $(uv)^p\equiv u^pv^p$). By the rule of (2) and the alternation of
-$B$, modulo $I_0M_2$,
+(here $s=1$; as $p$ is odd, $(uv)^p\equiv u^pv^p$). By the rule of (2) and the alternation of $B$, modulo $I_0M_2$,
 \[
-E\equiv p^{s}c\,\xb_2+B\bigl(\xb_2,(c^{\dagger}\delta-c^{\dagger}\delta^{\dagger}+\mu)\xb_1\bigr)
-+B\bigl(\xb_2,(c^{\dagger}\delta c+\nu)\xb_2\bigr)=p^{s}c\,\xb_2\equiv0,
+E\equiv p\,c\,\xb_2+B\bigl(\xb_2,(c^{\dagger}\delta-c^{\dagger}\delta^{\dagger}+\mu)\xb_1\bigr)
++B\bigl(\xb_2,(c^{\dagger}\delta c+\nu)\xb_2\bigr)=p\,c\,\xb_2\equiv0,
 \]
 the last step because $c\in I_0$. So $E\in I_0M_2=\theta M_2$, and there is $\zeta\in M_2$ with $\theta\zeta=-E$. Let
 $z\in P^{(2)}$ lift $\zeta$, and let $\psi'$ be $\psi$ with $x_0\mapsto x_0z$ instead of $x_0\mapsto x_0$. By (1),
@@ -764,8 +798,8 @@ $e\mid m$, which is Corollary~\ref{c:O3} together with Theorem~\ref{t:dichotomy}
 \end{proof}
 
 \begin{corollary}[$(\Qp)_+$ is moved]\label{c:Qp}
-\tagP\ Let $p$ be an odd prime and $k/\Qp$ a finite extension of odd degree $d\ge3$ (not necessarily small). Then there
-is $\alpha\in\Aut(G_k)$ with $\alpha_+\bigl((\Qp)_+\bigr)\cap(\Qp)_+=0$.
+\tagP\ Let $p$ be an odd prime and $k/\Qp$ a finite extension of odd degree $d\ge3$ with $s(k)=1$ (not necessarily
+small; $s(k)=1$ if $p\nmid e$). Then there is $\alpha\in\Aut(G_k)$ with $\alpha_+\bigl((\Qp)_+\bigr)\cap(\Qp)_+=0$.
 \end{corollary}
 \begin{proof}
 As $d$ is odd, $\mu_p\not\subset k$; the proof of Lemma~\ref{l:basis} goes through, and $y_1,\dots,y_d$ is a
@@ -781,11 +815,13 @@ $T_v(u)\notin\Qp u$. In both cases the two lines are distinct, so they meet in $
 
 \begin{remark}[Kondo's question]\label{r:kondo}
 \tagP\ The $\varphi$ of Theorem~\ref{t:lift} satisfies $\varphi_+(y_1)\ne y_1$; this is the element whose existence in
-odd degree Kondo left open \cite[Rem.~1.10]{Kondo}. In the proof of Kondo's Theorem~1.9 (for even $d_k$ and
+odd degree Kondo left open \cite[Rem.~1.10]{Kondo} (answered here for $s(k)=1$; for $s(k)\ge2$ see
+Remark~\ref{r:sge2}). In the proof of Kondo's Theorem~1.9 (for even $d_k$ and
 absolutely Galois $k$, a representation built from a Lubin--Tate character is not Aut-intrinsically Hodge--Tate) the
 parity of the degree enters only through the automorphism $\varphi$ of \cite[Lemma~1.5]{Kondo}, and the property used there is
 $\varphi_+\bigl((\Qp)_+\bigr)\cap(\Qp)_+=0$ \cite[proof of Lemma~1.5(2)]{Kondo}. The automorphism of
-Corollary~\ref{c:Qp} has this property, so the same proof applies to absolutely Galois $k$ of odd degree $d\ge3$. The
+Corollary~\ref{c:Qp} has this property, so the same proof applies to absolutely Galois $k$ of odd degree $d\ge3$ with
+$s(k)=1$. The
 conclusion itself was proved by Kondo in a later paper, by an argument with Haar measures that does not produce
 explicit automorphisms \cite[Thm.~D]{Kondo26}. What Corollary~\ref{c:Qp} adds is the existence of elements that move
 $(\Qp)_+$ itself, and, modulo $p$, the line $\ell_0$.
@@ -799,6 +835,15 @@ from Theorem~\ref{t:wingberg}. NSW use the same theorem to construct outer autom
 shifted towards $x_2$ at the third level; the commutator terms that this creates are absorbed by $x_3$, the $p$-th
 power term and the constraint from the trace by the condition $c\in I_0$ on the twisted augmentation, and the rest by
 the adjustment of $x_0$.
+\end{remark}
+
+\begin{remark}\label{r:sge2}
+\tagH\ For $k$ of odd degree with $s(k)\ge2$ (which occurs only when $p\mid e$; for example, the subfield of degree
+$p$ of $\Qp(\zeta_{p^2})$), Theorem~\ref{t:lift} is not proved here. The same construction with the descending
+$p^s$-central series, together with the lifting theorem in the form of \cite[Prop.~2.6]{Nishio26}, would presumably
+work, but this has not been checked. Version~1.0.0 of this note stated Theorem~\ref{t:wingberg} without the condition
+on $s$, and Theorem~\ref{t:lift}, Corollary~\ref{c:Qp} and Remark~\ref{r:kondo} including this case. Since $s=1$ for
+small $K$, Theorem~\ref{t:main} and Section~\ref{s:iut} are not affected.
 \end{remark}
 
 \section{Application to Step (v) of IUT IV}\label{s:iut}
@@ -883,14 +928,292 @@ Step~(v) of IUT~IV remains larger than the exact value by exactly a factor $p$ w
 \cite[Cor.~3.3]{Tiers}; this difference does not change the shape of the inequality of IUT~IV.
 \end{remark}
 
+\section{Two types that are not small: the cyclotomic boundary and fields unramified over \texorpdfstring{$\mathbb Q_2$}{Q2}}\label{s:other}
+
+Sections~\ref{s:setting}--\ref{s:odd} dealt with small $K$ ($p$ odd, $e\le p-2$). In this section we determine
+$S_K(m)$ and $a_K(m)$ for two types that are not small (the remaining types are Question~\ref{q:ram}). The new tool is
+that the group of principal units that become $p$-th powers in the unramified extension of degree $p$ is determined
+by the group. The proofs in \S\S8.1--8.3 do not use the lifting theorem of Section~\ref{s:odd} (Proposition~\ref{p:unions}(a)
+in \S8.4 uses Theorem~\ref{t:lift}). For $p=2$ too, $\alpha_+$ and $\Gamma_K$ are defined as in \S2.2 (Hoshi's
+reconstruction is stated for all mixed-characteristic local fields \cite[\S3]{Hoshi}). For $n\ge1$ write
+$U^{(n)}:=1+\fm^n$ (so $U^1=U^{(1)}$).
+
+\subsection{An invariant lattice from the unramified extension of degree \texorpdfstring{$p$}{p}}
+
+\begin{lemma}\label{l:CK}
+\tagP\ Let $K/\Qp$ be a finite extension ($p$ any prime), let $L$ be the unramified extension of $K$ of degree $p$, and
+put
+\[
+C_K:=U^1_K\cap(L^{\times})^p,
+\]
+the group of principal units of $K$ that are $p$-th powers in $L$. Then $\gamma(\log C_K)=\log C_K$ for every
+$\gamma\in\Gamma_K$.
+\end{lemma}
+\begin{proof}
+The inertia group $I_K$ and the wild inertia group $P_K$ of $G_K$ are group-theoretic \cite[Def.~3.5(iii),
+Prop.~3.6]{Hoshi}, so they are preserved by every continuous automorphism $\beta$ of $G_K$. The subgroup $H:=G_L$ is the
+inverse image of $p\widehat{\Z}$ under $G_K\to G_K/I_K\cong\widehat{\Z}$, so $\beta(H)=H$. In local class field
+theory the inclusion $\iota\colon K^{\times}\to L^{\times}$ corresponds to the transfer $G_K^{\mathrm{ab}}\to
+H^{\mathrm{ab}}$ \cite[Lemma~1.7(3)]{Hoshi}. The transfer commutes with isomorphisms of groups, so the multiplicative
+actions $\beta_K$, $\beta_L$ that $\beta$ and $\beta|_H$ induce on $K^{\times}$ and $L^{\times}$ (through the
+reciprocity maps) commute with $\iota$. They preserve the principal units \cite[Prop.~3.11(i)]{Hoshi}. Let $u\in C_K$
+with $\iota(u)=y^p$, $y\in L^{\times}$. Then $y$ is a unit with $\bar y^p=1$ in the residue field, so $y\in U^1_L$, and
+$\iota(\beta_K(u))=\beta_L(y)^p\in(L^{\times})^p$, that is, $\beta_K(u)\in C_K$. The same holds for $\beta^{-1}$, so
+$\beta_K(C_K)=C_K$. The map $\gamma=\beta_+$ of \S2.2 is the action of $\beta_K$ on $U^1_K$ transported by $\log$, so
+$\gamma(\log C_K)=\log C_K$.
+\end{proof}
+
+\begin{lemma}\label{l:primary}
+\tagP\ Assume $\mu_p\subset K$ and put $e_1:=e/(p-1)$ ($e_1=e$ if $p=2$). Then
+\[
+C_K=U^{(pe_1)}\,(U^1)^p .
+\]
+In particular, if $e_1=1$ ($e=p-1$, or $p=2$ and $e=1$), then $(U^1)^p\subseteq U^{(p)}$, so $C_K=U^{(p)}$.
+\end{lemma}
+This is the classical description of the units that give unramified Kummer extensions (primary elements)
+\cite[Ch.~IV, (1.4) and \S1, Exercise~7]{FV}; we include a proof.
+\begin{proof}
+Put $\rho:=\zeta_p-1$ ($\rho=-2$ if $p=2$). Then $v_K(\rho)=e_1$ and $p/\rho^{p-1}\equiv-1\pmod{\fm}$. For $A\in\cO$
+let $u=1+\rho^pA\in U^{(pe_1)}$ and
+\[
+F_A(X):=\frac{(1+\rho X)^p-u}{\rho^p}=X^p+\frac{p}{\rho^{p-1}}X-A+\sum_{j=2}^{p-1}\binom pj\rho^{\,j-p}X^j .
+\]
+The middle coefficients have valuation $(j-1)e_1>0$, so $F_A$ is a monic polynomial over $\cO$, and its reduction to
+the residue field $\kappa$ is the separable polynomial $X^p-X-\bar A$. This has a root in the extension of $\kappa$ of
+degree $p$ (the residue field of $L$), so by Hensel's lemma $F_A$ has a root $\xi\in\cO_L$, and $(1+\rho\xi)^p=u$.
+Hence $U^{(pe_1)}\subseteq C_K$; clearly $(U^1)^p\subseteq C_K$. Conversely, for $u\in C_K$, $u=y^p$ with $y\in L$,
+the map $\sigma\mapsto\sigma(y)/y\in\mu_p$ gives an injection of $C_K/(U^1)^p$ into $\mathrm{Hom}(\mathrm{Gal}(L/K),
+\mu_p)$, which has order $p$ (it does not depend on the choice of the root since $\mu_p\subset K$; for elements of the
+kernel $y\in K$, and then $y\in U^1_K$). If $A$ is chosen with $\Tr_{\kappa/\Fp}(\bar A)\ne0$, the corresponding $u$
+is not a $p$-th power in $K$: a $p$-th root $w\in K$ would satisfy $v_K(w-1)\ge e_1$, so $w=1+\rho X$ with $X\in\cO$,
+and $\bar X$ would be a root in $\kappa$. So the image of $U^{(pe_1)}$ is everything, and $C_K=U^{(pe_1)}(U^1)^p$. If
+$e_1=1$, then for $x\in\fm$ we have $v_K(px)\ge e+1=pe_1$ and $v_K(x^p)\ge p$, so $(1+x)^p\in U^{(p)}$.
+\end{proof}
+
+\begin{proposition}\label{p:invlat}
+\tagP\ If $\mu_p\subset K$, every $\gamma\in\Gamma_K$ preserves $p\Lambda+\fm^{pe_1}$ and $\Lambda+\fm^{e_1}$.
+\end{proposition}
+\begin{proof}
+As $pe_1>e/(p-1)$, $\log U^{(pe_1)}=\fm^{pe_1}$, so $\log C_K=p\Lambda+\fm^{pe_1}$ by Lemma~\ref{l:primary}. The claim
+follows from Lemma~\ref{l:CK}, $\Qp$-linearity and $p^{-1}\fm^{pe_1}=\fm^{e_1}$.
+\end{proof}
+
+\begin{remark}\label{r:aux}
+\tagS\ Constructing a lattice from the group side by means of an auxiliary extension is of the same kind as Hoshi's
+group-theoretic reconstruction of $\fm^n$ for $\mathbb Q_3(\zeta_3)$, which uses that the $\log$ of the image of the
+norm from $k(\zeta_9)$ is $\fm^3$ \cite[Lemma~1.8(iv), Def.~2.9(ii)]{HoshiTop}. Here the unramified extension and the
+transfer (the inclusion) are used. Proposition~\ref{p:invlat} does not follow from the invariance of $\Lambda$
+(Proposition~\ref{p:Gamma}) alone.
+\end{remark}
+
+\subsection{The cyclotomic boundary}
+In this subsection $p$ is an odd prime, $e=p-1$ and $\mu_p\subset K$. Then $K\supseteq\Qp(\zeta_p)$ and
+$K/\Qp(\zeta_p)$ is unramified, so $\pi:=\zeta_p-1$ is a uniformizer, and $d=(p-1)f$ is even. Let $\kappa$ be the
+residue field.
+
+\begin{lemma}\label{l:cyclolat}
+\tagP
+\begin{enumerate}[label=(\alph*)]
+\item $\fm^2\subset\Lambda\subset\fm$ and $[\fm:\Lambda]=p$; $\Lambda/\fm^2$ consists of the lifts of
+$\pi\cdot\ker\Tr_{\kappa/\Fp}$.
+\item $\Tr(\Lambda)=p\Zp$.
+\item The smallest valuation on $\Lambda\setminus\{0\}$ is $2$ if $f=1$ and $1$ if $f\ge2$ (if $f=1$, then
+$\Lambda=\fm^2$).
+\item $\gamma(\fm)=\fm$ for every $\gamma\in\Gamma_K$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+(a) As $2>e/(p-1)=1$, $\log U^{(2)}=\fm^2$. For $z\in\cO$ the terms $(\pi z)^n/n$ of $\log(1+\pi z)$ lie in $\fm^2$ for
+$2\le n\le p-1$ and for $n>p$, so $\log(1+\pi z)\equiv\pi\bigl(z+(\pi^{p-1}/p)z^p\bigr)\pmod{\fm^2}$, and
+$\pi^{p-1}/p\equiv-1\pmod{\fm}$. The image of $z\mapsto z-z^p$ on the residue field is $\ker\Tr_{\kappa/\Fp}$
+(Artin--Schreier), which gives (a). (b) $K/\Qp$ is tamely ramified and $\Tr(\fm^j)=p^{\ceil{j/e}}\Zp$, which is $p\Zp$
+for $j=1,2$. (c) follows from (a). (d) By Lemma~\ref{l:primary}, $C_K=U^{(p)}$ and $\log C_K=\fm^p=p\fm$ (as
+$e=p-1$); apply Lemma~\ref{l:CK}.
+\end{proof}
+
+\begin{lemma}\label{l:cyclobasis}
+\tagP\ Choose the Jannsen--Wingberg generators so that condition (0) of Proposition~1.1 of Hoshi--Nishio holds (it
+suffices to take the integers $g,h$ there larger than $p$ \cite[Prop.~1.1 and its proof]{HN}), and put
+$y_i:=\log\rec_K^{-1}(x_i)$ ($0\le i\le d$). Then $y_1,\dots,y_d$ is a $\Qp$-basis \cite[Lemma~1.3]{HN}, there is
+$z\in\Qp y_1$ with $\Zp y_0+\Zp y_1=\Zp z$, and
+\[
+\Lambda=\Zp z\oplus\bigoplus_{i=2}^{d}\Zp y_i,\qquad \Tr(z)=\Tr(y_i)=0\ (i\ge3),\qquad \Tr(y_2)\in p\Zp^{\times}.
+\]
+\end{lemma}
+\begin{proof}
+$P_K$ is normally generated by $x_0,\dots,x_d$, and its image in $G_K^{\mathrm{ab}}$ is $\rec_K(U^1)$, so
+$\Lambda=\sum_{i=0}^d\Zp y_i$ (conjugates become equal in the abelianization, and the sum is closed since it is finitely
+generated). Abelianizing the relation and taking $\log$ gives $h\,y_0=p\,y_1$ with $h\in\Zp$ (here the $s$ of \S6.2 is
+$1$, as $p\nmid e$). As $y_1\ne0$, $h\ne0$, so $y_0\in\Qp y_1$, and $\Zp y_0+\Zp y_1$ has rank $1$, so it is $\Zp z$ for
+some $z$. The sum is direct by the linear independence of $y_1,\dots,y_d$. As $d$ is even,
+$\ker\Tr=\langle y_1,y_3,\dots,y_d\rangle_{\Qp}$ \cite[Thm.~1.3]{Kondo} (whose proof uses this basis property). By
+Lemma~\ref{l:cyclolat}(b), $\Tr(y_2)$ generates $p\Zp$.
+\end{proof}
+Condition (0) cannot be dropped: for $g=h=1$ the abelianized relation reads $p\xb_1=0$, and $y_1=0$.
+
+\begin{lemma}\label{l:R}
+\tagP\ Put $V:=\Lambda/p\Lambda$, write $[x]$ for the class of $x\in\Lambda$, and let $\tau:=\Tr/p\bmod p$ (a linear
+form on $V$) and $R:=\fm^p/p\Lambda\subset V$. Then $R$ is preserved by $\Gamma_K$, and $R=\Fp[z]$.
+\end{lemma}
+\begin{proof}
+From $\fm^p=p\fm$ and $[\fm:\Lambda]=p$ we get $\dim R=1$, and from $\Tr(\fm^p)=p^2\Zp$ we get $\tau(R)=0$. Since $\fm$
+and $\Lambda$ are preserved (Lemma~\ref{l:cyclolat}(d)), so is $R$. Put $U:=\spn_{\Fp}([y_3],\dots,[y_d])$; then
+$\ker\tau=\Fp[z]\oplus U$. If $d=2$, then $U=0$ and we are done. If $d\ge4$, by Kondo $\Gamma_K$ contains elements that
+fix $y_1,y_2$ and act on $\langle y_3,\dots,y_d\rangle$ as $\Sp_{d-2}(\Zp)$ \cite[Lemma~3.3]{Kondo26} (they also fix
+$z$, as $y_0\in\Qp y_1$). Their reductions modulo $p$ act transitively on $U\setminus\{0\}$, so $U$ has no invariant
+line. The projection $\ker\tau\to U$ along $\Fp[z]$ is equivariant for this subgroup, so the image of $R$ is $0$, and
+$R=\Fp[z]$.
+\end{proof}
+
+\begin{lemma}\label{l:Sr}
+\tagP\ If $2\le r\le e$, then $S_K(r)=\Lambda$.
+\end{lemma}
+\begin{proof}
+If $d=2$, then $p=3$, $f=1$, $r=2$ and $\fm^2=\Lambda$. Let $d\ge4$. We have $p\Lambda\subset\fm^p\subset\fm^r\subset
+\fm^2\subset\Lambda$. Let $N$ be the $\Fp$-subspace of $V$ spanned by the $\Gamma_K$-orbit of the image of $\fm^r$.
+Then $N\supseteq R=\Fp[z]$. As $\Tr(\fm^r)=p\Zp$, $N$ contains an element $x$ with $\tau(x)\ne0$, that is, whose
+coefficient $\beta$ of $[y_2]$ is nonzero. The automorphism given by the mixing word $M$ of \S4.3 on the first two
+pairs $(x_1,x_2),(x_3,x_4)$ (Lemmas~\ref{l:induce} and~\ref{l:ZHJ}) fixes $x_0$ and $x_1$, acts on $\log$ by
+$y_2\mapsto y_2+y_1+y_4$, $y_3\mapsto y_3-y_1-y_4$ ($M^{\mathrm{ab}}=T_{a+d}$), and fixes the other $y_i$. If $\eta$ is
+the coefficient of $[y_3]$ in $x$, then $Mx-x=(\beta-\eta)([y_1]+[y_4])$. If $\beta=\eta$, apply first an element that
+multiplies the pair $(y_3,y_4)$ by $-1$ (an element of $\Sp_{d-2}(\Zp)$); then the coefficient of the difference is
+$2\beta\ne0$ ($p$ odd). Hence $[y_1]+[y_4]\in N$. As $[y_1]\in\Fp[z]\subset N$, also $[y_4]\in N$ (it does not matter
+whether the $\alpha$ with $y_1=\alpha z$ is divisible by $p$). As $\Sp_{d-2}(\Fp)$ acts transitively on
+$U\setminus\{0\}$, $U\subset N$. Since $N$ contains $\ker\tau=\Fp[z]\oplus U$ and an element with $\tau\ne0$, $N=V$.
+Together with $p\Lambda\subset\fm^r\subseteq S_K(r)$ this gives $S_K(r)=\Lambda$.
+\end{proof}
+
+\begin{theorem}[the cyclotomic boundary]\label{t:cyclo}
+\tagP\ Let $p$ be an odd prime and $K/\Qp$ a finite extension with $e=p-1$ and $\mu_p\subset K$. Write $m=ne+r$ with
+$1\le r\le e$. Then
+\[
+S_K(m)=\fm^m\quad(r=1),\qquad S_K(m)=p^n\Lambda\quad(2\le r\le e),
+\]
+and hence
+\[
+a_K(m)=\begin{cases}0&(r=1),\\ r-2=(m-2)\bmod e&(r\ge2,\ f=1),\\ r-1=(m-1)\bmod e&(r\ge2,\ f\ge2).\end{cases}
+\]
+In particular the images of $\cO_K$ span the log-shell $p^{-1}\Lambda$, and the image of some integral element reaches
+its boundary.
+\end{theorem}
+\begin{proof}
+For $r=1$, $\fm^m=p^n\fm$ is preserved (Lemma~\ref{l:cyclolat}(d)). For $r\ge2$, $\fm^m=p^n\fm^r\subseteq p^n\Lambda$
+and $p^n\Lambda$ is preserved, so $S_K(m)\subseteq p^n\Lambda$, with equality by Lemma~\ref{l:Sr} and $\Qp$-linearity.
+The value of $a_K(m)$ follows from the smallest valuation $ne+w$ on $p^n\Lambda$, with $w$ as in
+Lemma~\ref{l:cyclolat}(c); that the valuation of an image actually takes this value follows by the argument of
+Section~\ref{s:exact}. The ring $\cO_K=\fm^0$ is the case $n=-1$, $r=e$, and $S_K(0)=p^{-1}\Lambda$ is the log-shell
+$(2p)^{-1}\log\cO^{\times}=p^{-1}\Lambda$.
+\end{proof}
+
+\begin{example}\label{ex:cyclo}
+\tagP\ For $\mathbb Q_3(\zeta_3)$ ($e=2$, $f=1$), $a_K(m)=0$ for every $m$, in agreement with Hoshi's result that $\cO$
+and all $\fm^n$ are group-theoretic (Remark~\ref{r:Q2}). For $\mathbb Q_5(\zeta_5)$, $a_K(m)=0,0,1,2$ for $m=1,2,3,4$.
+For the unramified extensions of $\mathbb Q_3(\zeta_3)$ with $f\ge2$, $a_K(m)$ is $0$ for odd $m$ and $1$ for even $m$.
+\end{example}
+
+\subsection{Fields unramified over \texorpdfstring{$\mathbb Q_2$}{Q2}}
+
+\begin{theorem}\label{t:Q2}
+\tagP\ Let $K/\mathbb Q_2$ be a finite unramified extension. Then $\gamma(\fm^m)=\fm^m$ for every $\gamma\in\Gamma_K$
+and every integer $m$. Hence $S_K(m)=\fm^m$, $a_K(m)=0$, and $\Gamma_K$ preserves the ring of integers $\cO_K$.
+\end{theorem}
+\begin{proof}
+Here $e=1$, $\mu_2\subset K$ and $e_1=1$. By Lemma~\ref{l:primary}, $C_K=U^{(2)}=1+4\cO_K$, and $\log C_K=4\cO_K=\fm^2$
+(as $2>e/(p-1)=1$). By Lemma~\ref{l:CK}, $\fm^2$ is preserved; the claim follows from $\fm^m=2^{m-2}\fm^2$ and
+$\mathbb Q_2$-linearity.
+\end{proof}
+
+\begin{remark}\label{r:Q2}
+\tagS\ For $K=\mathbb Q_2$ and $K=\mathbb Q_3(\zeta_3)$ (and for unramified $K$ with $p$ odd) the log-shell equals the
+ring of integers, and Hoshi reconstructs $\cO_K$ and all $\fm^n$ group-theoretically \cite[Thm.~A(ii), Lemma~1.8(i)--(iv),
+Def.~2.9, Summary~2.11(ii)]{HoshiTop}. For $K$ unramified over $\mathbb Q_2$ of degree at least $2$, the log-shell does
+not equal $\cO_K$ \cite[Thm.~A(ii)]{HoshiTop}, but by Theorem~\ref{t:Q2} every automorphism preserves $\cO_K$. We do
+not know whether in this case $G_K$ has automorphisms that do not come from field automorphisms. For $p=2$ and
+$\sqrt{-1}\notin K$, no presentation of $G_K$ by generators and relations is known \cite[Rem.~2.22]{Kondo}.
+Theorem~\ref{t:Q2} should be read as a constraint on any automorphism. For $2$-adic fields containing $\sqrt{-1}$,
+Nishio constructs automorphisms that do not come from field automorphisms \cite[Thm.~1.6]{Nishio25}.
+\end{remark}
+
+\subsection{Unions of images}
+Instead of the module spanned by the images of a lattice, consider the union of the images itself,
+\[
+A_K(m):=\bigcup_{\gamma\in\Gamma_K}\gamma(\fm^m)\ \subseteq\ S_K(m).
+\]
+The holomorphic hull of IUT sees only the spanned module, so this does not affect Section~\ref{s:iut}.
+
+\begin{proposition}\label{p:unions}
+\tagP
+\begin{enumerate}[label=(\alph*)]
+\item Let $K$ be small and $d\ge3$ odd. If $f\ge2$, then $A_K(m)=\fm^{\lo(m)}$ for every $m$. If $f=1$ (so $d=e$),
+then $A_K(m)=\fm^{\lo(m)}$ for $e\nmid m$, and for $m=ne$
+\[
+A_K(ne)=p^{\,n-1}\bigl(\{x\in\Lambda:\Tr(x)\notin p^2\Zp\}\cup p\Lambda\bigr).
+\]
+\item On the cyclotomic boundary (the setting of Theorem~\ref{t:cyclo}) write $m=ne+r$ with $1\le r\le e$. If $r=1$,
+then $A_K(m)=\fm^m$; if $r\ge2$ and $(f,r)\ne(1,e)$, then $A_K(m)=p^n\Lambda$; if $f=1$ and $r=e$, then
+\[
+A_K(m)=p^n\bigl(\{x\in\Lambda:\Tr(x)\notin p^2\Zp\}\cup\fm^p\bigr).
+\]
+\item In the case $m=ne$ of (a), and in the case $f=1$, $r=e$, $d\ge4$ of (b), $A_K(m)$ is not an additive group, and
+its Haar measure relative to $S_K(m)$ is $1-1/p+p^{-d}$ and $1-1/p+p^{1-d}$ respectively (for example $101/125$ for
+$\mathbb Q_5(\zeta_5)$).
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Let $q\colon\Lambda\to V:=\Lambda/p\Lambda$ be the quotient map. For a $\Zp$-submodule $B$ with $p\Lambda\subseteq
+B\subseteq\Lambda$ we have $\bigcup_\gamma\gamma(B)=q^{-1}\bigl(\bigcup_\gamma\gamma(q(B))\bigr)$: if $q(x)=\gamma q(b)$
+with $b\in B$, then $x-\gamma(b)\in p\Lambda$ and $\gamma^{-1}(x-\gamma(b))\in p\Lambda\subseteq B$, so
+$x=\gamma\bigl(b+\gamma^{-1}(x-\gamma(b))\bigr)\in\gamma(B)$. So it suffices to determine the orbits in $V$.
+
+(a) We have $V=\Fp\yb_1\oplus\bar W$ with $\bar W=W/pW$, and $\tau:=\Tr/\Tr(y_1)\bmod p$ is preserved by $\Gamma_K$. The
+elements of $\Gamma_K$ that fix $y_1$ and act on $W$ as $\Sp_{d-1}(\Zp)$ \cite[Lemma~3.3]{Kondo26} fix $\yb_1$ and act
+transitively on $\bar W\setminus\{0\}$. The $\varphi$ of Theorem~\ref{t:lift} ($s=1$ for small $K$) maps $\yb_1$ to
+$\yb_1+\yb_2$. So the orbits in $V$ are $\{0\}$, $\bar W\setminus\{0\}$ and the sets $\tau^{-1}(t)$ ($t\ne0$). For
+$1\le r\le e$ the subspace $I_r:=q(\fm^r)$ has dimension $f(e+1-r)$ and $\tau(I_r)=\Fp$. If the dimension is at least
+$2$, $I_r$ meets every orbit, the union is $V$, and $A_K(r)=\Lambda$. If it is $1$ ($f=1$, $r=e$), then $I_e=\Fp\bar p$
+and the union is $\{0\}\cup\{\tau\ne0\}$. The general case follows from $\fm^{ne+r}=p^n\fm^r$.
+
+(b) $R=\Fp[z]$ and $\tau$ are preserved by $\Gamma_K$ (Lemma~\ref{l:R}). Use coordinates $(t,u)$ on
+$V/R=\Fp[y_2]\oplus U$. If $d=2$, then $U=0$, and as $\tau$ is preserved the orbits are points. If $d\ge4$, the $M$ of
+the proof of Lemma~\ref{l:Sr} acts modulo $R$ by $(t,u)\mapsto\bigl(t,u+(t-u_3)[y_4]\bigr)$, where $u_3$ is the
+coefficient of $[y_3]$ in $u$. The map $u\mapsto u-u_3[y_4]$ is a transvection in the direction $[y_4]$, an element of
+$\Sp_{d-2}$, so composing with its inverse gives the translation $(t,u)\mapsto(t,u+t[y_4])$, and conjugating by
+$\Sp_{d-2}$ gives $(t,u)\mapsto(t,u+tv)$ for every $v\in U$. So the orbits in $V/R$ are $\{0\}$, $U\setminus\{0\}$ and
+$\{t\}\times U$ ($t\ne0$). We have $q(\fm^r)\supseteq R$, and the intersection of $q(\fm^r)/R$ with $\ker\tau$ has
+dimension $f(e+1-r)-1$. If this is at least $1$, the union is $V$; if it is $0$ ($f=1$, $r=e$), the union is
+$R\cup\{\tau\ne0\}$, and it cannot be larger since all of $\Gamma_K$ preserves $R$ and $\tau$. The inverse image of $R$
+is $\fm^p$.
+
+(c) In $V$ the set $\{\tau\ne0\}$ has $(p-1)p^{d-1}$ elements. Add the element $0$ in (a) and the $p$ elements of $R$
+in (b), and divide by $p^d$. The union is not an additive group: in (a), $\yb_1$ and $-\yb_1+w$ ($0\ne w\in\bar W$) lie
+in it but their sum does not; in (b) the same holds for $[y_2]$ and $-[y_2]+u$ ($0\ne u\in U$).
+\end{proof}
+
+\begin{remark}\label{r:EssLgc}
+\tagS\ Mochizuki writes that for any $\Zp$-automorphism $\phi$ of the log-shell $\cI_k$ one has
+$\phi(U(\cO_k,n))\subseteq\bigcup_{i=-s}^{s}U(\cO_k,n+i)$, where $U(\cO_k,n)$ is the set of elements of $p^n\cO_k$ that
+are not in $p^{n+1}\cO_k$, and $s$ depends only on $k$ \cite[Ex.~3.5.1(ii)]{EssLgc}. Proposition~\ref{p:unions}
+determines exactly the union of the images of a lattice under the automorphisms of the actual Galois group.
+\end{remark}
+
 \section{Relation to earlier work}\label{s:prior}
 \begin{itemize}
 \item \tagS\ The ring of integers is not group-theoretic. Hoshi states that there are automorphisms of $G_L$ that do
 not preserve the ring of integers of $\overline L$, and that no functorial group-theoretic algorithm can reconstruct
 $(\cO_k)_+$ uniformly for all mixed-characteristic local fields \cite[Rem.~4.3.1(ii)(iii)]{Hoshi},
 \cite[Rem.~2.11.2]{HoshiTop}. Hoshi also shows that the log-shell equals the ring of integers exactly when $p$ is odd and
-$k$ is unramified, or $k\cong\mathbb Q_2$ or $\mathbb Q_3(\zeta_3)$ \cite[Thm.~A(ii)]{HoshiTop}. The present note
-measures, for each small $K$, how far the ring of integers is moved.
+$k$ is unramified, or $k\cong\mathbb Q_2$ or $\mathbb Q_3(\zeta_3)$ \cite[Thm.~A(ii)]{HoshiTop}, and in these cases
+reconstructs the ring of integers and all $\fm^n$ group-theoretically \cite[Def.~2.9, Summary~2.11(ii)]{HoshiTop}. The
+present note measures, for each small $K$, how far the ring of integers is moved.
+\item \tagS\ Types that are not small (Section~\ref{s:other}). The case $\mathbb Q_3(\zeta_3)$ of
+Theorem~\ref{t:cyclo} and the case $\mathbb Q_2$ of Theorem~\ref{t:Q2} are contained in Hoshi's reconstruction above,
+and constructing lattices with an auxiliary extension is of the same kind as \cite[Lemma~1.8(iv)]{HoshiTop}
+(Remark~\ref{r:aux}). For the cyclotomic boundary with $p\ge5$ or $f\ge2$, and for fields of degree at least $2$
+unramified over $\mathbb Q_2$, we have not found an earlier treatment. The description of the units that give
+unramified Kummer extensions is classical \cite[Ch.~IV, (1.4) and \S1, Exercise~7]{FV}. For $2$-adic fields containing
+$\sqrt{-1}$, Nishio constructs automorphisms that do not come from field automorphisms \cite[Thm.~1.6]{Nishio25}. For
+unions of images, Mochizuki writes a bound in the form of a union for any $\Zp$-automorphism of the log-shell
+\cite[Ex.~3.5.1(ii)]{EssLgc} (Remark~\ref{r:EssLgc}).
 \item \tagS\ Upper bounds. Hoshi's valuation with an indeterminacy \cite[Prop.~1.10(ii)]{HoshiTop} bounds the drop of
 the valuation (Remark~\ref{r:hoshi}). The bound of Proposition~\ref{p:upper} comes from the invariance of $\Lambda$
 and is of the same kind; the claim here is that it is always attained.
@@ -907,13 +1230,15 @@ nontrivial finite Galois extensions including those of odd degree, that the Lubi
 Aut-intrinsically Hodge--Tate, by an argument with Haar measures \cite[Thms.~C, D]{Kondo26}; that paper does not
 construct elements moving $y_1$ or $(\Qp)_+$, does not refer to Remark~1.10, and notes that explicit automorphisms are
 not obtained \cite[remark after Thm.~D, Rem.~3.7]{Kondo26}. Theorem~\ref{t:lift} shows that the element of
-Remark~1.10 exists.
+Remark~1.10 exists in odd degree when $s(k)=1$ (which always holds if $p\nmid e$).
 \item \tagS\ The lifting theorem and the presentation. We use the presentation of Jannsen and Wingberg \cite{JW}, the
 computation of the linear part of the relation in Section~2 of their paper, and Wingberg's lifting theorem
 \cite[Satz~2]{Wi}, \cite[Thm.~7.5.15]{NSW}. NSW construct nontrivial outer automorphisms of $G_{\Qp}$ with it
 \cite[pp.~421--423]{NSW}. Nishio uses the same lifting to construct finite subgroups of $\Aut(G_k)$ acting on the pairs
-$(x_2,x_3),\dots$ \cite[Prop.~2.6, Thm.~2.8]{Nishio26}; those automorphisms fix $x_0$ and $x_1$, and the paper does
-not consider the ring of integers or $(\Qp)_+$. Kumpitsch's Jannsen--Wingberg automorphisms and combinatorial Dehn
+$(x_2,x_3),\dots$ \cite[Prop.~2.6, Thm.~2.8]{Nishio26}; Nishio states the theorem with the descending
+$p^s$-central series, which agrees with the form in NSW in the case $s=1$ used here (the remark after
+Theorem~\ref{t:wingberg}). Those automorphisms fix $x_0$ and $x_1$, so they do not move the line of $y_1$, and the
+paper does not consider the ring of integers or $(\Qp)_+$. Kumpitsch's Jannsen--Wingberg automorphisms and combinatorial Dehn
 twists \cite[Prop.~3.2.4, Thm.~7.5.5]{Ku} and Gropper's arithmetic Dehn twists \cite{Gr} do not concern the movement of
 the ring of integers either. For $p=2$, Nishio studies the outer automorphism groups of the absolute Galois groups of
 $2$-adic fields \cite{Nishio25}.
@@ -938,15 +1263,18 @@ concerns each image. Zeng computes the index by which the hull enlarges the inte
 rings of integers \cite{Zeng}. Joshi reads (Ind1) as anabelomorphy \cite[\S8.11.2]{JoshiIII}, a reading different from
 the one used here.
 \item \tagP\ What is added here: (1) for small $K$, the determination of $S_K(m)$ and $a_K(m)$ for every $m$; (2) in
-odd degree $d\ge3$, the existence of an automorphism moving $y_1$ (the element of Kondo's Remark~1.10), and of
-automorphisms moving $(\Qp)_+$ and, modulo $p$, the line $\ell_0$; (3) for Step~(v) of IUT~IV, the removal of the
-hypotheses $\lambda\in\Z$ and (U) of \cite{Tiers}: at small places the actual (Ind1), (Ind2) reach the same hull as
-the factorwise automorphisms of the log-shells.
+odd degree $d\ge3$ with $s(k)=1$, the existence of an automorphism moving $y_1$ (the element of Kondo's Remark~1.10),
+and of automorphisms moving $(\Qp)_+$ and, modulo $p$, the line $\ell_0$; (3) for Step~(v) of IUT~IV, the removal of
+the hypotheses $\lambda\in\Z$ and (U) of \cite{Tiers}: at small places the actual (Ind1), (Ind2) reach the same hull as
+the factorwise automorphisms of the log-shells; (4) an invariant lattice determined by the unramified extension of
+degree $p$, and the movement of the lattices on the cyclotomic boundary and for fields unramified over $\mathbb Q_2$
+(Section~\ref{s:other}); (5) the unions of images (Proposition~\ref{p:unions}).
 \end{itemize}
 
 \section{Remaining questions}\label{s:questions}
-What is determined here is the module spanned by the images of the lattices $\fm_K^m$. For the group of induced maps
-itself, and outside the scope of this note, the following questions remain.
+What is determined here is the module spanned by the images of the lattices $\fm_K^m$ (and, in some cases, the union
+of the images). For the group of induced maps itself, and outside the scope of this note, the following questions
+remain.
 
 \begin{question}[the group of induced maps]\label{q:group}
 Let $p$ be an odd prime, $K/\Qp$ a finite extension with $\mu_p\not\subset K$, $\Lambda=\log U^1_K$, and
@@ -963,7 +1291,7 @@ We record what is known.
 \item \tagP\ For small $K$, by Theorem~\ref{t:main}, $\Gamma_K$ and $T_K$ give the same modules spanned by the images of
 $\fm_K^m$ for every $m$ (both $\fm_K^{\lo(m)}$: $T_K$ preserves $\Lambda$, so the upper bound is the same, and
 $\Gamma_K\subseteq T_K$ gives the lower bound). The movement of the lattices does not distinguish the two.
-\item \tagP\ In odd degree $d=2g+1\ge3$, with $W:=\Lambda\cap\ker\Tr$, the image of $\Gamma_K$ in
+\item \tagP\ In odd degree $d=2g+1\ge3$ with $s(K)=1$, with $W:=\Lambda\cap\ker\Tr$, the image of $\Gamma_K$ in
 $\GL(\Lambda/p\Lambda)$ satisfies
 \[
 (W/pW)\rtimes\Sp_{2g}(\Fp)\ \subseteq\ \mathrm{Im}\ \subseteq\ (W/pW)\rtimes\GL(W/pW),
@@ -986,14 +1314,17 @@ $\mu_{p^t}\subseteq K$ \cite[p.~17]{Ku}. Question~\ref{q:group} is an analogue o
 \end{remark}
 
 \begin{question}[larger ramification]\label{q:ram}
-For $p=2$, or for $e\ge p-1$ (except even degree with $e=p-1$ and $\mu_p\not\subset K$, Remark~\ref{r:pminus1}),
-determine $S_K(m)$ and $a_K(m)$.
+For $p=2$ with $K/\mathbb Q_2$ ramified, or for odd $p$ and $e\ge p$, determine $S_K(m)$ and $a_K(m)$.
 \end{question}
-Here $\Lambda=\log U^1_K$ is in general not $\fm_K$; the upper bound follows from the invariance of $\Lambda$ in the
-same way, but takes a different form. For odd $p$, Theorem~\ref{t:lift} places no condition on the ramification (only
-$d$ odd and at least $3$), so what remains is the computation on the side of the lattices. For $p=2$ one has to
-restart from the tools of Sections~\ref{s:jw}--\ref{s:odd} (the Jannsen--Wingberg presentation for odd primes); see
-\cite{Nishio25} for outer automorphisms in the $2$-adic case.
+The case $e=p-1$ is settled by Remark~\ref{r:pminus1} ($\mu_p\not\subset K$) and Theorem~\ref{t:cyclo}
+($\mu_p\subset K$), and the case of fields unramified over $\mathbb Q_2$ by Theorem~\ref{t:Q2}. In the remaining cases
+an upper bound again follows from the invariance of $\Lambda=\log U^1_K$, but in general $\Lambda\ne\fm_K$ and the form
+changes. If $\mu_p\subset K$, the invariant lattice $\Lambda+\fm^{e_1}$ of Proposition~\ref{p:invlat}
+($e_1=e/(p-1)$) can also be used for the upper bound. For odd $p$ and odd degree, Theorem~\ref{t:lift} can be used
+when $s(K)=1$. For $p=2$ one has to restart from the tools of Sections~\ref{s:jw}--\ref{s:odd} (the Jannsen--Wingberg
+presentation for odd primes); see \cite{Nishio25} for outer automorphisms in the $2$-adic case. We also do not know
+whether, for $K$ unramified over $\mathbb Q_2$ of degree at least $2$, $G_K$ has automorphisms that do not come from
+field automorphisms (Remark~\ref{r:Q2}).
 
 \begin{question}[an explicit automorphism]\label{q:explicit}
 For odd $d\ge3$, give an automorphism of $G_k$ with $\alpha_+(y_1)\ne y_1$ explicitly, as words in the
@@ -1004,24 +1335,111 @@ of $G_k$ comes from the lifting theorem (Theorem~\ref{t:wingberg}), which gives 
 words. Kondo also notes, for a different purpose (automorphisms that destroy the Hodge--Tate property), that explicit
 automorphisms are not obtained \cite[Rem.~3.7]{Kondo26}.
 
+\begin{question}[$s\ge2$]\label{q:sge2}
+For $k/\Qp$ of odd degree $d\ge3$ with $s(k)\ge2$, is there $\alpha\in\Aut(G_k)$ with $\alpha_+(y_1)\ne y_1$?
+\end{question}
+This amounts to checking the expectation of Remark~\ref{r:sge2}.
+
 \section{Limitations}
 \begin{itemize}
-\item The statements about lattices concern small $K$ only. The cases $p=2$, $e\ge p$ (wild ramification), and
-$e=p-1$ with $\mu_p\subset K$ are not treated.
+\item The statements about lattices concern only small $K$, $K$ with $e=p-1$ (Remark~\ref{r:pminus1},
+Theorem~\ref{t:cyclo}), and $K$ unramified over $\mathbb Q_2$. The cases $p=2$ with $K$ ramified and $p$ odd with
+$e\ge p$ (wild ramification) are not treated.
 \item $\Gamma_K$ itself is not determined, and the $\varphi$ of Theorem~\ref{t:lift} is explicit only modulo the second
-level.
+level. Theorem~\ref{t:lift} is proved only for $s(k)=1$ (Remark~\ref{r:sge2}).
 \item Theorem~\ref{t:lift} uses as known inputs the presentation of Jannsen and Wingberg with the computations of
 Section~2 of their paper, and Wingberg's lifting theorem (NSW (7.5.15)). The proof of the lifting theorem \cite{Wi}
 has not been checked here; we rely on the form stated in NSW, who note that the statement in \cite{Wi} was not correct
-as stated.
-\item All proofs are on paper; nothing is formally verified. The author's own reading of the proofs is still in
-progress.
+as stated. This note uses only the case $s=1$, in which the form in NSW agrees with that of \cite[Prop.~2.6]{Nishio26}
+(the remark after Theorem~\ref{t:wingberg}).
+\item The check in Lean (Section~\ref{s:lean}) is relative: the cited results and some classical facts are hypotheses,
+and Lean does not check that these hypotheses state the cited results correctly. Lemma~\ref{l:small}(c)(d),
+Remark~\ref{r:pminus1}, Lemma~\ref{l:cyclolat}, the assembly of the automorphism of $G_k$ in Theorem~\ref{t:lift}
+(the computation in the presentation and the lifting), and the passage to the holomorphic hull in
+Theorem~\ref{t:iut} are not in Lean. The author's own reading of the proofs is still in progress.
 \end{itemize}
 
-\section{Reproducibility}
+\section{Machine verification}\label{s:lean}
+
+Many of the \tagP\ statements are checked in Lean~4 (v4.30.0) with Mathlib (v4.30.0). The files are in the folder
+\texttt{log-shell-edge/lean} of the deposit (Section~\ref{s:repro}). What is checked is that each statement follows, by
+the proof given here, from the hypotheses in the right-hand column of Table~\ref{tab:lean}. The cited results (\tagS)
+and the classical facts about local fields that are not in Mathlib are hypotheses of the theorems (fields of
+structures), not axioms. Lean does not check that these hypotheses state the cited results correctly. Every theorem
+depends on no axioms other than \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}, and no
+\texttt{sorry} and no \texttt{native\_decide} is used; the file \texttt{Verify.lean} of the deposit prints the axioms
+of the main results. The README of the folder gives the names of the Lean theorems.
+
+In most files the field $K$ is replaced by a model: a $\Qp$-vector space $V$ with the lattices $L_j=\fm^j$
+($L_{j+e}=pL_j$, strictly decreasing), a basis $y$ of $\Lambda=L_1$, the linear form $\tau=\Tr/p$, and a subgroup
+$\Gamma$ of linear automorphisms (the maps $\alpha_+$). The multiplication of $K$, the group $G_K$ and the reciprocity
+map are not in Lean; what the proofs use about them enters as hypotheses. Only Lemma~\ref{l:small}(a)(b) is proved for
+an actual complete ultrametric normed field.
+
+\begin{table}[p]
+\centering\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.2\textwidth}>{\raggedright\arraybackslash}p{0.34\textwidth}>{\raggedright\arraybackslash}p{0.38\textwidth}@{}}
+\toprule
+Statement & Checked in Lean & Hypotheses\\
+\midrule
+Lemma~\ref{l:small}(a)(b) & $\mu_p\not\subset K$; $U^1$ is torsion-free; $\log$ is a bijection $U^1\to\fm$ that preserves
+norms and is a homomorphism & $\rho^e=\lVert p\rVert$ ($\rho$ the norm of a uniformizer), $e\le p-2$, discreteness ($\lVert
+x\rVert<1$ implies $\lVert x\rVert\le\rho$)\\
+Proposition~\ref{p:upper} & $S_K(m)\subseteq\fm^{\lo(m)}$ (hence $a_K(m)\le(m-1)\bmod e$), $S_K(m+e)=p\,S_K(m)$,
+$a_K(m+e)=a_K(m)$ & ($\Gamma1$)\\
+Lemma~\ref{l:basis} & the computation of the $\Zp$-module modulo the relation (if it is torsion-free, the coefficient is a
+unit and $y_1,\dots,y_d$ are independent) & the $p$-part of the abelianization of $G_K$ is this module (Theorem~\ref{t:jw}
+and the reciprocity map)\\
+Lemma~\ref{l:trace} & all & Kondo's description of the kernel of the trace; Lemma~\ref{l:small}(d)\\
+Lemma~\ref{l:induce} & that the automorphism descends through the presentation to $X$ & that $\alpha_+$ acts on
+$\Lambda$ by the matrix of the abelianization (through the reciprocity map and $\log$)\\
+Lemmas~\ref{l:pairs}, \ref{l:ZHJ} & all (identities in free groups, abelianizations) & none\\
+Proposition~\ref{p:gens}; the map $M$ of Lemma~\ref{l:Sr} & derived from the conclusion of Lemma~\ref{l:induce} & the
+conclusion of Lemma~\ref{l:induce}: an automorphism of the free group fixing $z_1$ and the boundary word is realized
+in $\Gamma_K$ by the matrix of its abelianization\\
+Lemmas~\ref{l:even}--\ref{l:oddspan}, Theorems~\ref{t:exact}, \ref{t:dichotomy}, Proposition~\ref{p:orbit} (the
+direction giving (ii)) & all & $\Lambda=\fm$ with its $\Zp$-basis, ($\Gamma1$), ($\Gamma2$), the dimensions of
+$\fm^r/p\fm$, the element of Lemma~\ref{l:small}(d), Kondo's description of the kernel of the trace, the conclusion of
+Lemma~\ref{l:induce}; for odd degree and total ramification also $\fm^e/p\fm=\Fp\bar p$\\
+Theorem~\ref{t:lift} & the identities in the group ring in steps (2)--(4) and (6) of the proof & Theorem~\ref{t:lift}
+itself; the computation in the presentation, $\theta R=I_0$, Proposition~\ref{p:linear} and the lifting
+(Theorem~\ref{t:wingberg}) are not in Lean\\
+Corollaries~\ref{c:O3}, \ref{c:Qp}, \ref{c:U}, Theorem~\ref{t:main}, Remark~\ref{r:kondo} & all & the hypotheses
+above, and Theorem~\ref{t:lift} (for odd degree and total ramification, and for Corollary~\ref{c:Qp} and
+Remark~\ref{r:kondo})\\
+Theorem~\ref{t:iut} & the identity of orders, and the hull of a set containing a unit & the setting of \cite{Tiers}; the
+passage to the container and the holomorphic hull is not in Lean\\
+Lemmas~\ref{l:CK}, \ref{l:primary} & the group-theoretic cores (maps commuting with the inclusion, a counting) & the
+identification with the groups of principal units, and the transfer\\
+Proposition~\ref{p:invlat}, Theorem~\ref{t:Q2} & all & the invariance of $\log C_K$ (Lemmas~\ref{l:CK},
+\ref{l:primary})\\
+Lemma~\ref{l:cyclobasis} & the computation of the module & \cite[Prop.~1.1, Lemma~1.3]{HN}\\
+Lemmas~\ref{l:R}, \ref{l:Sr}, Theorem~\ref{t:cyclo}, Proposition~\ref{p:unions} & all & the lattice facts of
+Lemma~\ref{l:cyclolat}, the basis of Lemma~\ref{l:cyclobasis}, the transvections of \cite[Lemma~3.3]{Kondo26}, the
+conclusion of Lemma~\ref{l:induce}; for Proposition~\ref{p:unions}(a) the hypotheses on small fields and
+Theorem~\ref{t:lift}\\
+\bottomrule
+\end{tabular}
+\caption{What is checked in Lean, and what is taken as a hypothesis.}\label{tab:lean}
+\end{table}
+
+Not in Lean are Lemma~\ref{l:small}(c)(d), Remark~\ref{r:pminus1}, Lemma~\ref{l:cyclolat}, Examples~\ref{ex:d109}
+and~\ref{ex:cyclo}, Remark~\ref{r:known}, and the parts marked ``not in Lean'' in Table~\ref{tab:lean}.
+
+It is also checked in Lean that the maps that the proofs put into $\Gamma$ (those of Proposition~\ref{p:gens}, $M$, the
+map of Theorem~\ref{t:lift}, Kondo's transvections) preserve the trace; so these maps do not contradict ($\Gamma2$).
+The conclusion of Lemma~\ref{l:induce} is not checked in this way for every automorphism of the free group.
+
+The automorphisms $Z,H,J,M$ of the free group in \S4.3, the two module lemmas used in Lemmas~\ref{l:basis}
+and~\ref{l:even}, and the logarithm series over $\Qp$ and over complete ultrametric normed fields are adapted from an
+earlier, unpublished Lean development of the author (the comments were rewritten, the namespaces renamed and unused
+statements removed).
+
+\section{Reproducibility}\label{s:repro}
 The folder \texttt{log-shell-edge/} of the repository \url{https://github.com/turahigashi/iut-explicit-initial-theta}
-(tag \texttt{v0.26.0}), also deposited with this note, contains scripts in Python (standard library only, except that
-the last one uses the program of \cite{Walk}, which needs sympy) and their outputs. The checks do not replace the
+(tag \texttt{v0.27.0}), also deposited with this note, contains the Lean files of Section~\ref{s:lean} (folder
+\texttt{lean}, with \texttt{Verify.lean} and a README), and scripts in Python (standard library only, except that the
+last one uses the program of \cite{Walk}, which needs sympy) with their outputs. The checks do not replace the
 proofs.
 \begin{itemize}
 \item \texttt{check\_free\_group.py}: the identities of Section~\ref{s:pairs} in the free group ($Z,H,J$ and the swap of
@@ -1036,15 +1454,48 @@ that $\varepsilon(c)=1$, $c\in I_0$ and $\varepsilon(\mu)=\varepsilon(\nu)=0$, a
 in $I_0M_2$ and that $\theta\zeta=-E$ is solvable, where $M_2=M_1\oplus\Lambda^2M_1$ models the second level of a free
 pro-$p$ group; $E$ itself is nonzero in every trial, so without the adjustment of $x_0$ the relation is not preserved
 at the third level.
+\item \texttt{check\_boundary\_lattices.py}: the lattice facts of Section~\ref{s:other} (Lemma~\ref{l:cyclolat}(a)--(c),
+the case $e_1=1$ of Lemma~\ref{l:primary}, $\log U^{(2)}=\fm^2$, the values of $a_K$ in Theorem~\ref{t:cyclo} and
+Example~\ref{ex:cyclo}, and the log-shell of fields unramified over $\mathbb Q_2$) for $\Qp(\zeta_p)$ ($p=3,5,7$), the
+unramified extensions of degree $2$ and $3$ of $\mathbb Q_3(\zeta_3)$, the unramified quadratic extension of
+$\mathbb Q_5(\zeta_5)$ and the fields unramified over $\mathbb Q_2$ of degree $1,2,3$, by exact integer arithmetic
+modulo $p^{10}$.
+\item \texttt{check\_boundary\_orbits.py}: the orbit computations of Lemmas~\ref{l:R}, \ref{l:Sr} and
+Proposition~\ref{p:unions}, in models over $\Fp$ generated only by the elements whose action is stated in the text
+(the transvections of $\Sp$, $M$ and $\varphi$): for (b), $(p,d)=(3,2),(3,4),(5,4),(3,6),(7,6)$ and every value of the
+$\alpha$ with $y_1=\alpha z$; for (a), $(p,d)=(3,3),(5,3),(7,3),(5,5),(7,5)$.
 \item \texttt{example\_d109.py}: the data of Example~\ref{ex:d109}, read from the program \texttt{iut\_compute.py} of
 \cite{Walk} (folder \texttt{iut-walkthrough/program} of the same repository).
 \end{itemize}
 
+\section*{Changes in version 1.1.0}
+Version~1.0.0 of this note is dated 8 November 2026 and has the DOI
+\href{https://doi.org/10.5281/zenodo.24050445}{10.5281/zenodo.24050445}. Version~1.1.0 (9 November 2026) differs
+from it as follows.
+\begin{enumerate}[label=(\arabic*)]
+\item Correction of scope. Version~1.0.0 stated Theorem~\ref{t:wingberg} (Wingberg's lifting theorem) without a
+condition on $s(k)$, and Theorem~\ref{t:lift}, Corollary~\ref{c:Qp} and Remark~\ref{r:kondo} for every $k$ of odd
+degree. The form stated in NSW uses the descending $p$-central series and cannot be used when $s(k)\ge2$ (the remark
+after Theorem~\ref{t:wingberg}). The proof works when $s(k)=1$, which holds whenever $p\nmid e$, and these statements
+are now restricted to that case; the case $s(k)\ge2$ is Remark~\ref{r:sge2} and Question~\ref{q:sge2}. Since $s=1$
+for small $K$, the main theorem (Theorem~\ref{t:main}) and Section~\ref{s:iut} are unchanged.
+\item A new Section~\ref{s:other} on two types that are not small: an invariant lattice from the unramified extension
+of degree $p$, the cyclotomic boundary, fields unramified over $\mathbb Q_2$, and unions of images; with two new
+scripts.
+\item A new Section~\ref{s:lean} on the check in Lean~4; the Lean files are in the deposit.
+\item Accordingly the abstract, Section~1, the relation to earlier work, the remaining questions, the limitations, the
+reproducibility section, the disclosure and the bibliography ([FV] added; for [HN] the revised version of June 2022 is
+used) were revised. The former Sections~8--10 are now Sections~9--11, and the former Section~11 is now
+Section~\ref{s:repro}.
+\end{enumerate}
+
 \section*{Disclosure}
 The question studied here arose in the author's discussions with generative AI tools, and the author decided to make it
 the subject of this note. The proofs were found with generative AI tools (large language models) under the author's
-direction, and these tools were also used for the computations, the literature search and the writing. The author's
-own reading of the proofs is still in progress. The author takes full responsibility for the note.
+direction, and these tools were also used for the computations, the formalisation in Lean, the literature search and
+the writing. Section~\ref{s:lean} says what is checked in Lean and under which hypotheses; the correspondence between
+these hypotheses and the cited results is not checked by Lean. The author's own reading of the proofs is still in
+progress. The author takes full responsibility for the note.
 
 \begin{thebibliography}{JoshiAnab}\raggedright
 \bibitem[AbsTopIII]{AbsTopIII}
@@ -1072,13 +1523,18 @@ papers on inter-universal Teichm\"uller theory}, March 2024.
 Shinichi Mochizuki, \emph{On the formalization of IUT: a preliminary progress report} [joint work in progress with
 Y.~Hoshi, G.~Yamashita, Y.~Yang, \dots], April 2026.
 
+\bibitem[FV]{FV}
+Ivan B. Fesenko and Sergei V. Vostokov, \emph{Local Fields and Their Extensions}, 2nd ed., Translations of
+Mathematical Monographs 121, American Mathematical Society, 2002.
+
 \bibitem[Gr]{Gr}
 Nadav Gropper, \emph{Surfaces and $p$-adic fields}, DPhil thesis, University of Oxford, 2022; see also
 \emph{Surfaces and $p$-adic fields I: Dehn twists}, arXiv:2303.04309v1, 8 March 2023.
 
 \bibitem[HN]{HN}
 Yuichiro Hoshi and Yu Nishio, \emph{On the outer automorphism groups of the absolute Galois groups of
-mixed-characteristic local fields}, RIMS Preprint 1931, November 2020; Res. Number Theory \textbf{8} (2022), no.~56.
+mixed-characteristic local fields}, RIMS Preprint 1931, November 2020 (revised June 2022); Res. Number Theory
+\textbf{8} (2022), no.~56.
 
 \bibitem[Hoshi]{Hoshi}
 Yuichiro Hoshi, \emph{Introduction to mono-anabelian geometry}, RIMS Preprint 1868, January 2017.

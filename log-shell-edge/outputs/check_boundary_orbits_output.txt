@@ -1,0 +1,61 @@
+=== (b) cyclotomic boundary model: p = 3, d = 2 (f = 1, e = 2)
+  orbits on V/R: {0}, U - {0}, and {tau = s} for s != 0 (sizes [1, 1, 1]): OK
+  (Lemma 8.8) R + span of the orbit of any x with tau(x) != 0 is V: OK
+  (Prop. 8.13(b)) union for R + span([y_2], [y_3]): V; union for R + F_p v, tau(v) != 0 (all 3 such v): R u {tau != 0}, relative measure 1 = 1 - 1/p + p^(1-d): OK
+      f = 1: q(m^e) = R + F_p [p] is of the second kind; q(m^r), 2 <= r < e, of the first
+  (all alpha in F_p tried)
+
+=== (b) cyclotomic boundary model: p = 3, d = 4 (f = 2, e = 2)
+  the transvections act transitively on U - {0} (8 vectors)
+  (Lemma 8.7) Sp-invariant lines in ker tau: 1, namely F_p[z]: OK
+  orbits on V/R: {0}, U - {0}, and {tau = s} for s != 0 (sizes [1, 8, 9, 9]): OK
+  (Lemma 8.8) R + span of the orbit of any x with tau(x) != 0 is V: OK
+  (Prop. 8.13(b)) union for R + span([y_2], [y_3]): V; union for R + F_p v, tau(v) != 0 (all 27 such v): R u {tau != 0}, relative measure 19/27 = 1 - 1/p + p^(1-d), not additive: OK
+      f >= 2: every q(m^r), 2 <= r <= e, meets U - {0}, so only the first kind occurs
+  (all alpha in F_p tried)
+
+=== (b) cyclotomic boundary model: p = 5, d = 4 (f = 1, e = 4)
+  the transvections act transitively on U - {0} (24 vectors)
+  (Lemma 8.7) Sp-invariant lines in ker tau: 1, namely F_p[z]: OK
+  orbits on V/R: {0}, U - {0}, and {tau = s} for s != 0 (sizes [1, 24, 25, 25, 25, 25]): OK
+  (Lemma 8.8) R + span of the orbit of any x with tau(x) != 0 is V: OK
+  (Prop. 8.13(b)) union for R + span([y_2], [y_3]): V; union for R + F_p v, tau(v) != 0 (all 125 such v): R u {tau != 0}, relative measure 101/125 = 1 - 1/p + p^(1-d), not additive: OK
+      f = 1: q(m^e) = R + F_p [p] is of the second kind; q(m^r), 2 <= r < e, of the first
+  (all alpha in F_p tried)
+
+=== (b) cyclotomic boundary model: p = 3, d = 6 (f = 3, e = 2)
+  the transvections act transitively on U - {0} (80 vectors)
+  (Lemma 8.7) Sp-invariant lines in ker tau: 1, namely F_p[z]: OK
+  orbits on V/R: {0}, U - {0}, and {tau = s} for s != 0 (sizes [1, 80, 81, 81]): OK
+  (Lemma 8.8) R + span of the orbit of any x with tau(x) != 0 is V: OK
+  (Prop. 8.13(b)) union for R + span([y_2], [y_3]): V; union for R + F_p v, tau(v) != 0 (all 243 such v): R u {tau != 0}, relative measure 163/243 = 1 - 1/p + p^(1-d), not additive: OK
+      f >= 2: every q(m^r), 2 <= r <= e, meets U - {0}, so only the first kind occurs
+  (all alpha in F_p tried)
+
+=== (b) cyclotomic boundary model: p = 7, d = 6 (f = 1, e = 6)
+  the transvections act transitively on U - {0} (2400 vectors)
+  (Lemma 8.7) Sp-invariant lines in ker tau: 1, namely F_p[z]: OK
+  orbits on V/R: {0}, U - {0}, and {tau = s} for s != 0 (sizes [1, 2400, 2401, 2401, 2401, 2401, 2401, 2401]): OK
+  (all alpha in F_p tried)
+
+=== (a) odd degree model: p = 3, d = 3 (small K with f = 1, e = d: none, only e < d occurs)
+  orbits on V: {0}, W - {0}, and {tau = t} for t != 0 (sizes [1, 8, 9, 9]): OK
+  (Prop. 8.13(a)) union for a line F_p v with tau(v) != 0 (all 9 such lines): {0} u {tau != 0}; relative measure 19/27 = 1 - 1/p + p^(-d); not additive; a plane meeting W gives V: OK
+
+=== (a) odd degree model: p = 5, d = 3 (small K with f = 1, e = d: exists)
+  orbits on V: {0}, W - {0}, and {tau = t} for t != 0 (sizes [1, 24, 25, 25, 25, 25]): OK
+  (Prop. 8.13(a)) union for a line F_p v with tau(v) != 0 (all 25 such lines): {0} u {tau != 0}; relative measure 101/125 = 1 - 1/p + p^(-d); not additive; a plane meeting W gives V: OK
+
+=== (a) odd degree model: p = 7, d = 3 (small K with f = 1, e = d: exists)
+  orbits on V: {0}, W - {0}, and {tau = t} for t != 0 (sizes [1, 48, 49, 49, 49, 49, 49, 49]): OK
+  (Prop. 8.13(a)) union for a line F_p v with tau(v) != 0 (all 49 such lines): {0} u {tau != 0}; relative measure 295/343 = 1 - 1/p + p^(-d); not additive; a plane meeting W gives V: OK
+
+=== (a) odd degree model: p = 5, d = 5 (small K with f = 1, e = d: none, only e < d occurs)
+  orbits on V: {0}, W - {0}, and {tau = t} for t != 0 (sizes [1, 624, 625, 625, 625, 625]): OK
+  (Prop. 8.13(a)) union for a line F_p v with tau(v) != 0 (all 625 such lines): {0} u {tau != 0}; relative measure 2501/3125 = 1 - 1/p + p^(-d); not additive; a plane meeting W gives V: OK
+
+=== (a) odd degree model: p = 7, d = 5 (small K with f = 1, e = d: exists)
+  orbits on V: {0}, W - {0}, and {tau = t} for t != 0 (sizes [1, 2400, 2401, 2401, 2401, 2401, 2401, 2401]): OK
+  (Prop. 8.13(a)) union for a line F_p v with tau(v) != 0 (all 2401 such lines): {0} u {tau != 0}; relative measure 14407/16807 = 1 - 1/p + p^(-d); not additive; a plane meeting W gives V: OK
+
+all checks passed

@@ -1,0 +1,118 @@
+=== Q_3(zeta_3): p = 3, e = 2, f = 1, d = 2
+  1 + rho is a nontrivial p-th root of unity (mu_p in K), rho = pi
+  (L1) log(1 + pi z) = pi (z - z^p) mod m^2 for all 3 residue representatives z: OK
+  (L2) Lambda/m^2 = pi * ker Tr_{kappa/F_p}: 1 classes = q/p, so [m : Lambda] = p: OK
+  (L3) v(log(1 + x)) = v(x) for 11 elements x of m^2: OK
+  (L4) v_p Tr(m^j), j = 0..5: [0, 1, 1, 2, 2, 3] = ceil(j/e); Tr(Lambda) = p Z_p: OK
+  (L5) least valuation of Lambda - {0}: w = 2: OK
+  (L6) (1 + x)^p in U^(p) for x in m; classes of (1 + pi z)^p in U^(p)/U^(p+1) = ker Tr (1);
+       1 + rho^p A is not a p-th power mod U^(p+1) exactly when Tr(A mod m) != 0 (2 of 3): OK
+  (L7) a_K(m) for m = -1..4: [0, 0, 0, 0, 0, 0]
+       a_K(1..e) = [0, 0]
+  (L8) log-shell (2p)^{-1} log O^x = p^{-1} Lambda, least valuation 2 - e = 0
+
+=== Q_5(zeta_5): p = 5, e = 4, f = 1, d = 4
+  1 + rho is a nontrivial p-th root of unity (mu_p in K), rho = pi
+  (L1) log(1 + pi z) = pi (z - z^p) mod m^2 for all 5 residue representatives z: OK
+  (L2) Lambda/m^2 = pi * ker Tr_{kappa/F_p}: 1 classes = q/p, so [m : Lambda] = p: OK
+  (L3) v(log(1 + x)) = v(x) for 15 elements x of m^2: OK
+  (L4) v_p Tr(m^j), j = 0..9: [0, 1, 1, 1, 1, 2, 2, 2, 2, 3] = ceil(j/e); Tr(Lambda) = p Z_p: OK
+  (L5) least valuation of Lambda - {0}: w = 2: OK
+  (L6) (1 + x)^p in U^(p) for x in m; classes of (1 + pi z)^p in U^(p)/U^(p+1) = ker Tr (1);
+       1 + rho^p A is not a p-th power mod U^(p+1) exactly when Tr(A mod m) != 0 (4 of 5): OK
+  (L7) a_K(m) for m = -3..8: [0, 0, 1, 2, 0, 0, 1, 2, 0, 0, 1, 2]
+       a_K(1..e) = [0, 0, 1, 2]
+  (L8) log-shell (2p)^{-1} log O^x = p^{-1} Lambda, least valuation 2 - e = -2
+
+=== Q_7(zeta_7): p = 7, e = 6, f = 1, d = 6
+  1 + rho is a nontrivial p-th root of unity (mu_p in K), rho = pi
+  (L1) log(1 + pi z) = pi (z - z^p) mod m^2 for all 7 residue representatives z: OK
+  (L2) Lambda/m^2 = pi * ker Tr_{kappa/F_p}: 1 classes = q/p, so [m : Lambda] = p: OK
+  (L3) v(log(1 + x)) = v(x) for 19 elements x of m^2: OK
+  (L4) v_p Tr(m^j), j = 0..13: [0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3] = ceil(j/e); Tr(Lambda) = p Z_p: OK
+  (L5) least valuation of Lambda - {0}: w = 2: OK
+  (L6) (1 + x)^p in U^(p) for x in m; classes of (1 + pi z)^p in U^(p)/U^(p+1) = ker Tr (1);
+       1 + rho^p A is not a p-th power mod U^(p+1) exactly when Tr(A mod m) != 0 (6 of 7): OK
+  (L7) a_K(m) for m = -5..12: [0, 0, 1, 2, 3, 4, 0, 0, 1, 2, 3, 4, 0, 0, 1, 2, 3, 4]
+       a_K(1..e) = [0, 0, 1, 2, 3, 4]
+  (L8) log-shell (2p)^{-1} log O^x = p^{-1} Lambda, least valuation 2 - e = -4
+
+=== Q_3(zeta_3) Q_9: p = 3, e = 2, f = 2, d = 4
+  1 + rho is a nontrivial p-th root of unity (mu_p in K), rho = pi
+  (L1) log(1 + pi z) = pi (z - z^p) mod m^2 for all 9 residue representatives z: OK
+  (L2) Lambda/m^2 = pi * ker Tr_{kappa/F_p}: 3 classes = q/p, so [m : Lambda] = p: OK
+  (L3) v(log(1 + x)) = v(x) for 16 elements x of m^2: OK
+  (L4) v_p Tr(m^j), j = 0..5: [0, 1, 1, 2, 2, 3] = ceil(j/e); Tr(Lambda) = p Z_p: OK
+  (L5) least valuation of Lambda - {0}: w = 1: OK
+  (L6) (1 + x)^p in U^(p) for x in m; classes of (1 + pi z)^p in U^(p)/U^(p+1) = ker Tr (3);
+       1 + rho^p A is not a p-th power mod U^(p+1) exactly when Tr(A mod m) != 0 (6 of 9): OK
+  (L7) a_K(m) for m = -1..4: [0, 1, 0, 1, 0, 1]
+       a_K(1..e) = [0, 1]
+  (L8) log-shell (2p)^{-1} log O^x = p^{-1} Lambda, least valuation 1 - e = -1
+
+=== Q_3(zeta_3) Q_27: p = 3, e = 2, f = 3, d = 6
+  1 + rho is a nontrivial p-th root of unity (mu_p in K), rho = pi
+  (L1) log(1 + pi z) = pi (z - z^p) mod m^2 for all 27 residue representatives z: OK
+  (L2) Lambda/m^2 = pi * ker Tr_{kappa/F_p}: 9 classes = q/p, so [m : Lambda] = p: OK
+  (L3) v(log(1 + x)) = v(x) for 21 elements x of m^2: OK
+  (L4) v_p Tr(m^j), j = 0..5: [0, 1, 1, 2, 2, 3] = ceil(j/e); Tr(Lambda) = p Z_p: OK
+  (L5) least valuation of Lambda - {0}: w = 1: OK
+  (L6) (1 + x)^p in U^(p) for x in m; classes of (1 + pi z)^p in U^(p)/U^(p+1) = ker Tr (9);
+       1 + rho^p A is not a p-th power mod U^(p+1) exactly when Tr(A mod m) != 0 (18 of 27): OK
+  (L7) a_K(m) for m = -1..4: [0, 1, 0, 1, 0, 1]
+       a_K(1..e) = [0, 1]
+  (L8) log-shell (2p)^{-1} log O^x = p^{-1} Lambda, least valuation 1 - e = -1
+
+=== Q_5(zeta_5) Q_25: p = 5, e = 4, f = 2, d = 8
+  1 + rho is a nontrivial p-th root of unity (mu_p in K), rho = pi
+  (L1) log(1 + pi z) = pi (z - z^p) mod m^2 for all 25 residue representatives z: OK
+  (L2) Lambda/m^2 = pi * ker Tr_{kappa/F_p}: 5 classes = q/p, so [m : Lambda] = p: OK
+  (L3) v(log(1 + x)) = v(x) for 24 elements x of m^2: OK
+  (L4) v_p Tr(m^j), j = 0..9: [0, 1, 1, 1, 1, 2, 2, 2, 2, 3] = ceil(j/e); Tr(Lambda) = p Z_p: OK
+  (L5) least valuation of Lambda - {0}: w = 1: OK
+  (L6) (1 + x)^p in U^(p) for x in m; classes of (1 + pi z)^p in U^(p)/U^(p+1) = ker Tr (5);
+       1 + rho^p A is not a p-th power mod U^(p+1) exactly when Tr(A mod m) != 0 (20 of 25): OK
+  (L7) a_K(m) for m = -3..8: [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3]
+       a_K(1..e) = [0, 1, 2, 3]
+  (L8) log-shell (2p)^{-1} log O^x = p^{-1} Lambda, least valuation 1 - e = -3
+
+=== Q_2: p = 2, e = 1, f = 1, d = 1
+  1 + rho is a nontrivial p-th root of unity (mu_p in K), rho = -2
+  (L1) log(1 + pi z) = pi (z - z^p) mod m^2 for all 2 residue representatives z: OK
+  (L2) Lambda/m^2 = pi * ker Tr_{kappa/F_p}: 1 classes = q/p, so [m : Lambda] = p: OK
+  (L3) v(log(1 + x)) = v(x) for 9 elements x of m^2: OK
+  (L4) v_p Tr(m^j), j = 0..3: [0, 1, 2, 3] = ceil(j/e); Tr(Lambda) = 4 Z_2 (p = 2): OK
+  (L5) least valuation of Lambda - {0}: w = 2: OK
+  (L6) (1 + x)^p in U^(p) for x in m; classes of (1 + pi z)^p in U^(p)/U^(p+1) = ker Tr (1);
+       1 + rho^p A is not a p-th power mod U^(p+1) exactly when Tr(A mod m) != 0 (1 of 2): OK
+  (L7) a_K(m) for m = 0..2: [0, 0, 0]
+       a_K(1..e) = [0]
+  (L8) log-shell (1/4) log O^x = O_K
+
+=== Q_4 (unramified over Q_2, f = 2): p = 2, e = 1, f = 2, d = 2
+  1 + rho is a nontrivial p-th root of unity (mu_p in K), rho = -2
+  (L1) log(1 + pi z) = pi (z - z^p) mod m^2 for all 4 residue representatives z: OK
+  (L2) Lambda/m^2 = pi * ker Tr_{kappa/F_p}: 2 classes = q/p, so [m : Lambda] = p: OK
+  (L3) v(log(1 + x)) = v(x) for 12 elements x of m^2: OK
+  (L4) v_p Tr(m^j), j = 0..3: [0, 1, 2, 3] = ceil(j/e); Tr(Lambda) = 4 Z_2 (p = 2): OK
+  (L5) least valuation of Lambda - {0}: w = 1: OK
+  (L6) (1 + x)^p in U^(p) for x in m; classes of (1 + pi z)^p in U^(p)/U^(p+1) = ker Tr (2);
+       1 + rho^p A is not a p-th power mod U^(p+1) exactly when Tr(A mod m) != 0 (2 of 4): OK
+  (L7) a_K(m) for m = 0..2: [0, 0, 0]
+       a_K(1..e) = [0]
+  (L8) log-shell (1/4) log O^x != O_K
+
+=== Q_8 (unramified over Q_2, f = 3): p = 2, e = 1, f = 3, d = 3
+  1 + rho is a nontrivial p-th root of unity (mu_p in K), rho = -2
+  (L1) log(1 + pi z) = pi (z - z^p) mod m^2 for all 8 residue representatives z: OK
+  (L2) Lambda/m^2 = pi * ker Tr_{kappa/F_p}: 4 classes = q/p, so [m : Lambda] = p: OK
+  (L3) v(log(1 + x)) = v(x) for 15 elements x of m^2: OK
+  (L4) v_p Tr(m^j), j = 0..3: [0, 1, 2, 3] = ceil(j/e); Tr(Lambda) = 4 Z_2 (p = 2): OK
+  (L5) least valuation of Lambda - {0}: w = 1: OK
+  (L6) (1 + x)^p in U^(p) for x in m; classes of (1 + pi z)^p in U^(p)/U^(p+1) = ker Tr (4);
+       1 + rho^p A is not a p-th power mod U^(p+1) exactly when Tr(A mod m) != 0 (4 of 8): OK
+  (L7) a_K(m) for m = 0..2: [0, 0, 0]
+       a_K(1..e) = [0]
+  (L8) log-shell (1/4) log O^x != O_K
+
+all checks passed
