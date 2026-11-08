@@ -1,0 +1,7 @@
+d = 2: T_a and U_w (w = y_3..y_d) preserve the form; det = -u^2 for 200 random x
+d = 4: T_a and U_w (w = y_3..y_d) preserve the form; det = -u^4 for 200 random x
+d = 6: T_a and U_w (w = y_3..y_d) preserve the form; det = -u^6 for 200 random x
+d = 8: T_a and U_w (w = y_3..y_d) preserve the form; det = -u^8 for 200 random x
+d = 10: T_a and U_w (w = y_3..y_d) preserve the form; det = -u^10 for 200 random x
+d = 12: T_a and U_w (w = y_3..y_d) preserve the form; det = -u^12 for 200 random x
+1200 determinants checked

@@ -1,0 +1,13 @@
+D109: l = 7, l* = 3; the places of V^bad_mod (walkthrough program):
+prime | ord_w(a) | ord_w(1-a) | ord_w(q) | p mod 4 | e | f = ord of p mod 420 | [K_v:Q_p] | small
+109 | 29 | 0 | 58 | 1 | 105 | 6 | 630 (even) | True
+21577 | 0 | 1 | 2 | 1 | 105 | 12 | 1260 (even) | True
+6065177 | 0 | 1 | 2 | 1 | 105 | 4 | 420 (even) | True
+534775081 | 0 | 1 | 2 | 1 | 105 | 1 | 105 (odd) | True
+1174770007439769673 | 0 | 1 | 2 | 1 | 105 | 12 | 1260 (even) | True
+16450055877403724897 | 0 | 1 | 2 | 1 | 105 | 4 | 420 (even) | True
+place above 109: e = 105, ord_p(qbb) = 29/7
+j | lambda | m = e*lambda | m mod e | lo(m) | lo(m)/e | ceil(lambda) - (e-1)/e
+1 | 29/7 | 435 | 15 | 421 | 421/105 | 421/105
+2 | 116/7 | 1740 | 60 | 1681 | 1681/105 | 1681/105
+3 | 261/7 | 3915 | 30 | 3886 | 3886/105 | 3886/105

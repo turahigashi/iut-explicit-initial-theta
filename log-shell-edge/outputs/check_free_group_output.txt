@@ -1,0 +1,26 @@
+ok   Z(k) = k
+ok   Z: stated inverse composes to the identity on both sides
+ok   H: stated inverse composes to the identity on both sides
+ok   J: stated inverse composes to the identity on both sides
+ok   swap of two pairs: stated inverse composes to the identity on both sides
+ok   a -> ab: stated inverse composes to the identity on both sides
+ok   b -> ba: stated inverse composes to the identity on both sides
+ok   Z fixes the boundary word as an element
+ok   H fixes the boundary word as an element
+ok   J fixes the boundary word as an element
+ok   swap of two pairs fixes the boundary word as an element
+ok   a -> ab fixes the boundary word as an element
+ok   b -> ba fixes the boundary word as an element
+ok   c -> c d^-1 fixes the boundary word as an element
+ok   M(a) = a
+ok   M fixes delta_2 = [a,b][c,d]
+ok   the word inducing U_d fixes a and delta_2
+ok   Z^ab = T_{d-b}
+ok   Psi^ab: a->c, b->d, c->b, d->-a
+ok   Psi^ab preserves the form
+ok   M^ab = T_{a+d}
+ok   (b -> ba)^ab = T_a
+ok   (c -> c d^-1)^ab = T_d
+ok   U_d = T_{a+d} T_a^-1 T_d^-1 equals x -> x + <x,a> d + <x,d> a
+ok   the word inducing U_d has abelianization U_d
+25/25 checks passed

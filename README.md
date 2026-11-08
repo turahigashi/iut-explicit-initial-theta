@@ -56,7 +56,9 @@ Theorem 1.10, on explicit data, in models, and in Lean.
   on these data; ind2-gap gives the (Ind2)-terms of lana-agents/iut in closed form; reading-family shows that in each of
   36 readings Corollary 3.12 and the upper bound of IV give the same height inequality (k − 1)|log q| ≤ C. three-tiers
   computes, at small places, the exact hull reached by the automorphisms φ of IUT IV, Proposition 1.2, and finds the
-  container of Step (v) larger by exactly a factor p when λ is not an integer.
+  container of Step (v) larger by exactly a factor p when λ is not an integer. log-shell-edge shows that the actual
+  (Ind1), (Ind2) reach that exact hull at every small place, by determining how far automorphisms of a p-adic absolute
+  Galois group move the ring of integers.
 - **Step (xi).** Segment or loop? and its elementary companion, Indexed identifications, state the comparison of
   Step (xi) as a lax 2-cell, which is equivalent to that inequality. Two computations and Bridge and size are essays
   that read it as a comparison of programs and as a bridge versus its size. Where Theorem 3.11 sits takes the content
@@ -244,6 +246,8 @@ The file names carry an older working numbering; the reports are numbered as fol
 | two computations | `two-computations/paper/two_computations.tex` | [10.5281/zenodo.23968298](https://doi.org/10.5281/zenodo.23968298) | 1.1.0, [10.5281/zenodo.24039369](https://doi.org/10.5281/zenodo.24039369) |
 | bridge and size | `bridge-and-size/paper/bridge_and_size.tex` | [10.5281/zenodo.23984200](https://doi.org/10.5281/zenodo.23984200) | 1.1.0, [10.5281/zenodo.24039372](https://doi.org/10.5281/zenodo.24039372) |
 | where Theorem 3.11 sits | `where-311-sits/paper/where-311-sits.tex` | [10.5281/zenodo.24028832](https://doi.org/10.5281/zenodo.24028832) | 1.1.1, [10.5281/zenodo.24044582](https://doi.org/10.5281/zenodo.24044582) |
+| three tiers of indeterminacy | `three-tiers/paper/three_tiers.tex` | [10.5281/zenodo.24042999](https://doi.org/10.5281/zenodo.24042999) | 1.0.0, [10.5281/zenodo.24043000](https://doi.org/10.5281/zenodo.24043000) |
+| to the edge of the log-shell | `log-shell-edge/paper/log_shell_edge.tex` | [10.5281/zenodo.24050444](https://doi.org/10.5281/zenodo.24050444) | 1.0.0, [10.5281/zenodo.24050445](https://doi.org/10.5281/zenodo.24050445) |
 
 `paper/paper.tex` is the expanded version of the **first** report, cited as `[First-full]`;
 the first report is the version of record.
@@ -558,3 +562,22 @@ discrepancies stated by Mochizuki. **Nothing is claimed about Corollary 3.12 or 
 the folder contains no Lean code. See `three-tiers/README.md`.
 
 The files in `three-tiers/` are licensed under CC BY 4.0.
+
+## How far automorphisms move the ring of integers (November 2026)
+
+**How far automorphisms of a p-adic absolute Galois group move the ring of integers: to the edge of the log-shell,
+with an application to Step (v) of IUT IV.** `log-shell-edge/paper/log_shell_edge.pdf` (19 pages), version 1.0.0, DOI
+[10.5281/zenodo.24050445](https://doi.org/10.5281/zenodo.24050445).
+
+For p odd and K/Q_p with ramification index e ≤ p − 2, the note determines the Z_p-module spanned by the images of
+𝔪_K^m under the maps α_+ induced by automorphisms α of G_K: it is 𝔪_K^lo(m), with lo(m) the largest integer ≤ m
+congruent to 1 modulo e, so the images of 𝒪_K span the whole log-shell. In odd degree with total ramification this
+uses an automorphism, built modulo the third term of the p-central series of the wild inertia group and lifted by
+Wingberg's lifting theorem (NSW (7.5.15)), that shifts the generator x_1 of the Jannsen–Wingberg presentation towards
+x_2; for every k/Q_p of odd degree d ≥ 3 it gives α_+(y_1) ≠ y_1, the element whose existence Kondo left open
+(arXiv:2512.09231, Remark 1.10). Application: at small places the actual (Ind1), (Ind2) reach the exact hull of
+`three-tiers/` without its hypotheses λ ∈ Z and (U). The note builds on Hoshi, Hoshi–Nishio, Kondo (including
+arXiv:2605.25428), Jannsen–Wingberg, Wingberg and NSW, and Nishio (arXiv:2609.19696). **Nothing is claimed about
+Corollary 3.12 or about abc.** The proofs are on paper; the folder contains no Lean code. See `log-shell-edge/README.md`.
+
+The files in `log-shell-edge/` are licensed under CC BY 4.0.
