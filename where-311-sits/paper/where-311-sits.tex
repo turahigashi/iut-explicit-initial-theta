@@ -4,6 +4,7 @@
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{enumitem}
 \usepackage{booktabs}
+\usepackage{longtable}
 \usepackage{array}
 \usepackage{tikz}
 \usepackage{hyperref}
@@ -35,7 +36,7 @@
 \newcommand{\tI}{(R_I)^{\sim}}
 \newcommand{\tO}{\widetilde{\mathcal O}}
 \newcommand{\fq}{\mathfrak q}
-\newcommand{\ArtifactURL}{\url{https://github.com/turahigashi/iut-explicit-initial-theta/tree/v0.25.1/where-311-sits/lean}}
+\newcommand{\ArtifactURL}{\url{https://github.com/turahigashi/iut-explicit-initial-theta/tree/v0.28.0/where-311-sits/lean}}
 \newcommand{\ArtifactDOI}{\href{https://doi.org/10.5281/zenodo.24044582}{10.5281/zenodo.24044582}}
 \setlength{\lineskiplimit}{2pt}
 \setlength{\lineskip}{2pt}
@@ -44,7 +45,7 @@
 cited in the proof of IUT~III, Corollary~3.12, does not imply its conclusion}
 \author{Toshihisa Urahigashi\\
 \small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.1.1 --- 8 November 2026\\[3pt]
+\date{Version 1.2.0 --- 10 November 2026\\[3pt]
 \small ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}\\
 \small \href{https://doi.org/10.5281/zenodo.24044582}{doi:10.5281/zenodo.24044582}}
 
@@ -56,7 +57,8 @@ The inequality of \cite[Cor.~3.12]{IUT3} is obtained in Step (xi) of its proof, 
 author states that he will be concerned only with certain qualitative properties of the
 multiradial algorithm of \cite[Thm.~3.11]{IUT3}, ``temporarily forgetting'' its internal
 structure. We list every
-result that the corollary and its proof cite (152 citations of 61 targets), keep the 22
+target that the corollary and its proof cite (164 citations of 63 targets; counting rule
+in \S\ref{s:step}, list in Appendix~A), keep the 22
 that the proof uses as
 definitions or premises, and state their content as axioms about normalized log-volumes of
 regions in tensor packets with Haar measure, at the strength of the source. A weak
@@ -113,8 +115,9 @@ Throughout, \Smark{} marks a fact about a cited text, \Pmark{} a statement prove
 
 \smallskip\noindent\textbf{Claimed.}
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
-\item \Smark{} The statement and proof of \cite[Cor.~3.12]{IUT3} cite 61 distinct targets
-  152 times.
+\item \Smark{} The statement and proof of \cite[Cor.~3.12]{IUT3} cite 63 distinct targets
+  164 times, by the counting rule fixed in \S\ref{s:step}; the targets are listed, with
+  their counts and roles, in Appendix~A.
   Of these, 22 are used as definitions or premises. The two steps (xi-e) and (xi-f), at
   which the inequality is drawn, invoke no numbered result as a premise: (xi-e) names the
   multiradial construction algorithm of \cite[Thm.~3.11]{IUT3}, whose output it describes,
@@ -439,27 +442,50 @@ namely, $-|\log(\qbb)|\in\mathbb R$.
 The inclusion $-|\log(\qbb)|\in\mathbb R_{\le-|\log(\Thbb)|}$ is then the conclusion.
 
 \Smark{} We read every citation in the statement and the proof of \cite[Cor.~3.12]{IUT3}
-and classified its role (Table~\ref{tab:inv}). The statement, which cites the definitions
-of the two log-volumes, is counted together with the proof.
+and classified its role (Table~\ref{tab:inv}; full list in Appendix~A). The statement,
+which cites the definitions of the two log-volumes, is counted together with the proof.
+Counting rule. An \emph{occurrence} is one textual naming of a target in the English
+original (author version, pp.~173--186, from the heading of Corollary~3.12 to just before
+Remark~3.12.1): a list counts once per target named, re-naming the same target inside one
+bracket counts again, citations inside Figure~3.6 count, and forward references count.
+References to Corollary~3.12 itself are excluded. A \emph{target} is a (document, kind,
+number) triple; whole works, sections and figures are targets in their own right, and a
+section range such as \cite[\S\S 4, 5, 6]{IUT1} counts as the three sections named.
+This gives 164 occurrences of 63 targets. (Versions 1.0.0--1.1.1 reported 152/61 from an
+earlier inventory extracted from a Japanese translation, which grouped
+\cite[\S\S 4, 5, 6]{IUT1} as one target and missed twelve textual occurrences; the set
+of targets is otherwise the same, and no role assignment changes. See ``Changes in
+version 1.2.0'' below.)
 \begin{table}[!tbp]
 \centering
 \begin{tabular}{lrp{0.5\textwidth}}
 \toprule
 role in the proof & targets & examples\\
 \midrule
-definition (A) & 5 & \cite[Def.~3.1]{IUT1}, \cite[Cor.~4.10]{IUT2}; Def.~2.4, Rem.~3.1.1, Def.~3.8\\
-definition and premise (A+B) & 2 & Prop.~3.9, Rem.~3.9.5\\
-premise (B) & 15 & Thm.~1.5, Thm.~3.11, Rem.~3.11.1, and twelve further remarks\\
-background & 31 & \\
-comments and figures & 8 & Rem.~3.6.2, \cite{IUT4}, Figs.~3.6--3.8\\
+definition (A) & 5 & all: \cite[Def.~3.1]{IUT1}, \cite[Cor.~4.10]{IUT2}; Def.~2.4, Rem.~3.1.1, Def.~3.8\\
+definition and premise (A+B) & 2 & all: Prop.~3.9, Rem.~3.9.5\\
+premise (B) & 15 & all: Thm.~1.5, Thm.~3.11; Rems.~1.2.2, 1.5.2, 1.5.4, 2.4.2,
+3.8.1, 3.9.2, 3.9.3, 3.9.6, 3.9.7, 3.10.1, 3.11.1, 3.11.3, 3.12.2\\
+background & 33 & e.g.\ \cite{EtTh}, \cite[\S 2, \S 3]{IUT2}, \cite[\S\S 4, 5, 6]{IUT1},
+[AbsTopIII], Prop.~3.2, [AbsAnab], Prop.~1.2.1\\
+comments and figures & 8 & Rems.~2.1.1, 3.6.2, \cite[Rem.~3.6.4]{IUT2}, \cite{IUT4},
+\cite[Rem.~2.3.2]{IUT4}; Figs.~3.6--3.8\\
 \bottomrule
 \end{tabular}
-\caption{The 61 targets cited in the statement and proof of
-\cite[Cor.~3.12]{IUT3}.}\label{tab:inv}
+\caption{The 63 targets cited in the statement and proof of
+\cite[Cor.~3.12]{IUT3}, by role. Kept: A, A+B and B, 22 targets. Full list with counts:
+Appendix~A.}\label{tab:inv}
 \end{table}
 Unless otherwise indicated, numbered items in the table are those of \cite{IUT3}.
-\cite[Prop.~3.5(ii)]{IUT3}, which we also use, is not cited by the proof directly but by
-\cite[Thm.~3.11(ii)]{IUT3}, in the passage quoted in Remark~\ref{r:strength}.
+Three sources used below are \emph{not} cited in Corollary~3.12 directly ($^\dagger$):
+\cite[Prop.~3.5(ii)]{IUT3}$^\dagger$, used for \ref{c:ind3}, enters through
+\cite[Thm.~3.11(ii)]{IUT3}, in the passage quoted in Remark~\ref{r:strength};
+\cite[Prop.~3.2(ii)]{IUT3}$^\dagger$, used in Definition~\ref{d:packet}(i) for the
+subquotients, enters through the situation of \cite[Prop.~3.9(i)]{IUT3} and through
+\cite[Thm.~3.11(i)(a)]{IUT3}; and \cite[Rem.~3.9.1]{IUT3}$^\dagger$, used in
+Definition~\ref{d:packet} only to fix conventions (the ordering of the branches), enters
+with \cite[Prop.~3.9]{IUT3}. No other statement is used below without occurring in the
+range counted above.
 Theorem~3.11 is stated without (IPL) and (SHE); the two properties are introduced in
 \cite[Rem.~3.11.1(iii)]{IUT3} (``IPL'' is mentioned before, in a forward reference in
 \cite[Rem.~3.9.5(ix)]{IUT3}), where (SHE) is said to correspond to the closed loop of
@@ -1172,7 +1198,43 @@ believe it does none of these; this is an argument about the source, not a theor
   (Proposition~\ref{p:restrict}).
 \item \cite[Rem.~3.11.3, Rem.~3.10.1, Rem.~1.2.2, Rem.~1.5.4]{IUT3}: explanations of
   method and of why Theorem~3.11 holds; they do not change the container.
+\item \cite[Rem.~3.12.2(ii), (iv), (v)]{IUT3} (cited forward in (xi-a), (xi-c), (xi-d)):
+  an interpretive summary of the proof just given---the $\Theta$-link as a gluing
+  isomorphism, the comparison of the $0$- and $1$-columns, and a toy model of the
+  (xi-e)/(xi-f) inference itself. Its two assertions with log-volume content are that
+  log-link compatibility of log-volumes is the same in the two columns (already
+  \cite[Prop.~3.9(iv)]{IUT3} and the end of \cite[Thm.~3.11(ii)]{IUT3}, item~2 above)
+  and that the $\cO^\times$-indeterminacy in relating regions to arithmetic line bundles
+  is absorbed by the holomorphic hull (already \cite[Rem.~3.9.5(vii)--(x)]{IUT3}).
+  The remaining point, that the $q$-pilot has no multiradial analogue, is the reason
+  $\vol(q)$ enters Definitions~\ref{d:packet}--\ref{d:cited} as a fixed value while the
+  $\Theta$-side varies in $\Poss$. No separate log-volume statement remains.
+\item \cite[Rem.~1.5.2(i)--(iii)]{IUT3}: the mono-analytic log-shell of
+  \cite[Thm.~1.5(iii)--(v)]{IUT3}, which is a premise as cited, viewed as a multiradial
+  container. The remark explains the construction; it asserts no log-volume value beyond
+  Theorem~1.5 and Theorem~3.11, both assumed.
+\item \cite[Rem.~3.8.1]{IUT3}: records that the $\Theta^{\times\mu}_{\mathrm{LGP}}$- and
+  $\Theta^{\times\mu}_{\mathfrak{lgp}}$-links send a $\Theta$-pilot object to a $q$-pilot
+  object. This is the setup of \cite[Def.~3.8(ii)]{IUT3} as stated in \ref{c:link}; the
+  remark contains no assertion about their log-volumes.
+\item \cite[Rem.~3.9.3]{IUT3}: the procession-normalized log-volume must use equal
+  weights, not a weighted average. This is already built into
+  Definition~\ref{d:packet}(iii), where the procession-normalized volume is
+  $\frac1\ell\sum_j$ (sources: \cite[Rem.~3.1.1(ii)--(iv)]{IUT3},
+  \cite[Prop.~3.9(i)(ii)]{IUT3}).
+\item \cite[Rem.~3.9.2]{IUT3}: a mono-analytic algorithm recovering the subquotients of
+  \cite[Prop.~3.9(iii)]{IUT3} from the effect of multiplication on log-volumes
+  (\cite[Prop.~3.9(ii)]{IUT3}). Recoverability is not a further assertion about the
+  values; the equality of the global arithmetic degree with a log-volume is
+  \cite[Prop.~3.9(iii)]{IUT3}, already used.
 \end{itemize}
+The remaining cited items are those marked background, comment or figure in
+Appendix~A. They are the reasons Theorem~3.11 holds (cyclotomic rigidity, conjugate
+synchronization, the Kummer theory of mono-theta environments, in Steps
+(ii), (v)--(viii)), comments after the conclusion (Step (xii), (xi-h)), and the three
+figures. Theorem~3.11 is assumed at the strength of the source, so no separate
+log-volume content is taken from them; any that one of them were found to carry would
+have to be added to Definition~\ref{d:cited} explicitly.
 
 \section{Relation to other work}\label{s:rel}
 
@@ -1344,7 +1406,7 @@ missing at the membership of the $q$-pilot among the possible images, that is, a
 
 \section{Machine verification}\label{s:lean}
 
-The Lean sources are in the folder \texttt{where-311-sits/lean} at tag v0.25.1 of
+The Lean sources are in the folder \texttt{where-311-sits/lean} at tag v0.28.0 of
 \url{https://github.com/turahigashi/iut-explicit-initial-theta} and are archived at
 \ArtifactDOI{}, together
 with \texttt{Verify.lean}, which checks the axioms of every declaration in the modules that
@@ -1398,6 +1460,114 @@ breaks the triviality of the holonomy, so it is a property of the chosen arrow a
 automatic; removing the container bound from the (Ind3) step breaks the inclusion of the
 generated possible images in $\Poss$.
 
+\section*{Changes in version 1.2.0}
+
+This version corrects the citation inventory; no statement proved here and no Lean
+source changes. An independent recount (10 November 2026) found that the numbers
+``152 citations of 61 targets'' in versions 1.0.0--1.1.1 came from an inventory
+extracted by pattern matching from a Japanese translation of \cite{IUT3}: it grouped
+\cite[\S\S 4, 5, 6]{IUT1} as one target and missed twelve textual occurrences in the
+English original, among them eight mentions of Theorem~3.11. Section~\ref{s:step} now
+fixes the counting rule and reports 164 occurrences of 63 targets; split by the old
+grouping, the target set is the same 61, and no role assignment changes. Table~2 now
+names all fifteen premise targets, including the twelve remarks previously left
+unnamed (Rems.~1.2.2, 1.5.2, 1.5.4, 2.4.2, 3.8.1, 3.9.2, 3.9.3, 3.9.6, 3.9.7, 3.10.1,
+3.11.3, 3.12.2), and Appendix~A lists every target with its count and role, as the
+abstract has claimed since version 1.0.0. Section~\ref{s:omitted} now disposes of the
+five premise remarks it previously did not mention (Rems.~1.5.2, 3.8.1, 3.9.2, 3.9.3,
+3.12.2). The three sources not cited in Corollary~3.12 directly
+(\cite[Prop.~3.5(ii)]{IUT3}, \cite[Prop.~3.2(ii)]{IUT3}, \cite[Rem.~3.9.1]{IUT3}) are
+now marked $^\dagger$ in \S\ref{s:step}; only the first was disclosed before. The
+consulted author versions in the bibliography are corrected to December 2020 for
+\cite{IUT2} and April 2020 for \cite{IUT4}, as printed on the copies used. The Lean
+sources are unchanged from tag \texttt{v0.25.1}; the recorded runs of
+\S\ref{s:lean} (7 November 2026) therefore stand, and this version's artifact is tagged
+\texttt{v0.28.0}. Prior work: the omission of \cite{LANA} in 1.0.0 and of
+\cite{Higuchi} and \cite{Pajo} in versions before 1.1.0, and the misdated comparison
+with \cite{LANA} corrected in 1.1.1, are recorded in the version histories of the
+Zenodo record; the present corrections are of the same kind and are recorded here so
+that they reach readers of the PDF.
+
+\appendix
+\section*{Appendix A. Inventory of the cited targets}
+
+Every target cited in the statement and proof of \cite[Cor.~3.12]{IUT3}, by the
+counting rule of \S\ref{s:step}: 164 occurrences, 63 targets. Unmarked items are those
+of \cite{IUT3}. Roles are those of Table~\ref{tab:inv}; kept targets are the first 22
+rows (roles A, A+B, B). The same list is in the supplementary archive as
+\texttt{inventory\_v120.csv}.
+
+\begin{longtable}{lrl}
+\toprule
+target & occurrences & role\\
+\midrule
+\endhead
+Def.~3.8 & 4 & definition \\
+\cite[Cor.~4.10]{IUT2} & 2 & definition \\
+Rem.~3.1.1 & 1 & definition \\
+\cite[Def.~3.1]{IUT1} & 1 & definition \\
+Def.~2.4 & 1 & definition \\
+Rem.~3.9.5 & 10 & definition and premise \\
+Prop.~3.9 & 4 & definition and premise \\
+Thm.~3.11 & 43 & premise \\
+Rem.~3.12.2 & 4 & premise \\
+Rem.~3.11.1 & 5 & premise \\
+Rem.~3.11.3 & 4 & premise \\
+Thm.~1.5 & 4 & premise \\
+Rem.~3.10.1 & 2 & premise \\
+Rem.~3.9.6 & 2 & premise \\
+Rem.~1.5.2 & 2 & premise \\
+Rem.~2.4.2 & 1 & premise \\
+Rem.~3.9.7 & 1 & premise \\
+Rem.~3.8.1 & 1 & premise \\
+Rem.~1.2.2 & 1 & premise \\
+Rem.~1.5.4 & 2 & premise \\
+Rem.~3.9.3 & 1 & premise \\
+Rem.~3.9.2 & 1 & premise \\
+Rem.~2.1.1 & 4 & background / comment \\
+\cite[Rem.~3.6.4]{IUT2} & 3 & background / comment \\
+\cite{EtTh} (whole work) & 6 & background \\
+Rem.~2.3.3 & 4 & background \\
+\cite[Ex.~5.1]{IUT1} & 2 & background \\
+\cite[Def.~5.2]{IUT1} & 2 & background \\
+Prop.~3.4 & 2 & background \\
+Rem.~2.3.2 & 2 & background \\
+\cite[Rem.~4.11.2]{IUT2} & 2 & background \\
+\cite[\S 3]{IUT2} & 2 & background \\
+\cite[Cor.~3.5]{IUT2} & 2 & background \\
+\cite[Cor.~3.6]{IUT2} & 2 & background \\
+\S 2 & 1 & background \\
+Prop.~3.7 & 1 & background \\
+Cor.~2.3 & 1 & background \\
+Rem.~2.2.2 & 1 & background \\
+Rem.~1.3.2 & 1 & background \\
+\cite[Cor.~1.11]{IUT2} & 1 & background \\
+\cite[Rem.~1.11.1]{IUT2} & 1 & background \\
+\cite[Prop.~4.2]{IUT2} & 1 & background \\
+{[AbsTopIII]}, Prop.~3.2 & 1 & background \\
+{[AbsAnab]}, Prop.~1.2.1 & 1 & background \\
+\cite[Prop.~4.4]{IUT2} & 1 & background \\
+\cite[Rem.~3.4.2]{IUT1} & 1 & background \\
+\cite[Rem.~1.11.3]{IUT2} & 1 & background \\
+Rem.~1.5.1 & 1 & background \\
+\cite[\S 4]{IUT1} & 1 & background \\
+\cite[\S 5]{IUT1} & 1 & background \\
+\cite[\S 6]{IUT1} & 1 & background \\
+\cite[Rem.~4.7.6]{IUT2} & 2 & background \\
+Rem.~3.11.2 & 1 & background \\
+\cite[\S 2]{IUT2} & 1 & background \\
+\cite[\S 2]{IUT1} & 1 & background \\
+\cite[Rem.~6.12.4]{IUT1} & 1 & background \\
+\cite[Rem.~4.5.3]{IUT2} & 1 & background \\
+\cite{IUT4} (whole work) & 1 & comment \\
+\cite[Rem.~2.3.2]{IUT4} & 1 & comment \\
+Rem.~3.6.2 & 1 & comment \\
+Fig.~3.6 & 3 & figure \\
+Fig.~3.8 & 2 & figure \\
+Fig.~3.7 & 2 & figure \\
+\bottomrule
+\end{longtable}
+
 \section*{Disclosure}
 
 The proofs in this paper were found with generative AI tools (large language models)
@@ -1446,13 +1616,13 @@ paper.
  Consulted author version: May 2020.
 \bibitem[IUT2]{IUT2} S.~Mochizuki, \emph{Inter-universal Teichm\"uller theory II},
  Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 209--401.
- Consulted author version: May 2020.
+ Consulted author version: December 2020.
 \bibitem[IUT3]{IUT3} S.~Mochizuki, \emph{Inter-universal Teichm\"uller theory III},
  Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 403--626.
  Consulted author version: May 2020.
 \bibitem[IUT4]{IUT4} S.~Mochizuki, \emph{Inter-universal Teichm\"uller theory IV},
  Publ. Res. Inst. Math. Sci. \textbf{57} (2021), 627--723.
- Consulted author version: May 2020.
+ Consulted author version: April 2020.
 \bibitem[Rpt]{Rpt} S.~Mochizuki, \emph{Report on discussions, held during the period
  March 15--20, 2018, concerning inter-universal Teichm\"uller theory}, RIMS, Kyoto
  University, February 2019 version, 45 pp.

@@ -1,11 +1,11 @@
 # Where Theorem 3.11 sits: the log-volume content of the results cited in the proof of IUT III, Corollary 3.12, does not imply its conclusion
 
-Version 1.1.1, 8 November 2026 (24 pages). DOI [10.5281/zenodo.24044582](https://doi.org/10.5281/zenodo.24044582);
+Version 1.2.0, 10 November 2026 (28 pages). DOI [10.5281/zenodo.24044582](https://doi.org/10.5281/zenodo.24044582) (version DOI to be assigned at upload);
 all versions: [10.5281/zenodo.24028832](https://doi.org/10.5281/zenodo.24028832).
 
 The inequality of Corollary 3.12 of IUT III is obtained in Step (xi) of its proof, where the author states that he
 will be concerned only with certain qualitative properties of the multiradial algorithm of Theorem 3.11. The note
-lists every result that the corollary and its proof cite (152 citations of 61 targets), keeps the 22 that the proof
+lists every target that the corollary and its proof cite (164 citations of 63 targets; full list in Appendix A of the paper and in `inventory_v120.csv`), keeps the 22 that the proof
 uses as definitions or premises, and states their content as axioms about normalized log-volumes of regions in
 tensor packets with Haar measure, at the strength of the source. A weak reading of the property (SHE) follows from
 these axioms. The conclusion of Corollary 3.12 fails in models of the axioms, one of which is built from the actual
@@ -28,6 +28,20 @@ objects.
 **We do not claim that Corollary 3.12 is false, nor anything about abc.** The result concerns what follows from the
 statements that the proof cites, including what Theorem 3.11 states about the output of its algorithm; whether the
 construction of the algorithm itself supplies the missing membership is not decided here.
+
+## Changes in 1.2.0
+
+The citation inventory is corrected (independent recount, 10 November 2026): the earlier
+"152 citations of 61 targets" came from an inventory extracted from a Japanese translation,
+which grouped [IUTchI] §§4, 5, 6 as one target and missed twelve textual occurrences. The paper
+now fixes the counting rule in §2 and reports 164 occurrences of 63 targets; the target set is
+otherwise the same and no role assignment changes. Table 2 names all fifteen premise targets
+(including the twelve remarks previously left unnamed), Appendix A lists every target with its
+count and role, and §9 disposes of the five premise remarks it previously did not mention
+(Rems. 1.5.2, 3.8.1, 3.9.2, 3.9.3, 3.12.2). The three sources not cited in Corollary 3.12 directly
+([IUT III] Props. 3.5(ii), 3.2(ii) and Rem. 3.9.1) are marked † in §2. Consulted author versions
+corrected to December 2020 for IUT II and April 2020 for IUT IV. No statement proved in the paper
+and no Lean source (`.lean`) changes; the recorded runs of 7 November 2026 stand.
 
 ## Changes in 1.1.1
 

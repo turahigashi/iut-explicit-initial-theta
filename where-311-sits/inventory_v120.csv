@@ -1,0 +1,64 @@
+target_doc,kind,number,display,occurrences,role
+IUT3,Def,3.8,Def. 3.8,4,definition
+IUTchII,Cor,4.10,[IUTchII] Cor. 4.10,2,definition
+IUT3,Rem,3.1.1,Rem. 3.1.1,1,definition
+IUTchI,Def,3.1,[IUTchI] Def. 3.1,1,definition
+IUT3,Def,2.4,Def. 2.4,1,definition
+IUT3,Rem,3.9.5,Rem. 3.9.5,10,definition and premise
+IUT3,Prop,3.9,Prop. 3.9,4,definition and premise
+IUT3,Thm,3.11,Thm. 3.11,43,premise
+IUT3,Rem,3.12.2,Rem. 3.12.2,4,premise
+IUT3,Rem,3.11.1,Rem. 3.11.1,5,premise
+IUT3,Rem,3.11.3,Rem. 3.11.3,4,premise
+IUT3,Thm,1.5,Thm. 1.5,4,premise
+IUT3,Rem,3.10.1,Rem. 3.10.1,2,premise
+IUT3,Rem,3.9.6,Rem. 3.9.6,2,premise
+IUT3,Rem,1.5.2,Rem. 1.5.2,2,premise
+IUT3,Rem,2.4.2,Rem. 2.4.2,1,premise
+IUT3,Rem,3.9.7,Rem. 3.9.7,1,premise
+IUT3,Rem,3.8.1,Rem. 3.8.1,1,premise
+IUT3,Rem,1.2.2,Rem. 1.2.2,1,premise
+IUT3,Rem,1.5.4,Rem. 1.5.4,2,premise
+IUT3,Rem,3.9.3,Rem. 3.9.3,1,premise
+IUT3,Rem,3.9.2,Rem. 3.9.2,1,premise
+IUT3,Rem,2.1.1,Rem. 2.1.1,4,background / comment
+IUTchII,Rem,3.6.4,[IUTchII] Rem. 3.6.4,3,background / comment
+EtTh,Work,,[EtTh] (whole work),6,background
+IUT3,Rem,2.3.3,Rem. 2.3.3,4,background
+IUTchI,Ex,5.1,[IUTchI] Ex. 5.1,2,background
+IUTchI,Def,5.2,[IUTchI] Def. 5.2,2,background
+IUT3,Prop,3.4,Prop. 3.4,2,background
+IUT3,Rem,2.3.2,Rem. 2.3.2,2,background
+IUTchII,Rem,4.11.2,[IUTchII] Rem. 4.11.2,2,background
+IUTchII,Sec,3,[IUTchII] \S3,2,background
+IUTchII,Cor,3.5,[IUTchII] Cor. 3.5,2,background
+IUTchII,Cor,3.6,[IUTchII] Cor. 3.6,2,background
+IUT3,Sec,2,\S2,1,background
+IUT3,Prop,3.7,Prop. 3.7,1,background
+IUT3,Cor,2.3,Cor. 2.3,1,background
+IUT3,Rem,2.2.2,Rem. 2.2.2,1,background
+IUT3,Rem,1.3.2,Rem. 1.3.2,1,background
+IUTchII,Cor,1.11,[IUTchII] Cor. 1.11,1,background
+IUTchII,Rem,1.11.1,[IUTchII] Rem. 1.11.1,1,background
+IUTchII,Prop,4.2,[IUTchII] Prop. 4.2,1,background
+AbsTopIII,Prop,3.2,[AbsTopIII] Prop. 3.2,1,background
+AbsAnab,Prop,1.2.1,[AbsAnab] Prop. 1.2.1,1,background
+IUTchII,Prop,4.4,[IUTchII] Prop. 4.4,1,background
+IUTchI,Rem,3.4.2,[IUTchI] Rem. 3.4.2,1,background
+IUTchII,Rem,1.11.3,[IUTchII] Rem. 1.11.3,1,background
+IUT3,Rem,1.5.1,Rem. 1.5.1,1,background
+IUTchI,Sec,4,[IUTchI] \S4,1,background
+IUTchI,Sec,5,[IUTchI] \S5,1,background
+IUTchI,Sec,6,[IUTchI] \S6,1,background
+IUTchII,Rem,4.7.6,[IUTchII] Rem. 4.7.6,2,background
+IUT3,Rem,3.11.2,Rem. 3.11.2,1,background
+IUTchII,Sec,2,[IUTchII] \S2,1,background
+IUTchI,Sec,2,[IUTchI] \S2,1,background
+IUTchI,Rem,6.12.4,[IUTchI] Rem. 6.12.4,1,background
+IUTchII,Rem,4.5.3,[IUTchII] Rem. 4.5.3,1,background
+IUTchIV,Work,,[IUTchIV] (whole work),1,comment
+IUTchIV,Rem,2.3.2,[IUTchIV] Rem. 2.3.2,1,comment
+IUT3,Rem,3.6.2,Rem. 3.6.2,1,comment
+IUT3,Fig,3.6,Fig. 3.6,3,figure
+IUT3,Fig,3.8,Fig. 3.8,2,figure
+IUT3,Fig,3.7,Fig. 3.7,2,figure
