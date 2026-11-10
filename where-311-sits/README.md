@@ -1,6 +1,6 @@
 # Where Theorem 3.11 sits: the log-volume content of the results cited in the proof of IUT III, Corollary 3.12, does not imply its conclusion
 
-Version 1.2.0, 10 November 2026 (28 pages). DOI [10.5281/zenodo.24044582](https://doi.org/10.5281/zenodo.24044582) (version DOI to be assigned at upload);
+Version 1.2.1, 10 November 2026 (28 pages). DOI [10.5281/zenodo.24104932](https://doi.org/10.5281/zenodo.24104932);
 all versions: [10.5281/zenodo.24028832](https://doi.org/10.5281/zenodo.24028832).
 
 The inequality of Corollary 3.12 of IUT III is obtained in Step (xi) of its proof, where the author states that he
@@ -28,6 +28,11 @@ objects.
 **We do not claim that Corollary 3.12 is false, nor anything about abc.** The result concerns what follows from the
 statements that the proof cites, including what Theorem 3.11 states about the output of its algorithm; whether the
 construction of the algorithm itself supplies the missing membership is not decided here.
+
+## Changes in 1.2.1
+
+Version 1.2.1 corrects only the version-DOI links inside the paper, which in 1.2.0 still
+pointed to the previous version (10.5281/zenodo.24044582). Nothing else changes.
 
 ## Changes in 1.2.0
 

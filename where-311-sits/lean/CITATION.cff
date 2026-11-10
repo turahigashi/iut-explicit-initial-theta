@@ -1,9 +1,9 @@
 cff-version: 1.2.0
 message: "If you use this artifact, please cite the accompanying paper and this artifact."
 title: "cor312-log-volume: Lean formalization for 'Where Theorem 3.11 sits: the log-volume content of the results cited in the proof of IUT III, Corollary 3.12, does not imply its conclusion'"
-doi: "10.5281/zenodo.24044582"
+doi: "10.5281/zenodo.24104932"
 date-released: "2026-11-10"
-repository-code: "https://github.com/turahigashi/iut-explicit-initial-theta/tree/v0.28.0/where-311-sits/lean"
+repository-code: "https://github.com/turahigashi/iut-explicit-initial-theta/tree/v0.28.1/where-311-sits/lean"
 type: software
 authors:
   - family-names: Urahigashi
