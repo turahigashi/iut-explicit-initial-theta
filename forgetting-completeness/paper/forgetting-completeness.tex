@@ -35,11 +35,11 @@ from Theorem~3.11 to Corollary~3.12\\
 in inter-universal Teichm\"uller theory}
 \author{Toshihisa Urahigashi\\
 \small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.1.1 --- 11 November 2026\\[3pt]
+\date{Version 1.1.2 --- 11 November 2026\\[3pt]
 \small Independent researcher. This work was carried out personally and is
 unrelated to any institutional affiliation.\\[3pt]
 \small ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}\\[-2pt]
-\small \href{https://doi.org/10.5281/zenodo.24135926}{doi:10.5281/zenodo.24135926} (all versions: \href{https://doi.org/10.5281/zenodo.24135420}{10.5281/zenodo.24135420})}
+\small \href{https://doi.org/10.5281/zenodo.24136372}{doi:10.5281/zenodo.24136372} (all versions: \href{https://doi.org/10.5281/zenodo.24135420}{10.5281/zenodo.24135420})}
 
 \begin{document}
 \maketitle
@@ -80,14 +80,19 @@ preserved through the whole transport, which contains forgetful
 steps.  This is not an unconditional equivalence with the ABC
 conjecture itself.
 
-An audit of the relevant interfaces in IUT~I--IV and in
-\cite{FrdI,EtTh,AbsTopIII} finds each of them locally closed: Tate
-parameter reconstruction, cyclotomic synchronization, the discrete
-valuation step, unit-side indeterminacy, within-copy volume
+An audit of the interface-relevant ranges in IUT~I--IV and in
+\cite{FrdI,EtTh,AbsTopIII}, summarized interface by interface in
+\S6, finds the other audited interfaces closed for their local
+queries, with the qualifications recorded there: Tate parameter
+reconstruction, cyclotomic synchronization, the discrete valuation
+step, unit-side indeterminacy at the readout, within-copy volume
 normalization, and the three-tier classification of degrees under
-realification.  What remains is a single square: whether the actual
-construction supplies a lift of the $\Theta$-link, given between bare
-prime-strips, to marked prime-strips preserving generators and scale.
+realification.  On the input side, what controls $\Delta$ is a
+single square: whether the actual construction supplies a lift of
+the $\Theta$-link, given between bare prime-strips, to marked
+prime-strips preserving generators and scale.  A separate item
+remains open on the output side: the identification of the source's
+holomorphic hull family with the same-run full-image family.
 The reduction also shrinks the formalization target: what has to be
 formalized is not all of IUT, but only the interfaces needed to
 decide the sign of $\Delta$.  This paper decides neither
@@ -368,6 +373,19 @@ have scale $1$.  Since the scale of each copy is anchored
 absolutely, e.g.\ by $\mu_k(\cO_k)=1$, the number $c$ is not a mere
 freedom of convention but an invariant of the chosen member.
 
+\FRAME{} \emph{Dictionary.}  Orient $c$ from the $\theta$-column to
+the $q$-column: $c$ is defined by $R_1(X)=c\,R_0(X)$ for the signed
+log-volume readouts $R_i$ of a transported pilot $X$, after the
+procession normalizations are fixed.  For $X=\theta$ this gives
+$\vol(q)=c\,\vol(\theta)$; hence $c$ is the $s$ of (C6) of
+\cite{U26} and of \S\S3 and 5 above, and
+$\Delta=(c-1)\vol(\theta)$.  The opposite orientation replaces $c$
+by $c^{-1}$, as in the reciprocal parameterization of LANA's
+\texttt{xi\_iff} (\S5).  This $c$ is the tracked invariant of
+Proposition~3.3 in the present instance; it is not the
+$x$-dependent constants also denoted $c$ in (C7) of \cite{U26},
+except that at $x=\theta$ such a constant equals $s$.
+
 \FRAME{} In categorical language this is a lifting problem for a
 forgetful functor $U:\mathbf{Marked}\to\mathbf{Bare}$.  A
 multiradial representation may be read as a functorial assignment
@@ -438,17 +456,19 @@ as commutativity of a diagram.  The contribution of the present
 paper is therefore not the discovery of this reduction itself, but
 its restatement in the language of completeness and the
 localization of what remains by an interface-by-interface audit.
-Within that audited decomposition, end-to-end completeness reduces
-to the liftability in the missing square.  This is a reduction
-relative to the audited decomposition in which the other faces are
-closed; it is not an unconditional equivalence theorem about the
-whole construction.
+Within that audited decomposition, the scale part of end-to-end
+completeness reduces to the liftability in the missing square; the
+output-side hull identification of \S6 remains a separate
+obligation.  This is a reduction relative to the audited
+decomposition; it is not an unconditional equivalence theorem about
+the whole construction.
 
 \section{The interface-by-interface audit}
 
 The following table summarizes the author's audit and formalization
-of the interfaces in IUT~I--IV and \cite{FrdI,EtTh,AbsTopIII},
-carried out against checked editions of the sources.  ``Closed''
+of the interface-relevant ranges in IUT~I--IV and
+\cite{FrdI,EtTh,AbsTopIII}, carried out against checked editions of
+the sources.  ``Closed''
 means that completeness for the local query at that interface was
 verified as a statement of the source or as a Lean theorem; it does
 not mean end-to-end completeness.
@@ -460,8 +480,8 @@ not mean end-to-end completeness.
 Interface & Kind & Status & Grounds\\
 \midrule
 \endhead
-Identification of initial $\Theta$-data & provenance & fixed by
-definition & A provenance condition on both theaters; not a
+Identification of initial $\Theta$-data & provenance & provenance
+(by definition) & A provenance condition on both theaters; not a
 condition on the choice of member \cite[Def.~3.8(ii)]{IUT3}.\\
 Curve to Tate parameter & reconstruction & closed & Intrinsic via
 $j$; Lean Tate reconstruction and the identification with
@@ -506,7 +526,11 @@ issue is on the input side.\\
 \end{center}
 
 \Hmark{} What this table shows is an accumulation of evidence that
-the audited interfaces are closed with one exception.
+the audited interfaces are closed with two exceptions: the lift
+(input side; it controls $\Delta$) and the hull identification
+(output side).  Two further rows are closed only for the stated
+local query or under the stated condition (unit-side indeterminacy
+at the readout, and function-level theta values).
 Mathematically it does not guarantee that no unknown interface
 exists.  The sentence ``end-to-end completeness reduces to one
 square'' must therefore be read relative to the decomposition and
@@ -630,7 +654,7 @@ Propositions~\ref{prop:fibre}--\ref{prop:defect} and the examples
 of \S2---is included in the accompanying repository%
 \footnote{\url{https://github.com/turahigashi/iut-explicit-initial-theta},
 directory \texttt{forgetting-completeness}, tag
-\texttt{forgetting-completeness-v1.1.1}.}
+\texttt{forgetting-completeness-v1.1.2}.}
 as the standalone Lean file \texttt{CompletenessFrameCore.lean},
 which depends only on Mathlib and was checked within the standard
 axioms \texttt{propext}, \texttt{Classical.choice},
@@ -781,8 +805,9 @@ themselves $=$ same initial-data calibration (supply unconfirmed)};
 {Judged complete (with evidence) / conditional or tiered /
 undecided (open interface) / definitional or provenance condition
 --- see the table of \S6.\\[2pt]
-What this figure says: every audited seam is closed; the only open
-one is the square in panel (b). A failure of completeness lives not
+What this figure says: the scale-controlling open square is
+panel (b); a separate output-side hull identification, not drawn,
+also remains open. A failure of completeness lives not
 inside the construction but at an interface, where a summary does
 not record a correlation.};
 \end{tikzpicture}}

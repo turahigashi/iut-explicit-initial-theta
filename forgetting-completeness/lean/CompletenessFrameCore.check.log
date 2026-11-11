@@ -1,0 +1,19 @@
+CompletenessFrameCore.lean — recorded check output
+Command: lean CompletenessFrameCore.lean (Lean 4.30.0, Mathlib c5ea00351c28e24afc9f0f84379aa41082b1188f)
+Exit code: 0. No errors or warnings.
+
+'CompletenessFrameCore.CompleteFor.fiber' does not depend on any axioms
+'CompletenessFrameCore.CompleteFor.of_fiber' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CompletenessFrameCore.complete_on_normalized' does not depend on any axioms
+'CompletenessFrameCore.not_completeFor_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CompletenessFrameCore.completeFor_sub_eq_zero_labelled' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CompletenessFrameCore.completeFor_sign_mul' depends on axioms: [propext, Quot.sound]
+'CompletenessFrameCore.not_completeFor_sign_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CompletenessFrameCore.conclusion_of_scaled_and_scale_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CompletenessFrameCore.scale_le_one_iff_of_extremal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CompletenessFrameCore.conclusion_of_nonpositive_scale_defect' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CompletenessFrameCore.conclusion_iff_defect_le_slack' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CompletenessFrameCore.scale_defect_eq_zero_iff_scale_eq_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CompletenessFrameCore.nonpositive_defect_iff_one_le_of_neg' depends on axioms: [propext, Classical.choice, Quot.sound]

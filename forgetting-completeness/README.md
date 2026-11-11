@@ -1,6 +1,6 @@
 # Forgetting and completeness: the centre of the passage from Theorem 3.11 to Corollary 3.12 in inter-universal Teichmüller theory
 
-Version 1.1.1, 11 November 2026 (13 pages; Appendix A added in 1.1.0, Disclosure and figure placement corrected in 1.1.1). DOI [10.5281/zenodo.24135926](https://doi.org/10.5281/zenodo.24135926);
+Version 1.1.2, 11 November 2026 (13 pages; Appendix A added in 1.1.0, Disclosure and figure placement corrected in 1.1.1, open-interface count, audit-range wording and the c/s dictionary corrected in 1.1.2). DOI [10.5281/zenodo.24136372](https://doi.org/10.5281/zenodo.24136372);
 all versions: [10.5281/zenodo.24135420](https://doi.org/10.5281/zenodo.24135420).
 
 The passage from Theorem 3.11 to Corollary 3.12 in inter-universal
@@ -41,7 +41,9 @@ needed to decide the sign of Δ.
   Lean 4.30.0 against Mathlib `c5ea00351c28e24afc9f0f84379aa41082b1188f`,
   within the standard axioms `propext`, `Classical.choice`,
   `Quot.sound` (the restoration lemma and the fibre direction use
-  none); `#print axioms` output is at the end of the file.
+  none); the `#print axioms` commands are at the end of the file,
+  and their recorded output is in
+  `lean/CompletenessFrameCore.check.log`.
 - `lean/ActualValuePartCompletenessFrame.lean` — the frame file of
   the author's larger sideways development, including the
   instantiation on value-part classes, reproduced for reference. It

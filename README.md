@@ -248,7 +248,7 @@ The file names carry an older working numbering; the reports are numbered as fol
 | where Theorem 3.11 sits | `where-311-sits/paper/where-311-sits.tex` | [10.5281/zenodo.24028832](https://doi.org/10.5281/zenodo.24028832) | 1.1.1, [10.5281/zenodo.24044582](https://doi.org/10.5281/zenodo.24044582) |
 | three tiers of indeterminacy | `three-tiers/paper/three_tiers.tex` | [10.5281/zenodo.24042999](https://doi.org/10.5281/zenodo.24042999) | 1.0.0, [10.5281/zenodo.24043000](https://doi.org/10.5281/zenodo.24043000) |
 | to the edge of the log-shell | `log-shell-edge/paper/log_shell_edge.tex` | [10.5281/zenodo.24050444](https://doi.org/10.5281/zenodo.24050444) | 1.1.0, [10.5281/zenodo.24057859](https://doi.org/10.5281/zenodo.24057859) |
-| forgetting and completeness | `forgetting-completeness/paper/forgetting-completeness.tex` | [10.5281/zenodo.24135420](https://doi.org/10.5281/zenodo.24135420) | 1.1.1, [10.5281/zenodo.24135926](https://doi.org/10.5281/zenodo.24135926) |
+| forgetting and completeness | `forgetting-completeness/paper/forgetting-completeness.tex` | [10.5281/zenodo.24135420](https://doi.org/10.5281/zenodo.24135420) | 1.1.2, [10.5281/zenodo.24136372](https://doi.org/10.5281/zenodo.24136372) |
 
 `paper/paper.tex` is the expanded version of the **first** report, cited as `[First-full]`;
 the first report is the version of record.
