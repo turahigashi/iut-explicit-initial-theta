@@ -35,11 +35,11 @@ from Theorem~3.11 to Corollary~3.12\\
 in inter-universal Teichm\"uller theory}
 \author{Toshihisa Urahigashi\\
 \small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.0.0 --- 11 November 2026\\[3pt]
+\date{Version 1.1.0 --- 11 November 2026\\[3pt]
 \small Independent researcher. This work was carried out personally and is
 unrelated to any institutional affiliation.\\[3pt]
 \small ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}\\[-2pt]
-\small \href{https://doi.org/10.5281/zenodo.24135421}{doi:10.5281/zenodo.24135421}}
+\small \href{https://doi.org/10.5281/zenodo.24135596}{doi:10.5281/zenodo.24135596} (all versions: \href{https://doi.org/10.5281/zenodo.24135420}{10.5281/zenodo.24135420})}
 
 \begin{document}
 \maketitle
@@ -330,6 +330,7 @@ structure.  In the reverse direction, mono-analytic reconstruction
 recovers part of what was dropped.  Horizontally there are the
 $\mathfrak{log}$-link inside a column, the $\Theta$-link between
 columns, and the Kummer correspondences and evaluation maps.
+Appendix~A collects the whole picture in one figure.
 
 \begin{figure}[h]
 \centering
@@ -629,7 +630,7 @@ Propositions~\ref{prop:fibre}--\ref{prop:defect} and the examples
 of \S2---is included in the accompanying repository%
 \footnote{\url{https://github.com/turahigashi/iut-explicit-initial-theta},
 directory \texttt{forgetting-completeness}, tag
-\texttt{forgetting-completeness-v1.0.0}.}
+\texttt{forgetting-completeness-v1.1.0}.}
 as the standalone Lean file \texttt{CompletenessFrameCore.lean},
 which depends only on Mathlib and was checked within the standard
 axioms \texttt{propext}, \texttt{Classical.choice},
@@ -657,6 +658,142 @@ the abstract frame are checked in Lean as described above.  The
 correspondence between the frame and the source texts is an audit,
 not a Lean-checked assertion.  The author takes full responsibility
 for the paper.
+
+\appendix
+\section{The whole diagram}
+
+Figure~\ref{fig:whole} collects, in one place, the tower of
+forgettings of \S4, the missing square of Figure~\ref{fig:square},
+the cross-column shape of the query $Q$ of Corollary~3.12, and the
+three tiers of scale restoration of \cite[Thm.~6.4]{FrdI}.  It is
+the diagram of which Figure~\ref{fig:square} is the central panel.
+
+\begin{figure}[p]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[>=Stealth,
+  box/.style={draw, align=center, font=\scriptsize, inner sep=3pt},
+  note/.style={align=left, font=\scriptsize, inner sep=2pt},
+  ttl/.style={font=\small\bfseries, align=left}]
+
+% ---------- (a) tower ----------
+\node[ttl] at (0,20.3) {(a) The tower of forgettings (vertical)
+and the reconstruction back-flow};
+\node[box, text width=4.6cm] (a1) at (2.5,19.2)
+{full arithmetic data\\ \tiny initial $\Theta$-data, curve, field,
+history \cite[I, Def.~3.1]{IUT1}};
+\node[box, text width=4.6cm] (a2) at (2.5,17.5)
+{tempered fundamental groups,\\ mono-theta environments};
+\node[box, text width=4.6cm] (a3) at (2.5,15.8)
+{prime-strips ($D$- and $F$-strips)};
+\node[box, text width=4.6cm] (a4) at (2.5,14.1)
+{unit part $\cO^{\times\mu}$ / value-group part};
+\node[box, text width=4.6cm] (a5) at (2.5,12.4)
+{realified Frobenioids};
+\node[box, text width=4.6cm] (a6) at (2.5,10.7)
+{log-volume $\in\mathbb R$};
+\draw[->] (a1)--(a2); \draw[->] (a2)--(a3); \draw[->] (a3)--(a4);
+\draw[->] (a4)--(a5); \draw[->] (a5)--(a6);
+\node[note, text width=3.3cm] at (7.55,18.35)
+{reduct: forget scheme structure};
+\node[note, text width=3.3cm] at (7.55,16.65)
+{reduct: forget addition\\ (multiplicative monoids + value groups)};
+\node[note, text width=3.3cm] at (7.55,14.95)
+{quotient: drop torsion and entanglement (home of (Ind))};
+\node[note, text width=3.3cm] at (7.55,13.25)
+{quotient: choice of basis of the degree line
+($\mathbb R_{>0}$-torsor)};
+\node[note, text width=3.3cm] at (7.55,11.55)
+{quotient: a single number (anchored within a copy by
+$\mu(\cO)=1$)};
+\draw[->, thick] (5.35,10.7) -- (5.35,19.2);
+\node[note, text width=3.2cm] at (7.3,9.9)
+{upward arrow: mono-analytic reconstruction (MLF; Tate
+reconstruction)};
+\node[note, text width=8.6cm] at (4.4,9.0)
+{Alienness is born at the prime-strip stage: the two additions are
+two points of the fibre over one multiplicative shadow.};
+
+% ---------- (b) missing square ----------
+\node[ttl] at (10.2,20.3) {(b) The missing square (the centre)};
+\node[box, text width=3.1cm] (b1) at (12.0,19.0)
+{marked strips (col.~0)\\ \tiny generators, scale preserved};
+\node[box, text width=3.1cm] (b2) at (16.2,19.0)
+{marked strips (col.~1)\\ \tiny generators, scale preserved};
+\node[box, text width=3.1cm] (b3) at (12.0,16.9)
+{bare strips (col.~0)};
+\node[box, text width=3.1cm] (b4) at (16.2,16.9)
+{bare strips (col.~1)};
+\draw[->, dashed] (b1)-- node[above, font=\scriptsize]
+{? lift ($W$)} (b2);
+\draw[->] (b1)-- node[left, font=\scriptsize]{forget} (b3);
+\draw[->] (b2)-- node[right, font=\scriptsize]{forget} (b4);
+\draw[->] (b3)-- node[below=3pt, font=\scriptsize, align=center,
+text width=3.4cm]
+{$\Theta$-link} (b4);
+\node[note, text width=7.6cm] at (14.1,15.2)
+{Obstruction $=$ relative scale $c$ (holonomy of the transport
+loop). $c=1$ iff the cocycle is a coboundary, iff a marking making
+every transport scale $1$ exists. Each copy is anchored absolutely
+by $\mu(\cO)=1$, so $c$ is an invariant, not a convention.};
+
+% ---------- (c) query Q ----------
+\node[ttl] at (10.2,13.9) {(c) The query $Q$ is a cross-column
+comparison};
+\node[box, text width=3.1cm] (c1) at (12.0,12.7)
+{$\Theta$-pilot (col.~0)\\ \tiny subject to indeterminacies};
+\node[box, text width=3.1cm] (c2) at (16.2,12.7)
+{$q$-pilot (col.~1)\\ \tiny initial $q$-parameter};
+\node[box, text width=3.1cm] (c3) at (12.0,10.9)
+{log-shell (container)\\ \tiny coric: same across columns};
+\node[box, text width=3.1cm] (c4) at (16.2,10.9)
+{log-shell (container)\\ \tiny volumes measured inside};
+\draw[->] (c1)-- node[above, font=\scriptsize, fill=white,
+inner sep=1.5pt]{$\Theta$-link} (c2);
+\draw[->] (c1)--(c3); \draw[->] (c2)--(c4);
+\draw[->] (c3)-- node[below=3pt, font=\scriptsize, align=center,
+text width=3.2cm]
+{log-link} (c4);
+\node[note, text width=7.6cm] at (14.1,9.2)
+{$Q$: $-|\log\Theta|\ge-|\log q|$? Within a column the order is
+scale-invariant and does not blur; the blur appears only across
+columns.};
+
+% ---------- (d) trichotomy ----------
+\node[ttl] at (0,7.9) {(d) Tiers of scale restoration
+\cite[Thm.~6.4]{FrdI}};
+\node[box, text width=4.9cm] (d1) at (2.7,6.5)
+{$\deg\in\mathbb R_{>0}$\\ \tiny identification at realification
+only \cite[Cor.~4.10(v)]{IUT2}: incomplete for $Q$};
+\node[box, text width=4.9cm] (d2) at (8.6,6.5)
+{$\deg\in\mathbb Q_{>0}$\\ \tiny lifted to perfection and unit
+trivialization: still incomplete for $Q$ (orientation not
+preserved)};
+\node[box, text width=4.9cm] (d3) at (14.5,6.5)
+{$\deg=1$\\ \tiny from a categorical equivalence of the Frobenioids
+themselves $=$ same initial-data calibration (supply unconfirmed)};
+\draw[->] (d1)--(d2); \draw[->] (d2)--(d3);
+
+% ---------- legend ----------
+\node[note, text width=17cm] at (8.6,4.8)
+{Judged complete (with evidence) / conditional or tiered /
+undecided (open interface) / definitional or provenance condition
+--- see the table of \S6.\\[2pt]
+What this figure says: every audited seam is closed; the only open
+one is the square in panel (b). A failure of completeness lives not
+inside the construction but at an interface, where a summary does
+not record a correlation.};
+\end{tikzpicture}}
+\caption{The whole diagram of forgetting and completeness.
+(a) The vertical tower of forgettings and the reverse
+mono-analytic reconstruction flow. (b) The missing square: the
+lower $\Theta$-link arrow exists by \cite[Def.~3.8(ii)]{IUT3}; the
+dashed lift to marked prime-strips is the centre of this paper.
+(c) The query $Q$ of Corollary~3.12 as a cross-column comparison
+inside a common container. (d) The three tiers of
+\cite[Thm.~6.4]{FrdI}; the conclusion needs the $\deg=1$ tier.}
+\label{fig:whole}
+\end{figure}
 
 \begin{thebibliography}{AbsTopIII}
 
