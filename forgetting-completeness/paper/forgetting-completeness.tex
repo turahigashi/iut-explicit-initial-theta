@@ -35,11 +35,11 @@ from Theorem~3.11 to Corollary~3.12\\
 in inter-universal Teichm\"uller theory}
 \author{Toshihisa Urahigashi\\
 \small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.1.0 --- 11 November 2026\\[3pt]
+\date{Version 1.1.1 --- 11 November 2026\\[3pt]
 \small Independent researcher. This work was carried out personally and is
 unrelated to any institutional affiliation.\\[3pt]
 \small ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}\\[-2pt]
-\small \href{https://doi.org/10.5281/zenodo.24135596}{doi:10.5281/zenodo.24135596} (all versions: \href{https://doi.org/10.5281/zenodo.24135420}{10.5281/zenodo.24135420})}
+\small \href{https://doi.org/10.5281/zenodo.24135926}{doi:10.5281/zenodo.24135926} (all versions: \href{https://doi.org/10.5281/zenodo.24135420}{10.5281/zenodo.24135420})}
 
 \begin{document}
 \maketitle
@@ -630,7 +630,7 @@ Propositions~\ref{prop:fibre}--\ref{prop:defect} and the examples
 of \S2---is included in the accompanying repository%
 \footnote{\url{https://github.com/turahigashi/iut-explicit-initial-theta},
 directory \texttt{forgetting-completeness}, tag
-\texttt{forgetting-completeness-v1.1.0}.}
+\texttt{forgetting-completeness-v1.1.1}.}
 as the standalone Lean file \texttt{CompletenessFrameCore.lean},
 which depends only on Mathlib and was checked within the standard
 axioms \texttt{propext}, \texttt{Classical.choice},
@@ -650,14 +650,16 @@ here.  Independent review has not been received.
 
 \section*{Disclosure}
 
-This paper was prepared with generative AI tools (large language
-models) under the author's direction, including the formalization,
-the audit, the writing and this English version, which the author
-prepared from his Japanese draft.  Statements marked \EST{} about
-the abstract frame are checked in Lean as described above.  The
-correspondence between the frame and the source texts is an audit,
-not a Lean-checked assertion.  The author takes full responsibility
-for the paper.
+The proofs in this paper were found with generative AI tools (large
+language models) under the author's direction, and these tools were
+also used for the source audit, the formalization, and the writing,
+including the Japanese draft and this English version prepared from
+it.  Every statement marked \EST{} in \S3 is checked in Lean~4 with
+Mathlib (see Reproducibility above).  The correspondence between
+the frame and the cited results is checked against the source texts
+as described in \S6; it is not checked by Lean.  The author's own
+reading of the proofs is still in progress.  The author takes full
+responsibility for the paper.
 
 \appendix
 \section{The whole diagram}
@@ -794,6 +796,8 @@ inside a common container. (d) The three tiers of
 \cite[Thm.~6.4]{FrdI}; the conclusion needs the $\deg=1$ tier.}
 \label{fig:whole}
 \end{figure}
+
+\clearpage
 
 \begin{thebibliography}{AbsTopIII}
 

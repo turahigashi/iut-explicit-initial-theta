@@ -1,6 +1,6 @@
 # Forgetting and completeness: the centre of the passage from Theorem 3.11 to Corollary 3.12 in inter-universal Teichmüller theory
 
-Version 1.1.0, 11 November 2026 (12 pages; Appendix A added in 1.1.0). DOI [10.5281/zenodo.24135596](https://doi.org/10.5281/zenodo.24135596);
+Version 1.1.1, 11 November 2026 (13 pages; Appendix A added in 1.1.0, Disclosure and figure placement corrected in 1.1.1). DOI [10.5281/zenodo.24135926](https://doi.org/10.5281/zenodo.24135926);
 all versions: [10.5281/zenodo.24135420](https://doi.org/10.5281/zenodo.24135420).
 
 The passage from Theorem 3.11 to Corollary 3.12 in inter-universal
