@@ -1,6 +1,6 @@
 # A conditional assembly from Theorem 3.11 to Corollary 3.12: decomposition of the scalar layer, a semantic principle, and isolation of the value-group profile switch
 
-Version 1.0.0, 13 November 2026 (15 pages). DOI [10.5281/zenodo.24166925](https://doi.org/10.5281/zenodo.24166925);
+Version 1.0.1, 13 November 2026 (16 pages; v1.0.1 only adds a caution note that the Venn diagram in Figure 1 is currently misrendered and will be corrected in a later version — no text, result or conclusion changed). DOI [10.5281/zenodo.24179190](https://doi.org/10.5281/zenodo.24179190);
 all versions [10.5281/zenodo.24166924](https://doi.org/10.5281/zenodo.24166924).
 Author: Toshihisa Urahigashi (independent researcher;
 ORCID [0009-0004-0460-6242](https://orcid.org/0009-0004-0460-6242)).
