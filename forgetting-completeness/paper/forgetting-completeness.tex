@@ -35,11 +35,11 @@ from Theorem~3.11 to Corollary~3.12\\
 in inter-universal Teichm\"uller theory}
 \author{Toshihisa Urahigashi\\
 \small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.1.2 --- 11 November 2026\\[3pt]
+\date{Version 1.1.3 --- 12 November 2026\\[3pt]
 \small Independent researcher. This work was carried out personally and is
 unrelated to any institutional affiliation.\\[3pt]
 \small ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}\\[-2pt]
-\small \href{https://doi.org/10.5281/zenodo.24136372}{doi:10.5281/zenodo.24136372} (all versions: \href{https://doi.org/10.5281/zenodo.24135420}{10.5281/zenodo.24135420})}
+\small \href{https://doi.org/10.5281/zenodo.24165837}{doi:10.5281/zenodo.24165837} (all versions: \href{https://doi.org/10.5281/zenodo.24135420}{10.5281/zenodo.24135420})}
 
 \begin{document}
 \maketitle
@@ -107,6 +107,14 @@ functor, dependency problem, realification, scale, Lean.
 \noindent Marks used below: \FRAME{} framing or translation;
 \EST{} proved here or verified in the source; \OPEN{} unresolved;
 \Hmark{} the present author's reading or interpretation.
+
+\medskip
+\noindent\textbf{Note added in version 1.1.3.}
+This version only clarifies the terminology around ``scale'' in
+\S4 and Appendix~A: the defect $\Delta$ is an aggregate readout
+quantity, and identity of a chart calibration does not by itself
+identify the value-group profiles of transported pilots.  No
+proposition, Lean file, audit status or conclusion is changed.
 
 \section{Introduction: two questions}
 
@@ -386,6 +394,26 @@ Proposition~3.3 in the present instance; it is not the
 $x$-dependent constants also denoted $c$ in (C7) of \cite{U26},
 except that at $x=\theta$ such a constant equals $s$.
 
+\FRAME{} \emph{Clarification added in version 1.1.3.}
+Two notions of scale must be separated.  A \emph{chart scalar} is a
+single multiplier on one value line
+$\Phi^{\mathrm{rlf}}\cong\mathbb R_{\ge0}$; fixing an anchored
+generator can force such a loop scalar to be $1$.  By contrast, the
+$c$ above is defined, after the procession normalizations are fixed,
+for a transported pilot $X$; write $c_X$ when this dependence
+matters.  It is an aggregate readout ratio and may differ from $1$
+because of the \emph{shape}, or profile, of the value-group
+components across the procession capsules (for example a Gaussian
+profile proportional to $\{j^2u\}_j$ versus a constant profile
+$\{u\}_j$), even when the chart calibration is the identity.  A
+single scalar multiple does not change the ratios between the
+components.  Thus the open lift in Figure~\ref{fig:square} is not
+merely a one-scalar recalibration: at the construction level it must
+also supply the switch of value-group profiles, compatibly with the
+hull and membership.  Proposition~\ref{prop:defect} records only the
+resulting aggregate defect $\Delta$; it does not assert equality of
+profiles.
+
 \FRAME{} In categorical language this is a lifting problem for a
 forgetful functor $U:\mathbf{Marked}\to\mathbf{Bare}$.  A
 multiradial representation may be read as a functorial assignment
@@ -654,7 +682,7 @@ Propositions~\ref{prop:fibre}--\ref{prop:defect} and the examples
 of \S2---is included in the accompanying repository%
 \footnote{\url{https://github.com/turahigashi/iut-explicit-initial-theta},
 directory \texttt{forgetting-completeness}, tag
-\texttt{forgetting-completeness-v1.1.2}.}
+\texttt{forgetting-completeness-v1.1.3}.}
 as the standalone Lean file \texttt{CompletenessFrameCore.lean},
 which depends only on Mathlib and was checked within the standard
 axioms \texttt{propext}, \texttt{Classical.choice},
@@ -758,10 +786,11 @@ two points of the fibre over one multiplicative shadow.};
 text width=3.4cm]
 {$\Theta$-link} (b4);
 \node[note, text width=7.6cm] at (14.1,15.2)
-{Obstruction $=$ relative scale $c$ (holonomy of the transport
-loop). $c=1$ iff the cocycle is a coboundary, iff a marking making
-every transport scale $1$ exists. Each copy is anchored absolutely
-by $\mu(\cO)=1$, so $c$ is an invariant, not a convention.};
+{Obstruction at readout level $=$ aggregate relative scale $c_X$
+for a transported pilot. This is not merely a chart scalar:
+identity of the chart calibration does not identify value-group
+profiles. Each copy is anchored absolutely by $\mu(\cO)=1$, so
+$c_X$ is an invariant, not a convention.};
 
 % ---------- (c) query Q ----------
 \node[ttl] at (10.2,13.9) {(c) The query $Q$ is a cross-column

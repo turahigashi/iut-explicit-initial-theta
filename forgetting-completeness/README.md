@@ -1,6 +1,6 @@
 # Forgetting and completeness: the centre of the passage from Theorem 3.11 to Corollary 3.12 in inter-universal Teichmüller theory
 
-Version 1.1.2, 11 November 2026 (13 pages; Appendix A added in 1.1.0, Disclosure and figure placement corrected in 1.1.1, open-interface count, audit-range wording and the c/s dictionary corrected in 1.1.2). DOI [10.5281/zenodo.24136372](https://doi.org/10.5281/zenodo.24136372);
+Version 1.1.3, 12 November 2026 (13 pages; Appendix A added in 1.1.0, Disclosure and figure placement corrected in 1.1.1, open-interface count, audit-range wording and the c/s dictionary corrected in 1.1.2, terminology around scale clarified in 1.1.3: the defect Δ is an aggregate readout quantity, and identity of a chart calibration does not by itself identify pilot value-group profiles; no proposition, Lean file, audit status or conclusion changed). DOI [10.5281/zenodo.24165837](https://doi.org/10.5281/zenodo.24165837);
 all versions: [10.5281/zenodo.24135420](https://doi.org/10.5281/zenodo.24135420).
 
 The passage from Theorem 3.11 to Corollary 3.12 in inter-universal
@@ -15,13 +15,15 @@ Corollary 3.12-shaped conclusion follows once the scale defect
 Δ = (s−1)·vol(θ) is nonpositive, and on extremal data with no slack
 this is also necessary; preservation itself is Δ = 0, i.e. s = 1.
 Relative to this route, a sufficient condition for the ABC-type
-conclusion reduces to whether the real scale is preserved through
-the whole transport; no unconditional equivalence with the ABC
-conjecture is claimed, and neither Corollary 3.12 nor ABC is
-decided. An audit of the interfaces in IUT I–IV and in the
-Frobenioid, étale theta and absolute anabelian sources finds each
-audited interface locally closed except one square: the lift of the
-Θ-link from bare to marked prime-strips. The reduction to a scale
+conclusion reduces to whether the aggregate real readout scale is
+preserved through the whole transport; no unconditional equivalence
+with the ABC conjecture is claimed, and neither Corollary 3.12 nor
+ABC is decided. An audit of the interfaces in IUT I–IV and in the
+Frobenioid, étale theta and absolute anabelian sources finds the
+other audited interfaces locally closed, with two items open: on the
+input side, the lift of the Θ-link from bare to marked prime-strips;
+on the output side, the identification of the source's holomorphic
+hull family with the same-run full-image family. The reduction to a scale
 defect itself is credited to Scholze–Stix and to Project LANA's
 `xi_iff` (the reciprocal parameterization); what is added here is
 the completeness language, the interface-wise localization, and the
