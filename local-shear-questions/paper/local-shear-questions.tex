@@ -1,0 +1,735 @@
+\pdfoutput=1
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{hyperref}
+\hypersetup{hidelinks,
+  pdftitle={Questions on the remaining value-group profile switch from Theorem 3.11 to Corollary 3.12: small questions bearing on the central residual in one route to Corollary 3.12 and ABC, on globalization of local shears and object membership},
+  pdfauthor={Toshihisa Urahigashi}}
+
+\newcommand{\uu}[1]{\underline{\underline{#1}}}
+\newcommand{\ord}{\operatorname{ord}}
+\newtheorem{question}{Question}
+\theoremstyle{definition}
+\newtheorem{statement}{Statement}
+\newtheorem{remark}{Remark}
+
+\title{Questions on the remaining value-group profile switch\\
+from Theorem~3.11 to Corollary~3.12\\[4pt]
+\large Small questions bearing on the central residual in one route\\
+to Corollary~3.12 and ABC: globalization of local shears\\
+and object membership}
+\author{Toshihisa Urahigashi\\
+\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
+\date{Version 1.0.0 --- 13 November 2026\\[3pt]
+\small Independent researcher. This work was carried out personally and is
+unrelated to any institutional affiliation.\\[3pt]
+\small ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}\\[-2pt]
+\small \href{https://doi.org/10.5281/zenodo.24198745}{doi:10.5281/zenodo.24198745} (all versions: \href{https://doi.org/10.5281/zenodo.24198744}{10.5281/zenodo.24198744})}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+In a conditional assembly from Theorem~3.11 to Corollary~3.12 in
+inter-universal Teichm\"uller theory, the chart calibration,
+normalized-generator scale and unit side can be treated as supplied
+at the level of stated inputs, while a value-group profile switch
+H*val remains.  A profile-level countermodel shows that this input
+does not follow from the remaining assembly hypotheses.  This note
+does not claim to solve that residual.  Instead, it decomposes it
+into small questions phrased, as far as possible, in the common
+vocabulary of anabelian geometry, and records the points on which
+expert guidance would be decisive.
+
+The central issue is local-to-global: how does a local shear, that
+is, a freedom arising from a choice of splitting, model or
+identification, act on degree readouts, and can such a difference
+be supported at a single bad place as the local component of a
+global change of model?  Around this main question we separate the
+category in which degree-moving shears should be classified, the
+minimal category containing both theta sections and degree
+readouts, the existence of a global difference $\delta$, a finite
+Tate-curve computation, and two return bridges to the assembly:
+identification of the two-path difference with the [EtTh] section
+difference, and passage from equality of readouts to object-level
+membership.
+
+For each question we record its relation to Project LANA's (9-1).
+This is a division-of-roles map, not a comparison of progress and
+not an alternative to (9-1).  Some questions would remain
+meaningful after (9-1) is settled, while answers to others could
+clarify where any route to (9-1) must carry its load.
+
+The abstract implication cores used in the reduction map have been
+checked in Lean: differences of two splittings, the volume
+implication from object membership and monotonicity, finite
+averages, non-cancellation for a common ratio, and many-to-oneness
+of totals as shadows of profiles.  The questions themselves, and
+their identification with the actual [EtTh] and IUT
+constructions, are not formalized.
+
+\medskip
+\noindent\textbf{Keywords:} inter-universal Teichm\"uller theory,
+Corollary~3.12, value-group profile, local shear, global
+synchronization, mono-theta environment, anabelian geometry, Lean.
+\end{abstract}
+
+\section*{Position of this note}
+
+This note is a problem statement for joint examination, not a
+completed proof.  It does not claim a proof or disproof of
+Corollary~3.12 or the ABC conjecture, a determination of H*val,
+or an equivalence between Statement~P$'$ below and the residual.
+It is also not an alternative to, or a criticism of, Project
+LANA's (9-1).  The intended relation is complementary: (9-1)
+fixes an object-level membership statement on the source side,
+whereas this note separates definitions, local mechanisms and
+globalization steps that precede or surround such a statement.
+Even if every question here receives a positive answer, the two
+return bridges and the numbered IUT inputs remain separate.
+Conversely, a concrete countermodel to one question would locate
+a place where this route closes.
+
+We use the following labels for relations with (9-1):
+\emph{directly connected} under a fixed dictionary; \emph{connected
+under an additional identification}; \emph{requires separate
+examination}; and \emph{corresponding}, meaning essentially the
+same content in different vocabulary under a fixed dictionary.
+Here ``dictionary'' means a fixed correspondence between the
+assembly-side two paths, possible images and degree data and the
+membership formulation used by LANA.  The dictionary itself is
+not proved in this note.
+
+\section{Fixed background}
+
+\subsection{The residual in two-path form}
+
+The residual in the conditional assembly [U26c] compares two
+routes at the level of objects.  Route~1 starts from the
+$\Theta$-pilot, passes through the value-group part of one
+$\Theta_{\mathrm{LGP}}$-link to the $q$-pilot, and then uses the
+column-one log-Kummer correspondence.  Route~2 starts from the
+same $\Theta$-pilot, uses the column-zero log-Kummer
+correspondence and permutation symmetry to obtain a possible
+image.  The object-level assertion $(\alpha)$ says that the
+Route~1 representation is, up to the permitted indeterminacies,
+one of the Route~2 possible images.  The numerical assertion
+$(\beta)$ follows from $(\alpha)$ together with the decomposition
+identity expressing the $q$-side readout as the volume of that
+object and monotonicity of the hull volume.  We use $(\alpha)$ as
+the standard form of the residual.
+
+\subsection{Parts treated as supplied}
+
+The questions below fix the following layers as supplied at
+assembly-statement level.  This is a focusing device, not a claim
+that they have been proved unconditionally in the actual theory.
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{0.18\textwidth}p{0.55\textwidth}p{0.20\textwidth}@{}}
+\toprule
+Layer & Content & Status here\\
+\midrule
+Chart & Calibration, generator scale and transport distortion of the measuring chart & Treated as supplied\\
+Unit & Theorem 3.11(iii)(a)(b), Kummer classes of actual functions and the restriction bridge & Treated as supplied\\
+Semantics & Reading prime-strip morphisms as isomorphisms of collections of data & Fixed as a reading; actual inhabitation remains separate\\
+Profile & Hull compatibility of the switch $\{j^2u\}_j$ to $\{u\}_j$ & \textbf{Open; subject of this note}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{What the profile countermodel fixed}
+
+The countermodel of [U26d] uses concrete data at $\ell=7$ in
+which chart calibration, the normalized generator, the unit side,
+membership and both volume decompositions hold, while only the
+labelwise profile differs and the Corollary-3.12-shaped
+conclusion fails.  The aggregate scale is in general
+$12/(\ell(\ell+1))$.  Hence an input solving the residual cannot
+be merely the numerical assumption that an aggregate scale equals
+$1$; it must connect profiles at object level or at the level of
+a sufficiently rich readout.
+
+\subsection{Nearby public Lean work}
+
+The public Project LANA Lean development already contains
+formalizations close in theme, including abstract forms of
+[EtTh] Proposition~2.14, shift automorphisms, discrete and
+cyclotomic rigidity, and, in Wall/LogLink models, scaling and
+unit-induced properties, a profile coefficient \texttt{sFactor},
+and hexagon noncommutativity.  This note does not restate those
+developments.  Its questions concern how such model-level
+classifications connect with the categories of the source texts
+and with globalization of section differences.
+
+\subsection{Formal cores checked in Lean, and what was not checked}
+
+Before circulation, the parts of the implication map that can be
+stated without the [EtTh] or IUT constructions were isolated in
+the Lean module:
+\begin{center}\small
+\texttt{M3.relative.ActualValuePartQuestionImplications}.
+\end{center}
+A selected build over three modules passed, and
+\texttt{\#print axioms} for the main theorems used only the
+standard three axioms.  The checked abstract implications are:
+\begin{itemize}[leftmargin=*]
+\item two splittings of one group homomorphism agree on the
+quotient, their pointwise difference lies in the kernel and
+satisfies the usual cocycle identity; hence any readout factoring
+through that quotient agrees for the two splittings;
+\item object membership, the readout decomposition identity, the
+hull-domain condition and monotonicity imply the numerical volume
+bound, abstractly $(\alpha)\Rightarrow(\beta)$;
+\item equality of an otherwise unconstrained transported number
+with the $q$-side readout does not imply that bound, and equal
+totals do not determine a labelled profile;
+\item a normalized linear readout invariant under all label
+permutations is an average, the mean-square formula holds, and a
+common ratio $r\ne1$ at every place does not cancel in a nonzero
+total.
+\end{itemize}
+
+The Lean files do not formalize mono-theta environments, the
+actual difference $\delta$, its globalization, Statement~P$'$,
+the two return bridges, or dictionary-dependent relations among
+candidate forms.  They should not be read as verifying the
+questions themselves.
+
+\subsection{Relation to prior public claims, in the audited range}
+
+The central identification difficulty itself is not new: it has
+been a public issue since [SS], and Project LANA records a
+corresponding membership problem as (9-1).  Joshi has published,
+inside his own arithmetic Teichm\"uller theory, a claimed local
+prototype of Corollary~3.12 and valuation-scaling results
+[JosII].  Because the definitions and framework differ, this note
+does not treat those claims, whose evaluation is not attempted
+here, as directly closing Questions~Q1 or Q2 as phrased in the
+[EtTh] categories.  For local outer automorphisms arising from
+the Jannsen--Wingberg presentation, see [NSW], [HN] and [Kon];
+in the statements audited here, the emphasis is on unit/log-side
+actions, not a category-by-category classification of actions on
+a normalized degree quotient or a one-place global realization.
+A public document [Zen26] claims an additional hull-inflation
+obstruction even under (9-1); that claim is not verified or used
+here.  Accordingly, this note does not claim that Q0--Q7 are
+globally unprecedented or open in every formulation.  In the
+range audited, no numbered statement was located that closes
+them in the exact categories and with the exact readouts used
+below.
+
+\section{Setup and terminology}
+
+\subsection{Stage}
+
+Let $K$ be a number field, $E/K$ an elliptic curve, and $S$ a
+finite set of places at which $E$ has split multiplicative
+reduction.  For $v\in S$, let $q_v\in K_v^\times$ be the Tate
+parameter, with $\ord_v(q_v)>0$ for the normalized valuation.
+Fix a prime $\ell\ge5$, a bound inherited as a hypothesis from
+the assembly-side data conditions.  For each $v$, consider the
+Tate curve, its $\ell$-torsion points, the relevant hyperbolic
+fundamental groups, and decomposition groups at cusps and torsion
+points.  Labels are $j\in\{1,\ldots,\ell^\divideontimes\}$,
+$\ell^\divideontimes=(\ell-1)/2$.  Write $\eta_{v,j}$ for the
+Kummer class of the theta value.  Its valuation satisfies
+\[
+\ord_v(\theta_{v,j})
+ =\frac{j^2}{2\ell}\ord_v(q_v).
+\]
+With $u_v:=|\log(\uu q_v)|=(2\ell)^{-1}\log(\mathfrak q_v)$,
+the signed readouts are $-j^2u_v$ on the theta side and $-u_v$ on
+the $q$ side.
+
+\subsection{Two sections and their difference}
+
+A mono-theta environment in [EtTh] contains tempered fundamental
+group data and a theta section.  The cyclotomic envelope also has
+a tautological algebraic section.  In a relevant subquotient the
+two appear as splittings of one surjection, with the theta
+section obtained from the algebraic section by subtracting an
+$\eta$-cocycle.  We write $\delta$ generically for such a
+difference or for the change of section under a change of model,
+always naming the category in question.  This avoids confusing
+the standard $\eta$-cocycle of [EtTh] with indeterminacy under
+conjugation or replacement of models.
+
+A mono-theta environment contains the theta section as data; the
+algebraic section is detected, in subquotients, through
+commutators.  A bi-theta environment contains both sections but
+loses discrete rigidity.  This tension is Question~Q3.
+
+\subsection{What ``shear'' means here}
+
+Because the word is used with different scopes, we use a working
+definition.  For a replacement $\alpha$ of splittings, models or
+identifications in a specified category, fixing specified
+group-theoretic and cyclotomic data, consider the induced action
+on degree readouts.  Conceptually there are two types:
+\begin{center}
+\small
+\begin{tabular}{@{}p{0.20\textwidth}p{0.43\textwidth}p{0.30\textwidth}@{}}
+\toprule
+Type & Form of action & Effect on degree\\
+\midrule
+U (splitting shear) & Splitting changes by a unit-valued cocycle & Normally invisible in the valuation quotient\\
+D (degree shear) & Normalized degree readout itself changes nontrivially & If linear, $D\mapsto\lambda D$, $\lambda\ne1$, is the issue\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+A warning is essential.  Local automorphisms arising from the
+Jannsen--Wingberg presentation and often called shears mix
+generators and induce unipotent actions on the unit/log side
+[NSW, Thm.~7.5.14], [HN], [Kon, Thm.~1.1].  Under suitable
+hypotheses such an action need not be a scalar composed with a
+field automorphism, and it may move sizes inside a log shell.
+This should not be identified with a D-type action on the
+normalized valuation quotient or degree readout itself.  Q0
+therefore does not presuppose the existence of D-type shears; it
+asks for their classification.
+
+When an action on a generator readout is multiplicative, write
+its ratio as $\lambda_v$.  Otherwise $\lambda_v$ is only shorthand
+and the action itself should be recorded.  For transported
+readouts write
+$\varepsilon_v:=D_v^{\mathrm{tr}}(q_v)-D_v(q_v)$.
+
+\section{The local skeleton already in [EtTh]}
+
+This section records a starting point, not a new result.  The
+theta functional equation [EtTh, Prop.~1.4(ii)] and its
+cohomological form [EtTh, Prop.~1.5(iii)] are the source of the
+$j^2$ profile.  By [EtTh, Thm.~1.6(ii)], a tempered isomorphism
+preserves the kernel in the valuation chain and the element
+$1\in\widehat{\mathbb Z}$; by (iii), the
+$\mathcal O^\times\cdot\eta^\Theta$ class is preserved up to
+conjugation.  Thus the indeterminacy of the theta class is
+compressed to the unit side, while its value part is pinned.
+Corollaries~2.8(iii) and 2.9 preserve the glued class without a
+constant indeterminacy and preserve cusp labels.  Proposition~2.12
+detects the algebraic splitting through commutators;
+Proposition~2.14(ii) gives a shift automorphism inducing identity
+on both quotient and kernel; and Corollary~2.19(i) obtains a
+cyclotomic isomorphism from the difference of two splittings.
+
+Formally, a readout factoring through the common quotient takes
+the same value for the two splittings.  This abstract part is
+among the Lean-checked cores.  It is only readout invariance, not
+object identity, and it does not include identification of the
+actual degree readout with such a quotient readout,
+globalization, or transport to the procession.  The questions
+below separate those outer steps.
+
+\section{Small questions Q0--Q7}
+
+None of the following questions by itself asserts
+Corollary~3.12 or ABC.  For each one, a known reference, a
+countermodel, a correction of category, or a better formulation
+would serve the purpose of this note.  Structurally, Q0--Q5 cut
+out prerequisites, definitions and the local core of
+Statement~P$'$ in Section~5.  Q6 and Q7 are bridges back from
+P$'$ to the assembly.  Thus P$'$ is not an additional independent
+question beside Q0--Q7; it is a composite form built from Q0--Q5,
+with Q6--Q7 outside it.
+
+\subsection*{Q0. In which category do local shears live?}
+
+For a mono-theta environment over a local field and a degree
+readout $D$, classify the actions on $D$ induced by automorphisms
+or changes of model fixing specified group-theoretic and
+cyclotomic data.  In particular, in which of the following
+categories does a D-type action, moving degree itself, occur?
+\begin{enumerate}[leftmargin=*]
+\item topological-group automorphisms of tempered fundamental groups, modulo inner automorphisms;
+\item automorphisms of mono-theta environments;
+\item automorphisms of bi-theta environments;
+\item automorphisms of tempered Frobenioids and their splitting monoids;
+\item automorphisms of realified Frobenioids.
+\end{enumerate}
+Please also distinguish whether ``fixing cyclotomic data'' means
+identity action on the cyclotomic object or compatibility with
+its natural cyclotomic isomorphism.
+
+\emph{Relation to (9-1): requires separate examination.}  (9-1)
+concerns membership of specific standard objects and does not
+classify automorphisms category by category.  Even if (9-1) is
+true, degree-moving shears might exist in a wider category; even
+if they exist, the standard transport might avoid them.
+
+\subsection*{Q1. Can a local shear globalize? (Main question)}
+
+Fix the local shear objects as in Q0.  What is the image, inside
+the product of local shears over places, of differences arising
+from a global change of model?  When the degree action can be
+written by ratios $(\lambda_v)_{v\in S}$, can the family
+\[
+\lambda_{v_0}\ne1\quad\text{at one bad place \(v_0\) only},\qquad
+\lambda_v=1\quad(v\ne v_0)
+\]
+be realized?  If not, is the obstruction only the product
+formula, label synchronization, rigidity of a decomposition-group
+preserving global model, or another global constraint?  We ask
+for the distinction between a purely global anabelian reading,
+using arithmetic fundamental-group data and decomposition groups,
+and a synchronized reading in which label synchronization of the
+type in [IUTchI, Prop.~6.5] is part of the given data.
+
+If a one-place shear is realizable but compensated at other
+places so that the total is preserved, the form of compensation
+should be made explicit.  Formally, a common ratio $r\ne1$ at
+all places does not cancel in a nonzero total; what remains open
+is whether place-dependent families, and one-place support in
+particular, occur in the image of global differences.
+
+\emph{Relation to (9-1): requires separate examination.}  (9-1)
+states membership for standard global objects; it does not
+classify realizability of prescribed local families.  Under a
+fixed dictionary and Bridge~(a), total consequences for the
+standard difference may follow, but not the one-place support
+condition.
+
+\subsection*{Q2. Is the degree readout invariant under the standard difference of sections?}
+
+For the algebraic and theta sections in [EtTh], if the
+identification of coefficients is transported to the theta-section
+side, is the valuation-quotient readout of the $q$-parameter
+Kummer class invariant?  Precisely, does
+$\varepsilon_v=D_v^{\mathrm{tr}}(q_v)-D_v(q_v)$ vanish?  Is this
+already a direct consequence of Propositions~2.12 and 2.14(ii),
+Theorem~1.6(ii)(iii), and Corollary~2.19(i), or is an additional
+claim needed at the coefficient-identification step?  Abstractly,
+invariance is immediate once the readout factors through a
+quotient on which the two splittings agree.  The remaining issue
+is the source-level identification showing that the actual degree
+readout and transport have that form.
+
+\emph{Relation to (9-1): connected under an additional
+identification.}  With the assembly dictionary and readout
+identification fixed, a numerical shadow follows from (9-1); the
+exact transformation rule inside [EtTh] does not.  This question
+may close from existing [EtTh] results alone.
+
+\subsection*{Q3. What is the smallest category containing both sections and the degree readout?}
+
+What is the smallest category in which the algebraic section,
+the theta section and the degree readout simultaneously exist as
+data while discrete rigidity is retained?  In a mono-theta
+environment the algebraic section is only detected in
+subquotients through commutators, whereas a bi-theta environment
+has both sections but loses discrete rigidity.  Is there a
+standard category resolving this tension, or evidence that the
+tension itself is essential?
+
+\emph{Relation to (9-1): requires separate examination.}  Even if
+(9-1) is formulated in the LANA framework, that does not decide
+which mono/bi-theta environment is the minimal home for this
+question.  It is a question at the level of source definitions.
+
+\subsection*{Q4. Does a global $\delta$ exist without Hodge theatres?}
+
+Can the projective system of local mono-theta environments and
+its $\eta$-classes be glued, from global arithmetic
+fundamental-group data and restrictions to decomposition groups
+alone, into one global object $\delta$ whose local components
+are not independent?  If so, what functor or reconstruction
+algorithm gives the gluing?  If not, what is the smallest
+additional datum required?  Is the understanding correct that
+label synchronization alone does not give cocycle coherence?
+
+\emph{Relation to (9-1): requires separate examination.}  A
+global object in the LANA framework would still need to be
+identified with a gluing of [EtTh] section systems.  Whether the
+setup can be founded in pre-IUT vocabulary is not decided by
+granting (9-1).
+
+\subsection*{Q5. Can the degree action of $\delta$ be computed in a Tate prototype?}
+
+For a Tate curve over a finite $p$-adic field containing the
+necessary roots of unity, for example at $\ell=5$ and including
+Gaussian-type local test cases, make explicit from theta series
+and product expansions the classes $\theta_{v,j}$ and the change
+of $\eta$-classes under translation by $a\in\mathbb Z$.  Under
+the standard splitting obtained by restriction to the zero
+section, compute the transported degree action
+$\varepsilon_v$, separating classically known parts from parts
+depending on the choice of section.
+
+\emph{Relation to (9-1): partly known; the centre requires
+separate examination.}  Valuations of theta values and the
+functional equation follow from classical computation and [EtTh,
+Props.~1.4--1.5].  The value of $\varepsilon_v$ under the standard
+splitting is not computed by (9-1).
+
+\subsection*{Q6. Bridge~(a): is the assembly two-path difference the [EtTh] section difference?}
+
+At each bad place, restrict the composite
+``Route~1 theta-link value part $\circ$ (Route~2 permutation
+transport)${}^{-1}$'' to the data of the mono-theta splitting
+monoid of [EtTh, Thm.~2.2(ii)].  Does it agree with transport
+induced by the [EtTh] section difference, the $\eta$-cocycle?
+Is that agreement compatible, including degree readouts, with
+the passage from the single-basepoint method to the procession
+method in [IUTchII, Rem.~3.5.3] and with horizontal compatibility
+in [IUTchIII, Cor.~2.3(iv)]?  If this is immediate from a numbered
+statement, we would be grateful for that reference.
+
+\emph{Relation to (9-1): corresponding under a fixed dictionary.}
+With a dictionary between LANA objects and the assembly two
+paths, a positive answer largely overlaps the content of (9-1).
+But fixing that dictionary is itself an unproved bridge, and
+identification with the [EtTh] $\delta$ is not immediate from the
+statement of (9-1).
+
+\subsection*{Q7. Bridge~(b): what is needed to pass from equal readouts to object membership?}
+
+Under a splitting into unit part and a rational ray generated by
+a normalized element, can two pilot objects with the same unit
+part and the same total procession degree be treated as the same
+possible image in the hull-compatible sense?  If not, what is
+the smallest additional datum beyond total degree: the profile
+tuple itself, a lower-bound or inclusion condition for regions,
+or another object-level identification?
+
+\emph{Relation to (9-1): membership is supplied; the implication
+requires separate examination.}  Granting (9-1) supplies the
+needed membership itself.  It does not prove an implication
+``equal readouts $\Rightarrow$ membership''.  A total degree is a
+many-to-one shadow of a tuple, and without additional structure
+such an implication fails in general.  In the assembly-shaped
+countermodel, this insufficiency is visible when the transported
+number is not connected to a theta-side object.
+
+\section{Statement \texorpdfstring{P$'$}{P'}}
+
+Statement P$'$ is a revised presentation of an earlier
+reformulation, arranged to match the local skeleton and the
+decomposition into questions above.  It is not claimed to be
+equivalent to the residual.  P$'$ is not an additional
+independent problem beside Q0--Q7: Q0--Q5 separate its
+prerequisites, definitions and local core, while Q6--Q7 are
+bridges outside P$'$ leading back to the assembly.
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{0.34\textwidth}p{0.20\textwidth}p{0.39\textwidth}@{}}
+\toprule
+Part of P$'$ & Questions & Remark\\
+\midrule
+Two sections and $\delta$ setup & Q3 & Minimal category\\
+Replacement by degree readouts & Q0, Q2, Q5 & Shear classification, transported readout, computation\\
+Globalization & Q1, Q4 & Image of global differences; existence of global $\delta$\\
+Total compatibility assertion & Q1 standard case + Q2 & Standard difference, not arbitrary shear families\\
+Return to assembly & Q6, Q7 & Bridges~(a)(b), outside P$'$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Differences from a solved form}
+
+[EtTh, Cor.~2.19(i)] says that the difference of two sections
+gives a compatible isomorphism on cyclotomic objects.  P$'$
+differs in two ways: first, it replaces the object of
+compatibility by value-group degree readouts; second, it states
+the local theory globally, under one global $\delta$ and the
+product-formula constraint.  The geometric Szpiro inequality in
+the function-field case is only an expository anchor for the
+second difference: there globality appears as a closed
+intersection-theoretic total.  It does not provide a mechanism
+in the number-field case.  For a prior formulation of a
+geometric Corollary~3.12, see [Jos].
+
+\subsection{Setup and statement}
+
+Take $K$, $E/K$, $S$, $q_v$, $\ell\ge5$, theta torsion data and
+$\eta_{v,j}$ as in Section~2.  Take the two sections
+$s^{\mathrm{alg}}$, $s^\Theta$ and their difference $\delta$ in
+the sense of Section~2; cyclotomic compatibility is known by
+[EtTh, Cor.~2.19(i)].  As a marked
+\textbf{premise-or-part-of-the-question}, suppose that the
+sections and $\delta$ exist as one global object whose local
+sections are restrictions to decomposition groups.  This
+globalization is not founded here from the local [EtTh] theory;
+it is Q4.
+
+\begin{statement}[P$'$: compatibility of transported degree readouts]
+$\delta$ is compatible with value-group degree readouts.
+Precisely, for the system over all $v\in S$, the degree datum
+$\ord_v(q_v)$ read through the algebraic section agrees, as the
+same readout in the same reconstructed value group, with the
+degree datum of the same object read through the theta section,
+that is, from the system of Kummer classes $\{\eta_{v,j}\}$.
+\end{statement}
+
+What is read through the theta section is not the total degree
+of the theta system itself, which is computed from its own
+valuations and does not equal the $q$-degree.  It is the degree
+of $q$-data transported by $\delta$.  Nor is the assertion about
+capsulewise profiles $\{j^2\}$ versus $\{1\}$, or a place-by-place
+assertion.  It is asserted only for the system over $S$, for one
+global $\delta$, under the product-formula constraint.
+
+\emph{Relation to (9-1): connected under additional
+identifications.}  With dictionary and Bridges~(a)(b) fixed, the
+numerical content of P$'$ is obtained as a shadow of (9-1).  The
+converse does not hold: P$'$ is a readout assertion, not object
+membership itself.
+
+\subsection{Rating of \texorpdfstring{P$'$}{P'}}
+
+No equivalence between P$'$ and $(\alpha)$ has been proved; the
+gap consists of Q6 and Q7.  The globalization in the setup is an
+unverified seam, and a version with the global clause removed is
+not P$'$.  The local skeleton gives formal scaffolding, but
+transplantation to degree readouts is itself the open content
+and does not follow automatically from Corollary~2.19(i), whose
+proof uses cyclotomic Kummer structure.  The direction checked
+formally is $(\alpha)$ plus decomposition identities implying
+$(\beta)$; numerical compatibility P$'$ alone does not imply
+$(\alpha)$.  If P$'$ is false, this assembly route closes, but
+that would not disprove ABC.  If P$'$ is true, Bridges~(a)(b)
+and the IUT black box still remain.
+
+\section{Candidate forms A--D and the implication map}
+
+Before this question list, the residual $(\alpha)$ was examined
+in the following candidate forms.  We record only their relation
+to the questions here.  The implications are sketches under a
+fixed dictionary, not proved equivalences between autonomous
+statements.
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{0.10\textwidth}p{0.34\textwidth}p{0.49\textwidth}@{}}
+\toprule
+Form & Content & Relation here\\
+\midrule
+A & Commutativity, in the value component, of the two-path square & Assembly-side form of $(\alpha)$; Q6 asks for [EtTh]-side identification\\
+B & Application of semantic principle S to the relevant isomorphism and value component & Semantic clothing of A; the general principle is not the question here\\
+C & Commutativity of mono-anabelian reconstruction $R$ with theta transport & Algorithmic clothing of A; seam: assembly degree data are output of $R$\\
+D $=$ (9-1) & Membership form of $\eta^q=\eta^{\mathrm{anab}}_S$ type & Current reference form; this note asks before and around it\\
+P$'$ & Global compatibility of transported degree readouts & Common-vocabulary entrance; weaker readout form than A\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Under supplied inputs, the sketch is: the relevant instance of B
+corresponds to A and to $(\alpha)$; C would give A through its
+seam; and D corresponds to $(\alpha)$ under the fixed dictionary.
+These dictionary-dependent relations were not formalized in Lean.
+Q0--Q5 separate prerequisites and definitions outside this map;
+Q6--Q7 ask about its seams.
+
+\section{Summary of relations with (9-1)}
+
+The labels below mean the position of a question if (9-1) is
+granted.  They do not include the truth of (9-1) or correctness
+of a dictionary.  This is a division-of-roles summary.  Many
+questions retain independent meaning after (9-1), as category
+classification or foundations for globalization.
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{0.30\textwidth}p{0.25\textwidth}p{0.38\textwidth}@{}}
+\toprule
+Question & Relation & Reason in brief\\
+\midrule
+Q0 local-shear classification & Separate & (9-1) gives no categorywise automorphism classification\\
+Q1 globalization / one place & Separate & Standard membership does not classify prescribed families\\
+Q2 transported-readout invariance & Additional identification & Numerical shadow follows; internal [EtTh] rule is separate\\
+Q3 minimal category & Separate & Source-definition question\\
+Q4 global $\delta$ & Separate & Identification with [EtTh] gluing is additional\\
+Q5 Tate computation & Partial & Theta valuations known; $\varepsilon_v$ is not computed by (9-1)\\
+Q6 Bridge~(a) & Corresponding under dictionary & Dictionary itself unproved\\
+Q7 Bridge~(b) & Membership supplied; implication separate & (9-1) does not prove readout-to-membership\\
+P$'$ & Additional identifications & Shadow under dictionary and bridges; converse fails\\
+Forms A, D & Corresponding under dictionary & Rephrasings of $(\alpha)$\\
+Form B, general principle & Separate & One instance does not imply a general semantic principle\\
+Form C & Additional identification & Assembly degree data as output of $R$ is the seam\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Closing: what guidance would be decisive?}
+
+In the author's understanding, the centre is how far local
+freedom is killed by global synchronization.  This appears most
+sharply in Q1's image problem.  But Q1 is meaningful only after
+Q0 fixes the category and type of shears and Q3--Q4 fix the home
+of global objects.  That is why the questions are separated.
+
+Any of the following would be decisive for this route:
+\begin{itemize}[leftmargin=*]
+\item for Q0, the exact category in which degree-moving shears exist, with a classification reference;
+\item for Q1, a one-place-supported global realization, or an explicit constraint forbidding it;
+\item for Q2 and Q5, a derivation of transported-readout invariance from existing theorems, or a concrete computed value;
+\item for Q3 and Q4, a standard category containing both sections and readouts, or an existing reconstruction giving global gluing;
+\item for Q6 and Q7, a numbered statement closing a bridge, or a concrete step where a bridge fails;
+\item a prior public formulation of the residual in [EtTh] or anabelian reconstruction vocabulary.  This note does not make its value depend on a novelty claim.
+\end{itemize}
+
+None of these questions is Corollary~3.12 or ABC itself.
+However, the conditional assembly and the profile countermodel
+have localized the remaining difficulty along this route to
+finitely many steps.  The purpose of this note is to put those
+steps in a form that specialists can judge in everyday
+vocabulary.
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{0.12\textwidth}p{0.42\textwidth}p{0.39\textwidth}@{}}
+\toprule
+Residual & Content & Treatment here\\
+\midrule
+R1 & Numbered statements of IUT I--IV as black boxes & Not verified\\
+R2V & Value-group profile switch H*val & Decomposed into Q0--Q7 and P$'$\\
+R2 & Inhabitation / frame fidelity to the actual construction & Marked at Q6 and Form B seams\\
+R3 & Source checking and independent re-verification & Author checking and outside rereading remain\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section*{Disclosure}
+
+This is personal work by an independent researcher, unrelated to
+any institutional affiliation.  Generative AI was used under the
+author's direction for auditing, formalization and drafting.
+Responsibility for the contents rests with the author.  This is
+a pre-review work report.
+
+\begin{thebibliography}{99}\small
+\bibitem[IUTchI]{iut1} S.~Mochizuki, Inter-universal Teichm\"uller Theory I: Construction of Hodge Theaters, \emph{Publ. Res. Inst. Math. Sci.} 57 (2021), 3--207.
+\bibitem[IUTchII]{iut2} S.~Mochizuki, Inter-universal Teichm\"uller Theory II: Hodge-Arakelov-theoretic Evaluation, \emph{Publ. Res. Inst. Math. Sci.} 57 (2021), 209--401.
+\bibitem[IUTchIII]{iut3} S.~Mochizuki, Inter-universal Teichm\"uller Theory III: Canonical Splittings of the Log-theta-lattice, \emph{Publ. Res. Inst. Math. Sci.} 57 (2021), 403--626.
+\bibitem[IUTchIV]{iut4} S.~Mochizuki, Inter-universal Teichm\"uller Theory IV: Log-volume Computations and Set-theoretic Foundations, \emph{Publ. Res. Inst. Math. Sci.} 57 (2021), 627--723.
+\bibitem[EtTh]{etth} S.~Mochizuki, The \'Etale Theta Function and its Frobenioid-theoretic Manifestations, \emph{Publ. Res. Inst. Math. Sci.} 45 (2009), 227--349.
+\bibitem[FrdI]{frd1} S.~Mochizuki, The Geometry of Frobenioids I: The General Theory, \emph{Kyushu J. Math.} 62 (2008), 293--400.
+\bibitem[FrdII]{frd2} S.~Mochizuki, The Geometry of Frobenioids II: Poly-Frobenioids, \emph{Kyushu J. Math.} 63 (2009), 1--182.
+\bibitem[AbsTopIII]{abstop3} S.~Mochizuki, Topics in Absolute Anabelian Geometry III: Global Reconstruction Algorithms, \emph{J. Math. Sci. Univ. Tokyo} 22 (2015), 939--1156.
+\bibitem[AbsAnab]{absanab} S.~Mochizuki, The Absolute Anabelian Geometry of Hyperbolic Curves, in \emph{Galois Groups and Fundamental Groups}, MSRI Publ.~41, Cambridge Univ. Press, 2003, 77--122.
+\bibitem[SS]{ss} P.~Scholze and J.~Stix, Why abc is still a conjecture, 2018.
+\bibitem[NSW]{nsw} J.~Neukirch, A.~Schmidt, and K.~Wingberg, \emph{Cohomology of Number Fields}, 2nd ed., Springer, 2008, Thm.~7.5.14.
+\bibitem[HN]{hn} Y.~Hoshi and Y.~Nishio, On the outer automorphism groups of the absolute Galois groups of mixed-characteristic local fields, \emph{Res. Number Theory} 8 (2022), no.~3, Paper No.~56.
+\bibitem[Kon]{kon} K.~Kondo, Anabelian aspects of the outer automorphism groups of the absolute Galois groups of mixed-characteristic local fields, arXiv:2512.09231v2.
+\bibitem[Jos]{jos} K.~Joshi, Construction of Arithmetic Teichmuller Spaces II$_{1/2}$: Deformations of Number Fields, arXiv:2305.10398.
+\bibitem[JosII]{jos2} K.~Joshi, Construction of Arithmetic Teichmuller Spaces II: Proof of a local prototype of Mochizuki's Corollary 3.12, arXiv:2303.01662v3, Thms.~6.9.1 and 9.2.1. Not treated here as evaluated input.
+\bibitem[Zen26]{zen} C.~Zeng, An Integral-Structure Inflation in the Hull Operation of IUT Corollary 3.12, Hexagon 2610.00646v1. Not verified or used as input here.
+\bibitem[LANA]{lana} Project LANA, interim report and public Lean development ((9-1), \texttt{xi\_iff}, EtaleTheta/Wall/LogLink modules). Mentioned only as reference form and nearby formalization; its results are not used here as proved inputs.
+\bibitem[U26]{u26} T.~Urahigashi, Where Theorem 3.11 sits, Zenodo, DOI \href{https://doi.org/10.5281/zenodo.24104932}{10.5281/zenodo.24104932} (v1.2.1).
+\bibitem[U26b]{u26b} T.~Urahigashi, Forgetting and Completeness, Zenodo, DOI \href{https://doi.org/10.5281/zenodo.24165837}{10.5281/zenodo.24165837} (v1.1.3).
+\bibitem[U26c]{u26c} T.~Urahigashi, A conditional assembly from Theorem 3.11 to Corollary 3.12: decomposition of the scalar layer, a semantic principle, and isolation of the value-group profile switch, Zenodo, DOI \href{https://doi.org/10.5281/zenodo.24179190}{10.5281/zenodo.24179190} (v1.0.1).
+\bibitem[U26d]{u26d} T.~Urahigashi, Scale preservation is not enough: a profile-level independence countermodel for the Corollary 3.12 assembly inputs, Zenodo, DOI \href{https://doi.org/10.5281/zenodo.24195284}{10.5281/zenodo.24195284} (v1.0.0).
+\end{thebibliography}
+
+\end{document}
+
+
+
+
