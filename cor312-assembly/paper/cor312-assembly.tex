@@ -27,11 +27,11 @@ decomposition of the scalar layer, a semantic principle,\\
 and isolation of the value-group profile switch}
 \author{Toshihisa Urahigashi\\
 \small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.0.1 --- 13 November 2026\\[3pt]
+\date{Version 1.0.2 --- 14 November 2026\\[3pt]
 \small Independent researcher. This work was carried out personally and is
 unrelated to any institutional affiliation.\\[3pt]
 \small ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}\\[-2pt]
-\small \href{https://doi.org/10.5281/zenodo.24179190}{doi:10.5281/zenodo.24179190} (all versions: \href{https://doi.org/10.5281/zenodo.24166924}{10.5281/zenodo.24166924})}
+\small \href{https://doi.org/10.5281/zenodo.24209701}{doi:10.5281/zenodo.24209701} (all versions: \href{https://doi.org/10.5281/zenodo.24166924}{10.5281/zenodo.24166924})}
 
 \begin{document}
 \maketitle
@@ -96,9 +96,16 @@ completeness, formalization (Lean), cyclotomic rigidity.
 \end{abstract}
 
 \medskip
-\noindent\textbf{Note added in version 1.0.1.}
-This version only adds the caution note on Figure~1 below: the Venn
-diagram in Figure~1 is currently misrendered.  No text, result or
+\noindent\textbf{Note added in version 1.0.2.}
+Figure~1 and its caption are redrawn.  Version~1.0.1 had added a
+caution that the diagram was misrendered (overlapping labels); that
+caution is removed.  The caption now states the claimed relations
+explicitly, and those concerning the assembly range $B$ are checked
+in Lean (\texttt{VennRegionB.lean}, added to the supplementary
+files).  The Lean counterpart of H*val, given as \texttt{hmem} alone
+in the table of \S1, is corrected to \texttt{hmem} and
+\texttt{hlocal}, with one sentence added in \S2.  The description
+of the unpublished working draft [W] is reworded.  No result or
 conclusion is changed.
 
 \section*{Claim and what remains, at the outset}
@@ -152,57 +159,108 @@ Conversely, the content of the assembly in this paper is that no
 input other than these is needed.  Figure~\ref{fig:venn} updates the
 Venn diagram of [U26] to the present state.
 
-\medskip
-\noindent\textbf{Note on Figure~1 (misrendering).}
-The Venn diagram in Figure~1 is currently misrendered: some labels
-overlap or overflow.  The figure will be corrected in a later
-version; for the present version, please rely on the caption rather
-than the diagram itself.
-
-\begin{figure}[ht]
+\begin{figure}[!htb]
 \centering
-\begin{tikzpicture}[scale=0.92, every node/.style={font=\footnotesize}]
-  \draw[rounded corners] (0,0) rectangle (11.4,6.9);
-  \node[anchor=north west] at (0.15,6.85) {$U$: arithmetic holomorphic structures};
-  \draw[rotate around={-8:(5.6,3.4)}] (5.6,3.4) ellipse (4.6 and 2.5);
-  \node at (1.7,5.55) {weak (SHE)};
-  \draw[blue!60!black] (4.4,3.5) ellipse (2.9 and 1.95);
-  \node[blue!60!black] at (2.35,4.95) {$A$: cited theory};
-  \draw[green!50!black] (7.0,3.5) ellipse (2.9 and 1.95);
-  \node[green!50!black] at (9.15,5.05) {$K$: conclusion holds};
-  \fill (2.95,2.45) circle (2.2pt);
-  \node[anchor=west,font=\scriptsize] at (3.08,2.45) {$m$ [U26]};
-  \draw[red!70!black,dashed,thick] (5.85,3.35) ellipse (1.55 and 1.35);
-  \node[red!70!black,font=\scriptsize] at (5.85,4.82) {$B$: assembly range};
-  \draw[teal!60!black,dashed] (5.85,3.35) ellipse (0.85 and 0.72);
-  \node[teal!60!black] at (5.85,3.98) {(9-1)?};
-  \draw[teal!60!black] (5.85,3.25) ellipse (0.52 and 0.33);
-  \node[teal!60!black,font=\scriptsize] at (5.85,3.25) {carriers};
-  \fill[green!50!black] (5.83,2.88) circle (2.2pt);
-  \node[font=\scriptsize,anchor=north] at (5.83,2.80) {$s_{\mathrm{chart}}=1$};
-  \draw[red!70!black,dashed] (6.75,3.55) circle (0.24);
-  \node[red!70!black] at (6.75,3.55) {$\star$};
-  \node[red!70!black,font=\scriptsize] at (7.02,3.72) {?};
-  \draw[gray] (6.90,3.38) -- (7.85,1.98);
-  \node[anchor=west,font=\scriptsize] at (7.90,1.95)
-    {actual $\star$:};
-  \node[anchor=west,font=\scriptsize] at (7.90,1.72)
-    {H*val, S undetermined};
-  \node[anchor=west,font=\scriptsize] at (0.2,0.35)
-    {$A\cap K=A\cap$ strong (SHE), the locus of ``3.11.5''};
+\begin{tikzpicture}[x=1cm,y=1cm,font=\scriptsize,
+  lab/.style={inner sep=1pt},
+  lead/.style={black!55,line width=0.4pt}]
+  % U
+  \draw[black!40,line width=0.6pt,rounded corners=4pt] (0,0) rectangle (15.6,10.3);
+  \node[lab,anchor=base west,text=black!65] at (0.25,9.95)
+    {$U$: structures at the level of log-volumes};
+  \begin{scope}[yshift=13.5mm]
+  % weak (SHE)
+  \filldraw[fill=green!6,draw=green!45!black,line width=0.7pt]
+    (5.5,4.4) ellipse [x radius=5.3,y radius=3.9];
+  \node[lab,anchor=base west,font=\scriptsize\bfseries] at (2.3,7.15) {weak (SHE)};
+  \node[lab,anchor=base west,text=black!60] at (2.3,6.83) {holds};
+  % A
+  \filldraw[fill=blue!6,draw=blue!55!black,line width=0.9pt]
+    (5.6,4.0) ellipse [x radius=4.3,y radius=2.75];
+  % A cap K
+  \begin{scope}
+    \clip (11.2,4.6) ellipse [x radius=4.0,y radius=3.4];
+    \fill[orange!14] (5.6,4.0) ellipse [x radius=4.3,y radius=2.75];
+  \end{scope}
+  \draw[blue!55!black,line width=0.9pt] (5.6,4.0) ellipse [x radius=4.3,y radius=2.75];
+  % K
+  \draw[black!70,line width=0.8pt] (11.2,4.6) ellipse [x radius=4.0,y radius=3.4];
+  % wall = boundary of K inside A
+  \begin{scope}
+    \clip (5.6,4.0) ellipse [x radius=4.3,y radius=2.75];
+    \draw[red!65!black,line width=2.2pt] (11.2,4.6) ellipse [x radius=4.0,y radius=3.4];
+  \end{scope}
+  % labels of A, K, wall
+  \node[lab,anchor=base west,font=\scriptsize\bfseries] at (2.0,5.25) {$A$: models of the cited theory};
+  \node[lab,anchor=base west,text=black!60] at (2.0,4.93) {(the cited statements as axioms)};
+  \node[lab,anchor=base,font=\scriptsize\bfseries] at (13.0,6.05) {$K$: conclusion holds};
+  \node[lab,anchor=base,text=black!60] at (13.0,5.73) {(Cor.~3.12)};
+  \node[lab,anchor=base east,text=red!65!black,font=\scriptsize\bfseries] at (7.05,6.12) {wall: boundary of $K$ in $A$};
+  \draw[lead,red!65!black] (7.1,6.2) -- (7.6,6.2);
+  % (9-1) and carrier
+  \filldraw[fill=white,draw=orange!60!black,line width=0.6pt]
+    (8.7,4.05) ellipse [x radius=0.8,y radius=0.8];
+  \node[lab,anchor=base,text=orange!60!black] at (8.7,4.45) {(9-1)};
+  \filldraw[fill=white,draw=orange!60!black,line width=0.6pt]
+    (8.9,4.05) ellipse [x radius=0.42,y radius=0.22];
+  \node[lab,anchor=base,text=orange!60!black,font=\tiny] at (8.9,3.99) {carrier};
+  % m
+  \fill[red!65!black] (3.3,3.0) circle [radius=0.075];
+  \node[lab,anchor=west] at (3.42,3.0) {$m$ [U26]};
+  % B
+  \draw[violet!80!black,line width=1.1pt,dash pattern=on 4pt off 2.5pt]
+    (7.0,3.0) ellipse [x radius=1.9,y radius=1.1];
+  \node[lab,font=\small\bfseries,text=violet!80!black] at (5.9,3.0) {$B$};
+  % star and its arrow
+  \node[font=\normalsize,text=red!60!black] (star) at (13.2,0.9) {$\star$};
+  \draw[-{Stealth[length=2mm]},red!60!black,line width=0.5pt,dash pattern=on 2pt off 1.5pt]
+    (star) -- node[pos=0.5,above,text=red!60!black,font=\scriptsize\bfseries]{?} (8.05,2.4);
+  \end{scope}
+  % A cap K callout (top)
+  \node[lab,anchor=base west,font=\scriptsize\bfseries] at (9.0,9.95)
+    {$A\cap K=A\cap{}$strong (SHE) [U26]};
+  \node[lab,anchor=base west,text=orange!55!black] at (9.0,9.63)
+    {$=$ Mochizuki's ``3.11.5''};
+  \draw[lead] (8.95,9.75) -- (8.3,6.95);
+  % legend (bottom band)
+  \draw[violet!80!black,line width=1.1pt,dash pattern=on 4pt off 2.5pt] (0.35,1.18) -- (1.0,1.18);
+  \node[lab,anchor=base west] at (1.2,1.1)
+    {$B$: the assembly range of this paper; $s_{\mathrm{chart}}=1$ throughout $B$ (Proposition~A).};
+  \draw[red!65!black,line width=2.2pt] (0.35,0.78) -- (1.0,0.78);
+  \node[lab,anchor=base west] at (1.2,0.70)
+    {Theorem~9.1: $B\cap{}$H*val $\subseteq$ (9-1) $\cap\,K$. \ $B\subseteq K$ is not claimed (chart calibration does not fix the profile, \S8).};
+  \node[font=\normalsize,text=red!60!black] at (0.67,0.36) {$\star$};
+  \node[lab,anchor=base west] at (1.2,0.30)
+    {the actual construction: in $A$ if R1 holds, in $B$ if also R2 holds, and then in $K$ if H*val (R2V) holds.};
 \end{tikzpicture}
-\caption{Updated Venn diagram: the diagram of [U26] with the
-assembly range $B$ of this paper (dashed) superimposed (not to
-scale).  Inside $A$ there still exists a countermodel $m$ where the
-conclusion is false.  Using content outside the cited range
-(expansions of definitions, explicit formulae, known literature),
-the assembly builds the steps around (9-1) and the chart side of
-$s=1$.  $B$ is not a range where (9-1) has been solved; it is the
-range in which (9-1) has been isolated as the value-group switch
-H*val (R2V).  Whether the star representing the actual construction
-satisfies H*val and inhabitation of Principle~S (R2) is what
-remains of the wall.  The IUT statements as a whole (R1) are a
-premise outside the cited range defining $A$ in this figure.}
+\caption{Updated Venn diagram.  As in [U26], each statement is drawn
+as the class of structures in which it holds; sizes, shapes and
+positions are schematic and measure nothing.  The relations claimed
+are exactly the following.
+(a)~$A$ lies inside weak (SHE), and $A$ contains a model $m$ outside
+$K$ [U26].
+(b)~Inside $A$, $K$ coincides with strong (SHE) in the value reading;
+the carrier class lies inside (9-1), and (9-1) inside $K$ [U26]; $A\cap K$ is the locus
+of Mochizuki's ``3.11.5'' (\S10).
+(c)~$B$, the assembly range of this paper, is the class of models of
+the cited theory that also satisfy the inputs of Theorem~9.1 other
+than H*val; it lies inside $A$, and $s_{\mathrm{chart}}=1$ throughout
+$B$ (Proposition~A).
+(d)~$B\cap{}$H*val $\subseteq$ (9-1) $\cap\,K$ (Theorem~9.1 and
+\S10).  $B\subseteq K$ is not claimed: $B$ is not a range where (9-1)
+has been solved, but the range in which (9-1) has been isolated as the
+value-group switch H*val (R2V).  In the abstract frame of the Lean
+capstone (\S2), (c), (d) and the inclusion (9-1) $\subseteq K$ are
+proved in Lean, and $B$ meets both sides of the wall, so that
+$B\not\subseteq K$ in that frame (by the profile countermodel of
+[U26c]); this holds whether H*val is read as \texttt{hmem}, as
+\texttt{hlocal}, or as both (\texttt{VennRegionB.lean}).
+(e)~The star is the actual construction.  The IUT statements as a
+whole (R1) are a premise outside the cited range defining $A$;
+inhabitation of Principle~S by the actual objects is R2; whether the
+star lies in $K$ is what remains of the wall.
+Beyond these, no inclusion and no non-emptiness of a region is
+claimed.}
 \label{fig:venn}
 \end{figure}
 
@@ -277,7 +335,7 @@ external cross-checking; (iii) an explicit finite list of remaining
 dependencies, including H*val and in-situ inhabitation of
 Principle~S; and (iv) machine verification of sufficiency in Lean.
 The detailed proof material is in the working draft [W]
-(ronbun9757); this note gives a summary and its position.  The
+(unpublished, in Japanese); this note gives a summary and its position.  The
 passage corresponding to Lemma~13.5 of [W]~v0.14 still needs
 revision in line with the downgrade in \S8 here.
 
@@ -327,7 +385,10 @@ frame fidelity), corrected place-by-place equality, and the
 membership sentence --- and are not axioms.  The Lean membership
 hypothesis \texttt{hmem} is $T\in\mathrm{Fam}$ for a single global
 object $T$, not place-by-place membership; only the numerical
-equality \texttt{hlocal} is place-by-place.  Variants comparing on
+equality \texttt{hlocal} is place-by-place.  The value-group switch
+H*val (R2V) enters both: the proof of Theorem~9.1 uses it for the
+membership \texttt{hmem} and, through the profile, for
+\texttt{hlocal}.  Variants comparing on
 the tensor-power side, \texttt{cor312\_of\_assembly\_scaled}, and
 deriving $s=1$ itself, \texttt{scale\_eq\_one\_of\_assembly}, are
 also included.  For the computational core of local cancellation,
@@ -837,8 +898,10 @@ it gives no conclusion\\
 Strong (SHE) ($=A\cap K$) & The actual output family contains an
 actual $q$-pilot representation.  Lemma~8.1 gives chart
 calibration, Lemma~8.2 the unit side; the value-group switch H*val
-itself is the central remainder, in Lean the single-global-object
-hypothesis \texttt{hmem} & Surroundings treated; H*val (R2V)
+itself is the central remainder; in Lean it is the pair of hypotheses
+\texttt{hmem} (membership of a single global object) and
+\texttt{hlocal} (corrected place-wise equality, which at a bad place
+is the label-wise profile equality) & Surroundings treated; H*val (R2V)
 unresolved, in-situ type transfer is R2\\
 (Ob4) & Lemma~7.2 (well-definedness of assembly) & Treated at
 statement level\\
@@ -1003,7 +1066,7 @@ AI was used, under the author's direction, in the proofs, assembly,
 audit, formalization, and preparation of the Japanese and English
 drafts of this paper.  The author bears responsibility for the
 contents.  The author's own complete reading of the sources is in
-progress, and this paper is a pre-review working report.
+progress, and this paper is a working report not yet independently re-verified.
 
 \section*{Artifact availability}
 
@@ -1013,12 +1076,17 @@ model-pair files referred to in \S3.1 are reproduced for reference
 in the supplementary archive.  They are excerpts of the author's
 larger Lean development and are not standalone: the selected build
 closing over them (353 modules) was checked in that development.
+The Lean check of Figure~1, \texttt{VennRegionB.lean}, is included
+as well; it imports two modules of the same development (the hull
+operator and the profile countermodel of [U26c]), restates the
+capstone in the same shape, and was compiled against them with
+Lean~4.30.0 and the same Mathlib pin.
 What is machine-checked in this paper is sufficiency of the
 assembly and the model-level statements named in the text --- not
 the paper proof as a whole, and not frame fidelity (R2) or the
 value-group switch (R2V).  The TeX source of this paper, the
 supplementary files and checksums are at the GitHub tag
-\texttt{cor312-assembly-v1.0.1}.
+\texttt{cor312-assembly-v1.0.2}.
 
 \begin{thebibliography}{99}
 \bibitem[IUTchI]{iutch1} S. Mochizuki, Inter-universal
@@ -1057,8 +1125,12 @@ Y. Hoshi, G. Yamashita, Y. Yang), slides, April 2026.
 DOI: 10.5281/zenodo.24104932 (v1.2.1).
 \bibitem[U26b]{u26b} T. Urahigashi, Forgetting and Completeness,
 Zenodo, DOI: 10.5281/zenodo.24165837 (v1.1.3).
+\bibitem[U26c]{u26c} T. Urahigashi, Scale preservation is not
+enough: a profile-level independence countermodel for the
+Corollary~3.12 assembly inputs, Zenodo, DOI: 10.5281/zenodo.24195284
+(v1.0.0).
 \bibitem[W]{w} T. Urahigashi, Assembly proof of Corollary 3.12
-(working draft v0.14, in Japanese), ronbun9757. The detailed
+(working draft v0.14, in Japanese, unpublished).  The detailed
 version of the present note.
 \bibitem[BKLNW]{bklnw} S. Broadbent, H. Kadiri, A. Lumley, N. Ng,
 K. Wilk, Sharper bounds for the Chebyshev function $\theta(x)$,

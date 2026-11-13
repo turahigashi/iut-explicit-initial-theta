@@ -23,11 +23,11 @@ inhabits the same shape with genuine arithmetic data:
   nondegeneracy (`FVdashIsoNondegenerate`).
 
 This is *not* an actual Frobenioid or Hodge theatre: it shows
-that Principle S (ronbun9757 §11), as a typing discipline, is
+that Principle S ([W] §11, the working draft of the paper), as a typing discipline, is
 inhabitable by non-degenerate real-valued data, and pins down
 exactly what an inhabitation for the actual source
 constructions would have to provide.  No new axioms.
-独立の点検は受けていない。
+Not independently re-checked.
 -/
 
 noncomputable section

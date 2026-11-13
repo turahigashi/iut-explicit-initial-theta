@@ -7,7 +7,7 @@ import M3.relative.ActualValuePartHullIdentification
 # Cor. 3.12 assembly: from place-wise data to the hull conclusion
 
 This module is the Lean counterpart of the assembly layer of the
-paper draft ronbun9757 (Lemma 3.4 = discharge of hinge H1,
+working draft [W] of the paper (Lemma 3.4 = discharge of hinge H1,
 Lemma 13.2 = discharge of hinge H2, §22 supplement for
 Prop. 3.9(ii)(iv)).  It proves, with no new axioms:
 
@@ -22,7 +22,7 @@ Prop. 3.9(ii)(iv)).  It proves, with no new axioms:
 * **The monoanalytic correction constant** of [AbsTopIII]
   Prop. 5.8(iii), `c = -(f + m) log p + e f log p*`, and its
   vanishing in the unramified case and for `ℚ₂` (classical
-  spot-checks, cf. ronbun9757 §22.1).
+  spot-checks, cf. [W] §22.1).
 * **Capstones** `cor312_of_assembly` and
   `cor312_of_assembly_scaled`: given the volume decompositions
   of `μ T` and `vQ` as the *same* weighted sum of place-wise
@@ -49,7 +49,7 @@ in the paper draft, stated as data, not axioms:
   not done here.
 * `hmem`: the output-side membership sentence.
 
-No new axioms.  独立の点検は受けていない。
+No new axioms.  Not independently re-checked.
 -/
 
 noncomputable section
@@ -119,7 +119,7 @@ theorem ratio_invariant_under_scaling {M a b : ℝ} (hM : M ≠ 0) :
 
 /-! ## The monoanalytic correction constant ([AbsTopIII] 5.8(iii)) -/
 
-/-- The correction constant of ronbun9757 §22.1: for a local
+/-- The correction constant of [W] §22.1: for a local
 field of absolute ramification index `e`, residue degree `f`,
 with `p^m` the number of `p`-power roots of unity and
 `p* = p` (odd `p`) or `p²` (`p = 2`), the log-volume of the

@@ -7,7 +7,7 @@ import M3.relative.ActualValuePartThetaHull
 # Calibrating a strip from generator and chart data at a Tate place
 
 Companion to `ActualValuePartLocalCancellationBridge` and
-audit memo L2-96.  The marked place is the finite place of
+to the author's audit notes.  The marked place is the finite place of
 `ActualValuePartLocalGlobal`, and the common coordinate `u`
 of the bridge is instantiated by the actual Tate coordinate
 `tateCoordinate F p W v h = -log ‖q‖`.
@@ -34,9 +34,9 @@ scalars satisfy the bridge identity `χT * β = χS * α`
   with that readout is not done here.
 * `hchart`: the chart normalization `χ * α = 1`, i.e. the
   `ρ`-formula of IUT I, Example 3.5(i)–(ii), in chart
-  coordinates.  Audited in L2-75–L2-79; not proved here.
+  coordinates.  Audited in the author's notes; not proved here.
 
-No new axioms.  独立の点検は受けていない。
+No new axioms.  Not independently re-checked.
 -/
 
 noncomputable section

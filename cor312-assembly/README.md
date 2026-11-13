@@ -1,6 +1,6 @@
 # A conditional assembly from Theorem 3.11 to Corollary 3.12: decomposition of the scalar layer, a semantic principle, and isolation of the value-group profile switch
 
-Version 1.0.1, 13 November 2026 (16 pages; v1.0.1 only adds a caution note that the Venn diagram in Figure 1 is currently misrendered and will be corrected in a later version — no text, result or conclusion changed). DOI [10.5281/zenodo.24179190](https://doi.org/10.5281/zenodo.24179190);
+Version 1.0.2, 14 November 2026 (16 pages; v1.0.2 redraws Figure 1 and its caption, checks in Lean the relations drawn for the assembly range B (`lean/VennRegionB.lean`), and corrects the Lean counterpart of H*val in the table of §1 from `hmem` alone to `hmem` and `hlocal` — no result or conclusion changed). DOI [10.5281/zenodo.24209701](https://doi.org/10.5281/zenodo.24209701);
 all versions [10.5281/zenodo.24166924](https://doi.org/10.5281/zenodo.24166924).
 Author: Toshihisa Urahigashi (independent researcher;
 ORCID [0009-0004-0460-6242](https://orcid.org/0009-0004-0460-6242)).
@@ -21,20 +21,24 @@ chart calibration does not imply equality of pilot value-group profiles,
 and the switch from a Gaussian $j^2$ profile to an actual $q$-pilot
 representation (H*val), together with frame fidelity, is open.
 
-This is the English version of the Japanese preprint draft v0.3
+This is the English version of the Japanese preprint draft v0.4
 (summary and main proofs). The detailed working draft is cited as [W].
 
 ## Contents
 
-- `paper/cor312-assembly.pdf` — the paper (15 pages).
+- `paper/cor312-assembly.pdf` — the paper (16 pages).
 - `paper/cor312-assembly.tex` — TeX source; build with
   `pdflatex cor312-assembly.tex` (twice).
 - `lean/*.lean` — Lean excerpts referred to in the text, reproduced for
   reference: the capstone `Cor312Assembly.lean`, the arithmetic
   inhabitation `FVdashArithmeticInstance.lean`, the prime-strip skeleton
   `FVdashPrimeStripSkeleton.lean`, the square-independence audit
-  `ShapeDoesNotDecide.lean`, and the Tate model-pair file
-  `ActualValuePartLocalCancellationTate.lean`. These are excerpts of a
+  `ShapeDoesNotDecide.lean`, the Tate model-pair file
+  `ActualValuePartLocalCancellationTate.lean`, and the check of Figure 1
+  `VennRegionB.lean` (relations drawn for the assembly range B, for each
+  reading of H*val; it imports two modules of the same development and
+  was compiled with Lean 4.30.0 against the same Mathlib pin). These are
+  excerpts of a
   larger Lean development and are **not standalone**; the selected build
   closing over them (353 modules) was checked in that development.
   What is machine-checked is sufficiency of the assembly and the
