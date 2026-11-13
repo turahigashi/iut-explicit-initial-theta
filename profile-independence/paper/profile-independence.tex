@@ -1,0 +1,687 @@
+\pdfoutput=1
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+\hypersetup{hidelinks,
+  pdftitle={Scale preservation is not enough: a profile-level independence countermodel for the Corollary 3.12 assembly inputs},
+  pdfauthor={Toshihisa Urahigashi}}
+
+\newcommand{\uu}[1]{\underline{\underline{#1}}}
+\newcommand{\Fam}{\mathrm{Fam}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Scale preservation is not enough:\\
+a profile-level independence countermodel\\
+for the Corollary~3.12 assembly inputs}
+\author{Toshihisa Urahigashi\\
+\small\texttt{123026.urahigashi.toshihisa@gmail.com}}
+\date{Version 1.0.0 --- 13 November 2026\\[3pt]
+\small Independent researcher. This work was carried out personally and is
+unrelated to any institutional affiliation.\\[3pt]
+\small ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}\\[-2pt]
+\small \href{https://doi.org/10.5281/zenodo.24195284}{doi:10.5281/zenodo.24195284} (all versions: \href{https://doi.org/10.5281/zenodo.24195283}{10.5281/zenodo.24195283})}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We exhibit a concrete profile-valued countermodel showing that the
+remaining value-group profile switch in a conditional assembly from
+Theorem~3.11 to Corollary~3.12 in inter-universal Teichm\"uller theory
+is logically independent of the other assembly inputs.  At
+$\ell=7$, with labels $j\in\{1,2,3\}$ at one bad place and
+normalized unit $u=1$, the theta-side readouts are $-j^2$ and the
+$q$-side readouts are $-1$, with equal procession weights $1/3$.
+The normalized generator and the unit-side readouts agree;
+membership, monotonicity, the hull domain and both volume
+decompositions hold.  Nevertheless the aggregates are $-14/3$ and
+$-1$, the aggregate scale is forced to $3/14$, and the
+Corollary-3.12-shaped conclusion fails.  For general odd primes
+$\ell\ge5$ the aggregate scale is $12/(\ell(\ell+1))$.  The
+countermodel and the resulting independence corollary are
+formalized in Lean~4; in the recorded selected build they depend
+only on the standard three axioms.
+
+The profile and normalizations are not arbitrary choices.  They are
+the source readouts: theta values $\uu q^{\,j^2}$, plain procession
+averaging, and the coefficient comparison in the proof of
+[IUTchIV, Theorem~1.10].  This note does not claim that
+Mochizuki's actual construction is this model, nor that
+Theorem~3.11, Corollary~3.12, the ABC conjecture or the switch
+H*val is false.  It proves only that no derivation exists from the
+listed inputs once labelwise profile equality is removed.  Further
+progress therefore requires a genuinely profile-level input, or a
+richer formalization of the actual construction, rather than more
+lemmas inside the same abstraction.
+
+\medskip
+\noindent\textbf{Keywords:} inter-universal Teichm\"uller theory,
+Corollary~3.12, value-group profile, scale preservation,
+independence countermodel, Lean.
+\end{abstract}
+
+\section*{What is and is not claimed}
+
+\textbf{Claimed.}
+\begin{itemize}[leftmargin=*]
+\item The hypotheses of the assembly capstone, with the single
+labelwise equality hypothesis removed, do not imply the
+Corollary-3.12-shaped volume conclusion.  A concrete datum
+satisfies all remaining hypotheses and falsifies the conclusion.
+\item In this countermodel the chart/generator scale and the unit
+side are preserved; only the labelwise profile differs.  The
+aggregate scale is nevertheless forced away from $1$.
+\item The numerical profile, equal weights and $q$-side
+normalization used below are read off from the definitions and
+computations in IUT~III--IV, as documented in Section~3.
+\end{itemize}
+
+\textbf{Not claimed.}
+\begin{itemize}[leftmargin=*]
+\item That Mochizuki's actual Frobenioid construction reduces to
+the simple model in Section~4.
+\item That Theorem~3.11, Corollary~3.12, the ABC conjecture or
+H*val is false.
+\item That the whole assembly paper, the IUT black boxes, or frame
+fidelity have been formalized in Lean.
+\end{itemize}
+
+\section{Scale versus profile}
+
+\subsection{Two meanings of scale preservation}
+
+The phrase ``the scale is preserved'' has been used at two
+different layers in the assembly from Theorem~3.11 to
+Corollary~3.12.  The first layer concerns calibration of the
+measuring device itself: a chart identifying two presentations has
+distortion $s_{\mathrm{chart}}=1$, or a normalized generator has
+the same readout on both sides.  The second layer concerns the
+aggregate obtained after summing labelwise components of the
+measured object with procession weights.
+
+Fix one bad place and a positive normalized unit $u$.  Write
+$\theta_j$ and $q_j$ for the label-$j$ theta-side and $q$-side
+readouts, and $w_j$ for the weights.  The aggregate ratio is
+\[
+s_{\mathrm{agg}}
+  :=\frac{\sum_j w_jq_j}{\sum_jw_j\theta_j}.
+\]
+Even when the chart and the weights are the same on both sides,
+$s_{\mathrm{agg}}$ need not equal $1$ if the sequences
+$\{\theta_j\}_j$ and $\{q_j\}_j$ differ.  We call such a sequence
+a \emph{profile}.  A profile is vector-valued information which
+becomes a scalar only after aggregation.
+
+\subsection{Relation to previous work}
+
+The note [U26] showed, by a countermodel, that
+Corollary~3.12 does not follow from the statements actually cited
+in its proof alone.  The subsequent assembly note [U26c] used
+material outside that cited range to supply the scalar and unit
+layers at the statement level, while isolating the value-group
+profile switch H*val (there called R2V) as the central remaining
+input.
+
+The present note connects these two results.  The aggregate scale
+$3/14$ in the countermodel of [U26] was described at the level of
+that cited theory as a scalar defect.  At the level of concrete
+values it is forced by averaging the $j^2$ profile.  Here the same
+phenomenon is placed inside the hypothesis shape of the assembly
+capstone of [U26c].  All supplied layers are satisfied, the
+profile alone differs, and the conclusion still fails.  Thus the
+result is not a repetition of [U26]: it localizes the missing
+input inside the expanded assembly.
+
+\subsection{The question}
+
+We answer the following question in the negative: assuming a
+monotone volume, the hull domain condition, membership in the
+family of possible images, finite-sum decompositions on both
+sides, agreement at the normalized generator, and agreement of
+unit-side readouts, does the Corollary-3.12-shaped volume
+conclusion follow without labelwise profile equality?
+
+\section{The abstract assembly shape}
+
+We use the following abstraction of the capstone
+\texttt{cor312\_of\_assembly} in the Lean assembly development.
+Let $\Omega$ be a hull operator on a type $\alpha$, let
+$\Fam\subseteq\mathcal P(\alpha)$ be a family of possible images,
+let $T\subseteq\alpha$, let
+$\mu:\mathcal P(\alpha)\to\mathbb R$ be a volume readout, and let
+$v_Q\in\mathbb R$.  Let $I$ be a finite index set with weights
+$w_i$ and readouts $\theta_i,q_i$.  Consider the inputs
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+ & input & in the model below\\
+\midrule
+(A1) & $\mu$ is monotone & holds\\
+(A2) & $\bigcup\Fam$ lies in the domain of $\Omega$ & holds\\
+(A3) & $T\in\Fam$ & holds\\
+(A4) & $\mu(T)=\sum_{i\in I}w_i\theta_i$ & both sides $-14/3$\\
+(A5) & $v_Q=\sum_{i\in I}w_iq_i$ & both sides $-1$\\
+(G)  & normalized generator readouts agree & both $-1$ at $j=1$\\
+(U)  & unit-side readouts agree labelwise & both $0$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The hypothesis deliberately removed is
+\[
+\tag{Hloc}
+\forall i\in I,\qquad q_i=\theta_i .
+\]
+The conclusion under test is the Corollary-3.12-shaped comparison
+\[
+\tag{C}
+v_Q\leq
+\mu\!\left(\Omega.\varphi\left(\bigcup\Fam\right)\right).
+\]
+In the usual assembly one obtains $\mu(T)\leq\mu(\mathrm{hull})$
+from membership and monotonicity (using extensivity of the hull
+operator), and $v_Q=\mu(T)$ from (Hloc), (A4) and (A5).  The
+countermodel shows that (Hloc) is genuinely load-bearing in this
+inference.
+
+The finite set $I$ is arbitrary at this abstract level.  Below we
+fix one bad place and take $I$ to be its label set.  Reading $I$
+instead as a set of places pre-aggregated over labels does not
+remove the mismatch: at the fixed bad place the two aggregates
+are already $-14/3$ and $-1$ (Section~7.2).
+
+\section{The source readout}
+
+An independence countermodel can be built from arbitrary
+sequences.  What matters here is that the sequence, weights and
+normalization below are those read off from the source.  This
+section lists only the inputs needed to fix the numbers; it is
+not a reproof of the source construction.
+
+\subsection{Labels and the theta pilot}
+
+For an odd prime $\ell$, the label set is
+$\mathbb F_\ell^{\divideontimes}
+ =\mathbb F_\ell^\times/\{\pm1\}$, with representatives
+$j\in\{1,\ldots,\ell^\divideontimes\}$,
+$\ell^\divideontimes=(\ell-1)/2$.  At a bad place the components
+of the theta pilot occur as the system of normalized theta values
+$\{\uu q_{\underline v}^{\,j^2}\}_j$ ([IUTchIII], Introduction,
+Definition~3.8(i), Remark~3.11.1(i)).  Here $\uu q$ is not the
+bare Tate parameter but the normalized generator of the next
+paragraph.
+
+\subsection{The $q$-side unit}
+
+[IUTchIV, Theorem~1.10] puts
+\[
+\left|\log(\uu q)\right|
+  =\frac1{2\ell}\log(\mathfrak q).
+\]
+We write $u_{\underline v}:=|\log(\uu q_{\underline v})|>0$ and,
+with the sign convention for log-volumes, label readouts
+$-j^2u_{\underline v}$ on the theta side and
+$-u_{\underline v}$ on the $q$ side.  In the main countermodel
+one bad place is fixed and $u_{\underline v}$ is normalized to
+$1$.
+
+\subsection{Capsules and cancellation of the tensor factor}
+
+In the procession normalization in the proof of
+[IUTchIV, Theorem~1.10], one evaluates the components of the
+capsule $S^\pm_{j+1}=\{0,1,\ldots,j\}$ and then averages over
+$j\in\{1,\ldots,\ell^\divideontimes\}$.  The distinguished factor
+is $i^\dagger=j$, and at a bad place the degree entering there is
+$\lambda=\operatorname{ord}(\uu q_{\underline v_j}^{\,j^2})$.
+A factor $j+1$ occurs in the per-factor quantities, but after the
+weighted average the capsule main term is
+$-\frac{j^2}{2\ell}\log(\mathfrak q)$: the number of tensor
+factors cancels.  The procession-averaged main term is
+$-\frac{\ell+1}{24}\log(\mathfrak q)$.  Comparing coefficients
+relative to $\log(\mathfrak q)$ gives
+\[
+\text{theta coefficient}=\frac{\ell+1}{24},
+\qquad
+\text{$q$ coefficient}=\frac1{2\ell},
+\qquad
+\frac{\text{theta}}{\text{$q$}}=\frac{\ell(\ell+1)}{12}.
+\]
+The reciprocal aggregate scale is $12/(\ell(\ell+1))$; at
+$\ell=7$ this is $3/14$, as in [U26].
+
+\subsection{Equal weights and the determinant}
+
+Procession normalization in [IUTchIII, Proposition~3.9(i)] is
+defined as the plain average over capsules.  Remark~3.9.3
+explicitly answers ``no'' to the question whether more general
+weighted averages may be used: compatibility with capsule
+inclusions forces the same weight for each capsule.  Moreover
+$\det_{\otimes M}$ is normalized so as to reproduce the packet
+log-volume and may be omitted in volume-only arguments; the
+$M$-th tensor power comparison of (Ob4) is a common factor on
+both sides and does not change the profile ratio.  The equal
+weights $1/3$ at $\ell=7$ below are therefore the source
+definition, not a simplifying choice.
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+item & source location & value in the model\\
+\midrule
+labels &
+$\ell^\divideontimes=(\ell-1)/2$ &
+$\ell=7$, $\{1,2,3\}$\\
+theta components &
+$\{\uu q^{\,j^2}\}_j$ &
+$-1,-4,-9$\\
+$q$ components &
+normalized triangle generator &
+$-1,-1,-1$\\
+weights &
+Prop.~3.9(i), Rem.~3.9.3 &
+$1/3,1/3,1/3$\\
+aggregates &
+Thm.~1.10 main terms &
+$-14/3$ versus $-1$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{The countermodel}
+
+We transcribe the definitions of the Lean file listed in
+Section~6.
+
+\begin{definition}[Profile datum at $\ell=7$]
+\begin{itemize}[leftmargin=*]
+\item Index set: $\texttt{placesProf}=\{1,2,3\}$.
+\item Weights: $w_j=1/3$ (\texttt{wProf}).
+\item Theta readouts: $\theta_j=-j^2$ (\texttt{thetaVProf}).
+\item $q$ readouts: $q_j=-1$ (\texttt{qVProf}).
+\item Unit readouts: $0$ on both sides for every label
+(\texttt{unitThetaProf}, \texttt{unitQProf}).
+\item Carrier type $\alpha=\mathbb R$; hull operator $\Omega$ is
+the identity hull \texttt{trivialHull}: every subset is in the
+domain and is a hull, and $\Omega.\varphi(S)=S$.
+\item Theta region and family:
+$T=\{-14/3\}$ (\texttt{TProf}), $\Fam=\{T\}$ (\texttt{FamProf}).
+\item Aggregate $q$ value: $v_Q=-1$ (\texttt{vQProf}).
+\item Volume readout, for $S\subseteq\mathbb R$:
+\[
+\mu(S)=
+\begin{cases}
+-\dfrac{14}{3}, & -\dfrac{14}{3}\in S,\\[2mm]
+-100, & -\dfrac{14}{3}\notin S
+\end{cases}
+\qquad\text{(\texttt{muProf})}.
+\]
+\end{itemize}
+\end{definition}
+
+The definitions of $T$ and $\mu$ are intentionally minimal.
+They are not a reconstruction of the actual log-volume or
+holomorphic hull.  Their purpose is to test what follows from
+the weak inputs listed in Section~2 without additional geometry
+of the actual hull.  If the actual construction has stronger
+hull properties which rescue the conclusion, those properties
+are precisely an extra input beyond the list; the present
+independence result identifies that such an extra input is
+necessary.
+
+\section{Main theorems}
+
+\begin{theorem}[Profile countermodel;
+Lean: \texttt{profile\_countermodel}]
+The datum of Definition~4.1 satisfies all of the following.
+\begin{enumerate}[leftmargin=*]
+\item $\mu$ is monotone, $\bigcup\Fam$ is in the domain of the
+identity hull, and $T\in\Fam$.
+\item The decompositions
+\[
+\mu(T)=\sum_{j=1}^{3}\frac13(-j^2)=-\frac{14}{3},
+\qquad
+v_Q=\sum_{j=1}^{3}\frac13(-1)=-1
+\]
+hold.
+\item At the normalized generator, $\theta_1=q_1=-1$, and the
+unit-side readouts agree at every label.
+\item $v_Q=\frac{3}{14}\mu(T)$.
+\item Nevertheless (Hloc) is false, and the conclusion
+$v_Q\leq\mu(\Omega.\varphi(\bigcup\Fam))$ is false.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+For monotonicity, let $A\subseteq B$.  If $-14/3\in A$ then
+$-14/3\in B$ and both values are $-14/3$.  If
+$-14/3\notin A$, then $\mu(A)=-100$, while $\mu(B)$ is either
+$-14/3$ or $-100$; hence $\mu(A)\leq\mu(B)$.  For the identity
+hull every set is in the domain and $\Omega.\varphi(S)=S$.
+Since $\Fam=\{T\}$, we have $T\in\Fam$ and
+$\bigcup\Fam=T$.
+
+The finite sums are direct:
+\[
+\sum_{j=1}^{3}\frac13(-j^2)
+ =-\frac{1+4+9}{3}=-\frac{14}{3},
+\qquad
+\sum_{j=1}^{3}\frac13(-1)=-1.
+\]
+Also $-14/3\in T$, so $\mu(T)=-14/3$.  At the generator,
+$\theta_1=-1^2=-1=q_1$, and both unit readouts are $0$ by
+definition.  The aggregate relation is
+$\frac{3}{14}\cdot(-14/3)=-1=v_Q$.
+
+On the other hand, at $j=2$ we have $q_2=-1$ and
+$\theta_2=-4$, so (Hloc) fails.  The conclusion would read
+$-1=v_Q\leq\mu(\Omega.\varphi(T))=\mu(T)=-14/3$, which is
+false.
+\end{proof}
+
+\begin{corollary}[Aggregate scale;
+Lean: \texttt{aggregate\_scale\_eq},
+\texttt{aggregate\_scale\_ne\_one}]
+In the datum of Definition~4.1, any real number $s$ satisfying
+$v_Q=s\,\mu(T)$ is equal to $3/14$.  In particular $s\neq1$.
+\end{corollary}
+
+\begin{proof}
+Solve $-1=s(-14/3)$.
+\end{proof}
+
+\begin{theorem}[Independence;
+Lean: \texttt{no\_cor312\_derivation\_without\_hlocal}]
+There is no universally quantified derivation of the conclusion
+(C) from inputs (A1)--(A5) alone.  Precisely, it is false that
+for every hull operator $\Omega$, family $\Fam$, region $T$,
+readout $\mu$, value $v_Q$, finite index set and weights and
+readouts, inputs (A1)--(A5) imply (C).
+\end{theorem}
+
+\begin{proof}
+Apply such a putative derivation to Definition~4.1.  By
+Theorem~5.1 all hypotheses (A1)--(A5) hold while (C) is false,
+a contradiction.
+\end{proof}
+
+\subsection{The computation for general $\ell$}
+
+The formalized witness is at $\ell=7$; one counterexample refutes
+the universal derivation.  The aggregate computation is the same
+for every odd prime $\ell\ge5$.  Put $m=(\ell-1)/2$, labels
+$j=1,\ldots,m$, equal weights $1/m$, $\theta_j=-j^2u$ and
+$q_j=-u$ with $u>0$.  Then
+\[
+\frac1m\sum_{j=1}^{m}j^2
+ =\frac{(m+1)(2m+1)}6
+ =\frac{\ell(\ell+1)}{12},
+\]
+hence
+\[
+s_{\mathrm{agg}}
+ =\frac{-u}{-\frac{\ell(\ell+1)}{12}u}
+ =\frac{12}{\ell(\ell+1)}\neq1
+\qquad(\ell\ge5).
+\]
+For example, at $\ell=5,7,11,13$ the mean profile coefficients
+are $5/2$, $14/3$, $11$ and $91/6$.  The general computation is
+the elementary finite-sum formula; the Lean theorem mechanizes
+the $\ell=7$ witness.
+
+\subsection{Permutation-invariant readouts}
+
+Extracting only the label $j=1$ would give the generator value
+$-u$.  But a procession volume readout does not distinguish
+labels in this way.  In general, a permutation-invariant linear
+readout must have equal weights: invariance under all
+transpositions forces all weights to coincide, and normalization
+on the constant profile $(1,\ldots,1)$ forces each weight to be
+$1/m$.  Such a readout is therefore the mean, which returns
+$\ell(\ell+1)/12\neq1$ on the theta side.  The minimum readout
+does return $1$, but it is not additive over tensor factors and
+hence is not a log-volume readout: for instance
+$\min(1,4)+\min(4,1)=2$, whereas
+$\min((1,4)+(4,1))=5$.
+
+\section{Lean verification}
+
+The Lean module and namespace are
+\begin{verbatim}
+M3.relative.ActualValuePartProfileIndependence
+Kouchiku.M3.ActualValuePartProfileIndependence
+\end{verbatim}
+Its
+main declarations are
+{\small\texttt{profile\_countermodel}},
+{\small\texttt{aggregate\_scale\_ne\_one}} and
+{\small\texttt{no\_cor312\_derivation\_\allowbreak
+without\_hlocal}}.
+The selected build in the author's Lean development repository
+was run as follows.
+\begin{verbatim}
+python3 tools/lean_selected.py \
+  M3.relative.ActualValuePartProfileIndependence
+\end{verbatim}
+The terminal output observed was:
+\begin{verbatim}
+Selected closure: 2 modules
+[1/2] M3.theorem311.Remark395HullIsAClosure [cached]
+[2/2] M3.relative.ActualValuePartProfileIndependence
+'...profile_countermodel' depends on axioms:
+  [propext, Classical.choice, Quot.sound]
+'...aggregate_scale_ne_one' depends on axioms:
+  [propext, Classical.choice, Quot.sound]
+'...no_cor312_derivation_without_hlocal' depends on axioms:
+  [propext, Classical.choice, Quot.sound]
+PASS: 2 modules.
+\end{verbatim}
+Thus there is no \texttt{sorryAx} and no additional axiom in the
+main theorems.  The Lean file is recorded in commit
+\texttt{bc25c4c9} of the author's development branch
+\texttt{muse/valuepart-radial-20261110}, and is included in the
+supplementary package for this note.
+
+\begin{remark}[Scope of the build]
+This selected build does not recompile the whole assembly
+development.  The present file deliberately imports only the
+defining module of the \texttt{HullOperator} type also used by
+the assembly capstone, together with the needed Mathlib
+components.  The hypothesis shape was matched by direct reading
+of \texttt{cor312\_of\_assembly} in
+\texttt{Cor312Assembly.lean}.  What is machine-checked here is
+therefore the independence theorem of this note itself, not the
+assembly paper as a whole and not the actual IUT construction.
+\end{remark}
+
+\section{Objections and scope}
+
+\subsection{The model is too degenerate}
+
+The model uses the identity hull and a singleton region.  For an
+independence statement quantified over all data satisfying the
+listed properties, degenerate data are legitimate
+counterexamples.  The actual holomorphic hull may of course have
+stronger closure, convexity or analytic properties which rescue
+the conclusion.  In that case the rescuing property is exactly
+an additional input.  The present result certifies that no
+derivation exists without such an addition.
+
+\subsection{The indices should be places, not labels}
+
+The finite sum in the capstone shape can be read with place
+indices or with combined (place, label) indices.  We use the
+finer reading to expose the profile.  Pre-aggregation at a fixed
+bad place does not help: the two place aggregates are already
+$-14u/3$ and $-u$.  Across several bad places the same ratio
+$\ell(\ell+1)/12$ occurs at each place, and summing with
+coefficients $u_{\underline v}\ge0$ produces no cancellation.
+Coarsening the indices or passing to a global sum therefore does
+not remove the mismatch.
+
+\subsection{The readout $\mu$ is not the actual log-volume}
+
+Correct, and stated as such above.  Inputs (A1)--(A5) impose on
+$\mu$ only monotonicity and two decompositions.  Additional laws
+satisfied by the actual log-volume --- its full behaviour under
+tensor products, lower bounds coming from the spread of the
+hull, or detailed normalizations across places --- are not in
+the input list.  An argument using such laws may evade the
+countermodel, but then the additional law carrying the weight
+must be named.  The point of this note is that one cannot say
+``the remaining lemmas will close the gap'' without that naming.
+
+\subsection{Why not select the generator $j=1$?}
+
+The two sides do agree at the normalized generator $j=1$.  That
+is chart-scale preservation.  But the Corollary-3.12-shaped
+conclusion measures the hull of the whole family of possible
+images with procession-normalized volume, not a single
+generator.  By Section~5.2, a permutation-invariant linear
+aggregation is necessarily the mean.  An operation selecting
+one label asymmetrically is not part of the mono-analytic
+procession vocabulary; if additional structure justifies such a
+selection, it forms part of the profile switch and should be
+stated as such.
+
+\subsection{Why not assume aggregate scale $s=1$ separately?}
+
+Assuming $s_{\mathrm{agg}}=1$ removes the defect by fiat, but
+under the source readout the two aggregates have ratio
+$\ell(\ell+1)/12$, so $s_{\mathrm{agg}}=1$ is incompatible with
+the readout itself.  The mathematical question is how the
+theta-side quantity, before aggregation, is connected through
+the hull of possible images to the $q$-side quantity.  Setting
+a numerical ratio to $1$ afterwards does not prove that
+connection.
+
+\subsection{The actual construction may contain more}
+
+This is compatible with the present conclusion.  For example,
+[EtTh] contains a local skeleton in which the difference of two
+sections is valued in the cyclotomic kernel and the theta class
+is pinned modulo units.  The actual Frobenioid construction has
+far more structure than the abstraction of Section~2.  What the
+countermodel shows is that at least one piece of that structure
+must carry weight at the profile level.  Conversely, once a
+candidate additional mechanism is proposed, the countermodel
+indicates which listed hypothesis it must violate or strengthen:
+for instance the actual hull must spread strictly more than the
+identity hull, the actual family of possible images must be
+larger, or an object-level identification must change the
+labelwise readouts.
+
+\section{Conclusion}
+
+Preservation of chart calibration and of the normalized
+generator scale does not imply preservation after aggregation.
+When the measured profile changes from $\{j^2u\}_j$ to
+$\{u\}_j$, the same ruler and the same equal weights produce
+aggregates differing by the factor $\ell(\ell+1)/12$.  The
+countermodel satisfies every other assembly input and still
+falsifies the conclusion.  The missing input is therefore
+localized exactly at the profile switch, not distributed over
+unspecified ``remaining lemmas''.
+
+From the point of view of formalization, this is a boundary
+result rather than a failure of effort.  A method which stacks
+further lemmas inside the fixed abstraction cannot cross the
+boundary.  Progress requires either formalizing the actual
+construction in richer definitions and exhibiting where the
+profile-level identification occurs, or explicitly introducing
+an object-level input equivalent to that identification.  This
+note fixes that necessity in finite, machine-checkable form.
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+residual & content & relation to this note\\
+\midrule
+R1 & IUT black boxes & not verified here\\
+R2V & value-group switch H*val &
+central input shown independent\\
+R2 & inhabitation / frame fidelity &
+no inhabitation claim is made\\
+R3 & independent re-verification &
+source audit and rereading remain\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section*{Disclosure}
+
+This work was carried out by the author as an independent
+researcher and is unrelated to any institutional affiliation.
+Generative AI was used under the author's direction in the
+audit, formalization and preparation of this draft.  The author
+bears responsibility for its contents.  This is an unrefereed
+preprint.
+
+\begin{thebibliography}{99}
+
+\bibitem[IUTchI]{IUTchI}
+S.~Mochizuki,
+Inter-universal Teichm\"uller Theory I: Construction of Hodge
+Theaters, Publ.\ Res.\ Inst.\ Math.\ Sci.\ \textbf{57} (2021),
+3--207.
+
+\bibitem[IUTchII]{IUTchII}
+S.~Mochizuki,
+Inter-universal Teichm\"uller Theory II:
+Hodge-Arakelov-theoretic Evaluation,
+Publ.\ Res.\ Inst.\ Math.\ Sci.\ \textbf{57} (2021), 209--401.
+
+\bibitem[IUTchIII]{IUTchIII}
+S.~Mochizuki,
+Inter-universal Teichm\"uller Theory III: Canonical Splittings
+of the Log-theta-lattice,
+Publ.\ Res.\ Inst.\ Math.\ Sci.\ \textbf{57} (2021), 403--626.
+
+\bibitem[IUTchIV]{IUTchIV}
+S.~Mochizuki,
+Inter-universal Teichm\"uller Theory IV: Log-volume
+Computations and Set-theoretic Foundations,
+Publ.\ Res.\ Inst.\ Math.\ Sci.\ \textbf{57} (2021), 627--723.
+
+\bibitem[EtTh]{EtTh}
+S.~Mochizuki,
+The \'Etale Theta Function and its Frobenioid-theoretic
+Manifestations,
+Publ.\ Res.\ Inst.\ Math.\ Sci.\ \textbf{45} (2009), 227--349.
+
+\bibitem[SS]{SS}
+P.~Scholze and J.~Stix, Why abc is still a conjecture, 2018.
+
+\bibitem[U26]{U26}
+T.~Urahigashi, Where Theorem 3.11 sits, Zenodo,
+doi:10.5281/zenodo.24104932 (version 1.2.1).
+
+\bibitem[U26b]{U26b}
+T.~Urahigashi, Forgetting and Completeness, Zenodo,
+doi:10.5281/zenodo.24165837 (version 1.1.3).
+
+\bibitem[U26c]{U26c}
+T.~Urahigashi, A conditional assembly from Theorem~3.11 to
+Corollary~3.12: decomposition of the scalar layer, a semantic
+principle, and isolation of the value-group profile switch,
+Zenodo, doi:10.5281/zenodo.24179190 (version 1.0.1).
+
+\bibitem[LANA]{LANA}
+Project LANA, interim reports ((9-1), \texttt{xi\_iff}).
+Cited only for the correspondence with preceding reductions;
+no result of that project is used as an input here.
+
+\end{thebibliography}
+
+\end{document}
+
+
+
+
