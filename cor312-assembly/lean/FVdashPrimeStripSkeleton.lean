@@ -1,41 +1,44 @@
 /-
-★★★★★ Phase E-4o：`F^Vdash` global/place/rho structured skeleton
+# `F^Vdash` prime-strips: a structured skeleton of global data, places and `rho`
 
-原典 HTML の境界：
+Boundary with the source:
 
-* [IUTchI], [IUT I], Definition 5.2(iv)：
-  `F^Vdash` prime-strip は四つ組
-  `(global Frobenioid C^Vdash, Prime(C^Vdash) ≃ V,
-    {local F^vdash_v}, {rho_v})` である。各 `rho_v` は global divisor
-  monoid と local realified Frobenioid monoid の topological monoid
-  isomorphism であり、射はこの全データの isomorphism である。
-* [IUTchI], Remark 3.5.2：データの isomorphism は
-  構成データ間の「obvious compatibility」を満たすが、個々の式は省略される。
-  category components は equivalence の isomorphism class として読む。
-* [IUTchII], [IUT II], Corollary 4.6(iv),(v)：
-  local Env／Gau evaluation は action／splitting と両立し、global evaluation
-  は prime bijections と local `rho` の下で local evaluation と両立する。
-* [IUTchII], Definition 4.9(viii)：enhanced
-  `F^(Vdash blacktriangleright times-mu)` strip も同じ四つ組 shape を持つ。
-* [IUTchII], Corollary 4.10(ii)：actual Env／Gau
-  four-tuples と、それら全データの evaluation isomorphism が構成される。
+* [IUTchI], [IUT I], Definition 5.2(iv): an `F^Vdash` prime-strip is a
+  four-tuple `(global Frobenioid C^Vdash, Prime(C^Vdash) ≃ V,
+    {local F^vdash_v}, {rho_v})`.  Each `rho_v` is an isomorphism of
+  topological monoids between the global divisor monoid and the local
+  realified Frobenioid monoid, and a morphism is an isomorphism of all of
+  these data.
+* [IUTchI], Remark 3.5.2: isomorphisms of data satisfy the "obvious
+  compatibility" between the constituent data, but the individual formulas
+  are omitted.  Category components are read as isomorphism classes of
+  equivalences.
+* [IUTchII], [IUT II], Corollary 4.6(iv),(v): local Env/Gau evaluation is
+  compatible with the action/splitting, and global evaluation is compatible
+  with local evaluation under the prime bijections and the local `rho`.
+* [IUTchII], Definition 4.9(viii): the enhanced
+  `F^(Vdash blacktriangleright times-mu)` strip has the same four-tuple shape.
+* [IUTchII], Corollary 4.10(ii): the actual Env/Gau four-tuples and the
+  evaluation isomorphisms of all of their data are constructed.
 
-本ファイルは四つ組の dependent type skeleton と、その射を property-free raw
-data として構成する。`PrimeLabelSquare` と `RhoNaturalitySquare` は Remark 3.5.2
-の compatibility を pointwise strict equality で展開した [P] interface であって、
-原典に表示された逐語式ではない。
+This file constructs the dependent-type skeleton of the four-tuple and its
+morphisms as property-free raw data.  `PrimeLabelSquare` and
+`RhoNaturalitySquare` are [P] interfaces that unfold the compatibility of
+Remark 3.5.2 as pointwise strict equalities; they are not formulas displayed
+verbatim in the source.
 
-`Global`／`Local v` は既に structured Frobenioid objects を表す入力型とする。
-従って裸の carrier equivalence へ潰さない。一方、このファイルは actual
-Frobenioid、Definition 5.2(iv)(a),(f) の model-identification、各 fiber の
-`R_{>=0}` model、Corollary 4.6 の actual constructor を与えない。末尾の finite
-Bool／C3 模型は SOURCE object の模型ではなく、二 compatibility predicates と
-closed-fiber degeneration の [P/audit] だけを検査する。
+`Global` / `Local v` are input types that already stand for structured
+Frobenioid objects, so they are not collapsed to bare carrier equivalences.
+On the other hand, this file does not give the actual Frobenioids, the model
+identification of Definition 5.2(iv)(a),(f), the `R_{>=0}` model of each
+fibre, or the actual constructor of Corollary 4.6.  The finite Bool / C3
+models at the end are not models of the source's objects; they check only
+the two compatibility predicates and the degeneration of the closed fibre.
 -/
 
 import M3.thetalink.CompletePolyIso
 
-namespace Grounding.ThetaLink
+namespace IUTFormal.ThetaLink
 
 noncomputable section
 
@@ -194,7 +197,7 @@ def FVdashIsoRaw.toTwoSquare
     TwoSquareFVdashIso S T GlobalIso LocalIso :=
   ⟨R, hPrime, hRho⟩
 
-/-! ## 4. Finite audit models; these are not SOURCE Frobenioids -/
+/-! ## 4. Finite check models; these are not the source's Frobenioids -/
 
 def boolFlipEquiv : Bool ≃ Bool where
   toFun b := !b
@@ -448,4 +451,4 @@ theorem source_shape_and_squares_do_not_exclude_closed_unit :
 
 end
 
-end Grounding.ThetaLink
+end IUTFormal.ThetaLink

@@ -1,6 +1,6 @@
 # Forgetting and completeness: the centre of the passage from Theorem 3.11 to Corollary 3.12 in inter-universal Teichmüller theory
 
-Version 1.1.3, 12 November 2026 (13 pages; Appendix A added in 1.1.0, Disclosure and figure placement corrected in 1.1.1, open-interface count, audit-range wording and the c/s dictionary corrected in 1.1.2, terminology around scale clarified in 1.1.3: the defect Δ is an aggregate readout quantity, and identity of a chart calibration does not by itself identify pilot value-group profiles; no proposition, Lean file, audit status or conclusion changed). DOI [10.5281/zenodo.24165837](https://doi.org/10.5281/zenodo.24165837);
+Version 1.1.4, 14 November 2026 (13 pages; Appendix A added in 1.1.0, Disclosure and figure placement corrected in 1.1.1, open-interface count, audit-range wording and the c/s dictionary corrected in 1.1.2, terminology around scale clarified in 1.1.3: the defect Δ is an aggregate readout quantity, and identity of a chart calibration does not by itself identify pilot value-group profiles; in 1.1.4 the description of the Lean development and of the source audit is reworded and the comments of the Lean files are rewritten in English; no proposition, Lean statement, audit status or conclusion changed). DOI [10.5281/zenodo.24209901](https://doi.org/10.5281/zenodo.24209901);
 all versions: [10.5281/zenodo.24135420](https://doi.org/10.5281/zenodo.24135420).
 
 The passage from Theorem 3.11 to Corollary 3.12 in inter-universal
@@ -47,11 +47,11 @@ needed to decide the sign of Δ.
   and their recorded output is in
   `lean/CompletenessFrameCore.check.log`.
 - `lean/ActualValuePartCompletenessFrame.lean` — the frame file of
-  the author's larger sideways development, including the
+  the author's larger Lean development, including the
   instantiation on value-part classes, reproduced for reference. It
   is not standalone: it is module
   `M3.relative.ActualValuePartCompletenessFrame` of that development
-  (branch `muse/valuepart-radial-20261110`, commit
+  (commit
   `1e144663259ff07329f2158b3e2043d396fa4d54`), where its selected
   build (341 modules) was verified within the standard three
   axioms.

@@ -1,4 +1,4 @@
--- Formal implication checks for the question note ronbun9810.
+-- Formal implication checks for the question note.
 import M3.relative.ActualValuePartProfileIndependence
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.BigOperators.Ring.Finset
@@ -39,10 +39,10 @@ The countermodel itself is imported from
 noncomputable section
 set_option autoImplicit false
 
-namespace Kouchiku.M3.ActualValuePartQuestionImplications
+namespace IUTFormal.M3.ActualValuePartQuestionImplications
 
-open Kouchiku.M3.Theorem311.Remark395
-open Kouchiku.M3.ActualValuePartProfileIndependence
+open IUTFormal.M3.Theorem311.Remark395
+open IUTFormal.M3.ActualValuePartProfileIndependence
 open Classical
 
 /-! ## Splittings of one surjection -/
@@ -252,5 +252,5 @@ theorem same_weighted_total_of_distinct_profile :
 #print axioms no_derivation_from_transported_equality_alone
 #print axioms same_weighted_total_of_distinct_profile
 
-end Kouchiku.M3.ActualValuePartQuestionImplications
+end IUTFormal.M3.ActualValuePartQuestionImplications
 

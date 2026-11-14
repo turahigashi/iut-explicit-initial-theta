@@ -42,23 +42,23 @@ No new axioms.  Not independently re-checked.
 noncomputable section
 set_option autoImplicit false
 
-namespace Kouchiku.M3.ActualValuePartLocalCancellationTate
+namespace IUTFormal.M3.ActualValuePartLocalCancellationTate
 
 open NumberField
-open Grounding.Theorem311
-open Grounding.Theorem311.NumberFieldRealDivisor
-open Grounding.Theorem311.NumberFieldRealLocalization
-open Kouchiku.IUT1.Corollary37
-open Kouchiku.IUT2.Definition49viii
-open Kouchiku.M3.ActualStrictBelyiFieldReconstruction
-open Kouchiku.M3.ActualValuePartQuotient
-open Kouchiku.M3.ActualValuePartRealifiedProbe
-open Kouchiku.M3.ActualFinitePlaceArithmeticCurve
+open IUTFormal.Theorem311
+open IUTFormal.Theorem311.NumberFieldRealDivisor
+open IUTFormal.Theorem311.NumberFieldRealLocalization
+open IUTFormal.IUT1.Corollary37
+open IUTFormal.IUT2.Definition49viii
+open IUTFormal.M3.ActualStrictBelyiFieldReconstruction
+open IUTFormal.M3.ActualValuePartQuotient
+open IUTFormal.M3.ActualValuePartRealifiedProbe
+open IUTFormal.M3.ActualFinitePlaceArithmeticCurve
 open Dispute.Prop310FinitePrimeFiberPacket
-open Grounding.ThetaLink.GaussianMonoidFromThetaValues
-open Grounding.ThetaLink.GaussianThetaLogReadout
-open Grounding.Theorem311.NumberFieldPrimeRays
-open Grounding.Theorem311.NumberFieldCompletionDegreeNormalization
+open IUTFormal.ThetaLink.GaussianMonoidFromThetaValues
+open IUTFormal.ThetaLink.GaussianThetaLogReadout
+open IUTFormal.Theorem311.NumberFieldPrimeRays
+open IUTFormal.Theorem311.NumberFieldCompletionDegreeNormalization
 
 variable (F : Type) [Field F] [NumberField F]
 variable (p : ℕ) [Fact p.Prime]
@@ -73,7 +73,7 @@ theorem calibratedAt_of_gen_chart (S : PStrip F) {α : ℝ}
     (hgen : (S.gen (Sum.inl (FinitePlace.mk v.1)) : ℝ)
       = α * ActualValuePartLocalGlobal.tateCoordinate F p W v h)
     (hchart : ((chartChange S (Sum.inl (FinitePlace.mk v.1))
-        Kouchiku.IUT1.Example35.posOne : positive) : ℝ) * α = 1) :
+        IUTFormal.IUT1.Example35.posOne : positive) : ℝ) * α = 1) :
     ActualValuePartLocalGlobal.CalibratedAt F p W v h S := by
   show normGen S (Sum.inl (FinitePlace.mk v.1))
     = ActualValuePartLocalGlobal.tatePositive F p W v h
@@ -88,13 +88,13 @@ omit [Fact p.Prime] in
 `χT * β = χS * α` (both sides are `1`). -/
 theorem chart_ratio_of_gen_chart (S T : PStrip F) {α β : ℝ}
     (hchartS : ((chartChange S (Sum.inl (FinitePlace.mk v.1))
-        Kouchiku.IUT1.Example35.posOne : positive) : ℝ) * α = 1)
+        IUTFormal.IUT1.Example35.posOne : positive) : ℝ) * α = 1)
     (hchartT : ((chartChange T (Sum.inl (FinitePlace.mk v.1))
-        Kouchiku.IUT1.Example35.posOne : positive) : ℝ) * β = 1) :
+        IUTFormal.IUT1.Example35.posOne : positive) : ℝ) * β = 1) :
     ((chartChange T (Sum.inl (FinitePlace.mk v.1))
-        Kouchiku.IUT1.Example35.posOne : positive) : ℝ) * β
+        IUTFormal.IUT1.Example35.posOne : positive) : ℝ) * β
       = ((chartChange S (Sum.inl (FinitePlace.mk v.1))
-        Kouchiku.IUT1.Example35.posOne : positive) : ℝ) * α :=
+        IUTFormal.IUT1.Example35.posOne : positive) : ℝ) * α :=
   hchartT.trans hchartS.symm
 
 /-- ★ Pilot degrees agree for two strips whose generators
@@ -108,11 +108,11 @@ theorem pilot_degree_eq_of_tate_gen_chart (S T : PStrip F)
     (hgenS : (S.gen (Sum.inl (FinitePlace.mk v.1)) : ℝ)
       = α * ActualValuePartLocalGlobal.tateCoordinate F p W v h)
     (hchartS : ((chartChange S (Sum.inl (FinitePlace.mk v.1))
-        Kouchiku.IUT1.Example35.posOne : positive) : ℝ) * α = 1)
+        IUTFormal.IUT1.Example35.posOne : positive) : ℝ) * α = 1)
     (hgenT : (T.gen (Sum.inl (FinitePlace.mk v.1)) : ℝ)
       = β * ActualValuePartLocalGlobal.tateCoordinate F p W v h)
     (hchartT : ((chartChange T (Sum.inl (FinitePlace.mk v.1))
-        Kouchiku.IUT1.Example35.posOne : positive) : ℝ) * β = 1)
+        IUTFormal.IUT1.Example35.posOne : positive) : ℝ) * β = 1)
     (bad : Finset (ArithmeticPlace F)) :
     degree F ((pilot T bad).alpha : Divisor F) =
       degree F ((pilot S bad).alpha : Divisor F) :=
@@ -161,7 +161,7 @@ noncomputable def tateGenFamily : ArithmeticPlace F → positive :=
   fun w => @ite _ (w = Sum.inl (FinitePlace.mk v.1))
     (Classical.propDecidable _)
     (ActualValuePartLocalGlobal.tatePositive F p W v h)
-    Kouchiku.IUT1.Example35.posOne
+    IUTFormal.IUT1.Example35.posOne
 
 theorem tateGenFamily_pos :
     ∀ w, (0 : ℝ) < (tateGenFamily F p W v h w : ℝ) := by
@@ -172,7 +172,7 @@ theorem tateGenFamily_pos :
     rw [ActualValuePartLocalGlobal.coe_tatePositive]
     exact ActualValuePartLocalGlobal.tateCoordinate_pos F p W v h
   · simp only [tateGenFamily, if_neg hw]
-    rw [Kouchiku.IUT1.Example35.coe_posOne]
+    rw [IUTFormal.IUT1.Example35.coe_posOne]
     norm_num
 
 /-- Chart family of the θ-side model strip: `1 / (2ℓ)` at
@@ -196,13 +196,13 @@ theorem thetaChartFamily_pos (hell : 0 < ell) :
 
 /-- The θ-side model strip at the actual Tate datum. -/
 noncomputable def thetaTateStrip : PStrip F :=
-  Kouchiku.IUT1.Corollary37.thtStrip F
+  IUTFormal.IUT1.Corollary37.thtStrip F
     (tateGenFamily F p W v h) (tateGenFamily_pos F p W v h)
     (thetaChartFamily F p v ell) (thetaChartFamily_pos F p v ell hell)
 
 /-- The mod-side model strip at the actual Tate datum. -/
 noncomputable def modTateStrip : PStrip F :=
-  Kouchiku.IUT1.Corollary37.modStrip F
+  IUTFormal.IUT1.Corollary37.modStrip F
     (tateGenFamily F p W v h) (tateGenFamily_pos F p W v h)
 
 theorem coe_gen_thetaTateStrip :
@@ -304,20 +304,20 @@ theorem pilot_degree_thetaTateStrip_eq
         Divisor F) :=
   ActualValuePartLocalGlobal.calibrated_pilot_degree_eq F p W v h
     (thetaTateStrip F p W v h ell hell) (modTateStrip F p W v h)
-    (Kouchiku.IUT1.Corollary37.thetaIso F _ _ _ _)
+    (IUTFormal.IUT1.Corollary37.thetaIso F _ _ _ _)
     (calibratedAt_thetaTateStrip F p W v h ell hell)
     (calibratedAt_modTateStrip F p W v h)
     bad
 
 end ThetaStripInstance
 
-end Kouchiku.M3.ActualValuePartLocalCancellationTate
+end IUTFormal.M3.ActualValuePartLocalCancellationTate
 
 end
 
 #print axioms
-  Kouchiku.M3.ActualValuePartLocalCancellationTate.pilot_degree_eq_of_tate_gen_chart
+  IUTFormal.M3.ActualValuePartLocalCancellationTate.pilot_degree_eq_of_tate_gen_chart
 #print axioms
-  Kouchiku.M3.ActualValuePartLocalCancellationTate.neg_log_readout_thetaRootClass
+  IUTFormal.M3.ActualValuePartLocalCancellationTate.neg_log_readout_thetaRootClass
 #print axioms
-  Kouchiku.M3.ActualValuePartLocalCancellationTate.pilot_degree_thetaTateStrip_eq
+  IUTFormal.M3.ActualValuePartLocalCancellationTate.pilot_degree_thetaTateStrip_eq

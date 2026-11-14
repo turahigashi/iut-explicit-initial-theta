@@ -1,8 +1,8 @@
--- Route C (L2-130/L2-131): profile independence countermodel for
+-- Profile independence countermodel for
 -- the Cor. 3.12 assembly capstone.
 -- Import is deliberately light: the independence statement below
 -- replicates the hypothesis shape of
--- `Kouchiku.M3.Cor312Assembly.cor312_of_assembly`
+-- `IUTFormal.M3.Cor312Assembly.cor312_of_assembly`
 -- (M3/relative/Cor312Assembly.lean) minus `hlocal`, over the
 -- same `HullOperator` type; it does not need the assembly module.
 import M3.theorem311.Remark395HullIsAClosure
@@ -17,12 +17,12 @@ do not imply the Corollary-3.12-shaped conclusion
 This module exhibits one concrete profile-valued datum (at
 `ℓ = 7`, labels `j ∈ {1, 2, 3}`, one bad place, normalized
 `u = 1`) which satisfies every hypothesis of
-`Kouchiku.M3.Cor312Assembly.cor312_of_assembly` **except**
+`IUTFormal.M3.Cor312Assembly.cor312_of_assembly` **except**
 label-wise `hlocal`, together with the extra supplied-layer
 inputs of the assembly, and in which the conclusion
 `vQ ≤ μ (hull)` is **false**.
 
-Readouts are the source-certified ones (L2-131):
+Readouts are those read off the source:
 
 * Θ-pilot label-`j` readout `-(j^2) * u`  (theta values
   `q̲^{j^2}`; IUT IV Thm. 1.10 proof (v), `λ = ord(q̲_{v_j}^{j^2})`),
@@ -44,20 +44,21 @@ What fails, and only this: label-wise corrected equality
 `hlocal` (`j = 2`: `-1 ≠ -4`), equivalently the aggregate scale
 is forced to `s = 3/14 = 12/(ℓ(ℓ+1)) ≠ 1`.  Hence no derivation
 of the capstone conclusion exists from the remaining inputs;
-a profile-level switch (H*val, preprint R2V) is logically
-independent of them.  This is an independence statement about
+the profile part of H*val (preprint R2V), namely `hlocal`, is
+logically independent of them; the membership part `hmem` holds
+in the model.  This is an independence statement about
 the listed assembly inputs, not a statement about the actual
 IUT construction.
 
-No new axioms.  独立の点検は受けていない。
+No new axioms.  Not independently re-checked.
 -/
 
 noncomputable section
 set_option autoImplicit false
 
-namespace Kouchiku.M3.ActualValuePartProfileIndependence
+namespace IUTFormal.M3.ActualValuePartProfileIndependence
 
-open Kouchiku.M3.Theorem311.Remark395
+open IUTFormal.M3.Theorem311.Remark395
 open Classical
 
 /-! ## The ℓ = 7 profile datum (one bad place, `u = 1`) -/
@@ -173,9 +174,9 @@ the hypotheses of `cor312_of_assembly` with label-wise
 `hlocal` removed — even though membership, the volume
 decompositions with the certified profile readout, generator
 cancellation and unit compatibility can all hold
-simultaneously (`profile_countermodel`).  The profile switch
-(H*val) is therefore independent of the remaining assembly
-inputs. -/
+simultaneously (`profile_countermodel`).  The profile part of
+H*val (`hlocal`; the membership part `hmem` holds in the model)
+is therefore independent of the remaining assembly inputs. -/
 theorem no_cor312_derivation_without_hlocal :
     ¬ ∀ (Ω : HullOperator ℝ) (Fam : Set (Set ℝ)) (T : Set ℝ)
         (μ : Set ℝ → ℝ) (vQ : ℝ)
@@ -190,13 +191,13 @@ theorem no_cor312_derivation_without_hlocal :
   exact hcon (h trivialHull FamProf TProf muProf vQProf
     placesProf wProf thetaVProf qVProf hμ hdom hmem hvθ hvq)
 
-end Kouchiku.M3.ActualValuePartProfileIndependence
+end IUTFormal.M3.ActualValuePartProfileIndependence
 
 end
 
 #print axioms
-  Kouchiku.M3.ActualValuePartProfileIndependence.profile_countermodel
+  IUTFormal.M3.ActualValuePartProfileIndependence.profile_countermodel
 #print axioms
-  Kouchiku.M3.ActualValuePartProfileIndependence.aggregate_scale_ne_one
+  IUTFormal.M3.ActualValuePartProfileIndependence.aggregate_scale_ne_one
 #print axioms
-  Kouchiku.M3.ActualValuePartProfileIndependence.no_cor312_derivation_without_hlocal
+  IUTFormal.M3.ActualValuePartProfileIndependence.no_cor312_derivation_without_hlocal

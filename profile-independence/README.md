@@ -1,6 +1,6 @@
 # Scale preservation is not enough: a profile-level independence countermodel for the Corollary 3.12 assembly inputs
 
-Version 1.0.0, 13 November 2026 (9 pages). DOI [10.5281/zenodo.24195284](https://doi.org/10.5281/zenodo.24195284);
+Version 1.0.1, 14 November 2026 (9 pages; v1.0.1 adds a remark relating the removed hypothesis (Hloc) to the Lean counterpart of H*val in the assembly note, rewords the description of the Lean build, and rewrites the comments of the Lean files in English with the root namespace of the excerpts renamed — no theorem or conclusion changed). DOI [10.5281/zenodo.24209904](https://doi.org/10.5281/zenodo.24209904);
 all versions [10.5281/zenodo.24195283](https://doi.org/10.5281/zenodo.24195283).
 Author: Toshihisa Urahigashi (independent researcher;
 ORCID [0009-0004-0460-6242](https://orcid.org/0009-0004-0460-6242)).
@@ -32,8 +32,7 @@ exists from the listed inputs once labelwise profile equality is
 removed. Further progress requires a genuinely profile-level input
 or a richer formalization of the actual construction.
 
-This is the English version of the Japanese preprint draft v0.1
-(ronbun9809).
+This is the English version of an unpublished Japanese draft.
 
 ## Contents
 

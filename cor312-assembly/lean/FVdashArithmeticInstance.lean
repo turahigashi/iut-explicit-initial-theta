@@ -33,9 +33,9 @@ Not independently re-checked.
 noncomputable section
 set_option autoImplicit false
 
-namespace Kouchiku.M3.FVdashArithmeticInstance
+namespace IUTFormal.M3.FVdashArithmeticInstance
 
-open Grounding.ThetaLink
+open IUTFormal.ThetaLink
 
 /-- Scaling equivalence on `Multiplicative ℝ` (= additive
 homothety `x ↦ a • x` in log-volume coordinates), as a
@@ -153,11 +153,11 @@ theorem arith_nondegenerate : FVdashIsoNondegenerate arithIso := by
         (fun z : Multiplicative ℝ => Multiplicative.toAdd z) h
       simp [arithIso, weight] at h2
 
-end Kouchiku.M3.FVdashArithmeticInstance
+end IUTFormal.M3.FVdashArithmeticInstance
 
 end
 
-#print axioms Kouchiku.M3.FVdashArithmeticInstance.scaleEquiv
-#print axioms Kouchiku.M3.FVdashArithmeticInstance.arithTwoSquare
+#print axioms IUTFormal.M3.FVdashArithmeticInstance.scaleEquiv
+#print axioms IUTFormal.M3.FVdashArithmeticInstance.arithTwoSquare
 #print axioms
-  Kouchiku.M3.FVdashArithmeticInstance.arith_nondegenerate
+  IUTFormal.M3.FVdashArithmeticInstance.arith_nondegenerate

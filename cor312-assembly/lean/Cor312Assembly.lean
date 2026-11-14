@@ -55,11 +55,11 @@ No new axioms.  Not independently re-checked.
 noncomputable section
 set_option autoImplicit false
 
-namespace Kouchiku.M3.Cor312Assembly
+namespace IUTFormal.M3.Cor312Assembly
 
-open Kouchiku.M3.Theorem311.Remark395
-open Kouchiku.M3.ActualValuePartCompletenessFrame
-open Kouchiku.M3.ActualValuePartHullIdentification
+open IUTFormal.M3.Theorem311.Remark395
+open IUTFormal.M3.ActualValuePartCompletenessFrame
+open IUTFormal.M3.ActualValuePartHullIdentification
 
 variable {α ι : Type*}
 
@@ -222,20 +222,20 @@ theorem scale_eq_one_of_assembly
     rw [h', this, sub_self]
   exact (scale_defect_eq_zero_iff_scale_eq_one hne).mp hdef
 
-end Kouchiku.M3.Cor312Assembly
+end IUTFormal.M3.Cor312Assembly
 
 end
 
 #print axioms
-  Kouchiku.M3.Cor312Assembly.volume_diff_invariant_under_shift
+  IUTFormal.M3.Cor312Assembly.volume_diff_invariant_under_shift
 #print axioms
-  Kouchiku.M3.Cor312Assembly.weighted_sum_sub_correction
+  IUTFormal.M3.Cor312Assembly.weighted_sum_sub_correction
 #print axioms
-  Kouchiku.M3.Cor312Assembly.monoCorrection_unramified
-#print axioms Kouchiku.M3.Cor312Assembly.monoCorrection_Q2
-#print axioms Kouchiku.M3.Cor312Assembly.cor312_of_assembly
+  IUTFormal.M3.Cor312Assembly.monoCorrection_unramified
+#print axioms IUTFormal.M3.Cor312Assembly.monoCorrection_Q2
+#print axioms IUTFormal.M3.Cor312Assembly.cor312_of_assembly
 #print axioms
-  Kouchiku.M3.Cor312Assembly.cor312_of_assembly_scaled
+  IUTFormal.M3.Cor312Assembly.cor312_of_assembly_scaled
 #print axioms
-  Kouchiku.M3.Cor312Assembly.scale_eq_one_of_assembly
+  IUTFormal.M3.Cor312Assembly.scale_eq_one_of_assembly
 

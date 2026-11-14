@@ -1,7 +1,7 @@
 -- Lean check of the relations drawn for the region B in Figure 1 of
 -- "A conditional assembly from Theorem 3.11 to Corollary 3.12" (v1.0.2).
 --
--- Frame: the hypotheses of `Kouchiku.M3.Cor312Assembly.cor312_of_assembly`,
+-- Frame: the hypotheses of `IUTFormal.M3.Cor312Assembly.cor312_of_assembly`,
 -- replicated here in the same shape (as in
 -- `ActualValuePartProfileIndependence`), together with the chart/generator
 -- layer (Proposition A, `s_chart = 1`) and the unit layer (Lemma 8.2).
@@ -23,8 +23,8 @@ set_option autoImplicit false
 
 namespace VennRegionB
 
-open Kouchiku.M3.Theorem311.Remark395
-open Kouchiku.M3.ActualValuePartProfileIndependence
+open IUTFormal.M3.Theorem311.Remark395
+open IUTFormal.M3.ActualValuePartProfileIndependence
 open Classical
 
 /-- One "structure" of the figure, at the level of the assembly capstone. -/

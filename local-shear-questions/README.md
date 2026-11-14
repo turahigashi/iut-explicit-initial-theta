@@ -2,7 +2,7 @@
 
 **Small questions bearing on the central residual in one route to Corollary 3.12 and ABC: globalization of local shears and object membership**
 
-Version 1.0.1, 13 November 2026 (12 pages). DOI [10.5281/zenodo.24199344](https://doi.org/10.5281/zenodo.24199344);
+Version 1.0.2, 14 November 2026 (12 pages; v1.0.2 rewrites the comments of the Lean files in English, renames the root namespace of the excerpts and rewords one sentence of the Disclosure — no question or conclusion changed). DOI [10.5281/zenodo.24209905](https://doi.org/10.5281/zenodo.24209905);
 all versions [10.5281/zenodo.24198744](https://doi.org/10.5281/zenodo.24198744).
 Author: Toshihisa Urahigashi (independent researcher;
 ORCID [0009-0004-0460-6242](https://orcid.org/0009-0004-0460-6242)).
@@ -13,7 +13,7 @@ A composite readout statement P′ is distinguished from the two outside bridges
 
 Abstract implication cores used in the reduction map were checked in Lean; the questions themselves and their identification with the actual [EtTh] and IUT constructions are not formalized. The note does not claim a proof or disproof of Corollary 3.12, the ABC conjecture, or the value-group profile switch, and does not claim that the questions are globally unprecedented: the central difficulty is already public, related local claims exist in different frameworks, and the audited range is stated explicitly.
 
-This is the English version of the Japanese preprint draft v0.2 (ronbun9810).
+This is the English version of an unpublished Japanese draft.
 
 ## Contents
 

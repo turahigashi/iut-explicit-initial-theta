@@ -24,11 +24,11 @@ a profile-level independence countermodel\\
 for the Corollary~3.12 assembly inputs}
 \author{Toshihisa Urahigashi\\
 \small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.0.0 --- 13 November 2026\\[3pt]
+\date{Version 1.0.1 --- 14 November 2026\\[3pt]
 \small Independent researcher. This work was carried out personally and is
 unrelated to any institutional affiliation.\\[3pt]
 \small ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}\\[-2pt]
-\small \href{https://doi.org/10.5281/zenodo.24195284}{doi:10.5281/zenodo.24195284} (all versions: \href{https://doi.org/10.5281/zenodo.24195283}{10.5281/zenodo.24195283})}
+\small \href{https://doi.org/10.5281/zenodo.24209904}{doi:10.5281/zenodo.24209904} (all versions: \href{https://doi.org/10.5281/zenodo.24195283}{10.5281/zenodo.24195283})}
 
 \begin{document}
 \maketitle
@@ -68,6 +68,14 @@ lemmas inside the same abstraction.
 Corollary~3.12, value-group profile, scale preservation,
 independence countermodel, Lean.
 \end{abstract}
+
+\medskip
+\noindent\textbf{Note added in version 1.0.1.}
+This version adds a remark in \S2 relating the removed hypothesis
+(Hloc) to the Lean counterpart of H*val in [U26c], rewords the
+description of the Lean build, and rewrites the comments of the
+supplementary Lean files in English with the root namespace of the
+excerpts renamed.  No theorem or conclusion is changed.
 
 \section*{What is and is not claimed}
 
@@ -191,6 +199,13 @@ from membership and monotonicity (using extensivity of the hull
 operator), and $v_Q=\mu(T)$ from (Hloc), (A4) and (A5).  The
 countermodel shows that (Hloc) is genuinely load-bearing in this
 inference.
+
+\textbf{Relation to the Lean counterpart of H*val.}  From
+version~1.0.2 of [U26c], the Lean counterpart of H*val is the pair of
+hypotheses \texttt{hmem}, which is (A3) here, and \texttt{hlocal},
+which is (Hloc).  The countermodel below keeps (A3) and removes only
+(Hloc).  What it shows to be independent is therefore the profile part
+of H*val; the independence holds a fortiori for the pair.
 
 The finite set $I$ is arbitrary at this abstract level.  Below we
 fix one bad place and take $I$ to be its label set.  Reading $I$
@@ -456,7 +471,7 @@ $\min((1,4)+(4,1))=5$.
 The Lean module and namespace are
 \begin{verbatim}
 M3.relative.ActualValuePartProfileIndependence
-Kouchiku.M3.ActualValuePartProfileIndependence
+IUTFormal.M3.ActualValuePartProfileIndependence
 \end{verbatim}
 Its
 main declarations are
@@ -464,30 +479,21 @@ main declarations are
 {\small\texttt{aggregate\_scale\_ne\_one}} and
 {\small\texttt{no\_cor312\_derivation\_\allowbreak
 without\_hlocal}}.
-The selected build in the author's Lean development repository
-was run as follows.
+The file and the module defining the hull operator were compiled
+with Lean~4.30.0 and Mathlib in the author's Lean development; the
+axioms reported for the main declarations were:
 \begin{verbatim}
-python3 tools/lean_selected.py \
-  M3.relative.ActualValuePartProfileIndependence
-\end{verbatim}
-The terminal output observed was:
-\begin{verbatim}
-Selected closure: 2 modules
-[1/2] M3.theorem311.Remark395HullIsAClosure [cached]
-[2/2] M3.relative.ActualValuePartProfileIndependence
 '...profile_countermodel' depends on axioms:
   [propext, Classical.choice, Quot.sound]
 '...aggregate_scale_ne_one' depends on axioms:
   [propext, Classical.choice, Quot.sound]
 '...no_cor312_derivation_without_hlocal' depends on axioms:
   [propext, Classical.choice, Quot.sound]
-PASS: 2 modules.
 \end{verbatim}
 Thus there is no \texttt{sorryAx} and no additional axiom in the
 main theorems.  The Lean file is recorded in commit
-\texttt{bc25c4c9} of the author's development branch
-\texttt{muse/valuepart-radial-20261110}, and is included in the
-supplementary package for this note.
+\texttt{bc25c4c9} of the author's Lean development and is included
+in the supplementary package for this note.
 
 \begin{remark}[Scope of the build]
 This selected build does not recompile the whole assembly
@@ -606,7 +612,7 @@ residual & content & relation to this note\\
 \midrule
 R1 & IUT black boxes & not verified here\\
 R2V & value-group switch H*val &
-central input shown independent\\
+its profile part (Hloc) shown independent\\
 R2 & inhabitation / frame fidelity &
 no inhabitation claim is made\\
 R3 & independent re-verification &
@@ -671,7 +677,7 @@ doi:10.5281/zenodo.24165837 (version 1.1.3).
 T.~Urahigashi, A conditional assembly from Theorem~3.11 to
 Corollary~3.12: decomposition of the scalar layer, a semantic
 principle, and isolation of the value-group profile switch,
-Zenodo, doi:10.5281/zenodo.24179190 (version 1.0.1).
+Zenodo, doi:10.5281/zenodo.24209701 (version 1.0.2).
 
 \bibitem[LANA]{LANA}
 Project LANA, interim reports ((9-1), \texttt{xi\_iff}).

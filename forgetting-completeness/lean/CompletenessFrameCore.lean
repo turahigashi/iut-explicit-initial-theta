@@ -26,11 +26,11 @@ This file depends only on Mathlib.  It contains:
   table.
 
 The instantiation of the frame on the value-part classes of the
-sideways formalization (`completeFor_thetaRootClass_readout`,
+value-part formalization (`completeFor_thetaRootClass_readout`,
 `completeFor_thetaValueClass_readout`) is not part of this file; it
 lives in the full development file
 `ActualValuePartCompletenessFrame.lean`, reproduced next to this
-file for reference.  Independent review has not been received.
+file for reference.  Not independently re-checked.
 -/
 
 noncomputable section

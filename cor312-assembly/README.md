@@ -1,6 +1,6 @@
 # A conditional assembly from Theorem 3.11 to Corollary 3.12: decomposition of the scalar layer, a semantic principle, and isolation of the value-group profile switch
 
-Version 1.0.2, 14 November 2026 (16 pages; v1.0.2 redraws Figure 1 and its caption, checks in Lean the relations drawn for the assembly range B (`lean/VennRegionB.lean`), and corrects the Lean counterpart of H*val in the table of §1 from `hmem` alone to `hmem` and `hlocal` — no result or conclusion changed). DOI [10.5281/zenodo.24209701](https://doi.org/10.5281/zenodo.24209701);
+Version 1.0.3, 14 November 2026 (16 pages; v1.0.3 rewrites the comments of the Lean files in English and renames the root namespace of the excerpts; v1.0.2 redraws Figure 1 and its caption, checks in Lean the relations drawn for the assembly range B (`lean/VennRegionB.lean`), and corrects the Lean counterpart of H*val in the table of §1 from `hmem` alone to `hmem` and `hlocal` — no result or conclusion changed). DOI [10.5281/zenodo.24209900](https://doi.org/10.5281/zenodo.24209900);
 all versions [10.5281/zenodo.24166924](https://doi.org/10.5281/zenodo.24166924).
 Author: Toshihisa Urahigashi (independent researcher;
 ORCID [0009-0004-0460-6242](https://orcid.org/0009-0004-0460-6242)).

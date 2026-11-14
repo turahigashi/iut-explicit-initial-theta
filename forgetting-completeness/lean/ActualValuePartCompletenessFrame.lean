@@ -4,10 +4,9 @@ import M3.relative.ActualValuePartThetaClass
 /-!
 # The forgetting / completeness frame, as Lean scaffolding
 
-Companion Lean file to `COMPLETENESS_FRAMING_20261111.md`
-(side note by the other Muse session) and sideways memo L2-38.
+Companion Lean file to the note *Forgetting and completeness*.
 This file formalizes only the abstract logic of the frame and
-instantiates it on existing sideways assets.  It contains no new
+instantiates it on existing value-part assets.  It contains no new
 arithmetic.
 
 ## The frame
@@ -25,7 +24,7 @@ for a query `Q : X → Y` if `Q` factors through `α`
    scale), and `c` is constant on the relevant states (scale
    normalized), then `Q` is already determined by `α` there.
    This is the abstract shape of the scale-restoration step
-   (paper Prop. 26; sideways calibration packages).
+   (paper Prop. 26; calibration packages).
 3. `not_completeFor_sub` with `completeFor_sub_eq_zero_labelled`:
    the dependency problem in miniature.  Componentwise (product)
    abstraction forgets the correlation between two uses of the
@@ -38,7 +37,7 @@ for a query `Q : X → Y` if `Q` factors through `α`
    cross-interface correlation query, and label-tracking is the
    cure.
 
-## Instantiation on sideways assets
+## Instantiation on value-part assets
 
 `completeFor_thetaRootClass_readout` and
 `completeFor_thetaValueClass_readout`: the value-part quotient
@@ -51,8 +50,8 @@ chosen so that the radial query factors through it, while the
 scale across copies (`linkScale`) is precisely the invariant
 that must additionally be tracked, as in item 2:
 `calibrated_pilot_degree_eq` (in `ActualValuePartLocalGlobal`)
-is the sideways Prop-26 instance, and its hypothesis
-(calibration) is the outstanding supply audited in L2-33–L2-36.
+is the Prop-26 instance, and its hypothesis (calibration) is
+the outstanding supply.
 
 ## [H] Non-claims
 
@@ -61,30 +60,30 @@ is the sideways Prop-26 instance, and its hypothesis
   calibration, and does not touch hull families or Cor. 3.12.
 * The toy in item 3 is an abstract finite/interval skeleton.
   Identification of IUT interfaces with the toy's components is
-  the framing discussion in L2-38, not a theorem here.
-  独立の点検は受けていない。
+  a matter of interpretation, not a theorem here.
+  Not independently re-checked.
 -/
 
 noncomputable section
 set_option autoImplicit false
 
-namespace Kouchiku.M3.ActualValuePartCompletenessFrame
+namespace IUTFormal.M3.ActualValuePartCompletenessFrame
 
-open Grounding.Theorem311
-open Grounding.Theorem311.NumberFieldRealDivisor
-open Grounding.Theorem311.NumberFieldRealLocalization
-open Kouchiku.IUT1.Corollary37
-open Kouchiku.IUT2.Definition49viii
-open Kouchiku.IUT3.Theorem311
-open Kouchiku.M3.ActualStrictBelyiFieldReconstruction
-open Kouchiku.M3.ActualValuePartQuotient
-open Kouchiku.M3.ActualValuePartLocalGlobal
-open Kouchiku.M3.ActualValuePartRealification
-open Kouchiku.M3.ActualValuePartThetaClass
-open Kouchiku.M3.ActualFinitePlaceArithmeticCurve
+open IUTFormal.Theorem311
+open IUTFormal.Theorem311.NumberFieldRealDivisor
+open IUTFormal.Theorem311.NumberFieldRealLocalization
+open IUTFormal.IUT1.Corollary37
+open IUTFormal.IUT2.Definition49viii
+open IUTFormal.IUT3.Theorem311
+open IUTFormal.M3.ActualStrictBelyiFieldReconstruction
+open IUTFormal.M3.ActualValuePartQuotient
+open IUTFormal.M3.ActualValuePartLocalGlobal
+open IUTFormal.M3.ActualValuePartRealification
+open IUTFormal.M3.ActualValuePartThetaClass
+open IUTFormal.M3.ActualFinitePlaceArithmeticCurve
 open Dispute.Prop310FinitePrimeFiberPacket
-open Grounding.ThetaLink.SourceArithmeticThetaKummer
-open Grounding.ThetaLink.GaussianMonoidFromThetaValues
+open IUTFormal.ThetaLink.SourceArithmeticThetaKummer
+open IUTFormal.ThetaLink.GaussianMonoidFromThetaValues
 
 section Frame
 
@@ -334,4 +333,4 @@ end Instantiate
 #print axioms completeFor_thetaRootClass_readout
 #print axioms completeFor_thetaValueClass_readout
 
-end Kouchiku.M3.ActualValuePartCompletenessFrame
+end IUTFormal.M3.ActualValuePartCompletenessFrame
