@@ -251,7 +251,7 @@ The file names carry an older working numbering; the reports are numbered as fol
 | forgetting and completeness | `forgetting-completeness/paper/forgetting-completeness.tex` | [10.5281/zenodo.24135420](https://doi.org/10.5281/zenodo.24135420) | 1.1.5, [10.5281/zenodo.24210290](https://doi.org/10.5281/zenodo.24210290) |
 | conditional assembly from Theorem 3.11 to Corollary 3.12 | `cor312-assembly/paper/cor312-assembly.tex` | [10.5281/zenodo.24166924](https://doi.org/10.5281/zenodo.24166924) | 1.0.3, [10.5281/zenodo.24209900](https://doi.org/10.5281/zenodo.24209900) |
 | scale preservation is not enough (profile countermodel) | `profile-independence/paper/profile-independence.tex` | [10.5281/zenodo.24195283](https://doi.org/10.5281/zenodo.24195283) | 1.0.1, [10.5281/zenodo.24209904](https://doi.org/10.5281/zenodo.24209904) |
-| questions on the value-group profile switch | `local-shear-questions/paper/local-shear-questions.tex` | [10.5281/zenodo.24198744](https://doi.org/10.5281/zenodo.24198744) | 1.0.2, [10.5281/zenodo.24209905](https://doi.org/10.5281/zenodo.24209905) |
+| questions on the value-group profile switch | `local-shear-questions/paper/local-shear-questions.tex` | [10.5281/zenodo.24198744](https://doi.org/10.5281/zenodo.24198744) | 2.0.0, [10.5281/zenodo.24213391](https://doi.org/10.5281/zenodo.24213391) |
 
 `paper/paper.tex` is the expanded version of the **first** report, cited as `[First-full]`;
 the first report is the version of record.

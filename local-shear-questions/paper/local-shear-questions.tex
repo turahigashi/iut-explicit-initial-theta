@@ -8,7 +8,7 @@
 \usepackage{longtable}
 \usepackage{hyperref}
 \hypersetup{hidelinks,
-  pdftitle={Questions on the remaining value-group profile switch from Theorem 3.11 to Corollary 3.12: small questions bearing on the central residual in one route to Corollary 3.12 and ABC, on globalization of local shears and object membership},
+  pdftitle={Questions on the remaining value-group profile switch from Theorem 3.11 to Corollary 3.12: where is it supplied? A central question with a test, and component questions on local shears and object membership},
   pdfauthor={Toshihisa Urahigashi}}
 
 \newcommand{\uu}[1]{\underline{\underline{#1}}}
@@ -17,105 +17,639 @@
 \theoremstyle{definition}
 \newtheorem{statement}{Statement}
 \newtheorem{remark}{Remark}
+\newtheorem*{centralq}{Central question}
 
 \title{Questions on the remaining value-group profile switch\\
 from Theorem~3.11 to Corollary~3.12\\[4pt]
-\large Small questions bearing on the central residual in one route\\
-to Corollary~3.12 and ABC: globalization of local shears\\
-and object membership}
+\large Where is it supplied? A central question with a test,\\
+and component questions on local shears and object membership}
 \author{Toshihisa Urahigashi\\
 \small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.0.2 --- 14 November 2026\\[3pt]
+\date{Version 2.0.0 --- 14 November 2026\\[3pt]
 \small Independent researcher. This work was carried out personally and is
 unrelated to any institutional affiliation.\\[3pt]
 \small ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}\\[-2pt]
-\small \href{https://doi.org/10.5281/zenodo.24209905}{doi:10.5281/zenodo.24209905} (all versions: \href{https://doi.org/10.5281/zenodo.24198744}{10.5281/zenodo.24198744})}
+\small \href{https://doi.org/10.5281/zenodo.24213391}{doi:10.5281/zenodo.24213391} (all versions: \href{https://doi.org/10.5281/zenodo.24198744}{10.5281/zenodo.24198744})}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-In a conditional assembly from Theorem~3.11 to Corollary~3.12 in
-inter-universal Teichm\"uller theory, the chart calibration,
-normalized-generator scale and unit side can be treated as supplied
-at the level of stated inputs, while a value-group profile switch
-H*val remains.  A profile-level countermodel shows that this input
-does not follow from the remaining assembly hypotheses.  This note
-does not claim to solve that residual.  Instead, it decomposes it
-into small questions phrased, as far as possible, in the common
-vocabulary of anabelian geometry, and records the points on which
-expert guidance would be decisive.
+In Step~(xi) of the proof of Corollary~3.12 of inter-universal
+Teichm\"uller theory, the $q$-pilot is compared with the possible
+images of the $\Theta$-pilot produced by the multiradial algorithm
+of Theorem~3.11, and the inequality is drawn from the property
+(SHE) in the form stated in Step~(xi-e).  Several works, in
+abstractions of the passage and, in the author's earlier notes, for
+the statements that the proof actually cites, show that this form
+does not follow from what is stated about the output of the
+algorithm; in a conditional assembly, the remaining input is a
+value-group profile switch whose profile part is independent of
+every other input.  Whether the construction of the algorithm
+itself supplies the step, and if so where, is not decided by those
+results.  This version of the note asks that question directly.
 
-The central issue is local-to-global: how does a local shear, that
-is, a freedom arising from a choice of splitting, model or
-identification, act on degree readouts, and can such a difference
-be supported at a single bad place as the local component of a
-global change of model?  Around this main question we separate the
-category in which degree-moving shears should be classified, the
-minimal category containing both theta sections and degree
-readouts, the existence of a global difference $\delta$, a finite
-Tate-curve computation, and two return bridges to the assembly:
-identification of the two-path difference with the [EtTh] section
-difference, and passage from equality of readouts to object-level
-membership.
+Together with IUT~IV, the step has the strength of an explicit
+height inequality.  Every proof of such an inequality has a step of
+this strength, at the place where its content enters.  The fact is
+not offered as evidence for or against the existence of the
+construction; it is used only as a criterion by which a supplier,
+once found, can be recognized.  The question asks where, not how,
+and it can be answered by pointing to a statement or to a passage
+of a proof.
 
-For each question we record its relation to Project LANA's (9-1).
-This is a division-of-roles map, not a comparison of progress and
-not an alternative to (9-1).  Some questions would remain
-meaningful after (9-1) is settled, while answers to others could
-clarify where any route to (9-1) must carry its load.
+The step is the value-group counterpart of a compatibility that is
+proved on the unit side, where cyclotomic rigidity gives a unique
+isomorphism.  On the value-group side the two profiles differ by the
+factors $j^2$ between the labels, and the counterpart cannot be an
+isomorphism: in that form it would force the degree scale of the
+$\Theta$-link to be $1$.  It has to be an inclusion in the
+holomorphic hull, and that inclusion is the inequality.
+Section~\ref{s:central} locates where the source divides the two
+sides.  Step~(i) of the proof splits the $\Theta$-link into a unit
+part and a value part, and the compatibilities of Theorem~3.11(iii)
+concern the unit part; we found no statement that carries the value
+part to regions in the common container.  Since the proof of
+Theorem~3.11 states that its assertions follow immediately from the
+definitions and the cited references, the question becomes which
+definition or cited construction supplies that one edge.  We read
+five places that could supply it, the family of possible images,
+the holomorphic hull, the identification of theta and Gaussian
+monoids, the compatibility statement of Theorem~3.11(iii)(c) and the
+global realified Frobenioids of Step~(xii), as holding in the
+author's models of the cited statements, built from actual local
+objects, in which the step fails.  This is a reading, not a claim
+that the construction does not supply the step.  The question is
+which property of the actual construction excludes those models,
+that is, where the models fail to represent it, or which of the
+readings is wrong.  The questions are not addressed to any particular person
+or project.
 
-The abstract implication cores used in the reduction map have been
-checked in Lean: differences of two splittings, the volume
-implication from object membership and monotonicity, finite
-averages, non-cancellation for a common ratio, and many-to-oneness
-of totals as shadows of profiles.  The questions themselves, and
-their identification with the actual [EtTh] and IUT
-constructions, are not formalized.
+The small questions Q0--Q7 of earlier versions, on local shears,
+their globalization and object membership, are kept in appendices
+as component questions about one route, through the difference of
+the theta and algebraic sections of [EtTh].  This version answers
+them provisionally: the difference of sections does not move degree
+readouts, a degree-moving freedom is one positive scalar common to
+all places, and the route does not carry the profile switch.  The
+abstract implication cores used by the component questions are
+checked in Lean, as before, and a standalone Lean file checks the
+elementary forms that the readings use; the readings themselves are
+not formalized.
+
+No claim is made that Corollary~3.12, the ABC conjecture or the
+profile switch is false, or that the construction does not supply
+the step.
 
 \medskip
 \noindent\textbf{Keywords:} inter-universal Teichm\"uller theory,
-Corollary~3.12, value-group profile, local shear, global
-synchronization, mono-theta environment, anabelian geometry, Lean.
+Corollary~3.12, Step~(xi), simultaneous holomorphic expressibility,
+value-group profile, local shear, mono-theta environment,
+anabelian geometry, Lean.
 \end{abstract}
 
 \medskip
-\noindent\textbf{Note added in version 1.0.2.}
-This version rewrites the comments of the supplementary Lean files in
-English, renames the root namespace of the excerpts, and rewords one
-sentence of the Disclosure.  No question or conclusion is changed.
+\noindent\textbf{Note added in version 2.0.0.}
+This version adds Section~\ref{s:central}, the central question, and
+makes it the main question of the note; Section~\ref{ss:square}
+locates the one edge of the comparison for which no statement was
+found, Section~\ref{ss:test} describes the author's models, reads
+five places that could supply the edge as holding in them, and asks
+which property of the actual construction excludes them or which
+reading is wrong, and Appendix~\ref{s:questions} gives provisional answers to
+Q0--Q7; a standalone Lean file checks the elementary forms that the
+readings use (Section~\ref{ss:cores}).  The abstract, the position
+statement and the closing section are rewritten accordingly; each
+component question receives a line on its bearing on the central
+question; the sentence of earlier versions saying that none of the
+questions is Corollary~3.12 or ABC is replaced by
+Remark~\ref{r:strength}; earlier works on the same step are cited
+([Higuchi], [Pajo], [Takkun], [Saito], [sfingali], [Geiger], [Form],
+[Ri]); and the references to the author's notes are updated.  The
+component questions Q0--Q7, Statement~P$'$ and the related tables
+are moved to Appendices~\ref{s:setup}--\ref{s:relations}; apart from
+the lines on their bearing, a paragraph on their scope and the
+provisional answers, their content is unchanged.  Version~1.0.2 rewrote the comments of the Lean files in
+English and changed no question.
 
 \section*{Position of this note}
 
 This note is a problem statement for joint examination, not a
-completed proof.  The questions are not addressed to any
-particular individual or project; they are addressed broadly to
-anyone with expertise in the relevant areas who may be able to
-supply references, corrections, counterexamples, or a better
-formulation.  It does not claim a proof or disproof of
-Corollary~3.12 or the ABC conjecture, a determination of H*val,
-or an equivalence between Statement~P$'$ below and the residual.
-It is also not an alternative to, or a criticism of, Project
-LANA's (9-1).  The intended relation is complementary: (9-1)
-fixes an object-level membership statement on the source side,
-whereas this note separates definitions, local mechanisms and
-globalization steps that precede or surround such a statement.
-Even if every question here receives a positive answer, the two
-return bridges and the numbered IUT inputs remain separate.
-Conversely, a concrete countermodel to one question would locate
-a place where this route closes.
+completed proof.  Its questions are not addressed to any particular
+individual or project; they are addressed to anyone with relevant
+expertise who can supply a reference, a correction, a
+counterexample or a better formulation.  Answers can be sent to the
+e-mail address on the title page or posted as an issue in the
+public repository that holds this note,
+\url{https://github.com/turahigashi/iut-explicit-initial-theta}; a one-line answer in one of
+the forms of Section~\ref{ss:answers} is enough.  The note does not
+claim a proof or disproof of Corollary~3.12 or the ABC conjecture, a
+determination of H*val, or an equivalence between Statement~P$'$
+below and the residual.  It is not an alternative to, or a
+criticism of, Project LANA's (9-1): (9-1) is one of the reference
+forms of the step asked about in Section~\ref{s:central}, and the
+component questions separate definitions, local mechanisms and
+globalization steps that precede or surround it.  Even if every
+component question receives a positive answer, the two return
+bridges and the numbered IUT inputs remain separate.  Conversely, a
+concrete countermodel to one component question would locate a
+place where this route closes.
 
-We use the following labels for relations with (9-1):
-\emph{directly connected} under a fixed dictionary; \emph{connected
-under an additional identification}; \emph{requires separate
-examination}; and \emph{corresponding}, meaning essentially the
-same content in different vocabulary under a fixed dictionary.
-Here ``dictionary'' means a fixed correspondence between the
-assembly-side two paths, possible images and degree data and the
-membership formulation used by LANA.  The dictionary itself is
-not proved in this note.
+\section{The central question}\label{s:central}
 
-\section{Fixed background}
+\subsection{The step}\label{ss:step}
+
+Corollary~3.12 of [IUTchIII] is proved in twelve steps, and the
+inequality is drawn in Step~(xi) [IUTchIII, pp.~181--185].  We
+summarize the substeps that matter here.  The summary is our
+reading and is meant to be checked.
+\begin{itemize}[leftmargin=4.2em,labelwidth=3.6em,labelsep=0.6em,align=left]
+\item[(xi-a)] The $\Theta_{\mathrm{LGP}}^{\times\boldsymbol\mu}$-link
+from $(0,0)$ to $(1,0)$ is read as a gluing isomorphism under which
+the $\Theta$-pilot object at $(0,0)$, regarded as an object of the
+relevant global realified Frobenioid, corresponds to the $q$-pilot
+object at $(1,0)$.
+\item[(xi-b)] The multiradial algorithm of [IUTchIII, Thm.~3.11]
+constructs a collection of possibilities for output data in a
+container common to the two columns, with the properties (IPL) and
+(SHE) of [IUTchIII, Rem.~3.11.1(iii)].  The author states that at
+this step only the qualitative properties (IPL), (SHE) and (APT) of
+the algorithm will be used, ``temporarily forgetting'' that it
+involves the $\Theta$-pilot, theta functions and mono-theta
+environments, which form its hidden internal structure in the sense
+of [IUTchIII, Rem.~3.11.1(iv)].
+\item[(xi-c)] The possibilities for output data are related,
+through isomorphisms of
+$\mathcal F^{\Vdash\blacktriangleright}$-prime-strips, to the
+representation of the $q$-pilot obtained by the column-one
+log-Kummer correspondence (IPL), and their construction is
+expressible in terms of the holomorphic structure of column one
+alone (SHE).  After passing to the holomorphic hull they are
+represented by localizations of arithmetic vector bundles.
+\item[(xi-d)] Taking determinants of suitable positive tensor
+powers and procession-normalized log-volumes yields the half-line
+$\mathbb R_{\le-|\log(\uu\Theta)|}$ of possible values and the
+number $-|\log(\uu q)|$ attached to the $q$-pilot.  The column-one
+log-Kummer correspondence is used here to correct the vertical
+misalignment of the unit parts.
+\item[(xi-e)] (SHE), that is, expressibility in terms of the
+arithmetic holomorphic structure of column one, is read as
+expressibility by operations that remain valid when the input
+prime-strip is subject to the condition that its pilot log-volume
+equals the fixed value $-|\log(\uu q)|$.
+\item[(xi-f)] Hence the construction of the possible values is also,
+perhaps only up to a kind of approximation caused by the
+indeterminacies, a construction of $-|\log(\uu q)|$, so that
+$-|\log(\uu q)|\in\mathbb R_{\le-|\log(\uu\Theta)|}$.  This is the
+inequality.
+\item[(xi-g)] The argument is summarized as two tautologically
+equivalent ways of computing the log-volume of the $q$-pilot
+[IUTchIII, Fig.~3.8].
+\end{itemize}
+The question of this note concerns the passage from (xi-e) to
+(xi-f): what supplies (SHE) in the form used in (xi-e).
+
+\subsection{What is already known}\label{ss:known}
+
+\begin{enumerate}[label=(K\arabic*),leftmargin=*]
+\item \emph{The step against the cited statements.}  At the level of
+log-volumes, the form of (SHE) in (xi-e) is the conclusion
+rewritten; it is equivalent to the inequality [U26, Prop.~6].  Its
+weak reading, that the possible images are computed from the common
+container, follows from the statements that the proof cites, taken
+at the strength of the source [U26, Prop.~5].  The strong readings,
+and the equality (9-1) that the interim report of Project LANA
+identifies as the missing step [LANA, \S9.2], do not
+[U26, Thm.~10, Cor.~11].  One of the models that show this is built
+from actual local objects at a finite extension of $\mathbb Q_p$ carrying
+the local data of a theta function: tensor packets of the field
+with the mono-analytic integral structure, the indeterminacies
+(Ind1) and (Ind2) acting through all permutations of tensor factors
+and all automorphisms of the log-shells, values of the theta
+series, a container containing all horizontal and vertical images,
+and, as hull, the smallest multiple of the ring of integers of the
+packet that contains the container [U26, Thm.~22].  The models
+survive the addition of any finite set of further places [U26, Thm.~14],
+and the closed loop of [IUTchIII, Rem.~3.9.5(viii)(ix)], to which
+[IUTchIII, Rem.~3.11.1(iii)] relates (SHE), holds in them.
+\item \emph{The step in a conditional assembly.}  In [U26c] the chart
+calibration, the normalized-generator scale and the unit side are
+supplied at the level of stated inputs, and the remaining input is
+the value-group profile switch H*val: from the
+$\{j^2u\}_j$-type profile of the $\Theta$-pilot, an actual $q$-pilot
+representation compatible with the holomorphic hull is obtained
+[U26c, \S8].  The model of [U26d], with the source profile at
+$\ell=7$, satisfies every other input of the assembly and falsifies
+the conclusion.  In the language of [U26b], the step is a failure
+of completeness at an interface, and the question becomes whether
+the additional principle needed is supplied by the actual
+construction.
+\item \emph{Earlier work on the same passage.}  Higuchi [Higuchi]
+proves non-derivability for a qualitative package extracted from
+(xi-e) and (xi-f), and Pajo [Pajo] a no-go theorem for a scale-free
+monoid, hull and log-volume abstraction.  In Lean, Takkun-kohinata
+[Takkun] proves for its transcription of the passage that the
+volume bound of the multiradial representation together with the
+containment is equivalent to the height inequality, that strict
+identification of the copies, with volume-preserving
+indeterminacies and a hull no larger than the $\Theta$-pilot, is
+contradictory, and that the slack between the hull and the
+$\Theta$-pilot cannot come from the orbits of (Ind1) and (Ind2),
+only from the hull.  Saito [Saito] audits the passage from
+(xi-a)--(xi-e) to the membership of (xi-f) against a registered
+inventory of the source; sfingali [sfingali] formalizes in Lean the
+core of the objection of [SS]; and Geiger [Geiger] records that the
+decisive membership of (xi-f) is stated to follow formally from a
+pair of declared properties rather than derived.  The public Lean
+repository of Project LANA [lana] proves that Step~(xi) cannot be
+derived from a package collecting what the repository proves at the
+level of Theorem~3.11, shows that Step~(xi) adds to the package
+exactly the inequality $(s-1)a\le V$ in its notation
+(\texttt{xi\_iff}), and separates two readings of (SHE), of which
+the one asserting that some output possibility has the volume class
+of the $q$-pilot region is proved equivalent to the wall inequality
+of [LANA, \S0.2] (\texttt{sheq\_iff\_wall}).  The interim report of the project
+states that the project does not at present have a proof of (9-1)
+[LANA, \S10.5].
+\item \emph{The author of IUT on the same step.}  In his report on
+formalization [Form, \S4], Mochizuki reorganizes the implication
+from Theorem~3.11 to Corollary~3.12 into four commutative triangles
+and isolates an intermediate statement ``3.11.5'' (Theorem~3.11
+together with Remark~3.9.5), which, as the report notes, does not
+appear in [IUTchI]--[IUTchIV].  The skeletal Lean code described
+there for ``3.11.5 $\Rightarrow$ 3.12'' takes as an input an arrow
+(SHE), which takes the input data of the algorithm to be the data of
+the $q$-pilot constructed from the \'etale Hodge theatre.  The report
+also states that the implication from Theorem~3.11 to
+Corollary~3.12, which has attracted the most attention, is in fact
+not very difficult, and that, correctly understood, it shows that the
+real object of interest is the proof of Theorem~3.11 [Form, \S2].  At the level of log-volumes
+the arrow (SHE) is the carrier reading of [U26, Def.~4]
+[U26, \S10].  Richards' Lean port [Ri] states ``3.11.5'' as a
+proposition and derives it, in a separate file, from a structure
+with a field identifying the region of the $\Theta$-pilot with that
+of the $q$-pilot.
+\end{enumerate}
+
+\subsection{What the step must deliver}\label{ss:target}
+
+We state it in terms of local fields, log-shells and Haar measure.
+Fix a number field $K$, an elliptic curve $E/K$, a prime $\ell\ge5$
+and the remaining data of an initial $\Theta$-datum
+[IUTchI, Def.~3.1]; further notation is that of
+Appendix~\ref{s:setup}.  At a bad place $v$ put
+$u_v=|\log(\uu q_v)|=(2\ell)^{-1}\log(\mathfrak q_v)$
+[IUTchIV, Thm.~1.10].  The labels are
+$j=1,\ldots,\ell^\divideontimes=(\ell-1)/2$.  At $v$ the
+$\Theta$-pilot has the labelled log-volume profile
+$\{-j^2u_v\}_j$ and the $q$-pilot the profile $\{-u_v\}_j$
+[IUTchII, Cor.~4.5(iv)(v)], [IUTchIII, Def.~3.8(i)].  The procession
+normalization gives every capsule the same weight
+[IUTchIII, Prop.~3.9(i), Rem.~3.9.3], and the aggregates of the two
+profiles are $-\frac{\ell(\ell+1)}{12}u_v$ and $-u_v$
+[U26d, \S3].
+
+The possible images of the $\Theta$-pilot are its images under the
+indeterminacies of [IUTchIII, Thm.~3.11]: (Ind1), coming from
+automorphisms of the \'etale-like data (copies of the local absolute
+Galois groups), which act on log-shells through mono-anabelian
+reconstruction; (Ind2), coming from automorphisms of the unit parts;
+and (Ind3), the upper semi-compatibility of the log-Kummer
+correspondence [IUTchIII, Thm.~3.11(ii)].  The holomorphic hull of
+their union is formed in tensor packets of log-shells, and volumes
+are procession-normalized log-volumes with respect to Haar measure
+[IUTchIII, Rem.~3.9.5(vii)].  Explicit formulas for (Ind1)--(Ind3)
+in terms of local fields are given in [DHPS].
+
+The step must deliver the following.
+\begin{itemize}[leftmargin=2.6em,labelwidth=2em,labelsep=0.6em,align=left]
+\item[(S)] The region of the $q$-pilot, represented in the common
+container through the column-one log-Kummer correspondence, lies in
+the holomorphic hull of the possible images of the $\Theta$-pilot
+(\emph{carrier form}); or at least its log-volume does not exceed
+that of the hull (\emph{value form}):
+\[
+-|\log(\uu q)|\ \le\ -|\log(\uu\Theta)|.
+\]
+\end{itemize}
+The value form is the inequality of Corollary~3.12.  In the reading
+of [U26, Def.~4], the carrier form implies (9-1), and (9-1) implies
+the value form [U26, Prop.~6].  Together with the upper bound for
+$-|\log(\uu\Theta)|$ in [IUTchIV, Thm.~1.10], (S) for all initial
+$\Theta$-data gives, through [IUTchIV, \S2], the diophantine
+inequalities of [IUTchIV, Cor.~2.3].
+
+\subsection{What is known not to suffice}\label{ss:notsuffice}
+
+\begin{enumerate}[label=(N\arabic*),leftmargin=*]
+\item \emph{The log-volume content of the cited statements.}  The
+22 statements that the proof of Corollary~3.12 uses as definitions
+or premises, among 63 cited targets [U26, \S3, App.~A], include what
+[IUTchIII, Thm.~3.11] states about the output of the algorithm, the
+hull of [IUTchIII, Rem.~3.9.5], (IPL) and the closed loop.  Their
+content at the level of log-volumes holds in the models of (K1),
+described in Section~\ref{ss:test}, in which (S) fails.  So does the weak reading of (SHE).
+\item \emph{Scalar calibrations.}  Agreement of the measuring charts
+of the two routes [U26c, Lemma~8.1], agreement at the normalized
+generator $j=1$, and compatibility on the unit side
+[U26c, Lemma~8.2] hold in the model of [U26d], in which (S) fails.
+A separate assumption that the aggregate ratio of the two pilots
+equals $1$ contradicts the source readout $\ell(\ell+1)/12\ne1$
+[U26d, \S7.5].
+\item \emph{Identification of the two pilots.}  A statement
+identifying the image of the $\Theta$-pilot with the region of the
+$q$-pilot implies (S), but it forces the degree scale of the
+$\Theta$-link to be $1$ [U26, Prop.~26(b)], contrary to the source
+readout; with the source data it cannot hold.  Compare [SS],
+[sfingali] and \texttt{strict\_collapse} in [Takkun].
+\end{enumerate}
+In the language of [SL], a statement of type (N3) asks for a strict
+2-cell between the two paths, which exists only if the degree scale
+is $1$ [SL, Thm.~5.2]; (S) is a lax 2-cell [SL, Thm.~5.3]; and the
+properties (IPL), (SHE) and (APT) by themselves are compatible with
+any size of the blurring, so that neither (S) nor its negation
+follows from them [SL, Thm.~5.7].
+
+\subsection{The value-group counterpart, and the edge without a statement}\label{ss:square}
+
+The step is the value-group counterpart of a compatibility that is
+proved on the unit side.  On the unit side the indeterminacies (Ind1)
+and (Ind2) preserve log-volumes [IUTchIII, Cor.~3.12, proof,
+Step~(x)], and what is needed is an isomorphism, made unique by
+cyclotomic rigidity [EtTh, Cor.~2.19(i)].  In the conditional
+assembly this side is supplied by such uniqueness statements
+[U26c, Lemma~8.2], and [EtTh, Cor.~2.19(i)] is also the solved form
+from which Statement~P$'$ departs (Appendix~\ref{s:pprime}).  On the
+value-group side the two profiles differ by the factors $j^2$ between
+the labels.  A counterpart of the same type, an isomorphism
+compatible with log-volumes, would identify the two pilots and force
+the degree scale of the $\Theta$-link to be $1$, as in (N3).  What is
+needed is an inclusion in the hull, (S): a lax rather than a strict
+2-cell [SL, Thms.~5.2, 5.3].  This is why the step does not follow by
+analogy from the unit side, and why it carries the strength of the
+conclusion.
+
+In the column-one container the proof compares what is carried along
+two routes.
+\begin{itemize}[leftmargin=4.8em,labelwidth=4.2em,labelsep=0.6em,align=left]
+\item[Route 1] The $\Theta$-pilot at $(0,0)$, the value part of the
+$\Theta^{\times\boldsymbol\mu}_{\mathrm{LGP}}$-link, the $q$-pilot at
+$(1,0)$, and the Kummer isomorphisms of column one
+[IUTchIII, Thm.~3.11(ii)].  The statement of Corollary~3.12 defines
+$-|\log(\uu q)|$ as the log-volume of this image, computed in the
+same multiradial representation and not subject to (Ind1)--(Ind3)
+[IUTchIII, p.~174].
+\item[Route 2] The $\Theta$-pilot at $(0,0)$, the Kummer isomorphisms
+of column zero, and the permutation symmetry at the end of
+[IUTchIII, Thm.~3.11(i)], which carries the possible images into the
+column-one container (Step~(xi-b)).
+\end{itemize}
+Step~(i) of the proof splits the $\Theta$-link into a unit part, a
+full poly-isomorphism of $\mathcal F^{\vdash\times\boldsymbol\mu}$-prime-strips,
+and a value part, a full poly-isomorphism of
+$\mathcal F^{\Vdash\blacktriangleright}$-prime-strips that sends the
+$\Theta$-pilot to the $q$-pilot [IUTchIII, p.~175].  The edges of the
+comparison and the statements that supply them are as follows.
+
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.50\textwidth}>{\raggedright\arraybackslash}p{0.44\textwidth}@{}}
+\toprule
+Edge & Statement\\
+\midrule
+Kummer isomorphisms of both columns & [IUTchIII, Thm.~3.11(ii)]\\
+Permutation symmetry between the columns & [IUTchIII, Thm.~3.11(i)], end\\
+Compatibility with the unit part of the $\Theta$-link & [IUTchIII, Thm.~3.11(iii)(a)(b)]\\
+Shielding of the cyclotomes that give the value part & [IUTchIII, Thm.~3.11(iii)(c)(d)]; Step~(ii) of the proof\\
+Log-volumes, their compatibility with log-Kummer, the hull & [IUTchIII, Thm.~3.11(ii), end; Prop.~3.9(iv); Rem.~3.9.5]\\
+Value part of the $\Theta$-link, carried to regions in the container & none located\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The compatibilities of [IUTchIII, Thm.~3.11(iii)] are stated with the
+full poly-isomorphisms of $\mathcal F^{\vdash\times\boldsymbol\mu}$-prime-strips
+as the example, in the sense that the constructions are stable,
+equivariant and functorial with respect to arbitrary automorphisms of
+the domain and the codomain of the $\Theta$-links
+[IUTchIII, pp.~157--158].  Step~(xi-b) describes the relation between
+the value parts as consisting precisely of full poly-isomorphisms of
+$\mathcal F^{\Vdash\blacktriangleright}$-prime-strips, and Step~(xi-e)
+crosses the remaining edge by its reading of (SHE).  The proof of
+[IUTchIII, Thm.~3.11] states that each assertion follows immediately
+from the definitions and the references cited in it
+[IUTchIII, p.~159].  So if something supplies the edge, it lies in
+those definitions and cited constructions, or in the hidden internal
+structure that Step~(xi-b) sets aside.  This is our reading of the
+statements, and the question below asks for it to be confirmed or
+corrected.
+
+\subsection{The models, the test, and the question}\label{ss:test}
+
+\paragraph{The models.}  The models used in this section are the
+author's own, from [U26] and [U26d].  They are countermodels to a
+derivation: the statements in question hold in them, and (S) fails.
+They are not counterexamples to Corollary~3.12, and they are not
+actual global initial $\Theta$-data.
+\begin{enumerate}[label=(M\arabic*),leftmargin=*]
+\item \emph{The local model of (K1)} [U26, Def.~20, Thm.~22].  Let
+$L$ be a finite extension of $\mathbb Q_p$ that carries a theta
+datum: $\tau,i\in L^\times$ with $i^2=-1$ and $|\tau|<1$, elements
+$\xi_1,\xi_2,\xi_3$ with
+$\xi_j^{\,7}=\vartheta(i)/\vartheta(\pm\tau^j i)$ for the theta
+series $\vartheta$ of [EtTh, Prop.~1.4], and $r$ with
+$r^{14}=\tau^2$.  The Tate parameter is $q=\tau^2$, so that
+$\xi_j^{\,14}=q^{j^2}$ ($\ell=7$, labels $j=1,2,3$); for every
+$N\ge1$ the $N$-th powers again form a theta datum, with Tate
+parameter $q^N$.  At the stage $j$ the packet is the tensor product
+$P_j$ of $j+1$ copies of $L$ over $\mathbb Q_p$, with ring of
+integers $\widetilde{\mathcal O}$ and log-volumes normalized as in
+[IUTchIV, Prop.~1.4(i)].  The $\Theta$-pilot is
+$\xi_j^N\cdot\widetilde{\mathcal O}$ and the $q$-pilot is
+$r^N\cdot\widetilde{\mathcal O}$.  The possible images are all
+regions between a horizontal image and the container.  The
+horizontal images are the images of the $\Theta$-pilot under all
+$\mathbb Q_p$-linear automorphisms of $P_j$ that preserve the
+log-shell, all unit multiples and all theta data with the same
+$\tau,i$; the container is the $p$-power multiple of the log-shell
+packet that contains all horizontal and vertical images; and the
+hull is the smallest multiple of $\widetilde{\mathcal O}$ that
+contains the container.  The excess of the hull over the
+$\Theta$-pilot is at most a constant $E_L$ that depends only on $L$,
+whereas (S) requires $\frac{11}{42}N\,|\log|q||\le E_L$; so (S)
+fails for large $N$.  The model satisfies the 22 cited statements
+that carry log-volume content, and survives the addition of any
+finite set of further places [U26, Thms.~10, 14, 22].  Every choice
+in it that the source does not dictate makes the hull larger, and so
+works against the failure of (S) [U26, Rem.~23].
+\item \emph{The profile countermodel} [U26d].  At $\ell=7$, with
+labels $j=1,2,3$ at one bad place and equal weights $1/3$, the
+$\Theta$-side readouts are $-j^2$ and the $q$-side readouts are
+$-1$, as in the source.  The normalized generator, the unit side,
+membership, monotonicity, the hull domain and both volume
+decompositions hold, while the aggregates are $-14/3$ and $-1$, and
+the conclusion of the shape of Corollary~3.12 fails.
+\end{enumerate}
+Both are given in finite, machine-checked form [U26, \S11],
+[U26d, \S6].  The question of this section is, in other words, where
+these models fail to represent the actual construction.
+
+\paragraph{The test.}  Call a statement $P$, that is, a numbered statement or a passage of
+a proof, in [IUTchI]--[IUTchIV] or in the papers they cite, a
+\emph{candidate supplier} if it passes the following tests.
+\begin{enumerate}[label=(T\arabic*),leftmargin=*]
+\item \emph{It does work.}  Some consequence of $P$ for regions,
+log-volumes and labels fails in (M1) or in (M2).  Otherwise $P$ falls under (N1) or (N2).
+\item \emph{It keeps the profile.}  $P$ is consistent with the source
+readout: it does not force the aggregate ratio $\ell(\ell+1)/12$ of
+the two pilots to equal $1$.  Otherwise $P$ falls under (N3).
+\item \emph{It is not the conclusion.}  $P$ is established without
+using Step~(xi-f) or Corollary~3.12.
+\end{enumerate}
+Because (M1) is built from actual local objects and survives the
+addition of places, a statement passing (T1) must use
+something that the cited statements do not state at the level of
+log-volumes: for instance a property of the hull or of the family of
+possible images beyond those stated [U26d, \S7.6], global
+information about the initial $\Theta$-datum, or the structure that
+Step~(xi-b) sets aside.  A candidate that holds in (M1) and (M2) is
+not a supplier, whatever else it does.  The tests are necessary
+conditions, not sufficient ones.
+
+\begin{centralq}
+Five places in the source could supply the edge of
+Section~\ref{ss:square}.  We read each of them as holding in (M1)
+and (M2), in which (S) fails.  This is our reading of the
+statements, not a claim that the construction does not supply the
+step.
+\begin{enumerate}[label=(\alph*),leftmargin=*]
+\item \emph{The family of possible images}
+[IUTchIII, Thm.~3.11(i); Props.~3.1--3.10].  (M1) reads it
+maximally, as all regions between a horizontal image and the
+container [U26, Def.~20]; the actual family lies in it.
+\item \emph{The holomorphic hull} [IUTchIII, Rem.~3.9.5(vii)--(x)].
+The hull of (M1) is the hull of the whole container; the actual
+hull, the hull of the possible images [IUTchIII, Rem.~3.9.5(i)], lies
+in it.  Even so, its excess over the $\Theta$-pilot is at most
+$E_L$, while the excess that (S) requires grows linearly with $N$
+[U26, Thm.~22(a)].
+\item \emph{The identification of theta and Gaussian monoids}
+[IUTchII, Cors.~4.5(iv)(v), 4.6(iv)(v)].  Its evaluation
+isomorphisms, and the ratio vector $(\dots,j^2,\dots)$, are
+constructed inside one Hodge theatre on the $\Theta$-side, and the
+$q$-pilot does not appear in them; the $\Theta$-pilot of (M1) is
+already built from the Gaussian values.
+\item \emph{The compatibility statement}
+[IUTchIII, Thm.~3.11(iii)(c)].  Its data are those of
+[IUTchIII, Cor.~2.3]: a Hodge theatre, the
+$\mathcal F^{\Vdash}$-prime-strip of the environment, the data at
+the bad places, the unit part
+$\mathcal F^{\vdash\times\boldsymbol\mu}_{\triangle}$ and a full
+poly-isomorphism of unit parts.  The multiradiality of
+[IUTchIII, Cor.~2.3(i)] is that the functor from these data to the
+coric data
+$(\mathcal D^{\vdash},\mathcal F^{\vdash\times\boldsymbol\mu}(\mathcal D^{\vdash}))$
+is full and essentially surjective [IUTchIII, pp.~72--75].  The value
+part $\mathcal F^{\Vdash\blacktriangleright}_{\triangle}$, which
+carries the $q$-pilot, is in neither.  At the level of regions its
+content is the closure under (Ind1) and (Ind2) and the bound (Ind3)
+[U26, \S9], which hold in (M1); and it does not involve the value of
+the $q$-pilot.
+\item \emph{The global realified Frobenioids}
+[IUTchIII, Cor.~3.12, proof, Step~(xii), p.~185].  Their role, as
+stated there, is to fix whether a local object corresponds to a
+given open submodule of the log-shell or to a $p^N$-multiple of it,
+since the isomorphisms of Frobenioids that arise from the
+$\Theta$-link preserve only isomorphism classes of objects
+[IUTchIII, Rem.~3.6.2(i)].  In (M1) the regions and the
+container are given subsets of the packet, at a fixed scale, so
+this ambiguity does not arise.  The freedom that remains in the
+degree is one positive scalar common to all places (Q0, Q1), which
+acts on all labels alike and so cannot carry one profile to the
+other.
+\end{enumerate}
+These readings depend on the container being a $p$-power multiple of
+the log-shell packet [U26, \S6].  If they are right, (M1) and (M2)
+satisfy (a)--(e).  Which property of the actual construction
+excludes them, and where is it stated or constructed?  In other
+words, where do these models fail to represent the actual
+construction?  Or which of the readings (a)--(e) is wrong?
+
+Our readings are least certain at the following places, and a
+pointer on any one of them would be enough.
+\begin{enumerate}[label=(\roman*),leftmargin=*]
+\item What is the internal structure of the value parts that
+Step~(xi-b) sets aside, and does it constrain regions?
+\item Is the container a $p$-power multiple of the log-shell packet,
+or is it larger, for instance growing with $N$?
+\item Does the family of possible images constructed in
+[IUTchIII, Props.~3.1--3.10] lie within the family of (M1), that is,
+between a horizontal image and the container?
+\item Do the product formula and the global realified Frobenioids do
+more than leave one positive scalar common to all places?
+\item Does a categorical statement, for instance
+[IUTchIII, Cor.~2.3(i)] or [IUTchIII, Thm.~3.11(iii)], have a
+consequence for regions or log-volumes that (M1) violates?
+\end{enumerate}
+\end{centralq}
+
+The provisional answers in Appendix~\ref{s:questions} also remove the
+difference of the theta and algebraic sections of [EtTh] as a
+candidate (Q2, Q6).
+
+In the decomposition of [Form, \S4], this asks where the arrow
+(SHE), which the skeletal code takes as an input, is supplied.  In
+the conditional assembly of [U26c], the carrier form of (S) is the
+content of H*val; in the reading of [U26, Def.~4] it implies the
+equality (9-1) of [LANA, \S9.2], which in turn implies the value
+form [U26, Prop.~6].
+
+Among the statements that the proof of Corollary~3.12 cites, none
+passes (T1) in the reading of [U26]: the 22 that carry log-volume
+content hold in its models [U26, Thms.~10, 22], and the others are
+discussed in [U26, \S9].  This concerns the statements as they are
+cited; what their proofs construct, in particular the proof of
+Theorem~3.11, is what the central question asks about.
+Other places in the source are listed in Appendix~\ref{s:places}.
+
+\subsection{Forms of answer}\label{ss:answers}
+
+Any of the following is useful, and one line is enough.
+\begin{enumerate}[label=(\Alph*),leftmargin=*]
+\item \emph{Misread.}  A reading above is wrong: one of (a)--(e)
+does not hold in the models, because the actual construction is
+larger there (where); or (M1) or (M2) violates a cited statement
+(which one); or Step~(xi-e) does not use (SHE) in the form described
+in Section~\ref{ss:step} (in which form, then).
+\item \emph{Located.}  A property of the actual construction, not
+among (a)--(e), that excludes (M1) or (M2), with a page, together
+with one consequence for regions, log-volumes or labels that fails
+in that model.
+\item \emph{Not needed.}  The argument reaches (S) by a route other
+than (xi-e)--(xi-f); please name the route.
+\item \emph{Not yet written.}  The supplier is contained in the
+construction but not yet stated in a citable form; please indicate
+the part of the construction, for instance a part of the proof of
+Theorem~3.11 or one of the triangles of [Form, \S4].
+\end{enumerate}
+
+\subsection{Strength is not evidence}\label{ss:strength}
+
+\begin{remark}\label{r:strength}
+A candidate supplier has, together with [IUTchIV, Thm.~1.10], the
+strength of an explicit height inequality, because (S) has.  This
+is a property of every proof of such an inequality: at the step
+where its content enters, a proof carries the strength of its
+conclusion.  The fact is therefore expected whether or not the
+construction supplies the step.  It is not offered as evidence
+either way, and it does not make the question hard to answer, since
+the question asks where and not how.  It is used above only as a
+criterion: a supplier, once found, can be recognized by what it
+implies.  The component questions of Appendix~\ref{s:questions} are
+weaker than the central question, and each informs a part of it.
+\end{remark}
+
+\section{Fixed background}\label{s:background}
 
 \subsection{The residual in two-path form}
 
@@ -168,7 +702,7 @@ a sufficiently rich readout.
 
 \subsection{Nearby public Lean work}
 
-The public Project LANA Lean development already contains
+The public Lean development of Project LANA [lana] already contains
 formalizations close in theme, including abstract forms of
 [EtTh] Proposition~2.14, shift automorphisms, discrete and
 cyclotomic rigidity, and, in Wall/LogLink models, scaling and
@@ -178,7 +712,7 @@ developments.  Its questions concern how such model-level
 classifications connect with the categories of the source texts
 and with globalization of section differences.
 
-\subsection{Formal cores checked in Lean, and what was not checked}
+\subsection{Formal cores checked in Lean, and what was not checked}\label{ss:cores}
 
 Before circulation, the parts of the implication map that can be
 stated without the [EtTh] or IUT constructions were isolated in
@@ -206,7 +740,42 @@ common ratio $r\ne1$ at every place does not cancel in a nonzero
 total.
 \end{itemize}
 
-The Lean files do not formalize mono-theta environments, the
+For this version, the elementary forms that the readings (a)--(e)
+of Section~\ref{ss:test} use were checked in a standalone file that
+depends only on Mathlib,
+\begin{center}\small
+\texttt{CentralQuestionReadings.lean},
+\end{center}
+compiled with Lean~4.30.0; for each of its 19 theorems,
+\texttt{\#print axioms} shows only the standard three axioms.  It
+checks the following.
+\begin{itemize}[leftmargin=*]
+\item Readings (a) and (b): an upper bound for the hull of the
+maximal family is an upper bound for every smaller family; the hull
+of a family that contains the container and lies in it is the hull
+of the container; and an excess bounded independently of $N$ fails,
+from some $N$ on, a requirement that grows linearly in $N$.
+\item Readings (c) and (d): a statement about data that do not
+contain the value of the $q$-pilot also holds in the configuration
+that changes only that value, where (S) at the level of values
+fails; so such a statement does not imply (S).
+\item Reading (e), with Q0, Q1, Q2 and Q6: a scaling of the local
+degrees that keeps the families of total degree zero is one scalar
+common to all places; one scalar acting on all labels alike does not
+carry the profile $\{a\}_j$ to $\{j^2a\}_j$, nor back, once two
+labels are present; and neither does a transport that keeps every
+degree readout.
+\end{itemize}
+Examples in the same file show that the positive slope, the
+condition that the members lie in the container, the two labels and
+the second place are needed, and removing any one of six hypotheses
+makes the corresponding proof fail.  These are the forms that the
+readings use.  That the constructions of [IUTchIII] and the models
+of [U26] have these forms is the content of the readings, and it is
+not formalized.
+
+The Lean files do not formalize the readings of
+Section~\ref{ss:test} themselves, mono-theta environments, the
 actual difference $\delta$, its globalization, Statement~P$'$,
 the two return bridges, or dictionary-dependent relations among
 candidate forms.  They should not be read as verifying the
@@ -216,7 +785,8 @@ questions themselves.
 
 The central identification difficulty itself is not new: it has
 been a public issue since [SS], and Project LANA records a
-corresponding membership problem as (9-1).  Joshi has published,
+corresponding membership problem as (9-1) [LANA, \S9.2].  Earlier
+work on the same passage is listed in Section~\ref{ss:known}.  Joshi has published,
 inside his own arithmetic Teichm\"uller theory, a claimed local
 prototype of Corollary~3.12 and valuation-scaling results
 [JosII].  Because the definitions and framework differ, this note
@@ -235,9 +805,60 @@ range audited, no numbered statement was located that closes
 them in the exact categories and with the exact readouts used
 below.
 
-\section{Setup and terminology}
+\section{Closing: what guidance would be decisive?}
 
-\subsection{Stage}
+The provisional answers in Appendix~\ref{s:questions} settle the
+component questions as far as the cited statements allow.  Along the
+route through the difference of sections, global synchronization
+leaves only one positive scalar in the degree (Q0, Q1), the
+difference of sections does not move degree readouts (Q2, Q5), and
+the two-path difference is not that difference (Q6).
+
+Any of the following would be decisive for this route:
+\begin{itemize}[leftmargin=*]
+\item for the central question, any answer of the forms (A)--(D) of Section~\ref{ss:answers}, in particular a pointer on one of the places (i)--(v) of Section~\ref{ss:test};
+\item for the component questions, a correction of the provisional answers in Appendix~\ref{s:questions}, in particular those to Q0(4), Q1, Q2 and Q6, or a reference that settles them;
+\item a prior public formulation of the residual in [EtTh] or anabelian reconstruction vocabulary.  This note does not make its value depend on a novelty claim.
+\end{itemize}
+
+The central question concerns a step that carries the strength
+of the conclusion.  As Remark~\ref{r:strength} explains, this is
+expected of the step at which the content of any proof of the
+inequality enters, and it does not make the question hard to
+answer.  The component questions are weaker, and each informs a part
+of the central one.  The earlier works of Section~\ref{ss:known},
+the conditional assembly and the profile countermodel have localized
+the remaining difficulty to that step, and Section~\ref{ss:square}
+locates it at one edge of the comparison: the value part of the
+$\Theta$-link, carried to regions in the common container.  The purpose of this note is
+to make the step searchable, and to put its parts in a form that
+specialists can judge in everyday vocabulary.
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{0.12\textwidth}p{0.42\textwidth}p{0.39\textwidth}@{}}
+\toprule
+Residual & Content & Treatment here\\
+\midrule
+R1 & Numbered statements of IUT I--IV as black boxes & Not verified\\
+R2V & Value-group profile switch H*val & Located at one edge (\S\ref{ss:square}) and asked in \S\ref{ss:test}; component questions answered provisionally (App.~\ref{s:questions})\\
+R2 & Inhabitation / frame fidelity to the actual construction & Marked at Q6 and Form B seams\\
+R3 & Source checking and independent re-verification & Author checking and outside rereading remain\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\appendix
+
+\section{Setup and terminology}\label{s:setup}
+
+Appendices~\ref{s:setup}--\ref{s:relations} keep the component
+questions of earlier versions together with the setup that they use,
+with provisional answers.  They are not needed to state or to answer
+the central question of Section~\ref{s:central}.
+Appendix~\ref{s:places} lists further places in the source.
+
+\subsection{Stage}\label{ss:stage}
 
 Let $K$ be a number field, $E/K$ an elliptic curve, and $S$ a
 finite set of places at which $E$ has split multiplicative
@@ -312,7 +933,7 @@ and the action itself should be recorded.  For transported
 readouts write
 $\varepsilon_v:=D_v^{\mathrm{tr}}(q_v)-D_v(q_v)$.
 
-\section{The local skeleton already in [EtTh]}
+\section{The local skeleton already in [EtTh]}\label{s:skeleton}
 
 This section records a starting point, not a new result.  The
 theta functional equation [EtTh, Prop.~1.4(ii)] and its
@@ -338,17 +959,43 @@ actual degree readout with such a quotient readout,
 globalization, or transport to the procession.  The questions
 below separate those outer steps.
 
-\section{Small questions Q0--Q7}
+\section{Component questions Q0--Q7}\label{s:questions}
 
-None of the following questions by itself asserts
-Corollary~3.12 or ABC.  For each one, a known reference, a
-countermodel, a correction of category, or a better formulation
-would serve the purpose of this note.  Structurally, Q0--Q5 cut
-out prerequisites, definitions and the local core of
-Statement~P$'$ in Section~5.  Q6 and Q7 are bridges back from
-P$'$ to the assembly.  Thus P$'$ is not an additional independent
-question beside Q0--Q7; it is a composite form built from Q0--Q5,
-with Q6--Q7 outside it.
+Each of the following questions is weaker than the central
+question of Section~\ref{s:central}, and none is needed to state
+it.  They concern one route, through the difference of the theta and
+algebraic sections of [EtTh], and they work at the level of the
+degree at each place.  An action on the degree line of a place
+changes the readouts of all labels by the same factor, so it cannot
+by itself turn the profile $\{j^2u\}_j$ into $\{u\}_j$.  The component
+questions can therefore close this route, or keep it open, but they
+cannot by themselves supply (S); the profile enters at Q7, whose
+distinction between readouts and membership is now part of (S).
+Each question is followed by a provisional answer.  An answer marked
+\emph{from the cited statements} rests on the statements it cites;
+one marked \emph{author's reading} also rests on our reading of how
+they apply, and corrections are welcome.  Taken together, the answers
+close this route.
+An answer to one of them would inform a specific part of the
+central question, recorded under ``Bearing on the central
+question''.  For each, a known reference, a countermodel, a
+correction of category, or a better formulation would serve the
+purpose of this note.  Structurally, Q0--Q5 cut out prerequisites,
+definitions and the local core of Statement~P$'$ in
+Appendix~\ref{s:pprime}.  Q6 and Q7 are bridges back from P$'$ to
+the assembly.  Thus P$'$ is not an additional independent question
+beside Q0--Q7; it is a composite form built from Q0--Q5, with
+Q6--Q7 outside it.
+
+We use the following labels for relations with (9-1):
+\emph{directly connected} under a fixed dictionary; \emph{connected
+under an additional identification}; \emph{requires separate
+examination}; and \emph{corresponding}, meaning essentially the
+same content in different vocabulary under a fixed dictionary.
+Here ``dictionary'' means a fixed correspondence between the
+assembly-side two paths, possible images and degree data and the
+membership formulation used by LANA.  The dictionary itself is
+not proved in this note.
 
 \subsection*{Q0. In which category do local shears live?}
 
@@ -374,7 +1021,36 @@ classify automorphisms category by category.  Even if (9-1) is
 true, degree-moving shears might exist in a wider category; even
 if they exist, the standard transport might avoid them.
 
-\subsection*{Q1. Can a local shear globalize? (Main question)}
+\emph{Bearing on the central question.}  A degree-moving action acts on
+the degree line of a place, so it multiplies the readouts of all
+labels by the same factor and cannot by itself turn $\{j^2u\}_j$ into
+$\{u\}_j$.  Its bearing is on whether the indeterminacies contain a
+freedom in the degree, that is, on how large the blurring is.  A
+classification excluding such actions in a category removes that
+category from consideration.
+
+\emph{Answer (from the cited statements, except item~4).}  An
+isomorphism of tempered fundamental groups induces isomorphisms of
+the relevant cohomology groups that are compatible with the
+surjections onto $\widehat{\mathbb Z}$ determined by the valuations,
+preserving both their kernels and the element
+$1\in\widehat{\mathbb Z}$ [EtTh, Thm.~1.6(ii)]; so no D-type action
+occurs in category~1.  An automorphism of a mono-theta or a bi-theta
+environment determines an automorphism of the tempered fundamental
+group [EtTh, Prop.~2.14(iii)], so none occurs in categories~2 and~3
+either.  These automorphisms act on the labels, through
+$(l\cdot\mathbb Z)\rtimes\{\pm1\}$ in the mono-theta case and through
+a subgroup of $(N^\dagger l\cdot\mathbb Z)\rtimes\{\pm1\}$ containing
+$(Nl\cdot\mathbb Z)\rtimes\{\pm1\}$ in the bi-theta case.  After
+realification the degree is determined only up to $\mathbb R_{>0}$
+[FrdI, Thm.~6.4(ii)], so a D-type action occurs in category~5, by
+one positive scalar; further structure [FrdI, Thm.~6.4(iii)(iv)]
+reduces it to $\mathbb Q_{>0}$ or to $1$.  Category~4 is not settled
+by the statements read here.  The two meanings of fixing cyclotomic
+data give the same answers, since the degree is read through the
+valuation surjection of [EtTh, Thm.~1.6(ii)].
+
+\subsection*{Q1. Can a local shear globalize? (Main component question)}
 
 Fix the local shear objects as in Q0.  What is the image, inside
 the product of local shears over places, of differences arising
@@ -406,6 +1082,24 @@ fixed dictionary and Bridge~(a), total consequences for the
 standard difference may follow, but not the one-place support
 condition.
 
+\emph{Bearing on the central question.}  Tells whether a freedom in the
+degree survives global synchronization.  Since such a freedom acts on
+all labels alike, this bears on how large the indeterminacies are and
+on the role of global data stressed in Step~(xii) of the proof of
+Corollary~3.12 [IUTchIII, p.~185], rather than on a supplier
+directly.
+
+\emph{Answer (author's reading).}  By the answer to Q0, a
+degree-moving action occurs only after realification, by a positive
+scalar.  For the global realified Frobenioids of $F_{\mathrm{mod}}$,
+compatibility with localization is stated up to $\mathbb R_{>0}$-orbits
+[IUTchII, Cor.~4.10(v)], that is, up to one scalar for all places.  A
+family with $\lambda_{v_0}\ne1$ and $\lambda_v=1$ for $v\ne v_0$ would
+not preserve the product formula: it sends a principal divisor with a
+nonzero component at $v_0$ to a divisor of nonzero total degree.  So
+one-place support is not realizable, and the obstruction is the
+product formula.  Such a scalar acts on all labels alike.
+
 \subsection*{Q2. Is the degree readout invariant under the standard difference of sections?}
 
 For the algebraic and theta sections in [EtTh], if the
@@ -427,6 +1121,27 @@ identification fixed, a numerical shadow follows from (9-1); the
 exact transformation rule inside [EtTh] does not.  This question
 may close from existing [EtTh] results alone.
 
+\emph{Bearing on the central question.}  With the dictionary and the
+readout identification fixed, (9-1) implies a numerical shadow of
+$\varepsilon_v=0$ (see the relation above), so a nonzero value would
+close this route.  The value $0$ is consistent with the route, but it
+does not supply the labelwise switch.
+
+\emph{Answer (author's reading).}  $\varepsilon_v=0$, and it follows
+from the statements cited in the question.  The difference of the two
+splittings is taken on the subquotient over $l\cdot\Delta_\Theta$ and
+yields the cyclotomic isomorphism [EtTh, Cor.~2.19(i)]; the
+automorphism obtained by shifting by a $\boldsymbol\mu_N$-valued
+difference of sections is the identity on both the quotient and the
+kernel [EtTh, Prop.~2.14(ii)]; and the valuation readout of Kummer
+classes of elements of the base field, such as $q_v$, is preserved by
+tempered isomorphisms together with $1\in\widehat{\mathbb Z}$
+[EtTh, Thm.~1.6(ii)].  Transporting the identification of
+coefficients to the theta-section side therefore leaves the readout
+of $q_v$ unchanged, and no further claim is needed at the
+coefficient-identification step.  This agrees with the abstract
+invariance checked in Lean (Section~\ref{ss:cores}).
+
 \subsection*{Q3. What is the smallest category containing both sections and the degree readout?}
 
 What is the smallest category in which the algebraic section,
@@ -442,6 +1157,23 @@ tension itself is essential?
 (9-1) is formulated in the LANA framework, that does not decide
 which mono/bi-theta environment is the minimal home for this
 question.  It is a question at the level of source definitions.
+
+\emph{Bearing on the central question.}  Locates the smallest
+category in which this route, and a supplier along it, could be
+stated.
+
+\emph{Answer (author's reading).}  The mono-theta environment
+itself.  The algebraic section is not part of its data, but the
+commutator property of [EtTh, Prop.~2.12] takes its place, and the
+three rigidities of [EtTh, Cor.~2.19] hold; [EtTh, Rem.~2.19.2] notes
+that the commutator property plays the role of the algebraic section,
+which does not appear in a mono-theta environment.  Adding the
+algebraic section as data, as in a bi-theta environment, cuts the
+symmetry acting on the labels down to multiples of $N$
+[EtTh, Prop.~2.14(iii)].  In this sense the tension is essential, and
+[EtTh] resolves it by using the algebraic section as a property rather
+than as data.  The degree readout is available through
+[EtTh, Thm.~1.6(ii)].
 
 \subsection*{Q4. Does a global $\delta$ exist without Hodge theatres?}
 
@@ -460,6 +1192,24 @@ identified with a gluing of [EtTh] section systems.  Whether the
 setup can be founded in pre-IUT vocabulary is not decided by
 granting (9-1).
 
+\emph{Bearing on the central question.}  Decides whether the global
+datum that a supplier might use can be stated without Hodge
+theatres.
+
+\emph{Answer (from the cited statements).}  Not in the naive sense.
+The source states that the local tempered fundamental groups at bad
+places do not extend to a global tempered fundamental group
+[IUTchIII, Cor.~3.12, proof, Step~(viii), p.~180].  What is used
+instead is a global $\pm$-synchronization, which produces a profinite
+conjugacy indeterminacy in the vertically coric construction of the
+theta values at torsion points; this indeterminacy is resolved by the
+theory of [IUTchI, \S2] ([IUTchI, Rem.~6.12.4(iii)];
+[IUTchII, Rems.~4.5.3(iii), 4.11.2(iii)]).  So the additional datum
+is this synchronization, which is part of the Hodge-theatre
+apparatus.  We found no statement that makes the local
+$\eta$-classes coherent as cocycles; the synchronization is at the
+level of conjugacy.
+
 \subsection*{Q5. Can the degree action of $\delta$ be computed in a Tate prototype?}
 
 For a Tate curve over a finite $p$-adic field containing the
@@ -477,6 +1227,22 @@ separate examination.}  Valuations of theta values and the
 functional equation follow from classical computation and [EtTh,
 Props.~1.4--1.5].  The value of $\varepsilon_v$ under the standard
 splitting is not computed by (9-1).
+
+\emph{Bearing on the central question.}  A computation that tests Q2
+in a Tate prototype.
+
+\emph{Answer (author's reading).}  The transported degree action is
+$\varepsilon_v=0$, by the answer to Q2.  The profile itself comes from
+the quadratic exponents of the theta series and its functional
+equation
+$\ddot\Theta(q_X^{a/2}\ddot U)=(-1)^aq_X^{-a^2/2}\ddot U^{-2a}\ddot\Theta(\ddot U)$
+[EtTh, Prop.~1.4(ii)], through the fact that restricting the \'etale
+theta class to a point gives the value of the theta function there up
+to units [EtTh, Prop.~1.4(iii)]; this gives the valuations
+$\frac{j^2}{2\ell}\ord_v(q_v)$ of Appendix~\ref{ss:stage}.  The
+difference of sections does not contribute to the profile.  We did
+not tabulate the values at $\ell=5$, since the answer does not depend
+on them.
 
 \subsection*{Q6. Bridge~(a): is the assembly two-path difference the [EtTh] section difference?}
 
@@ -498,6 +1264,22 @@ But fixing that dictionary is itself an unproved bridge, and
 identification with the [EtTh] $\delta$ is not immediate from the
 statement of (9-1).
 
+\emph{Bearing on the central question.}  A positive answer would
+reduce the central question, along this route, to properties of the
+[EtTh] section difference; a negative answer would close the route.
+
+\emph{Answer (author's reading; it depends on Q2).}  In the strict
+sense, no.  The two-path difference sends the labelwise readouts
+$\{j^2u_v\}_j$ to $\{u_v\}_j$; that is the profile switch.  The
+transport induced by the [EtTh] section difference leaves the degree
+readout of the $q$-datum unchanged (Q2).  The two can agree on degree
+readouts only if all labels have the same readout, which fails for
+$\ell\ge5$.  So this route does not carry the switch, and the
+compatibility with [IUTchII, Rem.~3.5.3] and
+[IUTchIII, Cor.~2.3(iv)] does not arise for it.  In the sense of
+inclusion in the hull, agreement up to the indeterminacies is (S)
+itself.
+
 \subsection*{Q7. Bridge~(b): what is needed to pass from equal readouts to object membership?}
 
 Under a splitting into unit part and a rational ray generated by
@@ -517,7 +1299,22 @@ such an implication fails in general.  In the assembly-shaped
 countermodel, this insufficiency is visible when the transported
 number is not connected to a theta-side object.
 
-\section{Statement \texorpdfstring{P$'$}{P'}}
+\emph{Bearing on the central question.}  This is where the profile
+enters.  The distinction between equal readouts and membership is
+now part of (S) in Section~\ref{ss:target}: a supplier of the value
+form need not supply the carrier form.
+
+\emph{Answer (from the cited statements and Section~\ref{ss:cores}).}
+No.  Equal unit parts and equal total procession degree do not make
+two pilot objects the same possible image: a total is a many-to-one
+shadow of a profile (Section~\ref{ss:cores}; the model of [U26d]).
+For the value form of (S) an inequality of totals is enough; for
+membership, that is, the carrier form of (S) and (9-1) in the reading
+of [U26, Def.~4], an inclusion of regions is needed.  That inclusion
+is the smallest additional datum, and it is what the central question
+asks for.
+
+\section{Statement \texorpdfstring{P$'$}{P'}}\label{s:pprime}
 
 Statement P$'$ is a revised presentation of an earlier
 reformulation, arranged to match the local skeleton and the
@@ -559,9 +1356,9 @@ geometric Corollary~3.12, see [Jos].
 \subsection{Setup and statement}
 
 Take $K$, $E/K$, $S$, $q_v$, $\ell\ge5$, theta torsion data and
-$\eta_{v,j}$ as in Section~2.  Take the two sections
+$\eta_{v,j}$ as in Appendix~\ref{s:setup}.  Take the two sections
 $s^{\mathrm{alg}}$, $s^\Theta$ and their difference $\delta$ in
-the sense of Section~2; cyclotomic compatibility is known by
+the sense of Appendix~\ref{s:setup}; cyclotomic compatibility is known by
 [EtTh, Cor.~2.19(i)].  As a marked
 \textbf{premise-or-part-of-the-question}, suppose that the
 sections and $\delta$ exist as one global object whose local
@@ -605,9 +1402,12 @@ formally is $(\alpha)$ plus decomposition identities implying
 $(\beta)$; numerical compatibility P$'$ alone does not imply
 $(\alpha)$.  If P$'$ is false, this assembly route closes, but
 that would not disprove ABC.  If P$'$ is true, Bridges~(a)(b)
-and the IUT black box still remain.
+and the IUT black box still remain.  With the provisional answers of
+Appendix~\ref{s:questions}, the local part of P$'$ holds (Q2), but
+Bridge~(a) fails in the strict sense (Q6), so P$'$ does not lead to
+$(\alpha)$ along this route.
 
-\section{Candidate forms A--D and the implication map}
+\section{Candidate forms A--D and the implication map}\label{s:forms}
 
 Before this question list, the residual $(\alpha)$ was examined
 in the following candidate forms.  We record only their relation
@@ -637,7 +1437,7 @@ These dictionary-dependent relations were not formalized in Lean.
 Q0--Q5 separate prerequisites and definitions outside this map;
 Q6--Q7 ask about its seams.
 
-\section{Summary of relations with (9-1)}
+\section{Summary of relations with (9-1)}\label{s:relations}
 
 The labels below mean the position of a question if (9-1) is
 granted.  They do not include the truth of (9-1) or correctness
@@ -651,6 +1451,7 @@ classification or foundations for globalization.
 \toprule
 Question & Relation & Reason in brief\\
 \midrule
+Central question (\S\ref{s:central}) & Supplier of (9-1) & A supplier of the carrier form of (S) gives (9-1) in the reading of [U26, Def.~4]; (9-1) gives the value form\\
 Q0 local-shear classification & Separate & (9-1) gives no categorywise automorphism classification\\
 Q1 globalization / one place & Separate & Standard membership does not classify prescribed families\\
 Q2 transported-readout invariance & Additional identification & Numerical shadow follows; internal [EtTh] rule is separate\\
@@ -667,44 +1468,32 @@ Form C & Additional identification & Assembly degree data as output of $R$ is th
 \end{tabular}
 \end{center}
 
-\section{Closing: what guidance would be decisive?}
+\section{Other places in the source}\label{s:places}
 
-In the author's understanding, the centre is how far local
-freedom is killed by global synchronization.  This appears most
-sharply in Q1's image problem.  But Q1 is meaningful only after
-Q0 fixes the category and type of shears and Q3--Q4 fix the home
-of global objects.  That is why the questions are separated.
+Besides the constructions named in the central question, the
+following places may bear on the edge of Section~\ref{ss:square}.
+The list is not exhaustive.
 
-Any of the following would be decisive for this route:
-\begin{itemize}[leftmargin=*]
-\item for Q0, the exact category in which degree-moving shears exist, with a classification reference;
-\item for Q1, a one-place-supported global realization, or an explicit constraint forbidding it;
-\item for Q2 and Q5, a derivation of transported-readout invariance from existing theorems, or a concrete computed value;
-\item for Q3 and Q4, a standard category containing both sections and readouts, or an existing reconstruction giving global gluing;
-\item for Q6 and Q7, a numbered statement closing a bridge, or a concrete step where a bridge fails;
-\item a prior public formulation of the residual in [EtTh] or anabelian reconstruction vocabulary.  This note does not make its value depend on a novelty claim.
-\end{itemize}
-
-None of these questions is Corollary~3.12 or ABC itself.
-However, the conditional assembly and the profile countermodel
-have localized the remaining difficulty along this route to
-finitely many steps.  The purpose of this note is to put those
-steps in a form that specialists can judge in everyday
-vocabulary.
-
-\begin{center}
-\small
-\begin{tabular}{@{}p{0.12\textwidth}p{0.42\textwidth}p{0.39\textwidth}@{}}
+{\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.27\textwidth}>{\raggedright\arraybackslash}p{0.37\textwidth}>{\raggedright\arraybackslash}p{0.30\textwidth}@{}}
 \toprule
-Residual & Content & Treatment here\\
+Place & Content & Bearing\\
 \midrule
-R1 & Numbered statements of IUT I--IV as black boxes & Not verified\\
-R2V & Value-group profile switch H*val & Decomposed into Q0--Q7 and P$'$\\
-R2 & Inhabitation / frame fidelity to the actual construction & Marked at Q6 and Form B seams\\
-R3 & Source checking and independent re-verification & Author checking and outside rereading remain\\
+\endhead
+{}[IUTchIII, Thm.~3.11(i)], pp.~153--155 & Multiradial representation; at the end of (i), the permutation symmetries of the \'etale-like structures & How the output is made independent of the holomorphic structure\\\addlinespace[3pt]
+{}[IUTchIII, Thm.~3.11(ii)], pp.~155--156 & Log-Kummer correspondence; (Ind3) & Step (xi-d) calls the column-one log-Kummer correspondence essential\\\addlinespace[3pt]
+{}[IUTchIII, Thm.~3.11(iii)], pp.~156--158 & Compatibility of the Kummer isomorphisms with the $\Theta^{\times\boldsymbol\mu}_{\mathrm{LGP}}$-links & Relates the $\Theta$-link to Kummer theory\\\addlinespace[3pt]
+{}[IUTchIII, Rem.~3.11.1(iii)--(v)], pp.~160--163 & (IPL), (SHE), (APT) and the hidden internal structure & The properties that Step~(xi) keeps, and what it sets aside\\\addlinespace[3pt]
+{}[IUTchIII, Rem.~3.11.1(vi)--(viii)], pp.~163--167 & Naive models: distinct labels give (IPL) but leave (SHE) unclear; confusing $q$ with its powers gives a trivial multiradial representation; the features of Theorem~3.11 on which the estimate depends; the permutation symmetry $\Pi\to G\leftarrow\Pi$ & The source's own statement of the dilemma, and of how the theory is meant to avoid it\\\addlinespace[3pt]
+{}[IUTchIII, Rem.~3.9.5(vii)--(x)], pp.~131--145 & Hull, (Ob1)--(Ob9), (sQ4), the closed loop of (viii)(ix) & The passage from regions to comparable numbers, cited in (xi-c)--(xi-e)\\\addlinespace[3pt]
+{}[IUTchIII, Cor.~3.12, proof], Steps (i)--(x), pp.~175--181, and (xii), p.~185 & Set-up of the comparison; in (xii), the role of the global realified Frobenioids in the $\Theta^{\times\boldsymbol\mu}_{\mathrm{LGP}}$-link & Step (xii) stresses that global data matter in Step (xi)\\\addlinespace[3pt]
+{}[IUTchIII, Rem.~3.12.2], pp.~187--195 & Interpretation of the gluing and of the entanglement of addition and multiplication & Context of (xi-a)\\\addlinespace[3pt]
+{}[IUTchII, Cor.~4.5(iv)(v)], p.~133; [IUTchII, Cor.~4.6(iv)(v)], pp.~138--139; [IUTchII, Cor.~4.10(v)], p.~160 & Theta and Gaussian monoids and Frobenioids, the ratio vector $(j^2)_j$, compatibility up to $\mathbb R_{>0}$-orbits & The source of the profile\\\addlinespace[3pt]
+{}[EtTh, Thm.~1.6, Props.~2.12, 2.14, Cor.~2.19] & Mono-theta environments, the difference of the theta and algebraic sections, cyclotomic rigidity & The local skeleton of Appendix~\ref{s:skeleton}; part of the structure set aside in (xi-b)\\\addlinespace[3pt]
+{}[FrdI, Thm.~6.4] & Restoration of the degree scale in tiers: $\mathbb R_{>0}$, $\mathbb Q_{>0}$, $1$ & What an equivalence of realified Frobenioids fixes: a single scalar on one line\\\addlinespace[3pt]
+{}[Form, \S\S3--4] & Symmetry of the \'etale Hodge theatre under exchanging the domain and the codomain of the $\Theta$-link with the basic prime-strip fixed; the four triangles; (APT) in the second and third & The author's own decomposition of the step\\
 \bottomrule
-\end{tabular}
-\end{center}
+\end{longtable}}
 
 \section*{Disclosure}
 
@@ -731,11 +1520,22 @@ a work report not yet independently re-verified.
 \bibitem[Jos]{jos} K.~Joshi, Construction of Arithmetic Teichmuller Spaces II$_{1/2}$: Deformations of Number Fields, arXiv:2305.10398.
 \bibitem[JosII]{jos2} K.~Joshi, Construction of Arithmetic Teichmuller Spaces II: Proof of a local prototype of Mochizuki's Corollary 3.12, arXiv:2303.01662v3, Thms.~6.9.1 and 9.2.1. Not treated here as evaluated input.
 \bibitem[Zen26]{zen} C.~Zeng, An Integral-Structure Inflation in the Hull Operation of IUT Corollary 3.12, Hexagon 2610.00646v1. Not verified or used as input here.
-\bibitem[LANA]{lana} Project LANA, interim report and public Lean development ((9-1), \texttt{xi\_iff}, EtaleTheta/Wall/LogLink modules). Mentioned only as reference form and nearby formalization; its results are not used here as proved inputs.
+\bibitem[LANA]{lana} Project LANA, \emph{Project LANA interim report on IUT theory}, July 2026, 50 pp. Mentioned as a reference form; its results are not used here as proved inputs.
+\bibitem[lana]{lanarepo} Project LANA, \emph{lana-agents/iut}, Lean repository, \url{https://github.com/lana-agents/iut}; files \texttt{Iut/WallEquiv/NonDerivable.lean} (added 13 October 2026, commit 180c049) and \texttt{Iut/Wall/Constraints.lean}, and the EtaleTheta, Wall and LogLink modules, consulted at commit 553076a (3 November 2026). Mentioned as nearby formalization; its results are not used here as proved inputs.
+\bibitem[Higuchi]{higuchi} J.~R.~Higuchi, A formal negative result for the passage from Step (xi-e) to Step (xi-f) in IUT III, preprint, March 31, 2026, 9 pp., DOI \href{https://doi.org/10.13140/RG.2.2.10989.76006}{10.13140/RG.2.2.10989.76006}.
+\bibitem[Pajo]{pajo} P.~Pajo, Scale-free common-container comparisons do not entail numerical inequalities: a minimum-viable no-go theorem motivated by the IUT III Theorem 3.11-to-Corollary 3.12 bridge, preliminary research note, April 26, 2026, 14 pp., DOI \href{https://doi.org/10.13140/RG.2.2.33620.16005}{10.13140/RG.2.2.33620.16005}.
+\bibitem[Takkun]{takkun} Takkun-kohinata, \emph{IUT\_LEAN}, Lean repository, \url{https://github.com/Takkun-kohinata/IUT_LEAN}, commit 9d56c46 (15 July 2026); files \texttt{IutLean/Multiradial/ThetaHullDichotomy.lean} and \texttt{DisputedCore.lean}.
+\bibitem[Saito]{saito} Y.~Saito, A registered-provenance audit of IUT III, Corollary 3.12, Step (xi), version 2.0.0, Zenodo, 26 July 2026, DOI \href{https://doi.org/10.5281/zenodo.21596198}{10.5281/zenodo.21596198}.
+\bibitem[sfingali]{sfingali} sfingali, The Scholze--Stix objection, formally: the arithmetic is agreed, the $q$-side is absent, Zenodo, 2 August 2026, DOI \href{https://doi.org/10.5281/zenodo.21757640}{10.5281/zenodo.21757640}.
+\bibitem[Geiger]{geiger} L.~Geiger, The bridge certificate: a line-level audit instrument for inter-theoretic transfer arguments, Zenodo, first version 14 August 2026, DOI \href{https://doi.org/10.5281/zenodo.21925803}{10.5281/zenodo.21925803} (all versions).
+\bibitem[Form]{form} S.~Mochizuki, On the formalization of IUT: a preliminary progress report (joint work in progress with Y.~Hoshi, G.~Yamashita, Y.~Yang), slides, April 2026, 14 pp.
+\bibitem[Ri]{ri} D.~Richards, \emph{motizukipdf --- Mochizuki's papers, plus a toolkit for the data types of IUT}, GitHub repository \url{https://github.com/oneman/motizukipdf}; Lean port \texttt{lean/IUT/LeanForm.lean} at commit 2665db1 (30 October 2026).
+\bibitem[DHPS]{dhps} T.~Dupuy and A.~Hilado, Probabilistic Szpiro, baby Szpiro, and explicit Szpiro from Mochizuki's Corollary 3.12, arXiv:2004.13108v2 [math.NT], 29 April 2020.
 \bibitem[U26]{u26} T.~Urahigashi, Where Theorem 3.11 sits, Zenodo, DOI \href{https://doi.org/10.5281/zenodo.24104932}{10.5281/zenodo.24104932} (v1.2.1).
-\bibitem[U26b]{u26b} T.~Urahigashi, Forgetting and Completeness, Zenodo, DOI \href{https://doi.org/10.5281/zenodo.24165837}{10.5281/zenodo.24165837} (v1.1.3).
-\bibitem[U26c]{u26c} T.~Urahigashi, A conditional assembly from Theorem 3.11 to Corollary 3.12: decomposition of the scalar layer, a semantic principle, and isolation of the value-group profile switch, Zenodo, DOI \href{https://doi.org/10.5281/zenodo.24179190}{10.5281/zenodo.24179190} (v1.0.1).
-\bibitem[U26d]{u26d} T.~Urahigashi, Scale preservation is not enough: a profile-level independence countermodel for the Corollary 3.12 assembly inputs, Zenodo, DOI \href{https://doi.org/10.5281/zenodo.24195284}{10.5281/zenodo.24195284} (v1.0.0).
+\bibitem[U26b]{u26b} T.~Urahigashi, Forgetting and Completeness, Zenodo, DOI \href{https://doi.org/10.5281/zenodo.24210290}{10.5281/zenodo.24210290} (v1.1.5).
+\bibitem[U26c]{u26c} T.~Urahigashi, A conditional assembly from Theorem 3.11 to Corollary 3.12: decomposition of the scalar layer, a semantic principle, and isolation of the value-group profile switch, Zenodo, DOI \href{https://doi.org/10.5281/zenodo.24209900}{10.5281/zenodo.24209900} (v1.0.3).
+\bibitem[U26d]{u26d} T.~Urahigashi, Scale preservation is not enough: a profile-level independence countermodel for the Corollary 3.12 assembly inputs, Zenodo, DOI \href{https://doi.org/10.5281/zenodo.24209904}{10.5281/zenodo.24209904} (v1.0.1).
+\bibitem[SL]{sl} T.~Urahigashi, Segment or loop? A homotopy-type-theoretic overview of the dispute over Corollary 3.12 of inter-universal Teichm\"uller theory, version 1.4.0, Zenodo, DOI \href{https://doi.org/10.5281/zenodo.24039360}{10.5281/zenodo.24039360}.
 \end{thebibliography}
 
 \end{document}
