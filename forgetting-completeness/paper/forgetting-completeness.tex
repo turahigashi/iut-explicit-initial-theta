@@ -35,11 +35,11 @@ from Theorem~3.11 to Corollary~3.12\\
 in inter-universal Teichm\"uller theory}
 \author{Toshihisa Urahigashi\\
 \small\texttt{123026.urahigashi.toshihisa@gmail.com}}
-\date{Version 1.1.4 --- 14 November 2026\\[3pt]
+\date{Version 1.1.5 --- 14 November 2026\\[3pt]
 \small Independent researcher. This work was carried out personally and is
 unrelated to any institutional affiliation.\\[3pt]
 \small ORCID \href{https://orcid.org/0009-0004-0460-6242}{\texttt{0009-0004-0460-6242}}\\[-2pt]
-\small \href{https://doi.org/10.5281/zenodo.24209901}{doi:10.5281/zenodo.24209901} (all versions: \href{https://doi.org/10.5281/zenodo.24135420}{10.5281/zenodo.24135420})}
+\small \href{https://doi.org/10.5281/zenodo.24210290}{doi:10.5281/zenodo.24210290} (all versions: \href{https://doi.org/10.5281/zenodo.24135420}{10.5281/zenodo.24135420})}
 
 \begin{document}
 \maketitle
@@ -109,6 +109,21 @@ functor, dependency problem, realification, scale, Lean.
 \Hmark{} the present author's reading or interpretation.
 
 \medskip
+\noindent\textbf{Note added in version 1.1.5.}
+This version corrects points found in a re-reading: the summary of
+\cite{U26} in \S1 (a weak reading of (SHE) follows there, not a weak
+form of the conclusion), the date of \cite{SS18}, the items cited from
+\cite[Cor.~2.19]{EtTh}, and a missing source in the table of \S6.
+Figure~2 is redrawn for legibility; its tier $\deg\in\mathbb Q_{>0}$
+no longer says that orientation is lost (the factor need not be $1$),
+the arrow between the two containers in panel~(c) no longer carries
+the label of the $\mathfrak{log}$-link, which acts within a column,
+and dashed elements marked \dag\ show the profile switch of the
+clarification of version~1.1.3.  The figure otherwise keeps the
+scale-centred view in which it was drawn.  No proposition, Lean
+file or conclusion is changed.
+
+\medskip
 \noindent\textbf{Note added in version 1.1.4.}
 This version only rewords the description of the Lean development and
 of the source audit in the reproducibility paragraph, and rewrites the
@@ -142,8 +157,8 @@ summaries of the cited properties?
 
 \EST{} The preceding study \cite{U26} showed, by countermodels
 checked in Lean, that the answer to Question~S is no for the theory
-obtained by fixing the cited range, and that a weak form of the
-conclusion does follow.  The present paper does not repeat that
+obtained by fixing the cited range, and that a weak reading of the
+property (SHE) does follow.  The present paper does not repeat that
 result.  Its purpose is to state precisely, in the language of
 forgetting and completeness, where the gap lives and what would have
 to be extracted to make Question~C decidable.
@@ -524,12 +539,13 @@ $j$; Lean Tate reconstruction and the identification with
 $\log\lVert j(W)\rVert$.\\
 Cyclotomic synchronization & reconstruction & closed &
 \cite[Cor.~2.19(i)]{EtTh}: finite-level Tate-twist identification;
-discrete ambiguity excluded.\\
+\cite[Cor.~2.19(ii)]{EtTh}: discrete ambiguity excluded.\\
 Local monoid reconstruction & reconstruction & closed &
 \cite[Prop.~3.2]{AbsTopIII}: normalization by the unramified
 value-monoid generator; rigidity of the value monoid $\mathbb N$.\\
 Unit-side indeterminacy & quotient & closed at readout & Ism acts
-by a unit scalar; the Galois part preserves at $e=1$ and has only a
+by a unit scalar \cite[Prop.~9]{U4}, after \cite[Thm.~F,
+Thm.~7.4]{MT}; the Galois part preserves at $e=1$ and has only a
 displacement bound for $e>1$.\\
 Identification at realification & quotient & tiered & The
 three-tier $\mathbb R_{>0}/\mathbb Q_{>0}/1$ classification of
@@ -690,7 +706,7 @@ Propositions~\ref{prop:fibre}--\ref{prop:defect} and the examples
 of \S2---is included in the accompanying repository%
 \footnote{\url{https://github.com/turahigashi/iut-explicit-initial-theta},
 directory \texttt{forgetting-completeness}, tag
-\texttt{forgetting-completeness-v1.1.4}.}
+\texttt{forgetting-completeness-v1.1.5}.}
 as the standalone Lean file \texttt{CompletenessFrameCore.lean},
 which depends only on Mathlib and was checked within the standard
 axioms \texttt{propext}, \texttt{Classical.choice},
@@ -730,130 +746,128 @@ the diagram of which Figure~\ref{fig:square} is the central panel.
 
 \begin{figure}[p]
 \centering
-\resizebox{\textwidth}{!}{%
-\begin{tikzpicture}[>=Stealth,
-  box/.style={draw, align=center, font=\scriptsize, inner sep=3pt},
-  note/.style={align=left, font=\scriptsize, inner sep=2pt},
-  ttl/.style={font=\small\bfseries, align=left}]
+\tikzset{>=Stealth,
+  every node/.append style={execute at begin node={\hyphenpenalty=10000\exhyphenpenalty=10000}},
+  fbox/.style={draw, align=center, font=\footnotesize, inner sep=3pt},
+  fnote/.style={align=left, font=\scriptsize, inner sep=1pt},
+  flab/.style={font=\scriptsize, inner sep=1.5pt},
+  later/.style={draw, dashed, thick, align=left, font=\scriptsize, inner sep=3pt}}
+\begin{minipage}[t]{0.47\textwidth}
+\textbf{\small (a) The tower of forgettings and the reconstruction back-flow}\par\medskip
+\begin{tikzpicture}
+\node[fbox, text width=3.5cm] (a1) at (0,0)
+  {full arithmetic data\\[-1pt] {\scriptsize initial $\Theta$-data, curve, field \cite[Def.~3.1]{IUT1}}};
+\node[fbox, text width=3.5cm] (a2) at (0,-1.6)
+  {tempered fundamental groups,\\ mono-theta environments};
+\node[fbox, text width=3.5cm] (a3) at (0,-3.2)
+  {prime-strips\\ ($\mathcal D$- and $\mathcal F$-strips)};
+\node[fbox, text width=3.5cm] (a4) at (0,-4.8)
+  {unit part $\cO^{\times\mu}$ /\\ value-group part};
+\node[fbox, text width=3.5cm] (a5) at (0,-6.4)
+  {realified Frobenioids};
+\node[fbox, text width=3.5cm] (a6) at (0,-8.0)
+  {log-volume $\in\mathbb R$};
+\foreach \u/\v in {a1/a2,a2/a3,a3/a4,a4/a5,a5/a6} \draw[->] (\u)--(\v);
+\draw[->, very thick, gray!70!black] (2.15,-8.0) -- (2.15,0);
+\node[fnote, text width=3.0cm, anchor=west] at (2.35,-0.8)
+  {reduct: forget the scheme structure};
+\node[fnote, text width=3.0cm, anchor=west] at (2.35,-2.4)
+  {reduct: forget addition (multiplicative monoids and value groups)};
+\node[fnote, text width=3.0cm, anchor=west] at (2.35,-4.0)
+  {quotient: drop torsion and entanglement (home of (Ind))};
+\node[fnote, text width=3.0cm, anchor=west] at (2.35,-5.6)
+  {quotient: choice of basis of the degree line ($\mathbb R_{>0}$-torsor)};
+\node[fnote, text width=3.0cm, anchor=west] at (2.35,-7.2)
+  {quotient: a single number (anchored within a copy by $\mu(\cO)=1$)};
+\node[fnote, text width=7.3cm, anchor=north west] at (-1.95,-8.55)
+  {Grey arrow: mono-analytic reconstruction (MLF; Tate reconstruction) back up the tower.\\[2pt]
+   Alienness is born at the prime-strip stage: the two additions are two points of the fibre
+   over one multiplicative shadow.};
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.5\textwidth}
+\textbf{\small (b) The missing square (the centre)}\par\medskip
+\begin{tikzpicture}
+\node[fbox, text width=3.0cm] (b1) at (0,0)
+  {marked strips\\ (col.~0)\\[-1pt] {\scriptsize generators, scale preserved}};
+\node[fbox, text width=3.0cm] (b2) at (4.9,0)
+  {marked strips\\ (col.~1)\\[-1pt] {\scriptsize generators, scale preserved}};
+\node[fbox, text width=3.0cm] (b3) at (0,-1.8) {bare strips (col.~0)};
+\node[fbox, text width=3.0cm] (b4) at (4.9,-1.8) {bare strips (col.~1)};
+\draw[->, dashed, thick] (b1) -- node[flab, above]{? lift $W$} (b2);
+\draw[->] (b1) -- node[flab, left]{forget} (b3);
+\draw[->] (b2) -- node[flab, right]{forget} (b4);
+\draw[->] (b3) -- node[flab, below]{$\Theta$-link} (b4);
+\node[fnote, text width=7.6cm, anchor=north] (bn) at (2.45,-2.5)
+  {Obstruction at readout level $=$ aggregate relative scale $c_X$ for a transported pilot.
+   Each copy is anchored absolutely by $\mu(\cO)=1$, so $c_X$ is an invariant, not a
+   convention.};
+\node[later, text width=7.35cm, anchor=north] at ([yshift=-6pt]bn.south)
+  {\dag\ Not a single scalar: the profiles differ, $\{j^2u\}_j$ on the $\Theta$-side and
+   $\{u\}_j$ on the $q$-side, with means in the ratio $\ell(\ell+1)/12\ne1$ ($\ell\ge5$);
+   chart identity does not identify them, so the lift must also switch the profile.};
+\end{tikzpicture}
 
-% ---------- (a) tower ----------
-\node[ttl] at (0,20.3) {(a) The tower of forgettings (vertical)
-and the reconstruction back-flow};
-\node[box, text width=4.6cm] (a1) at (2.5,19.2)
-{full arithmetic data\\ \tiny initial $\Theta$-data, curve, field,
-history \cite[I, Def.~3.1]{IUT1}};
-\node[box, text width=4.6cm] (a2) at (2.5,17.5)
-{tempered fundamental groups,\\ mono-theta environments};
-\node[box, text width=4.6cm] (a3) at (2.5,15.8)
-{prime-strips ($D$- and $F$-strips)};
-\node[box, text width=4.6cm] (a4) at (2.5,14.1)
-{unit part $\cO^{\times\mu}$ / value-group part};
-\node[box, text width=4.6cm] (a5) at (2.5,12.4)
-{realified Frobenioids};
-\node[box, text width=4.6cm] (a6) at (2.5,10.7)
-{log-volume $\in\mathbb R$};
-\draw[->] (a1)--(a2); \draw[->] (a2)--(a3); \draw[->] (a3)--(a4);
-\draw[->] (a4)--(a5); \draw[->] (a5)--(a6);
-\node[note, text width=3.3cm] at (7.55,18.35)
-{reduct: forget scheme structure};
-\node[note, text width=3.3cm] at (7.55,16.65)
-{reduct: forget addition\\ (multiplicative monoids + value groups)};
-\node[note, text width=3.3cm] at (7.55,14.95)
-{quotient: drop torsion and entanglement (home of (Ind))};
-\node[note, text width=3.3cm] at (7.55,13.25)
-{quotient: choice of basis of the degree line
-($\mathbb R_{>0}$-torsor)};
-\node[note, text width=3.3cm] at (7.55,11.55)
-{quotient: a single number (anchored within a copy by
-$\mu(\cO)=1$)};
-\draw[->, thick] (5.35,10.7) -- (5.35,19.2);
-\node[note, text width=3.2cm] at (7.3,9.9)
-{upward arrow: mono-analytic reconstruction (MLF; Tate
-reconstruction)};
-\node[note, text width=8.6cm] at (4.4,9.0)
-{Alienness is born at the prime-strip stage: the two additions are
-two points of the fibre over one multiplicative shadow.};
+\bigskip
+\textbf{\small (c) The query $Q$ is a cross-column comparison}\par\medskip
+\begin{tikzpicture}
+\node[fbox, text width=3.0cm, minimum height=1.05cm] (c1) at (0,0)
+  {$\Theta$-pilot (col.~0)\\[-1pt] {\scriptsize subject to indeterminacies}};
+\node[fbox, text width=3.0cm, minimum height=1.05cm] (c2) at (4.9,0)
+  {$q$-pilot (col.~1)\\[-1pt] {\scriptsize initial $q$-parameter}};
+\node[fbox, text width=3.0cm, minimum height=1.05cm] (c3) at (0,-1.8)
+  {log-shell (container)\\[-1pt] {\scriptsize coric: same across columns}};
+\node[fbox, text width=3.0cm, minimum height=1.05cm] (c4) at (4.9,-1.8)
+  {log-shell (container)\\[-1pt] {\scriptsize volumes measured inside}};
+\draw[->] (c1) -- node[flab, above]{$\Theta$-link} (c2);
+\draw[->] (c1) -- (c3);
+\draw[->] (c2) -- (c4);
+\draw[thick, double, double distance=2pt] (c3) -- (c4);
+\node[fnote, text width=7.6cm, anchor=north] at (2.45,-2.75)
+  {$Q$: $-|\log\Theta|\ge-|\log q|$? Within a column the order is scale-invariant and does not
+   blur; the blur appears only across columns.};
+\end{tikzpicture}
+\end{minipage}
 
-% ---------- (b) missing square ----------
-\node[ttl] at (10.2,20.3) {(b) The missing square (the centre)};
-\node[box, text width=3.1cm] (b1) at (12.0,19.0)
-{marked strips (col.~0)\\ \tiny generators, scale preserved};
-\node[box, text width=3.1cm] (b2) at (16.2,19.0)
-{marked strips (col.~1)\\ \tiny generators, scale preserved};
-\node[box, text width=3.1cm] (b3) at (12.0,16.9)
-{bare strips (col.~0)};
-\node[box, text width=3.1cm] (b4) at (16.2,16.9)
-{bare strips (col.~1)};
-\draw[->, dashed] (b1)-- node[above, font=\scriptsize]
-{? lift ($W$)} (b2);
-\draw[->] (b1)-- node[left, font=\scriptsize]{forget} (b3);
-\draw[->] (b2)-- node[right, font=\scriptsize]{forget} (b4);
-\draw[->] (b3)-- node[below=3pt, font=\scriptsize, align=center,
-text width=3.4cm]
-{$\Theta$-link} (b4);
-\node[note, text width=7.6cm] at (14.1,15.2)
-{Obstruction at readout level $=$ aggregate relative scale $c_X$
-for a transported pilot. This is not merely a chart scalar:
-identity of the chart calibration does not identify value-group
-profiles. Each copy is anchored absolutely by $\mu(\cO)=1$, so
-$c_X$ is an invariant, not a convention.};
+\vspace{0.9\baselineskip}
+\begin{minipage}{\textwidth}
+\textbf{\small (d) Tiers of scale restoration \cite[Thm.~6.4]{FrdI}}\par\smallskip
+\centering
+\begin{tikzpicture}
+\node[fbox, text width=3.3cm, minimum height=1.8cm] (d1) at (0,0)
+  {$\deg\in\mathbb R_{>0}$\\[-1pt] {\scriptsize realification only \cite[Cor.~4.10(v)]{IUT2}: incomplete for $Q$}};
+\node[fbox, text width=3.3cm, minimum height=1.8cm] (d2) at (4.25,0)
+  {$\deg\in\mathbb Q_{>0}$\\[-1pt] {\scriptsize lifted to perfection and unit trivialization: still incomplete for $Q$ (the factor need not be $1$)}};
+\node[fbox, text width=3.3cm, minimum height=1.8cm] (d3) at (8.5,0)
+  {$\deg=1$\\[-1pt] {\scriptsize from a categorical equivalence of the Frobenioids themselves $=$ same initial-data calibration (supply unconfirmed)}};
+\node[later, align=center, text width=3.3cm, minimum height=1.8cm] (d4) at (12.75,0)
+  {\dag\ profile switch\\[-1pt] $\{j^2u\}_j\to\{u\}_j$ across the labels: not a scalar; still needed after $\deg=1$ (open)};
+\draw[->] (d1) -- (d2);
+\draw[->] (d2) -- (d3);
+\draw[->, dashed, thick] (d3) -- (d4);
+\end{tikzpicture}
+\end{minipage}
 
-% ---------- (c) query Q ----------
-\node[ttl] at (10.2,13.9) {(c) The query $Q$ is a cross-column
-comparison};
-\node[box, text width=3.1cm] (c1) at (12.0,12.7)
-{$\Theta$-pilot (col.~0)\\ \tiny subject to indeterminacies};
-\node[box, text width=3.1cm] (c2) at (16.2,12.7)
-{$q$-pilot (col.~1)\\ \tiny initial $q$-parameter};
-\node[box, text width=3.1cm] (c3) at (12.0,10.9)
-{log-shell (container)\\ \tiny coric: same across columns};
-\node[box, text width=3.1cm] (c4) at (16.2,10.9)
-{log-shell (container)\\ \tiny volumes measured inside};
-\draw[->] (c1)-- node[above, font=\scriptsize, fill=white,
-inner sep=1.5pt]{$\Theta$-link} (c2);
-\draw[->] (c1)--(c3); \draw[->] (c2)--(c4);
-\draw[->] (c3)-- node[below=3pt, font=\scriptsize, align=center,
-text width=3.2cm]
-{log-link} (c4);
-\node[note, text width=7.6cm] at (14.1,9.2)
-{$Q$: $-|\log\Theta|\ge-|\log q|$? Within a column the order is
-scale-invariant and does not blur; the blur appears only across
-columns.};
+\vspace{0.7\baselineskip}
+{\footnotesize\raggedright
+The status of each interface is listed in the table of \S6. What this figure says: the scale-controlling open square is panel~(b); a separate output-side
+hull identification, not drawn, also remains open. A failure of completeness lives not inside the
+construction but at an interface, where a summary does not record a correlation.\\[3pt]
+\dag\ Dashed elements were added in version~1.1.5. The figure was drawn when the question was
+posed as whether the scale is preserved through the various combinations of forgetful steps; the
+dashed elements show where the later notes \cite{UCA,UPI} locate the remaining wall: a switch of
+value-group profiles across the labels, not a single scalar.\par}
 
-% ---------- (d) trichotomy ----------
-\node[ttl] at (0,7.9) {(d) Tiers of scale restoration
-\cite[Thm.~6.4]{FrdI}};
-\node[box, text width=4.9cm] (d1) at (2.7,6.5)
-{$\deg\in\mathbb R_{>0}$\\ \tiny identification at realification
-only \cite[Cor.~4.10(v)]{IUT2}: incomplete for $Q$};
-\node[box, text width=4.9cm] (d2) at (8.6,6.5)
-{$\deg\in\mathbb Q_{>0}$\\ \tiny lifted to perfection and unit
-trivialization: still incomplete for $Q$ (orientation not
-preserved)};
-\node[box, text width=4.9cm] (d3) at (14.5,6.5)
-{$\deg=1$\\ \tiny from a categorical equivalence of the Frobenioids
-themselves $=$ same initial-data calibration (supply unconfirmed)};
-\draw[->] (d1)--(d2); \draw[->] (d2)--(d3);
-
-% ---------- legend ----------
-\node[note, text width=17cm] at (8.6,4.8)
-{Judged complete (with evidence) / conditional or tiered /
-undecided (open interface) / definitional or provenance condition
---- see the table of \S6.\\[2pt]
-What this figure says: the scale-controlling open square is
-panel (b); a separate output-side hull identification, not drawn,
-also remains open. A failure of completeness lives not
-inside the construction but at an interface, where a summary does
-not record a correlation.};
-\end{tikzpicture}}
 \caption{The whole diagram of forgetting and completeness.
 (a) The vertical tower of forgettings and the reverse
 mono-analytic reconstruction flow. (b) The missing square: the
 lower $\Theta$-link arrow exists by \cite[Def.~3.8(ii)]{IUT3}; the
 dashed lift to marked prime-strips is the centre of this paper.
 (c) The query $Q$ of Corollary~3.12 as a cross-column comparison
-inside a common container. (d) The three tiers of
-\cite[Thm.~6.4]{FrdI}; the conclusion needs the $\deg=1$ tier.}
+inside a common container; the two containers are the same coric
+object. (d) The three tiers of \cite[Thm.~6.4]{FrdI} concern a single
+scalar on one value line; the conclusion needs the $\deg=1$ tier.
+Dashed elements (\dag): see the note above the caption.}
 \label{fig:whole}
 \end{figure}
 
@@ -940,7 +954,7 @@ anabelian geometry III: global reconstruction algorithms,
 \textbf{22} (2015), no.~4, 939--1156.
 
 \bibitem[SS18]{SS18} P.~Scholze and J.~Stix, Why \emph{abc} is
-still a conjecture, report, 14 May 2018.
+still a conjecture, report dated 23 August 2018.
 Available at
 \url{https://www.math.uni-bonn.de/people/scholze/WhyABCisStillaConjecture.pdf}.
 
@@ -957,6 +971,27 @@ log-volume content of the results cited in the proof of IUT~III,
 Corollary~3.12, does not imply its conclusion, version 1.2.1,
 Zenodo, 2026.
 DOI \href{https://doi.org/10.5281/zenodo.24104932}{10.5281/zenodo.24104932}.
+
+\bibitem[U4]{U4} T.~Urahigashi, Split bad primes and the tuple
+structure of inter-universal Teichm\"uller theory (a fourth report),
+version 1.0.5, Zenodo, 2026.
+DOI \href{https://doi.org/10.5281/zenodo.24039383}{10.5281/zenodo.24039383}.
+
+\bibitem[MT]{MT} A.~Minamide and S.~Tsujimura, Anabelian geometry
+for Henselian discrete valuation fields with quasi-finite residues,
+preprint RIMS-1973, Research Institute for Mathematical Sciences,
+Kyoto University, June 2023.
+
+\bibitem[UCA]{UCA} T.~Urahigashi, A conditional assembly from
+Theorem~3.11 to Corollary~3.12: decomposition of the scalar layer, a
+semantic principle, and isolation of the value-group profile switch,
+version 1.0.3, Zenodo, 2026.
+DOI \href{https://doi.org/10.5281/zenodo.24209900}{10.5281/zenodo.24209900}.
+
+\bibitem[UPI]{UPI} T.~Urahigashi, Scale preservation is not enough:
+a profile-level independence countermodel for the Corollary~3.12
+assembly inputs, version 1.0.1, Zenodo, 2026.
+DOI \href{https://doi.org/10.5281/zenodo.24209904}{10.5281/zenodo.24209904}.
 
 \bibitem[UCS]{UCS} T.~Urahigashi, Two computations of the height
 inequality and the multiradial algorithm: reading IUT from the
